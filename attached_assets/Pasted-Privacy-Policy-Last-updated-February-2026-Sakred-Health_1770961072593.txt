@@ -1,0 +1,185 @@
+Privacy Policy
+
+Last updated: February 2026
+
+Sakred Health (“Sakred,” “we,” “our,” or “us”) is committed to protecting your privacy and handling your information responsibly. This Privacy Policy explains what information we collect, how we use it, how it is stored, and your rights regarding your data.
+
+By using the Sakred Health app or web portal, you agree to the practices described in this policy.
+
+1. Information We Collect
+Account Information
+
+When you create an account, we collect:
+
+Email address
+
+Name or display name
+
+Authentication credentials (password or social login data)
+
+If you sign in using Google or Apple, we receive basic profile information from that provider.
+
+Wellness Activity Data
+
+We collect the wellness-related information you choose to use within the app, including:
+
+Habit tracking data and completion records
+
+Routine participation history
+
+Streaks and engagement metrics
+
+Routine configuration and intensity settings
+
+This data is used to provide structure and progress tracking within the app.
+
+Wearable Device Data
+
+If you choose to connect supported wearable devices or health services, we may collect data such as:
+
+Sleep duration and sleep metrics
+
+Activity data (steps, workouts, calories)
+
+Heart rate and HRV
+
+Recovery and readiness scores
+
+Supported integrations include Fitbit, WHOOP, Oura Ring, Garmin, and Apple Health.
+
+You may disconnect these integrations at any time.
+
+Healthcare Client Portal Information
+
+If you activate the Healthcare Client Portal, we may process:
+
+Healthcare enrollment email
+
+Carrier name and plan details
+
+Policy information
+
+Coverage summaries
+
+Uploaded policy documents
+
+Support and callback requests
+
+Policy documents uploaded to the portal may be processed to enable in-app search functionality and structured coverage summaries. This processing uses deterministic text extraction and search indexing methods. No generative AI or language models are used to analyze your policy documents.
+
+Support & Callback Requests
+
+If you submit support requests or callback scheduling requests, we collect:
+
+Request type
+
+Preferred time slots
+
+Time zone
+
+Message details you provide
+
+This information is used solely to assist you with your healthcare plan.
+
+2. How We Use Your Information
+
+We use your information to:
+
+Provide and maintain the Sakred Health app
+
+Track routine participation and progress
+
+Personalize your dashboard experience
+
+Enable wearable data synchronization
+
+Activate and operate the Healthcare Client Portal
+
+Provide policy document search and coverage summaries
+
+Process support and callback requests
+
+Improve app functionality and reliability
+
+Communicate important updates regarding your account
+
+We do not use your data to train artificial intelligence models.
+
+3. Data Storage & Security
+
+Sakred Health uses Supabase (PostgreSQL) for secure data storage.
+
+Security measures include:
+
+Row Level Security (RLS) to ensure users can only access their own data
+
+Encrypted data transmission via TLS
+
+Encrypted storage at rest
+
+Role-based access controls for administrative functions
+
+Signed URL access for private policy document downloads
+
+Uploaded policy documents are stored in private storage buckets and are only accessible to authorized users.
+
+We implement industry-standard security practices designed to protect against unauthorized access, disclosure, or alteration.
+
+4. Data Sharing
+
+We do not sell, rent, or trade your personal information.
+
+We may share data only:
+
+With trusted service providers who operate parts of our infrastructure (under strict confidentiality agreements)
+
+When required by law
+
+To protect the rights, safety, or security of Sakred Health or its users
+
+With your explicit consent
+
+Wearable integrations share data only through your authorized connections with those services.
+
+5. Your Rights
+
+You have the right to:
+
+Access your personal data
+
+Correct inaccurate information
+
+Delete your account and associated data
+
+Export your data
+
+Opt out of non-essential communications
+
+Restrict certain processing where applicable
+
+To request account deletion, contact us at help@sakredhealth.com
+.
+
+6. Data Retention
+
+We retain your data for as long as your account remains active.
+
+Upon account deletion, we permanently delete your personal data within 30 days, unless retention is required for legal, regulatory, or operational reasons.
+
+Policy documents and healthcare records are removed upon account deletion unless legally required to retain them.
+
+7. Children’s Privacy
+
+Sakred Health is not intended for individuals under 13 years of age. We do not knowingly collect personal information from children under 13. If we become aware that such data has been collected, we will delete it promptly.
+
+8. Changes to This Policy
+
+We may update this Privacy Policy periodically. If material changes occur, we will notify you via email or in-app notice. Continued use of Sakred Health after updates indicates acceptance of the revised policy.
+
+9. Contact Us
+
+If you have questions about this Privacy Policy or our data practices, please contact:
+
+Email: help@sakredhealth.com
+
+Website: https://sakredhealth.com

@@ -1,0 +1,53 @@
+The Visual Generation Prompt
+Use this in Midjourney (v6) or DALL-E to generate visual inspiration for the "Elevated" look.
+
+Prompt:
+
+High-fidelity UI/UX web design of a holistic wellness app landing page named "Sakred Health" --ar 16:9 --v 6.0
+
+Style & Atmosphere: Dark mode, ethereal tech, "Zen-SaaS," premium, bioluminescent, fluid, clean, minimalistic but immersive.
+
+Color Palette: Deep obsidian midnight blue background (#0a1520), glowing vibrant neon cyan accents (#67e8f9), subtle teal soft light (#5fb5a0), off-white typography.
+
+Key Visual Elements:
+
+Hero Section: A floating, glassmorphic smartphone mockup showcasing an AI chat interface and circular habit rings. Behind the phone is a soft, animated mesh gradient glow in cyan and deep blue.
+
+UI Components: Frosted glass cards (glassmorphism) with 1px luminous borders. Rounded corners (24px). Soft, diffused drop shadows.
+
+Typography: Bold, modern sans-serif headings (like Geist or Inter) in white, readable grey body text.
+
+Lighting: Volumetric lighting effects, soft ambient occlusion, "Framer Motion" style entrance effects frozen in time.
+
+Context: A dashboard showing "Dream Recording," "AI Insights," and "Habit Tracking." High-end Dribbble showcase style, 8k resolution, ultra-detailed, UX interface design.
+
+Option 2: The "Lead Designer" System Prompt
+Use this inputting into ChatGPT or Claude to have it write your code, CSS, or specific design documentation based on the elevated branding.
+
+Prompt:
+
+Act as a Senior UI/UX Designer and Frontend Engineer specializing in modern React applications (Next.js), Tailwind CSS, and Framer Motion.
+
+Your Task: Refine the "Sakred Health" brand into an elevated, premium Design System and generate the implementation strategy.
+
+Brand Visual Identity (The "Sakred" Aesthetic):
+
+Core Concept: "Bioluminescent Zen." The interface should feel like a light in the dark—calming yet highly advanced.
+
+Base: Deep Midnight (bg-[#0a1520]).
+
+Primary Action: Electric Cyan (text-[#67e8f9] / bg-[#67e8f9]).
+
+Texture: Use extensive Glassmorphism. Backgrounds should not be flat colors; use subtle radial gradients and blurs to create depth.
+
+Motion: Everything must feel fluid. Use framer-motion for staggering fade-ins (y: 20, opacity: 0 -> y: 0, opacity: 1). Buttons should have a "glow" elevation on hover, not just a color change.
+
+Specific UI Requirements to Implement:
+
+The "Sakred Glow": Create a custom Tailwind utility or CSS class for a box-shadow that mimics a neon light (e.g., shadow-[0_0_20px_rgba(103,232,249,0.3)]).
+
+Typography: Use a variable font strategy. Headings should be tight-tracking (letter-spacing: -0.02em) for a modern feel.
+
+Cards: Instead of solid borders, use a distinct linear-gradient border (top-left cyan to bottom-right transparent) to simulate light hitting the card edges.
+
+Output Required: Please provide the React/Tailwind code for the Hero Section and the Features Grid. Ensure the code includes the described gradients, glassmorphism backdrop-filters, and Framer Motion variants for the entrance animations.

@@ -1,0 +1,83 @@
+Role: You are a Tailwind CSS Expert and UI Stylist. Task: Reskin the existing website layout. DO NOT change the layout structure, section order, or content placement. Your job is strictly to update the Colors, Typography, Shadows, and Borders to match a specific "Old Money Wellness" aesthetic.
+
+Current Layout Structure (Maintain This):
+
+Navbar: Logo left, Links center, Cart/Sign-in right.
+
+Hero: Center alignment. Headline, Subheadline, CTA Button.
+
+Benefits Grid: A row of 5 simple boxes ("Smooth calm focus", etc.).
+
+Problem Section: Text centered ("The Problem We Solve").
+
+Timeline Cards: 4 vertical cards ("0-30 min", "30-90 min", etc.).
+
+Ingredient/Feature List: A split list of items.
+
+Comparison Grid: 4 cards ("More Potent", "Cleaner", etc.).
+
+The New Style Guide (Apply This Globally):
+
+1. The "Vanilla Cream" Backgrounds (No Dark Mode)
+
+Global Background: Change all white/gray page backgrounds to Alabaster Cream (bg-[#F9F9F7]).
+
+Card Backgrounds: Change all inner cards (benefits, timeline, comparison) to Pure White (bg-white) to create subtle contrast against the cream page.
+
+2. Typography & Colors (High Contrast)
+
+Headings: Change all headings to Deep Oxford Navy (text-[#0F172A]) and use a Serif Font (like Playfair Display).
+
+Body Text: Change all body text to Deep Navy (text-[#0F172A]) with slightly reduced opacity (80%).
+
+No Black: Do not use #000000. Use the Deep Navy for all "black" elements.
+
+3. The "Liquid Gold" Accents (The Glow Up)
+
+Buttons:
+
+Current: Solid Navy/Black.
+
+New: Liquid Gold Gradient (bg-gradient-to-r from-[#C5A059] via-[#EBD598] to-[#C5A059]).
+
+Text: Deep Navy (text-[#0F172A]).
+
+Borders & Hovers:
+
+Add a hover:border-[#C5A059] (Gold) to all cards.
+
+Add a subtle shadow-lg with a gold tint on hover (shadow-[#C5A059]/20).
+
+4. Specific Component Reskins:
+
+The Hero CTA: Make the "Add to Routine" button the Liquid Gold Gradient with a slight shine animation.
+
+The "How It Works" Timeline Cards:
+
+Keep the layout.
+
+Change background to White.
+
+Make the "Time Label" (e.g., 0-30 min) a Gold Pill (Gold bg, Navy text).
+
+The "Problem We Solve" Section:
+
+Keep text centered.
+
+Add a subtle Gold vertical line or divider above the title.
+
+The Ingredients/Features List:
+
+Keep the rows.
+
+Change the background of the rows to White.
+
+Add a thin Gold border to the bottom of each row.
+
+Technical Constraint:
+
+Use Tailwind CSS.
+
+Do not move any divs. Just change the className colors, fonts, borders, and shadows.
+
+Output: Refactor the CSS/Tailwind classes for the existing page to match this Cream/Navy/Gold theme.

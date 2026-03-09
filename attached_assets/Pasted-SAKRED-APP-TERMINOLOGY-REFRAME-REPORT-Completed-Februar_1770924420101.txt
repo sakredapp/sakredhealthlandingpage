@@ -1,0 +1,131 @@
+SAKRED APP — TERMINOLOGY REFRAME REPORT
+Completed: February 12, 2026
+Scope: Full database content migration from alternative health language to preventative wellness infrastructure language
+
+========================================
+WHAT CHANGED
+========================================
+
+All user-facing content in the Sakred app has been migrated from detox/cleanse/parasite/terrain theory framing to neutral preventative wellness language. This applies to routine names, descriptions, goals, habit titles, habit descriptions, science explanations, tips, instructions, copy blocks, and internal metadata tags.
+
+The app now positions itself as a preventative wellness + daily structure platform, not a detox or alternative health app.
+
+========================================
+BANNED TERMS (removed from all content)
+========================================
+
+These terms no longer appear anywhere in the app:
+- detox / detoxification
+- cleanse / cleansing
+- parasite / parasites / parasitic / anti-parasitic / antiparasitic
+- heavy metal / heavy metals
+- terrain theory / terrain translator
+- toxic / toxins
+- drainage (in health context)
+- chelation
+- binders (in detox context)
+
+========================================
+REPLACEMENT TERMINOLOGY MAP
+========================================
+
+detox → reset
+cleanse → reset protocol
+parasite cleanse → digestive stability protocol
+parasite / parasites → digestive stability / digestive imbalances
+heavy metal detox → mineral balance protocol
+heavy metal / heavy metals → mineral balance / mineral imbalances
+toxic / toxins → sluggish / buildup / metabolic waste
+detoxification pathways → metabolic reset pathways
+drainage → circulation support
+anti-parasitic / antiparasitic → digestive support
+liver flush → liver support reset
+terrain theory → foundational wellness (feature removed entirely)
+binders → binding support
+chelation → mineral support
+Detox symptoms → Adjustment symptoms
+
+========================================
+CATEGORY SYSTEM CHANGES
+========================================
+
+Old categories: enhance, reset, detox
+New categories: enhance, reset (detox merged into reset)
+
+All routines previously labeled "detox" are now categorized as "reset."
+The "detox" category value no longer exists in the database and is blocked by a CHECK constraint.
+
+========================================
+ROUTINE NAME CHANGES (examples)
+========================================
+
+Detox Skin & Reduce Breakouts → Reset Skin & Reduce Breakouts
+Detox & Drainage → Reset & Circulation
+Parasite Cleanse → Digestive Stability Protocol
+Heavy Metal Detox → Mineral Balance Protocol
+Lymphatic Cleanse → Lymphatic Circulation Protocol
+Full Gut Reset → Full Gut Reset (unchanged — already clean)
+
+========================================
+TAG SYSTEM CHANGES (internal metadata)
+========================================
+
+Old tag → New tag:
+detox → reset
+drainage → circulation
+parasite → digestive-stability
+parasites → digestive-stability
+heavy-metals → mineral-balance
+metals → mineral-balance
+cleanse → reset-protocol
+toxic → metabolic-support
+toxins → metabolic-support
+anti-parasitic → digestive-support
+antimicrobial → digestive-support
+binders → binding-support
+chelation → mineral-support
+
+========================================
+UI LABELS THAT NEED WEBSITE UPDATES
+========================================
+
+Category filter: "Detox/Cleanse" → "Reset"
+Search keywords: Remove "Parasite", "Detox", "Cleanse" → Replace with "Digestive", "Reset", "Gut Reset"
+Featured card: "Start a Cleanse Routine" → "Start a Reset Routine"
+Featured card subtitle: "Begin your detox journey with a guided wellness routine" → "Begin your wellness reset with a guided routine"
+Walkthrough: "Cleanse your body when the time is right" → "Reset your body when the time is right"
+Walkthrough section: "Best Times to Cleanse" → "Best Times to Reset"
+
+========================================
+KNOWLEDGE BASE CATEGORY CHANGES
+========================================
+
+Encyclopedia category: "detox" → "reset"
+Admin knowledge category: "detox_protocols" → "reset_protocols"
+
+========================================
+FEATURES REMOVED ENTIRELY
+========================================
+
+- Terrain Theory Translator (screen, utilities, edge function — deleted)
+- AI Coach Chat (screen, edge function — deleted)
+- Voice Transcription (component, edge function — deleted)
+- Journal / Dream Diary / Cycle Tracking (screens, hooks, database tables — deleted)
+
+========================================
+BRAND POSITIONING SUMMARY
+========================================
+
+OLD: Sakred is a detox and terrain theory wellness app with AI coaching, journaling, cycle tracking, and cleanse protocols.
+
+NEW: Sakred is a preventative wellness infrastructure app offering structured daily routines, habit tracking, adherence analytics, and guided reset protocols for stability, energy, and daily structure.
+
+========================================
+WEBSITE COPY GUIDANCE
+========================================
+
+DO use: reset, protocol, stability, daily structure, preventative wellness, metabolic support, circulation support, mineral balance, digestive stability, guided routines, habit adherence, wellness infrastructure
+
+DO NOT use: detox, cleanse, parasite, heavy metal, terrain theory, toxic/toxins, drainage, anti-parasitic, chelation, binders
+
+Tone: clinical-neutral, outcome-focused, non-diagnostic. No health claims. No references to specific conditions, organisms, or alternative medicine frameworks.

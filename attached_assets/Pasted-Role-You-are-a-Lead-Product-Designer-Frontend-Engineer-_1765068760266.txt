@@ -1,0 +1,128 @@
+Role: You are a Lead Product Designer & Frontend Engineer for a High-End Tech Startup. Project: Build a Landing Page for a Premium Wellness/Cognitive Performance App. Aesthetic Goal: "Digital Luxury." The vibe is Old Money meets Quantified Self. It should feel like a private members' club in digital form—exclusive, calm, and highly intelligent. Core Constraints:
+
+No Neons. No generic "tech blue" or "health green."
+
+Primary Texture: "Liquid Gold" gradients for data visualization and success states.
+
+Backgrounds: Primarily White/Cream for a clean, "breathable" UI.
+
+1. The Design System (Visual Identity)
+A. Color Palette
+
+Canvas: Pure White (#FFFFFF) and Soft Porcelain (#F9F9F7).
+
+Ink (Text): Deep Midnight Navy (#0F172A). This is the "black."
+
+The "Pulse" (Accent): A Liquid Gold Gradient.
+
+CSS: background: linear-gradient(135deg, #C5A059 0%, #EBD598 50%, #C5A059 100%);
+
+Usage: Progress rings, "Streak" flames, active toggle switches, and the "Success" state of any graph.
+
+B. Typography
+
+Headings: Playfair Display (Serif). Use for emotional hooks (e.g., "Master Your Circadian Rhythm").
+
+Interface Text: Inter or Geist Sans. Monospace numbers for data/timers to look scientific.
+
+C. Visual Motifs
+
+Glassmorphism: High-end frosted glass (backdrop-blur-xl, white with 10% opacity) for floating UI cards.
+
+The "Golden Thread": A recurring visual element—a thin gold line that guides the user's eye down the page, connecting sections.
+
+2. Section-by-Section Engineering Guide
+Section 1: The Hero (The Interface)
+Background: Pure White.
+
+Layout: Split screen (Text Left, 3D Phone Right).
+
+Visual: A high-fidelity iPhone mock-up floating in 3D space.
+
+Screen Content: A clean "Daily Readiness Score" dashboard. The score circle is animating (filling up with Liquid Gold).
+
+Headline (Serif): "Your Cognitive Operating System."
+
+Sub-headline: "Data-driven wellness for high performers."
+
+CTA: "Download for iOS" (Button is Deep Navy with Gold Text).
+
+Section 2: The Problem (The "Noise")
+Background: Alabaster Cream.
+
+Concept: "The Modern Overload."
+
+Visual Visualization:
+
+Show a jagged, chaotic Navy line graph moving rapidly (representing Stress/Cortisol).
+
+Interaction: As the user scrolls, a "Gold Overlay" (The App) slides over the jagged line, smoothing it out into a perfect, rhythmic sine wave.
+
+Text: "Turn chaotic data into flow state."
+
+Section 3: The Science (The "Algorithm")
+Background: Deep Midnight Navy (Dark Mode switch for contrast).
+
+Visual: A "Body Scan" or "Brain Scan" wireframe (SVG).
+
+Scroll Animation (The Sync):
+
+Morning: The visual shows a Gold "Cortisol Awakening Response" curve. (Text: "Morning Momentum").
+
+Afternoon: The visual shows a flat, sustained Gold line. (Text: "Deep Work Block").
+
+Evening: The visual shows a gentle downward Gold slope. (Text: "Melatonin Onset").
+
+Vibe: Show the user that the App understands their biology in real-time.
+
+Section 4: Features as "Modules" (Bento Grid)
+Background: Pure White.
+
+Grid Layout: Large, spacious white cards with soft shadows.
+
+Card Design:
+
+Card 1 (Focus): A Pomodoro-style timer ring. When hovered, the ring spins and glows Gold.
+
+Card 2 (Journaling): A minimalist notebook icon. When hovered, a Gold pen writes a line.
+
+Card 3 (Recovery): A sleep graph. When hovered, it optimizes the curve.
+
+Micro-Interaction: The borders of the cards are invisible until hovered, then they fade into a thin Gold hairline.
+
+Section 5: The "Old Money" Comparison
+Background: Pure White.
+
+The Table:
+
+Us (The App): Column background is faint Cream. The header text is Gold. The "Checkmarks" are elegant Gold icons.
+
+Others (Generic Trackers): Grayscale, low opacity.
+
+Comparison Points:
+
+Others: "Raw Data Dump."
+
+Us: "Actionable Insights."
+
+Others: "Nagging Notifications."
+
+Us: "Calm Technology."
+
+Section 6: Sticky Footer (The Membership)
+Design: A slim "Glass" bar floating at the bottom.
+
+Content: "Start your 7-Day Trial."
+
+Button: A "Liquid Gold" gradient pill button that shimmers every 5 seconds.
+
+3. Tech Stack Requirements
+Framework: React + Tailwind CSS.
+
+Animation: Framer Motion (use useScroll and useTransform for the Line Graph smoothing animation).
+
+3D Elements: Use CSS 3D transforms ( transform: rotateY(-10deg) rotateX(10deg) ) for the phone mockup to keep it lightweight (no heavy Three.js unless necessary).
+
+Responsiveness: Perfect mobile optimization (stack the Bento grid).
+
+Output Request: Generate the full React code for this Landing Page. Focus heavily on the "Jagged to Smooth" line graph animation and the Gold Gradient CSS.

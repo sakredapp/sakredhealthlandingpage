@@ -1,0 +1,45 @@
+Sakred Health Portal — Core Functionality & Client Benefits
+1. Personalized Daily Wellness Dashboard
+A time-of-day-aware home screen that greets users by name and shows exactly where they are in their wellness journey. A 14-day animated journey path tracks past completion (gold = fully done, bordered = partial), highlights today with a pulsing orb, and previews upcoming days. Active routine progress, streak count, Sakred Coins balance, and quick-start action cards are all visible at a glance — one screen tells you everything.
+
+Client benefit: No guesswork. Open the app and instantly know what to do today and how far you've come.
+
+2. Guided Wellness Routines (7–30 Day Programs)
+A full browsable library of structured reset programs organized into "Enhance" (optimize strengths) and "Support/Adjust" (restore and reset) categories. Each routine includes a goal, duration, intensity level (Lite at 15–20 min/day or Intensive at 45–60 min/day), "Who Is It For," "What to Expect," and "Expected Results." One tap enrolls a user and auto-generates their daily habits for the full program. Routines cover gut health, sleep, energy, detox, focus, minerals, brain health, cravings, and more.
+
+Client benefit: Like having a wellness coach hand you a personalized day-by-day plan for any health goal — sleep, energy, stress, detox, digestion.
+
+3. Daily Habits & Tracking
+Each day's habits appear as a checklist with one-tap completion. Every habit includes a science-backed "Why It Matters" explanation, a "Quick Tip," estimated duration, and recommended time of day. Habits carry cadence badges (daily, weekly, one-time) and routine labels. A Daily Guidance Screen provides a personalized check-in with stats, motivational content, and quick links.
+
+Client benefit: Abstract wellness goals become concrete daily actions. Users know exactly what to do, when to do it, and why it matters — backed by science.
+
+4. Habits Encyclopedia
+A searchable library of every wellness habit across all routines. Users can browse, search by keyword or category, read the full science behind each practice, and assign individual habits à la carte without committing to a full routine. A "Create" mode lets users build custom habits with their own cadence and schedule.
+
+Client benefit: Pick and choose specific wellness practices that fit your life. Build your own custom daily health protocol.
+
+5. Healthcare Insurance Portal (B2B)
+The core differentiator — a full-service insurance benefits portal inside the wellness app:
+
+Policy overview — carrier, plan name, policy/group/member numbers, effective dates, status
+Coverage summary — deductibles, out-of-pocket max, copays (PCP, specialist, urgent care, ER), coinsurance, Rx tiers at a glance
+Plain-language policy search — type a question like "what's my copay for a specialist" and get highlighted excerpts from the actual policy document, ranked by relevance
+Document access — view and download PDFs (ID cards, EOBs, claims, letters) in-app
+Assigned agent — dedicated benefits specialist with name, direct phone, and one-tap "Call Now"
+Callback scheduling — select up to 3 preferred time slots, add notes, and your assigned agent calls you back
+Support requests — submit questions by category (Claims, Coverage, Billing, Provider Search) and track status through resolution
+Activation — one-email match against employer/provider database, or book a free broker consultation via Calendly
+Client benefit: Turns insurance from a confusing paper-and-phone nightmare into a searchable, self-service digital experience. Understand your coverage, find answers, and reach your agent — all from your phone.
+
+6. Wearable Device Integrations
+Connect 5 major wearable platforms with one-tap OAuth:
+
+Fitbit — steps, heart rate, sleep, active minutes, calories
+WHOOP — recovery score, strain, HRV, sleep
+Oura Ring — sleep score, readiness, activity, heart rate
+Garmin — steps, stress, body battery, VO2 max, sleep
+Apple Health — steps, heart rate, sleep, workouts (iOS)
+All synced data is encrypted and never shared with third parties.
+
+Client benefit: Objective health data from devices you already wear — no manual logging. See real metrics alongside your daily habits.

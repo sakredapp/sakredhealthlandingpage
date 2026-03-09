@@ -1,0 +1,258 @@
+SAKRED SYSTEM — HABIT DECISION LOGIC (v1)
+
+Defines the backend rules the system uses to decide:
+- which habits can be included in routines,
+- when habits can be added, removed, upgraded,
+- how habits interact,
+- safety constraints,
+- lane scaling logic.
+
+This document must remain aligned with:
+
+- Premium_Routine_and_Habit_Modules_Clean.txt
+- premium_habits_database.txt
+- routine split primer.txt
+- Sakred App Free_ Product Copy.txt
+- Routine & Habit Generation Rules (Doc 4)
+- Goal → Routine Mapping Rules (Doc 5)
+
+Backend logic only. No tone or conversational style.
+
+------------------------------------------------------
+
+1. PURPOSE
+
+The system must ensure all habits:
+- are safe to combine,
+- align with user goals,
+- respect tier (free/premium),
+- fit lane load (lite/standard/intense),
+- match terrain balance requirements,
+- follow sequencing rules.
+
+This document governs inclusion, exclusion, pairing, conflicts, and scaling.
+
+------------------------------------------------------
+
+2. HABIT STRUCTURE REQUIREMENTS
+
+Each habit must include:
+- habit_id (unique, immutable)
+- name (short user-facing)
+- category (hydration, digestion, detox, nervous-system, movement, sleep, reflection, supplement, etc.)
+- terrain_tags (hydration, drainage, metabolic, etc.)
+- intensity_level (lite, standard, intense)
+- recommended_time (morning, evening, anytime)
+- frequency_default
+- max_frequency (if applicable)
+- requires_products (bool)
+- products_needed (list)
+- pairing_conflicts (list of habit_ids or categories)
+- prerequisites (list of required habit_ids or terrain anchors)
+- is_free (bool)
+- copy_block_id (links to explanatory text)
+
+Rules:
+- System must not create new habits on its own.
+- Only habits defined in premium_habits_database.txt and related documents may be used.
+
+------------------------------------------------------
+
+3. HABIT INCLUSION CRITERIA
+
+A habit can be included in a routine only if all are true:
+
+1. **Goal Match Rule**  
+Habit must support at least one goal_tag of the active routine.
+
+2. **Terrain Match Rule**  
+Habit must support the required terrain tags for the goal.  
+Example:  
+Goal = digestion → habit must include digestion terrain_tags.
+
+3. **Lane Compatibility Rule**  
+Intensity of habit must not exceed lane.  
+- lite lane → lite habits only  
+- standard lane → lite + standard  
+- intense lane → lite + standard + intense
+
+4. **Tier Rule**  
+- Free routines = habits where is_free = true  
+- Premium routines = all habits allowed
+
+5. **Safety Rule**  
+Habit must not violate:
+- pairing_conflicts  
+- detox overload limits  
+- nervous-system exhaustion limits  
+- user sensitivity constraints
+
+6. **Prerequisite Rule**  
+If a habit has prerequisites, system must ensure they are included or auto-add them.
+
+7. **Copy Block Rule**  
+Habit must have a valid copy_block_id.  
+No orphan habits allowed.
+
+------------------------------------------------------
+
+4. HABIT EXCLUSION CRITERIA
+
+A habit must NOT be included if:
+
+- It requires a product the user does not have and cannot access.
+- It belongs to detox category and user is new/inconsistent unless lane = intense + premium.
+- It conflicts with an active habit’s pairing_conflicts.
+- It exceeds max_frequency.
+- It produces excessive load (e.g., >3 detox habits/day).
+- It is a strong stressor (cold plunge, fasting, binders) when user reports:
+    - low sleep  
+    - overwhelm  
+    - high stress  
+    - early-cycle sensitivity  
+
+------------------------------------------------------
+
+5. HABIT PAIRING & CONFLICT LOGIC
+
+Hard conflicts (never allowed):
+- Combining multiple binders (charcoal + bentonite + zeolite) in one day unless lane=intense.
+- High-output training + strong detox + fasting on same day.
+- Coffee enema + drainage tools + binders in a single daily stack.
+- Two stimulant habits simultaneously.
+
+Soft conflicts (allowed with caution):
+- Strong saunas + hard training (requires nervous-system habit added).
+- Fasting + detox supplements (requires hydration + minerals).
+- High-output movement + low sleep (requires downgrade or suppression).
+
+System behavior:
+- If conflict detected → remove one competing habit (prefer removing higher-intensity).
+- If essential → downgrade to lite version.
+
+------------------------------------------------------
+
+6. TERRAIN BALANCE RULES
+
+Every daily routine must include:
+
+1 hydration / mineral habit  
+1 nervous-system / recovery habit  
+
+For any detox habit included:
+- auto-add hydration + minerals + nervous-system habit if missing.
+
+For movement-heavy day:
+- auto-include recovery habit (breathwork, stretching, sleep ritual).
+
+No routine should exceed:
+- 3 detox-intensive habits/day
+- 2 strong movement habits/day (unless intense)
+- 1 binder/day unless lane = intense
+
+------------------------------------------------------
+
+7. HABIT SCALING LOGIC (UPGRADE / DOWNGRADE)
+
+Upgrading (lite → standard → intense):
+- Only if user shows consistency.
+- Add progressive habits defined in routine split primer.txt.
+- Add no more than 1 “stressor habit” at a time.
+- Keep foundational hydration/digestion habits constant.
+- Detox tools may be added only after prerequisites satisfied.
+
+Downgrading:
+- Remove detox and high-stress habits first.
+- Preserve hydration, minerals, digestion, nervous-system habits.
+- Do not reduce to zero habits; retain minimum viable stack.
+
+------------------------------------------------------
+
+8. USER STATE OVERRIDE RULES
+
+If system receives context from the Coach AI (journals, patterns):
+
+If user is overwhelmed →  
+- suppress detox  
+- reduce habit count  
+- add nervous-system support  
+
+If user is fatigued →  
+- reduce output habits  
+- increase hydration+minerals  
+- remove fasting/detox  
+
+If user reports strong consistency →  
+- unlock standard/intense habits  
+- allow progressive load  
+
+If user reports sensitivity →  
+- restrict detox  
+- restrict stimulants  
+- restrict cold plunges  
+- keep digestion + hydration primary  
+
+------------------------------------------------------
+
+9. FREQUENCY & TIMING RULES
+
+Hydration/minerals: daily  
+Digestion rituals: daily or as needed  
+Movement: 3x/week minimum  
+Detox habits: 1–3x/week (lite), daily (intense only)  
+Nervous-system: daily (at least 1 habit)  
+Sleep rituals: daily (evening)  
+
+System must respect:
+- recommended_time  
+- max_frequency  
+
+------------------------------------------------------
+
+10. HABIT REPLACEMENT RULES
+
+System may replace a habit if:
+
+- product unavailable  
+- user declines a habit  
+- conflict detected  
+- routine being downgraded  
+- lane being changed  
+- habit exceeds load  
+
+Replacement hierarchy:
+1. Replace with same category, lower intensity  
+2. Replace with same terrain_tags  
+3. Replace with foundational habit (hydration/digestion/nervous-system)  
+4. Remove if no valid substitute exists  
+
+------------------------------------------------------
+
+11. HABIT PRIORITY TIERS
+
+Habits have internal priority:
+
+Tier 1 — Foundational  
+hydration, minerals, digestion, nervous-system
+
+Tier 2 — Supportive  
+movement, mild detox, supplements, light metabolic tools
+
+Tier 3 — Advanced  
+binders, fasting, coffee enemas, heavy detox, high-output movement
+
+Rules:
+- Tier 1 must always be present.  
+- Tier 2 optional depending on goal.  
+- Tier 3 only allowed in standard/intense & premium.  
+
+------------------------------------------------------
+
+12. VERSIONING
+
+Habit decision logic must be versioned:
+Habit_Decision_Logic_v1 → v2 → v3
+
+------------------------------------------------------
+
+END OF DOCUMENT

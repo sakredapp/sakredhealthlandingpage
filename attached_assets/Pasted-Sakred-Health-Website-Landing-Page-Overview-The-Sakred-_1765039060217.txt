@@ -1,0 +1,89 @@
+Sakred Health Website & Landing Page Overview
+The Sakred Health website is designed with a modern, clean, and responsive aesthetic, primarily featuring a dark theme with vibrant accent colors. The branding emphasizes a holistic, personalized, and science-based approach to wellness. The site is structured to guide users through the benefits of the Sakred Health app, culminating in a clear call to action for signup.
+
+Global Branding & Styling:
+Color Palette: Dominated by a deep #0a1520 (dark blue/black) background, with text in #fef7f2 (off-white) and #e8f0f2 (light gray).
+Primary Accent Color: #67e8f9 (bright cyan/aqua) is used for key headings, buttons, links, and interactive elements.
+Secondary Accent/Subtle Highlight: #5fb5a0 (teal/greenish blue) is often used in gradients or for subtle background elements.
+Typography: Uses bold, modern sans-serif fonts for headings, with readable body text.
+Visuals/Glow: Incorporates subtle framer-motion animations for entrance effects, and background "glow" elements with blur (e.g., in the Hero section) to create a soft, ethereal, and engaging atmosphere. Shadows are used for button highlights.
+Responsiveness: Designed to adapt fluidly across desktop, iPad, and phone screen sizes, ensuring content remains legible and interactive.
+Landing Page Structure & Content (pages/Landing.js):
+The Landing page integrates several distinct sections, each delivered via dedicated components, to present a cohesive narrative:
+
+Navigation (components/landing/Navigation.js):
+
+Purpose: Provides site-wide navigation and brand identity at the top of every page.
+Branding: Displays "Sakred Health" logo/text, with "Sakred" in #fef7f2 and "Health" in #67e8f9. Can also use a custom logo_url from SiteSettings.
+Links: "Home," "Features," "Blog."
+CTA: "Get Started" button (background: #67e8f9, text: #0a1520) which links to https://sakredapp.com.
+Responsiveness: Includes a hamburger menu (Menu icon) for mobile view, expanding into a vertical list of links.
+Styling: Fixed at the top, semi-transparent dark background (rgba(10, 21, 32, 0.9)), with subtle border.
+Hero Section (components/landing/Hero.js):
+
+Purpose: The main introductory section, capturing attention and conveying the core value proposition.
+Copy:
+Badge: "Your Complete Daily Wellness Companion"
+Headline: "Your Daily Companion for All Wellness Insights" (with "All Wellness Insights" in a cyan-teal gradient)
+Subtitle: "Start journaling with our holistic AI guide, build consistent habits, record dreams, and follow our custom routines to become a better you."
+Italic tagline: "No overwhelming protocols. No guilt trips. Just simple daily tracking that helps you feel better."
+Features Highlighted: Holistic AI guide, habit building, dream recording, custom routines.
+CTAs:
+Primary: "Start Free Today" button (background: #67e8f9, text: #0a1520, prominent shadow/glow effect).
+Secondary: "Explore Features" button (outline style, border: #2a4158, text: #67e8f9).
+Visuals/Glow: Large, animated background glows (#67e8f9 and #193046) creating a dynamic, soft ambient light effect. framer-motion animations for text and buttons.
+Additional Info: "Free to start," "No credit card required," "Cancel anytime" indicators.
+Problem Section (components/landing/ProblemSection.js):
+
+Purpose: Articulates common wellness challenges and introduces how Sakred Health solves them.
+Copy: Presents benefits through distinct cards with titles and descriptions. Examples include "Comprehensive Tracking," "Personalized AI Insights," "Sustainable Habit Formation."
+Styling: Cards have subtle hover effects (border color change, shadow).
+How It Works (components/landing/HowItWorks.js):
+
+Purpose: Explains the user journey in a simple, step-by-step manner.
+Copy: Three steps with titles and descriptions, e.g., "Step 1: Set Your Intentions," "Step 2: Track Your Progress," "Step 3: Gain Insights."
+Styling: Each step is presented in a card-like format with numbering, and framer-motion for entrance animations.
+Features Grid (components/landing/FeaturesGrid.js):
+
+Purpose: Showcases the app's core functionalities in more detail.
+Copy: Presents eight features, each with a title and description, like "AI Coach Integration," "Habit Tracking," "Journaling," "Dream Recording," "Routine Building," "Wellness Insights," "Wearable Data Sync," "Personalized Guidance."
+Styling: Each feature is a card with an icon (implicitly, as no icons are defined in the snippet, but the layout suggests it), title, and description. Hover effects are present.
+Pricing Section (components/landing/PricingSection.js):
+
+Purpose: Outlines subscription tiers and their respective benefits.
+Copy: Compares "Free" and "Premium" plans.
+Free: Limited habits, journaling, AI chats.
+Premium: Unlimited everything, AI conversations, priority support. Highlights "Best Value."
+CTAs: "Start Free" for the Free tier, "Try for 7 Days" for Premium. Both link to https://sakredapp.com.
+Styling: Two distinct cards, clear feature lists for each plan.
+FAQ (components/landing/FAQ.js):
+
+Purpose: Addresses common user questions to build trust and clarify doubts.
+Copy: Presents questions and answers using an accordion component, e.g., "What is Sakred Health?", "How does the AI coach work?", "Is my data private?".
+Styling: Uses an accordion UI component for collapsible content. Includes a link to the "AI & Privacy" page.
+Final CTA (components/landing/FinalCTA.js):
+
+Purpose: A concluding call to action before the footer.
+Copy:
+Headline: "Start Your Wellness Journey Today" (with "Journey Today" in cyan gradient).
+Subtitle: "Track everything in one place with complete wellness tracking and personalized AI guidance."
+CTA: "Get Started Free" button (prominent, large, background: #67e8f9, text: #0a1520, strong shadow/glow on hover).
+Additional Info: "No credit card required • 5 minute setup • Cancel anytime."
+Trust Elements: "Secure & Private," "Science-Based," "Daily Insights," "Your Progress, Your Control" with cyan bullet points.
+Styling: Separated from the footer by a subtle border (#2a4158).
+Other Key Pages & Functionality:
+Blog (pages/Blog.js & pages/BlogPost.js):
+Purpose: Provides informational articles related to wellness, health, and app usage.
+Structure: A blog listing page with search/filter capabilities, and individual blog post pages.
+Content: Blog posts include title, author, published date, tags, featured image, and markdown content.
+Styling: Follows the dark theme with accent colors for links and headers. Markdown content is styled for readability.
+AI Privacy (pages/AIPrivacy.js):
+Purpose: Details how user data is handled and protected by SakredAI.
+Content: Explains personalization, data security, non-use of data for model training, and user control over data access.
+Privacy Policy (pages/PrivacyPolicy.js):
+Purpose: Formal legal document outlining data collection, usage, sharing, and user rights.
+Content: Covers account info, wellness data, file uploads, wearable integrations (Fitbit, WHOOP, Oura Ring, Garmin, Apple Health), AI interaction data, payment info, data storage, and security. Mentions Supabase PostgreSQL with RLS, TLS 1.3, AES-256 encryption.
+Terms of Service (pages/TermsOfService.js):
+Purpose: Legal terms and conditions for using the service.
+In summary, the Sakred Health website uses a consistent dark-themed aesthetic with vibrant cyan accents, animated visual glows, and clear, benefit-driven copy. It's built with responsiveness in mind, using a component-based structure to deliver information and drive user engagement towards the Sakred Health app.
+

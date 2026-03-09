@@ -1,0 +1,105 @@
+✒️ The New Font Stack
+1. The Headline Font (Serif): Playfair Display or Cormorant Garamond
+
+Why: These fonts have high contrast (thick and thin lines). They feel expensive, authoritative, and organic.
+
+Where: Page Titles ("Good Afternoon, Jace"), Section Headers ("Your Journey"), and Big Stats.
+
+2. The Body/UI Font (Sans-Serif): DM Sans or Inter
+
+Why: You need readability for data, charts, and lists. DM Sans is cleaner and more "Swiss" than the rounded fonts you are using now. It feels more "medical/scientific" and less "startup."
+
+Where: Button text, list items, chart labels, and paragraphs.
+
+📋 COPY AND PASTE THIS INTO REPLIT / CURSOR
+Role: You are a Senior Mobile UI Designer specializing in Typography & Design Systems. Task: Reskin the entire mobile app to a "Luxury Stationery" aesthetic. Core Objective: Replace the "Dark Mode/Neon" look with "Cream/Navy/Gold." Typography Upgrade: Replace the current rounded/tech fonts with a high-end Serif + Sans-Serif pairing.
+
+1. Typography System (Crucial Update)
+A. Import these Google Fonts:
+
+Headings: Playfair Display (Weights: 600, 700)
+
+Body/UI: DM Sans (Weights: 400, 500, 700)
+
+B. Usage Rules:
+
+Page Titles (e.g., "Good Afternoon, Jace"): Use Playfair Display, Bold, Deep Navy. Tighten the letter spacing slightly (tracking-tight).
+
+Section Headers (e.g., "Health Data", "Quick Actions"): Use Playfair Display, Semi-Bold.
+
+UI Elements (Buttons, Lists, Inputs): Use DM Sans. It should look crisp and clean.
+
+Numbers/Stats (e.g., "10 Coins"): Use DM Sans (Monospace figures if possible) for a scientific look.
+
+2. Global Color & Style Reskin
+A. The Canvas (Backgrounds)
+
+App Background: Change bg-slate-900 to Alabaster Cream (bg-[#F9F9F7]).
+
+Card Backgrounds: Change bg-slate-800 to Pure White (bg-[#FFFFFF]).
+
+Shadows: Remove all colored/glowing shadows. Use soft, diffused gray shadows: shadow-[0_4px_20px_-12px_rgba(15,23,42,0.1)].
+
+B. The Palette
+
+Primary Text: Oxford Navy (#0F172A).
+
+Accents: Liquid Gold (#C5A059).
+
+Success/Checkmarks: Instead of Green/Cyan, use Gold.
+
+3. Screen-by-Screen Implementation Guide
+1. Home Dashboard (IMG_3012 & 3013)
+Top Greeting: Change "Good Afternoon" to DM Sans (Caps, tracking-wide, Gold). Change "Jace" to Playfair Display (Large, Navy).
+
+The Main Chart:
+
+Remove the dark background box. Make the chart float on the white card.
+
+Change the cyan progress line to a Gold Gradient Line.
+
+Change the center circle ("0/4") to a Gold Ring with Navy text.
+
+Stat Cards (Streak/Habits/Coins):
+
+White Background, rounded corners (reduce radius to rounded-xl for a sharper look).
+
+Add a thin border: border border-slate-100.
+
+Numbers: Large Navy DM Sans. Labels: Gold DM Sans.
+
+2. Habit List (IMG_3014)
+Cards: Change from Dark Blue to White.
+
+Checkboxes:
+
+Unchecked: Thin Navy Circle.
+
+Checked: Solid Gold Circle with White Checkmark.
+
+Text: Routine names in Playfair Display (e.g., "Mindful Breathing"). Subtext in DM Sans (Slate gray).
+
+3. Analytics & Charts (IMG_3027)
+Background: Remove the dark container. The chart should sit directly on the Cream background or a clean White card.
+
+Bars/Lines: Change from Blue/Purple to Gold.
+
+Text: All axis labels should be Deep Navy.
+
+4. The AI Coach (IMG_3017)
+Chat Bubbles:
+
+AI Response: Warm White background (#FDFCF8) with a thin Gold border. Text is Navy.
+
+User Message: Solid Navy background. Text is White.
+
+Input Field: Cream background with a Navy Outline (resembling high-end stationery).
+
+5. Login/Welcome (IMG_3011)
+Background: Alabaster Cream.
+
+Inputs: White background, Underlined Style (border-bottom only) instead of a box, to look like a form letter.
+
+Button: Solid Navy Button, Gold Text, Serif Font.
+
+Output: Refactor the CSS/Tailwind config to implement Playfair Display and DM Sans alongside the Cream/Navy/Gold palette.

@@ -1,0 +1,93 @@
+Create a responsive, full-width data table (or CSS Grid component) for my "Sacred Health" website titled "Alkaline vs. Acidic Food Chart".
+
+**Visual Structure & Logic:**
+The chart represents a pH spectrum. It requires 7 specific columns with distinct background color coding to represent the pH level.
+1. **High Acid:** Background should be Red/Dark Orange.
+2. **Medium Acid:** Background should be Orange.
+3. **Low Acid:** Background should be Yellow.
+4. **Neutral:** Background should be Blue.
+5. **High Alkaline:** Background should be Light Green.
+6. **Medium Alkaline:** Background should be Medium Green.
+7. **Low Alkaline:** Background should be Dark Green.
+
+*Note: Please use my existing website theme for fonts and borders, but use the specific colors listed above for the cell backgrounds to denote the pH levels.*
+
+**Header Section:**
+Above the table, create a split header:
+- **Left Side (Over the Acid columns):** "⊗ EAT LESS: MORE ACIDIC (Warming Effects/Stimulates Activity)"
+- **Right Side (Over the Alkaline columns):** "✔ EAT MORE: MORE ALKALINE (Cooling Effects/Stimulates Activity)"
+
+**Table Data:**
+Please populate the table with the following rows and data cells. The "Neutral" column contains "Water" for every row.
+
+**Row 1: Fruits**
+- High Acid: Sweetened Fruit Juices, Jams, Dried fruits (Sulphured)
+- Medium Acid: Cranberry, Pomegranate
+- Low Acid: Bananas, prunes, Natural fruit juice, Unsweetened jams
+- Neutral: Water
+- High Alkaline: Oranges, Cherries, Pineapples, Peaches, Most Berries, Apricots
+- Medium Alkaline: Dates, Figs, Melons, Grapes, Kiwi, Apples, Pears, Mango
+- Low Alkaline: Lemons, Limes, Watermelons, Grapefruit, Raspberry
+
+**Row 2: Vegetables / Legumes**
+- High Acid: Processed Soy beans, Salted + Sweetened Peanut Butter
+- Medium Acid: Potatoes w/o skin, Beans (Pinto, Kidney, Lima, String)
+- Low Acid: Cooked Spinach, Soy Protein Powder, Lentils, Chick + Split Peas, Tofu, Edamame
+- Neutral: Water
+- High Alkaline: Potato Skins, Beets, Lettuce, Mushrooms, Brussels Sprouts, Pumpkin, Squash, Tempeh, Tomatoes
+- Medium Alkaline: Bell Pepper, Cauliflower, Okra, Ginger, Sweet Potato, Cabbage, Celery, Carrots, Asparagus
+- Low Alkaline: Broccoli, Cucumber, Collard Greens, Kale, Chard, Spinach, Onion, Garlic, Parsley, Sea vegetables
+
+**Row 3: Grains / Cereals**
+- High Acid: Chocolate, Pastries, Cookies, Tarts, Cakes
+- Medium Acid: Rice Protein Powder, Oats + Bran, Rye, White Bread + Pasta, White Rice
+- Low Acid: Basmati + Brown Rice, Wheat, Buckwheat, Amaranth, Whole Wheat Bread + Pasta
+- Neutral: Water
+- High Alkaline: Whole Oats, Quinoa, Millet + Spelt, Hemp Protein, Sprouted Grain Bread, Wild Rice
+- Medium Alkaline: [Leave Empty]
+- Low Alkaline: [Leave Empty]
+
+**Row 4: Meat + Animal Products**
+- High Acid: Beef, Pork, Hard Cheeses, Eggs, Processed Meats, Ice Cream
+- Medium Acid: Chicken (White meat), Lamb, Veal, Shellfish, Casein (milk protein)
+- Low Acid: Whey Protein, Fish, Venison, Duck, Turkey, Cottage Cheese, Goat + Sheep Milk
+- Neutral: Water
+- High Alkaline: Dairy Probiotic Cultures, Human Breast Milk
+- Medium Alkaline: [Leave Empty]
+- Low Alkaline: [Leave Empty]
+
+**Row 5: Oils / Plants + Seeds**
+- High Acid: Margarine, Hydrogenated Oils, Cottonseed Oil, Heated Oils
+- Medium Acid: Lard, Chestnut + Palm Kernel Oils, Peanuts, Roasted Nuts & Seeds
+- Low Acid: Oils (Almond, Corn, Safflower, Sesame, Canola), Pine Nuts
+- Neutral: Water
+- High Alkaline: Avocados, Most Raw Nuts And Seeds (Sesame, Coconut, Hemp, Flax seeds + Oils)
+- Medium Alkaline: Pumpkin Seeds, Almonds, Chia Seeds, Raw Almond Butter, Olive Oil, Macadamia Nut Oil
+- Low Alkaline: All Sprouts, Sprouted/Soaked Nuts + Seeds, Wheat Grass
+
+**Row 6: Seasoning / Spices / Sweeteners**
+- High Acid: Soy Sauce, Nutritional Yeast, Black Pepper, Aspartame, MSG
+- Medium Acid: Vanilla, Nutmeg, Mayonnaise, Ketchup, Table Salt, Brown Sugar, High Fructose Syrup
+- Low Acid: Carob, Tahini, Processed Honey, Molasses, Agave
+- Neutral: Water
+- High Alkaline: Most Herbs, Curry, Tamari, Milk Thistle, Maple + Rice Syrup, Raw Honey, Blackstrap Molasses
+- Medium Alkaline: Cinnamon, Ginger, Dill, Mint, Peppermint, Turmeric, Basil, Oregano, Ginseng, Stevia
+- Low Alkaline: Celtic Sea Salt, Himalayan Pink Salt, Miso, Cayenne, Baking Soda
+
+**Row 7: Beverages**
+- High Acid: Caffeine, Alcoholic Drinks, Soda, White Vinegar
+- Medium Acid: Coffee, Black Tea, Red Wine Vinegar, Balsamic Vinegar
+- Low Acid: Kona Coffee, Rice Vinegar
+- Neutral: Water
+- High Alkaline: Green Tea, Ozonated Water, Ionized Water, Mineral Water
+- Medium Alkaline: Ginger Tea, Kombucha, Apple Cider Vinegar
+- Low Alkaline: Lemon Water, Herbal Tea
+
+**Row 8: Activities + Social Tendency (ST)**
+- High Acid: Lack of Sleep, Excess Stress, Hot Bath, ST: Over-reacting
+- Medium Acid: Weight Lifting, Shallow Breathing, Most Exercise, ST: Reacting
+- Low Acid: Walking, ST: Reacting
+- Neutral: Water
+- High Alkaline: Yin Yoga, Slow Synchronized Breath + Movement, ST: Responding
+- Medium Alkaline: Deep Breathing, Tai Chi, Meditation, ST: Anticipating
+- Low Alkaline: Deep Sleep, Cold Bath/Shower, Massage, ST: Anticipating

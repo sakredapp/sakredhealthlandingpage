@@ -1,0 +1,48 @@
+I need to build a "Feature Comparison Matrix" section similar to the AG1 (Athletic Greens) comparison table, but styled for my brand "Hytropic" (Gold, Dark Navy, White).
+
+Please create a React component named `ComparisonTable` using Tailwind CSS and Framer Motion.
+
+### 1. The Design (Visual Language)
+* **Layout:** A table with 3 distinct columns.
+    * **Column 1 (Left):** "Standard Energy Drinks" (Gray text, subtle background).
+    * **Column 2 (Middle - HERO):** "Hytropic" (This column must have a background color of Dark Navy #0B1221, with Metallic Gold text #D4AF37. It should have a drop shadow to pop out like a card).
+    * **Column 3 (Right):** "Basic Electrolyte Powders" (Gray text).
+* **Rows:** The rows should be separated by very thin, elegant dividers.
+
+### 2. The Data (The Logic)
+Please populate the table with this exact data structure based on my formulation. Use Checkmarks (✓) for "Yes" and explicit numbers for ingredient counts.
+
+**Row 1: Cognitive Nootropics (Focus)**
+* *Energy Drinks:* "Synthetic Caffeine Only"
+* *Hytropic:* "9 Clinical Actives" (Tooltip: Tyrosine, Alpha-GPC, Lion's Mane, Rhodiola, Ginseng, + more)
+* *Electrolytes:* 0
+
+**Row 2: Electrolytes & Minerals**
+* *Energy Drinks:* Low/None
+* *Hytropic:* "4 Premium Forms" (Highlight: Includes Magnesium L-Threonate)
+* *Electrolytes:* 2-3 Basics (Sodium/Potassium only)
+
+**Row 3: Nervous System Balance (Calm)**
+* *Energy Drinks:* ❌ (Causes Jitters)
+* *Hytropic:* "3 Calming Agents" (GABA, L-Theanine, Magnesium)
+* *Electrolytes:* ❌
+
+**Row 4: Cellular Energy (No Crash)**
+* *Energy Drinks:* Sugar Spike
+* *Hytropic:* "3 Mitochondrial Supports" (ALCAR, Taurine, D-Ribose)
+* *Electrolytes:* ❌
+
+**Row 5: Bioactive Vitamins**
+* *Energy Drinks:* Cheap Synthetics
+* *Hytropic:* "Methylated B-Complex" (P5P & Methylcobalamin)
+* *Electrolytes:* ❌
+
+### 3. Special Feature: L-Threonate Callout
+Inside the "Electrolytes" row for Hytropic, please add a small, pulsing "Info Badge" or text tag that says "Brain-Blood Barrier Crossing" to highlight the Magnesium L-Threonate.
+
+### 4. Animation
+* When the user scrolls to this table, trigger a "Count Up" animation for the numbers (e.g., the "9" in Nootropics spins up from 0 to 9).
+* The checkmarks for Hytropic should animate/draw themselves in Gold.
+
+### 5. Mobile Responsiveness
+On mobile, the table should be scrollable horizontally, but the "Hytropic" column should be sticky (locked) or the first visible column so the value is always clear.

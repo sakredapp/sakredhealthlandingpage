@@ -1,0 +1,57 @@
+Act as a Senior Lead Product Designer and Frontend Engineer expert in React, Tailwind CSS, and Framer Motion.
+
+I need you to refactor the UI/UX branding for "Sakred Health" into a "Premium Organic" aesthetic. We are pivoting away from Dark Mode. The new design system is built around a **Vanilla Cream** base, evoking feelings of natural paper, calmness, and clarity.
+
+**Global Design Variables & Theme:**
+
+1.  **Backgrounds (The "Vanilla" Base):**
+    * **Main BG:** `#FDFBF7` (Warm Vanilla/Cream).
+    * **Secondary BG:** `#F6F4EF` (Slightly darker Stone/Paper for distinct sections).
+    * **Avoid:** Stark white (`#ffffff`) as a page background.
+
+2.  **Typography & Contrast (Crucial Fixes):**
+    * **Primary Text:** `#1C1917` (Warm Black/Stone 900) - Used for headings.
+    * **Body Text:** `#44403C` (Stone 700) - Softer than black for readability on cream.
+    * **Accent Text:** `#0E7490` (Deep Teal) - Used for links and active states to ensure accessible contrast against cream.
+
+3.  **Accent Palette:**
+    * **Primary Brand Color:** `#06B6D4` (Cyan) is too light for text on cream. Use `#0891B2` (Teal 600) for buttons and primary actions.
+    * **Glows/Highlights:** Use `#67E8F9` (Cyan 300) ONLY for background blurs, gradients, or low-opacity decorative elements, never for text.
+    * **Success/Harmony:** `#14B8A6` (Teal 500).
+
+4.  **UI Physics & Texture:**
+    * **Glassmorphism (Light Mode):** Instead of dark glass, use "Frosted Ice."
+        * `bg-white/60 backdrop-blur-md border border-white/40 shadow-sm`.
+    * **Shadows:** Do not use black shadows. Use colored diffused shadows for an elevated feel.
+        * Example: `shadow-[0_8px_30px_rgb(0,0,0,0.04)]` or warm shadows `shadow-orange-500/5`.
+    * **Borders:** Subtle, organic borders. `border-stone-200` or `border-stone-900/5`.
+
+**Specific Component Instructions (Pages/Components):**
+
+**1. Navigation (components/landing/Navigation.js):**
+* **Background:** `bg-[#FDFBF7]/80` (Vanilla with blur).
+* **Logo:** "Sakred" in `#1C1917` (Dark), "Health" in `#0891B2` (Teal).
+* **CTA Button:** Solid Deep Teal background (`bg-[#0891B2]`), White text (`text-white`), rounded-full. Hover: Soft lift (`-translate-y-0.5`).
+
+**2. Hero Section (components/landing/Hero.js):**
+* **Atmosphere:** Clean, airy, sunlit.
+* **Visuals:** Instead of "glowing in the dark," use "Watercolor Orbs." Create absolute positioned divs behind the text with `bg-cyan-200/40` and `bg-teal-200/40`, heavily blurred (`blur-3xl`), floating slowly with Framer Motion.
+* **Headline:** Deep Stone (`#1C1917`). The gradient text phrase "All Wellness Insights" should be a gradient from `teal-600` to `cyan-500`.
+* **Buttons:**
+    * Primary: `bg-[#0891B2]` text-white shadow-lg shadow-cyan-900/20.
+    * Secondary: `border border-[#0891B2]` text-[#0891B2] bg-white/50.
+
+**3. Cards (Features, Problem, HowItWorks):**
+* **Style:** White cards sitting on the Cream background.
+* **Effect:** `bg-white` rounded-2xl `shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]`.
+* **Hover:** `hover:shadow-xl` and `hover:scale-[1.02]` transition-all duration-300.
+* **Icons:** Use thin, elegant strokes. Color: `#0891B2`.
+
+**4. Footer & Dark Sections:**
+* To create rhythm, make the **Final CTA** or **Footer** the inverse:
+    * Background: `#15202B` (Dark Slate/Navy).
+    * Text: `#FDFBF7` (Vanilla).
+    * This "grounds" the page at the bottom.
+
+**Deliverable:**
+Please rewrite the component styles and Tailwind classes to reflect this "Vanilla Cream & Deep Teal" aesthetic. Ensure high contrast and accessibility.

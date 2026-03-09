@@ -1,0 +1,193 @@
+SAKRED SYSTEM — GOAL → ROUTINE MAPPING RULES (v1)
+
+This document defines how the system converts user-selected goals into structured routines.
+It must remain aligned with:
+
+- Premium_Routine_and_Habit_Modules_Clean.txt
+- routine split primer.txt
+- Sakred App Free_ Product Copy.txt
+- premium_habits_database.txt
+- Routine & Habit Generation Rules (Doc 4)
+- Habit Decision Logic (Doc 6)
+
+This is backend logic only. No conversational tone required.
+
+------------------------------------------------------
+
+1. PURPOSE
+
+The system must:
+- Map a user’s selected goal to a valid routine template.
+- Filter routines by tier (free/premium) and lane (lite/standard/intense).
+- Respect terrain-first sequencing.
+- Always start simple unless user selects a higher load.
+
+------------------------------------------------------
+
+2. GOAL DEFINITIONS
+
+A “goal” is a user-facing selection representing an outcome category.
+Each goal must map to one or more of the following internal goal tags:
+
+FOCUS / COGNITION  
+ENERGY / VITALITY  
+DIGESTION / BLOAT  
+METABOLIC / CRAVINGS  
+SKIN / INFLAMMATION  
+STRESS / NERVOUS-SYSTEM  
+SLEEP / RECOVERY  
+CYCLE / HORMONES  
+DETOX / DRAINAGE  
+IMMUNE SUPPORT  
+PERFORMANCE / TRAINING  
+
+Rules:
+- A goal may map to multiple tags (e.g., “Better Energy” → energy + metabolic + nervous-system).
+- Tags determine which routines can be selected.
+
+------------------------------------------------------
+
+3. GOAL → ROUTINE MATCHING LOGIC
+
+When a user selects a goal:
+
+STEP 1 — Identify all routines with overlapping goal_tags.
+- Match routines where routine.goal_tags ∩ selected_goal_tags ≠ ∅.
+
+STEP 2 — Filter by tier.
+- Free user → only free routines.
+- Premium user → both free and premium routines available.
+
+STEP 3 — Filter by lane.
+- Default = lite unless user explicitly selects standard or intense.
+- If unknown: select lite.
+
+STEP 4 — Remove routines that violate required terrain balance.
+- Every candidate routine must contain hydration + minerals + nervous-system support habits.
+- Remove templates missing these anchors.
+
+STEP 5 — Prioritize routines that meet these criteria:
+1. Balanced terrain distribution  
+2. Clear copy_block_ids  
+3. Reasonable habit count for lane  
+4. Minimal detox load unless required by goal  
+
+STEP 6 — Select top 1–3 candidate routines.
+- If multiple matches exist, choose the routine with the most direct goal match (ordered by weight).
+
+------------------------------------------------------
+
+4. GOAL TAG → TERRAIN PRIORITY LOGIC
+
+Each goal tag maps to a required set of terrain categories:
+
+FOCUS → hydration, nervous-system, metabolism  
+ENERGY → hydration, minerals, digestion  
+DIGESTION → digestion, hydration  
+BLOAT → digestion, drainage  
+SKIN → digestion, detox-support (mild), hydration  
+STRESS → nervous-system, hydration  
+SLEEP → nervous-system, recovery  
+CYCLE → hormones, digestion, nervous-system  
+DETOX → drainage, hydration, minerals  
+METABOLIC → movement, digestion  
+PERFORMANCE → movement, recovery, hydration  
+
+Rules:
+- At least one terrain habit from each required category must appear in the routine.
+- If missing, the system auto-adds required foundational habits (if allowed by lane & tier).
+
+------------------------------------------------------
+
+5. GOAL SEVERITY LOGIC
+
+If user reports:
+- extreme fatigue  
+- high stress  
+- low recovery  
+- new to wellness  
+
+THEN:
+- force lane = lite  
+- suppress detox-heavy routines  
+- increase nervous-system weighting  
+
+If user reports:
+- high consistency  
+- regular training  
+- no sensitivity  
+
+THEN:
+- allow standard or intense  
+- unlock advanced routines if tier = premium  
+
+------------------------------------------------------
+
+6. MULTI-GOAL MAPPING
+
+If user selects multiple goals:
+
+STEP A — Combine all goal_tags into one set.  
+STEP B — Rank terrain priorities based on frequency of appearance.  
+STEP C — Select routines that overlap with the highest-weighted tags.  
+STEP D — Remove routines that overload detox unless detox is explicitly selected as a goal.  
+
+Rules:
+- Never exceed one detox-focused routine unless lane = intense + premium.
+- Hydration, minerals, and nervous-system must remain present.
+
+------------------------------------------------------
+
+7. PRIORITIZATION RULES
+
+If multiple routines match:
+
+PRIORITY ORDER:
+1. Strongest goal-tag match  
+2. Highest terrain match coverage  
+3. Routines with defined copy_block_ids  
+4. Simpler (lite) if user is new or inconsistent  
+5. More advanced (standard/intense) if user is consistent and opts in  
+6. Avoid routines requiring unavailable products  
+
+If tie persists:
+- Select the routine with the greatest number of foundational (hydration/digestion/nervous-system) habits.
+
+------------------------------------------------------
+
+8. FREE VS PREMIUM GOAL MAPPING
+
+FREE:
+- Use only routines defined in Free Product Copy.
+- No supplement-required habits unless user has products.
+- No advanced detox.
+
+PREMIUM:
+- Full access to routine library.
+- Can include detox stacks, supplement habits, advanced tools.
+
+Rule:
+Both free and premium may address the same goal but with different habit depth.
+
+------------------------------------------------------
+
+9. STABILITY RULES
+
+When a user changes goals:
+- Old routines and habits must be gracefully removed or archived.
+- Core foundational habits may be reused across goals.
+- Avoid abrupt lane changes (intense → lite) unless safety required.
+
+When goals are updated mid-routine:
+- System may re-evaluate mapping and swap routines only if user confirms.
+
+------------------------------------------------------
+
+10. VERSIONING
+
+Each update to goal mapping rules must be versioned:
+Goal_Mapping_Rules_v1 → v2 → v3.
+
+------------------------------------------------------
+
+END OF DOCUMENT
