@@ -801,3 +801,6 @@ export async function seedBlogPosts() {
     console.error("Error seeding blog posts:", error);
   }
 }
+
+// Auto-run when executed directly
+seedBlogPosts().then(() => process.exit(0)).catch(() => process.exit(1));
