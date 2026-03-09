@@ -4,15 +4,16 @@ import { Card } from "@/components/ui/card";
 import { useDownloadDialog } from "./DownloadDialog";
 
 const features = [
-  "Full Healthcare Portal (policy search, coverage, documents)",
-  "Dedicated benefits specialist",
-  "Claims & billing support",
+  "HIPAA-compliant Healthcare Portal (policy search, coverage, documents)",
+  "Dedicated healthcare agent with in-app messaging",
+  "Hathr AI Assistant for instant coverage answers",
+  "Claims, billing & support request tracking",
+  "Chronic condition & life policy management",
+  "Estate planning & retirement annuity access",
   "All 18+ Guided Wellness Routines",
-  "Healthy habits library",
-  "Advanced habit tracking & analytics",
-  "Wearable integrations (Fitbit, WHOOP, Oura, Garmin)",
-  "Healthcare broker connection (no plan needed)",
-  "Wellness Library",
+  "Daily habit tracking with journey path",
+  "Wearable integrations (Fitbit, WHOOP, Oura, Garmin, Apple Health)",
+  "Secure document vault with encrypted storage",
 ];
 
 export function Pricing() {

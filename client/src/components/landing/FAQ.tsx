@@ -10,7 +10,7 @@ import {
 const faqs = [
   {
     question: "What is Sakred Health?",
-    answer: "Sakred Health is an all-in-one healthcare and preventative wellness platform. It combines a full healthcare client portal — policy search, coverage breakdowns, document access, and dedicated agent support — with guided wellness routines, healthy habits, and wearable integrations. Think of it as the bridge between your healthcare plan and your daily well-being.",
+    answer: "Sakred Health is an all-in-one private healthcare and preventative wellness ecosystem. It combines a HIPAA-compliant client portal — policy search, coverage breakdowns, secure document vault, Hathr AI assistant, and dedicated agent messaging — with guided wellness routines, daily habit tracking, and wearable integrations. Beyond healthcare, Sakred also gives you access to chronic condition life policies, estate planning, and retirement annuities — so your entire health and long-term planning lives in one place.",
   },
   {
     question: "Do I need a healthcare plan to use Sakred?",
@@ -18,23 +18,27 @@ const faqs = [
   },
   {
     question: "What does the Healthcare Portal include?",
-    answer: "When your plan is linked, you get: plain-language policy search (no more digging through PDFs), a coverage overview with your deductible, copays, and out-of-pocket max, document access to download policy files anytime, a dedicated benefits specialist you can call or request callbacks from, and a support request system for claims and billing questions.",
+    answer: "When your plan is linked, you get: full visibility into active policies, carrier details, premiums, deductibles, and copays. Full-text policy search with highlighted answers and page references. A secure document vault for ID cards, EOBs, and claim letters. HIPAA-compliant in-app messaging with your dedicated agent. The Hathr AI assistant for instant policy questions. And a support request system with callback scheduling.",
+  },
+  {
+    question: "What about chronic conditions, estate planning, and retirement?",
+    answer: "Sakred goes beyond day-to-day healthcare. Activated clients can access chronic condition life insurance policies, estate planning resources, and retirement annuity details — all managed in the same secure portal alongside your health coverage. Your dedicated agent can help with questions across all of these areas.",
   },
   {
     question: "What kind of wellness routines are available?",
-    answer: "We offer 18+ structured routines covering digestive stability, metabolic support, nervous system regulation, hormonal balance, and more. Each routine is 14-28 days and follows a foundational sequencing approach — meaning we build your basics first before introducing more advanced protocols.",
+    answer: "We offer 18+ guided reset routines covering gut health, sleep optimization, energy recovery, detox & drainage, nervous system support, hydration, focus, and more. Each routine runs 7-30 days with Lite (15-20 min/day) or Intensive (45-60 min/day) options. Every routine includes science-backed daily habits, progress tracking, and recommended supplies.",
   },
   {
     question: "Which wearables are supported?",
-    answer: "We integrate with Fitbit, WHOOP, Oura Ring, and Garmin. Apple Health is also supported through our native iOS app. Connect your devices to sync steps, heart rate, sleep quality, HRV tracking, recovery scores, and more.",
+    answer: "We integrate with Fitbit, WHOOP, Oura Ring, Garmin, and Apple Health. Connect your devices to sync steps, heart rate, HRV, sleep scores, recovery, strain, and more — all in one place.",
   },
   {
     question: "Is my data private and secure?",
-    answer: "Absolutely. Your data is encrypted using industry-standard AES-256 encryption and stored securely. We never sell your personal information. Your healthcare data and wellness information are kept separate and you have full control over your data — including the ability to export or delete it anytime.",
+    answer: "Absolutely. Sakred is built to be HIPAA-compliant. Your data is encrypted using industry-standard AES-256 encryption and stored securely. All agent messaging is encrypted end-to-end. We never sell your personal information, and you have full control over your data — including the ability to export or delete it anytime.",
   },
   {
     question: "Is Sakred really free?",
-    answer: "Yes — Sakred Health is completely free. You get full access to the healthcare portal, all 18+ guided wellness routines, habit tracking, wearable integrations, and the wellness library at no cost. No credit card required, no hidden fees.",
+    answer: "Yes — Sakred Health is completely free for activated clients. You get full access to the healthcare portal, wellness routines, habit tracking, wearable integrations, Hathr AI, and the secure document vault at no cost. No credit card required, no hidden fees.",
   },
 ];
 

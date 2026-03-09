@@ -6,20 +6,20 @@ Sakred Health is an all-in-one healthcare client portal and preventative wellnes
 
 The application is a marketing landing page that showcases the product's features, pricing, and value proposition, with links to the actual application hosted at `app.sakredhealth.com`.
 
-**Positioning:** Healthcare portal as the primary value proposition, with preventative wellness as a complementary feature. The intersection of private healthcare access and foundational wellness.
+**Positioning:** HIPAA-compliant healthcare portal as the primary value proposition, with preventative wellness, chronic condition life policies, estate planning, and retirement annuities as complementary pillars. The full private healthcare and long-term planning ecosystem.
 
 **Core Features (from app screenshots):**
-- Healthcare Portal: Policy search, coverage summaries, document uploads/access, dedicated agent, support/callback requests
+- Healthcare Portal: Policy search, coverage summaries, document vault, dedicated agent messaging, Hathr AI assistant, support/callback requests
 - "Don't Have a Plan?" option: Free broker connection for users without coverage
-- Wellness Routines: Guided 14-28 day programs (digestive stability, metabolic support, etc.)
-- Healthy Habits: Individual wellness practices users can add to their day
+- Wellness Routines: Guided 7-30 day reset programs (gut health, sleep, energy, detox, nervous system, etc.)
+- Daily Habit Tracking: 14-day journey path with streaks and completion tracking
+- Habits Encyclopedia: Searchable library of wellness practices
 - Wearable Integrations: Fitbit, WHOOP, Oura Ring, Garmin, Apple Health
+- Long-Term Planning: Chronic condition life policies, estate planning, retirement annuities
 
-**Compliance:** All alternative medicine/medical terminology banned. Use only: reset, protocol, stability, preventative wellness, metabolic support, circulation support, foundational wellness, guided routines. DELETED features (never reference): Terrain Theory Translator, AI Coach, Journal/Dream Diary, Cycle Tracker.
+**Compliance:** HIPAA-compliant. All alternative medicine/medical terminology banned. Use only: reset, protocol, stability, preventative wellness, metabolic support, circulation support, foundational wellness, guided routines. DELETED features (never reference): Terrain Theory Translator, AI Coach, Journal/Dream Diary, Cycle Tracker.
 
-**Pricing:** Completely free. No paid tiers, no credit card required.
-
-**Maintenance Banner:** 40px amber banner below nav announcing premium features under maintenance (1-2 week timeline).
+**Pricing:** Completely free for activated clients. No paid tiers, no credit card required.
 
 ## User Preferences
 

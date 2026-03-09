@@ -19,52 +19,62 @@ const featureCategories: FeatureCategory[] = [
     category: "Healthcare Portal",
     features: [
       {
-        title: "Policy Search",
+        title: "Your Insurance, Simplified",
         bullets: [
-          "Search your entire policy document in plain language",
-          "No more digging through 80-page PDFs",
-          "Type a question like \"what's my copay for a specialist\" and get highlighted excerpts ranked by relevance",
-          "Results pulled directly from your actual policy document",
-        ],
-        benefit: "Understand your coverage in seconds, not hours.",
-      },
-      {
-        title: "Coverage Overview",
-        bullets: [
-          "See your deductible, copays, out-of-pocket max, and network type at a glance",
-          "PCP, specialist, urgent care, and ER copays broken down clearly",
-          "Coinsurance percentages and Rx tier pricing",
+          "Full visibility into active policies, carrier details, premiums, deductibles, and copays",
+          "Direct portal links to your carrier's website from one dashboard",
+          "Coinsurance percentages, Rx tier pricing, and network type at a glance",
           "All pulled directly from your plan — no manual entry",
         ],
         benefit: "Your full benefits summary on one screen.",
       },
       {
-        title: "Document Access",
+        title: "Search Your Policy",
         bullets: [
-          "Download your policy documents anytime, right from the app",
-          "Access ID cards, EOBs, claims, and letters in-app",
+          "Full-text search across all your uploaded policy documents",
+          "Ask plain-language questions like \"what's my deductible for specialist visits\"",
+          "Get highlighted answers pulled directly from your plan documents with page references",
+          "No more digging through 80-page PDFs",
+        ],
+        benefit: "Understand your coverage in seconds, not hours.",
+      },
+      {
+        title: "Secure Document Vault",
+        bullets: [
+          "Access uploaded policy documents, ID cards, EOBs, and claim letters anytime",
+          "Encrypted storage with signed download links",
           "View and share PDFs without calling your carrier",
           "Everything organized and searchable",
         ],
-        benefit: "Your insurance paperwork, always in your pocket.",
+        benefit: "Your insurance paperwork — encrypted and always in your pocket.",
       },
       {
-        title: "Dedicated Agent",
+        title: "Talk to Your Agent",
         bullets: [
-          "Assigned benefits specialist who already knows your plan",
-          "One-tap call or callback request",
-          "Select up to 3 preferred callback time slots",
-          "Add notes so your agent comes prepared",
+          "Message your dedicated healthcare agent directly inside the app",
+          "HIPAA-compliant, encrypted, and real-time messaging",
+          "Categorize messages by topic: claims, billing, coverage, referrals",
+          "Request callbacks at your preferred time and track read receipts",
         ],
         benefit: "Real human support from someone who knows your situation.",
       },
       {
-        title: "Support Requests",
+        title: "Hathr AI Assistant",
         bullets: [
-          "Submit questions by category: Claims, Coverage, Billing, Provider Search",
-          "Track status from submission through resolution",
-          "No more sitting on hold or repeating your story",
-          "Full history of every request and response",
+          "Get instant answers to policy and coverage questions from our AI assistant",
+          "Searches your actual plan data and returns personalized answers",
+          "If it can't help, one tap escalates to your human agent",
+          "Available 24/7 for quick coverage questions",
+        ],
+        benefit: "Instant, personalized answers — with a human fallback.",
+      },
+      {
+        title: "Support Requests & Callbacks",
+        bullets: [
+          "Submit tickets by category: Claims, Coverage, Billing, Provider Search",
+          "Book a callback with up to 3 preferred time slots",
+          "Your agent's contact info always on-screen",
+          "Full history of every request and resolution",
         ],
         benefit: "Get answers without the runaround.",
       },
@@ -74,31 +84,21 @@ const featureCategories: FeatureCategory[] = [
     category: "Preventative Wellness",
     features: [
       {
-        title: "Personalized Daily Dashboard",
+        title: "Guided Reset Routines (7-30 Day Programs)",
         bullets: [
-          "Time-of-day-aware home screen that greets you by name",
-          "14-day animated journey path tracking your progress",
-          "Active routine progress, streak count, and quick-start action cards",
-          "One screen tells you everything — what to do today and how far you've come",
-        ],
-        benefit: "Open the app and instantly know what to do today.",
-      },
-      {
-        title: "Guided Wellness Routines (7-30 Day Programs)",
-        bullets: [
-          "Structured reset programs: Digestive Stability, Metabolic Support, Nervous System Regulation, and more",
-          "Choose Lite (15-20 min/day) or Intensive (45-60 min/day) intensity",
-          "Each routine includes goal, duration, \"Who Is It For,\" and \"Expected Results\"",
+          "Multi-day programs built around functional wellness — gut health, sleep optimization, energy recovery, detox & drainage, nervous system support, and more",
+          "Choose Lite (15-20 min/day) or Intensive (45-60 min/day) based on your pace",
+          "Each routine includes science-backed daily habits, progress tracking, and recommended supplies",
           "One tap enrolls you and auto-generates your daily habits for the full program",
         ],
         benefit: "Like having a wellness coach hand you a day-by-day plan for any health goal.",
       },
       {
-        title: "Daily Habits & Tracking",
+        title: "Daily Habit Tracking",
         bullets: [
-          "Each day's habits appear as a checklist with one-tap completion",
-          "Every habit includes a \"Why It Matters\" explanation and \"Quick Tip\"",
-          "Estimated duration and recommended time of day for each habit",
+          "Check off habits each day with instant visual feedback on your journey path",
+          "14-day timeline showing momentum, streaks, and completion at a glance",
+          "Every habit includes \"Why It Matters,\" the science behind it, and practical tips",
           "Cadence badges (daily, weekly, one-time) keep you on track",
         ],
         benefit: "Abstract wellness goals become concrete daily actions.",
@@ -106,9 +106,9 @@ const featureCategories: FeatureCategory[] = [
       {
         title: "Habits Encyclopedia",
         bullets: [
-          "Searchable library of every wellness habit across all routines",
+          "Full searchable library of wellness practices across sleep, gut, mental clarity, stress, energy, and hydration",
           "Browse by keyword or category with full science-backed explanations",
-          "Add individual habits without committing to a full routine",
+          "Add any habit to your day individually, or enroll in the full routine it belongs to",
           "Build your own custom daily wellness protocol",
         ],
         benefit: "Pick and choose practices that fit your life.",
@@ -127,7 +127,32 @@ const featureCategories: FeatureCategory[] = [
           "Garmin — VO2 Max, Body Battery, stress, sleep",
           "Apple Health — steps, heart rate, sleep, workouts (iOS)",
         ],
-        benefit: "Objective health data from devices you already wear — no manual logging.",
+        benefit: "Real-time health data from devices you already wear — all in one place.",
+      },
+    ],
+  },
+  {
+    category: "Long-Term Planning",
+    features: [
+      {
+        title: "Chronic Condition & Life Policies",
+        bullets: [
+          "Access and manage life insurance policies designed for chronic conditions",
+          "View policy details, premiums, and coverage terms in plain language",
+          "Dedicated agent support for policy questions and claims",
+          "Everything organized alongside your health coverage",
+        ],
+        benefit: "Coverage for your future, managed alongside your health.",
+      },
+      {
+        title: "Estate Planning & Retirement Annuities",
+        bullets: [
+          "Estate planning resources and document access in one secure vault",
+          "Retirement annuity details, payout schedules, and carrier info",
+          "Work with your dedicated agent on long-term financial planning",
+          "Your healthcare and financial future — finally in the same place",
+        ],
+        benefit: "Plan for the long term without juggling separate advisors.",
       },
     ],
   },
@@ -158,7 +183,7 @@ export function FeaturesGrid() {
             </span>
           </h2>
           <p className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto">
-            A full self-service healthcare portal and preventative wellness platform — designed to work together
+            A HIPAA-compliant healthcare portal, preventative wellness platform, and long-term planning ecosystem — all designed to work together
           </p>
         </motion.div>
 

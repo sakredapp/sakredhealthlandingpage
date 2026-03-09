@@ -52,7 +52,7 @@ export function Hero() {
           transition={{ duration: 0.6 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-[#C5A059]/30 shadow-sm mb-8"
         >
-          <span className="text-sm font-medium text-[#2C2C2C]/80">Your Healthcare & Wellness Companion</span>
+          <span className="text-sm font-medium text-[#2C2C2C]/80">Preventative Wellness Meets Insurance Intelligence</span>
         </motion.div>
 
         <motion.h1
@@ -61,9 +61,9 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl sm:text-5xl lg:text-6xl font-display font-normal tracking-tight text-[#2C2C2C] mb-6"
         >
-          Your health plan, routines, and{" "}
+          One app for your health, coverage,{" "}
           <span className="bg-gradient-to-r from-[#C5A059] to-[#EBD598] bg-clip-text text-transparent">
-            wellness — all in one place
+            and long-term planning
           </span>
         </motion.h1>
 
@@ -73,7 +73,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg sm:text-xl text-[#2C2C2C]/70 max-w-3xl mx-auto mb-6 leading-relaxed"
         >
-          Access your policy details, coverage breakdowns, and dedicated support — paired with guided wellness routines, healthy habits, and wearable integrations. Private healthcare meets preventative wellness.
+          Guided wellness routines, daily habit tracking, wearable sync, and a secure HIPAA-compliant healthcare portal with dedicated agent support — plus chronic condition policies, estate planning, and retirement annuities. Your entire health and long-term planning ecosystem in one place.
         </motion.p>
 
         <motion.div
