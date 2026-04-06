@@ -21,19 +21,15 @@ const featureCategories: FeatureCategory[] = [
       {
         title: "Your Insurance, Simplified",
         bullets: [
-          "Full visibility into active policies, carrier details, premiums, deductibles, and copays",
-          "Direct portal links to your carrier's website from one dashboard",
-          "Coinsurance percentages, Rx tier pricing, and network type at a glance",
-          "All pulled directly from your plan — no manual entry",
+          "Active policies, premiums, deductibles, copays, and Rx tiers — all on one screen",
+          "Direct portal links to your carrier's website from your dashboard",
         ],
         benefit: "Your full benefits summary on one screen.",
       },
       {
         title: "Search Your Policy",
         bullets: [
-          "Full-text search across all your uploaded policy documents",
-          "Ask plain-language questions like \"what's my deductible for specialist visits\"",
-          "Get highlighted answers pulled directly from your plan documents with page references",
+          "Ask plain-language questions and get highlighted answers from your actual plan documents",
           "No more digging through 80-page PDFs",
         ],
         benefit: "Understand your coverage in seconds, not hours.",
@@ -41,42 +37,19 @@ const featureCategories: FeatureCategory[] = [
       {
         title: "Secure Document Vault",
         bullets: [
-          "Access uploaded policy documents, ID cards, EOBs, and claim letters anytime",
-          "Encrypted storage with signed download links",
-          "View and share PDFs without calling your carrier",
-          "Everything organized and searchable",
+          "Policy documents, ID cards, EOBs, and claim letters — encrypted and always accessible",
+          "Organized, searchable, and shareable without calling your carrier",
         ],
         benefit: "Your insurance paperwork — encrypted and always in your pocket.",
       },
       {
-        title: "Talk to Your Agent",
+        title: "Talk to Your Agent & AI Assistant",
         bullets: [
-          "Message your dedicated healthcare agent directly inside the app",
-          "HIPAA-compliant, encrypted, and real-time messaging",
-          "Categorize messages by topic: claims, billing, coverage, referrals",
-          "Request callbacks at your preferred time and track read receipts",
+          "HIPAA-compliant messaging with your dedicated agent — categorized by topic",
+          "Hathr AI delivers instant answers from your plan data, with one-tap human escalation",
+          "Submit support tickets, book callbacks, and track every request",
         ],
-        benefit: "Real human support from someone who knows your situation.",
-      },
-      {
-        title: "Hathr AI Assistant",
-        bullets: [
-          "Get instant answers to policy and coverage questions from our AI assistant",
-          "Searches your actual plan data and returns personalized answers",
-          "If it can't help, one tap escalates to your human agent",
-          "Available 24/7 for quick coverage questions",
-        ],
-        benefit: "Instant, personalized answers — with a human fallback.",
-      },
-      {
-        title: "Support Requests & Callbacks",
-        bullets: [
-          "Submit tickets by category: Claims, Coverage, Billing, Provider Search",
-          "Book a callback with up to 3 preferred time slots",
-          "Your agent's contact info always on-screen",
-          "Full history of every request and resolution",
-        ],
-        benefit: "Get answers without the runaround.",
+        benefit: "Real human support + instant AI answers — always in your pocket.",
       },
     ],
   },
@@ -84,50 +57,21 @@ const featureCategories: FeatureCategory[] = [
     category: "Preventative Wellness",
     features: [
       {
-        title: "Guided Reset Routines (7-30 Day Programs)",
+        title: "Guided Routines & Habit Tracking",
         bullets: [
-          "Multi-day programs built around functional wellness — gut health, sleep optimization, energy recovery, detox & drainage, nervous system support, and more",
-          "Choose Lite (15-20 min/day) or Intensive (45-60 min/day) based on your pace",
-          "Each routine includes science-backed daily habits, progress tracking, and recommended supplies",
-          "One tap enrolls you and auto-generates your daily habits for the full program",
+          "7-30 day reset programs for gut health, sleep, energy, detox, and more",
+          "Daily habit tracking with streaks, science-backed explanations, and progress journeys",
+          "Searchable habits encyclopedia — build your own custom wellness protocol",
         ],
-        benefit: "Like having a wellness coach hand you a day-by-day plan for any health goal.",
+        benefit: "A wellness coach in your pocket — day-by-day plans for any health goal.",
       },
       {
-        title: "Daily Habit Tracking",
+        title: "Wearable Integrations",
         bullets: [
-          "Check off habits each day with instant visual feedback on your journey path",
-          "14-day timeline showing momentum, streaks, and completion at a glance",
-          "Every habit includes \"Why It Matters,\" the science behind it, and practical tips",
-          "Cadence badges (daily, weekly, one-time) keep you on track",
+          "Sync Fitbit, WHOOP, Oura Ring, Garmin, and Apple Health",
+          "Real-time health data from devices you already wear — all in one place",
         ],
-        benefit: "Abstract wellness goals become concrete daily actions.",
-      },
-      {
-        title: "Habits Encyclopedia",
-        bullets: [
-          "Full searchable library of wellness practices across sleep, gut, mental clarity, stress, energy, and hydration",
-          "Browse by keyword or category with full science-backed explanations",
-          "Add any habit to your day individually, or enroll in the full routine it belongs to",
-          "Build your own custom daily wellness protocol",
-        ],
-        benefit: "Pick and choose practices that fit your life.",
-      },
-    ],
-  },
-  {
-    category: "Wearable Integrations",
-    features: [
-      {
-        title: "Connect Your Devices",
-        bullets: [
-          "Fitbit — steps, heart rate, sleep, active minutes, calories",
-          "WHOOP — recovery score, strain, HRV tracking",
-          "Oura Ring — sleep quality, readiness, activity, heart rate",
-          "Garmin — VO2 Max, Body Battery, stress, sleep",
-          "Apple Health — steps, heart rate, sleep, workouts (iOS)",
-        ],
-        benefit: "Real-time health data from devices you already wear — all in one place.",
+        benefit: "Your health data unified, not scattered.",
       },
     ],
   },
@@ -135,24 +79,12 @@ const featureCategories: FeatureCategory[] = [
     category: "Long-Term Planning",
     features: [
       {
-        title: "Chronic Condition & Life Policies",
+        title: "Life Policies & Estate Planning",
         bullets: [
-          "Access and manage life insurance policies designed for chronic conditions",
-          "View policy details, premiums, and coverage terms in plain language",
-          "Dedicated agent support for policy questions and claims",
-          "Everything organized alongside your health coverage",
+          "Manage chronic condition life policies, retirement annuities, and estate documents",
+          "Your dedicated agent supports both healthcare and long-term financial planning",
         ],
-        benefit: "Coverage for your future, managed alongside your health.",
-      },
-      {
-        title: "Estate Planning & Retirement Annuities",
-        bullets: [
-          "Estate planning resources and document access in one secure vault",
-          "Retirement annuity details, payout schedules, and carrier info",
-          "Work with your dedicated agent on long-term financial planning",
-          "Your healthcare and financial future — finally in the same place",
-        ],
-        benefit: "Plan for the long term without juggling separate advisors.",
+        benefit: "Your healthcare and financial future — finally in the same place.",
       },
     ],
   },

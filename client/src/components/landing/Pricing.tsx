@@ -10,10 +10,10 @@ const features = [
   "Claims, billing & support request tracking",
   "Chronic condition & life policy management",
   "Estate planning & retirement annuity access",
-  "All 18+ Guided Wellness Routines",
-  "Daily habit tracking with journey path",
+  "Guided Wellness Routines & daily habit tracking",
   "Wearable integrations (Fitbit, WHOOP, Oura, Garmin, Apple Health)",
   "Secure document vault with encrypted storage",
+  "Access to 15+ carrier partners and all plan types",
 ];
 
 export function Pricing() {
@@ -31,13 +31,13 @@ export function Pricing() {
         >
           <div className="w-12 h-1 bg-gradient-to-r from-[#C5A059] to-[#EBD598] mx-auto mb-6" />
           <h2 className="text-3xl sm:text-4xl font-display font-normal text-[#0F172A] mb-4">
-            Completely{" "}
+            Included With{" "}
             <span className="bg-gradient-to-r from-[#C5A059] to-[#EBD598] bg-clip-text text-transparent">
-              Free
+              Your Plan
             </span>
           </h2>
           <p className="text-lg text-[#0F172A]/80 max-w-2xl mx-auto">
-            Everything Sakred offers — your healthcare portal, wellness routines, habit tracking, and wearable integrations — at no cost
+            When you sign up for a plan with Sakred Health, our full portal and wellness ecosystem is included — no extra fees, no upsells
           </p>
         </motion.div>
 
@@ -50,9 +50,9 @@ export function Pricing() {
           <Card className="bg-white rounded-2xl p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.05),0_10px_20px_-2px_rgba(0,0,0,0.03)] ring-2 ring-[#C5A059] border-transparent">
             <div className="text-center mb-8">
               <div className="flex items-baseline justify-center gap-1 mb-2">
-                <span className="text-5xl font-bold text-[#0F172A]">$0</span>
+                <span className="text-3xl font-bold text-[#0F172A]">All-In-One Access</span>
               </div>
-              <p className="text-sm text-[#0F172A]/70">Free forever. No credit card required.</p>
+              <p className="text-sm text-[#0F172A]/70">Included with every Sakred Health plan — no add-ons required.</p>
             </div>
 
             <ul className="space-y-3 mb-8">
@@ -69,7 +69,7 @@ export function Pricing() {
               className="w-full rounded-full py-6 btn-gold-gradient shadow-lg shadow-[#C5A059]/20"
               data-testid="button-pricing-free"
             >
-              Download the App
+              Get Started With a Plan
             </Button>
           </Card>
         </motion.div>

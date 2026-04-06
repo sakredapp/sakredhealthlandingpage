@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { Navigation } from "@/components/landing/Navigation";
 import { Hero } from "@/components/landing/Hero";
-import { WellnessRoutines } from "@/components/landing/WellnessRoutines";
 import { FeaturesGrid } from "@/components/landing/FeaturesGrid";
 import { WhoWeHelp } from "@/components/landing/WhoWeHelp";
+import { CarrierPartners } from "@/components/landing/CarrierPartners";
 import { AppShowcase } from "@/components/landing/AppShowcase";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { Pricing } from "@/components/landing/Pricing";
@@ -22,8 +22,8 @@ export default function Landing() {
       <Navigation />
       <Hero />
       <FeaturesGrid />
-      <WellnessRoutines />
       <WhoWeHelp />
+      <CarrierPartners />
       <AppShowcase />
       <Testimonials testimonials={testimonials || []} isLoading={testimonialsLoading} />
       <Pricing />
