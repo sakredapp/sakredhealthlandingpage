@@ -1,17 +1,10 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { ChevronDown } from "lucide-react";
-
-interface PlanType {
-  name: string;
-  description: string;
-}
+import { motion } from "framer-motion";
 
 interface Carrier {
   name: string;
-  plans: string[];
   network?: string;
+  highlight?: boolean;
 }
 
 interface PlanCategory {
@@ -20,125 +13,45 @@ interface PlanCategory {
 }
 
 const carriers: Carrier[] = [
-  {
-    name: "Allstate Health",
-    plans: [
-      "Fixed Indemnity (Foundation Health, Access Plan, Health Expense Protection)",
-      "Short-Term Medical (Standard STM, TrioMED, Renewable PPO STM)",
-      "Dental PPO & Select Dental",
-      "DVH — Dental, Vision & Hearing",
-      "Supplemental (Accident, Cancer & Heart/Stroke, Critical Illness)",
-      "Disability Income",
-      "Senior Plans (Senior Indemnity, My Life Senior)",
-      "Virtual Care Add-ons (Recuro Rx, Virtual Urgent Care, Behavioral Health)",
-    ],
-  },
-  {
-    name: "UnitedHealthcare (UHOne)",
-    plans: [
-      "Fixed Indemnity (Health ProtectorGuard, Guard Plan, Guard Plus)",
-      "Hospital Indemnity (Hospital SafeGuard)",
-    ],
-  },
-  {
-    name: "Manhattan Life",
-    plans: [
-      "Accident Coverage (24 Hour Accident, Voluntary Group, Affordable Choice)",
-      "Critical Illness (Critical Protection CPR, CP4000 CancerCare)",
-      "Disability Income (Central Income Security DI, Group DI)",
-      "Hospital Indemnity & Hospital Indemnity Select",
-      "DVH — Dental, Vision & Hearing",
-      "Short-Term Care",
-    ],
-    network: "First Health Network",
-  },
-  {
-    name: "Enroll Prime",
-    plans: [
-      "Major Medical (Gold, Silver, Bronze tiers)",
-      "Limited Medical (Ease, LITE, MEC Care, MedAccess/MVP)",
-      "Dental & Vision (DVP plans at multiple benefit levels)",
-      "Coverage tiers: Member, +Spouse, +Children, +Family",
-    ],
-  },
-  {
-    name: "IronE Health",
-    plans: [
-      "Major Medical (PSM Classic, PSM HSA, PSM Value, PSM BCBS, PSM Million)",
-    ],
-  },
-  {
-    name: "MedMax / MyFirstHealth / AHW",
-    plans: ["Major Medical plans"],
-    network: "First Health Network",
-  },
-  {
-    name: "Elite Health / ACUSA",
-    plans: ["Limited Medical / Fixed Benefit plans"],
-    network: "First Health Network",
-  },
-  {
-    name: "Cigna",
-    plans: ["Major Medical", "PPO & HMO networks"],
-  },
-  {
-    name: "Aetna",
-    plans: ["Major Medical", "PPO network"],
-  },
-  {
-    name: "Blue Cross Blue Shield (BCBS)",
-    plans: ["Major Medical", "ACA / Marketplace plans", "PPO, HMO, EPO networks"],
-  },
-  {
-    name: "Ambetter",
-    plans: ["ACA / Marketplace plans"],
-  },
-  {
-    name: "Oscar Health",
-    plans: ["ACA / Marketplace plans"],
-  },
-  {
-    name: "Humana",
-    plans: ["Major Medical", "Medicare Advantage", "Supplemental"],
-  },
-  {
-    name: "HealthSmart",
-    plans: ["PPO network / Limited Medical plans"],
-  },
-  {
-    name: "PHCS / Multiplan",
-    plans: ["PPO network (used across multiple carriers)"],
-  },
+  { name: "Allstate Health", highlight: true },
+  { name: "UnitedHealthcare", highlight: true },
+  { name: "Blue Cross Blue Shield", highlight: true },
+  { name: "Cigna", highlight: true },
+  { name: "Aetna", highlight: true },
+  { name: "Humana", highlight: true },
+  { name: "Manhattan Life", network: "First Health" },
+  { name: "Enroll Prime" },
+  { name: "IronE Health" },
+  { name: "Ambetter" },
+  { name: "Oscar Health" },
+  { name: "MedMax / AHW", network: "First Health" },
+  { name: "Elite Health / ACUSA", network: "First Health" },
+  { name: "HealthSmart" },
+  { name: "PHCS / Multiplan" },
 ];
 
 const planCategories: PlanCategory[] = [
-  { category: "Major Medical", description: "Comprehensive health coverage (PPO, HMO, EPO)" },
-  { category: "ACA / Marketplace", description: "Affordable Care Act compliant plans" },
-  { category: "Limited Medical", description: "Budget-friendly plans with set benefit limits" },
-  { category: "Fixed Indemnity", description: "Pays fixed dollar amounts per service or event" },
-  { category: "Short-Term Medical", description: "Temporary coverage for gaps in insurance" },
-  { category: "Hospital Indemnity", description: "Cash payouts for hospital stays" },
-  { category: "Dental & Vision", description: "Standalone dental and vision coverage (PPO & Indemnity)" },
-  { category: "DVH", description: "Bundled Dental, Vision & Hearing" },
-  { category: "Supplemental", description: "Accident, Critical Illness, Cancer — pays on top of primary" },
-  { category: "Disability Income", description: "Income replacement during disability" },
-  { category: "Medicare", description: "Medicare Supplement & Medicare Advantage" },
-  { category: "Group", description: "Employer-sponsored group coverage" },
+  { category: "Major Medical", description: "Comprehensive PPO, HMO, EPO" },
+  { category: "ACA / Marketplace", description: "Affordable Care Act plans" },
+  { category: "Limited Medical", description: "Budget-friendly set benefits" },
+  { category: "Fixed Indemnity", description: "Fixed $ per service/event" },
+  { category: "Short-Term Medical", description: "Temporary gap coverage" },
+  { category: "Hospital Indemnity", description: "Cash for hospital stays" },
+  { category: "Dental & Vision", description: "PPO & Indemnity options" },
+  { category: "DVH Bundle", description: "Dental, Vision & Hearing" },
+  { category: "Supplemental", description: "Accident, Cancer, Critical Illness" },
+  { category: "Disability Income", description: "Income replacement" },
+  { category: "Medicare", description: "Supplement & Advantage" },
+  { category: "Group Plans", description: "Employer-sponsored coverage" },
 ];
 
 export function CarrierPartners() {
-  const [expandedCarriers, setExpandedCarriers] = useState<Record<number, boolean>>({});
-  const [showAllCarriers, setShowAllCarriers] = useState(false);
-
-  const toggleCarrier = (index: number) => {
-    setExpandedCarriers((prev) => ({ ...prev, [index]: !prev[index] }));
-  };
-
-  const visibleCarriers = showAllCarriers ? carriers : carriers.slice(0, 6);
+  const [showAll, setShowAll] = useState(false);
+  const visibleCarriers = showAll ? carriers : carriers.slice(0, 9);
 
   return (
     <section className="py-12 lg:py-20 bg-[#F9F9F7]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -154,114 +67,80 @@ export function CarrierPartners() {
             </span>
           </h2>
           <p className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto">
-            We work with top-rated insurance carriers so you can switch plans or carriers seamlessly — all while keeping the same dedicated agent and agency managing your healthcare.
+            Switch plans or carriers seamlessly — all while keeping the same dedicated agent and agency managing your healthcare.
           </p>
         </motion.div>
 
-        {/* Carrier Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-          {visibleCarriers.map((carrier, index) => {
-            const isExpanded = expandedCarriers[index];
-            return (
-              <motion.div
-                key={carrier.name}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.03 }}
-              >
-                <Card
-                  className={`cursor-pointer transition-all duration-300 overflow-visible h-full ${
-                    isExpanded
-                      ? "border-[#C5A059]/40 shadow-[0_0_15px_rgba(197,160,89,0.15)]"
-                      : "border-[#E8E4DC]"
-                  } hover-elevate`}
-                  onClick={() => toggleCarrier(index)}
-                >
-                  <div className="flex items-center justify-between p-4 gap-3">
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-display font-semibold text-[#2C2C2C] text-sm sm:text-base">
-                        {carrier.name}
-                      </h4>
-                      {carrier.network && (
-                        <p className="text-xs text-[#C5A059] mt-0.5">{carrier.network}</p>
-                      )}
-                    </div>
-                    <ChevronDown
-                      className={`w-4 h-4 text-[#C5A059] flex-shrink-0 transition-transform duration-200 ${
-                        isExpanded ? "rotate-180" : ""
-                      }`}
-                    />
-                  </div>
-                  <AnimatePresence>
-                    {isExpanded && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <CardContent className="px-4 pb-4 pt-0">
-                          <ul className="space-y-1.5">
-                            {carrier.plans.map((plan, i) => (
-                              <li key={i} className="flex items-start gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#C5A059] to-[#EBD598] mt-1.5 flex-shrink-0" />
-                                <span className="text-sm text-[#2C2C2C]/75 leading-relaxed">{plan}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </CardContent>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </Card>
-              </motion.div>
-            );
-          })}
+        {/* Carrier Name Grid — clean tiles, no dropdowns */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-4">
+          {visibleCarriers.map((carrier, index) => (
+            <motion.div
+              key={carrier.name}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: index * 0.03 }}
+              className={`relative rounded-xl border px-4 py-4 text-center transition-all duration-200 hover:border-[#C5A059]/40 hover:shadow-sm ${
+                carrier.highlight
+                  ? "bg-white border-[#C5A059]/20 shadow-[0_1px_4px_rgba(0,0,0,0.04)]"
+                  : "bg-white/60 border-[#E8E4DC]"
+              }`}
+            >
+              <p className="font-display font-semibold text-[#2C2C2C] text-xs sm:text-sm leading-tight">
+                {carrier.name}
+              </p>
+              {carrier.network && (
+                <p className="text-[10px] text-[#C5A059] mt-1">{carrier.network}</p>
+              )}
+            </motion.div>
+          ))}
         </div>
 
-        {!showAllCarriers && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+        {!showAll && (
+          <div className="text-center mb-10">
             <button
-              onClick={() => setShowAllCarriers(true)}
+              onClick={() => setShowAll(true)}
               className="text-sm font-medium text-[#C5A059] hover:text-[#B8903F] transition-colors underline underline-offset-4"
             >
-              View all {carriers.length} carrier partners
+              + {carriers.length - 9} more partners
             </button>
-          </motion.div>
+          </div>
         )}
 
-        {/* Plan Types Grid */}
+        {/* Divider */}
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-[#E8E4DC] to-transparent my-10" />
+
+        {/* Plan Types — horizontal pill/tag layout */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-12"
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="text-center"
         >
-          <h3 className="text-sm font-medium uppercase tracking-wider text-[#C5A059] mb-4 text-center">
+          <h3 className="text-sm font-medium uppercase tracking-wider text-[#C5A059] mb-6">
             Plan Types We Offer
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+          <div className="flex flex-wrap justify-center gap-3">
             {planCategories.map((plan, index) => (
               <motion.div
                 key={plan.category}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.03 }}
+                transition={{ duration: 0.25, delay: index * 0.03 }}
+                className="group relative"
               >
-                <Card className="border-[#E8E4DC] p-3 h-full hover:border-[#C5A059]/30 transition-colors duration-200">
-                  <h4 className="font-display font-semibold text-[#2C2C2C] text-xs sm:text-sm mb-1">
+                <div className="rounded-full border border-[#E8E4DC] bg-white px-4 py-2 hover:border-[#C5A059]/40 hover:shadow-sm transition-all duration-200 cursor-default">
+                  <span className="font-display font-semibold text-[#2C2C2C] text-xs sm:text-sm">
                     {plan.category}
-                  </h4>
-                  <p className="text-xs text-[#2C2C2C]/60 leading-snug">{plan.description}</p>
-                </Card>
+                  </span>
+                </div>
+                {/* Tooltip on hover */}
+                <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-[#2C2C2C] text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+                  {plan.description}
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 w-2 h-2 bg-[#2C2C2C] rotate-45" />
+                </div>
               </motion.div>
             ))}
           </div>
