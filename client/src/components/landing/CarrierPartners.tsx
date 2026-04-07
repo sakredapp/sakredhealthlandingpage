@@ -1,33 +1,26 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-
-interface Carrier {
-  name: string;
-  network?: string;
-  highlight?: boolean;
-}
 
 interface PlanCategory {
   category: string;
   description: string;
 }
 
-const carriers: Carrier[] = [
-  { name: "Allstate Health", highlight: true },
-  { name: "UnitedHealthcare", highlight: true },
-  { name: "Blue Cross Blue Shield", highlight: true },
-  { name: "Cigna", highlight: true },
-  { name: "Aetna", highlight: true },
-  { name: "Humana", highlight: true },
-  { name: "Manhattan Life", network: "First Health" },
-  { name: "Enroll Prime" },
-  { name: "IronE Health" },
-  { name: "Ambetter" },
-  { name: "Oscar Health" },
-  { name: "MedMax / AHW", network: "First Health" },
-  { name: "Elite Health / ACUSA", network: "First Health" },
-  { name: "HealthSmart" },
-  { name: "PHCS / Multiplan" },
+const carriers = [
+  "Allstate Health",
+  "UnitedHealthcare",
+  "Blue Cross Blue Shield",
+  "Cigna",
+  "Aetna",
+  "Humana",
+  "Manhattan Life",
+  "Enroll Prime",
+  "IronE Health",
+  "Ambetter",
+  "Oscar Health",
+  "MedMax / AHW",
+  "Elite Health / ACUSA",
+  "HealthSmart",
+  "PHCS / Multiplan",
 ];
 
 const planCategories: PlanCategory[] = [
@@ -46,18 +39,15 @@ const planCategories: PlanCategory[] = [
 ];
 
 export function CarrierPartners() {
-  const [showAll, setShowAll] = useState(false);
-  const visibleCarriers = showAll ? carriers : carriers.slice(0, 9);
-
   return (
     <section className="py-12 lg:py-20 bg-[#F9F9F7]">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          className="text-center mb-8"
         >
           <div className="w-12 h-1 bg-gradient-to-r from-[#C5A059] to-[#EBD598] mx-auto mb-6" />
           <h2 className="text-3xl sm:text-4xl font-display font-normal text-[#2C2C2C] mb-4">
@@ -71,41 +61,23 @@ export function CarrierPartners() {
           </p>
         </motion.div>
 
-        {/* Carrier Name Grid — clean tiles, no dropdowns */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-4">
-          {visibleCarriers.map((carrier, index) => (
+        {/* Carrier Name Grid */}
+        <div className="flex flex-wrap justify-center gap-2.5 mb-8">
+          {carriers.map((name, index) => (
             <motion.div
-              key={carrier.name}
+              key={name}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.03 }}
-              className={`relative rounded-xl border px-4 py-4 text-center transition-all duration-200 hover:border-[#C5A059]/40 hover:shadow-sm ${
-                carrier.highlight
-                  ? "bg-white border-[#C5A059]/20 shadow-[0_1px_4px_rgba(0,0,0,0.04)]"
-                  : "bg-white/60 border-[#E8E4DC]"
-              }`}
+              transition={{ duration: 0.3, delay: index * 0.02 }}
+              className="rounded-lg border border-[#E8E4DC] bg-white px-4 py-2.5 text-center hover:border-[#C5A059]/40 hover:shadow-sm transition-all duration-200"
             >
-              <p className="font-display font-semibold text-[#2C2C2C] text-xs sm:text-sm leading-tight">
-                {carrier.name}
+              <p className="font-display font-semibold text-[#2C2C2C] text-xs sm:text-sm whitespace-nowrap">
+                {name}
               </p>
-              {carrier.network && (
-                <p className="text-[10px] text-[#C5A059] mt-1">{carrier.network}</p>
-              )}
             </motion.div>
           ))}
         </div>
-
-        {!showAll && (
-          <div className="text-center mb-10">
-            <button
-              onClick={() => setShowAll(true)}
-              className="text-sm font-medium text-[#C5A059] hover:text-[#B8903F] transition-colors underline underline-offset-4"
-            >
-              + {carriers.length - 9} more partners
-            </button>
-          </div>
-        )}
 
         {/* Divider */}
         <div className="w-full h-px bg-gradient-to-r from-transparent via-[#E8E4DC] to-transparent my-10" />
