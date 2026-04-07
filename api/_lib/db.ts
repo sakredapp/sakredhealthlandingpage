@@ -14,9 +14,10 @@ function getPool() {
     }
     pool = new Pool({
       connectionString: process.env.DATABASE_URL,
-      max: 5, // limit connections for serverless
+      max: 5,
       idleTimeoutMillis: 30000,
       connectionTimeoutMillis: 10000,
+      ssl: { rejectUnauthorized: false },
     });
   }
   return pool;
