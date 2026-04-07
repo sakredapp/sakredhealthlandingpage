@@ -9,7 +9,7 @@ export default function DeleteAccount() {
     <div className="min-h-screen bg-[#F9F9F7]">
       <Navigation />
       
-      <main className="pt-34 pb-16">
+      <main className="pt-24 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

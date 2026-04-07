@@ -227,7 +227,7 @@ export default function BlogPost() {
     return (
       <div className="min-h-screen bg-[#F9F9F7]">
         <Navigation />
-        <main className="pt-34 pb-20 px-4 sm:px-6 lg:px-8">
+        <main className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
           <BlogPostSkeleton />
         </main>
         <Footer />
@@ -239,7 +239,7 @@ export default function BlogPost() {
     return (
       <div className="min-h-screen bg-[#F9F9F7]">
         <Navigation />
-        <main className="pt-34 pb-20 px-4 sm:px-6 lg:px-8">
+        <main className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center py-20">
             <h1 className="text-3xl font-display font-normal text-[#0F172A] mb-4">Article not found</h1>
             <p className="text-[#0F172A]/70 mb-8">
@@ -261,7 +261,7 @@ export default function BlogPost() {
     <div className="min-h-screen bg-[#F9F9F7]">
       <Navigation />
 
-      <main className="pt-34 pb-20">
+      <main className="pt-24 pb-20">
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
