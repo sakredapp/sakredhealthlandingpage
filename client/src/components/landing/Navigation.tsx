@@ -1,15 +1,14 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import sakredLogo from "@assets/full_png_image_sakred__1771270183106.png";
-import { useDownloadDialog } from "./DownloadDialog";
+import { MapPin } from "lucide-react";
 
 export function Navigation() {
   const [location] = useLocation();
-  const { openDialog, DialogComponent } = useDownloadDialog();
 
   const links = [
     { href: "/", label: "Home" },
-    { href: "/food-chart", label: "Food Chart" },
+    { href: "/app", label: "The App" },
     { href: "/blog", label: "Blog" },
   ];
 
@@ -36,30 +35,29 @@ export function Navigation() {
                       ? "text-[#C5A059]"
                       : "text-[#0F172A]/80 hover:text-[#C5A059]"
                   }`}
-                  data-testid={`link-nav-${link.label.toLowerCase()}`}
                 >
                   {link.label}
                 </Link>
               ))}
-              <Button
-                onClick={openDialog}
-                className="hidden sm:flex rounded-full btn-gold-gradient shadow-lg shadow-[#C5A059]/20 hover:-translate-y-0.5 transition-transform"
-                data-testid="button-get-started-nav"
-              >
-                Download
-              </Button>
-              <Button
-                onClick={openDialog}
-                size="sm"
-                className="sm:hidden rounded-full btn-gold-gradient shadow-lg shadow-[#C5A059]/20"
-                data-testid="button-get-started-mobile"
-              >
-                Download
-              </Button>
+              <Link href="/get-coverage">
+                <Button
+                  className="hidden sm:flex rounded-full btn-gold-gradient shadow-lg shadow-[#C5A059]/20 hover:-translate-y-0.5 transition-transform"
+                >
+                  <MapPin className="w-4 h-4 mr-1" />
+                  Get Coverage
+                </Button>
+              </Link>
+              <Link href="/get-coverage">
+                <Button
+                  size="sm"
+                  className="sm:hidden rounded-full btn-gold-gradient shadow-lg shadow-[#C5A059]/20"
+                >
+                  Get Coverage
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
-        {DialogComponent}
       </nav>
     </>
   );

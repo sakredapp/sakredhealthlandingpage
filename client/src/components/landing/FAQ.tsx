@@ -10,35 +10,35 @@ import {
 const faqs = [
   {
     question: "What is Sakred Health?",
-    answer: "Sakred Health is an all-in-one private healthcare and preventative wellness ecosystem. It combines a HIPAA-compliant client portal — policy search, coverage breakdowns, secure document vault, Hathr AI assistant, and dedicated agent messaging — with guided wellness routines, daily habit tracking, and wearable integrations. Beyond healthcare, Sakred also gives you access to chronic condition life policies, estate planning, and retirement annuities — so your entire health and long-term planning lives in one place.",
+    answer: "Sakred Health is a private healthcare agency that connects individuals, families, and small businesses with affordable health insurance from 15+ carriers. Every client gets a dedicated licensed agent, a HIPAA-compliant portal to manage their coverage, and access to a full preventative wellness ecosystem — all included at no extra cost.",
   },
   {
-    question: "Do I need a healthcare plan to use Sakred?",
-    answer: "No. You can use our wellness routines, habit tracking, and wearable integrations without any plan. If you do have coverage through an employer or provider that partners with Sakred, you can link your plan to unlock the full healthcare portal. And if you don't have a plan yet, we can connect you with a private broker for free.",
+    question: "Who is Sakred Health for?",
+    answer: "We primarily serve people who don't have employer-sponsored coverage and don't qualify for ACA/Obamacare subsidies — self-employed individuals, 1099 contractors, small business owners, families, pre-retirees, young adults aging off their parents' plans, and anyone navigating the private insurance market.",
   },
   {
-    question: "What does the Healthcare Portal include?",
-    answer: "When your plan is linked, you get: full visibility into active policies, carrier details, premiums, deductibles, and copays. Full-text policy search with highlighted answers and page references. A secure document vault for ID cards, EOBs, and claim letters. HIPAA-compliant in-app messaging with your dedicated agent. The Hathr AI assistant for instant policy questions. And a support request system with callback scheduling.",
+    question: "What types of plans do you offer?",
+    answer: "We offer major medical (PPO, HMO, EPO), ACA/Marketplace plans, limited medical, fixed indemnity, short-term medical, hospital indemnity, dental & vision, DVH bundles, supplemental (accident, cancer, critical illness), disability income, Medicare (supplement & advantage), and group employer-sponsored plans.",
   },
   {
-    question: "What about chronic conditions, estate planning, and retirement?",
-    answer: "Sakred goes beyond day-to-day healthcare. Activated clients can access chronic condition life insurance policies, estate planning resources, and retirement annuity details — all managed in the same secure portal alongside your health coverage. Your dedicated agent can help with questions across all of these areas.",
+    question: "How is this different from Healthcare.gov or an insurance marketplace?",
+    answer: "Marketplaces are self-service — you're on your own comparing plans and figuring out what's covered. With Sakred, you get a dedicated agent who understands your situation, compares options across 15+ carriers, and stays with you after enrollment for claims, questions, and renewals. Plus you get a full client portal and wellness app included.",
   },
   {
-    question: "What kind of wellness routines are available?",
-    answer: "We offer 18+ guided reset routines covering gut health, sleep optimization, energy recovery, detox & drainage, nervous system support, hydration, focus, and more. Each routine runs 7-30 days with Lite (15-20 min/day) or Intensive (45-60 min/day) options. Every routine includes science-backed daily habits, progress tracking, and recommended supplies.",
+    question: "Do I get a real person to help me?",
+    answer: "Yes — every Sakred client is assigned a licensed healthcare agent. They're not a chatbot or a call center. Your agent knows your plan, your family, and your history. You can message them directly through the app or schedule a call anytime.",
   },
   {
-    question: "Which wearables are supported?",
-    answer: "We integrate with Fitbit, WHOOP, Oura Ring, Garmin, and Apple Health. Connect your devices to sync steps, heart rate, HRV, sleep scores, recovery, strain, and more — all in one place.",
+    question: "Is there a cost to use Sakred Health?",
+    answer: "There's no fee to work with us. Our agents are compensated by the carriers, not by you. The client portal, wellness routines, habit tracking, and all app features are included with every plan at no additional cost.",
   },
   {
-    question: "Is my data private and secure?",
-    answer: "Absolutely. Sakred is built to be HIPAA-compliant. Your data is encrypted using industry-standard AES-256 encryption and stored securely. All agent messaging is encrypted end-to-end. We never sell your personal information, and you have full control over your data — including the ability to export or delete it anytime.",
+    question: "What if I already have coverage but want better options?",
+    answer: "We can review your current plan and compare it against our carrier network. If there's a better fit — lower premiums, better coverage, or additional benefits — your agent will walk you through the switch. You keep the same agent and agency throughout.",
   },
   {
-    question: "Is Sakred really free?",
-    answer: "Yes — Sakred Health is completely free for activated clients. You get full access to the healthcare portal, wellness routines, habit tracking, wearable integrations, Hathr AI, and the secure document vault at no cost. No credit card required, no hidden fees.",
+    question: "How do I get started?",
+    answer: "Click 'See Plans in Your Area,' enter your zip code, and answer a few quick questions about your situation. A licensed agent will reach out with personalized options — no obligation, no pressure.",
   },
 ];
 

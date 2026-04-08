@@ -4,6 +4,8 @@ import { QueryClientProvider, useQuery } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Landing from "@/pages/Landing";
+import AppPage from "@/pages/AppPage";
+import GetCoverage from "@/pages/GetCoverage";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import AdminBlogList from "@/pages/AdminBlogList";
@@ -57,6 +59,8 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Landing} />
+      <Route path="/app" component={AppPage} />
+      <Route path="/get-coverage" component={GetCoverage} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/admin/login" component={AdminLogin} />

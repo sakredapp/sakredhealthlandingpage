@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { useDownloadDialog } from "./DownloadDialog";
+import { Link } from "wouter";
+import { MapPin } from "lucide-react";
 
 export function Hero() {
-  const { openDialog, DialogComponent } = useDownloadDialog();
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#F9F9F7] pt-16">
       <motion.div
@@ -52,7 +51,7 @@ export function Hero() {
           transition={{ duration: 0.6 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-[#C5A059]/30 shadow-sm mb-8"
         >
-          <span className="text-sm font-medium text-[#2C2C2C]/80">Preventative Wellness Meets Insurance Intelligence</span>
+          <span className="text-sm font-medium text-[#2C2C2C]/80">Private Healthcare for Individuals, Families & Small Businesses</span>
         </motion.div>
 
         <motion.h1
@@ -61,9 +60,9 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl sm:text-5xl lg:text-6xl font-display font-normal tracking-tight text-[#2C2C2C] mb-6"
         >
-          One app for your health, coverage,{" "}
+          Affordable health coverage{" "}
           <span className="bg-gradient-to-r from-[#C5A059] to-[#EBD598] bg-clip-text text-transparent">
-            and long-term planning
+            without the confusion
           </span>
         </motion.h1>
 
@@ -71,30 +70,45 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg sm:text-xl text-[#2C2C2C]/70 max-w-3xl mx-auto mb-6 leading-relaxed"
+          className="text-lg sm:text-xl text-[#2C2C2C]/70 max-w-3xl mx-auto mb-4 leading-relaxed"
         >
-          Guided wellness routines, daily habit tracking, wearable sync, and a secure HIPAA-compliant healthcare portal with dedicated agent support — plus chronic condition policies, estate planning, and retirement annuities. Your entire health and long-term planning ecosystem in one place.
+          No employer plan? Don't qualify for an ACA subsidy? You're not stuck. Sakred Health connects you with private health insurance from 15+ carriers — with a dedicated agent who actually picks up the phone.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="text-base text-[#2C2C2C]/55 max-w-2xl mx-auto mb-8"
+        >
+          Major medical, short-term, supplemental, dental & vision, Medicare, group plans, and more — all through one agency, one agent, one app.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="flex flex-col items-center gap-4 mb-4"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4"
         >
-          <Button
-            onClick={openDialog}
-            size="lg"
-            className="rounded-full btn-gold-gradient text-[#2C2C2C] px-10 py-7 text-lg font-normal shadow-lg shadow-[#C5A059]/30 hover:shadow-[#C5A059]/50 hover:-translate-y-0.5 transition-all border border-[#C5A059]"
-            data-testid="button-download-hero"
-          >
-            Download the App
-          </Button>
-          <p className="text-sm text-[#2C2C2C]/50">Available on iOS and Android</p>
+          <Link href="/get-coverage">
+            <Button
+              size="lg"
+              className="rounded-full btn-gold-gradient text-[#2C2C2C] px-10 py-7 text-lg font-normal shadow-lg shadow-[#C5A059]/30 hover:shadow-[#C5A059]/50 hover:-translate-y-0.5 transition-all border border-[#C5A059]"
+            >
+              <MapPin className="w-5 h-5 mr-2" />
+              See Plans in Your Area
+            </Button>
+          </Link>
         </motion.div>
-
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-sm text-[#2C2C2C]/45"
+        >
+          Free consultation — no obligation, no pressure
+        </motion.p>
       </div>
-      {DialogComponent}
     </section>
   );
 }
