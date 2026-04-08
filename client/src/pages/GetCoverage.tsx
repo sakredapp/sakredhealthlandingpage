@@ -31,6 +31,7 @@ interface FormData {
   dob: string;
   zip: string;
   state: string;
+  coverage_for: string;
   annual_household_income: string;
   has_major_medical: string;
   current_coverage_type: string;
@@ -46,6 +47,7 @@ const initialForm: FormData = {
   dob: "",
   zip: "",
   state: "",
+  coverage_for: "",
   annual_household_income: "",
   has_major_medical: "",
   current_coverage_type: "",
@@ -114,6 +116,7 @@ export default function GetCoverage() {
       };
       if (form.email) payload.email = form.email;
       if (form.state) payload.state = form.state;
+      if (form.coverage_for) payload.coverage_for = form.coverage_for;
       if (form.household_size) payload.household_size = Number(form.household_size);
       if (form.has_major_medical === "yes") {
         payload.current_coverage_type = form.current_coverage_type;
@@ -329,6 +332,36 @@ export default function GetCoverage() {
                         <option key={n} value={n}>{n}{n === 8 ? "+" : ""}</option>
                       ))}
                     </select>
+                  </div>
+                </div>
+
+                {/* Coverage type: Individual or Family */}
+                <div>
+                  <label className={labelClass}>
+                    Are you looking for individual or family coverage? *
+                  </label>
+                  <div className="flex gap-4 mt-1">
+                    {([{ value: "individual", label: "Individual" }, { value: "family", label: "Family" }] as const).map((opt) => (
+                      <label
+                        key={opt.value}
+                        className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border cursor-pointer transition-colors text-center ${
+                          form.coverage_for === opt.value
+                            ? "border-[#C5A059] bg-[#C5A059]/5 text-[#2C2C2C]"
+                            : "border-[#E8E4DC] bg-[#FDFBF7] text-[#2C2C2C]/60 hover:border-[#C5A059]/40"
+                        }`}
+                      >
+                        <input
+                          type="radio"
+                          name="coverage_for"
+                          value={opt.value}
+                          required
+                          className="sr-only"
+                          checked={form.coverage_for === opt.value}
+                          onChange={() => update("coverage_for", opt.value)}
+                        />
+                        <span className="font-medium">{opt.label}</span>
+                      </label>
+                    ))}
                   </div>
                 </div>
 

@@ -13,6 +13,7 @@ interface IntakePayload {
   has_major_medical: "yes" | "no";
   current_coverage_type?: "aca" | "employer" | "private" | "none";
   household_size?: number;
+  coverage_for?: "individual" | "family";
   sms_consent: boolean;
   form_consent_source?: string;
   form_consent_timestamp?: string;
@@ -98,6 +99,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     if (body.email?.trim()) payload.email = body.email.trim();
     if (body.state) payload.state = body.state.toUpperCase();
+    if (body.coverage_for) payload.coverage_for = body.coverage_for;
     if (body.household_size) payload.household_size = Number(body.household_size);
     if (body.has_major_medical === "yes") {
       payload.current_coverage_type = body.current_coverage_type;
