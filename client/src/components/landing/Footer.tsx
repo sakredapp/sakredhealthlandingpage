@@ -7,6 +7,7 @@ export function Footer() {
     product: [
       { label: "Home", href: "/" },
       { label: "The App", href: "/app" },
+      { label: "Food Chart", href: "/food-chart" },
       { label: "Get Coverage", href: "/get-coverage" },
       { label: "Blog", href: "/blog" },
     ],

@@ -30,19 +30,19 @@ interface FoodCategory {
 }
 
 const levelConfig: Record<PHLevel, { label: string; color: string; bgColor: string; position: number }> = {
-  3: { label: "High Alkaline", color: "#059669", bgColor: "#D1FAE5", position: 1 },
-  2: { label: "Medium Alkaline", color: "#10B981", bgColor: "#ECFDF5", position: 2 },
-  1: { label: "Low Alkaline", color: "#34D399", bgColor: "#F0FDF4", position: 3 },
+  3: { label: "Strongly Anti-Inflammatory", color: "#059669", bgColor: "#D1FAE5", position: 1 },
+  2: { label: "Anti-Inflammatory", color: "#10B981", bgColor: "#ECFDF5", position: 2 },
+  1: { label: "Mildly Anti-Inflammatory", color: "#34D399", bgColor: "#F0FDF4", position: 3 },
   0: { label: "Neutral", color: "#C5A059", bgColor: "#FEF3C7", position: 4 },
-  [-1]: { label: "Low Acid", color: "#F59E0B", bgColor: "#FEF3C7", position: 5 },
-  [-2]: { label: "Medium Acid", color: "#F97316", bgColor: "#FED7AA", position: 6 },
-  [-3]: { label: "High Acid", color: "#DC2626", bgColor: "#FEE2E2", position: 7 },
+  [-1]: { label: "Mildly Inflammatory", color: "#F59E0B", bgColor: "#FEF3C7", position: 5 },
+  [-2]: { label: "Inflammatory", color: "#F97316", bgColor: "#FED7AA", position: 6 },
+  [-3]: { label: "Highly Inflammatory", color: "#DC2626", bgColor: "#FEE2E2", position: 7 },
 };
 
 const foodData: FoodCategory[] = [
   {
     category: "Fruits",
-    description: "Fresh and dried fruits across the pH spectrum",
+    description: "Fresh and dried fruits — many are rich in antioxidants that fight inflammation",
     items: [
       { name: "Lemons", level: 3 },
       { name: "Limes", level: 3 },
@@ -76,7 +76,7 @@ const foodData: FoodCategory[] = [
   },
   {
     category: "Vegetables & Legumes",
-    description: "Plant-based foods and protein sources",
+    description: "Plant-based foods and protein sources — most are anti-inflammatory powerhouses",
     items: [
       { name: "Broccoli", level: 3 },
       { name: "Cucumber", level: 3 },
@@ -146,7 +146,7 @@ const foodData: FoodCategory[] = [
   },
   {
     category: "Meat & Animal Products",
-    description: "Animal proteins and dairy products",
+    description: "Animal proteins and dairy — quality and processing matter",
     items: [
       { name: "Dairy Probiotic Cultures", level: 1 },
       { name: "Human Breast Milk", level: 1 },
@@ -172,7 +172,7 @@ const foodData: FoodCategory[] = [
   },
   {
     category: "Oils, Plants & Seeds",
-    description: "Healthy fats, nuts, and seed products",
+    description: "Healthy fats, nuts, and seeds — omega balance affects inflammation",
     items: [
       { name: "All Sprouts", level: 3 },
       { name: "Sprouted/Soaked Nuts + Seeds", level: 3 },
@@ -201,7 +201,7 @@ const foodData: FoodCategory[] = [
   },
   {
     category: "Seasoning, Spices & Sweeteners",
-    description: "Flavor enhancers and natural sweeteners",
+    description: "Many spices have powerful anti-inflammatory compounds",
     items: [
       { name: "Celtic Sea Salt", level: 3 },
       { name: "Himalayan Pink Salt", level: 3 },
@@ -241,7 +241,7 @@ const foodData: FoodCategory[] = [
   },
   {
     category: "Beverages",
-    description: "Drinks and liquid refreshments",
+    description: "What you drink matters — hydration and polyphenols reduce inflammation",
     items: [
       { name: "Lemon Water", level: 3 },
       { name: "Herbal Tea", level: 3 },
@@ -266,7 +266,7 @@ const foodData: FoodCategory[] = [
   },
   {
     category: "Activities & Lifestyle",
-    description: "Behaviors that affect your body's pH balance",
+    description: "Stress, sleep, and movement directly influence your inflammatory response",
     items: [
       { name: "Deep Sleep", level: 3 },
       { name: "Cold Bath/Shower", level: 3 },
@@ -331,7 +331,7 @@ function PHLevelIndicator({ level }: { level: PHLevel }) {
 function PHScaleLegend() {
   return (
     <div className="bg-white rounded-2xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-[#E8E6E3] mb-8">
-      <h3 className="font-display text-lg font-medium text-[#0F172A] mb-4 text-center">pH Level Scale</h3>
+      <h3 className="font-display text-lg font-medium text-[#0F172A] mb-4 text-center">Inflammation Scale</h3>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 flex-wrap">
         {([3, 2, 1, 0, -1, -2, -3] as PHLevel[]).map((level) => {
           const config = levelConfig[level];
@@ -353,7 +353,7 @@ function PHScaleLegend() {
         })}
       </div>
       <p className="text-center text-sm text-[#0F172A]/60 mt-4">
-        Items at the top are more alkaline (cooling, balancing). Items at the bottom are more acidic (warming, stimulating).
+        Green foods tend to reduce chronic inflammation. Red foods may promote it. Both have a place in a balanced diet — awareness is the goal.
       </p>
     </div>
   );
@@ -475,7 +475,7 @@ function EmailGateModal({ onSubscribe, onSkip }: { onSubscribe: (email: string) 
             Unlock the Full Food Chart
           </h2>
           <p className="text-[#0F172A]/70 text-sm leading-relaxed">
-            Enter your email to get instant free access to our complete alkaline and acidic food guide.
+            Enter your email to get instant free access to our complete anti-inflammatory food guide.
             No credit card required, no hidden costs.
           </p>
         </div>
@@ -595,12 +595,12 @@ export default function FoodChart() {
               Foundational Nutrition
             </Badge>
             <h1 className="font-display text-4xl md:text-5xl font-normal text-[#0F172A] mb-6">
-              Alkaline vs. Acidic Food Chart
+              Anti-Inflammatory Food Chart
             </h1>
             <p className="text-lg text-[#0F172A]/70 max-w-3xl mx-auto leading-relaxed">
-              Understanding the pH balance of foods helps support your body's internal balance. 
-              This isn't about strict rules—it's about awareness. Both acidic and alkaline foods 
-              have their place in a balanced approach to nourishment.
+              Chronic inflammation is at the root of many modern health issues — from joint pain and fatigue 
+              to heart disease and autoimmune conditions. The foods you eat every day can either fuel 
+              inflammation or help your body fight it. Use this chart to make informed choices.
             </p>
           </motion.div>
 
@@ -652,27 +652,28 @@ export default function FoodChart() {
             className="grid md:grid-cols-2 gap-6 mt-12 mb-12"
           >
             <div className="bg-white rounded-2xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-[#E8E6E3]">
-              <h3 className="font-display text-xl font-medium text-[#0F172A] mb-4">Understanding the Balance</h3>
+              <h3 className="font-display text-xl font-medium text-[#0F172A] mb-4">What Is Chronic Inflammation?</h3>
               <p className="text-[#0F172A]/70 leading-relaxed mb-4">
-                Your body naturally maintains a slightly alkaline blood pH (7.35-7.45). The foods you eat 
-                don't directly change blood pH, but they can influence how hard your body works to maintain 
-                that balance.
+                Acute inflammation is your body's natural healing response — a cut swells, fights infection, 
+                and heals. Chronic inflammation is different. It's a low-grade, persistent immune response 
+                that can damage healthy tissue over time.
               </p>
               <p className="text-[#0F172A]/70 leading-relaxed">
-                Eating more alkaline-forming foods may reduce the burden on your body's buffering systems, 
-                supporting overall vitality and energy levels.
+                Research links chronic inflammation to conditions like type 2 diabetes, cardiovascular disease, 
+                arthritis, digestive disorders, and even mood imbalances. What you eat is one of the most 
+                powerful levers you have to manage it.
               </p>
             </div>
             <div className="bg-white rounded-2xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-[#E8E6E3]">
-              <h3 className="font-display text-xl font-medium text-[#0F172A] mb-4">A Flexible Approach</h3>
+              <h3 className="font-display text-xl font-medium text-[#0F172A] mb-4">How to Use This Chart</h3>
               <p className="text-[#0F172A]/70 leading-relaxed mb-4">
-                This chart is a guide, not a strict rulebook. Acidic foods aren't "bad"—many provide 
-                essential nutrients. The goal is awareness and gradual shifts toward more 
-                alkaline-forming choices when possible.
+                This isn't about perfection — it's about awareness. Foods in the green zone are rich in 
+                antioxidants, polyphenols, and nutrients that help calm your immune system. Foods in the red 
+                zone tend to trigger inflammatory pathways, especially when consumed in excess.
               </p>
               <p className="text-[#0F172A]/70 leading-relaxed">
-                Listen to your body. Notice how different foods make you feel. Use this knowledge 
-                to make informed choices that support your unique wellness journey.
+                The goal is simple: notice patterns, make gradual shifts, and pay attention to how different 
+                foods make you feel. Small, consistent choices add up to meaningful health changes.
               </p>
             </div>
           </motion.div>
