@@ -16,8 +16,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const staticPages = [
       { loc: "/", priority: "1.0", changefreq: "weekly" },
-      { loc: "/routines", priority: "0.9", changefreq: "weekly" },
+      { loc: "/get-coverage", priority: "0.9", changefreq: "weekly" },
       { loc: "/blog", priority: "0.9", changefreq: "daily" },
+      { loc: "/app", priority: "0.8", changefreq: "weekly" },
       { loc: "/food-chart", priority: "0.8", changefreq: "monthly" },
       { loc: "/privacy-policy", priority: "0.3", changefreq: "monthly" },
       { loc: "/terms-of-service", priority: "0.3", changefreq: "monthly" },
