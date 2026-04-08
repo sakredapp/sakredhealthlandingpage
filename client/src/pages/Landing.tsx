@@ -13,8 +13,8 @@ export default function Landing() {
     <div className="min-h-screen bg-[#FDFBF7]">
       <Navigation />
       <Hero />
-      <InsuranceFeatures />
       <WhoWeHelp />
+      <InsuranceFeatures />
       <CarrierPartners />
       <WhyPrivate />
       <FAQ />
