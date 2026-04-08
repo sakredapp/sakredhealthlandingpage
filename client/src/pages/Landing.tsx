@@ -14,9 +14,9 @@ export default function Landing() {
       <Navigation />
       <Hero />
       <WhoWeHelp />
-      <InsuranceFeatures />
       <CarrierPartners />
       <WhyPrivate />
+      <InsuranceFeatures />
       <FAQ />
       <FinalCTA />
       <Footer />
