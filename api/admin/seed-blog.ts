@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { setCorsHeaders } from "../_lib/auth";
-import { getDb } from "../_lib/db";
-import { blogPosts } from "../../shared/schema";
+import { setCorsHeaders } from "../_lib/auth.js";
+import { getDb } from "../_lib/db.js";
+import { blogPosts } from "../../shared/schema.js";
 import { eq } from "drizzle-orm";
 
 const articles = [

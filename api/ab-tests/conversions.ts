@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { setCorsHeaders } from "../_lib/auth";
-import { trackConversion } from "../_lib/storage";
-import { insertAbTestConversionSchema } from "../../shared/schema";
+import { setCorsHeaders } from "../_lib/auth.js";
+import { trackConversion } from "../_lib/storage.js";
+import { insertAbTestConversionSchema } from "../../shared/schema.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   setCorsHeaders(res);

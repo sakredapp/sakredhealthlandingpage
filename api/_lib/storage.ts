@@ -20,8 +20,8 @@ import {
   videoAnalytics,
   abTestVariants,
   abTestConversions,
-} from "../../shared/schema";
-import { getDb } from "./db";
+} from "../../shared/schema.js";
+import { getDb } from "./db.js";
 import { eq, desc, and } from "drizzle-orm";
 
 // Blog Posts

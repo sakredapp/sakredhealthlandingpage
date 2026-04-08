@@ -1,11 +1,11 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { setCorsHeaders } from "../_lib/auth";
+import { setCorsHeaders } from "../_lib/auth.js";
 import {
   getTestimonials,
   getFeaturedTestimonials,
   createTestimonial,
-} from "../_lib/storage";
-import { insertTestimonialSchema } from "../../shared/schema";
+} from "../_lib/storage.js";
+import { insertTestimonialSchema } from "../../shared/schema.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   setCorsHeaders(res);

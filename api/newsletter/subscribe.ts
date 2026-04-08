@@ -1,14 +1,14 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { setCorsHeaders } from "../../_lib/auth";
+import { setCorsHeaders } from "../_lib/auth.js";
 import {
   saveNewsletterSubscriberToSupabase,
   supabase,
-} from "../../_lib/supabase";
+} from "../_lib/supabase.js";
 import {
   subscribeNewsletter,
   getSubscriberByEmail,
-} from "../../_lib/storage";
-import { insertNewsletterSubscriberSchema } from "../../../shared/schema";
+} from "../_lib/storage.js";
+import { insertNewsletterSubscriberSchema } from "../../shared/schema.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   setCorsHeaders(res);
