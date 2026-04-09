@@ -40,6 +40,20 @@ export function CarrierPartners() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="text-center mb-10"
+        >
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#2C2C2C] mb-3">
+            Our Network & Coverage
+          </h2>
+          <p className="text-[#2C2C2C]/60 text-base sm:text-lg max-w-2xl mx-auto">
+            We partner with top-rated carriers to bring you comprehensive coverage across every plan type.
+          </p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.15 }}
           className="bg-white rounded-2xl border border-[#E8E4DC] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] p-8 sm:p-10"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
