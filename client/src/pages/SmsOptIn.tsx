@@ -26,14 +26,14 @@ export default function SmsOptIn() {
               SMS Opt-In & Messaging Policy
             </h1>
             <p className="text-[#0F172A]/70 mb-8">
-              Last updated: March 2026
+              Effective Date: May 2, 2026
             </p>
 
             <div className="prose prose-lg max-w-none prose-headings:text-[#0F172A] prose-headings:font-display prose-headings:font-medium prose-p:text-[#0F172A]/70 prose-p:leading-relaxed prose-a:text-[#C5A059] prose-li:text-[#0F172A]/70">
 
               <h2>1. Program Description</h2>
               <p>
-                Sakred Health ("Sakred," "we," "our," or "us") offers an SMS messaging program to provide information about private health insurance services, coverage options, plan availability, enrollment assistance, and related healthcare updates. By opting in, you consent to receive text messages from Sakred Health related to these services.
+                Sakred Health ("Sakred," "we," "our," or "us") is a licensed life and health insurance agency. We offer an SMS messaging program to provide information about life insurance and private health insurance products, coverage options, plan availability, enrollment assistance, beneficiary updates, and related insurance updates. By opting in, you consent to receive text messages from Sakred Health related to these life and health insurance services.
               </p>
 
               <h2>2. Consent & Opt-In</h2>
@@ -55,16 +55,21 @@ export default function SmsOptIn() {
                 Messages may include, but are not limited to:
               </p>
               <ul>
-                <li>Private health insurance plan information and updates</li>
-                <li>Coverage options, benefits, and enrollment details</li>
+                <li>Life insurance plan information and policy updates</li>
+                <li>Health insurance plan information, benefits, and coverage details</li>
+                <li>Quote follow-ups for life and health products</li>
                 <li>Appointment reminders and callback confirmations</li>
-                <li>Open enrollment notifications and deadline reminders</li>
+                <li>Open enrollment notifications and deadline reminders (health)</li>
+                <li>Beneficiary update reminders (life)</li>
                 <li>Wellness tips and preventative health information</li>
-                <li>Promotional offers related to our insurance services</li>
+                <li>Promotional offers related to our life and health insurance services</li>
                 <li>Account and service updates</li>
               </ul>
               <p>
-                Message frequency varies. You may receive up to 10 messages per month, though frequency may increase during open enrollment periods or based on your interaction with our services.
+                For Account Notifications and Customer Care: typical frequency is 1–4 messages per inquiry or transaction.
+              </p>
+              <p>
+                For Marketing (only if explicitly opted in): typical frequency is 2–6 messages per month, increasing during open enrollment periods.
               </p>
 
               <h2>4. Opt-Out Instructions</h2>
@@ -132,6 +137,21 @@ export default function SmsOptIn() {
                 Email: <a href="mailto:team@sakredhealth.com">team@sakredhealth.com</a><br />
                 Phone: (227) 225-6591<br />
                 Website: <a href="https://sakredhealth.com" target="_blank" rel="noopener noreferrer">sakredhealth.com</a>
+              </p>
+
+              <h2>12. Consent Logging</h2>
+              <p>
+                When you opt in to our SMS program, we record:
+              </p>
+              <ul>
+                <li>The mobile phone number you provided</li>
+                <li>The IP address of the device used</li>
+                <li>The exact date and timestamp of consent</li>
+                <li>The specific message categories you opted into (Account Notification, Customer Care, Marketing — each a separate checkbox)</li>
+                <li>The version of this Opt-In Policy in effect at the time of consent</li>
+              </ul>
+              <p>
+                This consent record is retained for the duration of the messaging relationship and for a reasonable period thereafter to demonstrate TCPA compliance.
               </p>
             </div>
           </motion.div>

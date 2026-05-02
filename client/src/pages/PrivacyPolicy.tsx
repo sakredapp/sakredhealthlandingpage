@@ -26,7 +26,7 @@ export default function PrivacyPolicy() {
               Privacy Policy
             </h1>
             <p className="text-[#0F172A]/70 mb-8">
-              Last updated: March 2026
+              Effective Date: May 2, 2026
             </p>
 
             <div className="prose prose-lg max-w-none prose-headings:text-[#0F172A] prose-headings:font-display prose-headings:font-medium prose-p:text-[#0F172A]/70 prose-p:leading-relaxed prose-a:text-[#C5A059] prose-li:text-[#0F172A]/70">
@@ -35,6 +35,11 @@ export default function PrivacyPolicy() {
               </p>
               <p>
                 By using the Sakred Health app or web portal, you agree to the practices described in this policy.
+              </p>
+
+              <h2>SMS Disclaimer</h2>
+              <p>
+                Sakred Health is a licensed life and health insurance agency. We provide Customer Support messages (information on your policy/quote/enrollment and help if you ever need guidance during the process), and marketing of our life and health insurance services when applicable. SMS opt-in consent and phone numbers collected through our messaging program are never sold, rented, or shared with third parties for their own marketing purposes. You may opt out at any time by replying STOP. Standard message and data rates may apply.
               </p>
 
               <h2>1. Information We Collect</h2>
@@ -121,7 +126,7 @@ export default function PrivacyPolicy() {
                 <li>Message delivery and interaction data</li>
               </ul>
               <p>
-                This information is used to send you messages about private health insurance services, coverage options, enrollment assistance, and related updates. Your phone number and opt-in data are not sold, rented, or shared with third parties for their marketing purposes. For full details, see our{" "}
+                This information is used to send you messages about your life and health insurance inquiries, including account notifications, customer care, and (only with your explicit consent) marketing of our life and health insurance services. Your phone number and opt-in data are not sold, rented, or shared with third parties for their marketing purposes. For full details, see our{" "}
                 <a href="/opt-in">SMS Opt-In & Messaging Policy</a>.
               </p>
 
@@ -135,7 +140,7 @@ export default function PrivacyPolicy() {
                 <li>Activate and operate the Healthcare Client Portal</li>
                 <li>Provide policy document search and coverage summaries</li>
                 <li>Process support and callback requests</li>
-                <li>Send SMS messages about health insurance services (with your consent)</li>
+                <li>Send SMS messages about life and health insurance services (with your consent)</li>
                 <li>Improve app functionality and reliability</li>
                 <li>Communicate important updates regarding your account</li>
               </ul>
@@ -162,7 +167,7 @@ export default function PrivacyPolicy() {
                 We implement industry-standard security practices designed to protect against unauthorized access, disclosure, or alteration.
               </p>
 
-              <h2>4. Data Sharing</h2>
+              <h2>4. Disclosure of Your Information</h2>
               <p>
                 We do not sell, rent, or trade your personal information.
               </p>
@@ -175,6 +180,19 @@ export default function PrivacyPolicy() {
               </ul>
               <p>
                 Wearable integrations share data only through your authorized connections with those services.
+              </p>
+
+              <h3>SMS Opt-In Data — Explicit Non-Disclosure</h3>
+              <p>
+                Phone numbers and SMS opt-in consent collected through our SMS program are used SOLELY by Sakred Health to send the message types you have consented to. We do NOT share, sell, rent, lease, or otherwise transfer your phone number or opt-in consent to any third party for any marketing or promotional purpose. This restriction applies to all affiliates, partners, vendors, and service providers — none of them receive your SMS opt-in data for their own use.
+              </p>
+              <p>
+                If you opt out (reply STOP), your phone number is removed from active messaging within 24 hours and retained only as required by law to prove the opt-out occurred.
+              </p>
+
+              <h3>SMS Carrier Notice</h3>
+              <p>
+                Mobile carriers (AT&amp;T, T-Mobile, Verizon, etc.) are not liable for delayed or undelivered SMS messages. Carrier message and data rates may apply.
               </p>
 
               <h2>5. Your Rights</h2>

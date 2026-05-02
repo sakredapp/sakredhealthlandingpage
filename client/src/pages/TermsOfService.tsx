@@ -26,7 +26,7 @@ export default function TermsOfService() {
               Terms of Service
             </h1>
             <p className="text-[#0F172A]/70 mb-8">
-              Last updated: March 2026
+              Effective Date: May 2, 2026
             </p>
 
             <div className="prose prose-lg max-w-none prose-headings:text-[#0F172A] prose-headings:font-display prose-headings:font-medium prose-p:text-[#0F172A]/70 prose-p:leading-relaxed prose-a:text-[#C5A059] prose-li:text-[#0F172A]/70">
@@ -35,9 +35,9 @@ export default function TermsOfService() {
                 By accessing or using Sakred Health ("Service"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Service.
               </p>
 
-              <h2>2. Description of Service</h2>
+              <h2>2. Services</h2>
               <p>
-                Sakred Health is a healthcare client portal and preventative wellness platform that provides access to private health insurance services, policy information, coverage breakdowns, dedicated agent support, structured daily wellness routines, habit tracking, and wearable integrations. The Service is designed to support your healthcare needs and personal wellness journey but is not a substitute for professional medical advice, diagnosis, or treatment.
+                We provide life and health insurance brokerage and enrollment services ("Services"), including plan comparison, policy quoting, enrollment assistance, and ongoing customer support for individuals and families seeking life insurance and health coverage. Sakred Health also offers an optional client portal and preventative wellness platform with policy information, coverage breakdowns, dedicated agent support, structured daily wellness routines, habit tracking, and wearable integrations. The Service is designed to support your insurance and wellness needs but is not a substitute for professional medical advice, diagnosis, or treatment.
               </p>
 
               <h2>3. User Accounts</h2>
@@ -65,17 +65,17 @@ export default function TermsOfService() {
                 You retain ownership of all content you create within the Service, including habit data, routine progress, and personal preferences. By using the Service, you grant us a limited license to store, process, and display your content solely to provide the Service to you.
               </p>
 
-              <h2>6. Cost of Service</h2>
+              <h2>6. Fees and Payment</h2>
               <p>
-                Sakred Health is completely free to use. No paid tiers, subscriptions, or credit card information are required to access any features of the Service.
+                Consumers do not pay Sakred Health for our brokerage and enrollment Services. As a licensed life and health insurance agency, Sakred Health is compensated by the insurance carriers whose products we offer when a policy is placed. The wellness app and client portal are free to use, with no paid tiers, subscriptions, or credit card information required.
               </p>
 
               <h2>7. SMS Communications</h2>
               <p>
-                By opting in to our SMS messaging program, you consent to receive recurring automated marketing and informational text messages from Sakred Health related to private health insurance services, coverage options, enrollment assistance, and related updates. Consent to receive SMS messages is not a condition of using the Service.
+                By opting in to our SMS messaging program, you consent to receive recurring automated marketing and informational text messages from Sakred Health related to your life and health insurance inquiries. Consent to receive SMS messages is not a condition of using the Service or of purchasing any insurance policy.
               </p>
               <p>
-                You may opt out at any time by replying STOP to any message. Standard message and data rates may apply. For complete details, see our{" "}
+                You may opt out at any time by replying STOP to any message. Standard message and data rates may apply. For complete details, see our full Section 17 below and our{" "}
                 <a href="/opt-in">SMS Opt-In & Messaging Policy</a>.
               </p>
 
@@ -109,7 +109,18 @@ export default function TermsOfService() {
                 These Terms are governed by the laws of the State of Florida, United States, without regard to conflict of law principles.
               </p>
 
-              <h2>14. Contact</h2>
+              <h2>14. Dispute Resolution</h2>
+              <p>
+                Any dispute arising out of or relating to these Terms or the Services shall be resolved in the state or federal courts located in Miami-Dade County, Florida, and you consent to the personal jurisdiction of those courts. The State of Florida is the governing state, matching Sakred Health's state of incorporation.
+              </p>
+
+              <h2>15. Privacy</h2>
+              <p>
+                Your use of the Service is also governed by our{" "}
+                <a href="/privacy-policy">Privacy Policy</a>, which describes how we collect, use, and protect your information.
+              </p>
+
+              <h2>16. Contact</h2>
               <p>
                 For questions about these Terms, please contact us at{" "}
                 <a href="mailto:team@sakredhealth.com">team@sakredhealth.com</a>.
@@ -119,6 +130,33 @@ export default function TermsOfService() {
                 382 NE 191st St<br />
                 Miami, FL 33179<br />
                 Phone: (227) 225-6591
+              </p>
+
+              <h2>17. SMS Messaging Program</h2>
+              <p>
+                By providing your mobile phone number to Sakred Health, you consent to receive SMS text messages from us related to your life and health insurance inquiries, including:
+              </p>
+              <ul>
+                <li>
+                  <strong>Account notifications</strong> (appointment confirmations, policy updates, enrollment status, beneficiary changes)
+                </li>
+                <li>
+                  <strong>Customer care</strong> (responses to your inquiries, plan and policy questions, support for both life and health products)
+                </li>
+                <li>
+                  <strong>Marketing messages</strong> (new plan offerings, open enrollment reminders, life insurance product updates), only if you have explicitly opted into marketing communications
+                </li>
+              </ul>
+              <p>
+                Message frequency varies. Standard message and data rates may apply. You may opt out at any time by replying <strong>STOP</strong> to any message. You may request help by replying <strong>HELP</strong>, calling (227) 225-6591, or emailing{" "}
+                <a href="mailto:team@sakredhealth.com">team@sakredhealth.com</a>.
+              </p>
+              <p>
+                We will never sell, rent, or share your mobile phone number or SMS opt-in data with third parties for their own marketing purposes.
+              </p>
+              <p>
+                For complete SMS terms, see our{" "}
+                <a href="/opt-in">Opt-In &amp; Messaging Policy</a>.
               </p>
             </div>
           </motion.div>
