@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     question: "What does the Healthcare Portal include?",
-    answer: "When your plan is linked, you get: full visibility into active policies, carrier details, premiums, deductibles, and copays. Full-text policy search with highlighted answers and page references. A secure document vault for ID cards, EOBs, and claim letters. HIPAA-compliant in-app messaging with your dedicated agent. The Hathr AI assistant for instant policy questions. And a support request system with callback scheduling.",
+    answer: "When your plan is linked, you get: full visibility into active policies, plan details, premiums, deductibles, and copays. Full-text policy search with highlighted answers and page references. A secure document vault for ID cards, EOBs, and claim letters. HIPAA-compliant in-app messaging with your dedicated agent. The Hathr AI assistant for instant policy questions. And a support request system with callback scheduling.",
   },
   {
     question: "What kind of wellness routines are available?",

@@ -24,7 +24,7 @@ const clientTypes: ClientType[] = [
     title: "Families & Households",
     description: "Married couples, parents with dependents, multi-generational households",
     bullets: [
-      "Managing coverage for multiple family members across carriers",
+      "Managing coverage for multiple family members across different insurance plans",
       "Need clear visibility into copays, deductibles, and out-of-pocket maximums",
       "Want life insurance and estate planning alongside health coverage",
       "Looking for dental, vision, and supplemental plans bundled together",

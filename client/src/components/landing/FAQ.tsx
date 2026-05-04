@@ -10,7 +10,7 @@ import {
 const faqs = [
   {
     question: "What is Sakred Health?",
-    answer: "Sakred Health is a private healthcare agency that connects individuals, families, and small businesses with affordable health insurance from 15+ carriers. Every client gets a dedicated licensed agent, a HIPAA-compliant portal to manage their coverage, and access to a full preventative wellness ecosystem — all included at no extra cost.",
+    answer: "Sakred Health is a licensed life and health insurance agency that connects individuals, families, and small businesses with affordable health and life insurance options. Every client gets a dedicated licensed agent, a HIPAA-compliant portal to manage their coverage, and access to a full preventative wellness ecosystem — all included at no extra cost.",
   },
   {
     question: "Who is Sakred Health for?",
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: "How is this different from Healthcare.gov or an insurance marketplace?",
-    answer: "Marketplaces are self-service — you're on your own comparing plans and figuring out what's covered. With Sakred, you get a dedicated agent who understands your situation, compares options across 15+ carriers, and stays with you after enrollment for claims, questions, and renewals. Plus you get a full client portal and wellness app included.",
+    answer: "Marketplaces are self-service — you're on your own comparing plans and figuring out what's covered. With Sakred, you get a dedicated agent who understands your situation, compares options across 15+ insurance companies, and stays with you after enrollment for claims, questions, and renewals. Plus you get a full client portal and wellness app included.",
   },
   {
     question: "Do I get a real person to help me?",
@@ -38,11 +38,11 @@ const faqs = [
   },
   {
     question: "Is there a cost to use Sakred Health?",
-    answer: "There's no fee to work with us. Our agents are compensated by the carriers, not by you. The client portal, wellness routines, habit tracking, and all app features are included with every plan at no additional cost.",
+    answer: "There's no fee to work with us. Our agents are compensated by the insurance companies, not by you. The client portal, wellness routines, habit tracking, and all app features are included with every plan at no additional cost.",
   },
   {
     question: "What if I already have coverage but want better options?",
-    answer: "We can review your current plan and compare it against our carrier network. If there's a better fit — lower premiums, better coverage, or additional benefits — your agent will walk you through the switch. You keep the same agent and agency throughout.",
+    answer: "We can review your current plan and compare it against our provider network. If there's a better fit — lower premiums, better coverage, or additional benefits — your agent will walk you through the switch. You keep the same agent and agency throughout.",
   },
   {
     question: "How do I get started?",

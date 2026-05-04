@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
-const carrierStats = [
-  { stat: "15+", label: "Top-rated national and regional carriers" },
-  { stat: "A-rated", label: "All carriers hold A.M. Best or equivalent financial ratings" },
+const networkStats = [
+  { stat: "15+", label: "Top-rated national and regional insurance companies" },
+  { stat: "A-rated", label: "All partners hold A.M. Best or equivalent financial ratings" },
   { stat: "50 states", label: "Coverage options available across all U.S. states" },
   { stat: "1 agent", label: "One dedicated licensed agent across all your plans" },
 ];
@@ -62,7 +62,7 @@ export function CarrierPartners() {
                 Our Network
               </h3>
               <ul className="space-y-5">
-                {carrierStats.map((item) => (
+                {networkStats.map((item) => (
                   <li key={item.stat} className="flex items-start gap-4">
                     <span className="font-display font-bold text-2xl text-[#C5A059] leading-none shrink-0 w-16">
                       {item.stat}

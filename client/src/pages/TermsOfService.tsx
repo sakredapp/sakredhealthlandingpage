@@ -67,7 +67,7 @@ export default function TermsOfService() {
 
               <h2>6. Fees and Payment</h2>
               <p>
-                Consumers do not pay Sakred Health for our brokerage and enrollment Services. As a licensed life and health insurance agency, Sakred Health is compensated by the insurance carriers whose products we offer when a policy is placed. The wellness app and client portal are free to use, with no paid tiers, subscriptions, or credit card information required.
+                Consumers do not pay Sakred Health for our brokerage and enrollment Services. As a licensed life and health insurance agency, Sakred Health is compensated by the insurance companies whose products we offer when a policy is placed. The wellness app and client portal are free to use, with no paid tiers, subscriptions, or credit card information required.
               </p>
 
               <h2>7. SMS Communications</h2>

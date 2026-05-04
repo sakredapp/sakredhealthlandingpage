@@ -12,7 +12,7 @@ const features: Feature[] = [
   {
     icon: <Shield className="w-6 h-6" />,
     title: "Your Insurance, Simplified",
-    description: "Policies, premiums, deductibles, copays, and Rx tiers — all on one screen with direct carrier portal links.",
+    description: "Policies, premiums, deductibles, copays, and Rx tiers — all on one screen with direct insurance portal links.",
     tag: "Portal",
   },
   {

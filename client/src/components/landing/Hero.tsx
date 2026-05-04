@@ -72,7 +72,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg sm:text-xl text-[#2C2C2C]/70 max-w-3xl mx-auto mb-4 leading-relaxed"
         >
-          No employer plan? Don't qualify for an ACA subsidy? You're not stuck. Sakred Health connects you with private health insurance from 15+ carriers — with a dedicated agent who actually picks up the phone.
+          No employer plan? Don't qualify for an ACA subsidy? You're not stuck. Sakred Health connects you with private health insurance from 15+ insurance companies — with a dedicated agent who actually picks up the phone.
         </motion.p>
 
         <motion.p

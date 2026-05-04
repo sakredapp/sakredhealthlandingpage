@@ -29,7 +29,7 @@ export function Footer() {
               <span className="text-xl font-display font-normal tracking-tight bg-gradient-to-r from-[#C5A059] to-[#EBD598] bg-clip-text text-transparent">Health</span>
             </Link>
             <p className="text-[#2C2C2C]/60 text-sm leading-relaxed max-w-sm">
-              Health and life insurance for individuals, families, and small businesses. Major medical, Medicare, term & whole life, IULs, mortgage protection (MPI), final expense, and annuities — one dedicated agent, 15+ carriers, and a client portal to manage it all.
+              Health and life insurance for individuals, families, and small businesses. Major medical, Medicare, term & whole life, IULs, mortgage protection (MPI), final expense, and annuities — one dedicated agent, 15+ insurance companies, and a client portal to manage it all.
             </p>
           </div>
 
