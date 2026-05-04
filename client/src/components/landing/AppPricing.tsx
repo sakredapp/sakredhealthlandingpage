@@ -13,7 +13,7 @@ const features = [
   "Guided Wellness Routines & daily habit tracking",
   "Wearable integrations (Fitbit, WHOOP, Oura, Garmin, Apple Health)",
   "Secure document vault with encrypted storage",
-  "Access to 15+ insurance company partners and all plan types",
+  "Access to a wide range of health and life insurance plan types",
 ];
 
 export function AppPricing() {

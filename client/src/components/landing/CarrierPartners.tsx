@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const networkStats = [
-  { stat: "15+", label: "Top-rated national and regional insurance companies" },
-  { stat: "A-rated", label: "All partners hold A.M. Best or equivalent financial ratings" },
+  { stat: "A-rated", label: "We work with financially strong, top-rated insurance partners" },
   { stat: "50 states", label: "Coverage options available across all U.S. states" },
   { stat: "1 agent", label: "One dedicated licensed agent across all your plans" },
+  { stat: "Free", label: "No cost to work with us — we're paid when you're placed" },
 ];
 
 const healthPlans = [

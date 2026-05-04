@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: "How is this different from Healthcare.gov or an insurance marketplace?",
-    answer: "Marketplaces are self-service — you're on your own comparing plans and figuring out what's covered. With Sakred, you get a dedicated agent who understands your situation, compares options across 15+ insurance companies, and stays with you after enrollment for claims, questions, and renewals. Plus you get a full client portal and wellness app included.",
+    answer: "Marketplaces are self-service — you're on your own comparing plans and figuring out what's covered. With Sakred, you get a dedicated agent who understands your situation, finds the right plan for you, and stays with you after enrollment for claims, questions, and renewals. Plus you get a full client portal and wellness app included.",
   },
   {
     question: "Do I get a real person to help me?",
@@ -38,11 +38,11 @@ const faqs = [
   },
   {
     question: "Is there a cost to use Sakred Health?",
-    answer: "There's no fee to work with us. Our agents are compensated by the insurance companies, not by you. The client portal, wellness routines, habit tracking, and all app features are included with every plan at no additional cost.",
+    answer: "There's no fee to work with us. As a licensed agency, we earn a commission when a policy is placed — you pay nothing extra. The client portal, wellness routines, habit tracking, and all app features are included with every plan at no additional cost.",
   },
   {
     question: "What if I already have coverage but want better options?",
-    answer: "We can review your current plan and compare it against our provider network. If there's a better fit — lower premiums, better coverage, or additional benefits — your agent will walk you through the switch. You keep the same agent and agency throughout.",
+    answer: "We can review your current plan and find better options for you. If there's a better fit — lower premiums, better coverage, or additional benefits — your agent will walk you through the switch. You keep the same agent and agency throughout.",
   },
   {
     question: "How do I get started?",

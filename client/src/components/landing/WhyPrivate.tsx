@@ -22,7 +22,7 @@ const reasons = [
   },
   {
     title: "You want more plan options",
-    detail: "ACA marketplaces limit your choices. Through Sakred, you access 15+ insurance companies and 12 plan types — major medical, supplemental, dental, vision, Medicare, and more.",
+    detail: "ACA marketplaces limit your choices. Through Sakred, you access a wide range of plan types — major medical, supplemental, dental, vision, Medicare, and more — matched to your specific situation by a licensed agent.",
   },
   {
     title: "You want all your protection in one place",
