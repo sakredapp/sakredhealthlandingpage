@@ -17,7 +17,7 @@ const carriers = [
   "HealthSmart",
 ];
 
-const planCategories = [
+const healthPlans = [
   { category: "Major Medical", description: "Comprehensive health coverage (PPO, HMO, EPO)" },
   { category: "ACA / Marketplace", description: "Affordable Care Act compliant plans" },
   { category: "Limited Medical", description: "Budget-friendly plans with set benefit limits" },
@@ -29,6 +29,15 @@ const planCategories = [
   { category: "Supplemental", description: "Accident, Critical Illness, Cancer — pays on top of primary" },
   { category: "Disability Income", description: "Income replacement during disability" },
   { category: "Medicare", description: "Medicare Supplement & Medicare Advantage" },
+];
+
+const lifeAndRetirement = [
+  { category: "Term Life Insurance", description: "Affordable level coverage for 10, 20, or 30 years" },
+  { category: "Whole Life Insurance", description: "Permanent coverage with guaranteed cash value growth" },
+  { category: "Indexed Universal Life (IUL)", description: "Permanent life insurance with market-linked cash value" },
+  { category: "Mortgage Protection (MPI)", description: "Term life insurance sized to pay off your mortgage — not a loan or lending product" },
+  { category: "Final Expense", description: "Small whole life policies that cover funeral and end-of-life costs" },
+  { category: "Annuities", description: "Guaranteed retirement income — fixed, indexed, and immediate options" },
 ];
 
 export function CarrierPartners() {
@@ -46,7 +55,7 @@ export function CarrierPartners() {
             Our Network & Coverage
           </h2>
           <p className="text-[#2C2C2C]/60 text-base sm:text-lg max-w-2xl mx-auto">
-            We partner with top-rated carriers to bring you comprehensive coverage across every plan type.
+            Your health is part of your life — so we make sure every box is checked, not just one. Health coverage, life insurance, and retirement income, all through one agency and one dedicated agent.
           </p>
         </motion.div>
         <motion.div
@@ -74,22 +83,41 @@ export function CarrierPartners() {
               </ul>
             </div>
 
-            {/* Plan Categories */}
-            <div>
-              <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-[#C5A059] mb-6">
-                Plan Categories
-              </h3>
-              <ul className="space-y-3">
-                {planCategories.map((plan) => (
-                  <li key={plan.category} className="flex items-start gap-2.5">
-                    <span className="mt-2 w-1 h-1 rounded-full bg-[#2C2C2C]/40 shrink-0" />
-                    <span className="text-sm sm:text-base">
-                      <span className="font-display font-semibold text-[#2C2C2C]">{plan.category}</span>
-                      <span className="text-[#2C2C2C]/50"> — {plan.description}</span>
-                    </span>
-                  </li>
-                ))}
-              </ul>
+            {/* Plan Categories — Health + Life & Retirement */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-[#C5A059] mb-6">
+                  Health Coverage
+                </h3>
+                <ul className="space-y-3">
+                  {healthPlans.map((plan) => (
+                    <li key={plan.category} className="flex items-start gap-2.5">
+                      <span className="mt-2 w-1 h-1 rounded-full bg-[#2C2C2C]/40 shrink-0" />
+                      <span className="text-sm sm:text-base">
+                        <span className="font-display font-semibold text-[#2C2C2C]">{plan.category}</span>
+                        <span className="text-[#2C2C2C]/50"> — {plan.description}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-[#C5A059] mb-6">
+                  Life Insurance & Retirement
+                </h3>
+                <ul className="space-y-3">
+                  {lifeAndRetirement.map((plan) => (
+                    <li key={plan.category} className="flex items-start gap-2.5">
+                      <span className="mt-2 w-1 h-1 rounded-full bg-[#2C2C2C]/40 shrink-0" />
+                      <span className="text-sm sm:text-base">
+                        <span className="font-display font-semibold text-[#2C2C2C]">{plan.category}</span>
+                        <span className="text-[#2C2C2C]/50"> — {plan.description}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </motion.div>

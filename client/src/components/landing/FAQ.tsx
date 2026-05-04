@@ -18,7 +18,15 @@ const faqs = [
   },
   {
     question: "What types of plans do you offer?",
-    answer: "We offer major medical (PPO, HMO, EPO), ACA/Marketplace plans, limited medical, fixed indemnity, short-term medical, hospital indemnity, dental & vision, DVH bundles, supplemental (accident, cancer, critical illness), disability income, Medicare (supplement & advantage), and group employer-sponsored plans.",
+    answer: "On the health side: major medical (PPO, HMO, EPO), ACA/Marketplace plans, limited medical, fixed indemnity, short-term medical, hospital indemnity, dental & vision, DVH bundles, supplemental (accident, cancer, critical illness), disability income, Medicare (supplement & advantage), and group employer-sponsored plans. On the life and retirement side: term life, whole life, Indexed Universal Life (IUL), Mortgage Protection Insurance (MPI), final expense, and annuities.",
+  },
+  {
+    question: "Do you offer life insurance and annuities?",
+    answer: "Yes. Your health is part of your life — so we make sure every box is checked, not just one. We offer term life (10/20/30-year), whole life, Indexed Universal Life (IUL), Mortgage Protection Insurance (MPI — term life sized to pay off your mortgage if something happens to you, not a loan), final expense (small whole life for funeral and end-of-life costs), and annuities (fixed, indexed, and immediate options for guaranteed retirement income). Your dedicated agent handles both your health and life coverage so you have one person who knows your full picture.",
+  },
+  {
+    question: "Is Mortgage Protection the same as a mortgage or refinance?",
+    answer: "No. Mortgage Protection Insurance (MPI) is a life insurance policy — not a loan, refinance, or lending product. It's term life insurance with a death benefit sized to pay off the remaining balance on your mortgage if you pass away during the term, so your family isn't forced to sell the home. Sakred Health is a licensed life and health insurance agency, not a mortgage lender or broker.",
   },
   {
     question: "How is this different from Healthcare.gov or an insurance marketplace?",

@@ -66,6 +66,9 @@ export default function SmsOptIn() {
                 <li>Account and service updates</li>
               </ul>
               <p>
+                Message frequency varies. You may receive up to 5 messages per week.
+              </p>
+              <p>
                 For Account Notifications and Customer Care: typical frequency is 1–4 messages per inquiry or transaction.
               </p>
               <p>

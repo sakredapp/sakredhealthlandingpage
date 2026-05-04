@@ -24,6 +24,10 @@ const reasons = [
     title: "You want more plan options",
     detail: "ACA marketplaces limit your choices. Through Sakred, you access 15+ carriers and 12 plan types — major medical, supplemental, dental, vision, Medicare, and more.",
   },
+  {
+    title: "You want all your protection in one place",
+    detail: "Your health is part of your life. Through Sakred you can pair health coverage with term, whole, and indexed universal life insurance, mortgage protection (MPI), final expense, and annuities — every box checked, all under one agent who knows your full picture.",
+  },
 ];
 
 export function WhyPrivate() {
