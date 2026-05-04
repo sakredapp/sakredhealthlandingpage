@@ -1,20 +1,10 @@
 import { motion } from "framer-motion";
 
-const carriers = [
-  "Blue Cross Blue Shield",
-  "Cigna",
-  "Aetna",
-  "UnitedHealthcare (UHOne)",
-  "Ambetter",
-  "Oscar Health",
-  "Humana",
-  "Allstate Health",
-  "Manhattan Life",
-  "Enroll Prime",
-  "IronE Health",
-  "MedMax / MyFirstHealth / AHW",
-  "Elite Health / ACUSA",
-  "HealthSmart",
+const carrierStats = [
+  { stat: "15+", label: "Top-rated national and regional carriers" },
+  { stat: "A-rated", label: "All carriers hold A.M. Best or equivalent financial ratings" },
+  { stat: "50 states", label: "Coverage options available across all U.S. states" },
+  { stat: "1 agent", label: "One dedicated licensed agent across all your plans" },
 ];
 
 const healthPlans = [
@@ -66,17 +56,19 @@ export function CarrierPartners() {
           className="bg-white rounded-2xl border border-[#E8E4DC] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] p-8 sm:p-10"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
-            {/* Carrier Partners */}
+            {/* Network Stats */}
             <div>
               <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-[#C5A059] mb-6">
-                Carrier Partners
+                Our Network
               </h3>
-              <ul className="space-y-3">
-                {carriers.map((name) => (
-                  <li key={name} className="flex items-start gap-2.5">
-                    <span className="mt-2 w-1 h-1 rounded-full bg-[#2C2C2C]/40 shrink-0" />
-                    <span className="font-display font-semibold text-[#2C2C2C] text-sm sm:text-base">
-                      {name}
+              <ul className="space-y-5">
+                {carrierStats.map((item) => (
+                  <li key={item.stat} className="flex items-start gap-4">
+                    <span className="font-display font-bold text-2xl text-[#C5A059] leading-none shrink-0 w-16">
+                      {item.stat}
+                    </span>
+                    <span className="text-sm text-[#2C2C2C]/65 leading-snug pt-1">
+                      {item.label}
                     </span>
                   </li>
                 ))}
