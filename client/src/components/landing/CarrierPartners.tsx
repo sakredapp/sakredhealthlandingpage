@@ -25,7 +25,7 @@ const lifeAndRetirement = [
   { category: "Term Life Insurance", description: "Affordable level coverage for 10, 20, or 30 years" },
   { category: "Whole Life Insurance", description: "Permanent coverage with guaranteed cash value growth" },
   { category: "Indexed Universal Life (IUL)", description: "Permanent life insurance with market-linked cash value" },
-  { category: "Mortgage Protection (MPI)", description: "Term life insurance sized to pay off your mortgage — not a loan or lending product" },
+  { category: "Mortgage Protection (MPI)", description: "Life insurance built to protect your family from the mortgage — not PMI, not a loan" },
   { category: "Final Expense", description: "Small whole life policies that cover funeral and end-of-life costs" },
   { category: "Annuities", description: "Guaranteed retirement income — fixed, indexed, and immediate options" },
 ];
@@ -112,6 +112,52 @@ export function CarrierPartners() {
               </div>
             </div>
           </div>
+        </motion.div>
+
+        {/* Mortgage Protection spotlight */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-6 bg-white rounded-2xl border border-[#E8E4DC] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] p-8 sm:p-10"
+        >
+          <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-[#C5A059] mb-4">
+            Spotlight: Mortgage Protection
+          </h3>
+          <p className="font-display text-xl sm:text-2xl font-bold text-[#2C2C2C] mb-4">
+            Protect your family from the mortgage — not the bank.
+          </p>
+          <p className="text-sm sm:text-base text-[#2C2C2C]/65 leading-relaxed mb-4">
+            Mortgage protection is a type of life insurance — it has nothing to do with PMI. PMI protects the
+            lender if you default; mortgage protection protects the people you love. If something happens to you,
+            it keeps your family from inheriting the burden of the mortgage and helps preserve the equity you
+            worked hard to build, so they aren't forced to sell the home.
+          </p>
+          <p className="text-sm sm:text-base text-[#2C2C2C]/65 leading-relaxed mb-6">
+            Best of all, it's flexible. We size the coverage around your budget and your goals — there's no
+            one-size-fits-all answer. Whether your payment is $2,000 or $4,000 a month, you decide how much
+            protection makes sense for your family.
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-6">
+            {[
+              "Cover a year or two of mortgage payments so your family has breathing room",
+              "Pay off a portion of the balance — half the mortgage, or whatever fits",
+              "Pay off the entire mortgage so the home is theirs, free and clear",
+              "Adjust the term and benefit to match your budget and timeline",
+            ].map((point) => (
+              <li key={point} className="flex items-start gap-2.5">
+                <span className="mt-2 w-1 h-1 rounded-full bg-[#C5A059] shrink-0" />
+                <span className="text-sm sm:text-base text-[#2C2C2C]/65 leading-snug">{point}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-sm sm:text-base text-[#2C2C2C]/65 leading-relaxed">
+            Because it's budget-driven, monthly premiums can range anywhere from about{" "}
+            <span className="font-display font-semibold text-[#2C2C2C]">$30 to $250+</span>, depending on the
+            coverage amount, your age, and your health. Your dedicated agent walks you through the options and
+            builds a plan that fits.
+          </p>
         </motion.div>
       </div>
     </section>
