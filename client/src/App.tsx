@@ -14,6 +14,7 @@ import AdminLogin from "@/pages/AdminLogin";
 import AIPrivacy from "@/pages/AIPrivacy";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
+import Terms from "@/pages/Terms";
 import SmsOptIn from "@/pages/SmsOptIn";
 import FoodChart from "@/pages/FoodChart";
 import DeleteAccount from "@/pages/DeleteAccount";
@@ -75,7 +76,9 @@ function Router() {
       </Route>
       <Route path="/ai-privacy" component={AIPrivacy} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/privacy" component={PrivacyPolicy} />
       <Route path="/terms-of-service" component={TermsOfService} />
+      <Route path="/terms" component={Terms} />
       <Route path="/opt-in" component={SmsOptIn} />
       <Route path="/food-chart" component={FoodChart} />
       <Route path="/delete-account" component={DeleteAccount} />
