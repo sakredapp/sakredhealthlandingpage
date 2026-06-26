@@ -36,7 +36,7 @@ export default function Terms() {
 
               <h2>1. Educational content, not medical advice</h2>
               <p>
-                Content in the Library (eBooks, guides, resources) is provided for general educational purposes only and is <strong>not medical advice</strong>. It is not a substitute for professional diagnosis or treatment. Always consult a qualified healthcare provider. Insurance and policy information shown in the App is informational; your carrier's official documents control.
+                Content in the Library (eBooks, guides, resources) is provided for general educational purposes only and is <strong>not medical advice</strong>. It is not a substitute for professional diagnosis or treatment. Always consult a qualified healthcare provider. Insurance and policy information shown in the App is informational; your insurance provider's official documents control.
               </p>
 
               <h2>2. Community Forum — code of conduct (zero tolerance)</h2>
