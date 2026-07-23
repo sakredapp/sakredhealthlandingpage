@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Shield, Search, FolderLock, MessageCircle, Activity, UserCheck, MapPin } from "lucide-react";
+import { GlowCard, Reveal, StampHeading, stagger } from "@/components/motion";
 
 interface Feature {
   icon: React.ReactNode;
@@ -46,55 +46,41 @@ export function InsuranceFeatures() {
   return (
     <section id="features" className="py-12 lg:py-20 bg-[#F9F9F7]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <div className="w-12 h-1 bg-gradient-to-r from-[#C5A059] to-[#EBD598] mx-auto mb-6" />
-          <h2 className="text-3xl sm:text-4xl font-display font-normal text-[#2C2C2C] mb-4">
-            What You Get With{" "}
-            <span className="bg-gradient-to-r from-[#C5A059] to-[#EBD598] bg-clip-text text-transparent">
-              Sakred Health
-            </span>
-          </h2>
-          <p className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto">
-            Real coverage, a real agent, and a real portal to manage everything — not another faceless insurance marketplace.
-          </p>
-        </motion.div>
+        <div className="text-center mb-12">
+          <Reveal>
+            <div className="w-12 h-1 bg-gradient-to-r from-[#C5A059] to-[#EBD598] mx-auto mb-6" />
+          </Reveal>
+          <StampHeading
+            text="What You Get With"
+            accent="Sakred Health"
+            className="text-3xl sm:text-4xl font-display font-normal text-[#2C2C2C] mb-4"
+          />
+          <Reveal delay={0.12}>
+            <p className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto">
+              Real coverage, a real agent, and a real portal to manage everything — not another faceless insurance marketplace.
+            </p>
+          </Reveal>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="group bg-white rounded-2xl border border-[#E8E4DC] p-6 hover:border-[#C5A059]/40 hover:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] transition-all duration-300"
-            >
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#C5A059]/10 to-[#EBD598]/10 flex items-center justify-center text-[#C5A059] mb-4 group-hover:from-[#C5A059]/20 group-hover:to-[#EBD598]/20 transition-colors duration-300">
-                {feature.icon}
-              </div>
-              <h3 className="font-display font-semibold text-[#2C2C2C] text-sm sm:text-base mb-2">
-                {feature.title}
-              </h3>
-              <p className="text-sm text-[#2C2C2C]/65 leading-relaxed">
-                {feature.description}
-              </p>
-            </motion.div>
+            <Reveal key={feature.title} delay={stagger(index)}>
+              <GlowCard className="group h-full bg-white rounded-2xl border border-[#E8E4DC] p-6 hover:border-[#C5A059]/40 hover:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] transition-all duration-300">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#C5A059]/10 to-[#EBD598]/10 flex items-center justify-center text-[#C5A059] mb-4 group-hover:from-[#C5A059]/20 group-hover:to-[#EBD598]/20 transition-colors duration-300">
+                  {feature.icon}
+                </div>
+                <h3 className="font-display font-semibold text-[#2C2C2C] text-sm sm:text-base mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-[#2C2C2C]/65 leading-relaxed">
+                  {feature.description}
+                </p>
+              </GlowCard>
+            </Reveal>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-center mt-10"
-        >
+        <Reveal delay={0.1} className="text-center mt-10">
           <Link href="/get-coverage">
             <Button
               size="lg"
@@ -104,7 +90,7 @@ export function InsuranceFeatures() {
               See Affordable Options Near You
             </Button>
           </Link>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

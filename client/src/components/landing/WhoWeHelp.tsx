@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronDown } from "lucide-react";
+import { Reveal, StampHeading, stagger } from "@/components/motion";
 
 interface ClientType {
   title: string;
@@ -72,36 +73,27 @@ export function WhoWeHelp() {
   return (
     <section className="py-12 lg:py-20 bg-[#FDFBF7]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-8"
-        >
-          <p className="text-sm font-medium uppercase tracking-wider text-[#C5A059] mb-3">Who We Help</p>
-          <h2 className="text-3xl sm:text-4xl font-display font-normal text-[#2C2C2C] mb-4">
-            Built for{" "}
-            <span className="bg-gradient-to-r from-[#C5A059] to-[#EBD598] bg-clip-text text-transparent">
-              Real People
-            </span>
-          </h2>
-          <p className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto">
-            Whether you're self-employed, raising a family, or navigating coverage for the first time — Sakred was designed for you.
-          </p>
-        </motion.div>
+        <div className="text-center mb-8">
+          <Reveal>
+            <p className="text-sm font-medium uppercase tracking-wider text-[#C5A059] mb-3">Who We Help</p>
+          </Reveal>
+          <StampHeading
+            text="Built for"
+            accent="Real People"
+            className="text-3xl sm:text-4xl font-display font-normal text-[#2C2C2C] mb-4"
+          />
+          <Reveal delay={0.12}>
+            <p className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto">
+              Whether you're self-employed, raising a family, or navigating coverage for the first time — Sakred was designed for you.
+            </p>
+          </Reveal>
+        </div>
 
         <div className="space-y-3">
           {clientTypes.map((client, index) => {
             const isExpanded = expandedItems[index];
             return (
-              <motion.div
-                key={client.title}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-              >
+              <Reveal key={client.title} delay={stagger(index)}>
                 <Card
                   className={`cursor-pointer transition-all duration-300 overflow-visible ${
                     isExpanded
@@ -148,7 +140,7 @@ export function WhoWeHelp() {
                     )}
                   </AnimatePresence>
                 </Card>
-              </motion.div>
+              </Reveal>
             );
           })}
         </div>

@@ -1,4 +1,5 @@
 import { Switch, Route, useLocation } from "wouter";
+import { MotionConfig } from "framer-motion";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider, useQuery } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -91,10 +92,16 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-      </TooltipProvider>
+      {/* reducedMotion="user" is a site-wide safety net: for visitors who have asked their
+          OS for reduced motion, every framer-motion transform/layout animation is skipped
+          (opacity still cross-fades) — including the ad-hoc whileInView blocks on pages
+          that haven't been migrated to the shared primitives in components/motion.tsx. */}
+      <MotionConfig reducedMotion="user">
+        <TooltipProvider>
+          <Toaster />
+          <Router />
+        </TooltipProvider>
+      </MotionConfig>
     </QueryClientProvider>
   );
 }

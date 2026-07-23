@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { Reveal, StampHeading, stagger } from "@/components/motion";
 import {
   Accordion,
   AccordionContent,
@@ -54,35 +54,26 @@ export function FAQ() {
   return (
     <section className="py-12 lg:py-20 bg-[#FDFBF7]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <div className="w-12 h-1 bg-gradient-to-r from-[#C5A059] to-[#EBD598] mx-auto mb-6" />
-          <h2 className="text-3xl sm:text-4xl font-display font-normal text-[#0F172A] mb-4">
-            Frequently Asked{" "}
-            <span className="bg-gradient-to-r from-[#C5A059] to-[#EBD598] bg-clip-text text-transparent">
-              Questions
-            </span>
-          </h2>
-          <p className="text-lg text-[#0F172A]/70">
-            Everything you need to know about Sakred Health
-          </p>
-        </motion.div>
+        <div className="text-center mb-16">
+          <Reveal>
+            <div className="w-12 h-1 bg-gradient-to-r from-[#C5A059] to-[#EBD598] mx-auto mb-6" />
+          </Reveal>
+          <StampHeading
+            text="Frequently Asked"
+            accent="Questions"
+            className="text-3xl sm:text-4xl font-display font-normal text-[#0F172A] mb-4"
+          />
+          <Reveal delay={0.12}>
+            <p className="text-lg text-[#0F172A]/70">
+              Everything you need to know about Sakred Health
+            </p>
+          </Reveal>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-        >
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
+        <Accordion type="single" collapsible className="space-y-4">
+          {faqs.map((faq, index) => (
+            <Reveal key={index} delay={stagger(index, 0.05, 0.3)}>
               <AccordionItem
-                key={index}
                 value={`item-${index}`}
                 className="bg-white rounded-2xl px-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border-0 overflow-hidden"
               >
@@ -96,24 +87,18 @@ export function FAQ() {
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
-            ))}
-          </Accordion>
-        </motion.div>
+            </Reveal>
+          ))}
+        </Accordion>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center mt-12"
-        >
+        <Reveal delay={0.1} className="text-center mt-12">
           <p className="text-[#0F172A]/70">
             Have more questions?{" "}
             <Link href="/ai-privacy" className="text-[#C5A059] font-medium hover:underline" data-testid="link-ai-privacy">
               Learn about AI & Privacy
             </Link>
           </p>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

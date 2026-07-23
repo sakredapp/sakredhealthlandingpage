@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { MapPin, Check } from "lucide-react";
+import { Reveal, StampHeading, stagger } from "@/components/motion";
 
 const reasons = [
   {
@@ -34,33 +34,27 @@ export function WhyPrivate() {
   return (
     <section className="py-12 lg:py-20 bg-[#F6F4EF]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <div className="w-12 h-1 bg-gradient-to-r from-[#C5A059] to-[#EBD598] mx-auto mb-6" />
-          <h2 className="text-3xl sm:text-4xl font-display font-normal text-[#2C2C2C] mb-4">
-            Why{" "}
-            <span className="bg-gradient-to-r from-[#C5A059] to-[#EBD598] bg-clip-text text-transparent">
-              Private Health Insurance?
-            </span>
-          </h2>
-          <p className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto">
-            Millions of Americans fall through the cracks — earning too much for subsidies but not enough to overpay. That's exactly who we serve.
-          </p>
-        </motion.div>
+        <div className="text-center mb-12">
+          <Reveal>
+            <div className="w-12 h-1 bg-gradient-to-r from-[#C5A059] to-[#EBD598] mx-auto mb-6" />
+          </Reveal>
+          <StampHeading
+            text="Why"
+            accent="Private Health Insurance?"
+            className="text-3xl sm:text-4xl font-display font-normal text-[#2C2C2C] mb-4"
+          />
+          <Reveal delay={0.12}>
+            <p className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto">
+              Millions of Americans fall through the cracks — earning too much for subsidies but not enough to overpay. That's exactly who we serve.
+            </p>
+          </Reveal>
+        </div>
 
         <div className="space-y-4">
           {reasons.map((reason, index) => (
-            <motion.div
+            <Reveal
               key={reason.title}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.06 }}
+              delay={stagger(index)}
               className="bg-white rounded-2xl border border-[#E8E4DC] p-6 hover:border-[#C5A059]/30 transition-colors duration-200"
             >
               <div className="flex items-start gap-4">
@@ -76,17 +70,11 @@ export function WhyPrivate() {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </Reveal>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-center mt-10"
-        >
+        <Reveal delay={0.1} className="text-center mt-10">
           <Link href="/get-coverage">
             <Button
               size="lg"
@@ -96,7 +84,7 @@ export function WhyPrivate() {
               Check Coverage in Your Zip Code
             </Button>
           </Link>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

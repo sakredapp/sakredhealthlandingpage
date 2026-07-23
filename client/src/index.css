@@ -324,4 +324,39 @@
   .font-display {
     font-family: 'Playfair Display', Georgia, serif;
   }
+
+  /* Pointer glow for cards. The JS in components/motion.tsx writes --glow-x/--glow-y
+     and toggles .is-lit; touch devices never fire pointermove, so this costs nothing
+     on mobile. `isolation: isolate` is what lets the z-index:-1 layer sit above the
+     card's own background but below its content. */
+  .glow-card {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .glow-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 380ms ease;
+    background: radial-gradient(
+      340px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+      rgba(197, 160, 89, 0.14),
+      transparent 68%
+    );
+  }
+
+  .glow-card.is-lit::before {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .glow-card::before {
+      display: none;
+    }
+  }
 }

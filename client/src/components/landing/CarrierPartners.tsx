@@ -1,8 +1,10 @@
-import { motion } from "framer-motion";
+import { CountUp, Reveal, StampHeading, stagger } from "@/components/motion";
 
-const networkStats = [
+// `count` rolls the number up on scroll; anything without one is a word, not a metric,
+// and stays static. Never animate toward a number the agency can't stand behind.
+const networkStats: { stat: string; count?: number; suffix?: string; label: string }[] = [
   { stat: "Licensed", label: "Fully licensed life and health insurance agency" },
-  { stat: "50 states", label: "Coverage options available across all U.S. states" },
+  { stat: "50 states", count: 50, suffix: " states", label: "Coverage options available across all U.S. states" },
   { stat: "1 agent", label: "One dedicated licensed agent across all your plans" },
   { stat: "Free", label: "No cost to you — we earn a commission when a policy is placed" },
 ];
@@ -34,25 +36,19 @@ export function CarrierPartners() {
   return (
     <section className="py-12 lg:py-20 bg-[#F9F9F7]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-10"
-        >
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#2C2C2C] mb-3">
-            Our Network & Coverage
-          </h2>
-          <p className="text-[#2C2C2C]/60 text-base sm:text-lg max-w-2xl mx-auto">
-            Your health is part of your life — so we make sure every box is checked, not just one. Health coverage, life insurance, and retirement income, all through one agency and one dedicated agent.
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.15 }}
+        <div className="text-center mb-10">
+          <StampHeading
+            text="Our Network & Coverage"
+            className="font-display text-3xl sm:text-4xl font-bold text-[#2C2C2C] mb-3"
+          />
+          <Reveal delay={0.12}>
+            <p className="text-[#2C2C2C]/60 text-base sm:text-lg max-w-2xl mx-auto">
+              Your health is part of your life — so we make sure every box is checked, not just one. Health coverage, life insurance, and retirement income, all through one agency and one dedicated agent.
+            </p>
+          </Reveal>
+        </div>
+        <Reveal
+          delay={0.15}
           className="bg-white rounded-2xl border border-[#E8E4DC] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] p-8 sm:p-10"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
@@ -65,7 +61,11 @@ export function CarrierPartners() {
                 {networkStats.map((item) => (
                   <li key={item.stat} className="flex items-start gap-4">
                     <span className="font-display font-bold text-2xl text-[#C5A059] leading-none shrink-0 w-16">
-                      {item.stat}
+                      {item.count !== undefined ? (
+                        <CountUp to={item.count} suffix={item.suffix} />
+                      ) : (
+                        item.stat
+                      )}
                     </span>
                     <span className="text-sm text-[#2C2C2C]/65 leading-snug pt-1">
                       {item.label}
@@ -112,14 +112,11 @@ export function CarrierPartners() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </Reveal>
 
         {/* Mortgage Protection spotlight */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+        <Reveal
+          delay={0.1}
           className="mt-6 bg-white rounded-2xl border border-[#E8E4DC] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] p-8 sm:p-10"
         >
           <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-[#C5A059] mb-4">
@@ -158,7 +155,7 @@ export function CarrierPartners() {
             coverage amount, your age, and your health. Your dedicated agent walks you through the options and
             builds a plan that fits.
           </p>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

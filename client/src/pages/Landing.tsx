@@ -7,11 +7,13 @@ import { WhyPrivate } from "@/components/landing/WhyPrivate";
 import { FAQ } from "@/components/landing/FAQ";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
+import { ScrollProgress } from "@/components/motion";
 
 export default function Landing() {
   return (
     <div className="min-h-screen bg-[#FDFBF7]">
       <Navigation />
+      <ScrollProgress />
       <Hero />
       <WhoWeHelp />
       <CarrierPartners />
