@@ -59,15 +59,15 @@ export function CarrierPartners() {
               </h3>
               <ul className="space-y-5">
                 {networkStats.map((item) => (
-                  <li key={item.stat} className="flex items-start gap-4">
-                    <span className="font-display font-bold text-2xl text-[#C5A059] leading-none shrink-0 w-16">
+                  <li key={item.stat}>
+                    <span className="block font-display font-bold text-2xl text-[#C5A059] leading-none mb-1.5">
                       {item.count !== undefined ? (
                         <CountUp to={item.count} suffix={item.suffix} />
                       ) : (
                         item.stat
                       )}
                     </span>
-                    <span className="text-sm text-[#2C2C2C]/65 leading-snug pt-1">
+                    <span className="block text-sm text-[#2C2C2C]/65 leading-snug">
                       {item.label}
                     </span>
                   </li>
