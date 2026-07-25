@@ -1,40 +1,24 @@
 import { motion } from "framer-motion";
-import homeScreenImg from "@assets/IMG_6822_1771471874439.jpg";
-import routinesImg from "@assets/IMG_6823_1771471874438.jpg";
-import portalImg from "@assets/IMG_6824_1771471874439.jpg";
-import membersImg from "@assets/IMG_6825_1771471874439.jpg";
-import wearablesImg from "@assets/IMG_6826_1771471874439.jpg";
 
-// To swap in the App Store marketing screenshots: drop the files into
-// attached_assets/ and point each `image` below at the new import. Labels
-// already match the six-tab app (Home, Habits, Library, Shop, Policy).
+// App screenshots hosted in Supabase Storage (public bucket "appdemoscreenshots").
+// Swapping an image = replace the URL; add/remove a screen = edit this array.
+const BUCKET =
+  "https://auth.sakredhealth.com/storage/v1/object/public/appdemoscreenshots";
+
 const screenshots = [
-  {
-    image: homeScreenImg,
-    label: "Home & Daily Habits",
-  },
-  {
-    image: routinesImg,
-    label: "Habit Library",
-  },
-  {
-    image: membersImg,
-    label: "Guides, Reader & Shop",
-  },
-  {
-    image: wearablesImg,
-    label: "Community & Sakred AI",
-  },
-  {
-    image: portalImg,
-    label: "Policy Portal",
-  },
+  { image: `${BUCKET}/homescreen%20.jpeg`, label: "Home Dashboard" },
+  { image: `${BUCKET}/todays%20habits.jpeg`, label: "Today's Habits" },
+  { image: `${BUCKET}/routine%20and%20habit%20tracker%20.jpeg`, label: "Habit Tracker" },
+  { image: `${BUCKET}/routine%20outline%20.jpeg`, label: "Routine Walkthrough" },
+  { image: `${BUCKET}/library%20overview%20.jpeg`, label: "Library & Community" },
+  { image: `${BUCKET}/real%20foods%20market%20.jpeg`, label: "Shop" },
+  { image: `${BUCKET}/policy%20portal%20.jpeg`, label: "Policy Portal" },
 ];
 
 export function AppShowcase() {
   return (
     <section className="py-12 lg:py-20 bg-[#F9F9F7]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +35,7 @@ export function AppShowcase() {
           </h2>
         </motion.div>
 
-        <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide sm:justify-center">
+        <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide lg:justify-center">
           {screenshots.map((screenshot, index) => (
             <motion.div
               key={screenshot.label}
@@ -73,6 +57,7 @@ export function AppShowcase() {
                   data-testid={`img-screenshot-${index}`}
                 />
               </div>
+              <p className="text-center text-xs text-[#2C2C2C]/55 mt-2">{screenshot.label}</p>
             </motion.div>
           ))}
         </div>
