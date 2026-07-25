@@ -32,7 +32,7 @@ const features: Feature[] = [
   },
   {
     icon: <MessageCircle className="w-6 h-6" />,
-    title: "Hathr AI + Agent Messaging",
+    title: "Sakred AI + Agent Messaging",
     description: "Get instant answers from our AI assistant or message your agent directly — all HIPAA-compliant.",
   },
   {

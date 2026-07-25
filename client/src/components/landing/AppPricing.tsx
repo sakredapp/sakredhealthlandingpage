@@ -4,16 +4,16 @@ import { Card } from "@/components/ui/card";
 import { useDownloadDialog } from "./DownloadDialog";
 
 const features = [
-  "HIPAA-compliant Healthcare Portal (policy search, coverage, documents)",
-  "Dedicated healthcare agent with in-app messaging",
-  "Hathr AI Assistant for instant coverage answers",
-  "Claims, billing & support request tracking",
-  "Chronic condition & life policy management",
-  "Estate planning & retirement annuity access",
-  "Guided Wellness Routines & daily habit tracking",
-  "Wearable integrations (Fitbit, WHOOP, Oura, Garmin, Apple Health)",
+  "HIPAA-compliant Policy portal — Health, Life & Annuity cards, coverage & documents",
+  "Plain-language policy search across your plan documents",
+  "Dedicated agent with in-app messaging, callbacks & support requests",
+  "Sakred AI assistant + Terrain Translator for instant guidance",
+  "Guided routines & daily habit tracking with a Habits Encyclopedia",
+  "eBook library & in-app reader with audio",
+  "Community Forum — general chat & breakout threads",
+  "Curated shop with routine shopping lists",
+  "Wearable sync (Garmin, Oura, WHOOP, Fitbit)",
   "Secure document vault with encrypted storage",
-  "Access to a wide range of health and life insurance plan types",
 ];
 
 export function AppPricing() {

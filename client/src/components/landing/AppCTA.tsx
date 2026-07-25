@@ -39,7 +39,7 @@ export function AppCTA() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto mb-10"
         >
-          Stop juggling separate apps for insurance, wellness, health tracking, and financial planning. Sakred brings your healthcare portal, preventative wellness, chronic condition policies, and retirement planning together — so you can focus on what matters.
+          Stop juggling separate apps for insurance, wellness, health tracking, and financial planning. Sakred brings your Policy portal, guided routines, library, shop, and long-term planning together — so you can focus on what matters.
         </motion.p>
 
         <motion.div

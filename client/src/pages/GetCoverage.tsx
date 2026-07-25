@@ -188,7 +188,7 @@ export default function GetCoverage() {
                   A licensed Sakred Health agent will reach out shortly with coverage options tailored to you.
                 </p>
                 <p className="text-sm text-[#2C2C2C]/50">
-                  Keep an eye on your phone — our AI assistant Hathr will text you within minutes to confirm your details and help schedule a call.
+                  Keep an eye on your phone — Sakred AI, our AI assistant, will text you within minutes to confirm your details and help schedule a call.
                 </p>
               </div>
             ) : (

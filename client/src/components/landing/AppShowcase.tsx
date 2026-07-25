@@ -5,26 +5,29 @@ import portalImg from "@assets/IMG_6824_1771471874439.jpg";
 import membersImg from "@assets/IMG_6825_1771471874439.jpg";
 import wearablesImg from "@assets/IMG_6826_1771471874439.jpg";
 
+// To swap in the App Store marketing screenshots: drop the files into
+// attached_assets/ and point each `image` below at the new import. Labels
+// already match the six-tab app (Home, Habits, Library, Shop, Policy).
 const screenshots = [
   {
-    image: portalImg,
-    label: "Healthcare Portal",
-  },
-  {
-    image: membersImg,
-    label: "Coverage & Support",
-  },
-  {
     image: homeScreenImg,
-    label: "Home Dashboard",
+    label: "Home & Daily Habits",
   },
   {
     image: routinesImg,
-    label: "Guided Routines",
+    label: "Habit Library",
+  },
+  {
+    image: membersImg,
+    label: "Guides, Reader & Shop",
   },
   {
     image: wearablesImg,
-    label: "Wearable Integrations",
+    label: "Community & Sakred AI",
+  },
+  {
+    image: portalImg,
+    label: "Policy Portal",
   },
 ];
 

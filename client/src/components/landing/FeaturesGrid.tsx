@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Shield, Search, FolderLock, MessageCircle, Activity, Heart, Watch, Landmark } from "lucide-react";
+import { ShieldCheck, Search, MessageCircle, Heart, BookOpen, Compass, ShoppingBag, Watch } from "lucide-react";
 
 interface Feature {
   icon: React.ReactNode;
@@ -10,52 +10,52 @@ interface Feature {
 
 const features: Feature[] = [
   {
-    icon: <Shield className="w-6 h-6" />,
-    title: "Your Insurance, Simplified",
-    description: "Policies, premiums, deductibles, copays, and Rx tiers — all on one screen with direct insurance portal links.",
-    tag: "Portal",
+    icon: <ShieldCheck className="w-6 h-6" />,
+    title: "All Your Coverage, One View",
+    description: "Policy cards for Health, Life, and Annuity — premiums, deductibles, member IDs, and documents, together in the Policy tab.",
+    tag: "Policy",
   },
   {
     icon: <Search className="w-6 h-6" />,
-    title: "Search Your Policy",
-    description: "Ask plain-language questions and get highlighted answers pulled directly from your plan documents.",
-    tag: "Portal",
-  },
-  {
-    icon: <FolderLock className="w-6 h-6" />,
-    title: "Secure Document Vault",
-    description: "ID cards, EOBs, claim letters — encrypted, organized, searchable, and always in your pocket.",
-    tag: "Portal",
+    title: "Plain-Language Policy Search",
+    description: "Ask a question about any plan and get highlighted answers pulled straight from your own policy documents.",
+    tag: "Policy",
   },
   {
     icon: <MessageCircle className="w-6 h-6" />,
-    title: "Agent & AI Support",
-    description: "HIPAA-compliant messaging with your dedicated agent, plus Hathr AI for instant coverage answers 24/7.",
-    tag: "Portal",
+    title: "Your Agent + Sakred AI",
+    description: "HIPAA-compliant messaging, callbacks, and support requests with your dedicated agent — plus Sakred AI for instant answers.",
+    tag: "Policy",
   },
   {
     icon: <Heart className="w-6 h-6" />,
-    title: "Guided Wellness Routines",
-    description: "7-30 day reset programs for gut health, sleep, energy, and detox — with daily habit tracking and streaks.",
-    tag: "Wellness",
+    title: "Guided Routines & Daily Habits",
+    description: "Multi-day terrain protocols — liver & detox, gut reset, digestion, sleep — with daily habit tracking and streaks.",
+    tag: "Habits",
+  },
+  {
+    icon: <BookOpen className="w-6 h-6" />,
+    title: "eBook Library & Reader",
+    description: "A storefront and your owned library, with an in-app reader and audio — the education behind every protocol.",
+    tag: "Library",
+  },
+  {
+    icon: <Compass className="w-6 h-6" />,
+    title: "Terrain Translator & Ask",
+    description: "Type a symptom to see root causes and what to do, search across your books, or send a question to your team.",
+    tag: "Library",
+  },
+  {
+    icon: <ShoppingBag className="w-6 h-6" />,
+    title: "Curated Marketplace",
+    description: "Shop the trusted products a protocol calls for — search, browse, and build routine shopping lists in a tap.",
+    tag: "Shop",
   },
   {
     icon: <Watch className="w-6 h-6" />,
-    title: "Wearable Integrations",
-    description: "Sync Fitbit, WHOOP, Oura Ring, Garmin, and Apple Health — all your health data in one place.",
-    tag: "Wellness",
-  },
-  {
-    icon: <Activity className="w-6 h-6" />,
-    title: "Claims & Support Tracking",
-    description: "Submit tickets, book callbacks, and track every request and resolution with your agent.",
-    tag: "Portal",
-  },
-  {
-    icon: <Landmark className="w-6 h-6" />,
-    title: "Life Policies & Estate Planning",
-    description: "Manage life policies, retirement annuities, and estate documents alongside your health coverage.",
-    tag: "Planning",
+    title: "Wearable Sync",
+    description: "Connect Garmin, Oura, WHOOP, and Fitbit for real-time sync — steps, heart rate, HRV, sleep, recovery, and strain.",
+    tag: "Wearables",
   },
 ];
 
@@ -72,13 +72,13 @@ export function FeaturesGrid() {
         >
           <div className="w-12 h-1 bg-gradient-to-r from-[#C5A059] to-[#EBD598] mx-auto mb-6" />
           <h2 className="text-3xl sm:text-4xl font-display font-normal text-[#2C2C2C] mb-4">
-            Everything You Need,{" "}
+            Six tabs,{" "}
             <span className="bg-gradient-to-r from-[#C5A059] to-[#EBD598] bg-clip-text text-transparent">
-              One App
+              one membership
             </span>
           </h2>
           <p className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto">
-            A HIPAA-compliant healthcare portal, preventative wellness platform, and long-term planning ecosystem — all designed to work together
+            Home, Habits, Policy, Library, and Shop — your coverage, preventative wellness, and everyday guidance designed to work together
           </p>
         </motion.div>
 

@@ -10,19 +10,27 @@ import {
 const faqs = [
   {
     question: "What is the Sakred Health app?",
-    answer: "The Sakred Health app is an all-in-one healthcare portal and preventative wellness platform. It combines a HIPAA-compliant client portal — policy search, coverage breakdowns, secure document vault, Hathr AI assistant, and dedicated agent messaging — with guided wellness routines, daily habit tracking, and wearable integrations.",
+    answer: "The Sakred Health app is an all-in-one wellness and coverage platform organized into six tabs: Home, Habits, Policy, Library, Shop, and Profile. It pairs a HIPAA-compliant Policy portal — coverage breakdowns, plain-language policy search, secure documents, Sakred AI, and dedicated agent messaging — with guided routines, daily habit tracking, an eBook library and community, a curated shop, and wearable sync.",
   },
   {
-    question: "What does the Healthcare Portal include?",
-    answer: "When your plan is linked, you get: full visibility into active policies, plan details, premiums, deductibles, and copays. Full-text policy search with highlighted answers and page references. A secure document vault for ID cards, EOBs, and claim letters. HIPAA-compliant in-app messaging with your dedicated agent. The Hathr AI assistant for instant policy questions. And a support request system with callback scheduling.",
+    question: "What does the Policy tab include?",
+    answer: "When your coverage is linked, you get policy cards for Health, Life, and Annuity — not health-only — with premiums, deductibles, copays, and member IDs. Plain-language policy search returns highlighted answers with page references. There's a secure document vault for ID cards, EOBs, and claim letters, HIPAA-compliant messaging with your dedicated agent, callback and support requests, and a self-serve activation flow. Not a member yet? The tab shows how to get covered.",
   },
   {
-    question: "What kind of wellness routines are available?",
-    answer: "We offer 18+ guided reset routines covering gut health, sleep optimization, energy recovery, detox & drainage, nervous system support, hydration, focus, and more. Each routine runs 7-30 days with Lite (15-20 min/day) or Intensive (45-60 min/day) options. Every routine includes science-backed daily habits, progress tracking, and recommended supplies.",
+    question: "What's in the Library and Shop tabs?",
+    answer: "The Library is an eBook storefront and your owned library with an in-app reader and audio, a Community Forum with general chat and breakout threads, and Ask & Search — the Terrain Translator (type a symptom to see root causes, the reasoning behind them, and what to do), search across your books, and a question queue to our team. The Shop is a curated product marketplace with search, product pages, buy links, and routine shopping lists so you can shop exactly what a protocol calls for.",
+  },
+  {
+    question: "What kind of routines and habits are available?",
+    answer: "The Habits tab lets you check off daily habits and start guided Routines — multi-day protocols organized by goal or 'terrain' (liver & detox, gut reset, digestion, sleep, and more). Each runs on a clear day-by-day plan with science-backed habits, a routine walkthrough, progress tracking, and a Habits Encyclopedia to learn the why behind every step.",
+  },
+  {
+    question: "What is Sakred AI?",
+    answer: "Sakred AI is the app's built-in assistant, grounded in our terrain-based wellness approach. Ask it about protocols, your habits, or your coverage and get instant, plain-language guidance. It works alongside the Terrain Translator, which turns a symptom into likely root causes and practical next steps.",
   },
   {
     question: "Which wearables are supported?",
-    answer: "We integrate with Fitbit, WHOOP, Oura Ring, Garmin, and Apple Health. Connect your devices to sync steps, heart rate, HRV, sleep scores, recovery, strain, and more — all in one place.",
+    answer: "Connect Garmin, Oura, WHOOP, and Fitbit. Devices sync in real time to bring steps, heart rate, HRV, sleep scores, recovery, and strain into the app alongside your habits — managed from the Profile tab.",
   },
   {
     question: "Is my data private and secure?",
@@ -30,7 +38,7 @@ const faqs = [
   },
   {
     question: "Is the app free?",
-    answer: "Yes — the Sakred Health app is included with every Sakred Health plan at no extra cost. You get full access to the healthcare portal, wellness routines, habit tracking, wearable integrations, Hathr AI, and the secure document vault. No add-ons, no hidden fees.",
+    answer: "Yes — the Sakred Health app is included with every Sakred Health plan at no extra cost. You get full access to the Policy portal, guided routines and habits, the eBook library and community, the shop, wearable sync, and Sakred AI. No add-ons, no hidden fees. It runs on iOS, Android, and the web at sakredapp.com.",
   },
 ];
 

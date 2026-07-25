@@ -51,7 +51,7 @@ export function AppHero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg sm:text-xl text-[#2C2C2C]/70 max-w-3xl mx-auto mb-6 leading-relaxed"
         >
-          Guided wellness routines, daily habit tracking, wearable sync, and a secure HIPAA-compliant healthcare portal with dedicated agent support — plus chronic condition policies, estate planning, and retirement annuities. Your entire health and long-term planning ecosystem in one place.
+          Guided routines and daily habits, an eBook library and community, a curated shop, wearable sync, and a secure HIPAA-compliant Policy portal — with dedicated agent support across Health, Life, and Annuity coverage. Your entire health and long-term planning ecosystem in one place.
         </motion.p>
 
         <motion.div
