@@ -72,13 +72,13 @@ export function FeaturesGrid() {
         >
           <div className="w-12 h-1 bg-gradient-to-r from-[#C5A059] to-[#EBD598] mx-auto mb-6" />
           <h2 className="text-3xl sm:text-4xl font-display font-normal text-[#2C2C2C] mb-4">
-            Six tabs,{" "}
+            Everything you get,{" "}
             <span className="bg-gradient-to-r from-[#C5A059] to-[#EBD598] bg-clip-text text-transparent">
               one membership
             </span>
           </h2>
           <p className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto">
-            Home, Habits, Policy, Library, and Shop — your coverage, preventative wellness, and everyday guidance designed to work together
+            Across Home, Habits, Policy, Library, and Shop — your coverage, preventative wellness, and everyday guidance, designed to work together
           </p>
         </motion.div>
 
