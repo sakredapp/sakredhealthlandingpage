@@ -2,8 +2,11 @@ import { Navigation } from "@/components/landing/Navigation";
 import { Hero } from "@/components/landing/Hero";
 import { InsuranceFeatures } from "@/components/landing/InsuranceFeatures";
 import { WhoWeHelp } from "@/components/landing/WhoWeHelp";
+import { HowGettingCoveredWorks } from "@/components/landing/HowGettingCoveredWorks";
 import { CarrierPartners } from "@/components/landing/CarrierPartners";
 import { WhyPrivate } from "@/components/landing/WhyPrivate";
+import { CoverageCalculator } from "@/components/landing/CoverageCalculator";
+import { TextToBook } from "@/components/landing/TextToBook";
 import { FAQ } from "@/components/landing/FAQ";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
@@ -16,9 +19,12 @@ export default function Landing() {
       <ScrollProgress />
       <Hero />
       <WhoWeHelp />
+      <HowGettingCoveredWorks />
       <CarrierPartners />
       <WhyPrivate />
+      <CoverageCalculator />
       <InsuranceFeatures />
+      <TextToBook />
       <FAQ />
       <FinalCTA />
       <Footer />
