@@ -15,10 +15,13 @@ import { Reveal, StampHeading } from "@/components/motion";
  * yet the API returns null and the button falls back to /get-coverage, so
  * nothing is ever broken in production.
  */
-// The home page is general and health-led, so route its text-ins to the HEALTH
-// keyword — a text with no keyword lands unassigned in the CRM. Product and state
-// pages use their own product keyword via <TextCta />.
-const SMS_KEYWORD = "HEALTH";
+// The general home CTA has NO keyword on purpose. A matched keyword makes the
+// CRM open an AI session with product_intent_locked = true — right for product
+// pages (the page IS the visitor's intent) but wrong here: an undeclared visitor
+// would get locked into a product the AI won't correct off. No keyword = lead
+// still created + attributed to the home page, just unassigned for human triage
+// (the safe failure). Set this to the general keyword once the CRM provides it.
+const SMS_KEYWORD: string = "";
 
 type Msg = { from: "user" | "agent"; text: string };
 

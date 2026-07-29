@@ -6,7 +6,6 @@ import { HowGettingCoveredWorks } from "@/components/landing/HowGettingCoveredWo
 import { CarrierPartners } from "@/components/landing/CarrierPartners";
 import { WhyPrivate } from "@/components/landing/WhyPrivate";
 import { CoverageCalculator } from "@/components/landing/CoverageCalculator";
-import { TextToBook } from "@/components/landing/TextToBook";
 import { FAQ } from "@/components/landing/FAQ";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
@@ -24,7 +23,6 @@ export default function Landing() {
       <WhyPrivate />
       <CoverageCalculator />
       <InsuranceFeatures />
-      <TextToBook />
       <FAQ />
       <FinalCTA />
       <Footer />
