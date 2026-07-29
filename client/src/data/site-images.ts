@@ -21,15 +21,46 @@ export interface SiteImage {
   alt: string;
 }
 
-const EMPTY: SiteImage = { src: "", alt: "" };
+// Public Supabase bucket holding the landing-page family photography.
+// Filenames carry per-file timestamps, so each entry keeps its full suffix.
+const BUCKET =
+  "https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/landingpagefamilyimages";
+const img = (suffix: string, alt: string): SiteImage => ({
+  src: `${BUCKET}/ChatGPT%20Image%20Jul%2029,%202026,%20${suffix}.png`,
+  alt,
+});
 
+// Spares already in the bucket (swap in anytime, e.g. on product pages):
+//   04_45_52%20PM%20(1) — parents helping daughter with homework in the living room
+//   04_45_52%20PM%20(3) — mom reviewing paperwork at the kitchen table with her son
+//   04_45_52%20PM%20(4) — older couple reading a plan document together at home
+//   04_45_53%20PM%20(9) — adult daughter laughing over tea with her elderly mother
 export const SITE_IMAGES = {
   /** Wide band on the home page, between the products and the calculator. */
-  homeFamilyBand: EMPTY,
+  homeFamilyBand: img(
+    "04_45_52%20PM%20(2)",
+    "Three generations of a family sharing dinner on the back patio of their home at golden hour",
+  ),
   /** Portrait beside the About page story. */
-  aboutStory: EMPTY,
+  aboutStory: img(
+    "04_45_52%20PM%20(5)",
+    "A mother holding her baby in the kitchen while packing a lunchbox with fresh fruit and vegetables",
+  ),
   /** Three small supporting shots on the About page (holistic wellness). */
-  aboutGrid: [EMPTY, EMPTY, EMPTY] as SiteImage[],
+  aboutGrid: [
+    img(
+      "04_45_54%20PM%20(10)",
+      "A mother chopping fresh vegetables for dinner while her two kids help in the kitchen",
+    ),
+    img(
+      "04_45_53%20PM%20(8)",
+      "A father kneeling to tie his daughter's shoe by the front door before school",
+    ),
+    img(
+      "04_45_53%20PM%20(6)",
+      "An older couple laughing together on the front steps of their home",
+    ),
+  ] as SiteImage[],
 } satisfies Record<string, SiteImage | SiteImage[]>;
 
 export const hasImage = (img: SiteImage | undefined): boolean => !!img?.src;
