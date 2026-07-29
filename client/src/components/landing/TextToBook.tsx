@@ -9,11 +9,12 @@ import { Reveal, StampHeading } from "@/components/motion";
  * Prefer-to-text section: a real click-to-text button plus an animated sample
  * thread showing how a prospect can handle everything over text.
  *
- * SMS_NUMBER: set to the real texting number in E.164 (e.g. "+15125550142").
- * While it's empty the button safely falls back to the /get-coverage flow, so
+ * The number is resolved per-visitor by /api/local-number, which reads the
+ * visitor's state from Vercel's geo headers and returns the matching local DID
+ * (falling back to a general number). While the CRM numbers aren't populated
+ * yet the API returns null and the button falls back to /get-coverage, so
  * nothing is ever broken in production.
  */
-const SMS_NUMBER = ""; // TODO: real text-us number, E.164 format
 const SMS_BODY = "Hi Sakred Health — I'd like to talk about coverage options.";
 
 type Msg = { from: "user" | "agent"; text: string };
@@ -148,9 +149,27 @@ function ThreadPlayer() {
 }
 
 export function TextToBook() {
-  const hasNumber = SMS_NUMBER.length > 0;
+  const [number, setNumber] = useState<string | null>(null);
+  const [display, setDisplay] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/local-number")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        if (cancelled || !data?.number) return;
+        setNumber(data.number);
+        setDisplay(data.display ?? null);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const hasNumber = !!number;
   // iOS + most Android accept the `?&body=` form.
-  const smsHref = `sms:${SMS_NUMBER}?&body=${encodeURIComponent(SMS_BODY)}`;
+  const smsHref = `sms:${number ?? ""}?&body=${encodeURIComponent(SMS_BODY)}`;
 
   return (
     <section className="py-12 lg:py-20 bg-[#F9F9F7]">
@@ -194,15 +213,25 @@ export function TextToBook() {
 
             <Reveal delay={0.3}>
               {hasNumber ? (
-                <a href={smsHref}>
-                  <Button
-                    size="lg"
-                    className="rounded-full btn-gold-gradient text-[#2C2C2C] px-8 py-6 text-base font-normal shadow-lg shadow-[#C5A059]/20 hover:shadow-[#C5A059]/40 hover:-translate-y-0.5 transition-all border border-[#C5A059]"
-                  >
-                    <MessageSquareText className="w-4 h-4 mr-2" />
-                    Text us now
-                  </Button>
-                </a>
+                <div>
+                  <a href={smsHref}>
+                    <Button
+                      size="lg"
+                      className="rounded-full btn-gold-gradient text-[#2C2C2C] px-8 py-6 text-base font-normal shadow-lg shadow-[#C5A059]/20 hover:shadow-[#C5A059]/40 hover:-translate-y-0.5 transition-all border border-[#C5A059]"
+                    >
+                      <MessageSquareText className="w-4 h-4 mr-2" />
+                      Text us now
+                    </Button>
+                  </a>
+                  {display && (
+                    <p className="text-sm text-[#2C2C2C]/50 mt-3">
+                      Or text us at{" "}
+                      <a href={smsHref} className="font-medium text-[#C5A059] hover:underline">
+                        {display}
+                      </a>
+                    </p>
+                  )}
+                </div>
               ) : (
                 <Link href="/get-coverage">
                   <Button
