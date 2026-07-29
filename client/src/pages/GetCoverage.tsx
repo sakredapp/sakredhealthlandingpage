@@ -96,6 +96,14 @@ export default function GetCoverage() {
       setError("Please enter a valid 10-digit phone number.");
       return;
     }
+    if (!form.email.includes("@")) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+    if (!form.state) {
+      setError("Please select your state.");
+      return;
+    }
     if (!/^\d{5}$/.test(form.zip)) {
       setError("Please enter a valid 5-digit zip code.");
       return;
@@ -112,25 +120,30 @@ export default function GetCoverage() {
     setSubmitting(true);
 
     try {
+      // Migrated to the campaign-slug path: /get-coverage is a health-insurance
+      // intake (major-medical questions), so it maps to the "health-insurance"
+      // product. The server resolves that to the CRM health campaign slug. Extra
+      // health fields (dob, income, coverage type, etc.) pass straight through.
       const payload: Record<string, unknown> = {
+        product: "health-insurance",
         first_name: form.first_name,
         last_name: form.last_name,
         phone,
+        email: form.email,
+        state: form.state,
         dob: form.dob,
         zip: form.zip,
         annual_household_income: form.annual_household_income,
         has_major_medical: form.has_major_medical,
         sms_consent: true,
       };
-      if (form.email) payload.email = form.email;
-      if (form.state) payload.state = form.state;
       if (form.coverage_for) payload.coverage_for = form.coverage_for;
       if (form.household_size) payload.household_size = Number(form.household_size);
       if (form.has_major_medical === "yes") {
         payload.current_coverage_type = form.current_coverage_type;
       }
 
-      const res = await fetch("/api/intake/submit", {
+      const res = await fetch("/api/product-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -247,10 +260,11 @@ export default function GetCoverage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className={labelClass}>Email</label>
+                    <label htmlFor="email" className={labelClass}>Email *</label>
                     <input
                       id="email"
                       type="email"
+                      required
                       autoComplete="email"
                       className={inputClass}
                       placeholder="jane@example.com"
@@ -292,9 +306,10 @@ export default function GetCoverage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="state" className={labelClass}>State</label>
+                    <label htmlFor="state" className={labelClass}>State *</label>
                     <select
                       id="state"
+                      required
                       autoComplete="address-level1"
                       className={inputClass}
                       value={form.state}

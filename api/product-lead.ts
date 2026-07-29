@@ -26,7 +26,7 @@ const CAMPAIGN_ENV: Record<string, string> = {
   "health-insurance": "CRM_CAMPAIGN_HEALTH_INSURANCE",
   "final-expense": "CRM_CAMPAIGN_FINAL_EXPENSE",
   "life-insurance": "CRM_CAMPAIGN_LIFE_INSURANCE",
-  "retirement-annuities": "CRM_CAMPAIGN_RETIREMENT_ANNUITIES",
+  "retirement-annuities": "CRM_CAMPAIGN_ANNUITY",
 };
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
