@@ -98,7 +98,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     const result = await response.json().catch(() => ({}));
-    return res.status(200).json({ success: true, prospect_id: result.prospect_id ?? null });
+
+    // The CRM can answer 200 with an in-body error (e.g. "received":true but
+    // "error":"prospect_insert_failed") — that is NOT a created lead. Treat any
+    // error field or missing prospect_id as failure so leads never die silently.
+    if (result?.error || !result?.prospect_id) {
+      console.error("CRM accepted request but did not create a prospect:", JSON.stringify(result));
+      return res.status(502).json({ error: "Failed to submit. Please try again." });
+    }
+
+    return res.status(200).json({ success: true, prospect_id: result.prospect_id });
   } catch (err) {
     console.error("product-lead error:", err);
     return res.status(500).json({ error: "Something went wrong. Please try again." });
