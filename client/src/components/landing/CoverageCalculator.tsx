@@ -124,7 +124,7 @@ export function CoverageCalculator() {
                 <p className="text-sm text-[#2C2C2C]/55 mb-6">
                   A common income-replacement estimate — not a quote or an offer of coverage.
                 </p>
-                <Link href="/get-coverage">
+                <Link href="/products">
                   <Button
                     size="lg"
                     className="rounded-full btn-gold-gradient text-[#2C2C2C] px-8 py-6 text-base font-normal shadow-lg shadow-[#C5A059]/20 hover:shadow-[#C5A059]/40 hover:-translate-y-0.5 transition-all border border-[#C5A059]"

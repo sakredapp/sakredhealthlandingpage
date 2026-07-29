@@ -31,7 +31,7 @@ export function FinalCTA() {
         </Reveal>
 
         <Reveal delay={0.22} className="mb-10">
-          <Link href="/get-coverage">
+          <Link href="/products">
             <Button
               size="lg"
               className="rounded-full btn-gold-gradient text-[#2C2C2C] px-10 py-7 text-lg font-normal shadow-lg shadow-[#C5A059]/20 hover:shadow-[#C5A059]/40 hover:-translate-y-0.5 transition-all border border-[#C5A059]"

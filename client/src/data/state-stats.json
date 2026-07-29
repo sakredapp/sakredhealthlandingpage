@@ -1,0 +1,419 @@
+{
+  "_meta": {
+    "source": "U.S. Census Bureau, American Community Survey 2023 5-Year Estimates",
+    "sourceUrl": "https://www.census.gov/programs-surveys/acs",
+    "year": 2023,
+    "fetchedAt": "2026-07-29",
+    "states": 51
+  },
+  "states": {
+    "AL": {
+      "name": "Alabama",
+      "medianHomeValue": 195100,
+      "medianOwnerCostWithMortgage": 1386,
+      "medianHouseholdIncome": 62027,
+      "homeownershipRate": 69.9,
+      "medianAge": 39.3
+    },
+    "AK": {
+      "name": "Alaska",
+      "medianHomeValue": 333300,
+      "medianOwnerCostWithMortgage": 2192,
+      "medianHouseholdIncome": 89336,
+      "homeownershipRate": 66.6,
+      "medianAge": 35.6
+    },
+    "AZ": {
+      "name": "Arizona",
+      "medianHomeValue": 358900,
+      "medianOwnerCostWithMortgage": 1739,
+      "medianHouseholdIncome": 76872,
+      "homeownershipRate": 67,
+      "medianAge": 38.8
+    },
+    "AR": {
+      "name": "Arkansas",
+      "medianHomeValue": 175300,
+      "medianOwnerCostWithMortgage": 1297,
+      "medianHouseholdIncome": 58773,
+      "homeownershipRate": 66.1,
+      "medianAge": 38.4
+    },
+    "CA": {
+      "name": "California",
+      "medianHomeValue": 695400,
+      "medianOwnerCostWithMortgage": 2865,
+      "medianHouseholdIncome": 96334,
+      "homeownershipRate": 55.8,
+      "medianAge": 37.6
+    },
+    "CO": {
+      "name": "Colorado",
+      "medianHomeValue": 502200,
+      "medianOwnerCostWithMortgage": 2231,
+      "medianHouseholdIncome": 92470,
+      "homeownershipRate": 66.3,
+      "medianAge": 37.5
+    },
+    "CT": {
+      "name": "Connecticut",
+      "medianHomeValue": 343200,
+      "medianOwnerCostWithMortgage": 2383,
+      "medianHouseholdIncome": 93760,
+      "homeownershipRate": 66.2,
+      "medianAge": 41.2
+    },
+    "DE": {
+      "name": "Delaware",
+      "medianHomeValue": 326800,
+      "medianOwnerCostWithMortgage": 1782,
+      "medianHouseholdIncome": 82855,
+      "homeownershipRate": 72.3,
+      "medianAge": 41.5
+    },
+    "DC": {
+      "name": "District of Columbia",
+      "medianHomeValue": 724600,
+      "medianOwnerCostWithMortgage": 3062,
+      "medianHouseholdIncome": 106287,
+      "homeownershipRate": 41.1,
+      "medianAge": 34.9
+    },
+    "FL": {
+      "name": "Florida",
+      "medianHomeValue": 325000,
+      "medianOwnerCostWithMortgage": 1860,
+      "medianHouseholdIncome": 71711,
+      "homeownershipRate": 67.3,
+      "medianAge": 42.6
+    },
+    "GA": {
+      "name": "Georgia",
+      "medianHomeValue": 272900,
+      "medianOwnerCostWithMortgage": 1712,
+      "medianHouseholdIncome": 74664,
+      "homeownershipRate": 65.4,
+      "medianAge": 37.4
+    },
+    "HI": {
+      "name": "Hawaii",
+      "medianHomeValue": 808200,
+      "medianOwnerCostWithMortgage": 2863,
+      "medianHouseholdIncome": 98317,
+      "homeownershipRate": 62.6,
+      "medianAge": 40.6
+    },
+    "ID": {
+      "name": "Idaho",
+      "medianHomeValue": 376000,
+      "medianOwnerCostWithMortgage": 1610,
+      "medianHouseholdIncome": 74636,
+      "homeownershipRate": 72.4,
+      "medianAge": 37.1
+    },
+    "IL": {
+      "name": "Illinois",
+      "medianHomeValue": 250500,
+      "medianOwnerCostWithMortgage": 1950,
+      "medianHouseholdIncome": 81702,
+      "homeownershipRate": 66.8,
+      "medianAge": 38.9
+    },
+    "IN": {
+      "name": "Indiana",
+      "medianHomeValue": 201600,
+      "medianOwnerCostWithMortgage": 1355,
+      "medianHouseholdIncome": 70051,
+      "homeownershipRate": 70.4,
+      "medianAge": 38
+    },
+    "IA": {
+      "name": "Iowa",
+      "medianHomeValue": 195900,
+      "medianOwnerCostWithMortgage": 1494,
+      "medianHouseholdIncome": 73147,
+      "homeownershipRate": 71.5,
+      "medianAge": 38.6
+    },
+    "KS": {
+      "name": "Kansas",
+      "medianHomeValue": 203400,
+      "medianOwnerCostWithMortgage": 1638,
+      "medianHouseholdIncome": 72639,
+      "homeownershipRate": 66.9,
+      "medianAge": 37.2
+    },
+    "KY": {
+      "name": "Kentucky",
+      "medianHomeValue": 192300,
+      "medianOwnerCostWithMortgage": 1393,
+      "medianHouseholdIncome": 62417,
+      "homeownershipRate": 68.3,
+      "medianAge": 39.1
+    },
+    "LA": {
+      "name": "Louisiana",
+      "medianHomeValue": 208700,
+      "medianOwnerCostWithMortgage": 1543,
+      "medianHouseholdIncome": 60023,
+      "homeownershipRate": 67.3,
+      "medianAge": 37.8
+    },
+    "ME": {
+      "name": "Maine",
+      "medianHomeValue": 266400,
+      "medianOwnerCostWithMortgage": 1657,
+      "medianHouseholdIncome": 71773,
+      "homeownershipRate": 74,
+      "medianAge": 44.8
+    },
+    "MD": {
+      "name": "Maryland",
+      "medianHomeValue": 397700,
+      "medianOwnerCostWithMortgage": 2301,
+      "medianHouseholdIncome": 101652,
+      "homeownershipRate": 67.5,
+      "medianAge": 39.3
+    },
+    "MA": {
+      "name": "Massachusetts",
+      "medianHomeValue": 525800,
+      "medianOwnerCostWithMortgage": 2659,
+      "medianHouseholdIncome": 101341,
+      "homeownershipRate": 62.6,
+      "medianAge": 40
+    },
+    "MI": {
+      "name": "Michigan",
+      "medianHomeValue": 217600,
+      "medianOwnerCostWithMortgage": 1521,
+      "medianHouseholdIncome": 71149,
+      "homeownershipRate": 72.9,
+      "medianAge": 40.1
+    },
+    "MN": {
+      "name": "Minnesota",
+      "medianHomeValue": 305500,
+      "medianOwnerCostWithMortgage": 1890,
+      "medianHouseholdIncome": 87556,
+      "homeownershipRate": 72.4,
+      "medianAge": 38.6
+    },
+    "MS": {
+      "name": "Mississippi",
+      "medianHomeValue": 161400,
+      "medianOwnerCostWithMortgage": 1353,
+      "medianHouseholdIncome": 54915,
+      "homeownershipRate": 69.5,
+      "medianAge": 38.4
+    },
+    "MO": {
+      "name": "Missouri",
+      "medianHomeValue": 215600,
+      "medianOwnerCostWithMortgage": 1478,
+      "medianHouseholdIncome": 68920,
+      "homeownershipRate": 67.9,
+      "medianAge": 38.9
+    },
+    "MT": {
+      "name": "Montana",
+      "medianHomeValue": 338100,
+      "medianOwnerCostWithMortgage": 1736,
+      "medianHouseholdIncome": 69922,
+      "homeownershipRate": 69.4,
+      "medianAge": 40.2
+    },
+    "NE": {
+      "name": "Nebraska",
+      "medianHomeValue": 223800,
+      "medianOwnerCostWithMortgage": 1686,
+      "medianHouseholdIncome": 74985,
+      "homeownershipRate": 66.5,
+      "medianAge": 37.1
+    },
+    "NV": {
+      "name": "Nevada",
+      "medianHomeValue": 406100,
+      "medianOwnerCostWithMortgage": 1867,
+      "medianHouseholdIncome": 75561,
+      "homeownershipRate": 59.3,
+      "medianAge": 38.9
+    },
+    "NH": {
+      "name": "New Hampshire",
+      "medianHomeValue": 367200,
+      "medianOwnerCostWithMortgage": 2305,
+      "medianHouseholdIncome": 95628,
+      "homeownershipRate": 72.5,
+      "medianAge": 43.2
+    },
+    "NJ": {
+      "name": "New Jersey",
+      "medianHomeValue": 427600,
+      "medianOwnerCostWithMortgage": 2787,
+      "medianHouseholdIncome": 101050,
+      "homeownershipRate": 63.7,
+      "medianAge": 40.1
+    },
+    "NM": {
+      "name": "New Mexico",
+      "medianHomeValue": 232200,
+      "medianOwnerCostWithMortgage": 1510,
+      "medianHouseholdIncome": 62125,
+      "homeownershipRate": 69.3,
+      "medianAge": 39.2
+    },
+    "NY": {
+      "name": "New York",
+      "medianHomeValue": 403000,
+      "medianOwnerCostWithMortgage": 2501,
+      "medianHouseholdIncome": 84578,
+      "homeownershipRate": 54.3,
+      "medianAge": 39.6
+    },
+    "NC": {
+      "name": "North Carolina",
+      "medianHomeValue": 259400,
+      "medianOwnerCostWithMortgage": 1561,
+      "medianHouseholdIncome": 69904,
+      "homeownershipRate": 66.4,
+      "medianAge": 39.1
+    },
+    "ND": {
+      "name": "North Dakota",
+      "medianHomeValue": 241100,
+      "medianOwnerCostWithMortgage": 1715,
+      "medianHouseholdIncome": 75949,
+      "homeownershipRate": 63.4,
+      "medianAge": 35.7
+    },
+    "OH": {
+      "name": "Ohio",
+      "medianHomeValue": 199200,
+      "medianOwnerCostWithMortgage": 1472,
+      "medianHouseholdIncome": 69680,
+      "homeownershipRate": 67,
+      "medianAge": 39.6
+    },
+    "OK": {
+      "name": "Oklahoma",
+      "medianHomeValue": 185900,
+      "medianOwnerCostWithMortgage": 1479,
+      "medianHouseholdIncome": 63603,
+      "homeownershipRate": 65.8,
+      "medianAge": 36.9
+    },
+    "OR": {
+      "name": "Oregon",
+      "medianHomeValue": 454200,
+      "medianOwnerCostWithMortgage": 2080,
+      "medianHouseholdIncome": 80426,
+      "homeownershipRate": 63.4,
+      "medianAge": 40.1
+    },
+    "PA": {
+      "name": "Pennsylvania",
+      "medianHomeValue": 240500,
+      "medianOwnerCostWithMortgage": 1722,
+      "medianHouseholdIncome": 76081,
+      "homeownershipRate": 69.3,
+      "medianAge": 40.9
+    },
+    "RI": {
+      "name": "Rhode Island",
+      "medianHomeValue": 368800,
+      "medianOwnerCostWithMortgage": 2190,
+      "medianHouseholdIncome": 86372,
+      "homeownershipRate": 63.3,
+      "medianAge": 40.5
+    },
+    "SC": {
+      "name": "South Carolina",
+      "medianHomeValue": 236700,
+      "medianOwnerCostWithMortgage": 1475,
+      "medianHouseholdIncome": 66818,
+      "homeownershipRate": 71.4,
+      "medianAge": 40.1
+    },
+    "SD": {
+      "name": "South Dakota",
+      "medianHomeValue": 236800,
+      "medianOwnerCostWithMortgage": 1618,
+      "medianHouseholdIncome": 72421,
+      "homeownershipRate": 68.6,
+      "medianAge": 37.7
+    },
+    "TN": {
+      "name": "Tennessee",
+      "medianHomeValue": 256800,
+      "medianOwnerCostWithMortgage": 1506,
+      "medianHouseholdIncome": 67097,
+      "homeownershipRate": 67,
+      "medianAge": 38.9
+    },
+    "TX": {
+      "name": "Texas",
+      "medianHomeValue": 260400,
+      "medianOwnerCostWithMortgage": 2012,
+      "medianHouseholdIncome": 76292,
+      "homeownershipRate": 62.6,
+      "medianAge": 35.5
+    },
+    "UT": {
+      "name": "Utah",
+      "medianHomeValue": 455000,
+      "medianOwnerCostWithMortgage": 1927,
+      "medianHouseholdIncome": 91750,
+      "homeownershipRate": 70.6,
+      "medianAge": 31.7
+    },
+    "VT": {
+      "name": "Vermont",
+      "medianHomeValue": 290500,
+      "medianOwnerCostWithMortgage": 1877,
+      "medianHouseholdIncome": 78024,
+      "homeownershipRate": 72.8,
+      "medianAge": 43
+    },
+    "VA": {
+      "name": "Virginia",
+      "medianHomeValue": 360700,
+      "medianOwnerCostWithMortgage": 2079,
+      "medianHouseholdIncome": 90974,
+      "homeownershipRate": 67.2,
+      "medianAge": 38.8
+    },
+    "WA": {
+      "name": "Washington",
+      "medianHomeValue": 519800,
+      "medianOwnerCostWithMortgage": 2358,
+      "medianHouseholdIncome": 94952,
+      "homeownershipRate": 63.9,
+      "medianAge": 38.2
+    },
+    "WV": {
+      "name": "West Virginia",
+      "medianHomeValue": 155600,
+      "medianOwnerCostWithMortgage": 1225,
+      "medianHouseholdIncome": 57917,
+      "homeownershipRate": 74.3,
+      "medianAge": 42.7
+    },
+    "WI": {
+      "name": "Wisconsin",
+      "medianHomeValue": 247400,
+      "medianOwnerCostWithMortgage": 1652,
+      "medianHouseholdIncome": 75670,
+      "homeownershipRate": 67.9,
+      "medianAge": 40.1
+    },
+    "WY": {
+      "name": "Wyoming",
+      "medianHomeValue": 285100,
+      "medianOwnerCostWithMortgage": 1691,
+      "medianHouseholdIncome": 74815,
+      "homeownershipRate": 71.9,
+      "medianAge": 38.8
+    }
+  }
+}

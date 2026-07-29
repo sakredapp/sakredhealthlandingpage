@@ -57,7 +57,7 @@ export function Hero() {
           {...fadeUp(0.5)}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4"
         >
-          <Link href="/get-coverage">
+          <Link href="/products">
             <Button
               size="lg"
               className="rounded-full btn-gold-gradient text-[#2C2C2C] px-10 py-7 text-lg font-normal shadow-lg shadow-[#C5A059]/30 hover:shadow-[#C5A059]/50 hover:-translate-y-0.5 transition-all border border-[#C5A059]"

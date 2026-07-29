@@ -81,7 +81,7 @@ export function InsuranceFeatures() {
         </div>
 
         <Reveal delay={0.1} className="text-center mt-10">
-          <Link href="/get-coverage">
+          <Link href="/products">
             <Button
               size="lg"
               className="rounded-full btn-gold-gradient text-[#2C2C2C] px-8 py-6 text-base font-normal shadow-lg shadow-[#C5A059]/20 hover:shadow-[#C5A059]/40 hover:-translate-y-0.5 transition-all border border-[#C5A059]"

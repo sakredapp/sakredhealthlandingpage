@@ -55,7 +55,7 @@ export function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              <Link href="/get-coverage">
+              <Link href="/products">
                 <Button
                   className="rounded-full btn-gold-gradient shadow-lg shadow-[#C5A059]/20 hover:-translate-y-0.5 transition-transform"
                 >
@@ -67,7 +67,7 @@ export function Navigation() {
 
             {/* Mobile: Get Coverage + Hamburger */}
             <div className="flex md:hidden items-center gap-3">
-              <Link href="/get-coverage">
+              <Link href="/products">
                 <Button
                   size="sm"
                   className="rounded-full btn-gold-gradient shadow-lg shadow-[#C5A059]/20"
@@ -104,7 +104,7 @@ export function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <Link href="/get-coverage" className="mt-4">
+            <Link href="/products" className="mt-4">
               <Button
                 className="w-full rounded-full btn-gold-gradient shadow-lg shadow-[#C5A059]/20 text-base py-6"
               >
