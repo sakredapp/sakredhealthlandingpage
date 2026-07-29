@@ -30,12 +30,8 @@ const img = (suffix: string, alt: string): SiteImage => ({
   alt,
 });
 
-// Spares already in the bucket (swap in anytime, e.g. on product pages):
-//   04_45_52%20PM%20(1) — parents helping daughter with homework in the living room
-//   04_45_52%20PM%20(3) — mom reviewing paperwork at the kitchen table with her son
-//   04_45_52%20PM%20(4) — older couple reading a plan document together at home
-//   04_45_53%20PM%20(8) — dad kneeling to tie his daughter's shoe by the front door
-//   04_45_53%20PM%20(9) — adult daughter laughing over tea with her elderly mother
+// NOTE: the other five images in this bucket (1, 3, 4, 8, 9) are reserved for a
+// different site — do not wire them into this one.
 export const SITE_IMAGES = {
   /** Wide band on the home page, between the products and the calculator. */
   homeFamilyBand: img(
