@@ -1,22 +1,25 @@
 /**
  * Product catalog for the /products pages.
  *
- * ⚠️ PROVISIONAL SLUGS + KEYWORDS — replace `campaign` and `smsKeyword` with the
- * real values from the CRM dev before this goes live. The CRM sets the product
- * from the campaign slug (webhooks/leads?campaign=<slug>) and from the SMS body
- * keyword, so wrong values = miscategorized leads. This is the ONLY file to edit.
+ * SECURITY: campaign slugs are a CREDENTIAL (they self-authenticate the CRM
+ * webhook) and must NEVER appear in client code. They live only in server-side
+ * env vars, read by api/product-lead.ts. The client sends the product `slug`
+ * (a public, non-secret id); the server maps it to the real campaign slug.
+ *
+ * `smsKeyword` IS public (it's visible in the sms: link the user taps), so it
+ * stays here. Only MP and HEALTH keywords are wired on the CRM side today; the
+ * others still create a lead but land untagged until the CRM adds campaigns.
  */
 export type Pillar = "Life" | "Health" | "Retirement";
 
 export interface Product {
-  slug: string;        // route segment: /products/<slug>
-  campaign: string;    // CRM campaign slug (form POST) — PROVISIONAL
-  smsKeyword: string;  // SMS body keyword (text CTA) — PROVISIONAL
+  slug: string;        // route + server product id: /products/<slug>
+  smsKeyword: string;  // SMS body keyword (public)
   pillar: Pillar;
   title: string;
-  eyebrow: string;     // short specialty label
-  tagline: string;     // benefit-led one-liner
-  blurb: string;       // 1–2 sentence explainer
+  eyebrow: string;
+  tagline: string;
+  blurb: string;
   points: string[];
   /** When set, the intake form shows a "coverage in mind" dropdown with this label. */
   amountLabel?: string;
@@ -25,7 +28,6 @@ export interface Product {
 export const PRODUCTS: Product[] = [
   {
     slug: "mortgage-protection",
-    campaign: "mortgage-protection",
     smsKeyword: "MP",
     pillar: "Life",
     title: "Mortgage Protection",
@@ -42,7 +44,6 @@ export const PRODUCTS: Product[] = [
   },
   {
     slug: "final-expense",
-    campaign: "final-expense",
     smsKeyword: "FE",
     pillar: "Life",
     title: "Final Expense",
@@ -59,7 +60,6 @@ export const PRODUCTS: Product[] = [
   },
   {
     slug: "life-insurance",
-    campaign: "life-insurance",
     smsKeyword: "LIFE",
     pillar: "Life",
     title: "Life Insurance",
@@ -76,7 +76,6 @@ export const PRODUCTS: Product[] = [
   },
   {
     slug: "health-insurance",
-    campaign: "health-insurance",
     smsKeyword: "HEALTH",
     pillar: "Health",
     title: "Health Insurance",
@@ -91,24 +90,7 @@ export const PRODUCTS: Product[] = [
     ],
   },
   {
-    slug: "medicare",
-    campaign: "medicare",
-    smsKeyword: "MEDICARE",
-    pillar: "Health",
-    title: "Medicare",
-    eyebrow: "We'll show you what Original Medicare leaves out",
-    tagline: "Turning 65 shouldn't feel like a maze.",
-    blurb:
-      "Medicare Supplement and Medicare Advantage explained in plain language, with a licensed agent who helps you pick the right fit — and stays on for questions and renewals.",
-    points: [
-      "Medicare Supplement vs. Medicare Advantage, side by side",
-      "Help with drug coverage, doctors, and networks",
-      "One agent who knows your plan year after year",
-    ],
-  },
-  {
     slug: "retirement-annuities",
-    campaign: "retirement-annuities",
     smsKeyword: "ANNUITY",
     pillar: "Retirement",
     title: "Retirement & Annuities",

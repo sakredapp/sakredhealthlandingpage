@@ -33,8 +33,8 @@ const inputClass =
 const labelClass = "block text-sm font-medium text-[#2C2C2C]/80 mb-1.5";
 
 interface Props {
-  /** CRM campaign slug — sets the product on the CRM side. */
-  campaign: string;
+  /** Public product id (route slug). The server maps it to the CRM campaign slug. */
+  product: string;
   productTitle: string;
   /** When set, shows a "coverage in mind" dropdown with this label. */
   amountLabel?: string;
@@ -42,7 +42,7 @@ interface Props {
   defaultState?: string;
 }
 
-export function ProductIntakeForm({ campaign, productTitle, amountLabel, defaultState }: Props) {
+export function ProductIntakeForm({ product, productTitle, amountLabel, defaultState }: Props) {
   const [form, setForm] = useState({
     first_name: "",
     last_name: "",
@@ -81,7 +81,7 @@ export function ProductIntakeForm({ campaign, productTitle, amountLabel, default
       const jl = (document.querySelector('input[name="jornaya_lead_id"]') as HTMLInputElement | null)?.value;
 
       const payload: Record<string, unknown> = {
-        campaign,
+        product,
         first_name: form.first_name.trim(),
         last_name: form.last_name.trim(),
         email: form.email.trim(),

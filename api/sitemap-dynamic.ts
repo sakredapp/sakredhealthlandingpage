@@ -20,7 +20,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       "final-expense",
       "life-insurance",
       "health-insurance",
-      "medicare",
       "retirement-annuities",
     ];
 

@@ -102,7 +102,7 @@ export default function ProductDetail() {
                   A licensed agent will reach out — no obligation, no pressure.
                 </p>
                 <ProductIntakeForm
-                  campaign={product.campaign}
+                  product={product.slug}
                   productTitle={product.title}
                   amountLabel={product.amountLabel}
                 />
