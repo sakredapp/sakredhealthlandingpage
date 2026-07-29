@@ -3,8 +3,8 @@ import { Check } from "lucide-react";
 import { Navigation } from "@/components/landing/Navigation";
 import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
-import { HowGettingCoveredWorks } from "@/components/landing/HowGettingCoveredWorks";
 import { Reveal, StampHeading } from "@/components/motion";
+import { getStateCopy } from "@/data/state-copy";
 import { TextCta } from "@/components/TextCta";
 import { ProductIntakeForm } from "@/components/ProductIntakeForm";
 import { useSeo, SITE_URL } from "@/lib/seo";
@@ -74,8 +74,7 @@ export default function StateMortgageProtection() {
     );
   }
 
-  const annualCost =
-    stat.medianOwnerCostWithMortgage != null ? stat.medianOwnerCostWithMortgage * 12 : null;
+  const copy = getStateCopy(state, stat, STATS.states);
 
   const tiles = [
     { label: "Median home value", value: usd(stat.medianHomeValue) },
@@ -99,23 +98,16 @@ export default function StateMortgageProtection() {
                 </Reveal>
                 <StampHeading
                   as="h1"
-                  text="What happens to the house"
-                  accent="if something happens to you?"
+                  text={copy.headline.text}
+                  accent={copy.headline.accent}
                   className="text-3xl sm:text-4xl lg:text-5xl font-display font-normal text-[#2C2C2C] mb-4 leading-tight"
                 />
                 <Reveal delay={0.12}>
-                  <p className="text-lg text-[#2C2C2C]/70 leading-relaxed mb-6">
-                    The median home in {state.name} is worth{" "}
-                    <strong className="text-[#2C2C2C]">{usd(stat.medianHomeValue)}</strong>, and homeowners with
-                    a mortgage pay about <strong className="text-[#2C2C2C]">{usd(stat.medianOwnerCostWithMortgage)}</strong>{" "}
-                    a month{annualCost ? <> — roughly <strong className="text-[#2C2C2C]">{usd(annualCost)}</strong> a year</> : null}.
-                    Mortgage protection can pay off what's left on the loan if you pass away, so your family keeps
-                    the equity and the home, not the payment.
-                  </p>
+                  <p className="text-lg text-[#2C2C2C]/70 leading-relaxed mb-6">{copy.intro}</p>
                 </Reveal>
                 <Reveal delay={0.18}>
                   <ul className="space-y-2.5 mb-8">
-                    {mp.points.map((pt) => (
+                    {copy.points.map((pt) => (
                       <li key={pt} className="flex items-start gap-3">
                         <span className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-br from-[#C5A059] to-[#EBD598] flex items-center justify-center mt-0.5">
                           <Check className="w-3 h-3 text-white" />
@@ -134,11 +126,9 @@ export default function StateMortgageProtection() {
               <Reveal delay={0.1} y={24}>
                 <div className="bg-white rounded-2xl border border-[#E8E4DC] p-6 sm:p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
                   <h2 className="font-display font-semibold text-xl text-[#2C2C2C] mb-1">
-                    Free {state.name} quote
+                    {copy.formHeading}
                   </h2>
-                  <p className="text-sm text-[#2C2C2C]/55 mb-6">
-                    A licensed agent will reach out — no obligation, no pressure.
-                  </p>
+                  <p className="text-sm text-[#2C2C2C]/55 mb-6">{copy.ctaNote}</p>
                   <ProductIntakeForm
                     product={mp.slug}
                     productTitle="Mortgage Protection"
@@ -155,8 +145,8 @@ export default function StateMortgageProtection() {
         <section className="py-12 lg:py-16 bg-[#F6F4EF]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <StampHeading
-              text={`${state.name} homeowners`}
-              accent="by the numbers"
+              text={copy.numbersHeading.text}
+              accent={copy.numbersHeading.accent}
               className="text-2xl sm:text-3xl font-display font-normal text-[#2C2C2C] mb-8 text-center"
             />
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -175,7 +165,19 @@ export default function StateMortgageProtection() {
           </div>
         </section>
 
-        <HowGettingCoveredWorks />
+        {/* Tone- and state-specific closing section (varies per page to avoid duplicate copy) */}
+        <section className="py-12 lg:py-16">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <StampHeading
+              text={copy.whyHeading.text}
+              accent={copy.whyHeading.accent}
+              className="text-2xl sm:text-3xl font-display font-normal text-[#2C2C2C] mb-4"
+            />
+            <Reveal delay={0.12}>
+              <p className="text-[#2C2C2C]/70 leading-relaxed max-w-2xl mx-auto">{copy.whyBody}</p>
+            </Reveal>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
