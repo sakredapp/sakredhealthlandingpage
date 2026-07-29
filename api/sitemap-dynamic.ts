@@ -40,6 +40,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       { loc: "/", priority: "1.0", changefreq: "weekly" },
       { loc: "/get-coverage", priority: "0.9", changefreq: "weekly" },
       { loc: "/products", priority: "0.9", changefreq: "weekly" },
+      { loc: "/about", priority: "0.7", changefreq: "monthly" },
       ...productSlugs.map((s) => ({ loc: `/products/${s}`, priority: "0.8", changefreq: "monthly" })),
       ...stateSlugs.map((s) => ({ loc: `/mortgage-protection/${s}`, priority: "0.7", changefreq: "monthly" })),
       { loc: "/blog", priority: "0.9", changefreq: "daily" },

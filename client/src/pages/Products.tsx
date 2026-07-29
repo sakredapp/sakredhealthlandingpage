@@ -65,23 +65,45 @@ export default function Products() {
                     </div>
                   </Reveal>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {items.map((p, i) => (
-                      <Reveal key={p.slug} delay={stagger(i)}>
+                  {/* A single-product pillar in a 3-up grid leaves two empty columns,
+                      so lay a lone product out as a full-width horizontal card instead. */}
+                  {items.length === 1 ? (
+                    items.map((p) => (
+                      <Reveal key={p.slug}>
                         <Link href={`/products/${p.slug}`}>
-                          <div className="group h-full bg-white rounded-2xl border border-[#E8E4DC] p-6 hover:border-[#C5A059]/40 hover:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] transition-all duration-300 cursor-pointer flex flex-col">
-                            <h3 className="font-display font-semibold text-[#2C2C2C] text-lg mb-1">{p.title}</h3>
-                            <p className="text-sm text-[#C5A059] mb-3">{p.eyebrow}</p>
-                            <p className="text-sm text-[#2C2C2C]/65 leading-relaxed flex-1">{p.blurb}</p>
-                            <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#2C2C2C] group-hover:gap-2.5 transition-all">
+                          <div className="group bg-white rounded-2xl border border-[#E8E4DC] p-6 sm:p-8 hover:border-[#C5A059]/40 hover:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] transition-all duration-300 cursor-pointer flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
+                            <div className="sm:flex-1">
+                              <h3 className="font-display font-semibold text-[#2C2C2C] text-xl mb-1">{p.title}</h3>
+                              <p className="text-sm text-[#C5A059] mb-3">{p.eyebrow}</p>
+                              <p className="text-sm text-[#2C2C2C]/65 leading-relaxed max-w-2xl">{p.blurb}</p>
+                            </div>
+                            <span className="flex-shrink-0 inline-flex items-center gap-1.5 text-sm font-medium text-[#2C2C2C] group-hover:gap-2.5 transition-all">
                               Inquire about {p.title}
                               <ArrowRight className="w-4 h-4 text-[#C5A059]" />
                             </span>
                           </div>
                         </Link>
                       </Reveal>
-                    ))}
-                  </div>
+                    ))
+                  ) : (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                      {items.map((p, i) => (
+                        <Reveal key={p.slug} delay={stagger(i)}>
+                          <Link href={`/products/${p.slug}`}>
+                            <div className="group h-full bg-white rounded-2xl border border-[#E8E4DC] p-6 hover:border-[#C5A059]/40 hover:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] transition-all duration-300 cursor-pointer flex flex-col">
+                              <h3 className="font-display font-semibold text-[#2C2C2C] text-lg mb-1">{p.title}</h3>
+                              <p className="text-sm text-[#C5A059] mb-3">{p.eyebrow}</p>
+                              <p className="text-sm text-[#2C2C2C]/65 leading-relaxed flex-1">{p.blurb}</p>
+                              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#2C2C2C] group-hover:gap-2.5 transition-all">
+                                Inquire about {p.title}
+                                <ArrowRight className="w-4 h-4 text-[#C5A059]" />
+                              </span>
+                            </div>
+                          </Link>
+                        </Reveal>
+                      ))}
+                    </div>
+                  )}
                 </div>
               );
             })}

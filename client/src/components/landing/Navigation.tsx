@@ -22,6 +22,7 @@ export function Navigation() {
   const links = [
     { href: "/", label: "Home" },
     { href: "/products", label: "Products" },
+    { href: "/about", label: "Our Story" },
     { href: "/app", label: "The App" },
     { href: "/food-chart", label: "Food Chart" },
     { href: "/blog", label: "Blog" },

@@ -8,6 +8,7 @@ import Landing from "@/pages/Landing";
 import AppPage from "@/pages/AppPage";
 import Products from "@/pages/Products";
 import ProductDetail from "@/pages/ProductDetail";
+import About from "@/pages/About";
 import StateMortgageProtection from "@/pages/StateMortgageProtection";
 import GetCoverage from "@/pages/GetCoverage";
 import Blog from "@/pages/Blog";
@@ -65,6 +66,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Landing} />
       <Route path="/app" component={AppPage} />
+      <Route path="/about" component={About} />
       <Route path="/products" component={Products} />
       <Route path="/products/:slug" component={ProductDetail} />
       <Route path="/mortgage-protection/:state" component={StateMortgageProtection} />

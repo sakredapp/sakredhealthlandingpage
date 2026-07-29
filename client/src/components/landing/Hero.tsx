@@ -28,13 +28,13 @@ export function Hero() {
           {...fadeUp(0)}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-[#C5A059]/30 shadow-sm mb-8"
         >
-          <span className="text-sm font-medium text-[#2C2C2C]/80">Health & Life Insurance for Individuals, Families & Small Businesses</span>
+          <span className="text-sm font-medium text-[#2C2C2C]/80">Mortgage Protection · Life · Health · Retirement</span>
         </motion.div>
 
         <StampHeading
           as="h1"
-          text="Affordable health coverage"
-          accent="without the confusion"
+          text="Protect what you've built"
+          accent="and who you built it for"
           delay={0.1}
           className="text-4xl sm:text-5xl lg:text-6xl font-display font-normal tracking-tight text-[#2C2C2C] mb-6"
         />
@@ -43,14 +43,17 @@ export function Hero() {
           {...fadeUp(0.35)}
           className="text-lg sm:text-xl text-[#2C2C2C]/70 max-w-3xl mx-auto mb-4 leading-relaxed"
         >
-          No employer plan? Don't qualify for an ACA subsidy? You're not stuck. Sakred Health is a licensed life and health insurance agency — with a dedicated agent who actually picks up the phone and finds the right plan for your situation.
+          The house, the people in it, and the years ahead. Sakred Health is a licensed life and health
+          insurance agency — with a dedicated agent who actually picks up the phone and builds coverage
+          around your life, not a script.
         </motion.p>
 
         <motion.p
           {...fadeUp(0.42)}
           className="text-base text-[#2C2C2C]/55 max-w-2xl mx-auto mb-8"
         >
-          Major medical, short-term, dental & vision, Medicare, group plans, term & whole life, IULs, annuities, mortgage protection (MPI) and final expense — all through one agency, one agent, one app.
+          Mortgage protection, term & whole life, IULs, final expense, major medical, short-term, dental &
+          vision, and retirement annuities — all through one agency, one agent, one app.
         </motion.p>
 
         <motion.div
