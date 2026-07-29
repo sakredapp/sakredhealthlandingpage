@@ -30,8 +30,14 @@ const img = (suffix: string, alt: string): SiteImage => ({
   alt,
 });
 
-// NOTE: the other five images in this bucket (1, 3, 4, 8, 9) are reserved for a
-// different site — do not wire them into this one.
+// Second set lives in the bucket's secondset/ folder.
+const img2 = (suffix: string, alt: string): SiteImage => ({
+  src: `${BUCKET}/secondset/ChatGPT%20Image%20Jul%2029,%202026,%20${suffix}.png`,
+  alt,
+});
+
+// NOTE: the other five images in the bucket ROOT (1, 3, 4, 8, 9) are reserved
+// for a different site — do not wire them into this one.
 export const SITE_IMAGES = {
   /** Wide band on the home page, between the products and the calculator. */
   homeFamilyBand: img(
@@ -58,6 +64,32 @@ export const SITE_IMAGES = {
       "An older couple laughing together on the front steps of their home",
     ),
   ] as SiteImage[],
+
+  /** Beside the Who We Help accordion on the home page. */
+  whoWeHelp: img2(
+    "05_16_32%20PM%20(7)",
+    "Parents stretching on the living room floor while their toddler plays between them",
+  ),
+  /** Beside the how-it-works step walker (home + state pages). */
+  howItWorks: img2(
+    "05_16_32%20PM%20(8)",
+    "A father kneeling to tie his daughter's shoe at the front door as she heads to school",
+  ),
+  /** Beside the Why Private reason list. */
+  whyPrivate: img2(
+    "05_16_32%20PM%20(6)",
+    "A mother and teenage daughter talking on the front steps of their home after a morning workout",
+  ),
+  /** Beside the FAQ accordion. */
+  faq: img2(
+    "05_16_33%20PM%20(9)",
+    "An adult daughter sharing tea and a long conversation with her elderly mother at home",
+  ),
+  /** Small overlapping photo on the home family band. */
+  familyBandOverlay: img2(
+    "05_16_33%20PM%20(10)",
+    "Kids helping their mother cook dinner in the family kitchen",
+  ),
 } satisfies Record<string, SiteImage | SiteImage[]>;
 
 export const hasImage = (img: SiteImage | undefined): boolean => !!img?.src;

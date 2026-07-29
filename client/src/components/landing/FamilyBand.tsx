@@ -61,12 +61,22 @@ export function FamilyBand() {
 
           {withPhoto && (
             <Reveal delay={0.1} y={24}>
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full h-auto rounded-3xl border border-[#E8E4DC] shadow-[0_20px_50px_-20px_rgba(197,160,89,0.4)]"
-                loading="lazy"
-              />
+              <div className="relative">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-auto rounded-3xl border border-[#E8E4DC] shadow-[0_20px_50px_-20px_rgba(197,160,89,0.4)]"
+                  loading="lazy"
+                />
+                {hasImage(SITE_IMAGES.familyBandOverlay) && (
+                  <img
+                    src={SITE_IMAGES.familyBandOverlay.src}
+                    alt={SITE_IMAGES.familyBandOverlay.alt}
+                    className="absolute -bottom-6 -left-4 sm:-left-8 w-36 sm:w-48 aspect-[4/3] object-cover rounded-2xl border-4 border-white shadow-xl -rotate-3"
+                    loading="lazy"
+                  />
+                )}
+              </div>
             </Reveal>
           )}
         </div>

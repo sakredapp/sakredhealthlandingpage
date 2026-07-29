@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useInView, useReducedMotion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Reveal, StampHeading } from "@/components/motion";
+import { SITE_IMAGES, hasImage } from "@/data/site-images";
 
 const steps = [
   {
@@ -60,9 +61,12 @@ export function HowGettingCoveredWorks() {
     return () => timers.forEach(clearTimeout);
   }, [inView, reduced]);
 
+  const photo = SITE_IMAGES.howItWorks;
+  const withPhoto = hasImage(photo);
+
   return (
     <section className="py-12 lg:py-20 bg-[#FDFBF7]">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className={`${withPhoto ? "max-w-6xl" : "max-w-3xl"} mx-auto px-4 sm:px-6 lg:px-8`}>
         <div className="text-center mb-10">
           <Reveal>
             <p className="text-sm font-medium uppercase tracking-wider text-[#C5A059] mb-3">How It Works</p>
@@ -78,6 +82,20 @@ export function HowGettingCoveredWorks() {
             </p>
           </Reveal>
         </div>
+
+        <div className={withPhoto ? "grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start" : ""}>
+        {withPhoto && (
+          <Reveal delay={0.1} y={24} className="order-last lg:order-first">
+            <div className="lg:sticky lg:top-28">
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                className="w-full h-64 sm:h-80 lg:h-[440px] object-cover rounded-3xl border border-[#E8E4DC] shadow-[0_20px_50px_-25px_rgba(197,160,89,0.45)]"
+                loading="lazy"
+              />
+            </div>
+          </Reveal>
+        )}
 
         <div ref={ref} className="space-y-3">
           {steps.map((step, i) => {
@@ -115,6 +133,7 @@ export function HowGettingCoveredWorks() {
               </Reveal>
             );
           })}
+        </div>
         </div>
       </div>
     </section>

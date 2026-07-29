@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { MapPin, Check } from "lucide-react";
 import { Reveal, StampHeading, stagger } from "@/components/motion";
+import { SITE_IMAGES, hasImage } from "@/data/site-images";
 
 const reasons = [
   {
@@ -31,9 +32,12 @@ const reasons = [
 ];
 
 export function WhyPrivate() {
+  const photo = SITE_IMAGES.whyPrivate;
+  const withPhoto = hasImage(photo);
+
   return (
     <section className="py-12 lg:py-20 bg-[#F6F4EF]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className={`${withPhoto ? "max-w-6xl" : "max-w-4xl"} mx-auto px-4 sm:px-6 lg:px-8`}>
         <div className="text-center mb-12">
           <Reveal>
             <div className="w-12 h-1 bg-gradient-to-r from-[#C5A059] to-[#EBD598] mx-auto mb-6" />
@@ -49,6 +53,20 @@ export function WhyPrivate() {
             </p>
           </Reveal>
         </div>
+
+        <div className={withPhoto ? "grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start" : ""}>
+        {withPhoto && (
+          <Reveal delay={0.1} y={24} className="order-last lg:order-first">
+            <div className="lg:sticky lg:top-28">
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                className="w-full h-64 sm:h-80 lg:h-[500px] object-cover rounded-3xl border border-[#E8E4DC] shadow-[0_20px_50px_-25px_rgba(197,160,89,0.45)]"
+                loading="lazy"
+              />
+            </div>
+          </Reveal>
+        )}
 
         <div className="space-y-4">
           {reasons.map((reason, index) => (
@@ -72,6 +90,7 @@ export function WhyPrivate() {
               </div>
             </Reveal>
           ))}
+        </div>
         </div>
 
         <Reveal delay={0.1} className="text-center mt-10">

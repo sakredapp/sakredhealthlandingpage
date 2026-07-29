@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Reveal, StampHeading, stagger } from "@/components/motion";
+import { SITE_IMAGES, hasImage } from "@/data/site-images";
 import {
   Accordion,
   AccordionContent,
@@ -51,9 +52,12 @@ const faqs = [
 ];
 
 export function FAQ() {
+  const photo = SITE_IMAGES.faq;
+  const withPhoto = hasImage(photo);
+
   return (
     <section className="py-12 lg:py-20 bg-[#FDFBF7]">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className={`${withPhoto ? "max-w-6xl" : "max-w-3xl"} mx-auto px-4 sm:px-6 lg:px-8`}>
         <div className="text-center mb-16">
           <Reveal>
             <div className="w-12 h-1 bg-gradient-to-r from-[#C5A059] to-[#EBD598] mx-auto mb-6" />
@@ -70,6 +74,7 @@ export function FAQ() {
           </Reveal>
         </div>
 
+        <div className={withPhoto ? "grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start" : ""}>
         <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, index) => (
             <Reveal key={index} delay={stagger(index, 0.05, 0.3)}>
@@ -90,6 +95,20 @@ export function FAQ() {
             </Reveal>
           ))}
         </Accordion>
+
+        {withPhoto && (
+          <Reveal delay={0.12} y={24}>
+            <div className="lg:sticky lg:top-28">
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                className="w-full h-64 sm:h-80 lg:h-[500px] object-cover rounded-3xl border border-[#E8E4DC] shadow-[0_20px_50px_-25px_rgba(197,160,89,0.45)]"
+                loading="lazy"
+              />
+            </div>
+          </Reveal>
+        )}
+        </div>
 
         <Reveal delay={0.1} className="text-center mt-12">
           <p className="text-[#0F172A]/70">
