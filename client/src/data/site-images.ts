@@ -34,6 +34,7 @@ const img = (suffix: string, alt: string): SiteImage => ({
 //   04_45_52%20PM%20(1) — parents helping daughter with homework in the living room
 //   04_45_52%20PM%20(3) — mom reviewing paperwork at the kitchen table with her son
 //   04_45_52%20PM%20(4) — older couple reading a plan document together at home
+//   04_45_53%20PM%20(8) — dad kneeling to tie his daughter's shoe by the front door
 //   04_45_53%20PM%20(9) — adult daughter laughing over tea with her elderly mother
 export const SITE_IMAGES = {
   /** Wide band on the home page, between the products and the calculator. */
@@ -53,8 +54,8 @@ export const SITE_IMAGES = {
       "A mother chopping fresh vegetables for dinner while her two kids help in the kitchen",
     ),
     img(
-      "04_45_53%20PM%20(8)",
-      "A father kneeling to tie his daughter's shoe by the front door before school",
+      "04_45_53%20PM%20(7)",
+      "A family stretching together on the living room floor, a mother guiding her young daughter",
     ),
     img(
       "04_45_53%20PM%20(6)",
