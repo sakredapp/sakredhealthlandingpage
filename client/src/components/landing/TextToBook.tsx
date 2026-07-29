@@ -15,7 +15,10 @@ import { Reveal, StampHeading } from "@/components/motion";
  * yet the API returns null and the button falls back to /get-coverage, so
  * nothing is ever broken in production.
  */
-const SMS_BODY = "Hi Sakred Health — I'd like to talk about coverage options.";
+// The home page is general and health-led, so route its text-ins to the HEALTH
+// keyword — a text with no keyword lands unassigned in the CRM. Product and state
+// pages use their own product keyword via <TextCta />.
+const SMS_KEYWORD = "HEALTH";
 
 type Msg = { from: "user" | "agent"; text: string };
 
@@ -169,7 +172,7 @@ export function TextToBook() {
 
   const hasNumber = !!number;
   // iOS + most Android accept the `?&body=` form.
-  const smsHref = `sms:${number ?? ""}?&body=${encodeURIComponent(SMS_BODY)}`;
+  const smsHref = `sms:${number ?? ""}?&body=${encodeURIComponent(SMS_KEYWORD)}`;
 
   return (
     <section className="py-12 lg:py-20 bg-[#F9F9F7]">
@@ -225,7 +228,7 @@ export function TextToBook() {
                   </a>
                   {display && (
                     <p className="text-sm text-[#2C2C2C]/50 mt-3">
-                      Or text us at{" "}
+                      Or text <span className="font-semibold text-[#2C2C2C]">{SMS_KEYWORD}</span> to{" "}
                       <a href={smsHref} className="font-medium text-[#C5A059] hover:underline">
                         {display}
                       </a>

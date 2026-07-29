@@ -41,6 +41,9 @@ export function TextCta({
 
   const href = `sms:${number}?&body=${encodeURIComponent(keyword)}`;
 
+  // The keyword MUST be in the visible label, not just the link: people who read
+  // the number off the page and type it into Messages themselves never hit the
+  // link, and a text with no keyword lands unassigned in the CRM.
   return (
     <a href={href} className={className}>
       <Button
@@ -49,7 +52,7 @@ export function TextCta({
         className="rounded-full border-[#C5A059] text-[#2C2C2C] hover:bg-[#C5A059]/5 px-8 py-6 text-base font-normal"
       >
         <MessageSquareText className="w-4 h-4 mr-2" />
-        Text us{display ? `: ${display}` : ""}
+        {display ? `Text ${keyword} to ${display}` : `Text ${keyword}`}
       </Button>
     </a>
   );
