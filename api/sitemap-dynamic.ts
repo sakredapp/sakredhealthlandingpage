@@ -23,11 +23,25 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       "retirement-annuities",
     ];
 
+    // Per-state mortgage-protection landing pages (keep in sync with
+    // client/src/data/states.ts). Each has real, cited Census data.
+    const stateSlugs = [
+      "alabama","alaska","arizona","arkansas","california","colorado","connecticut",
+      "delaware","florida","georgia","hawaii","idaho","illinois","indiana","iowa",
+      "kansas","kentucky","louisiana","maine","maryland","massachusetts","michigan",
+      "minnesota","mississippi","missouri","montana","nebraska","nevada","new-hampshire",
+      "new-jersey","new-mexico","new-york","north-carolina","north-dakota","ohio",
+      "oklahoma","oregon","pennsylvania","rhode-island","south-carolina","south-dakota",
+      "tennessee","texas","utah","vermont","virginia","washington","west-virginia",
+      "wisconsin","wyoming","washington-dc",
+    ];
+
     const staticPages = [
       { loc: "/", priority: "1.0", changefreq: "weekly" },
       { loc: "/get-coverage", priority: "0.9", changefreq: "weekly" },
       { loc: "/products", priority: "0.9", changefreq: "weekly" },
       ...productSlugs.map((s) => ({ loc: `/products/${s}`, priority: "0.8", changefreq: "monthly" })),
+      ...stateSlugs.map((s) => ({ loc: `/mortgage-protection/${s}`, priority: "0.7", changefreq: "monthly" })),
       { loc: "/blog", priority: "0.9", changefreq: "daily" },
       { loc: "/app", priority: "0.8", changefreq: "weekly" },
       { loc: "/food-chart", priority: "0.8", changefreq: "monthly" },

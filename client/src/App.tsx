@@ -8,6 +8,7 @@ import Landing from "@/pages/Landing";
 import AppPage from "@/pages/AppPage";
 import Products from "@/pages/Products";
 import ProductDetail from "@/pages/ProductDetail";
+import StateMortgageProtection from "@/pages/StateMortgageProtection";
 import GetCoverage from "@/pages/GetCoverage";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
@@ -66,6 +67,7 @@ function Router() {
       <Route path="/app" component={AppPage} />
       <Route path="/products" component={Products} />
       <Route path="/products/:slug" component={ProductDetail} />
+      <Route path="/mortgage-protection/:state" component={StateMortgageProtection} />
       <Route path="/get-coverage" component={GetCoverage} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
