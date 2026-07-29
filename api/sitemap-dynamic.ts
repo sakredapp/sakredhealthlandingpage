@@ -14,9 +14,21 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const posts = await getBlogPosts();
     const baseUrl = "https://sakredhealth.com";
 
+    // Product route slugs (keep in sync with client/src/data/products.ts).
+    const productSlugs = [
+      "mortgage-protection",
+      "final-expense",
+      "life-insurance",
+      "health-insurance",
+      "medicare",
+      "retirement-annuities",
+    ];
+
     const staticPages = [
       { loc: "/", priority: "1.0", changefreq: "weekly" },
       { loc: "/get-coverage", priority: "0.9", changefreq: "weekly" },
+      { loc: "/products", priority: "0.9", changefreq: "weekly" },
+      ...productSlugs.map((s) => ({ loc: `/products/${s}`, priority: "0.8", changefreq: "monthly" })),
       { loc: "/blog", priority: "0.9", changefreq: "daily" },
       { loc: "/app", priority: "0.8", changefreq: "weekly" },
       { loc: "/food-chart", priority: "0.8", changefreq: "monthly" },

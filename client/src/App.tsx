@@ -6,6 +6,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Landing from "@/pages/Landing";
 import AppPage from "@/pages/AppPage";
+import Products from "@/pages/Products";
+import ProductDetail from "@/pages/ProductDetail";
 import GetCoverage from "@/pages/GetCoverage";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
@@ -62,6 +64,8 @@ function Router() {
     <Switch>
       <Route path="/" component={Landing} />
       <Route path="/app" component={AppPage} />
+      <Route path="/products" component={Products} />
+      <Route path="/products/:slug" component={ProductDetail} />
       <Route path="/get-coverage" component={GetCoverage} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
