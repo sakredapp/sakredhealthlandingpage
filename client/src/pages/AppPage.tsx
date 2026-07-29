@@ -8,11 +8,19 @@ import { AppHero } from "@/components/landing/AppHero";
 import { AppFAQ } from "@/components/landing/AppFAQ";
 import { AppCTA } from "@/components/landing/AppCTA";
 import { AppPricing } from "@/components/landing/AppPricing";
+import { useSeo } from "@/lib/seo";
 import type { Testimonial } from "@shared/schema";
 
 export default function AppPage() {
   const { data: testimonials, isLoading: testimonialsLoading } = useQuery<Testimonial[]>({
     queryKey: ["/api/testimonials", { featured: true }],
+  });
+
+  useSeo({
+    title: "The Sakred Health App — Coverage, Wellness & Care in One Place",
+    description:
+      "Manage your policy, chat with your dedicated agent, follow guided wellness routines, sync wearables, and read the library — all in the Sakred Health app for iOS, Android, and web.",
+    canonical: "/app",
   });
 
   return (

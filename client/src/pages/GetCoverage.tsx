@@ -5,6 +5,7 @@ import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
 import { MapPin, ArrowRight, CheckCircle2, Loader2, ShieldCheck } from "lucide-react";
 import { Link } from "wouter";
+import { useSeo } from "@/lib/seo";
 
 const US_STATES = [
   "AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA",
@@ -72,6 +73,13 @@ export default function GetCoverage() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useSeo({
+    title: "Get Coverage — Free Consultation with a Licensed Agent | Sakred Health",
+    description:
+      "Answer a few quick questions and a licensed Sakred Health agent will reach out with private health and life coverage options built around your budget. Free, no obligation.",
+    canonical: "/get-coverage",
+  });
 
   function update(field: keyof FormData, value: string | boolean) {
     setForm((prev) => ({ ...prev, [field]: value }));

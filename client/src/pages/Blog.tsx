@@ -9,6 +9,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useSeo } from "@/lib/seo";
 import type { BlogPost } from "@shared/schema";
 
 const containerVariants = {
@@ -57,6 +58,13 @@ export default function Blog() {
 
   const { data: posts, isLoading } = useQuery<BlogPost[]>({
     queryKey: ["/api/blog-posts"],
+  });
+
+  useSeo({
+    title: "Wellness Insights — Health, Habits & Coverage | Sakred Health",
+    description:
+      "Articles, guides, and tips on preventative wellness, healthy habits, and navigating health and life insurance — from the Sakred Health team.",
+    canonical: "/blog",
   });
 
   const allTags = posts
