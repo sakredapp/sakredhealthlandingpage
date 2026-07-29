@@ -460,16 +460,31 @@ export default function GetCoverage() {
                 )}
 
                 {/* SMS consent */}
+                {/* TCPA consent — required on EVERY intake. Natively required, validated
+                    in JS, and the API rejects any lead without it. */}
                 <div className="border-t border-[#E8E4DC] pt-6">
                   <label className="flex items-start gap-3 cursor-pointer group">
                     <input
                       type="checkbox"
+                      required
                       checked={form.sms_consent}
                       onChange={(e) => update("sms_consent", e.target.checked)}
                       className="mt-1 h-4 w-4 rounded border-[#E8E4DC] text-[#C5A059] focus:ring-[#C5A059]/40 cursor-pointer"
                     />
-                    <span className="text-sm text-[#2C2C2C]/60 leading-relaxed">
-                      I agree to receive SMS messages from Sakred Health and its agents regarding my insurance inquiry. Message &amp; data rates may apply. Reply STOP to opt out at any time. *
+                    <span className="text-xs text-[#2C2C2C]/60 leading-relaxed">
+                      By checking this box, I agree to receive calls and text messages from Sakred Health and
+                      its licensed agents at the number provided — including messages sent using automated
+                      technology or prerecorded voice — regarding my inquiry and coverage options. Consent is
+                      not a condition of purchase. Message frequency varies; message &amp; data rates may apply.
+                      Reply STOP to cancel or HELP for help. I have read the{" "}
+                      <a href="/privacy-policy" target="_blank" rel="noopener" className="text-[#C5A059] underline">
+                        Privacy Policy
+                      </a>{" "}
+                      and{" "}
+                      <a href="/terms-of-service" target="_blank" rel="noopener" className="text-[#C5A059] underline">
+                        Terms of Service
+                      </a>
+                      . *
                     </span>
                   </label>
                 </div>

@@ -62,11 +62,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (!email.includes("@")) return res.status(400).json({ error: "A valid email is required" });
     if (!/^[A-Z]{2}$/.test(state)) return res.status(400).json({ error: "State is required" });
 
-    // Consent gates TEXTING on the CRM side, not lead creation. Forward the
-    // actual value: the form UI requires the checkbox, so real leads are always
-    // consented; consent:false is used only for no-text verification leads. Only
-    // stamp the consent record when consent was actually given.
-    const smsConsent = body.sms_consent === true;
+    // SMS consent is REQUIRED on every intake — no lead is forwarded without a
+    // real, checked consent box. This is our TCPA record. The form UI also
+    // requires the checkbox; this is the server-side guarantee behind it.
+    if (body.sms_consent !== true) {
+      return res.status(400).json({ error: "SMS consent is required" });
+    }
 
     // Forward everything the form sent (minus the product id) with core fields
     // normalized. Extra fields pass straight through; the CRM captures them.
@@ -78,13 +79,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       phone,
       email,
       state,
-      sms_consent: smsConsent,
-      ...(smsConsent
-        ? {
-            form_consent_source: "sakred_health_landing_page",
-            form_consent_timestamp: new Date().toISOString(),
-          }
-        : {}),
+      sms_consent: true,
+      form_consent_source: "sakred_health_landing_page",
+      form_consent_timestamp: new Date().toISOString(),
     };
 
     const url = `${CRM_LEADS_URL}?campaign=${encodeURIComponent(campaign)}`;
