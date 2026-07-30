@@ -312,3 +312,5 @@ export function fenceLanguage(className: unknown): string {
 }
 
 export const DATA_FENCE_LANGUAGES = ["stats", "chart"];
+
+export default DataFence;

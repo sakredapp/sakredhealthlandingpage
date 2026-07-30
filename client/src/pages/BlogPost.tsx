@@ -3,11 +3,38 @@ import { useParams, Link } from "wouter";
 import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import {
-  DataFence,
-  fenceLanguage,
-  DATA_FENCE_LANGUAGES,
-} from "@/components/blog/BlogDataBlocks";
+import { lazy, Suspense } from "react";
+
+// Lazy so recharts/framer chart code loads only on posts that embed data blocks
+const DataFence = lazy(() => import("@/components/blog/BlogDataBlocks"));
+
+const DATA_FENCE_LANGUAGES = ["stats", "chart"];
+function fenceLanguage(className: unknown): string {
+  const m = /language-(\w+)/.exec(typeof className === "string" ? className : "");
+  return m ? m[1] : "";
+}
+
+// ```stats / ```chart fences render as animated data blocks
+const markdownComponents = {
+  pre: (props: any) => {
+    const lang = fenceLanguage(props?.children?.props?.className);
+    if (DATA_FENCE_LANGUAGES.includes(lang)) {
+      return <>{props.children}</>;
+    }
+    return <pre {...props} />;
+  },
+  code: (props: any) => {
+    const lang = fenceLanguage(props?.className);
+    if (DATA_FENCE_LANGUAGES.includes(lang)) {
+      return (
+        <Suspense fallback={null}>
+          <DataFence language={lang} raw={String(props.children ?? "")} />
+        </Suspense>
+      );
+    }
+    return <code {...props} />;
+  },
+};
 import { Calendar, User, ArrowLeft, Clock, ArrowRight } from "lucide-react";
 import { Navigation } from "@/components/landing/Navigation";
 import { Footer } from "@/components/landing/Footer";
@@ -339,25 +366,7 @@ export default function BlogPost() {
             <div className="prose prose-lg max-w-none prose-headings:text-[#0F172A] prose-headings:font-display prose-headings:font-normal prose-p:text-[#0F172A]/70 prose-p:leading-relaxed prose-a:text-[#C5A059] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#0F172A] prose-ul:text-[#0F172A]/70 prose-ol:text-[#0F172A]/70 prose-blockquote:border-l-[#C5A059] prose-blockquote:text-[#0F172A]/70 prose-blockquote:italic">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
-                components={{
-                  // ```stats / ```chart fences render as animated data blocks
-                  pre: (props: any) => {
-                    const lang = fenceLanguage(props?.children?.props?.className);
-                    if (DATA_FENCE_LANGUAGES.includes(lang)) {
-                      return <>{props.children}</>;
-                    }
-                    return <pre {...props} />;
-                  },
-                  code: (props: any) => {
-                    const lang = fenceLanguage(props?.className);
-                    if (DATA_FENCE_LANGUAGES.includes(lang)) {
-                      return (
-                        <DataFence language={lang} raw={String(props.children ?? "")} />
-                      );
-                    }
-                    return <code {...props} />;
-                  },
-                }}
+                components={markdownComponents}
               >
                 {post.content}
               </ReactMarkdown>
