@@ -76,7 +76,7 @@ export const PRODUCTS: Product[] = [
     pillar: "Life",
     title: "Final Expense",
     eyebrow: "Nobody should have to pass a hat",
-    tagline: "Cover the goodbye, not your family.",
+    tagline: "So the hardest week never comes with a bill.",
     blurb:
       "A small whole-life policy that covers funeral, burial, and end-of-life costs — so the people you love aren't left with the bill during the hardest week of their lives.",
     points: [

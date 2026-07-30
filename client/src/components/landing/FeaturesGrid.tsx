@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Search, MessageCircle, Heart, BookOpen, Compass, ShoppingBag, Watch } from "lucide-react";
 
 interface Feature {
-  icon: React.ReactNode;
   title: string;
   description: string;
   tag: string;
@@ -10,49 +8,41 @@ interface Feature {
 
 const features: Feature[] = [
   {
-    icon: <ShieldCheck className="w-6 h-6" />,
     title: "All Your Coverage, One View",
     description: "Policy cards for Health, Life, and Annuity — premiums, deductibles, member IDs, and documents, together in the Policy tab.",
     tag: "Policy",
   },
   {
-    icon: <Search className="w-6 h-6" />,
     title: "Plain-Language Policy Search",
     description: "Ask a question about any plan and get highlighted answers pulled straight from your own policy documents.",
     tag: "Policy",
   },
   {
-    icon: <MessageCircle className="w-6 h-6" />,
     title: "Your Agent + Sakred AI",
     description: "HIPAA-compliant messaging, callbacks, and support requests with your dedicated agent — plus Sakred AI for instant answers.",
     tag: "Policy",
   },
   {
-    icon: <Heart className="w-6 h-6" />,
     title: "Guided Routines & Daily Habits",
     description: "Multi-day terrain protocols — liver & detox, gut reset, digestion, sleep — with daily habit tracking and streaks.",
     tag: "Habits",
   },
   {
-    icon: <BookOpen className="w-6 h-6" />,
     title: "eBook Library & Reader",
     description: "A storefront and your owned library, with an in-app reader and audio — the education behind every protocol.",
     tag: "Library",
   },
   {
-    icon: <Compass className="w-6 h-6" />,
     title: "Terrain Translator & Ask",
     description: "Type a symptom to see root causes and what to do, search across your books, or send a question to your team.",
     tag: "Library",
   },
   {
-    icon: <ShoppingBag className="w-6 h-6" />,
     title: "Curated Marketplace",
     description: "Shop the trusted products a protocol calls for — search, browse, and build routine shopping lists in a tap.",
     tag: "Shop",
   },
   {
-    icon: <Watch className="w-6 h-6" />,
     title: "Wearable Sync",
     description: "Connect Garmin, Oura, WHOOP, and Fitbit for real-time sync — steps, heart rate, HRV, sleep, recovery, and strain.",
     tag: "Wearables",
@@ -92,9 +82,7 @@ export function FeaturesGrid() {
               transition={{ duration: 0.4, delay: index * 0.05 }}
               className="group bg-white rounded-2xl border border-[#E8E4DC] p-6 hover:border-[#C5A059]/40 hover:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] transition-all duration-300"
             >
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#C5A059]/10 to-[#EBD598]/10 flex items-center justify-center text-[#C5A059] mb-4 group-hover:from-[#C5A059]/20 group-hover:to-[#EBD598]/20 transition-colors duration-300">
-                {feature.icon}
-              </div>
+              <div className="w-8 h-[3px] rounded-full bg-gradient-to-r from-[#C5A059] to-[#EBD598] mb-4 group-hover:w-12 transition-all duration-300" />
               <span className="text-[10px] font-semibold uppercase tracking-widest text-[#C5A059]/70 mb-2 block">
                 {feature.tag}
               </span>

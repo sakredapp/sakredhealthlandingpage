@@ -27,12 +27,12 @@ export default function AppPage() {
     <div className="min-h-screen bg-[#FDFBF7]">
       <Navigation />
       <AppHero />
-      <FeaturesGrid />
       <AppShowcase />
+      <AppCTA />
+      <FeaturesGrid />
       <Testimonials testimonials={testimonials || []} isLoading={testimonialsLoading} />
       <AppPricing />
       <AppFAQ />
-      <AppCTA />
       <Footer />
     </div>
   );

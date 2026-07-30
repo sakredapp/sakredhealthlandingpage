@@ -4,27 +4,38 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider, useQuery } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { lazy, Suspense } from "react";
 import Landing from "@/pages/Landing";
-import AppPage from "@/pages/AppPage";
-import Products from "@/pages/Products";
-import ProductDetail from "@/pages/ProductDetail";
-import About from "@/pages/About";
-import StateMortgageProtection from "@/pages/StateMortgageProtection";
-import GetCoverage from "@/pages/GetCoverage";
-import Blog from "@/pages/Blog";
-import BlogPost from "@/pages/BlogPost";
-import AdminBlogList from "@/pages/AdminBlogList";
-import AdminBlogEditor from "@/pages/AdminBlogEditor";
-import AdminLogin from "@/pages/AdminLogin";
-import AIPrivacy from "@/pages/AIPrivacy";
-import PrivacyPolicy from "@/pages/PrivacyPolicy";
-import TermsOfService from "@/pages/TermsOfService";
-import Terms from "@/pages/Terms";
-import SmsOptIn from "@/pages/SmsOptIn";
-import FoodChart from "@/pages/FoodChart";
-import DeleteAccount from "@/pages/DeleteAccount";
-import DeleteData from "@/pages/DeleteData";
-import NotFound from "@/pages/not-found";
+
+// Every non-home route is code-split so the landing page ships only its own JS.
+const AppPage = lazy(() => import("@/pages/AppPage"));
+const Products = lazy(() => import("@/pages/Products"));
+const ProductDetail = lazy(() => import("@/pages/ProductDetail"));
+const About = lazy(() => import("@/pages/About"));
+const StateMortgageProtection = lazy(() => import("@/pages/StateMortgageProtection"));
+const GetCoverage = lazy(() => import("@/pages/GetCoverage"));
+const Blog = lazy(() => import("@/pages/Blog"));
+const BlogPost = lazy(() => import("@/pages/BlogPost"));
+const AdminBlogList = lazy(() => import("@/pages/AdminBlogList"));
+const AdminBlogEditor = lazy(() => import("@/pages/AdminBlogEditor"));
+const AdminLogin = lazy(() => import("@/pages/AdminLogin"));
+const AIPrivacy = lazy(() => import("@/pages/AIPrivacy"));
+const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
+const Terms = lazy(() => import("@/pages/Terms"));
+const SmsOptIn = lazy(() => import("@/pages/SmsOptIn"));
+const FoodChart = lazy(() => import("@/pages/FoodChart"));
+const DeleteAccount = lazy(() => import("@/pages/DeleteAccount"));
+const DeleteData = lazy(() => import("@/pages/DeleteData"));
+const NotFound = lazy(() => import("@/pages/not-found"));
+
+function RouteFallback() {
+  return (
+    <div className="min-h-screen bg-[#F9F9F7] flex items-center justify-center">
+      <div className="w-8 h-8 rounded-full border-2 border-[#C5A059]/30 border-t-[#C5A059] animate-spin" />
+    </div>
+  );
+}
 
 function RequireAdminAuth({ children }: { children: React.ReactNode }) {
   const [, navigate] = useLocation();
@@ -63,6 +74,7 @@ function RequireAdminAuth({ children }: { children: React.ReactNode }) {
 
 function Router() {
   return (
+    <Suspense fallback={<RouteFallback />}>
     <Switch>
       <Route path="/" component={Landing} />
       <Route path="/app" component={AppPage} />
@@ -94,6 +106,7 @@ function Router() {
       <Route path="/delete-data" component={DeleteData} />
       <Route component={NotFound} />
     </Switch>
+    </Suspense>
   );
 }
 

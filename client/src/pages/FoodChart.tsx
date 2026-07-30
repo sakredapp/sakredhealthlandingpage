@@ -287,44 +287,36 @@ const foodData: FoodCategory[] = [
   },
 ];
 
-function PHLevelIndicator({ level }: { level: PHLevel }) {
-  const config = levelConfig[level];
-  const segments = 7;
-  const activeSegment = config.position;
-
+function LevelDots({ level }: { level: PHLevel }) {
+  const activeSegment = levelConfig[level].position;
   return (
-    <div className="flex items-center gap-1.5" data-testid={`ph-indicator-${level}`}>
-      <div className="flex gap-0.5">
-        {Array.from({ length: segments }).map((_, i) => {
-          const segmentLevel = (3 - i) as PHLevel;
-          const segmentConfig = levelConfig[segmentLevel];
-          const isActive = i + 1 === activeSegment;
-          
-          return (
-            <div
-              key={i}
-              className={`w-2 h-4 rounded-sm transition-all ${
-                isActive 
-                  ? "ring-1 ring-offset-1 ring-[#0F172A]/20" 
-                  : "opacity-30"
-              }`}
-              style={{ 
-                backgroundColor: isActive ? segmentConfig.color : segmentConfig.color,
-              }}
-            />
-          );
-        })}
-      </div>
-      <span 
-        className="text-xs font-medium px-2 py-0.5 rounded-full"
-        style={{ 
-          backgroundColor: config.bgColor,
-          color: config.color,
-        }}
-      >
-        {config.label}
-      </span>
+    <div className="flex gap-0.5" data-testid={`ph-indicator-${level}`}>
+      {Array.from({ length: 7 }).map((_, i) => {
+        const segmentConfig = levelConfig[(3 - i) as PHLevel];
+        const isActive = i + 1 === activeSegment;
+        return (
+          <div
+            key={i}
+            className={`w-2 h-4 rounded-sm transition-all ${
+              isActive ? "ring-1 ring-offset-1 ring-[#0F172A]/20" : "opacity-30"
+            }`}
+            style={{ backgroundColor: segmentConfig.color }}
+          />
+        );
+      })}
     </div>
+  );
+}
+
+function LevelPill({ level }: { level: PHLevel }) {
+  const config = levelConfig[level];
+  return (
+    <span
+      className="text-[11px] sm:text-xs font-medium px-2 py-0.5 rounded-full whitespace-nowrap shrink-0"
+      style={{ backgroundColor: config.bgColor, color: config.color }}
+    >
+      {config.label}
+    </span>
   );
 }
 
@@ -403,13 +395,23 @@ function CategoryAccordionContent({ category }: { category: FoodCategory }) {
             filteredItems.map((item, index) => (
               <div
                 key={`${item.name}-${index}`}
-                className="flex items-center justify-between gap-4 py-2 px-3 rounded-lg hover:bg-[#F9F9F7]/80 transition-colors"
+                className="py-2.5 px-3 rounded-lg hover:bg-[#F9F9F7]/80 transition-colors"
                 data-testid={`food-item-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
               >
-                <span className="text-[#0F172A]/80 text-sm">
-                  {item.name}
-                </span>
-                <PHLevelIndicator level={item.level} />
+                {/* Uniform rows: name + pill share the top line (truncate, never wrap);
+                    the dot scale gets its own line on mobile, inline on desktop. */}
+                <div className="flex items-center justify-between gap-3">
+                  <span className="text-[#0F172A]/80 text-sm min-w-0 flex-1 truncate">
+                    {item.name}
+                  </span>
+                  <div className="hidden sm:block">
+                    <LevelDots level={item.level} />
+                  </div>
+                  <LevelPill level={item.level} />
+                </div>
+                <div className="mt-1.5 sm:hidden">
+                  <LevelDots level={item.level} />
+                </div>
               </div>
             ))
           )}
