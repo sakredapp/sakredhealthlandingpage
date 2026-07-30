@@ -3,15 +3,20 @@ import { ArrowLeft, Check } from "lucide-react";
 import { Navigation } from "@/components/landing/Navigation";
 import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
-import { Reveal } from "@/components/motion";
+import { Reveal, StampHeading } from "@/components/motion";
 import { TextCta } from "@/components/TextCta";
 import { ProductIntakeForm } from "@/components/ProductIntakeForm";
+import { ProductDemo } from "@/components/ProductDemos";
+import { CoverageCalculator } from "@/components/landing/CoverageCalculator";
+import { MortgageCalculator } from "@/components/landing/MortgageCalculator";
 import { useSeo, SITE_URL } from "@/lib/seo";
 import { getProduct } from "@/data/products";
+import { PRODUCT_PAGE_IMAGES, hasImage } from "@/data/site-images";
 
 export default function ProductDetail() {
   const { slug = "" } = useParams<{ slug: string }>();
   const product = getProduct(slug);
+  const photo = PRODUCT_PAGE_IMAGES[slug];
 
   useSeo({
     title: product
@@ -55,7 +60,7 @@ export default function ProductDetail() {
   return (
     <div className="min-h-screen bg-[#FDFBF7]">
       <Navigation />
-      <main className="pt-24 pb-20">
+      <main className="pt-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/products" className="inline-flex items-center gap-2 text-[#C5A059] hover:underline mb-8">
             <ArrowLeft className="w-4 h-4" />
@@ -63,7 +68,7 @@ export default function ProductDetail() {
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-            {/* copy */}
+            {/* copy + animated demo */}
             <div>
               <Reveal>
                 <p className="text-sm font-medium uppercase tracking-wider text-[#C5A059] mb-3">{product.pillar}</p>
@@ -87,14 +92,24 @@ export default function ProductDetail() {
                 </ul>
               </Reveal>
 
-              <Reveal delay={0.2}>
+              {/* Animated "what this coverage does" vignette */}
+              <Reveal delay={0.18}>
+                <div className="mb-8">
+                  <ProductDemo slug={product.slug} />
+                </div>
+              </Reveal>
+
+              <Reveal delay={0.24}>
                 <TextCta keyword={product.smsKeyword} />
               </Reveal>
             </div>
 
             {/* form */}
             <Reveal delay={0.1} y={24}>
-              <div className="bg-white rounded-2xl border border-[#E8E4DC] p-6 sm:p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+              <div
+                id="inquire"
+                className="scroll-mt-28 bg-white rounded-2xl border border-[#E8E4DC] p-6 sm:p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] lg:sticky lg:top-24"
+              >
                 <h2 className="font-display font-semibold text-xl text-[#2C2C2C] mb-1">
                   Inquire about {product.title}
                 </h2>
@@ -110,6 +125,65 @@ export default function ProductDetail() {
             </Reveal>
           </div>
         </div>
+
+        {/* Deep-dive sections */}
+        {product.detailSections?.map((section) => (
+          <section key={section.heading} className="py-12 lg:py-16 mt-12 bg-[#F6F4EF]">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div
+                className={`grid grid-cols-1 ${
+                  photo && hasImage(photo) ? "lg:grid-cols-[1fr_360px]" : ""
+                } gap-10 items-start`}
+              >
+                <div>
+                  <StampHeading
+                    text={section.heading}
+                    className="text-2xl sm:text-3xl font-display font-normal text-[#2C2C2C] mb-5"
+                  />
+                  {section.intro?.map((p) => (
+                    <Reveal key={p.slice(0, 24)} delay={0.08}>
+                      <p className="text-[#2C2C2C]/70 leading-relaxed mb-4">{p}</p>
+                    </Reveal>
+                  ))}
+                  <Reveal delay={0.12}>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 my-6">
+                      {section.items.map((item) => (
+                        <li key={item.name} className="flex items-start gap-2.5">
+                          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#C5A059] shrink-0" />
+                          <span className="text-sm sm:text-base leading-snug">
+                            <span className="font-display font-semibold text-[#2C2C2C]">{item.name}</span>
+                            <span className="text-[#2C2C2C]/55"> — {item.description}</span>
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </Reveal>
+                  {section.outro && (
+                    <Reveal delay={0.16}>
+                      <p className="text-[#2C2C2C]/70 leading-relaxed">{section.outro}</p>
+                    </Reveal>
+                  )}
+                </div>
+                {photo && hasImage(photo) && (
+                  <Reveal delay={0.14} y={24}>
+                    <img
+                      src={photo.src}
+                      alt={photo.alt}
+                      className="w-full h-64 lg:h-80 object-cover rounded-3xl border border-[#E8E4DC] shadow-[0_20px_50px_-25px_rgba(197,160,89,0.45)]"
+                      loading="lazy"
+                    />
+                  </Reveal>
+                )}
+              </div>
+            </div>
+          </section>
+        ))}
+
+        {/* Interactive estimators */}
+        {product.slug === "mortgage-protection" && <MortgageCalculator ctaHref="#inquire" />}
+        {product.slug === "life-insurance" && (
+          <CoverageCalculator ctaHref="#inquire" ctaLabel="Get a real quote" />
+        )}
       </main>
       <Footer />
     </div>

@@ -8,8 +8,9 @@ import type { StateInfo } from "./states";
  * (emotional, logical, legacy, plain, protective, peace-of-mind) deterministically
  * by state, and (2) weave in sentences derived from that state's *own* numbers —
  * how its home prices rank among the 51 — so no two pages share a paragraph.
- * Everything stays factually accurate and on-brand (mortgage protection = life
- * insurance that pays off the loan; never PMI, a loan, or a refinance).
+ * Everything stays factually accurate and on-brand. Copy rule: mortgage
+ * protection is "insurance coverage built around your home loan" — never call
+ * it life insurance, and never PMI, a loan, or a refinance.
  */
 interface Stat {
   name: string;
@@ -88,7 +89,7 @@ const VARIANTS: Variant[] = [
     tone: "emotional",
     headline: { text: "The people you love", accent: "shouldn't inherit the payment." },
     intro: (c) =>
-      `In ${c.name}, the typical home is worth ${c.hv}, and a mortgage runs about ${c.oc} a month — roughly ${c.annual} a year. If something happened to you tomorrow, that bill wouldn't pause for grief. Mortgage protection is life insurance that clears the balance, so the people you love keep the home instead of the payment. ${rankPhrase(c, "price")}`,
+      `In ${c.name}, the typical home is worth ${c.hv}, and a mortgage runs about ${c.oc} a month — roughly ${c.annual} a year. If something happened to you tomorrow, that bill wouldn't pause for grief. Mortgage protection is coverage that clears the balance, so the people you love keep the home instead of the payment. ${rankPhrase(c, "price")}`,
     points: [
       "Pays the remaining mortgage so your family isn't forced to sell in the hardest season of their lives",
       "Built around your loan and your budget — you choose how much protection feels right",
@@ -105,7 +106,7 @@ const VARIANTS: Variant[] = [
     tone: "logical",
     headline: { text: "Your mortgage doesn't stop", accent: "if your paycheck does." },
     intro: (c) =>
-      `The median ${c.name} home carries a ${c.hv} value and about ${c.oc}/month in owner costs — ${c.annual} a year that has to come from somewhere. Mortgage protection is term life insurance sized to that balance: if you pass during the term, it pays the loan off. Not PMI, not a refinance — a straightforward hedge on the largest debt most households carry. ${rankPhrase(c, "market")}`,
+      `The median ${c.name} home carries a ${c.hv} value and about ${c.oc}/month in owner costs — ${c.annual} a year that has to come from somewhere. Mortgage protection is coverage sized to that balance: if you pass during the term, it pays the loan off. Not PMI, not a refinance — a straightforward hedge on the largest debt most households carry. ${rankPhrase(c, "market")}`,
     points: [
       "Death benefit sized to your outstanding balance, so the loan is covered, not guessed at",
       "Level term you can match to the years left on the mortgage",
@@ -139,7 +140,7 @@ const VARIANTS: Variant[] = [
     tone: "plain",
     headline: { text: "Pay off the house", accent: "even if you're not here to." },
     intro: (c) =>
-      `Straight talk: a home in ${c.name} runs about ${c.hv}, and the payment is around ${c.oc} a month. Mortgage protection is a life insurance policy that pays off whatever's left on your loan if you die. That's it. Your family keeps the house and skips the payment. It isn't a loan, a refinance, or PMI. ${rankPhrase(c, "cost")}`,
+      `Straight talk: a home in ${c.name} runs about ${c.hv}, and the payment is around ${c.oc} a month. Mortgage protection is coverage that pays off whatever's left on your loan if you die. That's it. Your family keeps the house and skips the payment. It isn't a loan, a refinance, or PMI. ${rankPhrase(c, "cost")}`,
     points: [
       "If you pass, it pays off the mortgage balance — simple as that",
       "You pick the amount and term; we size it to your budget",

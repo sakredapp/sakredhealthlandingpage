@@ -84,13 +84,14 @@ export function HowGettingCoveredWorks() {
         </div>
 
         <div className={withPhoto ? "grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start" : ""}>
+        {/* Photo leads the section on mobile (under the heading) and sits sticky-left on desktop. */}
         {withPhoto && (
-          <Reveal delay={0.1} y={24} className="order-last lg:order-first">
+          <Reveal delay={0.1} y={16}>
             <div className="lg:sticky lg:top-28">
               <img
                 src={photo.src}
                 alt={photo.alt}
-                className="w-full h-64 sm:h-80 lg:h-[440px] object-cover rounded-3xl border border-[#E8E4DC] shadow-[0_20px_50px_-25px_rgba(197,160,89,0.45)]"
+                className="w-full h-52 sm:h-64 lg:h-[440px] object-cover rounded-3xl border border-[#E8E4DC] shadow-[0_16px_40px_-25px_rgba(197,160,89,0.45)]"
                 loading="lazy"
               />
             </div>

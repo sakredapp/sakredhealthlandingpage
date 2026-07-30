@@ -7,6 +7,8 @@ import { Reveal, StampHeading } from "@/components/motion";
 import { getStateCopy } from "@/data/state-copy";
 import { TextCta } from "@/components/TextCta";
 import { ProductIntakeForm } from "@/components/ProductIntakeForm";
+import { MortgageDemo, DemoDisclaimer } from "@/components/ProductDemos";
+import { MortgageCalculator } from "@/components/landing/MortgageCalculator";
 import { useSeo, SITE_URL } from "@/lib/seo";
 import { getState } from "@/data/states";
 import { getProduct } from "@/data/products";
@@ -117,6 +119,14 @@ export default function StateMortgageProtection() {
                     ))}
                   </ul>
                 </Reveal>
+                {/* Animated "what this coverage does" vignette */}
+                <Reveal delay={0.2}>
+                  <div className="mb-8">
+                    <MortgageDemo />
+                    <DemoDisclaimer />
+                  </div>
+                </Reveal>
+
                 <Reveal delay={0.24}>
                   <TextCta keyword={mp.smsKeyword} state={state.abbr} />
                 </Reveal>
@@ -124,7 +134,9 @@ export default function StateMortgageProtection() {
 
               {/* Form */}
               <Reveal delay={0.1} y={24}>
-                <div className="bg-white rounded-2xl border border-[#E8E4DC] p-6 sm:p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+                <div
+                  id="inquire"
+                  className="scroll-mt-28 bg-white rounded-2xl border border-[#E8E4DC] p-6 sm:p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] lg:sticky lg:top-24">
                   <h2 className="font-display font-semibold text-xl text-[#2C2C2C] mb-1">
                     {copy.formHeading}
                   </h2>
@@ -178,6 +190,8 @@ export default function StateMortgageProtection() {
             </Reveal>
           </div>
         </section>
+
+        <MortgageCalculator ctaHref="#inquire" />
       </main>
       <Footer />
     </div>

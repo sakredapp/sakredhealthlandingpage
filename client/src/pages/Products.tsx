@@ -54,14 +54,10 @@ export default function Products() {
               return (
                 <div key={pillar.name}>
                   <Reveal>
-                    <div className="flex items-baseline gap-4 mb-6">
-                      <span className="font-display font-bold text-2xl text-[#C5A059]">
-                        {String(pi + 1).padStart(2, "0")}
-                      </span>
-                      <div>
-                        <h2 className="font-display font-semibold text-2xl text-[#2C2C2C]">{pillar.name}</h2>
-                        <p className="text-sm text-[#2C2C2C]/55">{pillar.blurb}</p>
-                      </div>
+                    <div className="flex items-baseline gap-3 mb-6">
+                      <h2 className="font-display font-semibold text-2xl text-[#2C2C2C]">{pillar.name}</h2>
+                      <span className="h-px flex-1 bg-gradient-to-r from-[#C5A059]/40 to-transparent" />
+                      <p className="text-sm text-[#2C2C2C]/55">{pillar.blurb}</p>
                     </div>
                   </Reveal>
 
@@ -86,7 +82,7 @@ export default function Products() {
                       </Reveal>
                     ))
                   ) : (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div className={`grid grid-cols-1 sm:grid-cols-2 ${items.length >= 3 ? "lg:grid-cols-3" : ""} gap-5`}>
                       {items.map((p, i) => (
                         <Reveal key={p.slug} delay={stagger(i)}>
                           <Link href={`/products/${p.slug}`}>

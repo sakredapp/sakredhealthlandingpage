@@ -21,12 +21,16 @@ import { setCorsHeaders } from "./_lib/auth.js";
  */
 const CRM_LEADS_URL = "https://www.sakredcrm.com/api/webhooks/leads";
 
-const CAMPAIGN_ENV: Record<string, string> = {
-  "mortgage-protection": "CRM_CAMPAIGN_MORTGAGE_PROTECTION",
-  "health-insurance": "CRM_CAMPAIGN_HEALTH_INSURANCE",
-  "final-expense": "CRM_CAMPAIGN_FINAL_EXPENSE",
-  "life-insurance": "CRM_CAMPAIGN_LIFE_INSURANCE",
-  "retirement-annuities": "CRM_CAMPAIGN_ANNUITY",
+// Env names tried in order — first one set wins. ACA falls back to the health
+// campaign until the CRM stands up a dedicated ACA campaign (set
+// CRM_CAMPAIGN_ACA when they do; no code change needed).
+const CAMPAIGN_ENV: Record<string, string[]> = {
+  "mortgage-protection": ["CRM_CAMPAIGN_MORTGAGE_PROTECTION"],
+  "health-insurance": ["CRM_CAMPAIGN_HEALTH_INSURANCE"],
+  "aca-plans": ["CRM_CAMPAIGN_ACA", "CRM_CAMPAIGN_HEALTH_INSURANCE"],
+  "final-expense": ["CRM_CAMPAIGN_FINAL_EXPENSE"],
+  "life-insurance": ["CRM_CAMPAIGN_LIFE_INSURANCE"],
+  "retirement-annuities": ["CRM_CAMPAIGN_ANNUITY"],
 };
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -38,10 +42,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const body = (req.body || {}) as Record<string, unknown>;
 
     const product = String(body.product || "").trim().toLowerCase();
-    const envName = CAMPAIGN_ENV[product];
-    if (!envName) return res.status(400).json({ error: "Unknown product" });
+    const envNames = CAMPAIGN_ENV[product];
+    if (!envNames) return res.status(400).json({ error: "Unknown product" });
 
-    const campaign = process.env[envName];
+    const campaign = envNames.map((n) => process.env[n]).find(Boolean);
     if (!campaign) {
       // Campaign not wired up yet — tell the client to fall back to text/call.
       return res.status(503).json({

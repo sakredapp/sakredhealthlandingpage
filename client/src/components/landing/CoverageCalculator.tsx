@@ -18,7 +18,13 @@ function suggestedCoverage(income: number, years: number, dependents: number): n
 const SLIDER =
   "w-full h-2 rounded-full appearance-none cursor-pointer bg-[#EDE9E0] [accent-color:#C5A059]";
 
-export function CoverageCalculator() {
+interface Props {
+  /** Where the CTA goes. "#..." renders a plain anchor (same-page scroll). */
+  ctaHref?: string;
+  ctaLabel?: string;
+}
+
+export function CoverageCalculator({ ctaHref = "/products", ctaLabel = "Get a real quote" }: Props) {
   const [income, setIncome] = useState(85_000);
   const [years, setYears] = useState(20);
   const [dependents, setDependents] = useState(2);
@@ -124,15 +130,27 @@ export function CoverageCalculator() {
                 <p className="text-sm text-[#2C2C2C]/55 mb-6">
                   A common income-replacement estimate — not a quote or an offer of coverage.
                 </p>
-                <Link href="/products">
-                  <Button
-                    size="lg"
-                    className="rounded-full btn-gold-gradient text-[#2C2C2C] px-8 py-6 text-base font-normal shadow-lg shadow-[#C5A059]/20 hover:shadow-[#C5A059]/40 hover:-translate-y-0.5 transition-all border border-[#C5A059]"
-                  >
-                    <MapPin className="w-4 h-4 mr-2" />
-                    Get a real quote
-                  </Button>
-                </Link>
+                {ctaHref.startsWith("#") ? (
+                  <a href={ctaHref}>
+                    <Button
+                      size="lg"
+                      className="rounded-full btn-gold-gradient text-[#2C2C2C] px-8 py-6 text-base font-normal shadow-lg shadow-[#C5A059]/20 hover:shadow-[#C5A059]/40 hover:-translate-y-0.5 transition-all border border-[#C5A059]"
+                    >
+                      <MapPin className="w-4 h-4 mr-2" />
+                      {ctaLabel}
+                    </Button>
+                  </a>
+                ) : (
+                  <Link href={ctaHref}>
+                    <Button
+                      size="lg"
+                      className="rounded-full btn-gold-gradient text-[#2C2C2C] px-8 py-6 text-base font-normal shadow-lg shadow-[#C5A059]/20 hover:shadow-[#C5A059]/40 hover:-translate-y-0.5 transition-all border border-[#C5A059]"
+                    >
+                      <MapPin className="w-4 h-4 mr-2" />
+                      {ctaLabel}
+                    </Button>
+                  </Link>
+                )}
               </div>
             </div>
           </div>

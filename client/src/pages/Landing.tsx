@@ -5,9 +5,7 @@ import { InsuranceFeatures } from "@/components/landing/InsuranceFeatures";
 import { WhoWeHelp } from "@/components/landing/WhoWeHelp";
 import { HowGettingCoveredWorks } from "@/components/landing/HowGettingCoveredWorks";
 import { CarrierPartners } from "@/components/landing/CarrierPartners";
-import { WhyPrivate } from "@/components/landing/WhyPrivate";
 import { FamilyBand } from "@/components/landing/FamilyBand";
-import { CoverageCalculator } from "@/components/landing/CoverageCalculator";
 import { FAQ } from "@/components/landing/FAQ";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
@@ -33,9 +31,7 @@ export default function Landing() {
       <WhoWeHelp />
       <HowGettingCoveredWorks />
       <CarrierPartners />
-      <WhyPrivate />
       <FamilyBand />
-      <CoverageCalculator />
       <InsuranceFeatures />
       <FAQ />
       <FinalCTA />

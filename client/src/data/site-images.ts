@@ -75,21 +75,23 @@ export const SITE_IMAGES = {
     "05_16_32%20PM%20(8)",
     "A father kneeling to tie his daughter's shoe at the front door as she heads to school",
   ),
-  /** Beside the Why Private reason list. */
-  whyPrivate: img2(
-    "05_16_32%20PM%20(6)",
-    "A mother and teenage daughter talking on the front steps of their home after a morning workout",
-  ),
-  /** Beside the FAQ accordion. */
-  faq: img2(
-    "05_16_33%20PM%20(9)",
-    "An adult daughter sharing tea and a long conversation with her elderly mother at home",
-  ),
   /** Small overlapping photo on the home family band. */
   familyBandOverlay: img2(
     "05_16_33%20PM%20(10)",
     "Kids helping their mother cook dinner in the family kitchen",
   ),
 } satisfies Record<string, SiteImage | SiteImage[]>;
+
+/** Photo shown on a product detail page, keyed by product slug. */
+export const PRODUCT_PAGE_IMAGES: Record<string, SiteImage> = {
+  "life-insurance": img2(
+    "05_16_32%20PM%20(6)",
+    "A mother and teenage daughter talking on the front steps of their home after a morning workout",
+  ),
+  "final-expense": img2(
+    "05_16_33%20PM%20(9)",
+    "An adult daughter sharing tea and a long conversation with her elderly mother at home",
+  ),
+};
 
 export const hasImage = (img: SiteImage | undefined): boolean => !!img?.src;

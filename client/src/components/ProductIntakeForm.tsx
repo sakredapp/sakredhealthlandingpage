@@ -206,11 +206,14 @@ export function ProductIntakeForm({ product, productTitle, amountLabel, defaultS
             onChange={(e) => update("sms_consent", e.target.checked)}
             className="mt-1 h-4 w-4 rounded border-[#E8E4DC] text-[#C5A059] focus:ring-[#C5A059]/40 cursor-pointer" />
           <span className="text-xs text-[#2C2C2C]/60 leading-relaxed">
-            By checking this box, I agree to receive calls and text messages from Sakred Health and its
-            licensed agents at the number provided — including messages sent using automated technology or
-            prerecorded voice — regarding my inquiry and coverage options. Consent is not a condition of
-            purchase. Message frequency varies; message &amp; data rates may apply. Reply STOP to cancel or
-            HELP for help. I have read the{" "}
+            By checking this box and clicking submit, I give Sakred Health and a licensed insurance agent
+            acting on its behalf my prior express written consent to contact me about insurance products and
+            services at the phone number and email address I provided — including by live telephone call,
+            SMS text message, automatic telephone dialing system, and artificial or prerecorded voice — even
+            if my number is listed on a federal, state, or company Do Not Call registry. Consent is not a
+            condition of any purchase. Message frequency varies and message &amp; data rates may apply. I can
+            revoke consent at any time, including by replying STOP to any text or HELP for assistance. I have
+            read the{" "}
             <a href="/privacy-policy" target="_blank" rel="noopener" className="text-[#C5A059] underline">
               Privacy Policy
             </a>{" "}

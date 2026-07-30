@@ -1,6 +1,5 @@
 import { Link } from "wouter";
 import { Reveal, StampHeading, stagger } from "@/components/motion";
-import { SITE_IMAGES, hasImage } from "@/data/site-images";
 import {
   Accordion,
   AccordionContent,
@@ -22,12 +21,12 @@ const faqs = [
     answer: "On the health side: major medical (PPO, HMO, EPO), ACA/Marketplace plans, limited medical, fixed indemnity, short-term medical, hospital indemnity, dental & vision, DVH bundles, supplemental (accident, cancer, critical illness), disability income, Medicare (supplement & advantage), and group employer-sponsored plans. On the life and retirement side: term life, whole life, Indexed Universal Life (IUL), Mortgage Protection Insurance (MPI), final expense, and annuities.",
   },
   {
-    question: "Do you offer life insurance and annuities?",
-    answer: "Yes. Your health is part of your life — so we make sure every box is checked, not just one. We offer term life (10/20/30-year), whole life, Indexed Universal Life (IUL), Mortgage Protection Insurance (MPI — term life sized to pay off your mortgage if something happens to you, not a loan), final expense (small whole life for funeral and end-of-life costs), and annuities (fixed, indexed, and immediate options for guaranteed retirement income). Your dedicated agent handles both your health and life coverage so you have one person who knows your full picture.",
+    question: "Do you offer general life insurance and annuities?",
+    answer: "Yes. Your health is part of your life — so we make sure every box is checked, not just one. Our General Life products include term life (10/20/30-year), whole life, and Indexed Universal Life (IUL). We also offer Mortgage Protection (coverage sized to pay off your mortgage if something happens to you — not a loan), final expense (small policies that cover funeral and end-of-life costs), and annuities (fixed, indexed, and immediate options for guaranteed retirement income). Your dedicated agent handles all of it so you have one person who knows your full picture.",
   },
   {
     question: "Is Mortgage Protection the same as a mortgage or refinance?",
-    answer: "No. Mortgage Protection Insurance (MPI) is a life insurance policy — not a loan, refinance, or lending product. It's term life insurance with a death benefit sized to pay off the remaining balance on your mortgage if you pass away during the term, so your family isn't forced to sell the home. Sakred Health is a licensed life and health insurance agency, not a mortgage lender or broker.",
+    answer: "No. Mortgage Protection Insurance (MPI) is insurance coverage built around your home loan — not a loan, refinance, or lending product. It pays a benefit sized to clear the remaining balance on your mortgage if you pass away during the term, so your family isn't forced to sell the home. Sakred Health is a licensed insurance agency, not a mortgage lender or broker.",
   },
   {
     question: "How is this different from Healthcare.gov or an insurance marketplace?",
@@ -52,12 +51,13 @@ const faqs = [
 ];
 
 export function FAQ() {
-  const photo = SITE_IMAGES.faq;
-  const withPhoto = hasImage(photo);
+  // Two balanced accordion columns on desktop — no photo; the questions are the content.
+  const mid = Math.ceil(faqs.length / 2);
+  const columns = [faqs.slice(0, mid), faqs.slice(mid)];
 
   return (
     <section className="py-12 lg:py-20 bg-[#FDFBF7]">
-      <div className={`${withPhoto ? "max-w-6xl" : "max-w-3xl"} mx-auto px-4 sm:px-6 lg:px-8`}>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Reveal>
             <div className="w-12 h-1 bg-gradient-to-r from-[#C5A059] to-[#EBD598] mx-auto mb-6" />
@@ -74,40 +74,32 @@ export function FAQ() {
           </Reveal>
         </div>
 
-        <div className={withPhoto ? "grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start" : ""}>
-        <Accordion type="single" collapsible className="space-y-4">
-          {faqs.map((faq, index) => (
-            <Reveal key={index} delay={stagger(index, 0.05, 0.3)}>
-              <AccordionItem
-                value={`item-${index}`}
-                className="bg-white rounded-2xl px-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border-0 overflow-hidden"
-              >
-                <AccordionTrigger
-                  className="text-left text-[#0F172A] font-medium py-5 hover:no-underline"
-                  data-testid={`button-faq-${index}`}
-                >
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-[#0F172A]/70 pb-5 leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            </Reveal>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 items-start">
+          {columns.map((column, ci) => (
+            <Accordion key={ci} type="single" collapsible className="space-y-4">
+              {column.map((faq, i) => {
+                const index = ci * mid + i;
+                return (
+                  <Reveal key={index} delay={stagger(i, 0.05, 0.3)}>
+                    <AccordionItem
+                      value={`item-${index}`}
+                      className="bg-white rounded-2xl px-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border-0 overflow-hidden"
+                    >
+                      <AccordionTrigger
+                        className="text-left text-[#0F172A] font-medium py-5 hover:no-underline"
+                        data-testid={`button-faq-${index}`}
+                      >
+                        {faq.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-[#0F172A]/70 pb-5 leading-relaxed">
+                        {faq.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Reveal>
+                );
+              })}
+            </Accordion>
           ))}
-        </Accordion>
-
-        {withPhoto && (
-          <Reveal delay={0.12} y={24}>
-            <div className="lg:sticky lg:top-28">
-              <img
-                src={photo.src}
-                alt={photo.alt}
-                className="w-full h-64 sm:h-80 lg:h-[500px] object-cover rounded-3xl border border-[#E8E4DC] shadow-[0_20px_50px_-25px_rgba(197,160,89,0.45)]"
-                loading="lazy"
-              />
-            </div>
-          </Reveal>
-        )}
         </div>
 
         <Reveal delay={0.1} className="text-center mt-12">

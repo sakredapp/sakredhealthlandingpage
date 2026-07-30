@@ -1,44 +1,43 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Shield, Search, FolderLock, MessageCircle, Activity, UserCheck, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { GlowCard, Reveal, StampHeading, stagger } from "@/components/motion";
 
-interface Feature {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-const features: Feature[] = [
+/**
+ * "What you get" — deliberately icon-free (type + a gold rule carry the design).
+ * The pitch: a real agent, plus the Sakred app / client portal that comes with
+ * every plan.
+ */
+const features: { title: string; description: string }[] = [
   {
-    icon: <UserCheck className="w-6 h-6" />,
-    title: "Your Own Dedicated Agent",
-    description: "A licensed agent assigned to you — not a call center. They know your plan, your family, and your history.",
+    title: "A dedicated licensed agent",
+    description:
+      "A real person assigned to you — not a call center. They know your plan, your family, and your history, and they pick up the phone.",
   },
   {
-    icon: <Shield className="w-6 h-6" />,
-    title: "Coverage That Fits Your Budget",
-    description: "Major medical, short-term, fixed indemnity, supplemental, and more — we find the right plan for your situation.",
+    title: "The Sakred Health app",
+    description:
+      "Your coverage and your wellness in one app — iOS, Android, and web. Policy details, guided routines, habit tracking, and the library, all included.",
   },
   {
-    icon: <Search className="w-6 h-6" />,
-    title: "Plain-Language Policy Search",
-    description: "Ask questions about your plan in plain English and get highlighted answers pulled directly from your policy docs.",
+    title: "A real client portal",
+    description:
+      "ID cards, claims, EOBs, and documents in one secure, HIPAA-compliant place — organized and accessible from your phone, not a shoebox.",
   },
   {
-    icon: <FolderLock className="w-6 h-6" />,
-    title: "Secure Document Vault",
-    description: "ID cards, EOBs, claim letters — encrypted, organized, and always accessible from your phone.",
+    title: "Plain-language policy answers",
+    description:
+      "Ask what's covered in plain English and get answers pulled from your actual policy documents — no decoding insurance jargon.",
   },
   {
-    icon: <MessageCircle className="w-6 h-6" />,
-    title: "Sakred AI + Agent Messaging",
-    description: "Get instant answers from our AI assistant or message your agent directly — all HIPAA-compliant.",
+    title: "Message your agent directly",
+    description:
+      "Questions, claims, callbacks — message your agent or our support team right in the app and track every request to resolution.",
   },
   {
-    icon: <Activity className="w-6 h-6" />,
-    title: "Claims & Support Tracking",
-    description: "Submit tickets, schedule callbacks, and track every claim and resolution in one place.",
+    title: "Wellness, included",
+    description:
+      "Guided routines, habit tracking, and the full library come with every plan at no extra cost — because coverage is the floor, not the goal.",
   },
 ];
 
@@ -57,7 +56,8 @@ export function InsuranceFeatures() {
           />
           <Reveal delay={0.12}>
             <p className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto">
-              Real coverage, a real agent, and a real portal to manage everything — not another faceless insurance marketplace.
+              Every plan comes with a dedicated agent, the Sakred Health app, and a real client
+              portal — not another faceless insurance marketplace.
             </p>
           </Reveal>
         </div>
@@ -66,10 +66,8 @@ export function InsuranceFeatures() {
           {features.map((feature, index) => (
             <Reveal key={feature.title} delay={stagger(index)}>
               <GlowCard className="group h-full bg-white rounded-2xl border border-[#E8E4DC] p-6 hover:border-[#C5A059]/40 hover:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] transition-all duration-300">
-                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#C5A059]/10 to-[#EBD598]/10 flex items-center justify-center text-[#C5A059] mb-4 group-hover:from-[#C5A059]/20 group-hover:to-[#EBD598]/20 transition-colors duration-300">
-                  {feature.icon}
-                </div>
-                <h3 className="font-display font-semibold text-[#2C2C2C] text-sm sm:text-base mb-2">
+                <div className="w-10 h-1 rounded-full bg-gradient-to-r from-[#C5A059] to-[#EBD598] mb-4 group-hover:w-16 transition-all duration-300" />
+                <h3 className="font-display font-semibold text-[#2C2C2C] text-base mb-2">
                   {feature.title}
                 </h3>
                 <p className="text-sm text-[#2C2C2C]/65 leading-relaxed">
@@ -81,13 +79,14 @@ export function InsuranceFeatures() {
         </div>
 
         <Reveal delay={0.1} className="text-center mt-10">
-          <Link href="/products">
+          <Link href="/app">
             <Button
               size="lg"
-              className="rounded-full btn-gold-gradient text-[#2C2C2C] px-8 py-6 text-base font-normal shadow-lg shadow-[#C5A059]/20 hover:shadow-[#C5A059]/40 hover:-translate-y-0.5 transition-all border border-[#C5A059]"
+              variant="outline"
+              className="rounded-full border-[#C5A059] text-[#2C2C2C] hover:bg-[#C5A059]/5 px-8 py-6 text-base font-normal"
             >
-              <MapPin className="w-4 h-4 mr-2" />
-              See Affordable Options Near You
+              See the app
+              <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </Link>
         </Reveal>
