@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "node scripts/sync-blog-content.mjs; vite build && node scripts/prerender-blog.mjs",
+  "buildCommand": "node scripts/sync-blog-content.mjs; vite build && node scripts/prerender-blog.mjs && npx tsx scripts/prerender-pages.ts",
   "outputDirectory": "dist",
   "framework": null,
   "installCommand": "npm install",

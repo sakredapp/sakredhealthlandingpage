@@ -230,8 +230,13 @@ function injectIntoTemplate(template, headExtra, bodyHtml) {
     .replace(/<meta name="description"[^>]*>\s*/g, "")
     .replace(/<link rel="canonical"[^>]*>\s*/g, "")
     .replace(/<meta (?:property="og:|name="twitter:)[^>]*>\s*/g, "");
-  out = out.replace("</head>", `    ${headExtra}\n  </head>`);
-  out = out.replace(/(<div id="root">)([\s\S]*?)(<\/div>)/, `$1${bodyHtml}$3`);
+  // Replacer functions: literal `$1`/`$2` in article text must not be
+  // interpreted as backreferences by String.replace.
+  out = out.replace("</head>", () => `    ${headExtra}\n  </head>`);
+  out = out.replace(
+    /(<div id="root">)([\s\S]*?)(<\/div>)/,
+    (_m, open, _inner, close) => `${open}${bodyHtml}${close}`
+  );
   return out;
 }
 
