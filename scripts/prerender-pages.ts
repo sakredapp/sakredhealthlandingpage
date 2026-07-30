@@ -267,7 +267,38 @@ function main() {
     count++;
   }
 
-  console.log(`[prerender-pages] wrote ${count} static pages (products + states)`);
+  // Lightweight static heads for stable pages the SPA otherwise leaves generic
+  const simplePages: { path: string; title: string; description: string }[] = [
+    {
+      path: "/about",
+      title: "Our Story — Why Sakred Health Exists | Sakred Health",
+      description:
+        "Sakred Health pairs daily-habit wellness with real coverage — life, health, mortgage protection, and retirement — through one licensed agency and a dedicated agent.",
+    },
+    {
+      path: "/get-coverage",
+      title: "Get Coverage — Free Quote in Minutes | Sakred Health",
+      description:
+        "Tell us about your household and get matched with life, health, mortgage protection, or retirement coverage. Licensed in all 50 states. Free consultation.",
+    },
+  ];
+  for (const pg of simplePages) {
+    const head = buildHead({
+      title: pg.title,
+      description: pg.description,
+      path: pg.path,
+      jsonLd: {
+        "@context": "https://schema.org",
+        "@graph": [breadcrumb([{ name: "Home", path: "/" }, { name: pg.title.split(" — ")[0], path: pg.path }])],
+      },
+    });
+    const dir = join(DIST, pg.path.slice(1));
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(join(dir, "index.html"), injectIntoTemplate(template, head, ""));
+    count++;
+  }
+
+  console.log(`[prerender-pages] wrote ${count} static pages (products + states + core)`);
 }
 
 try {
