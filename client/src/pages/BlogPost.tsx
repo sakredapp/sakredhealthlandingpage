@@ -16,14 +16,14 @@ function fenceLanguage(className: unknown): string {
 
 // ```stats / ```chart fences render as animated data blocks
 const markdownComponents = {
-  pre: (props: any) => {
+  pre: ({ node: _node, ...props }: any) => {
     const lang = fenceLanguage(props?.children?.props?.className);
     if (DATA_FENCE_LANGUAGES.includes(lang)) {
       return <>{props.children}</>;
     }
     return <pre {...props} />;
   },
-  code: (props: any) => {
+  code: ({ node: _node, ...props }: any) => {
     const lang = fenceLanguage(props?.className);
     if (DATA_FENCE_LANGUAGES.includes(lang)) {
       return (
