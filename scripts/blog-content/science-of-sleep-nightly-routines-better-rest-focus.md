@@ -58,6 +58,10 @@ Two things follow. First, the fix isn't only "night mode" — it's dimming the w
 
 **Alcohol.** Oura's November 2025 analysis compared alcohol-tagged nights against each member's own surrounding sober nights, across more than 600,000 members:
 
+```chart
+{"type": "hbar", "title": "Alcohol nights vs. each member's sober baseline (% change)", "suffix": "%", "source": "Oura analysis of 600,000+ members, November 2025", "height": 300, "data": [{"label": "Heart rate variability", "value": -15.6}, {"label": "Resting heart rate", "value": 8.2}, {"label": "Sleep Score", "value": -6.8}, {"label": "Total sleep", "value": -5.0}, {"label": "Deep sleep", "value": -5.0}, {"label": "REM sleep", "value": -4.2}, {"label": "Sleep efficiency", "value": -2.2}]}
+```
+
 | Metric | Change on alcohol nights | Percent change |
 | --- | --- | --- |
 | Total sleep | −34.6 min | −5.0% |

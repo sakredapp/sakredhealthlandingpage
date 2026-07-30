@@ -27,6 +27,10 @@ The most useful recent trial is also the most practical. Balban and colleagues a
 
 All four groups improved. The breathing groups improved more on mood, and the exhale-weighted practice improved most.
 
+```chart
+{"type": "hbar", "title": "Average daily improvement in positive affect after 28 days (5 min/day)", "source": "Balban et al., Cell Reports Medicine, 2023", "data": [{"label": "Cyclic hyperventilation", "value": 1.97}, {"label": "Cyclic sighing", "value": 1.89}, {"label": "Box breathing", "value": 1.84}, {"label": "Mindfulness meditation", "value": 1.22}]}
+```
+
 | Practice (5 min/day, 28 days) | n | Avg. daily change in positive affect | Avg. daily change in state anxiety (STAI) |
 |---|---|---|---|
 | Cyclic sighing (double inhale, long exhale) | 27 | +1.89 ± 3.76 (p = 0.025) | −3.85 ± 4.88 |

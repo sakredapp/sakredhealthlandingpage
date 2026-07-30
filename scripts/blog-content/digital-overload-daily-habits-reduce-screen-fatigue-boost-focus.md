@@ -39,6 +39,10 @@ The practical translation: don't rely on willpower to remember the rule. Use a b
 
 ## The attention tax: switching, notifications, and the 23-minute recovery
 
+```chart
+{"type": "bar", "title": "Average attention on a single screen before switching", "suffix": " sec", "source": "Gloria Mark, University of California, Irvine", "data": [{"label": "2004", "value": 150}, {"label": "~2012", "value": 75}, {"label": "Recent", "value": 47}]}
+```
+
 Screen fatigue isn't only ocular. Gloria Mark's two decades of workplace research at UC Irvine quantified what fragmentation costs. Her early observational studies found office workers were interrupted roughly every 11 minutes, and that after a significant interruption it took an average of 23 minutes and 15 seconds to fully return to the original task. Strikingly, her research also found that about 44 percent of interruptions are self-initiated — we break our own focus, unprompted, almost as often as our devices do.
 
 Layer the modern numbers on top of that: if you check your phone 186 to 205 times a day and each check risks a multi-minute refocusing cost, the arithmetic explains why a full day at a screen can feel busy yet unproductive. The 47-second average screen attention span Mark documented isn't a character flaw spreading through the population; it's the predictable result of an environment engineered to interrupt.

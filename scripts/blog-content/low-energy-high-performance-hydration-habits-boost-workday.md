@@ -55,6 +55,10 @@ The 2014 *PLOS ONE* crossover trial gave 50 habitual coffee drinkers either four
 
 What *does* differ is how long fluid is retained. The 2016 beverage hydration index trial in the *American Journal of Clinical Nutrition* gave 72 euhydrated men one liter of each of 13 drinks and collected urine for four hours:
 
+```chart
+{"type": "hbar", "title": "Beverage hydration index (still water = 1.0)", "source": "Maughan et al., American Journal of Clinical Nutrition, 2016", "data": [{"label": "Skim milk", "value": 1.58}, {"label": "Oral rehydration solution", "value": 1.54}, {"label": "Full-fat milk", "value": 1.5}, {"label": "Orange juice", "value": 1.39}, {"label": "Still water", "value": 1.0}]}
+```
+
 | Beverage | Hydration index vs. still water (1.0) |
 | --- | --- |
 | Skim milk | 1.58 |

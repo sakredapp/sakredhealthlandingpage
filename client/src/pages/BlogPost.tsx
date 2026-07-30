@@ -74,6 +74,22 @@ function estimateReadTime(content: string): number {
   return Math.ceil(words / wordsPerMinute);
 }
 
+const INSURANCE_TAGS = new Set([
+  "life-insurance",
+  "final-expense",
+  "mortgage-protection",
+  "coverage-gap",
+  "insurance-statistics",
+  "insurance-data",
+  "funeral-costs",
+  "mortgage-debt",
+  "financial-protection",
+]);
+
+function isInsurancePost(p: BlogPostType): boolean {
+  return (p.tags || []).some((t) => INSURANCE_TAGS.has(t));
+}
+
 function calculateRelevanceScore(currentPost: BlogPostType, otherPost: BlogPostType): number {
   const currentTags = new Set(currentPost.tags || []);
   const currentKeywords = new Set(currentPost.seoKeywords || []);
@@ -239,18 +255,23 @@ export default function BlogPost() {
 
   const recommendedPosts = useMemo(() => {
     if (!post || !allPosts) return [];
-    
+
     const otherPosts = allPosts.filter(p => p.id !== post.id);
-    const scoredPosts = otherPosts.map(p => ({
-      post: p,
-      score: calculateRelevanceScore(post, p)
-    }));
-    
-    return scoredPosts
-      .filter(sp => sp.score > 0)
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 3)
-      .map(sp => sp.post);
+    const scoredPosts = otherPosts
+      .map(p => ({ post: p, score: calculateRelevanceScore(post, p) }))
+      .sort((a, b) => b.score - a.score);
+
+    const picks = scoredPosts.filter(sp => sp.score > 0).slice(0, 3).map(sp => sp.post);
+
+    // Wellness readers always get one path into the coverage content
+    if (!isInsurancePost(post) && !picks.some(isInsurancePost)) {
+      const bestInsurance = scoredPosts.map(sp => sp.post).find(isInsurancePost);
+      if (bestInsurance) {
+        if (picks.length >= 3) picks[2] = bestInsurance;
+        else picks.push(bestInsurance);
+      }
+    }
+    return picks;
   }, [post, allPosts]);
 
   useSEOMetaTags(post);

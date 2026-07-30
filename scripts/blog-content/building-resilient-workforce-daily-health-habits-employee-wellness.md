@@ -35,6 +35,10 @@ And in 2024, University of Oxford researcher William Fleming analyzed survey dat
 
 That's the honest state of the evidence. It does not say employee health doesn't matter. It says *the delivery mechanism* matters — and events, apps, and perks bolted onto an unchanged workday are the wrong mechanism.
 
+```chart
+{"type": "hbar", "title": "Reported return per $1 of wellness spending — note rigor rises, returns fall", "prefix": "$", "source": "Health Affairs (2010); RAND/PepsiCo (2014); the 2019 JAMA RCT found no significant effect", "data": [{"label": "Early meta-analysis (2010)", "value": 3.27}, {"label": "Disease management (RAND)", "value": 3.8}, {"label": "Lifestyle perks (RAND)", "value": 0.5}]}
+```
+
 | Study | Year | Design | Headline finding |
 | --- | --- | --- | --- |
 | Baicker, Cutler & Song (Health Affairs) | 2010 | Meta-analysis of early studies | $3.27 medical savings per $1 spent |

@@ -48,6 +48,10 @@ The American Gut Project — a citizen-science dataset of more than 10,000 gut m
 
 Stanford's 2021 randomized trial, published in *Cell* by Wastyk and colleagues, assigned 36 healthy adults to a 10-week high-fermented-food or high-fiber diet (18 per arm, within a 17-week protocol). The fermented-food group went from 0.4 ± 0.6 servings per day at baseline to 6.3 ± 2.9 servings per day — yogurt, kefir, fermented cottage cheese, kimchi, fermented vegetables, vegetable brine drinks, and kombucha.
 
+```chart
+{"type": "bar", "title": "Inflammatory proteins that decreased over 10 weeks, by diet arm", "source": "Wastyk et al., Cell, 2021 (Stanford fermented-food RCT)", "data": [{"label": "Fermented foods", "value": 19}, {"label": "High fiber", "value": 0}]}
+```
+
 | | Fermented-food arm | High-fiber arm |
 |---|---|---|
 | Change in intake | 0.4 → 6.3 servings/day | 21.5 → 45.1 g fiber/day |

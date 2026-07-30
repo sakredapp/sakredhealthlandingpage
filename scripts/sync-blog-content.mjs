@@ -2,13 +2,13 @@
 // Upserts by slug and only writes rows whose content actually changed, so
 // re-deploys are no-ops. Never fails the build: any error logs and exits 0.
 import { readFileSync, readdirSync } from "fs";
-import { fileURLToPath } from "url";
+import { fileURLToPath, pathToFileURL } from "url";
 import { dirname, join } from "path";
 import pg from "pg";
 
-const CONTENT_DIR = join(dirname(fileURLToPath(import.meta.url)), "blog-content");
+export const CONTENT_DIR = join(dirname(fileURLToPath(import.meta.url)), "blog-content");
 
-function parseArticle(raw, file) {
+export function parseArticle(raw, file) {
   const m = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
   if (!m) throw new Error(`${file}: missing frontmatter block`);
   const meta = {};
@@ -89,6 +89,8 @@ async function main() {
   }
 }
 
-main().catch((err) => {
-  console.error("[sync-blog] sync failed (build continues):", err.message);
-});
+if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
+  main().catch((err) => {
+    console.error("[sync-blog] sync failed (build continues):", err.message);
+  });
+}

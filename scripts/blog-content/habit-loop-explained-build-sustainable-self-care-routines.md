@@ -26,6 +26,10 @@ In 2010, Phillippa Lally and colleagues at University College London ran what re
 
 Fourteen years later, researchers at the University of South Australia pooled every comparable study they could find. Their 2024 systematic review and meta-analysis in *Healthcare*, covering 20 studies and 2,601 participants, reported medians of 59 to 66 days, means of 106 to 154 days, and an outer range of 4 to 335 days. Lead author Ben Singh put it plainly in the university's January 2025 announcement: the 21-day claim is "not evidence-based," and people should not "give up at that mythical three-week mark."
 
+```chart
+{"type": "hbar", "title": "Days for a new habit to become automatic: myth vs. measurement", "suffix": " days", "source": "Maltz (1960); Lally et al. (2010); Singh et al. (2024)", "data": [{"label": "The '21-day' claim (1960)", "value": 21}, {"label": "Measured median (Lally)", "value": 66}, {"label": "Longest observed (Lally)", "value": 254}]}
+```
+
 | Source | Claimed or measured timeline | Evidence base |
 | --- | --- | --- |
 | Maltz, *Psycho-Cybernetics* (1960) | "A minimum of about 21 days" | Clinical observation of surgical patients; no trial |

@@ -37,6 +37,10 @@ In 2019, Mathew White and colleagues at the University of Exeter analyzed respon
 
 The answer had a shape. Below two hours a week, nothing. At and above it, a clear and sustained association.
 
+```chart
+{"type": "line", "title": "Odds of good health and high wellbeing by weekly nature time (1.0 = no nature contact)", "source": "White et al., Scientific Reports, 2019 (n=19,806)", "series": ["Good health", "High wellbeing"], "data": [{"label": "1–59 min", "value": 1.04, "value2": 0.99}, {"label": "60–119", "value": 1.13, "value2": 1.1}, {"label": "120–179", "value": 1.59, "value2": 1.23}, {"label": "180–239", "value": 1.44, "value2": 1.16}, {"label": "240–299", "value": 1.55, "value2": 1.25}, {"label": "300+", "value": 1.33, "value2": 1.2}]}
+```
+
 | Nature contact last week | Odds of reporting good health | Odds of reporting high wellbeing |
 | --- | --- | --- |
 | 1–59 minutes | 1.04 (not significant) | 0.99 (not significant) |
