@@ -8,6 +8,7 @@ import { AppHero } from "@/components/landing/AppHero";
 import { AppFAQ } from "@/components/landing/AppFAQ";
 import { AppCTA } from "@/components/landing/AppCTA";
 import { AppPricing } from "@/components/landing/AppPricing";
+import { ProtocolsSection } from "@/components/landing/ProtocolsSection";
 import { useSeo } from "@/lib/seo";
 import type { Testimonial } from "@shared/schema";
 
@@ -17,9 +18,9 @@ export default function AppPage() {
   });
 
   useSeo({
-    title: "The Sakred Health App — Coverage, Wellness & Care in One Place",
+    title: "Health App with Guided Detox, Gut & Sleep Routines | Sakred Health",
     description:
-      "Manage your policy, chat with your dedicated agent, follow guided wellness routines, sync wearables, and read the library — all in the Sakred Health app for iOS, Android, and web.",
+      "Follow guided multi-day wellness protocols — liver detox, gut reset, lymphatic drainage, and sleep — with daily habit tracking, streaks, reminders, and wearable sync. Plus your policy and agent in the same app.",
     canonical: "/app",
   });
 
@@ -29,6 +30,7 @@ export default function AppPage() {
       <AppHero />
       <AppShowcase />
       <AppCTA />
+      <ProtocolsSection />
       <FeaturesGrid />
       <Testimonials testimonials={testimonials || []} isLoading={testimonialsLoading} />
       <AppPricing />

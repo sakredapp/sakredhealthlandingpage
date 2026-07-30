@@ -13,6 +13,7 @@ import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 import { PRODUCTS, type Product } from "../client/src/data/products";
+import { PROTOCOLS } from "../client/src/data/protocols";
 import { STATES } from "../client/src/data/states";
 import { getStateCopy } from "../client/src/data/state-copy";
 import STATS from "../client/src/data/state-stats.json";
@@ -266,6 +267,64 @@ function main() {
     writeFileSync(join(dir, "index.html"), injectIntoTemplate(template, head, body));
     count++;
   }
+
+  // /app — real crawlable protocol content + MobileApplication schema
+  const appBody = `
+    <main class="pt-24 pb-20 px-4 sm:px-6 lg:px-8 bg-[#FDFBF7]">
+      <article class="max-w-3xl mx-auto prose prose-lg">
+        <h1>The Sakred Health app</h1>
+        <p>Guided multi-day wellness protocols with daily habit tracking, streaks, reminders, and
+        wearable sync — alongside your policy documents and a dedicated agent, in one app for iOS and Android.</p>
+        <h2>Guided programs, scheduled day by day</h2>
+        ${PROTOCOLS.map(
+          (p) => `
+        <section>
+          <h3>${esc(p.name)} — ${p.days} days</h3>
+          <p>${esc(p.summary)}</p>
+          <ul>${p.practices.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
+          <p><a href="/blog/${p.postSlug}">Read the full ${p.days}-day guide</a></p>
+        </section>`
+        ).join("")}
+        <h2>What else is in the app</h2>
+        <ul>
+          <li>Policy cards for health, life, and annuity coverage — premiums, deductibles, member IDs, and documents</li>
+          <li>Plain-language policy search and messaging with your dedicated agent</li>
+          <li>A habits encyclopedia, guided routines, and daily habit tracking with streaks</li>
+          <li>An eBook library with in-app reader and audio</li>
+          <li>Wearable sync for Garmin, Oura, WHOOP, and Fitbit</li>
+        </ul>
+        <p><a href="/get-coverage">Get coverage</a> or browse <a href="/blog">our research library</a>.</p>
+      </article>
+    </main>`;
+  const appHead = buildHead({
+    title: "Health App with Guided Detox, Gut & Sleep Routines | Sakred Health",
+    description:
+      "Guided multi-day wellness protocols — liver detox, gut reset, lymphatic drainage, and sleep — with habit tracking, streaks, reminders, and wearable sync. Plus your policy and agent in one app.",
+    path: "/app",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "MobileApplication",
+          name: "Sakred Health",
+          operatingSystem: "iOS, Android",
+          applicationCategory: "HealthApplication",
+          url: `${BASE_URL}/app`,
+          description:
+            "Guided multi-day wellness protocols with daily habit tracking, streaks, and wearable sync, alongside insurance policy management and a dedicated agent.",
+          featureList: PROTOCOLS.map((p) => `${p.name} (${p.days}-day guided protocol)`).join(", "),
+          publisher: { "@type": "Organization", name: "Sakred Health", url: BASE_URL },
+        },
+        breadcrumb([
+          { name: "Home", path: "/" },
+          { name: "App", path: "/app" },
+        ]),
+      ],
+    },
+  });
+  mkdirSync(join(DIST, "app"), { recursive: true });
+  writeFileSync(join(DIST, "app", "index.html"), injectIntoTemplate(template, appHead, appBody));
+  count++;
 
   // Lightweight static heads for stable pages the SPA otherwise leaves generic
   const simplePages: { path: string; title: string; description: string }[] = [
