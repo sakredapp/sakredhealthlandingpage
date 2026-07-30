@@ -149,7 +149,7 @@ export default function Blog() {
                     <Card className="bg-white rounded-2xl overflow-hidden shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_20px_-4px_rgba(197,160,89,0.25)] hover:border-[#C5A059]/30 transition-all duration-300 border border-transparent cursor-pointer group h-full flex flex-col">
                       {post.featuredImage && (
                         <div className="aspect-[16/9] overflow-hidden bg-gradient-to-br from-[#C5A059]/10 to-[#EBD598]/20">
-                          <img
+                          <img loading="lazy" decoding="async"
                             src={post.featuredImage}
                             alt={post.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

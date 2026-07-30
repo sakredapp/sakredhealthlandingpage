@@ -85,7 +85,7 @@ export function Testimonials({ testimonials, isLoading }: TestimonialsProps) {
                 <div className="flex items-center gap-3 mt-auto">
                   <Avatar className="w-10 h-10">
                     {testimonial.avatarUrl ? (
-                      <img 
+                      <img loading="lazy" decoding="async" 
                         src={testimonial.avatarUrl} 
                         alt={testimonial.name}
                         className="w-full h-full object-cover"
