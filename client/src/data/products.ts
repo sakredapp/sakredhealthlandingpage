@@ -149,7 +149,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     slug: "aca-plans",
-    smsKeyword: "HEALTH",
+    smsKeyword: "ACA",
     pillar: "Health",
     title: "ACA Marketplace Plans",
     eyebrow: "Subsidies, if you qualify — without the government-website maze",
