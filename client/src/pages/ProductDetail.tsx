@@ -4,7 +4,7 @@ import { Navigation } from "@/components/landing/Navigation";
 import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
 import { Reveal, StampHeading } from "@/components/motion";
-import { TextCta } from "@/components/TextCta";
+import { TextUsSection } from "@/components/TextUsSection";
 import { ProductIntakeForm } from "@/components/ProductIntakeForm";
 import { ProductDemo } from "@/components/ProductDemos";
 import { CoverageCalculator } from "@/components/landing/CoverageCalculator";
@@ -94,13 +94,7 @@ export default function ProductDetail() {
 
               {/* Animated "what this coverage does" vignette */}
               <Reveal delay={0.18}>
-                <div className="mb-8">
-                  <ProductDemo slug={product.slug} />
-                </div>
-              </Reveal>
-
-              <Reveal delay={0.24}>
-                <TextCta keyword={product.smsKeyword} />
+                <ProductDemo slug={product.slug} />
               </Reveal>
             </div>
 
@@ -124,6 +118,11 @@ export default function ProductDetail() {
               </div>
             </Reveal>
           </div>
+        </div>
+
+        {/* Dedicated text-us section — product keyword + local number w/ state picker */}
+        <div className="mt-14">
+          <TextUsSection keyword={product.smsKeyword} productTitle={product.title} />
         </div>
 
         {/* Deep-dive sections */}

@@ -5,7 +5,7 @@ import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
 import { Reveal, StampHeading } from "@/components/motion";
 import { getStateCopy } from "@/data/state-copy";
-import { TextCta } from "@/components/TextCta";
+import { TextUsSection } from "@/components/TextUsSection";
 import { ProductIntakeForm } from "@/components/ProductIntakeForm";
 import { MortgageDemo, DemoDisclaimer } from "@/components/ProductDemos";
 import { MortgageCalculator } from "@/components/landing/MortgageCalculator";
@@ -127,9 +127,6 @@ export default function StateMortgageProtection() {
                   </div>
                 </Reveal>
 
-                <Reveal delay={0.24}>
-                  <TextCta keyword={mp.smsKeyword} state={state.abbr} />
-                </Reveal>
               </div>
 
               {/* Form */}
@@ -190,6 +187,8 @@ export default function StateMortgageProtection() {
             </Reveal>
           </div>
         </section>
+
+        <TextUsSection keyword={mp.smsKeyword} productTitle="Mortgage Protection" fixedState={state.abbr} />
 
         <MortgageCalculator ctaHref="#inquire" />
       </main>

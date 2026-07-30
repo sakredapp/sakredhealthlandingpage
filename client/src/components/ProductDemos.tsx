@@ -14,26 +14,30 @@ import { Check } from "lucide-react";
 
 const usd = (n: number) => `$${Math.round(n).toLocaleString()}`;
 
-/** Cycle through phases 0..durations.length-1 while enabled; hold last phase when disabled. */
-function usePhaseLoop(durations: number[], enabled: boolean, holdLast: boolean): number {
-  const [phase, setPhase] = useState(holdLast ? durations.length - 1 : 0);
+/**
+ * Cycle through phases 0..durations.length-1 while enabled.
+ * The demo ALWAYS paints its finished (last) phase first — on first paint,
+ * off-screen, and when scrolling into view — holds it a beat, then cycles.
+ * That way there's never an empty/blank card waiting to "load".
+ */
+function usePhaseLoop(durations: number[], enabled: boolean): number {
+  const last = durations.length - 1;
+  const [phase, setPhase] = useState(last);
   useEffect(() => {
     if (!enabled) return;
-    setPhase(0);
-    let i = 0;
+    let i = last;
+    setPhase(i);
     let t: ReturnType<typeof setTimeout>;
-    const next = () => {
-      t = setTimeout(() => {
-        i = (i + 1) % durations.length;
-        setPhase(i);
-        next();
-      }, durations[i]);
+    const step = () => {
+      i = (i + 1) % durations.length;
+      setPhase(i);
+      t = setTimeout(step, durations[i]);
     };
-    next();
+    t = setTimeout(step, 1600); // hold the resolved state before the first cycle
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enabled]);
-  return enabled ? phase : durations.length - 1;
+  return enabled ? phase : last;
 }
 
 /** Number that eases from `from` to `to` whenever `play` flips true. */
@@ -70,19 +74,33 @@ function Shell({ label, children, footer }: { label: string; children: React.Rea
   );
 }
 
-function Resolved({ show, children }: { show: boolean; children: React.ReactNode }) {
+/**
+ * Status row at the bottom of every demo. Never empty: while the loop runs it
+ * shows a muted "in progress" line with a pulsing gold dot, then flips to the
+ * green resolved state — so the card has no reserved-but-blank space.
+ */
+function Status({ done, pending, resolved }: { done: boolean; pending: string; resolved: string }) {
   return (
-    <motion.div
-      initial={false}
-      animate={{ opacity: show ? 1 : 0, y: show ? 0 : 6 }}
-      transition={{ duration: 0.35 }}
-      className="flex items-center gap-2 rounded-xl bg-emerald-50 border border-emerald-200 px-4 py-3"
+    <div
+      className={`flex items-center gap-2.5 rounded-xl border px-4 py-3 transition-colors duration-300 ${
+        done ? "bg-emerald-50 border-emerald-200" : "bg-[#F6F4EF] border-[#E8E4DC]"
+      }`}
     >
-      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center">
-        <Check className="w-3 h-3 text-white" />
+      {done ? (
+        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center">
+          <Check className="w-3 h-3 text-white" />
+        </span>
+      ) : (
+        <motion.span
+          className="flex-shrink-0 w-2.5 h-2.5 mx-[5px] rounded-full bg-[#C5A059]"
+          animate={{ opacity: [0.35, 1, 0.35] }}
+          transition={{ duration: 1.4, repeat: Infinity }}
+        />
+      )}
+      <span className={`text-sm font-medium ${done ? "text-emerald-800" : "text-[#2C2C2C]/55"}`}>
+        {done ? resolved : pending}
       </span>
-      <span className="text-sm font-medium text-emerald-800">{children}</span>
-    </motion.div>
+    </div>
   );
 }
 
@@ -91,7 +109,7 @@ function useDemoState(count: number, durations: number[]) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { amount: 0.4 });
   const enabled = !reduced && inView;
-  const phase = usePhaseLoop(durations, enabled, !!reduced);
+  const phase = usePhaseLoop(durations, enabled);
   return { ref, phase, reduced: !!reduced };
 }
 
@@ -116,7 +134,7 @@ export function MortgageDemo() {
           <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />
           <span className="text-xs font-medium text-[#2C2C2C]/75">Mortgage protection payout applied</span>
         </motion.div>
-        <Resolved show={phase >= 3}>The house is theirs — free and clear</Resolved>
+        <Status done={phase >= 3} pending="Payout being applied…" resolved="The house is theirs — free and clear" />
       </Shell>
     </div>
   );
@@ -133,38 +151,37 @@ const FE_ITEMS = [
 const FE_TOTAL = FE_ITEMS.reduce((s, i) => s + i.cost, 0);
 
 export function FinalExpenseDemo() {
-  // 0-4 items appear · 5 total · 6 policy pays (rows flip) · 7 resolved
-  const { ref, phase } = useDemoState(8, [500, 420, 420, 420, 420, 1100, 1500, 3600]);
+  // Items are ALWAYS visible — only the billed → paid flip animates.
+  // 0 billed hold · 1 rows flip to Paid one by one · 2 total rolls to 0 · 3 resolved
+  const { ref, phase } = useDemoState(4, [1500, 1300, 1400, 3800]);
   return (
     <div ref={ref}>
       <Shell label="What a goodbye actually costs">
         <ul className="space-y-1.5 mb-3">
           {FE_ITEMS.map((item, i) => {
-            const visible = phase >= i;
-            const paid = phase >= 6;
+            const paid = phase >= 1;
             return (
-              <motion.li
-                key={item.name}
-                initial={false}
-                animate={{ opacity: visible ? 1 : 0, x: visible ? 0 : -8 }}
-                transition={{ duration: 0.3 }}
-                className="flex items-center justify-between text-sm"
-              >
+              <li key={item.name} className="flex items-center justify-between text-sm">
                 <span className={paid ? "text-[#2C2C2C]/40 line-through" : "text-[#2C2C2C]/75"}>{item.name}</span>
-                <span className={`tabular-nums ${paid ? "text-emerald-600 font-medium" : "text-[#2C2C2C]"}`}>
+                <motion.span
+                  initial={false}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.25, delay: phase === 1 ? i * 0.15 : 0 }}
+                  className={`tabular-nums ${paid ? "text-emerald-600 font-medium" : "text-[#2C2C2C]"}`}
+                >
                   {paid ? "Paid ✓" : usd(item.cost)}
-                </span>
-              </motion.li>
+                </motion.span>
+              </li>
             );
           })}
         </ul>
         <div className="flex items-center justify-between border-t border-[#E8E4DC] pt-3 mb-4">
           <span className="text-sm font-medium text-[#2C2C2C]">Family owes</span>
           <span className="font-display font-bold text-2xl text-[#2C2C2C]">
-            <Rolling from={FE_TOTAL} to={phase >= 6 ? 0 : FE_TOTAL} play={phase === 6} duration={1300} />
+            <Rolling from={FE_TOTAL} to={phase >= 2 ? 0 : FE_TOTAL} play={phase === 2} duration={1300} />
           </span>
         </div>
-        <Resolved show={phase >= 7}>They get to grieve — not fundraise</Resolved>
+        <Status done={phase >= 3} pending="Policy paying the bill…" resolved="They get to grieve — not fundraise" />
       </Shell>
     </div>
   );
@@ -193,7 +210,7 @@ export function AnnuityDemo() {
             </motion.li>
           ))}
         </ul>
-        <Resolved show={phase >= 6}>Every month. For life. Regardless of the market.</Resolved>
+        <Status done={phase >= 6} pending="Deposits arriving…" resolved="Every month. For life. Regardless of the market." />
       </Shell>
     </div>
   );
@@ -236,7 +253,7 @@ export function GeneralLifeDemo() {
             );
           })}
         </div>
-        <Resolved show={phase >= 5}>The paycheck that keeps showing up</Resolved>
+        <Status done={phase >= 5} pending="Putting the benefit to work…" resolved="The paycheck that keeps showing up" />
       </Shell>
     </div>
   );
@@ -267,7 +284,7 @@ export function HealthDemo() {
             <Rolling from={3_850} to={phase >= 2 ? 530 : 3_850} play={phase === 2} duration={1400} />
           </span>
         </div>
-        <Resolved show={phase >= 3}>A bad day — not a financial event</Resolved>
+        <Status done={phase >= 3} pending="Your plan is processing the claim…" resolved="A bad day — not a financial event" />
       </Shell>
     </div>
   );
@@ -299,7 +316,7 @@ export function AcaDemo() {
             <span className="text-base font-normal text-[#2C2C2C]/50">/mo</span>
           </span>
         </div>
-        <Resolved show={phase >= 3}>Same plan — a fraction of the sticker price</Resolved>
+        <Status done={phase >= 3} pending="Checking your subsidy…" resolved="Same plan — a fraction of the sticker price" />
       </Shell>
     </div>
   );
