@@ -16,7 +16,7 @@ import { CONTENT_DIR, parseArticle } from "./sync-blog-content.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = join(ROOT, "dist");
-const BASE_URL = "https://sakredhealth.com";
+const BASE_URL = "https://www.sakredhealth.com";
 const h = React.createElement;
 
 const esc = (s) =>
@@ -85,8 +85,16 @@ function StaticChart({ raw }) {
   );
 }
 
+// Anchor ids on section headings (deep links; mirrored at runtime in BlogPost.tsx)
+export const headingId = (children) => {
+  const text = Array.isArray(children) ? children.map((c) => (typeof c === "string" ? c : "")).join("") : String(children ?? "");
+  return text.toLowerCase().replace(/[^a-z0-9\s-]/g, "").trim().replace(/\s+/g, "-").slice(0, 80);
+};
+
 const fenceLang = (c) => (/language-(\w+)/.exec(typeof c === "string" ? c : "") || [])[1] || "";
 const mdComponents = {
+  h2: ({ node: _n, children, ...rest }) => h("h2", { id: headingId(children), ...rest }, children),
+  h3: ({ node: _n, children, ...rest }) => h("h3", { id: headingId(children), ...rest }, children),
   pre: (props) => {
     const lang = fenceLang(props?.children?.props?.className);
     if (lang === "stats" || lang === "chart") return h(React.Fragment, null, props.children);
@@ -134,9 +142,25 @@ function extractSourceUrls(content) {
   return [...m.matchAll(/\((https?:\/\/[^)\s]+)\)/g)].map((x) => x[1]);
 }
 
+// Parse a "## Frequently asked questions" section (### question + answer paragraphs)
+function extractFaq(content) {
+  const section = content.split(/^## Frequently asked questions\s*$/im)[1];
+  if (!section) return [];
+  const body = section.split(/^## /m)[0];
+  const parts = body.split(/^### /m).slice(1);
+  return parts
+    .map((p) => {
+      const [q, ...rest] = p.split("\n");
+      const answer = rest.join("\n").trim().replace(/\s+/g, " ");
+      return { q: q.trim(), a: answer };
+    })
+    .filter((x) => x.q && x.a);
+}
+
 function jsonLd(a, dates) {
+  const faq = extractFaq(a.content);
+  const graph = [];
   const data = {
-    "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: a.title,
     description: a.excerpt,
@@ -155,7 +179,26 @@ function jsonLd(a, dates) {
   };
   if (dates?.publishedAt) data.datePublished = dates.publishedAt;
   if (dates?.updatedAt) data.dateModified = dates.updatedAt;
-  return JSON.stringify(data).replace(/<\//g, "<\\/");
+  graph.push(data);
+  graph.push({
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${BASE_URL}/blog` },
+      { "@type": "ListItem", position: 3, name: a.title, item: `${BASE_URL}/blog/${a.slug}` },
+    ],
+  });
+  if (faq.length) {
+    graph.push({
+      "@type": "FAQPage",
+      mainEntity: faq.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    });
+  }
+  return JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replace(/<\//g, "<\\/");
 }
 
 function buildHead(a, dates) {
@@ -175,6 +218,7 @@ function buildHead(a, dates) {
     `<meta name="twitter:card" content="summary_large_image">`,
     `<meta name="twitter:title" content="${esc(title)}">`,
     `<meta name="twitter:description" content="${esc(desc)}">`,
+    `<link rel="alternate" type="application/rss+xml" title="Sakred Health Blog" href="${BASE_URL}/blog/feed.xml">`,
     `<script type="application/ld+json">${jsonLd(a, dates)}</script>`,
   ].filter(Boolean).join("\n    ");
 }
@@ -282,7 +326,53 @@ async function main() {
   ].join("\n");
   writeFileSync(join(DIST, "llms.txt"), llms);
 
-  console.log(`[prerender] wrote ${articles.length} posts + blog index + llms.txt`);
+  // llms-full.txt — complete article text for AI crawlers that want depth
+  const llmsFull = articles
+    .map((a) =>
+      [
+        `# ${a.title}`,
+        `URL: ${BASE_URL}/blog/${a.slug}`,
+        `Summary: ${a.excerpt}`,
+        "",
+        a.content,
+        "",
+        "---",
+        "",
+      ].join("\n")
+    )
+    .join("\n");
+  writeFileSync(join(DIST, "llms-full.txt"), llmsFull);
+
+  // RSS 2.0 feed
+  const rssItems = articles
+    .map((a) => {
+      const d = dates[a.slug]?.publishedAt;
+      return [
+        "    <item>",
+        `      <title>${esc(a.title)}</title>`,
+        `      <link>${BASE_URL}/blog/${a.slug}</link>`,
+        `      <guid isPermaLink="true">${BASE_URL}/blog/${a.slug}</guid>`,
+        `      <description>${esc(a.excerpt)}</description>`,
+        d ? `      <pubDate>${new Date(d).toUTCString()}</pubDate>` : "",
+        "    </item>",
+      ].filter(Boolean).join("\n");
+    })
+    .join("\n");
+  const rss = [
+    `<?xml version="1.0" encoding="UTF-8"?>`,
+    `<rss version="2.0">`,
+    `  <channel>`,
+    `    <title>Sakred Health Blog</title>`,
+    `    <link>${BASE_URL}/blog</link>`,
+    `    <description>Data-driven research on daily health, workplace wellness, life insurance, mortgage protection, and final expense planning — every claim cited to its source.</description>`,
+    `    <language>en-us</language>`,
+    rssItems,
+    `  </channel>`,
+    `</rss>`,
+  ].join("\n");
+  writeFileSync(join(DIST, "blog", "feed.xml"), rss);
+
+  console.log(`[prerender] wrote ${articles.length} posts + blog index + feed.xml + llms.txt + llms-full.txt`);
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {

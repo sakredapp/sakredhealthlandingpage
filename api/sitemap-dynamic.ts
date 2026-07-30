@@ -12,7 +12,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     const posts = await getBlogPosts();
-    const baseUrl = "https://sakredhealth.com";
+    const baseUrl = "https://www.sakredhealth.com";
 
     // Product route slugs (keep in sync with client/src/data/products.ts).
     const productSlugs = [

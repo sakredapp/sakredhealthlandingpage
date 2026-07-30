@@ -9,7 +9,7 @@ import { useEffect } from "react";
  * indexed. For maximum ranking on the programmatic state pages, prerendering
  * these routes to static HTML at build time is the recommended follow-up.
  */
-export const SITE_URL = "https://sakredhealth.com";
+export const SITE_URL = "https://www.sakredhealth.com";
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 interface SeoInput {

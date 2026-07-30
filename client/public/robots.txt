@@ -2,8 +2,8 @@ User-agent: *
 Allow: /
 
 # Sitemap locations
-Sitemap: https://sakredhealth.com/sitemap.xml
-Sitemap: https://sakredhealth.com/sitemap-dynamic.xml
+Sitemap: https://www.sakredhealth.com/sitemap.xml
+Sitemap: https://www.sakredhealth.com/sitemap-dynamic.xml
 
 # Disallow admin pages
 Disallow: /admin/

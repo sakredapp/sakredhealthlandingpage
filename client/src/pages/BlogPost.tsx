@@ -14,8 +14,22 @@ function fenceLanguage(className: unknown): string {
   return m ? m[1] : "";
 }
 
+// Matches scripts/prerender-blog.mjs headingId so static and hydrated anchors agree
+function headingId(children: unknown): string {
+  const text = Array.isArray(children)
+    ? children.map((c) => (typeof c === "string" ? c : "")).join("")
+    : String(children ?? "");
+  return text.toLowerCase().replace(/[^a-z0-9\s-]/g, "").trim().replace(/\s+/g, "-").slice(0, 80);
+}
+
 // ```stats / ```chart fences render as animated data blocks
 const markdownComponents = {
+  h2: ({ node: _node, children, ...props }: any) => (
+    <h2 id={headingId(children)} {...props}>{children}</h2>
+  ),
+  h3: ({ node: _node, children, ...props }: any) => (
+    <h3 id={headingId(children)} {...props}>{children}</h3>
+  ),
   pre: ({ node: _node, ...props }: any) => {
     const lang = fenceLanguage(props?.children?.props?.className);
     if (DATA_FENCE_LANGUAGES.includes(lang)) {
