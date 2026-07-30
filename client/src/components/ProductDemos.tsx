@@ -1,25 +1,26 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
-import { Check } from "lucide-react";
 
 /**
- * Animated process vignettes — one per product — showing what the coverage
- * actually *does*: the mortgage draining to $0, the funeral bill being paid,
- * monthly annuity checks arriving, a payout funding the family, a doctor's
- * bill shrinking. Pure framer-motion + rAF, no external services.
+ * Animated process vignettes — one per product — styled as the real-world
+ * artifact each coverage acts on: a loan statement, a funeral-home invoice, a
+ * bank deposit feed, an explanation of benefits, a marketplace checkout.
+ * Layered micro-motion (drawn checkmarks, payment shine sweeps, a stamped
+ * "PAID IN FULL", rolling balances) — pure framer-motion + rAF, no services.
  *
- * All demos: loop while on screen, pause off screen, and render their final
- * "resolved" state statically under prefers-reduced-motion.
+ * Behavior contract (do not regress):
+ *  - Loops while on screen, pauses off screen.
+ *  - ALWAYS paints the finished/resolved state first (no blank frames), holds
+ *    a beat, then cycles.
+ *  - prefers-reduced-motion renders the resolved state statically.
  */
 
 const usd = (n: number) => `$${Math.round(n).toLocaleString()}`;
 
-/**
- * Cycle through phases 0..durations.length-1 while enabled.
- * The demo ALWAYS paints its finished (last) phase first — on first paint,
- * off-screen, and when scrolling into view — holds it a beat, then cycles.
- * That way there's never an empty/blank card waiting to "load".
- */
+/* ------------------------------------------------------------------ */
+/* Shared kit                                                          */
+/* ------------------------------------------------------------------ */
+
 function usePhaseLoop(durations: number[], enabled: boolean): number {
   const last = durations.length - 1;
   const [phase, setPhase] = useState(last);
@@ -33,16 +34,25 @@ function usePhaseLoop(durations: number[], enabled: boolean): number {
       setPhase(i);
       t = setTimeout(step, durations[i]);
     };
-    t = setTimeout(step, 1600); // hold the resolved state before the first cycle
+    t = setTimeout(step, 1800); // hold the resolved state before the first cycle
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enabled]);
   return enabled ? phase : last;
 }
 
+function useDemoState(durations: number[]) {
+  const reduced = useReducedMotion();
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { amount: 0.35 });
+  const enabled = !reduced && inView;
+  const phase = usePhaseLoop(durations, enabled);
+  return { ref, phase };
+}
+
 /** Number that eases from `from` to `to` whenever `play` flips true. */
-function Rolling({ from, to, play, duration = 1400, prefix = "$" }: {
-  from: number; to: number; play: boolean; duration?: number; prefix?: string;
+function Rolling({ from, to, play, duration = 1400, prefix = "$", suffix = "" }: {
+  from: number; to: number; play: boolean; duration?: number; prefix?: string; suffix?: string;
 }) {
   const [val, setVal] = useState(play ? from : to);
   useEffect(() => {
@@ -59,41 +69,119 @@ function Rolling({ from, to, play, duration = 1400, prefix = "$" }: {
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
   }, [play, from, to, duration]);
-  return <span className="tabular-nums">{prefix}{Math.round(val).toLocaleString()}</span>;
+  return <span className="tabular-nums">{prefix}{Math.round(val).toLocaleString()}{suffix}</span>;
 }
 
-function Shell({ label, children, footer }: { label: string; children: React.ReactNode; footer?: React.ReactNode }) {
+/** Checkmark that draws itself on (SVG pathLength). */
+function DrawnCheck({ on, className = "", stroke = "#059669" }: { on: boolean; className?: string; stroke?: string }) {
   return (
-    <div className="rounded-2xl border border-[#E8E4DC] bg-white shadow-[0_16px_40px_-20px_rgba(197,160,89,0.4)] overflow-hidden">
-      <div className="px-5 py-3 bg-[#F6F4EF] border-b border-[#E8E4DC]">
-        <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#C5A059]">{label}</span>
+    <svg viewBox="0 0 24 24" fill="none" className={`w-4 h-4 ${className}`} aria-hidden="true">
+      <motion.path
+        d="M4 12.5 L9.5 18 L20 6.5"
+        stroke={stroke}
+        strokeWidth={3}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        initial={false}
+        animate={{ pathLength: on ? 1 : 0, opacity: on ? 1 : 0 }}
+        transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+      />
+    </svg>
+  );
+}
+
+/** Gold shine that sweeps across its (relative) parent when triggered. */
+function Sweep({ play }: { play: boolean }) {
+  return (
+    <motion.span
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-[#C5A059]/25 to-transparent"
+      initial={false}
+      animate={play ? { x: ["-120%", "340%"], opacity: 1 } : { x: "-120%", opacity: 0 }}
+      transition={play ? { duration: 0.9, ease: "easeInOut" } : { duration: 0 }}
+    />
+  );
+}
+
+/** Rubber stamp that thuds down (scale + settle) when shown. */
+function Stamp({ show, children, color = "#059669" }: { show: boolean; children: React.ReactNode; color?: string }) {
+  return (
+    <motion.div
+      aria-hidden="true"
+      className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 select-none"
+      initial={false}
+      animate={show ? { opacity: 1, scale: 1, rotate: -10 } : { opacity: 0, scale: 1.9, rotate: -2 }}
+      transition={show ? { type: "spring", stiffness: 320, damping: 16 } : { duration: 0.15 }}
+    >
+      <span
+        className="block border-[3px] rounded-md px-2.5 py-1 font-display font-bold text-sm tracking-[0.14em] uppercase"
+        style={{ color, borderColor: color, opacity: 0.88 }}
+      >
+        {children}
+      </span>
+    </motion.div>
+  );
+}
+
+/** Document chrome: faux statement header + body + barcode footer. */
+function Doc({ kicker, title, meta, children }: {
+  kicker: string; title: string; meta: string; children: React.ReactNode;
+}) {
+  return (
+    <div className="relative rounded-2xl border border-[#E8E4DC] bg-white shadow-[0_16px_40px_-20px_rgba(197,160,89,0.45)] overflow-hidden">
+      {/* subtle second sheet behind */}
+      <div aria-hidden className="absolute -bottom-1.5 left-3 right-3 h-3 rounded-b-2xl bg-[#EDE9E0]" />
+      <div className="relative bg-white rounded-2xl overflow-hidden">
+        <div className="flex items-center justify-between px-5 pt-4 pb-3 border-b border-dashed border-[#E8E4DC]">
+          <div>
+            <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[#C5A059]">{kicker}</p>
+            <p className="font-display font-semibold text-sm text-[#2C2C2C] mt-0.5">{title}</p>
+          </div>
+          <p className="text-[10px] text-[#2C2C2C]/40 text-right leading-tight whitespace-pre-line">{meta}</p>
+        </div>
+        <div className="px-5 py-4">{children}</div>
+        {/* faux barcode footer */}
+        <div className="flex items-center justify-between px-5 pb-3">
+          <div
+            aria-hidden
+            className="h-4 w-24 opacity-25"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(90deg, #2C2C2C 0 1.5px, transparent 1.5px 3.5px, #2C2C2C 3.5px 6px, transparent 6px 7px)",
+            }}
+          />
+          <span className="text-[9px] tracking-[0.18em] text-[#2C2C2C]/30 uppercase">Illustration</span>
+        </div>
       </div>
-      <div className="p-5">{children}</div>
-      {footer && <div className="px-5 pb-5">{footer}</div>}
     </div>
   );
 }
 
-/**
- * Status row at the bottom of every demo. Never empty: while the loop runs it
- * shows a muted "in progress" line with a pulsing gold dot, then flips to the
- * green resolved state — so the card has no reserved-but-blank space.
- */
+/** Dotted-leader line item, invoice style. */
+function LineItem({ label, right, dim = false }: { label: React.ReactNode; right: React.ReactNode; dim?: boolean }) {
+  return (
+    <div className="relative flex items-baseline gap-2 text-sm py-0.5">
+      <span className={dim ? "text-[#2C2C2C]/40" : "text-[#2C2C2C]/75"}>{label}</span>
+      <span className="flex-1 border-b border-dotted border-[#2C2C2C]/20 translate-y-[-3px]" />
+      <span className="tabular-nums">{right}</span>
+    </div>
+  );
+}
+
+/** Status footer — never empty: pulsing "in progress" → drawn-check resolved. */
 function Status({ done, pending, resolved }: { done: boolean; pending: string; resolved: string }) {
   return (
     <div
-      className={`flex items-center gap-2.5 rounded-xl border px-4 py-3 transition-colors duration-300 ${
+      className={`flex items-center gap-2.5 rounded-xl border px-4 py-3 mt-4 transition-colors duration-300 ${
         done ? "bg-emerald-50 border-emerald-200" : "bg-[#F6F4EF] border-[#E8E4DC]"
       }`}
     >
       {done ? (
-        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center">
-          <Check className="w-3 h-3 text-white" />
-        </span>
+        <DrawnCheck on className="flex-shrink-0" />
       ) : (
         <motion.span
-          className="flex-shrink-0 w-2.5 h-2.5 mx-[5px] rounded-full bg-[#C5A059]"
-          animate={{ opacity: [0.35, 1, 0.35] }}
+          className="flex-shrink-0 w-2.5 h-2.5 mx-[3px] rounded-full bg-[#C5A059]"
+          animate={{ opacity: [0.35, 1, 0.35], scale: [1, 1.15, 1] }}
           transition={{ duration: 1.4, repeat: Infinity }}
         />
       )}
@@ -104,43 +192,75 @@ function Status({ done, pending, resolved }: { done: boolean; pending: string; r
   );
 }
 
-function useDemoState(count: number, durations: number[]) {
-  const reduced = useReducedMotion();
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { amount: 0.4 });
-  const enabled = !reduced && inView;
-  const phase = usePhaseLoop(durations, enabled);
-  return { ref, phase, reduced: !!reduced };
-}
-
-/* ---------------- Mortgage Protection ---------------- */
-export function MortgageDemo() {
-  // 0 wait · 1 payout chip · 2 balance drains · 3 resolved (hold)
-  const { ref, phase } = useDemoState(4, [1200, 900, 1700, 3600]);
+/** Animated split bar (e.g. plan pays vs you pay). */
+function SplitBar({ segments, play }: { segments: { pct: number; className: string }[]; play: boolean }) {
   return (
-    <div ref={ref}>
-      <Shell label="If something happens to you">
-        <div className="flex items-baseline justify-between mb-1">
-          <span className="text-sm text-[#2C2C2C]/60">Remaining mortgage balance</span>
-        </div>
-        <p className="font-display font-bold text-4xl text-[#2C2C2C] mb-3">
-          <Rolling from={284_000} to={phase >= 3 ? 0 : phase === 2 ? 0 : 284_000} play={phase === 2} duration={1600} />
-        </p>
+    <div className="h-2.5 rounded-full bg-[#F0EBE1] overflow-hidden flex">
+      {segments.map((s, i) => (
         <motion.div
+          key={i}
           initial={false}
-          animate={{ opacity: phase >= 1 ? 1 : 0, x: phase >= 1 ? 0 : -8 }}
-          className="inline-flex items-center gap-2 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/30 px-3 py-1.5 mb-4"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />
-          <span className="text-xs font-medium text-[#2C2C2C]/75">Mortgage protection payout applied</span>
-        </motion.div>
-        <Status done={phase >= 3} pending="Payout being applied…" resolved="The house is theirs — free and clear" />
-      </Shell>
+          animate={{ width: play ? `${s.pct}%` : "0%" }}
+          transition={{ duration: 0.7, delay: i * 0.25, ease: [0.16, 1, 0.3, 1] }}
+          className={`h-full ${s.className}`}
+        />
+      ))}
     </div>
   );
 }
 
-/* ---------------- Final Expense ---------------- */
+/* ------------------------------------------------------------------ */
+/* Mortgage Protection — home loan statement                           */
+/* ------------------------------------------------------------------ */
+export function MortgageDemo() {
+  // 0 statement · 1 payout row sweeps in · 2 balance drains + bar empties · 3 stamped + resolved
+  const { ref, phase } = useDemoState([1600, 1100, 1800, 4200]);
+  const draining = phase >= 2;
+  return (
+    <div ref={ref}>
+      <Doc kicker="Home loan statement" title="Mortgage · Loan •••• 4821" meta={"Statement 07/2026\nAutopay on"}>
+        <LineItem label="Principal remaining" right={<span className="text-[#2C2C2C]">{usd(271_400)}</span>} />
+        <LineItem label="Interest & escrow" right={<span className="text-[#2C2C2C]">{usd(12_600)}</span>} />
+        <motion.div
+          initial={false}
+          animate={{ opacity: phase >= 1 ? 1 : 0, y: phase >= 1 ? 0 : -6 }}
+          transition={{ duration: 0.35 }}
+          className="relative overflow-hidden rounded-md -mx-1 px-1"
+        >
+          <Sweep play={phase === 1} />
+          <LineItem
+            label={<span className="font-medium text-[#B08A3E]">Sakred payout applied</span>}
+            right={<span className="font-medium text-[#B08A3E]">− {usd(284_000)}</span>}
+          />
+        </motion.div>
+
+        <div className="relative border-t border-[#E8E4DC] mt-2 pt-3">
+          <div className="flex items-baseline justify-between">
+            <span className="text-sm font-medium text-[#2C2C2C]">Balance due</span>
+            <span className="font-display font-bold text-3xl text-[#2C2C2C]">
+              <Rolling from={284_000} to={draining ? 0 : 284_000} play={phase === 2} duration={1600} />
+            </span>
+          </div>
+          <div className="mt-2.5 h-2 rounded-full bg-[#F0EBE1] overflow-hidden">
+            <motion.div
+              initial={false}
+              animate={{ width: draining ? "0%" : "88%" }}
+              transition={{ duration: phase === 2 ? 1.6 : 0.3, ease: [0.33, 1, 0.68, 1] }}
+              className="h-full rounded-full bg-gradient-to-r from-[#C5A059] to-[#EBD598]"
+            />
+          </div>
+          <Stamp show={phase >= 3}>Paid in full</Stamp>
+        </div>
+
+        <Status done={phase >= 3} pending="Payout being applied…" resolved="The house is theirs — free and clear" />
+      </Doc>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Final Expense — funeral-home invoice                                */
+/* ------------------------------------------------------------------ */
 const FE_ITEMS = [
   { name: "Casket", cost: 2_400 },
   { name: "Funeral service", cost: 1_800 },
@@ -151,101 +271,136 @@ const FE_ITEMS = [
 const FE_TOTAL = FE_ITEMS.reduce((s, i) => s + i.cost, 0);
 
 export function FinalExpenseDemo() {
-  // Items are ALWAYS visible — only the billed → paid flip animates.
-  // 0 billed hold · 1 rows flip to Paid one by one · 2 total rolls to 0 · 3 resolved
-  const { ref, phase } = useDemoState(4, [1500, 1300, 1400, 3800]);
+  // 0 invoice · 1..5 rows pay one-by-one (sweep + drawn check) · 6 total drains · 7 stamped + resolved
+  const { ref, phase } = useDemoState([1500, 480, 480, 480, 480, 700, 1500, 4200]);
   return (
     <div ref={ref}>
-      <Shell label="What a goodbye actually costs">
-        <ul className="space-y-1.5 mb-3">
+      <Doc kicker="Invoice" title="Rosewood Funeral Home" meta={"Inv. 20189\nDue on receipt"}>
+        <div className="space-y-0.5 mb-1">
           {FE_ITEMS.map((item, i) => {
-            const paid = phase >= 1;
+            const paid = phase >= i + 1;
             return (
-              <li key={item.name} className="flex items-center justify-between text-sm">
-                <span className={paid ? "text-[#2C2C2C]/40 line-through" : "text-[#2C2C2C]/75"}>{item.name}</span>
-                <motion.span
-                  initial={false}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.25, delay: phase === 1 ? i * 0.15 : 0 }}
-                  className={`tabular-nums ${paid ? "text-emerald-600 font-medium" : "text-[#2C2C2C]"}`}
-                >
-                  {paid ? "Paid ✓" : usd(item.cost)}
-                </motion.span>
-              </li>
+              <div key={item.name} className="relative overflow-hidden rounded-md -mx-1 px-1">
+                <Sweep play={phase === i + 1} />
+                <LineItem
+                  dim={paid}
+                  label={<span className={paid ? "line-through" : ""}>{item.name}</span>}
+                  right={
+                    paid ? (
+                      <span className="inline-flex items-center gap-1 text-emerald-600 font-medium">
+                        <DrawnCheck on={paid} className="w-3.5 h-3.5" /> Paid
+                      </span>
+                    ) : (
+                      <span className="text-[#2C2C2C]">{usd(item.cost)}</span>
+                    )
+                  }
+                />
+              </div>
             );
           })}
-        </ul>
-        <div className="flex items-center justify-between border-t border-[#E8E4DC] pt-3 mb-4">
-          <span className="text-sm font-medium text-[#2C2C2C]">Family owes</span>
-          <span className="font-display font-bold text-2xl text-[#2C2C2C]">
-            <Rolling from={FE_TOTAL} to={phase >= 2 ? 0 : FE_TOTAL} play={phase === 2} duration={1300} />
-          </span>
         </div>
-        <Status done={phase >= 3} pending="Policy paying the bill…" resolved="They get to grieve — not fundraise" />
-      </Shell>
+        <div className="relative border-t border-[#E8E4DC] pt-3">
+          <div className="flex items-baseline justify-between">
+            <span className="text-sm font-medium text-[#2C2C2C]">Family owes</span>
+            <span className="font-display font-bold text-3xl text-[#2C2C2C]">
+              <Rolling from={FE_TOTAL} to={phase >= 6 ? 0 : FE_TOTAL} play={phase === 6} duration={1300} />
+            </span>
+          </div>
+          <Stamp show={phase >= 7}>Covered</Stamp>
+        </div>
+        <Status done={phase >= 7} pending="Policy paying the bill…" resolved="They get to grieve — not fundraise" />
+      </Doc>
     </div>
   );
 }
 
-/* ---------------- Annuities ---------------- */
-const MONTHS = ["January", "February", "March", "April", "May", "June"];
+/* ------------------------------------------------------------------ */
+/* Annuities — bank deposit feed with running balance                  */
+/* ------------------------------------------------------------------ */
+const ANN_MONTHS = ["Jan 1", "Feb 1", "Mar 1", "Apr 1", "May 1", "Jun 1"];
+const ANN_DEPOSIT = 2_150;
+
 export function AnnuityDemo() {
-  // phases 0..5 add a deposit each; 6 resolved hold
-  const { ref, phase } = useDemoState(7, [900, 900, 900, 900, 900, 900, 3800]);
-  const shown = Math.min(phase + 1, MONTHS.length);
+  // 0..5 deposits land (newest on top) · 6 resolved hold
+  const { ref, phase } = useDemoState([950, 950, 950, 950, 950, 950, 4200]);
+  const shown = Math.min(phase + 1, ANN_MONTHS.length);
+  const balance = 18_400 + shown * ANN_DEPOSIT;
   return (
     <div ref={ref}>
-      <Shell label="Guaranteed monthly income">
-        <ul className="space-y-1.5 mb-4 min-h-[168px]">
-          {MONTHS.slice(0, shown).map((m) => (
+      <Doc kicker="Checking · •••• 2201" title="Guaranteed income deposits" meta={"Annuity\nAuto-deposit"}>
+        <div className="flex items-baseline justify-between mb-3">
+          <span className="text-xs uppercase tracking-[0.18em] text-[#2C2C2C]/45">Balance</span>
+          <span className="font-display font-bold text-2xl text-[#2C2C2C]">
+            <Rolling from={balance - ANN_DEPOSIT} to={balance} play={phase < 6} duration={500} />
+          </span>
+        </div>
+        <ul className="space-y-1.5 min-h-[180px]">
+          {ANN_MONTHS.slice(0, shown).map((m, i) => (
             <motion.li
               key={m}
-              initial={{ opacity: 0, y: 6 }}
+              layout
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="flex items-center justify-between text-sm rounded-lg bg-[#F6F4EF] px-3 py-2"
+              className={`flex items-center justify-between text-sm rounded-lg px-3 py-2 ${
+                i === shown - 1 && phase < 6 ? "bg-[#C5A059]/10 border border-[#C5A059]/25" : "bg-[#F6F4EF]"
+              }`}
             >
-              <span className="text-[#2C2C2C]/70">{m}</span>
-              <span className="font-medium text-emerald-700 tabular-nums">+ $2,150 deposited ✓</span>
+              <span className="text-[#2C2C2C]/60">{m} · Annuity payment</span>
+              <span className="font-medium text-emerald-700 tabular-nums inline-flex items-center gap-1.5">
+                <DrawnCheck on className="w-3.5 h-3.5" /> +{usd(ANN_DEPOSIT)}
+              </span>
             </motion.li>
           ))}
         </ul>
         <Status done={phase >= 6} pending="Deposits arriving…" resolved="Every month. For life. Regardless of the market." />
-      </Shell>
+      </Doc>
     </div>
   );
 }
 
-/* ---------------- General Life ---------------- */
+/* ------------------------------------------------------------------ */
+/* General Life — payout allocation                                    */
+/* ------------------------------------------------------------------ */
 const GL_ALLOC = [
-  { name: "Mortgage cleared", pct: 40 },
-  { name: "College fund", pct: 30 },
-  { name: "Years of income replaced", pct: 30 },
+  { name: "Mortgage cleared", amount: 200_000, pct: 92 },
+  { name: "College fund", amount: 150_000, pct: 74 },
+  { name: "Years of income replaced", amount: 150_000, pct: 74 },
 ];
+
 export function GeneralLifeDemo() {
-  // 0 wait · 1 payout counts · 2-4 bars fill · 5 resolved
-  const { ref, phase } = useDemoState(6, [900, 1500, 700, 700, 700, 3800]);
+  // 0 quiet · 1 payout counts · 2-4 bars fill w/ checks · 5 resolved
+  const { ref, phase } = useDemoState([1100, 1600, 750, 750, 750, 4200]);
   return (
     <div ref={ref}>
-      <Shell label="What a policy can do">
-        <p className="text-sm text-[#2C2C2C]/60 mb-1">Benefit paid to your family</p>
+      <Doc kicker="Benefit disbursement" title="Policy •••• 0917 · Beneficiary: family" meta={"Term 20\nIn force"}>
+        <p className="text-xs uppercase tracking-[0.18em] text-[#2C2C2C]/45 mb-1">Benefit paid</p>
         <p className="font-display font-bold text-4xl text-[#2C2C2C] mb-4">
-          <Rolling from={0} to={500_000} play={phase === 1} duration={1400} />
+          <Rolling from={0} to={500_000} play={phase === 1} duration={1500} />
         </p>
-        <div className="space-y-3 mb-4">
+        <div className="space-y-3">
           {GL_ALLOC.map((a, i) => {
             const on = phase >= i + 2;
             return (
               <div key={a.name}>
                 <div className="flex items-center justify-between text-xs mb-1">
-                  <span className="text-[#2C2C2C]/70">{a.name}</span>
-                  {on && <Check className="w-3.5 h-3.5 text-[#C5A059]" />}
+                  <span className="text-[#2C2C2C]/70 inline-flex items-center gap-1.5">
+                    <DrawnCheck on={on} className="w-3.5 h-3.5" stroke="#C5A059" />
+                    {a.name}
+                  </span>
+                  <motion.span
+                    initial={false}
+                    animate={{ opacity: on ? 1 : 0 }}
+                    className="tabular-nums text-[#2C2C2C]/55"
+                  >
+                    {usd(a.amount)}
+                  </motion.span>
                 </div>
                 <div className="h-2 rounded-full bg-[#F0EBE1] overflow-hidden">
                   <motion.div
                     initial={false}
-                    animate={{ width: on ? `${a.pct + 55}%` : "0%" }}
-                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    animate={{ width: on ? `${a.pct}%` : "0%" }}
+                    transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
                     className="h-full rounded-full bg-gradient-to-r from-[#C5A059] to-[#EBD598]"
                   />
                 </div>
@@ -254,73 +409,108 @@ export function GeneralLifeDemo() {
           })}
         </div>
         <Status done={phase >= 5} pending="Putting the benefit to work…" resolved="The paycheck that keeps showing up" />
-      </Shell>
+      </Doc>
     </div>
   );
 }
 
-/* ---------------- Private Health ---------------- */
+/* ------------------------------------------------------------------ */
+/* Private Health — explanation of benefits                            */
+/* ------------------------------------------------------------------ */
 export function HealthDemo() {
-  // 0 bill · 1 plan pays chip · 2 balance shrinks · 3 resolved
-  const { ref, phase } = useDemoState(4, [1300, 900, 1600, 3600]);
+  // 0 bill · 1 discount sweeps in · 2 plan pays sweeps in · 3 you-pay drains + bar · 4 resolved
+  const { ref, phase } = useDemoState([1500, 900, 900, 1500, 4200]);
   return (
     <div ref={ref}>
-      <Shell label="An ER visit, with coverage">
-        <div className="flex items-center justify-between text-sm mb-2">
-          <span className="text-[#2C2C2C]/70">Emergency room bill</span>
-          <span className="tabular-nums text-[#2C2C2C]">{usd(3_850)}</span>
-        </div>
-        <motion.div
-          initial={false}
-          animate={{ opacity: phase >= 1 ? 1 : 0, x: phase >= 1 ? 0 : -8 }}
-          className="flex items-center justify-between text-sm mb-3 rounded-lg bg-[#C5A059]/10 border border-[#C5A059]/25 px-3 py-2"
-        >
-          <span className="text-[#2C2C2C]/75 font-medium">Your plan pays</span>
-          <span className="tabular-nums text-[#2C2C2C] font-medium">− {usd(3_320)}</span>
+      <Doc kicker="Explanation of benefits" title="Emergency room visit" meta={"Claim 88-4127\nProcessed"}>
+        <LineItem label="Provider billed" right={<span className="text-[#2C2C2C]">{usd(3_850)}</span>} />
+        <motion.div initial={false} animate={{ opacity: phase >= 1 ? 1 : 0 }} transition={{ duration: 0.3 }}
+          className="relative overflow-hidden rounded-md -mx-1 px-1">
+          <Sweep play={phase === 1} />
+          <LineItem dim label="Plan-negotiated discount" right={<span>− {usd(1_140)}</span>} />
         </motion.div>
-        <div className="flex items-baseline justify-between border-t border-[#E8E4DC] pt-3 mb-4">
-          <span className="text-sm font-medium text-[#2C2C2C]">You pay</span>
-          <span className="font-display font-bold text-3xl text-[#2C2C2C]">
-            <Rolling from={3_850} to={phase >= 2 ? 530 : 3_850} play={phase === 2} duration={1400} />
-          </span>
+        <motion.div initial={false} animate={{ opacity: phase >= 2 ? 1 : 0 }} transition={{ duration: 0.3 }}
+          className="relative overflow-hidden rounded-md -mx-1 px-1">
+          <Sweep play={phase === 2} />
+          <LineItem
+            label={<span className="font-medium text-[#B08A3E]">Your plan paid</span>}
+            right={<span className="font-medium text-[#B08A3E]">− {usd(2_180)}</span>}
+          />
+        </motion.div>
+
+        <div className="border-t border-[#E8E4DC] mt-2 pt-3">
+          <div className="flex items-baseline justify-between mb-2.5">
+            <span className="text-sm font-medium text-[#2C2C2C]">You pay</span>
+            <span className="font-display font-bold text-3xl text-[#2C2C2C]">
+              <Rolling from={3_850} to={phase >= 3 ? 530 : 3_850} play={phase === 3} duration={1400} />
+            </span>
+          </div>
+          <SplitBar
+            play={phase >= 3}
+            segments={[
+              { pct: 30, className: "bg-[#EDE9E0]" },
+              { pct: 56, className: "bg-gradient-to-r from-[#C5A059] to-[#EBD598]" },
+              { pct: 14, className: "bg-[#2C2C2C]/70" },
+            ]}
+          />
+          <div className="flex justify-between text-[10px] text-[#2C2C2C]/40 mt-1">
+            <span>Discount</span>
+            <span>Plan paid</span>
+            <span>You</span>
+          </div>
         </div>
-        <Status done={phase >= 3} pending="Your plan is processing the claim…" resolved="A bad day — not a financial event" />
-      </Shell>
+        <Status done={phase >= 4} pending="Your plan is processing the claim…" resolved="A bad day — not a financial event" />
+      </Doc>
     </div>
   );
 }
 
-/* ---------------- ACA ---------------- */
+/* ------------------------------------------------------------------ */
+/* ACA — marketplace checkout                                          */
+/* ------------------------------------------------------------------ */
 export function AcaDemo() {
-  // 0 premium · 1 subsidy chip · 2 premium shrinks · 3 resolved
-  const { ref, phase } = useDemoState(4, [1300, 900, 1600, 3600]);
+  // 0 sticker price · 1 credit sweeps in · 2 you-pay drains + bar · 3 resolved
+  const { ref, phase } = useDemoState([1500, 1000, 1500, 4200]);
   return (
     <div ref={ref}>
-      <Shell label="The subsidy check most people skip">
-        <div className="flex items-center justify-between text-sm mb-2">
-          <span className="text-[#2C2C2C]/70">Marketplace premium</span>
-          <span className="tabular-nums text-[#2C2C2C]">$612/mo</span>
-        </div>
-        <motion.div
-          initial={false}
-          animate={{ opacity: phase >= 1 ? 1 : 0, x: phase >= 1 ? 0 : -8 }}
-          className="flex items-center justify-between text-sm mb-3 rounded-lg bg-[#C5A059]/10 border border-[#C5A059]/25 px-3 py-2"
-        >
-          <span className="text-[#2C2C2C]/75 font-medium">Premium tax credit applied</span>
-          <span className="tabular-nums text-[#2C2C2C] font-medium">− $464/mo</span>
+      <Doc kicker="Marketplace enrollment" title="Silver plan · Family of three" meta={"Plan year 2026\nEligible"}>
+        <LineItem label="Monthly premium" right={<span className="text-[#2C2C2C]">$612/mo</span>} />
+        <motion.div initial={false} animate={{ opacity: phase >= 1 ? 1 : 0, y: phase >= 1 ? 0 : -6 }}
+          transition={{ duration: 0.35 }} className="relative overflow-hidden rounded-md -mx-1 px-1">
+          <Sweep play={phase === 1} />
+          <LineItem
+            label={<span className="font-medium text-[#B08A3E]">Premium tax credit</span>}
+            right={<span className="font-medium text-[#B08A3E]">− $464/mo</span>}
+          />
         </motion.div>
-        <div className="flex items-baseline justify-between border-t border-[#E8E4DC] pt-3 mb-4">
-          <span className="text-sm font-medium text-[#2C2C2C]">You pay</span>
-          <span className="font-display font-bold text-3xl text-[#2C2C2C]">
-            <Rolling from={612} to={phase >= 2 ? 148 : 612} play={phase === 2} duration={1400} />
-            <span className="text-base font-normal text-[#2C2C2C]/50">/mo</span>
-          </span>
+
+        <div className="border-t border-[#E8E4DC] mt-2 pt-3">
+          <div className="flex items-baseline justify-between mb-2.5">
+            <span className="text-sm font-medium text-[#2C2C2C]">You pay</span>
+            <span className="font-display font-bold text-3xl text-[#2C2C2C]">
+              <Rolling from={612} to={phase >= 2 ? 148 : 612} play={phase === 2} duration={1400} />
+              <span className="text-base font-normal text-[#2C2C2C]/50">/mo</span>
+            </span>
+          </div>
+          <SplitBar
+            play={phase >= 2}
+            segments={[
+              { pct: 76, className: "bg-gradient-to-r from-[#C5A059] to-[#EBD598]" },
+              { pct: 24, className: "bg-[#2C2C2C]/70" },
+            ]}
+          />
+          <div className="flex justify-between text-[10px] text-[#2C2C2C]/40 mt-1">
+            <span>Credit covers</span>
+            <span>You</span>
+          </div>
         </div>
         <Status done={phase >= 3} pending="Checking your subsidy…" resolved="Same plan — a fraction of the sticker price" />
-      </Shell>
+      </Doc>
     </div>
   );
 }
+
+/* ------------------------------------------------------------------ */
 
 /** Illustrative-numbers disclaimer every demo needs. */
 export function DemoDisclaimer() {
