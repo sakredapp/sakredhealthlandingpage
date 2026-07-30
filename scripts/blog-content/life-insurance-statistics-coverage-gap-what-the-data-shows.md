@@ -14,11 +14,11 @@ Half the country is walking around without a policy. According to the 2025 Insur
 
 ## Key statistics at a glance
 
-- **51%** of American adults report having life insurance in 2025, down from 63% in 2011 (LIMRA/Life Happens, 2025 Insurance Barometer Study)
-- **~100 million** US adults — 40% of the adult population — say they need life insurance or more of it (LIMRA, 2025)
+```stats
+[{"value": 51, "suffix": "%", "label": "American adults with life insurance, down from 63% in 2011", "source": "LIMRA/Life Happens, 2025"}, {"value": 100, "suffix": "M", "label": "US adults who say they need coverage, or more of it", "source": "LIMRA, 2025"}, {"display": "10–12×", "label": "How much healthy under-30s overestimate term life cost", "source": "LIMRA, 2025"}, {"value": 23, "prefix": "$", "suffix": "/mo", "label": "Real cost of a $500K, 20-year term policy at age 30 (from)", "source": "MoneyGeek, 2026"}]
+```
+
 - **47%** of Americans say they would have trouble paying living expenses within six months of a primary wage earner's death; **30%** would struggle within one month (LIMRA/Life Happens, 2025)
-- **About three-quarters** of adults overestimate the cost of life insurance; healthy adults under 30 overestimate the price of a $250,000 term policy by **10–12 times** (LIMRA, 2025)
-- A healthy 30-year-old pays roughly **$23–28 per month** for a $500,000, 20-year term policy in current rate data (MoneyGeek, 2026)
 - Women's ownership trails men's — **48% versus 54%** in 2025, after a record 11-point gap (46% vs. 57%) in 2024 (LIMRA)
 - Only **9.4 million** individual policies were sold in 2024, despite roughly 100 million adults saying they're in the market (LIMRA, 2025)
 - US life expectancy hit a record **79.0 years** in 2024, up from 78.4 in 2023 (CDC/NCHS, released January 2026)
@@ -49,13 +49,9 @@ Two things stand out. First, term coverage at this age costs about as much as a 
 
 The gap is not evenly distributed. The 2025 Barometer data shows:
 
-| Group | Ownership rate (2025) |
-|---|---|
-| All adults | 51% |
-| Men | 54% |
-| Women | 48% |
-| Millennials | 51% |
-| Gen Z adults | 42% |
+```chart
+{"type": "hbar", "title": "Life insurance ownership rate by group, 2025", "suffix": "%", "source": "LIMRA/Life Happens, 2025 Insurance Barometer Study", "data": [{"label": "All adults", "value": 51}, {"label": "Men", "value": 54}, {"label": "Women", "value": 48}, {"label": "Millennials", "value": 51}, {"label": "Gen Z adults", "value": 42}]}
+```
 
 The gender gap deserves attention. In 2024, LIMRA reported women's ownership at 46% versus 57% for men — an 11-point spread, the widest in the study's history. It narrowed to six points in 2025, but women remain both less likely to own coverage and more likely to report a need gap (43% of women versus 37% of men in the 2025 data). Given that a caregiver's unpaid work also has replacement cost, the gap understates the exposure.
 

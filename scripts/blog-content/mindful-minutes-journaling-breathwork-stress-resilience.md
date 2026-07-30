@@ -12,14 +12,14 @@ Half of employees in the United States and Canada said they felt a lot of stress
 
 ## Key statistics at a glance
 
-- **50%** of US and Canadian employees experienced a lot of stress the prior day, versus 40% globally — Gallup, State of the Global Workplace: 2026
+```stats
+[{"value": 50, "suffix": "%", "label": "US and Canadian employees with a lot of stress the prior day", "source": "Gallup, 2026"}, {"value": 5, "suffix": " min", "label": "Daily cyclic sighing that outperformed meditation on mood", "source": "Cell Reports Medicine, 2023"}, {"display": "g = 0.81", "label": "Effect of slow-breathing biofeedback on stress and anxiety", "source": "Psychological Medicine, 2017"}, {"value": 3.3, "suffix": "%", "decimals": 1, "label": "Median 30-day retention across 93 mental-health apps", "source": "JMIR, 2019"}]
+```
+
 - **62%** of US adults named societal division a significant source of stress, and **54%** said they felt isolated from others — American Psychological Association, Stress in America 2025
-- **5 minutes a day for 28 days** of cyclic sighing produced a larger daily improvement in positive affect (+1.89) than mindfulness meditation (+1.22) — Balban et al., Cell Reports Medicine (2023)
 - **g = −0.35** — the pooled effect of breathwork on self-reported stress across 12 randomized trials and 785 adults — Fincham et al., Scientific Reports (2023)
-- **g = 0.81 to 0.83** — the effect of heart rate variability biofeedback (slow-paced breathing) on stress and anxiety across 24 studies — Goessl et al., Psychological Medicine (2017)
 - **47.1% vs 24.3%** — the share of patients with asthma or rheumatoid arthritis showing clinically relevant improvement four months after three 20-minute writing sessions, versus controls — Smyth et al., JAMA (1999)
 - **g = 0.04, not significant** — the pooled effect of expressive writing on health across 30 randomized trials — Mogk et al., Psychosocial Medicine (2006)
-- **3.3%** — median 30-day retention across 93 mental health apps; breathing-exercise apps had a median of **0.0%** — Baumel et al., Journal of Medical Internet Research (2019)
 
 ## Five minutes of breathing, measured against meditation
 

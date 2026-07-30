@@ -14,13 +14,13 @@ The good news is that the research on countermeasures has gotten much sharper in
 
 ## Key statistics at a glance
 
+```stats
+[{"value": 10.6, "suffix": " hrs", "decimals": 1, "label": "Measured weekday sitting time for office workers", "source": "BMC Public Health, 2015"}, {"value": 58, "suffix": "%", "label": "Glucose-spike reduction from a 5-minute walk every 30 minutes", "source": "Columbia University, 2023"}, {"value": 4.4, "suffix": " min", "decimals": 1, "label": "Daily vigorous movement tied to 26–30% lower mortality risk", "source": "Nature Medicine, 2022"}, {"value": 80, "suffix": "%", "label": "Office workers reporting musculoskeletal complaints", "source": "Scientific Reports, 2025"}]
+```
+
 - **1 in 4 US adults** reports sitting more than 8 hours a day, and 44% report no moderate-to-vigorous weekly physical activity (CDC researchers in JAMA, 2018)
-- **10.6 hours** — total weekday sitting time measured by activity monitors in a sample of office workers (BMC Public Health, 2015)
 - **60–75 minutes** of daily moderate activity appeared to eliminate the excess mortality risk of high sitting time in a meta-analysis of over 1 million adults (Ekelund et al., The Lancet, 2016)
-- **A 5-minute walk every 30 minutes** cut post-meal blood sugar spikes by 58% versus uninterrupted sitting (Columbia University, 2023)
-- **~4.4 minutes a day** of vigorous incidental movement was associated with 26–30% lower all-cause mortality risk in non-exercisers (Nature Medicine, 2022)
 - **Standing more does not improve cardiovascular outcomes** and may raise the risk of circulatory problems like varicose veins (University of Sydney, 2024)
-- **Roughly 80%** of office workers in a 2025 Scientific Reports study reported work-related musculoskeletal complaints, with neck pain (58.6%) and lower back pain (52.5%) leading
 
 ## What prolonged sitting actually does
 

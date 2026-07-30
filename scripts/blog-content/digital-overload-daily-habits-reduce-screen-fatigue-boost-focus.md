@@ -12,14 +12,14 @@ The average adult internet user now spends 6 hours and 38 minutes online every d
 
 ## Key statistics at a glance
 
-- Adult internet users average **6 hours 38 minutes online per day** (GWI, via DataReportal Digital 2025).
+```stats
+[{"display": "6h 38m", "label": "Average daily time online per adult internet user", "source": "GWI via DataReportal, 2025"}, {"value": 47, "suffix": " sec", "label": "Average attention on one screen, down from 2.5 minutes in 2004", "source": "Gloria Mark, UC Irvine"}, {"value": 59, "suffix": "%", "label": "Higher insomnia risk per hour of in-bed screen use", "source": "Frontiers in Psychiatry, 2025"}, {"value": 91, "suffix": "%", "label": "Participants who improved when mobile internet was blocked for two weeks", "source": "PNAS Nexus, 2025"}]
+```
+
 - **6.04 billion people** — 73.2% of the world's population — now use the internet (DataReportal Digital 2026).
 - Americans checked their phones about **205 times per day** in Reviews.org's 2025 survey, easing to **186 times per day** in its 2026 follow-up.
-- Average attention on any single screen is now **47 seconds**, down from ~2.5 minutes in 2004 (Gloria Mark, UC Irvine).
 - After a significant interruption, it takes an average of **23 minutes and 15 seconds** to fully return to a task (Gloria Mark, UC Irvine).
 - **58% of adults** have experienced digital eye strain or vision problems from computer use (American Optometric Association survey).
-- One hour of screen use in bed is linked to a **59% higher risk of insomnia** and **24 fewer minutes of sleep** (Norwegian study of ~40,000 students, Frontiers in Psychiatry, 2025).
-- In a 2025 randomized trial, blocking mobile internet for two weeks improved attention, mood, or mental health for **91% of participants** (PNAS Nexus).
 
 ## How much screen time are we actually logging
 

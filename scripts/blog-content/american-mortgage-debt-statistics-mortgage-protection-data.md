@@ -14,13 +14,13 @@ Americans owed $13.19 trillion on their mortgages at the end of March 2026, acco
 
 ## Key statistics at a glance
 
-- **$13.19 trillion** — total US mortgage balances at the end of Q1 2026 (Federal Reserve Bank of New York, 2026)
-- **$264,162** — average mortgage balance per borrower as of March 2026, up $7,359 in one year (Experian, 2026)
-- **$2,198** — national median monthly payment on new purchase mortgage applications in May 2026 (Mortgage Bankers Association, 2026)
+```stats
+[{"value": 13.19, "prefix": "$", "suffix": "T", "decimals": 2, "label": "Total US mortgage debt, Q1 2026", "source": "Federal Reserve Bank of New York, 2026"}, {"value": 264162, "prefix": "$", "label": "Average mortgage balance per borrower", "source": "Experian, March 2026"}, {"value": 2198, "prefix": "$", "label": "Median new-mortgage payment, May 2026", "source": "Mortgage Bankers Association, 2026"}, {"value": 51, "suffix": "%", "label": "Adults with life insurance, down from 63% in 2011", "source": "LIMRA 2025 Insurance Barometer"}]
+```
+
 - **6.49%** — average 30-year fixed mortgage rate in June 2026 (Freddie Mac data, via NAR, 2026)
 - **23.7%** — share of homeowner households spending more than 30% of income on housing, a total of 20.3 million households (Harvard Joint Center for Housing Studies, 2025)
 - **4.44%** — mortgage delinquency rate in Q1 2026, up 40 basis points year over year (Mortgage Bankers Association, 2026)
-- **51%** — share of American adults who report having life insurance, down from 63% in 2011 (LIMRA 2025 Insurance Barometer Study)
 - **47%** — share of households that say they would struggle to pay living expenses within six months of a primary wage earner's death (LIMRA, 2025)
 
 ## America's mortgage balance sheet
@@ -35,14 +35,9 @@ Two forces keep pushing balances up. Home prices keep climbing — the National 
 
 For families buying now, the monthly obligation has been grinding upward for most of the past year. The Mortgage Bankers Association's Purchase Applications Payment Index, which tracks the median payment on new purchase mortgage applications, shows the trend clearly.
 
-| Month | Median new-mortgage payment (MBA PAPI) | Change |
-|---|---|---|
-| December 2025 | $2,025 | — |
-| January 2026 | $2,070 | +$45 |
-| February 2026 | $2,061 | −$9 |
-| March 2026 | $2,131 | +$70 |
-| April 2026 | $2,152 | +$21 |
-| May 2026 | $2,198 | +$46 |
+```chart
+{"type": "line", "title": "Median monthly payment on new purchase mortgage applications", "prefix": "$", "source": "Mortgage Bankers Association, Purchase Applications Payment Index (2025–2026)", "data": [{"label": "Dec '25", "value": 2025}, {"label": "Jan '26", "value": 2070}, {"label": "Feb '26", "value": 2061}, {"label": "Mar '26", "value": 2131}, {"label": "Apr '26", "value": 2152}, {"label": "May '26", "value": 2198}]}
+```
 
 That is a $173 increase — about 8.5% — in five months. And these are median figures for approved applicants; households stretching for homes in high-cost metros are committing to considerably more.
 

@@ -12,12 +12,12 @@ Companies now spend enormous sums keeping employees well — the global corporat
 
 ## Key statistics at a glance
 
-- **$68.02 billion** — estimated size of the global corporate wellness market in 2025, projected to reach $72.73 billion in 2026 (Precedence Research, 2025)
-- **20%** — share of the world's employees engaged at work in 2025, with 41% reporting significant stress the prior day (Gallup, State of the Global Workplace, 2026 report)
-- **$438 billion** — lost productivity Gallup attributed to the 2024 drop in global engagement alone (Gallup, 2025)
+```stats
+[{"value": 68, "prefix": "$", "suffix": "B", "label": "Global corporate wellness market in 2025", "source": "Precedence Research, 2025"}, {"value": 20, "suffix": "%", "label": "World's employees engaged at work in 2025", "source": "Gallup, 2026 report"}, {"value": 438, "prefix": "$", "suffix": "B", "label": "Lost productivity from 2024's engagement drop", "source": "Gallup, 2025"}, {"value": 58, "suffix": "%", "label": "Cut in post-meal glucose spikes from a 5-minute walk every 30 minutes", "source": "Columbia University, 2023"}]
+```
+
 - **No significant effect** on clinical health measures, healthcare spending, or absenteeism after 18 months of a multicomponent wellness program across 160 worksites (Song & Baicker, JAMA randomized trial, 2019)
 - **$0.50 returned per $1 spent** on lifestyle-management wellness programming at PepsiCo, versus **$3.80 per $1** for chronic-disease management (RAND Corporation, 2014)
-- **58% reduction** in post-meal blood sugar spikes from a five-minute walk every 30 minutes of sitting (Columbia University Irving Medical Center, 2023)
 - **1 in 5** employees worldwide report feeling lonely a lot of the previous day — 25% among fully remote workers (Gallup, 2024)
 - **One-half to two times annual salary** — Gallup's estimate of the cost of replacing a single employee, part of roughly $1 trillion in annual U.S. voluntary-turnover costs (Gallup, 2019)
 

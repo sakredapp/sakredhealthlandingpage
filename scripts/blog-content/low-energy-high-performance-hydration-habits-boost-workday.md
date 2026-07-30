@@ -14,11 +14,11 @@ Hydration advice is unusually full of numbers that nobody can source. Below is a
 
 ## Key statistics at a glance
 
-- **29.5%** of US adults aged 20–74 were inadequately hydrated (urine osmolality of 800 mOsm/kg or higher) in an analysis of 8,258 NHANES 2009–2012 participants published in *Annals of Family Medicine* (2016).
-- **44 ounces** — the average daily plain water intake of US adults in NHANES 2015–2018, per CDC data published in 2024. That is about 5.5 cups.
+```stats
+[{"value": 29.5, "suffix": "%", "decimals": 1, "label": "US adults inadequately hydrated by urine osmolality", "source": "Annals of Family Medicine, 2016"}, {"value": 44, "suffix": " oz", "label": "Average daily plain-water intake — about 5.5 cups", "source": "CDC/NHANES, 2024"}, {"value": 1.36, "suffix": "%", "decimals": 2, "label": "Body-mass loss enough to degrade mood, focus, and trigger headaches", "source": "Armstrong et al., 2012"}, {"display": "−0.21", "label": "Pooled effect of dehydration on cognition across 33 studies", "source": "Wittbrodt & Millard-Stafford, 2018"}]
+```
+
 - **3.7 L for men, 2.7 L for women** — the National Academies' 2004 adequate intake values for *total* water from all beverages and food, with roughly 80% typically coming from beverages and 20% from food.
-- **−0.21** — the overall effect size for cognitive impairment from dehydration across 33 studies and 413 subjects in the 2018 *Medicine & Science in Sports & Exercise* meta-analysis by Wittbrodt and Millard-Stafford, with larger impairment above 2% body-mass loss.
-- **1.36%** body-mass loss was enough to degrade mood, raise perceived task difficulty, lower concentration and trigger headache symptoms in 25 healthy young women (Armstrong et al., *Journal of Nutrition*, 2012).
 - **Four cups of coffee a day** produced no significant difference in hydration status versus the same volume of water across a wide range of markers in a 50-man crossover trial (Killer et al., *PLOS ONE*, 2014).
 - **5,604 people across 23 countries** were measured with doubly labeled water for the 2022 *Science* study on water turnover, whose authors concluded the "eight 8-ounce glasses" rule is not backed by objective evidence.
 

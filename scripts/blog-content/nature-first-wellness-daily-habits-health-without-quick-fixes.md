@@ -12,13 +12,13 @@ The Global Wellness Institute's 2025 Global Wellness Economy Monitor put the wel
 
 ## Key statistics at a glance
 
-- **$6.8 trillion** — size of the global wellness economy in 2024, up 7.9% year over year and double its 2013 size (Global Wellness Institute, 2025)
+```stats
+[{"value": 6.8, "prefix": "$", "suffix": "T", "decimals": 1, "label": "Global wellness economy in 2024 — double its 2013 size", "source": "Global Wellness Institute, 2025"}, {"value": 120, "suffix": " min", "label": "Weekly nature time where health benefits become significant", "source": "White et al., 2019"}, {"value": 93, "suffix": "%", "label": "Time Americans spend inside buildings or vehicles", "source": "EPA National Human Activity Pattern Survey"}, {"display": "−4.8 mmHg", "label": "Blood-pressure effect of nature-prescription programs", "source": "The Lancet Planetary Health, 2023"}]
+```
+
 - **75%** — share of Americans who report using dietary supplements (Council for Responsible Nutrition consumer survey, 2024)
 - **No mortality benefit** — daily multivitamin use was not associated with lower all-cause mortality across 390,124 adults followed up to 27 years (Loftfield et al., *JAMA Network Open*, 2024)
-- **120 minutes a week** — the threshold at which nature contact became significantly associated with good health (OR 1.59) and high wellbeing (OR 1.23) among 19,806 adults (White et al., *Scientific Reports*, 2019)
-- **−4.82 mmHg systolic** — pooled blood-pressure effect of nature-prescription programs versus controls, alongside a moderate-to-large effect on depression scores (*The Lancet Planetary Health*, 2023)
 - **HR 0.96 per 0.1 NDVI** — reduction in all-cause mortality risk for each increment of residential greenness within 500 m, across nine cohort studies covering more than eight million people (*The Lancet Planetary Health*, 2019)
-- **87% + 6%** — share of time Americans spend inside buildings and inside vehicles, respectively (EPA-funded National Human Activity Pattern Survey, 2001)
 - **250 lux** — minimum recommended daytime melanopic light at the eye; typical office lighting delivers under 200 (Brown et al., *PLOS Biology*, 2022)
 
 ## What $6.8 trillion buys, and what it doesn't

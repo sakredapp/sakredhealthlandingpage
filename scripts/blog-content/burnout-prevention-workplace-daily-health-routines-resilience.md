@@ -12,11 +12,12 @@ Burnout is often described in vague terms — feeling "fried," "running on empty
 
 ## Key statistics at a glance
 
-- **40%** of employees globally experienced a lot of stress the previous day (Gallup, State of the Global Workplace, 2026 data summary).
-- **21%** of employees worldwide were engaged at work in 2024, down from 23% — a drop Gallup estimates cost **$438 billion** in lost productivity (Gallup, 2025).
-- **44%** of U.S. employees reported feeling burned out at work, and 51% felt "used up" at the end of the workday (SHRM, 2024).
+```stats
+[{"value": 40, "suffix": "%", "label": "Employees worldwide who felt a lot of stress yesterday", "source": "Gallup, 2026 data summary"}, {"value": 44, "suffix": "%", "label": "US employees reporting burnout at work", "source": "SHRM, 2024"}, {"value": 20700, "prefix": "$", "label": "Upper-bound annual cost of one burned-out employee", "source": "American Journal of Preventive Medicine, 2025"}, {"value": 438, "prefix": "$", "suffix": "B", "label": "Lost productivity from the global engagement drop", "source": "Gallup, 2025"}]
+```
+
+- **21%** of employees worldwide were engaged at work in 2024, down from 23% (Gallup, 2025).
 - Burned-out employees are nearly **3x more likely** to be actively job hunting — 45% vs. 16% of non-burned-out peers (SHRM, 2024).
-- Burnout and disengagement cost employers an estimated **$4,000 to $20,700 per employee per year** depending on role (American Journal of Preventive Medicine, 2025).
 - Sleeping **less than 6 hours** a night was the single strongest predictor of developing clinical burnout in a two-year prospective study (Journal of Occupational Health Psychology, 2012).
 - Just **4 weeks** of regular exercise — cardio or resistance — significantly reduced perceived stress and emotional exhaustion in a randomized controlled trial (PeerJ, 2015).
 

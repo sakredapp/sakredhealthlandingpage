@@ -12,11 +12,11 @@ The most-quoted number in self-improvement is wrong. The claim that it takes 21 
 
 ## Key statistics at a glance
 
-- **66 days** — median time for a new daily behavior to reach its automaticity plateau, with individuals ranging from **18 to 254 days** (Lally et al., *European Journal of Social Psychology*, 2010)
+```stats
+[{"value": 66, "suffix": " days", "label": "Median time to automaticity — the range ran 18 to 254", "source": "Lally et al., 2010"}, {"display": "d = 0.65", "label": "Effect of if-then planning on goal attainment across 94 tests", "source": "Gollwitzer & Sheeran, 2006"}, {"display": "35–43%", "label": "Share of everyday behaviors that are true habits", "source": "Wood, Quinn & Kashy, 2002"}, {"value": 9, "suffix": "%", "label": "People who keep a New Year's resolution a full year", "source": "Forbes Health/OnePoll, 2023"}]
+```
+
 - **59–66 days median, 4–335 days range** — across 20 studies and 2,601 participants in the first systematic review of habit-formation timelines (Singh et al., *Healthcare*, 2024)
-- **d = 0.65** — the medium-to-large effect of if-then implementation intentions on goal attainment, pooled across 94 independent tests and more than 8,000 participants (Gollwitzer & Sheeran, 2006)
-- **35–43%** — share of everyday behaviors that diary studies classified as habits, meaning they were performed almost daily in the same place (Wood, Quinn & Kashy, *Journal of Personality and Social Psychology*, 2002)
-- **3.74 months** — average lifespan of a New Year's resolution; only 9% of people keep one for a full year (Forbes Health/OnePoll survey of 1,000 U.S. adults, 2023)
 - **31.3%** — share of adults worldwide who were insufficiently physically active in 2022, up from 23.4% in 2000 (WHO analysis in *The Lancet Global Health*, 2024)
 - **30.5%** — share of U.S. adults sleeping under seven hours a night in 2024 (CDC National Center for Health Statistics, 2025)
 

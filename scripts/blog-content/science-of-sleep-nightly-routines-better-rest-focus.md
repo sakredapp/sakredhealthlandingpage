@@ -14,12 +14,12 @@ The last decade of sleep research — especially the arrival of large wearable d
 
 ## Key statistics at a glance
 
-- **30.5%** of U.S. adults had short sleep duration (0–6 hours) in 2024, per the CDC's NCHS Data Brief No. 559 (2026).
+```stats
+[{"value": 30.5, "suffix": "%", "decimals": 1, "label": "US adults sleeping six hours or less a night", "source": "CDC/NCHS Data Brief 559, 2026"}, {"value": 411, "prefix": "$", "suffix": "B", "label": "Annual US economic cost of insufficient sleep", "source": "RAND Europe, 2016"}, {"display": "20–48%", "label": "Lower mortality among the most sleep-regular adults", "source": "SLEEP, 2023 (UK Biobank)"}, {"value": 15.3, "suffix": " min", "decimals": 1, "label": "REM sleep lost on alcohol nights, across 600K+ Oura members", "source": "Oura, November 2025"}]
+```
+
 - **18.1%** had trouble staying asleep and **15.4%** had trouble falling asleep, according to the same NCHS analysis.
-- Insufficient sleep costs the U.S. economy up to **$411 billion a year — 2.28% of GDP** — according to RAND Europe's 2016 analysis.
 - Sleeping under six hours a night carries a **13% higher mortality risk** than sleeping seven to nine, per that same RAND report.
-- The most sleep-regular adults had roughly **20%–48% lower all-cause mortality** than the least regular, in a 2023 *SLEEP* study of 60,977 UK Biobank participants — and regularity outpredicted duration.
-- Alcohol nights cut REM sleep by **15.3 minutes** and HRV by **15.6%** in an analysis of over 600,000 Oura members published in November 2025.
 - 400 mg of caffeine taken **six hours before bed** reduced objectively measured sleep by **more than an hour**, in a 2013 *Journal of Clinical Sleep Medicine* trial — and participants didn't notice.
 
 ## Regularity matters more than duration

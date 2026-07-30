@@ -12,11 +12,11 @@ In a nationally representative survey of 71,812 Americans published in the *Amer
 
 ## Key statistics at a glance
 
-- **61%** of US adults reported a GI symptom in the past week (Almario et al., *American Journal of Gastroenterology*, 2018)
-- **7.4%** of US adults met the recommended adequate intake of fiber, per an NHANES 2013–2018 analysis presented at Nutrition 2021
-- **55.0%** of total calories consumed by Americans age 1 and up came from ultra-processed foods (CDC/NCHS Data Brief No. 536, 2025)
+```stats
+[{"value": 7.4, "suffix": "%", "decimals": 1, "label": "US adults meeting the recommended fiber intake", "source": "NHANES 2013–2018 analysis"}, {"value": 55, "suffix": "%", "label": "Share of US calories from ultra-processed foods", "source": "CDC/NCHS, 2025"}, {"value": 19, "label": "Inflammatory proteins lowered by fermented foods in Stanford's trial", "source": "Wastyk et al., Cell, 2021"}, {"value": 61, "suffix": "%", "label": "US adults with a GI symptom in the past week", "source": "American Journal of Gastroenterology, 2018"}]
+```
+
 - **15–30%** lower all-cause and cardiovascular mortality among the highest fiber consumers versus the lowest (Reynolds et al., *The Lancet*, 2019)
-- **19** inflammatory proteins in blood fell in the fermented-food arm of Stanford's 2021 trial; **zero** fell in the high-fiber arm (Wastyk et al., *Cell*, 2021)
 - **30+ plant types per week** was associated with a measurably different microbiome — including fewer antibiotic resistance genes — versus 10 or fewer (McDonald et al., *mSystems*, 2018)
 - **3 of 8** clinical uses for probiotics earned even a conditional recommendation from the American Gastroenterological Association in its 2020 guideline
 

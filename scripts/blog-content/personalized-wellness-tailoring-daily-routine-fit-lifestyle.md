@@ -12,10 +12,10 @@ In 2020, researchers behind the PREDICT 1 study fed 1,002 adults in the UK and U
 
 ## Key statistics at a glance
 
-- **103%, 68%, 59%** — between-person variation in triglyceride, glucose, and insulin responses to identical meals across 1,002 participants (Berry et al., *Nature Medicine*, 2020)
-- **384 ml O₂ average gain, with individual results ranging from a decline to more than 1,000 ml** — across 720 adults doing the same supervised 20-week aerobic program in the HERITAGE Family Study (reviewed by Pickering & Kiely, *Sports Medicine*, 2018)
-- **7.4%** — the grip-strength advantage early chronotypes held over late chronotypes at 8 a.m., alongside 8.4% better psychomotor vigilance (Facer-Childs et al., *Sports Medicine – Open*, 2018)
-- **351 genetic loci** associated with being a morning person, identified in 697,828 people; the most "morning" 5% sleep an average of 25 minutes earlier than the least (Jones et al., *Nature Communications*, 2019)
+```stats
+[{"value": 103, "suffix": "%", "label": "Person-to-person variation in triglyceride response to identical meals", "source": "Berry et al., Nature Medicine, 2020"}, {"value": 384, "suffix": " ml", "label": "Average VO₂ gain from one identical program — individuals ranged from decline to 1,000+", "source": "HERITAGE Family Study"}, {"value": 7.4, "suffix": "%", "decimals": 1, "label": "Morning types' grip-strength edge over night owls at 8 a.m.", "source": "Facer-Childs et al., 2018"}, {"value": 351, "label": "Genetic loci tied to being a morning person, in 697,828 people", "source": "Jones et al., Nature Communications, 2019"}]
+```
+
 - **68% vs. 55%** — the share of 8,433 Finnish adults classified as morning types by questionnaire versus by a single self-report question; even the label is instrument-dependent (Maukonen et al., *Journal of Biological Rhythms*, 2020)
 - **g = 0.13 to 0.22** — effect sizes for computer-tailored health interventions versus generic controls across smoking, diet, and physical activity (Krebs, Prochaska & Rossi, *Preventive Medicine*, 2010)
 - **30.5%** — U.S. adults sleeping under seven hours a night in 2024, a constraint no routine template can wish away (CDC National Center for Health Statistics, 2025)

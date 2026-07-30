@@ -33,27 +33,18 @@ export function Hero() {
 
         <StampHeading
           as="h1"
-          text="Protect what you've built"
-          accent="and who you built it for"
+          text="Your whole life,"
+          accent="covered."
           delay={0.1}
           className="text-4xl sm:text-5xl lg:text-6xl font-display font-normal tracking-tight text-[#2C2C2C] mb-6"
         />
 
+        {/* One line only — the headline does the work. */}
         <motion.p
           {...fadeUp(0.35)}
-          className="text-lg sm:text-xl text-[#2C2C2C]/70 max-w-3xl mx-auto mb-4 leading-relaxed"
+          className="text-lg sm:text-xl text-[#2C2C2C]/70 max-w-2xl mx-auto mb-8 leading-relaxed"
         >
-          The house, the people in it, and the years ahead. Sakred Health is a licensed life and health
-          insurance agency — with a dedicated agent who actually picks up the phone and builds coverage
-          around your life, not a script.
-        </motion.p>
-
-        <motion.p
-          {...fadeUp(0.42)}
-          className="text-base text-[#2C2C2C]/55 max-w-2xl mx-auto mb-8"
-        >
-          Mortgage protection, term & whole life, IULs, final expense, major medical, short-term, dental &
-          vision, and retirement annuities — all through one agency, one agent, one app.
+          Health, home, and family — one agency, one agent, all 50 states.
         </motion.p>
 
         <motion.div

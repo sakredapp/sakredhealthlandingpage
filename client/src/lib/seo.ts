@@ -10,7 +10,7 @@ import { useEffect } from "react";
  * these routes to static HTML at build time is the recommended follow-up.
  */
 export const SITE_URL = "https://sakredhealth.com";
-const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
+const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 interface SeoInput {
   title: string;

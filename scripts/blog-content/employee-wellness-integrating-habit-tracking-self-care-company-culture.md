@@ -12,12 +12,12 @@ Habit tracking has quietly become mainstream at work: SHRM survey data cited in 
 
 ## Key statistics at a glance
 
-- **30% of organizations** included wearables in wellness plans by 2023, up from about 10% five years earlier (SHRM survey data, 2023)
+```stats
+[{"value": 30, "suffix": "%", "label": "Organizations with wearables in wellness plans by 2023", "source": "SHRM survey data, 2023"}, {"value": 66, "suffix": " days", "label": "Median time for a new daily habit to become automatic", "source": "University College London"}, {"value": 41, "suffix": "%", "label": "Employees with significant stress the previous day", "source": "Gallup, 2026 report"}, {"display": "1 of ~90", "label": "Individual wellness perks linked to better wellbeing in Oxford's UK analysis", "source": "Fleming, Industrial Relations Journal, 2024"}]
+```
+
 - **Self-monitoring interventions significantly reduced sedentary time** across 19 studies and 2,800 participants (International Journal of Behavioral Nutrition and Physical Activity meta-analysis, 2019)
 - **Adherence to self-monitoring is among the strongest predictors of weight-loss success** in digital health interventions (Obesity Reviews systematic review, 2021)
-- **Median 66 days to automaticity** for a new daily health habit, with a range of 18–254 days (University College London, 2009)
-- **Only 1 of ~90** individual-level workplace wellbeing interventions showed a positive association with wellbeing in Oxford's large UK analysis — volunteering (Fleming, Industrial Relations Journal, 2024)
-- **41% of employees** worldwide reported significant stress the previous day; only 34% are thriving in overall wellbeing (Gallup, State of the Global Workplace, 2026 report)
 - **Manager engagement fell from 27% to 22%** between 2024 and 2025 — the steepest decline of any group Gallup tracks (Gallup, 2026 report)
 - **1 in 5 employees feels lonely** a lot of the previous day, rising to 25% for fully remote workers (Gallup, 2024)
 

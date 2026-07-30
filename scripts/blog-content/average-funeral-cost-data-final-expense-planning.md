@@ -14,14 +14,14 @@ The gap between what a funeral costs and what most families have set aside for o
 
 ## Key statistics at a glance
 
-- **$8,300** — median cost of a funeral with viewing and burial, before cemetery costs (NFDA General Price List survey, 2023, the most recent edition)
-- **$9,995** — the same funeral with a burial vault, which many cemeteries require (NFDA, 2023)
-- **$6,280** — median cost of a funeral with cremation, including an alternative cremation casket and urn (NFDA, 2023)
+```stats
+[{"value": 9995, "prefix": "$", "label": "Median funeral with viewing, burial, and vault", "source": "NFDA General Price List survey, 2023"}, {"value": 6280, "prefix": "$", "label": "Median funeral with cremation", "source": "NFDA, 2023"}, {"value": 255, "prefix": "$", "label": "Social Security lump-sum death payment, unchanged since 1954", "source": "Social Security Administration"}, {"value": 57, "suffix": "%", "label": "Americans who couldn't cover a funeral today without debt", "source": "Debt.com survey, October 2025"}]
+```
+
+- **$8,300** — the same funeral before the burial vault many cemeteries require (NFDA, 2023)
 - **63.4%** — projected U.S. cremation rate for 2025, versus a 31.6% burial rate (NFDA 2025 Cremation & Burial Report)
 - **82.3%** — projected cremation rate by 2045, when cremations are expected to outnumber burials more than six to one (NFDA, 2025)
-- **57%** — share of Americans who say they could not cover a loved one's funeral today without going into debt (Debt.com survey, October 2025)
 - **37%** — share who took on debt after a loved one's death in 2025, up from 14% a year earlier (Debt.com, 2025)
-- **$255** — Social Security's one-time lump-sum death payment, unchanged for over 70 years (Social Security Administration)
 
 ## The itemized bill: where $9,995 actually goes
 
@@ -42,6 +42,10 @@ The NFDA's General Price List survey — the industry's benchmark pricing study,
 | **Subtotal: funeral with viewing and burial** | **$8,300** |
 | Burial vault | $1,695 |
 | **Total with vault** | **$9,995** |
+
+```chart
+{"type": "hbar", "title": "Where the median funeral bill goes (2023)", "prefix": "$", "source": "NFDA General Price List survey, 2023", "height": 340, "data": [{"label": "Metal casket", "value": 2500}, {"label": "Basic services fee", "value": 2495}, {"label": "Burial vault", "value": 1695}, {"label": "Embalming", "value": 845}, {"label": "Funeral ceremony", "value": 550}, {"label": "Viewing", "value": 475}, {"label": "Transfer of remains", "value": 395}, {"label": "Hearse", "value": 375}]}
+```
 
 Two things in this table deserve attention. First, the basic services fee — $2,495 — is non-declinable under the FTC's Funeral Rule; it applies no matter how simple the arrangement. Second, and more important for planning: **this total excludes the cemetery entirely.** The NFDA figure does not include the plot, opening and closing of the grave, a monument or marker, flowers, or the obituary. Families budgeting off the $8,300 headline number routinely find the real total runs thousands higher once cemetery charges are added.
 
