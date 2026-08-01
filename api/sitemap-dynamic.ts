@@ -6,6 +6,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   setCorsHeaders(res);
   if (req.method === "OPTIONS") return res.status(200).end();
 
+  // Google's sitemap fetcher issues HEAD before GET — rejecting it made Search
+  // Console report "Couldn't fetch". Answer HEAD with the real headers, no body.
+  if (req.method === "HEAD") {
+    res.setHeader("Content-Type", "application/xml");
+    return res.status(200).end();
+  }
+
   if (req.method !== "GET") {
     return res.status(405).json({ error: "Method not allowed" });
   }
