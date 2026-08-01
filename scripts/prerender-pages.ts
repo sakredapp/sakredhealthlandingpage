@@ -357,7 +357,62 @@ function main() {
     count++;
   }
 
-  console.log(`[prerender-pages] wrote ${count} static pages (products + states + core)`);
+  // Homepage — dist/index.html is also the SPA fallback, so it must be written
+  // LAST (the template was read at the top of main() and is unaffected).
+  // Without this the crawler-facing homepage was an empty <div id="root">:
+  // no H1, no copy. React replaces this markup on mount.
+  const homeBody = `
+    <main class="pt-24 pb-20 px-4 sm:px-6 lg:px-8 bg-[#F9F9F7]">
+      <div class="max-w-3xl mx-auto prose prose-lg">
+        <p>Mortgage Protection · Life · Health · Retirement</p>
+        <h1>Your whole life, covered.</h1>
+        <p>The health plan, the mortgage protection, and the retirement income behind it —
+        built together by one dedicated agent who knows your family. Licensed in all 50 states.</p>
+        <p><a href="/get-coverage">Get a free quote</a> · <a href="/products">See plans in your area</a></p>
+        <h2>What we protect</h2>
+        <ul>${PRODUCTS.map(
+          (p) => `<li><a href="/products/${p.slug}">${esc(p.title)}</a> — ${esc(p.tagline)}</li>`
+        ).join("")}</ul>
+        <h2>Wellness built in</h2>
+        <p>Every household we cover gets the <a href="/app">Sakred Health app</a>: guided
+        multi-day protocols for sleep, gut, liver, and lymphatic health, daily habit tracking,
+        and your policy documents and agent in the same place.</p>
+        <ul>${PROTOCOLS.map(
+          (p) => `<li><a href="/blog/${p.postSlug}">${esc(p.name)} — ${p.days}-day protocol</a></li>`
+        ).join("")}</ul>
+        <h2>Research</h2>
+        <p>We publish cited research on coverage and daily health — read
+        <a href="/blog">the full library</a>.</p>
+      </div>
+    </main>`;
+  const homeHead = buildHead({
+    title: "Sakred Health — Health, Life & Mortgage Protection",
+    description:
+      "One licensed agency for health, life, mortgage protection, and retirement coverage — with a dedicated agent in all 50 states. Free consultation.",
+    path: "/",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "InsuranceAgency",
+          name: "Sakred Health",
+          url: BASE_URL,
+          areaServed: { "@type": "Country", name: "United States" },
+          description:
+            "Licensed insurance agency offering health, life, mortgage protection, final expense, and retirement coverage in all 50 states, with a wellness app included.",
+        },
+        {
+          "@type": "WebSite",
+          name: "Sakred Health",
+          url: BASE_URL,
+        },
+      ],
+    },
+  });
+  writeFileSync(join(DIST, "index.html"), injectIntoTemplate(template, homeHead, homeBody));
+  count++;
+
+  console.log(`[prerender-pages] wrote ${count} static pages (home + products + states + core)`);
 }
 
 try {
