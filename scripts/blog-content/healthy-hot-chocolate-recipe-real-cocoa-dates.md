@@ -17,9 +17,13 @@ recipeCategory: Beverage
 recipeCuisine: American
 ---
 
-Healthy hot chocolate is made from four things: natural unsweetened cocoa powder, the milk of your choice, one whole date blended in as the only sweetener, and a trio of flavor amplifiers — vanilla, cinnamon, and a pinch of sea salt. It takes about ten minutes, contains roughly 16 grams of sugar from the date instead of the 23 grams of added sugar in a standard instant cocoa envelope, and it carries fiber, potassium, and magnesium that the packet does not. It is still a sweet drink. It is just a sweet drink you built on purpose.
+One envelope of Swiss Miss Milk Chocolate hot cocoa mix carries **23 grams of added sugar** — most of a woman's entire daily allowance under the American Heart Association's 25-gram limit, in a mug that takes ninety seconds to drink. That is the honest answer to whether hot chocolate is bad for you: the cocoa isn't the problem, and the sugar is. Cocoa itself is a genuinely useful ingredient — two tablespoons of the unsweetened powder bring about 4 grams of fiber, 164 mg of potassium and 54 mg of magnesium for roughly 24 calories.
 
-Nobody actually craves maltodextrin. What people want in December is a warm mug, a chocolate smell, and fifteen minutes of holding something. All of that is reproducible with better ingredients — and one of those ingredients matters far more than the recipe blogs admit.
+There is a second answer most people never hear, and it decides which tin to buy: **heavily alkalized (Dutch-process) cocoa loses about 89% of its flavanols** compared with natural cocoa — 3.9 mg per gram against 34.6. Nearly every packet and café pump uses the alkalized kind. So the drink most people think of as "chocolate" is the version with the sugar maximized and the interesting chemistry stripped out.
+
+Built the other way — natural unsweetened cocoa powder, the milk of your choice, one whole date blended in as the only sweetener, and a trio of flavor amplifiers in vanilla, cinnamon and a pinch of sea salt — it takes about ten minutes and carries roughly 16 grams of sugar from the date, plus fiber, potassium and magnesium the packet does not have. It is still a sweet drink. It is just a sweet drink you built on purpose.
+
+Nobody actually craves maltodextrin. What people want in December is a warm mug, a chocolate smell, and fifteen minutes of holding something.
 
 *This article is educational, not medical advice. Talk to your doctor before making dietary changes, especially if you're pregnant, nursing, managing blood sugar, or taking medication.*
 

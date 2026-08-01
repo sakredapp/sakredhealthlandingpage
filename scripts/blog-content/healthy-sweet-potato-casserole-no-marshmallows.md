@@ -15,9 +15,13 @@ recipeCategory: Side Dish
 recipeCuisine: American
 ---
 
-Sweet potato casserole without marshmallows is made from **boiled** sweet potatoes — not roasted — mashed with egg, milk, butter, warm spices and a quarter cup of maple syrup, then baked under a topping of pecans, rolled oats and a little coconut sugar. It comes out at roughly **7 grams of added sugar per serving** against about 27 grams in a half-cup of a commercially prepared version, with around 5 grams of fiber and well over a day's worth of vitamin A.
+Sweet potato casserole is built on one of the most nutrient-dense vegetables on the Thanksgiving table and then loaded until that stops mattering. A half-cup of a commercially prepared version — Member's Mark — carries **27 grams of added sugar**, which is more than the American Heart Association's entire 25-gram daily ceiling for women, in a side dish nobody counts as dessert. The sweet potato underneath is doing real work: one cup of the finished casserole still supplies **157% of the Daily Value for vitamin A** along with several grams of fiber. The vegetable is not the issue. The quarter-inch of marshmallow on top and the sugar stirred through the mash are.
 
-The boiling instruction is not a shortcut. It is the single most consequential decision in the recipe, and published glycemic data says it matters more than the topping does. That is the first of two things worth knowing here. The second is that the marshmallow topping most people think of as an inherited family tradition was, documentably, a marshmallow company's 1917 advertising campaign.
+There is a second answer that almost nobody mentions, and published data says it matters more than the topping: **how you cook the sweet potato moves its glycemic index further than what you put on it.** Boiled, ten cultivars tested in a randomized cross-over trial ranged from **41 to 50**. Baked, the same cultivars ranged from **82 to 94** — roughly double. Nearly every recipe tells you to roast.
+
+Rebuilt on both findings, the dish lands at roughly **7 grams of added sugar per serving**: **boiled** sweet potatoes — not roasted — mashed with egg, milk, butter, warm spices and a quarter cup of maple syrup, then baked under a topping of pecans, rolled oats and a little coconut sugar, with around 5 grams of fiber and well over a day's worth of vitamin A.
+
+And the marshmallow topping most people treat as an inherited family tradition was, documentably, a marshmallow company's 1917 advertising campaign.
 
 *This article is educational, not medical or nutrition advice. Talk to your doctor before making dietary changes, especially if you're pregnant, nursing, managing blood sugar, or taking medication.*
 

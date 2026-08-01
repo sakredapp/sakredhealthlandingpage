@@ -15,9 +15,11 @@ recipeCategory: Dessert
 recipeCuisine: American
 ---
 
-Healthy pumpkin bread without refined sugar is made from one can of pure pumpkin purée, whole-grain flour, eggs, a little neutral oil, Greek yogurt, warm spices, vanilla, salt, baking soda — and six blended Medjool dates plus two tablespoons of maple syrup as the entire sweetener. It bakes into one 9×5-inch loaf, twelve slices, at about **10 grams of added sugar and 4 grams of fiber per slice**. A widely published version of the same loaf runs about 22 grams of added sugar per slice. It is still a sweet quick bread. It is just one where you set the number.
+Pumpkin bread is a dessert wearing a vegetable's name. A widely published home recipe runs about **22 grams of added sugar per slice** at 12 slices to the loaf, and a Starbucks Pumpkin & Pepita Loaf lists **31 grams of total sugars** with 2 grams of fiber — so a single slice can carry a woman's entire daily added-sugar allowance under the American Heart Association's 25-gram limit. The pumpkin itself is genuinely nutritious; half a cup of the canned purée delivers more than a full day's vitamin A plus 3.6 grams of fiber. The problem is the ratio of sugar to everything else, not the squash.
 
-That's the recipe. The rest of this is the three things nobody tells you: what is actually inside a can labeled "pumpkin," what you genuinely give up when you take sugar out of a quick bread, and whether pumpkin is as nutritious as autumn marketing implies. All three answers are more interesting than the internet version.
+Rebuilt around that ratio, the loaf lands at about **10 grams of added sugar and 4 grams of fiber per slice** — one can of pure pumpkin purée, whole-grain flour, eggs, a little neutral oil, Greek yogurt, warm spices, vanilla, salt, baking soda, and six blended Medjool dates plus two tablespoons of maple syrup as the entire sweetener. It is still a sweet quick bread. It is just one where you set the number.
+
+Below that: what is actually inside a can labeled "pumpkin," what you genuinely give up when you take sugar out of a quick bread, and whether pumpkin is as nutritious as autumn marketing implies. All three answers are more interesting than the internet version.
 
 *This article is educational, not medical or nutrition advice. Talk to your doctor before making dietary changes, especially if you're pregnant, nursing, managing blood sugar, or taking medication.*
 
