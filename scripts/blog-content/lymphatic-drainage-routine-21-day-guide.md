@@ -6,7 +6,7 @@ title: "The 21-Day Lymphatic Drainage Routine: What the Evidence Actually Suppor
 excerpt: Your lymphatic system has no pump — it moves only when you move, breathe, or press on it. Here's a 21-day at-home routine built from eight practices, each graded honestly against the published evidence.
 tags: [lymphatic-system, movement, sauna, breathwork, 21-day-protocol]
 seoTitle: "21-Day Lymphatic Drainage Routine (Evidence-Graded)"
-seoDescription: "Lymph has no pump. A 21-day at-home lymphatic routine — dry brushing, rebounding, breathwork, sauna, self-massage — with each practice graded against real evidence."
+seoDescription: Lymph has no pump. A 21-day at-home lymphatic routine — dry brushing, rebounding, breathwork, sauna, self-massage.
 seoKeywords: [lymphatic drainage at home, how to move lymph, dry brushing, lymphatic cleanse routine, rebounding for lymph]
 ---
 

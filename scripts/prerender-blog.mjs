@@ -205,8 +205,12 @@ function buildHead(a, dates) {
   const url = `${BASE_URL}/blog/${a.slug}`;
   const title = a.seoTitle || a.title;
   const desc = a.seoDescription || a.excerpt;
+  // Append the brand only when it keeps the title inside the ~60-char display
+  // limit — otherwise the suffix is what pushes an already-tuned title over.
+  const branded = `${title} | Sakred Health`;
+  const headTitle = branded.length <= 60 ? branded : title;
   return [
-    `<title>${esc(title)} | Sakred Health</title>`,
+    `<title>${esc(headTitle)}</title>`,
     `<meta name="description" content="${esc(desc)}">`,
     `<link rel="canonical" href="${url}">`,
     `<meta property="og:type" content="article">`,
@@ -307,7 +311,7 @@ async function main() {
     )
   );
   const listingHead = [
-    `<title>Blog — Data-Driven Health &amp; Coverage Research | Sakred Health</title>`,
+    `<title>Blog — Health &amp; Coverage Research | Sakred Health</title>`,
     `<meta name="description" content="Research-backed articles on daily health, workplace wellness, life insurance, mortgage protection, and final expense planning — every claim cited to its source.">`,
     `<link rel="canonical" href="${BASE_URL}/blog">`,
   ].join("\n    ");

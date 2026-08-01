@@ -6,7 +6,7 @@ title: "The Price of Getting Sick in America: A $172,500 Retirement Bill and $22
 excerpt: A 65-year-old retiring in 2025 needs an estimated $172,500 for health care, while Americans carry at least $220 billion in medical debt. Here is what the numbers say — and how to plan around them.
 tags: [retirement-planning, medical-debt, health-insurance, healthcare-costs]
 seoTitle: Retirement Health Costs & Medical Debt Statistics
-seoDescription: A 65-year-old needs an estimated $172,500 for retirement health care, and Americans owe $220B+ in medical debt. Key statistics, cost breakdowns, and planning steps.
+seoDescription: A 65-year-old needs an estimated $172,500 for retirement health care, and Americans owe $220B+ in medical debt. Key statistics, cost breakdowns.
 seoKeywords: [retirement health care costs, medical debt statistics, Fidelity retiree health estimate, Medicare out-of-pocket costs, HSA statistics]
 ---
 

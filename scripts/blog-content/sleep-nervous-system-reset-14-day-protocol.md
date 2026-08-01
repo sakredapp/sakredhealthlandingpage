@@ -6,7 +6,7 @@ title: "The 14-Day Sleep & Nervous System Reset: A Protocol Graded by the Eviden
 excerpt: About a third of American adults wake up at least three nights a week. This is a 14-day, practice-by-practice sleep reset — morning light, a 20-minute wind-down, a mental offload, and a calm-down supplement stack — with each step graded against published trials.
 tags: [sleep, nervous-system, circadian-rhythm, protocols]
 seoTitle: "14-Day Sleep Reset Protocol: What the Evidence Supports"
-seoDescription: "A 14-day sleep and nervous system reset graded by evidence: morning light, screens off, box breathing, brain dump, magnesium and L-theanine. Honest about what works."
+seoDescription: A 14-day sleep and nervous system reset graded by evidence: morning light, screens off, box breathing, brain dump, magnesium and L-theanine.
 seoKeywords: [sleep reset protocol, why do I wake up at 3am, nervous system regulation for sleep, 14 day sleep routine, magnesium for sleep]
 ---
 

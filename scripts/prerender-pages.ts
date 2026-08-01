@@ -150,8 +150,9 @@ function main() {
 
   // Product detail pages
   for (const p of PRODUCTS) {
-    const title = truncate(`${p.title} — ${p.tagline} | Sakred Health`, 65);
-    const desc = truncate(p.blurb, 158);
+    const full = `${p.title} — ${p.tagline} | Sakred Health`;
+    const title = full.length <= 60 ? full : truncate(`${p.title} | Sakred Health`, 60);
+    const desc = truncate(p.blurb, 155);
     const head = buildHead({
       title,
       description: desc,
@@ -198,7 +199,7 @@ function main() {
     injectIntoTemplate(
       template,
       buildHead({
-        title: "Insurance Products — Life, Health, Mortgage Protection | Sakred Health",
+        title: "Coverage Options — Life, Health &amp; Mortgage Protection",
         description:
           "Mortgage protection, life insurance, final expense, private health, ACA marketplace plans, and retirement annuities — one licensed agency, all 50 states.",
         path: "/products",
@@ -297,9 +298,9 @@ function main() {
       </article>
     </main>`;
   const appHead = buildHead({
-    title: "Health App with Guided Detox, Gut & Sleep Routines | Sakred Health",
+    title: "Health App: Guided Detox, Gut & Sleep Routines",
     description:
-      "Guided multi-day wellness protocols — liver detox, gut reset, lymphatic drainage, and sleep — with habit tracking, streaks, reminders, and wearable sync. Plus your policy and agent in one app.",
+      "Guided multi-day wellness protocols — liver detox, gut reset, lymphatic drainage, and sleep — with habit tracking, streaks, and wearable sync.",
     path: "/app",
     jsonLd: {
       "@context": "https://schema.org",
@@ -327,18 +328,24 @@ function main() {
   count++;
 
   // Lightweight static heads for stable pages the SPA otherwise leaves generic
-  const simplePages: { path: string; title: string; description: string }[] = [
+  const simplePages: { path: string; title: string; description: string; h1: string; body: string }[] = [
     {
       path: "/about",
-      title: "Our Story — Why Sakred Health Exists | Sakred Health",
+      title: "Our Story — Why Sakred Health Exists",
       description:
-        "Sakred Health pairs daily-habit wellness with real coverage — life, health, mortgage protection, and retirement — through one licensed agency and a dedicated agent.",
+        "Sakred Health pairs daily-habit wellness with real coverage — life, health, mortgage protection, and retirement — one licensed agency, one dedicated agent.",
+      h1: "Why Sakred Health exists",
+      body:
+        "We think coverage and health belong in the same place. Most agencies sell you a policy and disappear until renewal; most wellness apps ignore the financial risk entirely. Sakred Health does both — a licensed agency for life, health, mortgage protection, final expense, and retirement coverage in all 50 states, paired with an app of guided daily-health protocols and one dedicated agent who knows your family.",
     },
     {
       path: "/get-coverage",
-      title: "Get Coverage — Free Quote in Minutes | Sakred Health",
+      title: "Get Coverage — Free Quote in Minutes",
       description:
         "Tell us about your household and get matched with life, health, mortgage protection, or retirement coverage. Licensed in all 50 states. Free consultation.",
+      h1: "Get coverage built around your household",
+      body:
+        "Answer a few questions about your household and a licensed agent will match you with the right mix of health, life, mortgage protection, and retirement coverage. Free consultation, no obligation, no pressure — and licensed in all 50 states.",
     },
   ];
   for (const pg of simplePages) {
@@ -353,7 +360,15 @@ function main() {
     });
     const dir = join(DIST, pg.path.slice(1));
     mkdirSync(dir, { recursive: true });
-    writeFileSync(join(dir, "index.html"), injectIntoTemplate(template, head, ""));
+    const body = `
+    <main class="pt-24 pb-20 px-4 sm:px-6 lg:px-8 bg-[#F9F9F7]">
+      <div class="max-w-3xl mx-auto prose prose-lg">
+        <h1>${esc(pg.h1)}</h1>
+        <p>${esc(pg.body)}</p>
+        <p><a href="/products">See coverage options</a> · <a href="/app">The Sakred app</a> · <a href="/blog">Research</a></p>
+      </div>
+    </main>`;
+    writeFileSync(join(dir, "index.html"), injectIntoTemplate(template, head, body));
     count++;
   }
 

@@ -6,7 +6,7 @@ title: "What Aging Actually Costs: The Long-Term Care Numbers Every Family Shoul
 excerpt: A private nursing home room now runs $129,575 a year, and 70% of 65-year-olds will develop severe care needs. Here is the verified data on long-term care costs, who pays, and how to plan.
 tags: [long-term-care, retirement-planning, caregiving, healthcare-costs]
 seoTitle: "Long-Term Care Costs 2025: Data Families Should See"
-seoDescription: "Verified 2025 data on long-term care: $129,575/year for a private nursing home room, 70% lifetime risk of needing care, and why Medicare won't pay for most of it."
+seoDescription: Verified 2025 data on long-term care: $129,575/year for a private nursing home room, 70% lifetime risk of needing care.
 seoKeywords: [long-term care costs 2025, nursing home cost per year, assisted living cost, who pays for long-term care, does medicare cover long-term care]
 ---
 

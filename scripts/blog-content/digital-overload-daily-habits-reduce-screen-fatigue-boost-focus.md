@@ -4,7 +4,7 @@ title: "Digital Overload by the Numbers: Daily Habits That Reduce Screen Fatigue
 excerpt: Adults now spend nearly seven hours a day online and hold attention on one screen for just 47 seconds. Here is what the research says about screen fatigue, and the specific habits proven to reverse it.
 tags: [digital-wellness, screen-fatigue, focus, sleep, productivity]
 seoTitle: "Screen Fatigue Data: Daily Habits That Rebuild Focus"
-seoDescription: "Adults average 6h 38m online daily and 47 seconds of attention per screen. The research-backed habits — 20-20-20, notification batching, bedtime cutoffs — that work."
+seoDescription: Adults average 6h 38m online daily and 47 seconds of attention per screen. The research-backed habits — 20-20-20, notification batching, bedtime cutoffs.
 seoKeywords: [screen fatigue, digital eye strain, 20-20-20 rule, attention span, screen time before bed]
 ---
 

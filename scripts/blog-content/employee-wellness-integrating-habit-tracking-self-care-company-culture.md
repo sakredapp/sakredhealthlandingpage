@@ -4,7 +4,7 @@ title: "Employee Wellness 2.0: Making Habit Tracking and Self-Care Part of Compa
 excerpt: Wearables and habit tracking have tripled in workplace programs, but tracking only works inside a culture that protects breaks, boundaries, and privacy. A data-backed, 90-day playbook for making wellness a daily norm.
 tags: [habit-tracking, company-culture, self-care, employee-wellness]
 seoTitle: "Habit Tracking at Work: A Culture Playbook"
-seoDescription: "Workplace habit tracking tripled in five years. What self-monitoring research shows, where privacy can break trust, and a 90-day plan to build wellness culture."
+seoDescription: Workplace habit tracking tripled in five years. What self-monitoring research shows, where privacy can break trust.
 seoKeywords: [habit tracking at work, employee wellness culture, workplace wearables, self-care at work, wellness program implementation]
 ---
 

@@ -6,7 +6,7 @@ title: The 21-Day Liver Support Protocol — What Actually Helps Phase I and Pha
 excerpt: A day-by-day guide to the Sakred Health 21-Day Liver & Detox Support Protocol, with every practice graded honestly against published evidence — from silymarin and cruciferous vegetables to castor oil packs and lemon water.
 tags: [liver-health, detox, nutrition, protocols]
 seoTitle: 21-Day Liver Detox Protocol - What the Evidence Shows
-seoDescription: A 21-day liver support protocol built on Phase I and Phase II detoxification biochemistry, with each daily practice graded honestly against published research.
+seoDescription: A 21-day liver support protocol built on Phase I and Phase II detoxification biochemistry, with each daily practice graded honestly against published.
 seoKeywords: [liver detox protocol, 21 day liver cleanse, phase 1 phase 2 liver detox, how to support liver detoxification, milk thistle evidence]
 ---
 
