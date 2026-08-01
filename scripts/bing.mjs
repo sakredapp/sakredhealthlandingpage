@@ -1,0 +1,118 @@
+#!/usr/bin/env node
+/**
+ * Bing Webmaster Tools CLI.
+ *
+ * Setup: get a key at bing.com/webmasters -> Settings -> API access -> API key,
+ * then put it in .env at the repo root (gitignored):
+ *   BING_API_KEY=your-key-here
+ *
+ * Usage:
+ *   node scripts/bing.mjs quota     # how many URL submissions are left today
+ *   node scripts/bing.mjs issues    # crawl + SEO issues Bing has found
+ *   node scripts/bing.mjs stats     # top queries and pages
+ *   node scripts/bing.mjs submit    # submit every URL in both sitemaps (batched)
+ */
+import { readFileSync, existsSync } from "fs";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+const SITE = process.env.BING_SITE_URL || "https://www.sakredhealth.com";
+const BASE = "https://ssl.bing.com/webmaster/api.svc/json";
+
+function loadKey() {
+  if (process.env.BING_API_KEY) return process.env.BING_API_KEY;
+  const envPath = join(ROOT, ".env");
+  if (existsSync(envPath)) {
+    const m = readFileSync(envPath, "utf8").match(/^BING_API_KEY=(.+)$/m);
+    if (m) return m[1].trim().replace(/^["']|["']$/g, "");
+  }
+  console.error(
+    "No BING_API_KEY found.\n" +
+      "Get one at https://www.bing.com/webmasters -> Settings -> API access -> API key,\n" +
+      "then add this line to .env at the repo root (it is gitignored):\n" +
+      "  BING_API_KEY=your-key-here"
+  );
+  process.exit(1);
+}
+
+const KEY = loadKey();
+
+async function call(method, { post, params = {} } = {}) {
+  const qs = new URLSearchParams({ apikey: KEY, siteUrl: SITE, ...params });
+  const url = `${BASE}/${method}?${qs}`;
+  const res = await fetch(url, {
+    method: post ? "POST" : "GET",
+    headers: { "Content-Type": "application/json; charset=utf-8" },
+    body: post ? JSON.stringify(post) : undefined,
+  });
+  const text = await res.text();
+  if (!res.ok) throw new Error(`${method} -> HTTP ${res.status}: ${text.slice(0, 400)}`);
+  try {
+    return JSON.parse(text);
+  } catch {
+    throw new Error(`${method} returned non-JSON: ${text.slice(0, 200)}`);
+  }
+}
+
+/** Pull every URL out of both sitemaps. */
+async function sitemapUrls() {
+  const urls = new Set();
+  for (const sm of ["sitemap.xml", "sitemap-dynamic.xml"]) {
+    const xml = await (await fetch(`${SITE}/${sm}`)).text();
+    for (const m of xml.matchAll(/<loc>([^<]+)<\/loc>/g)) urls.add(m[1].trim());
+  }
+  return [...urls];
+}
+
+const nice = (v) => JSON.stringify(v, null, 2);
+
+const commands = {
+  async quota() {
+    const r = await call("GetUrlSubmissionQuota");
+    const d = r.d ?? r;
+    console.log(`Daily submissions left: ${d.DailyQuota ?? "?"}`);
+    console.log(`Monthly submissions left: ${d.MonthlyQuota ?? "?"}`);
+  },
+
+  async issues() {
+    for (const method of ["GetCrawlIssues", "GetQueryStats"]) {
+      try {
+        const r = await call(method);
+        const rows = r.d ?? r;
+        const list = Array.isArray(rows) ? rows : [rows];
+        console.log(`\n=== ${method} — ${list.length} row(s)`);
+        console.log(nice(list.slice(0, 25)));
+      } catch (err) {
+        console.log(`\n=== ${method} — ${err.message}`);
+      }
+    }
+  },
+
+  async stats() {
+    const r = await call("GetRankAndTrafficStats");
+    console.log(nice((r.d ?? r).slice?.(0, 30) ?? r.d ?? r));
+  },
+
+  async submit() {
+    const urls = await sitemapUrls();
+    console.log(`Found ${urls.length} URLs across both sitemaps.`);
+    // API caps a batch at 500 URLs.
+    for (let i = 0; i < urls.length; i += 500) {
+      const batch = urls.slice(i, i + 500);
+      await call("SubmitUrlBatch", { post: { siteUrl: SITE, urlList: batch } });
+      console.log(`Submitted ${batch.length} URLs (${i + batch.length}/${urls.length}).`);
+    }
+    console.log("Done.");
+  },
+};
+
+const cmd = process.argv[2];
+if (!commands[cmd]) {
+  console.error(`Usage: node scripts/bing.mjs <${Object.keys(commands).join("|")}>`);
+  process.exit(1);
+}
+commands[cmd]().catch((err) => {
+  console.error("Failed:", err.message);
+  process.exit(1);
+});
