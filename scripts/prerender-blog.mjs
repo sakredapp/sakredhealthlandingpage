@@ -488,6 +488,33 @@ async function main() {
     `<title>Blog — Health &amp; Coverage Research | Sakred Health</title>`,
     `<meta name="description" content="Research-backed articles on daily health, workplace wellness, life insurance, mortgage protection, and final expense planning — every claim cited to its source.">`,
     `<link rel="canonical" href="${BASE_URL}/blog">`,
+    `<meta property="og:type" content="website">`,
+    `<meta property="og:title" content="Blog — Health &amp; Coverage Research">`,
+    `<meta property="og:description" content="Research-backed articles on daily health, workplace wellness, and insurance planning — every claim cited to its source.">`,
+    `<meta property="og:url" content="${BASE_URL}/blog">`,
+    `<meta property="og:image" content="${BASE_URL}/og-image.jpg">`,
+    `<meta property="og:image:width" content="1200">`,
+    `<meta property="og:image:height" content="630">`,
+    `<meta name="twitter:card" content="summary_large_image">`,
+    `<script type="application/ld+json">${JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "Sakred Health Blog",
+      url: `${BASE_URL}/blog`,
+      description:
+        "Research-backed articles on daily health, workplace wellness, and insurance planning — every claim cited to its source.",
+      publisher: { "@type": "Organization", name: "Sakred Health", url: BASE_URL },
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: articles.length,
+        itemListElement: articles.map((a, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `${BASE_URL}/blog/${a.slug}`,
+          name: a.title,
+        })),
+      },
+    })}</script>`,
   ].join("\n    ");
   mkdirSync(join(DIST, "blog"), { recursive: true });
   writeFileSync(join(DIST, "blog", "index.html"), injectIntoTemplate(template, listingHead, listing));

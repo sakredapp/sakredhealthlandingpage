@@ -200,7 +200,7 @@ function main() {
     injectIntoTemplate(
       template,
       buildHead({
-        title: "Coverage Options — Life, Health &amp; Mortgage Protection",
+        title: "Coverage Options — Life, Health & Mortgage Protection",
         description:
           "Mortgage protection, life insurance, final expense, private health, ACA marketplace plans, and retirement annuities — one licensed agency, all 50 states.",
         path: "/products",
