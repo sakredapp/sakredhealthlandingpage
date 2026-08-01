@@ -206,7 +206,11 @@ function extractFaq(content) {
   const section = content.split(/^## Frequently asked questions\s*$/im)[1];
   if (!section) return [];
   const body = section.split(/^## /m)[0];
-  const parts = body.split(/^### /m).slice(1);
+  // Accept "### Question" and bold "**Question**" — writers use both, and a
+  // silent mismatch used to emit an empty FAQPage.
+  const parts = /^### /m.test(body)
+    ? body.split(/^### /m).slice(1)
+    : body.split(/^\*\*(?=.+\*\*\s*$)/m).slice(1).map((x) => x.replace(/\*\*/, ""));
   return parts
     .map((p) => {
       const [q, ...rest] = p.split("\n");
@@ -229,7 +233,14 @@ function extractRecipe(a) {
       .split(/^## /m)[0]
       .split("\n")
       .map((l) => l.replace(/^\s*(?:[-*]|\d+\.)\s+/, "").trim())
-      .filter((l) => l && !l.startsWith("#") && !l.startsWith("|"));
+      .filter(
+        (l) =>
+          l &&
+          !l.startsWith("#") &&
+          !l.startsWith("|") &&
+          // skip bold-only sub-labels ("**For the syrup:**") — not ingredients
+          !/^\*\*[^*]+\*\*:?$/.test(l)
+      );
   };
   const ingredients = grab("Ingredients");
   const steps = grab("Instructions");
