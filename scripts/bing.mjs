@@ -10,6 +10,7 @@
  *   node scripts/bing.mjs quota     # how many URL submissions are left today
  *   node scripts/bing.mjs issues    # crawl + SEO issues Bing has found
  *   node scripts/bing.mjs stats     # top queries and pages
+ *   node scripts/bing.mjs links     # inbound links Bing has indexed
  *   node scripts/bing.mjs submit    # submit every URL in both sitemaps (batched)
  */
 import { readFileSync, existsSync } from "fs";
@@ -86,6 +87,18 @@ const commands = {
       } catch (err) {
         console.log(`\n=== ${method} — ${err.message}`);
       }
+    }
+  },
+
+  async links() {
+    const r = await call("GetLinkCounts");
+    const d = r.d ?? r;
+    const rows = d.Links ?? [];
+    console.log(`Inbound links Bing has indexed: ${rows.length} (TotalPages: ${d.TotalPages ?? 0})`);
+    for (const l of rows.slice(0, 40)) console.log(`  ${l.Count ?? "?"}  ${l.Url ?? JSON.stringify(l)}`);
+    if (!rows.length) {
+      console.log("\nZero backlinks. This is the binding constraint on rankings —");
+      console.log("on-page work is done; authority now comes from other sites linking here.");
     }
   },
 
