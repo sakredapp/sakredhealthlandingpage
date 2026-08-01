@@ -119,7 +119,17 @@ function articleHtml(a, related = []) {
         "article",
         { className: "max-w-3xl mx-auto" },
         h("h1", { className: "text-3xl sm:text-4xl font-display text-[#0F172A] mb-4" }, a.title),
-        h("p", { className: "text-[#0F172A]/70 mb-8" }, a.excerpt),
+        h("p", { className: "text-[#0F172A]/70 mb-3" }, a.excerpt),
+        a.author
+          ? h(
+              "p",
+              { className: "text-sm text-[#0F172A]/55 mb-8" },
+              `By ${a.author}${a.authorTitle ? `, ${a.authorTitle}` : ""}`,
+              a.reviewedBy
+                ? ` · Reviewed by ${a.reviewedBy}${a.reviewerTitle ? `, ${a.reviewerTitle}` : ""}`
+                : ""
+            )
+          : null,
         a.featuredImage
           ? h("img", {
               src: a.featuredImage,
@@ -206,6 +216,42 @@ function extractFaq(content) {
     .filter((x) => x.q && x.a);
 }
 
+/* Recipe posts: ingredients and steps are parsed out of the markdown itself
+   (## Ingredients list, ## Instructions ordered list) so the copy stays
+   readable and the schema can never drift from what the page shows.
+   Times/yield come from optional frontmatter (prepTime/cookTime/recipeYield). */
+function extractRecipe(a) {
+  const body = a.content;
+  const grab = (heading) => {
+    const m = body.split(new RegExp(`^## ${heading}\\s*$`, "im"))[1];
+    if (!m) return [];
+    return m
+      .split(/^## /m)[0]
+      .split("\n")
+      .map((l) => l.replace(/^\s*(?:[-*]|\d+\.)\s+/, "").trim())
+      .filter((l) => l && !l.startsWith("#") && !l.startsWith("|"));
+  };
+  const ingredients = grab("Ingredients");
+  const steps = grab("Instructions");
+  if (!ingredients.length || !steps.length) return null;
+  const r = {
+    "@type": "Recipe",
+    name: a.title,
+    description: a.excerpt,
+    image: a.featuredImage || `${BASE_URL}/og-image.jpg`,
+    author: { "@type": "Organization", name: "Sakred Health" },
+    recipeIngredient: ingredients,
+    recipeInstructions: steps.map((t) => ({ "@type": "HowToStep", text: t })),
+  };
+  if (a.prepTime) r.prepTime = a.prepTime;
+  if (a.cookTime) r.cookTime = a.cookTime;
+  if (a.totalTime) r.totalTime = a.totalTime;
+  if (a.recipeYield) r.recipeYield = a.recipeYield;
+  if (a.recipeCategory) r.recipeCategory = a.recipeCategory;
+  if (a.recipeCuisine) r.recipeCuisine = a.recipeCuisine;
+  return r;
+}
+
 function jsonLd(a, dates) {
   const faq = extractFaq(a.content);
   const graph = [];
@@ -216,7 +262,14 @@ function jsonLd(a, dates) {
     image: a.featuredImage || `${BASE_URL}/og-image.jpg`,
     url: `${BASE_URL}/blog/${a.slug}`,
     mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}/blog/${a.slug}` },
-    author: { "@type": "Organization", name: "Sakred Health", url: BASE_URL },
+    author: a.author && a.author !== "Sakred Health"
+      ? {
+          "@type": "Person",
+          name: a.author,
+          ...(a.authorTitle ? { jobTitle: a.authorTitle } : {}),
+          ...(a.authorUrl ? { url: a.authorUrl } : {}),
+        }
+      : { "@type": "Organization", name: "Sakred Health", url: BASE_URL },
     publisher: {
       "@type": "Organization",
       name: "Sakred Health",
@@ -224,6 +277,15 @@ function jsonLd(a, dates) {
       logo: { "@type": "ImageObject", url: `${BASE_URL}/og-image.jpg` },
     },
     keywords: (a.seoKeywords || []).join(", "),
+    ...(a.reviewedBy
+      ? {
+          reviewedBy: {
+            "@type": "Person",
+            name: a.reviewedBy,
+            ...(a.reviewerTitle ? { jobTitle: a.reviewerTitle } : {}),
+          },
+        }
+      : {}),
     citation: extractSourceUrls(a.content),
   };
   if (dates?.publishedAt) data.datePublished = dates.publishedAt;
@@ -237,6 +299,8 @@ function jsonLd(a, dates) {
       { "@type": "ListItem", position: 3, name: a.title, item: `${BASE_URL}/blog/${a.slug}` },
     ],
   });
+  const recipe = extractRecipe(a);
+  if (recipe) graph.push(recipe);
   if (faq.length) {
     graph.push({
       "@type": "FAQPage",

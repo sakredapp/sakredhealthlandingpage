@@ -10,11 +10,15 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  Cell,
 } from "recharts";
 
 // Chart palette validated for CVD separation + contrast on white
 // (deepened brand gold + companion blue; brand #C5A059 is too light for marks).
 const SERIES_COLORS = ["#B58527", "#3B6FC4"];
+// Semantic colors for before/after comparisons — validated for colorblind
+// separation and contrast, so a swap reads instantly without the caption.
+const TONE_COLORS: Record<string, string> = { bad: "#C1442E", good: "#2E7D53", neutral: "#8A8578" };
 const INK = "#0F172A";
 
 /* ---------------------------------- stats --------------------------------- */
@@ -95,7 +99,7 @@ export function BlogStats({ stats }: { stats: StatSpec[] }) {
 interface ChartSpec {
   type: "bar" | "hbar" | "line";
   title?: string;
-  data: Array<{ label: string; value: number; value2?: number }>;
+  data: Array<{ label: string; value: number; value2?: number; tone?: "good" | "bad" | "neutral" }>;
   series?: [string] | [string, string];
   prefix?: string;
   suffix?: string;
@@ -227,7 +231,11 @@ export function BlogChart({ spec }: { spec: ChartSpec }) {
                   radius={[0, 4, 4, 0]}
                   barSize={18}
                   animationDuration={900}
-                />
+                >
+                  {spec.data.map((d, i) => (
+                    <Cell key={i} fill={d.tone ? TONE_COLORS[d.tone] : SERIES_COLORS[0]} />
+                  ))}
+                </Bar>
                 {twoSeries && (
                   <Bar
                     dataKey="value2"
@@ -258,7 +266,11 @@ export function BlogChart({ spec }: { spec: ChartSpec }) {
                   radius={[4, 4, 0, 0]}
                   barSize={28}
                   animationDuration={900}
-                />
+                >
+                  {spec.data.map((d, i) => (
+                    <Cell key={i} fill={d.tone ? TONE_COLORS[d.tone] : SERIES_COLORS[0]} />
+                  ))}
+                </Bar>
                 {twoSeries && (
                   <Bar
                     dataKey="value2"
