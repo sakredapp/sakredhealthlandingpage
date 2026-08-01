@@ -30,6 +30,16 @@ That is the finding, and it is worth being precise about what it means: this was
 - In a 2025 crossover trial where **both** diets were built to meet the UK's national dietary guidance, participants lost weight on both — **−2.06% on minimally processed vs −1.05% on ultra-processed**, a difference of −1.01% (95% CI −1.87 to −0.14, p = 0.024) — *Dicken et al., Nature Medicine, 2025*
 - Ultra-processed foods supplied **53.0% of calories for US adults and 61.9% for youth** in August 2021–August 2023 — *CDC/NCHS Data Brief 536, 2025*
 
+## How much of the American diet this describes
+
+Before the mechanism, the scale — because a 508-calorie effect only matters in proportion to how much of the diet it applies to.
+
+```chart
+{"type": "hbar", "title": "Share of daily calories from ultra-processed food, United States", "suffix": "%", "source": "CDC/NCHS Data Brief 536, 2025 — August 2021–August 2023, compared against the highest-intake threshold used in the ELSA-Brasil cognition analysis", "data": [{"label": "US youth (ages 1–18)", "value": 61.9, "tone": "bad"}, {"label": "US adults (19+)", "value": 53.0, "tone": "bad"}, {"label": "\"High intake\" threshold in cognition research", "value": 20, "tone": "neutral"}]}
+```
+
+The bottom bar is the comparison worth sitting with. When researchers study the effects of *high* ultra-processed intake, the threshold they typically use is around 20% of calories. The American average is more than double that, and the average for children is triple it. This is not a study of a fringe eating pattern. It is a study of the default one.
+
 ## Why the matching is the whole story
 
 Most nutrition headlines come from observational studies: researchers ask thousands of people what they eat, follow them for years, and look for patterns. Those studies are useful for generating hypotheses and nearly useless for establishing cause, because people who eat more ultra-processed food differ from people who don't in dozens of ways — income, sleep, work schedule, neighborhood, stress, healthcare access. Any of those could be doing the work.
@@ -65,6 +75,10 @@ Protein intake was the one thing that did not move — **−2 ± 12 kcal/day**, 
 
 The single most concrete difference between the two arms was how fast the food went down: **48 calories per minute versus 31**.
 
+```chart
+{"type": "bar", "title": "How fast the food was eaten", "suffix": " kcal/min", "source": "Hall et al., Cell Metabolism, 2019 — mean energy intake rate by diet arm", "data": [{"label": "Unprocessed diet", "value": 31, "tone": "good"}, {"label": "Ultra-processed diet", "value": 48, "tone": "bad"}]}
+```
+
 Satiety signaling is slow. PYY and the other post-meal fullness hormones take roughly 15 to 20 minutes to register. Food that can be consumed at 48 calories a minute delivers several hundred calories inside that window — before the system that would have told you to stop has reported in. Food that requires chewing, that has structure, that resists being swallowed quickly, gives the signal time to arrive.
 
 That reframes the problem usefully. The issue may be less about any specific villain ingredient and more about **engineering that removes the friction food used to have**. Softness, solubility and consistency are deliberate design targets in industrial food production — and they are the same properties that let you eat 500 extra calories without noticing.
@@ -78,6 +92,12 @@ Good evidence includes the study that doesn't fit the story, so here is that one
 In August 2025, Dicken and colleagues at University College London published the UPDATE trial in *Nature Medicine*. Fifty participants ate researcher-provided food at home for **eight weeks per arm** — four times longer than Hall's trial — crossing over between an ultra-processed diet and a minimally processed one. The twist: **both diets were designed to meet the UK's national dietary guidance**, the Eatwell Guide.
 
 Participants lost weight on **both** diets. The minimally processed arm lost more — **−2.06% versus −1.05% of body weight**, a difference of −1.01% (95% CI −1.87 to −0.14, p = 0.024, Cohen's d −0.48) — but the ultra-processed arm did not gain the weight the researchers had expected.
+
+```chart
+{"type": "hbar", "title": "Body weight lost over 8 weeks, both diets built to national dietary guidance", "suffix": "%", "source": "Dicken et al., Nature Medicine, 2025 (UPDATE trial) — 50 participants, randomized crossover. Bars show weight lost, so longer is more loss.", "data": [{"label": "Minimally processed diet", "value": 2.06, "tone": "good"}, {"label": "Ultra-processed diet", "value": 1.05, "tone": "neutral"}]}
+```
+
+Note the color choice: the ultra-processed bar is marked neutral, not bad. Participants on it still lost weight. That is the finding, and softening it would be dishonest.
 
 That result deserves to be read carefully rather than dismissed or oversold. It says that ultra-processed food *formulated to nutritional guidelines* halved the benefit of eating well — it did not reverse it. Which means "ultra-processed" is not a synonym for "harmful," and the category as defined by the NOVA system is genuinely broad: it includes packaged whole-grain bread and plain canned beans alongside candy and soda. The trials that show dramatic effects use the ultra-processed food people actually eat. The trial that showed a modest effect used ultra-processed food built by nutrition researchers to hit targets.
 

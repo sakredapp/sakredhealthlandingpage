@@ -53,6 +53,12 @@ The methodological move that makes this study matter is the within-family analys
 That rules out genetics and demographic change. Whatever is causing the decline is environmental, and it is acting on children growing up in the same households as their higher-scoring older siblings.
 
 ```chart
+{"type": "line", "title": "Norwegian conscript IQ relative to the 1975 peak, by birth cohort", "suffix": " pts", "source": "Trajectory computed from the ~0.2 points-per-year rate of decline reported in Bratsberg & Rogeberg, PNAS 2018. Points are derived from that published rate, not individually reported cohort scores.", "data": [{"label": "1975", "value": 0}, {"label": "1979", "value": -0.8}, {"label": "1983", "value": -1.6}, {"label": "1987", "value": -2.4}, {"label": "1991", "value": -3.2}]}
+```
+
+To be explicit about that chart: the study reports a rate, not a table of per-cohort scores, so the line is arithmetic applied to the published rate across the birth cohorts the researchers observed. It is drawn to show the shape and the slope, not to assert five independently measured data points.
+
+```chart
 {"type": "hbar", "title": "Size of documented population-level cognitive shifts (absolute IQ points)", "suffix": " pts", "source": "Feyrer, Politi & Weil, JEEA 2017; Bratsberg & Rogeberg, PNAS 2018. The Norwegian figure is the decline accumulated across the studied birth cohorts after the 1975 peak, at ~0.2 points per year.", "data": [{"label": "Gain — US iodine-deficient regions after 1924", "value": 15, "tone": "good"}, {"label": "Gain — US nationwide after 1924", "value": 3.5, "tone": "good"}, {"label": "Decline — Norwegian cohorts after the 1975 peak", "value": 3.2, "tone": "bad"}]}
 ```
 
@@ -66,6 +72,10 @@ Now the honest part, and it is where most versions of this argument overreach.
 
 What *does* exist is a direct association between ultra-processed food and cognitive decline in adults. In December 2022, Gomes Gonçalves and colleagues published an analysis of ELSA-Brasil — more than 10,000 Brazilian adults aged 35 and up, followed for a median of eight years with repeated cognitive testing. Participants in the highest ultra-processed intake groups, at **20% or more of daily calories**, showed **28% faster decline in global cognition** and 25% faster decline in executive function than those in the lowest.
 
+```chart
+{"type": "hbar", "title": "Rate of cognitive decline vs. lowest ultra-processed intake group", "suffix": "% faster", "source": "Gomes Gonçalves et al., JAMA Neurology, 2022 — ELSA-Brasil, 10,000+ adults, median 8-year follow-up. Highest intake group = 20%+ of daily calories from ultra-processed food. Observational: association, not proven cause.", "data": [{"label": "Global cognition", "value": 28, "tone": "bad"}, {"label": "Executive function", "value": 25, "tone": "bad"}]}
+```
+
 **Grade this correctly:** that is an observational cohort study. It shows association, not causation. People who eat more ultra-processed food differ systematically in education, income, physical activity and healthcare access, and although the researchers adjusted for many such factors, adjustment is never complete. It is genuinely suggestive. It is not the iodine result, and it should not be quoted as though it were.
 
 ## The displacement argument
@@ -73,6 +83,10 @@ What *does* exist is a direct association between ultra-processed food and cogni
 Here is the mechanism that makes the whole thesis coherent, and it does not require any exotic biology.
 
 Ultra-processed food now supplies **53% of American adult calories and nearly 62% of youth calories**. The concern is not only what those calories contain. It is what they crowd out. A stomach filled by engineered products is a stomach not filled by the foods that carry iodine, iron, zinc, choline, B vitamins and omega-3 fatty acids — the nutrients with the best-established roles in neural development.
+
+```chart
+{"type": "hbar", "title": "A child's daily calories: how much of the plate is already spoken for", "suffix": "%", "source": "CDC/NCHS Data Brief 536, 2025 — share of total daily calories from ultra-processed foods among US youth ages 1–18, August 2021–August 2023", "data": [{"label": "From ultra-processed food", "value": 61.9, "tone": "bad"}, {"label": "Left for everything else", "value": 38.1, "tone": "neutral"}]}
+```
 
 That is the displacement argument, and it is the strongest form of the case: **Big Food may not need to poison anyone to depress cognition. It only needs to occupy the plate.** Iodine deficiency did not damage American brains by adding a toxin. It damaged them through the absence of something necessary.
 

@@ -25,6 +25,12 @@ That is the short answer. What follows is what each of those three numbers actua
 
 The Center for Science in the Public Interest's 2025 analysis of Starbucks nutrition data puts a Grande PSL with 2% milk at 50 grams of total sugar, roughly 32 of which are added — about seven and a half teaspoons. The remaining ~18 grams is lactose, naturally present in the milk.
 
+```chart
+{"type": "hbar", "title": "Where the 50 grams of sugar in a Grande PSL comes from", "suffix": " g", "source": "CSPI analysis of Starbucks nutrition data, 2025. Lactose is naturally present in milk and is not counted as added sugar under FDA rules.", "data": [{"label": "Added sugar (syrup and sauce)", "value": 32, "tone": "bad"}, {"label": "AHA daily added-sugar limit, women", "value": 25, "tone": "neutral"}, {"label": "Lactose from the milk", "value": 18, "tone": "good"}]}
+```
+
+That split matters and it is the part most coverage skips. The lactose is not the problem — it comes with the protein and calcium of the milk, and FDA does not count it as added sugar. The 32 grams above it are the ones a barista pumped in, and they alone exceed the AHA's entire daily ceiling for women by 28%.
+
 That distinction matters because the guidance is written about added sugar. The AHA's daily limits are 25 grams for women and 36 for men. **One Grande is 128% of a woman's entire daily allowance and 89% of a man's**, before anything else she eats that day. The 2025–2030 Dietary Guidelines for Americans keep added sugars under 10% of daily calories and add per-occasion framing around roughly 10 grams per meal or snack.
 
 Most of that sugar is not in the espresso or the milk. It is in the pumpkin spice sauce, whose published ingredients lead with sugar and condensed skim milk. The syrup is the drink's sugar content almost in its entirety, which is why the number moves so much when you change the number of pumps rather than the size.

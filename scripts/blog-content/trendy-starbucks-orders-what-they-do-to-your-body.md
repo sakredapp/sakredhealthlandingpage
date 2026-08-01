@@ -35,6 +35,14 @@ PSL figures are from the Center for Science in the Public Interest's 2025 analys
 {"type": "hbar", "title": "Sugar per Grande vs. the AHA daily limit for women (25 g)", "suffix": " g", "source": "CSPI 2025 analysis and Starbucks published nutrition; homemade values calculated from USDA data", "data": [{"label": "Pumpkin Spice Latte", "value": 50, "tone": "bad"}, {"label": "Pumpkin Cream Cold Brew", "value": 31, "tone": "bad"}, {"label": "Chai Latte", "value": 29, "tone": "bad"}, {"label": "AHA daily limit, women", "value": 25, "tone": "neutral"}, {"label": "Homemade PSL", "value": 22, "tone": "good"}, {"label": "Homemade cold foam", "value": 12, "tone": "good"}, {"label": "Homemade chai", "value": 6, "tone": "good"}]}
 ```
 
+Sugar is only half of what these drinks deliver. The other half is caffeine, and it varies far more between them than most people expect — the cold brew carries more than three times the chai.
+
+```chart
+{"type": "hbar", "title": "Caffeine per Grande (16 oz)", "suffix": " mg", "source": "Starbucks published nutrition data, 2026. FDA cites 400 mg/day as the level not generally associated with negative effects for healthy adults.", "data": [{"label": "Pumpkin Cream Cold Brew", "value": 185, "tone": "bad"}, {"label": "Pumpkin Spice Latte", "value": 150, "tone": "neutral"}, {"label": "Chai Latte", "value": 55, "tone": "good"}]}
+```
+
+Two of these before noon puts you within range of FDA's 400 mg reference point before any other source of caffeine in the day is counted. That is not a warning — FDA describes 400 mg as the level *not* generally associated with negative effects — but it is worth knowing which drink is which, since nothing on the menu board distinguishes a 55 mg order from a 185 mg one.
+
 Homemade bars show total sugars, including milk lactose, so the comparison is like for like.
 
 ## 1. The Pumpkin Spice Latte

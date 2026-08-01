@@ -39,6 +39,12 @@ We have now researched a dozen seasonal foods for this site. The pattern was con
 
 Notice the split. Every product sold in a package discloses. Every product sold across a counter does not. The companies behaving "well" and "badly" here are mostly just companies selling through different channels under different rules.
 
+```chart
+{"type": "hbar", "title": "Share of researched products publishing an added-sugar figure, by sales channel", "suffix": "%", "source": "The eight products tabulated above. Packaged: Cinnabon retail, Coffee mate, Tazo, Oregon Chai, Happy Apple/Tastee. Counter-sold: Starbucks PSL, Starbucks Chai Latte, Dunkin' Apple Cider Donut.", "data": [{"label": "Sold packaged, on a shelf", "value": 100, "tone": "good"}, {"label": "Sold across a counter", "value": 0, "tone": "bad"}]}
+```
+
+That is not a sample large enough to generalize to the whole food supply, and we are not claiming it is. It is every product we researched for this series, and the split fell on the channel line without a single exception — which is what a regulatory boundary looks like when you bump into it from the consumer side.
+
 ## The cider donut, which nobody can answer
 
 This is the clearest case we found, and it is worth walking through because it is not a scandal — it is an absence.
@@ -46,6 +52,10 @@ This is the clearest case we found, and it is worth walking through because it i
 Dunkin' publishes downloadable nutrition documents but does not display per-item sugar detail for its seasonal Apple Cider Donut. So the figures circulating online come from third-party aggregators, and they contradict each other. One widely cited database lists it at **380 calories, 22 g fat, 41 g carbohydrate**, with no sugar line at all and a page last updated in 2020. Another lists **320 calories, 18 g fat, 37 g carbohydrate and 15 g total sugars**. Neither reports added sugars.
 
 Sixty calories apart, on a single donut, from sources people are treating as authoritative.
+
+```chart
+{"type": "hbar", "title": "What three sources say about one apple cider donut", "suffix": " cal", "source": "Two widely cited third-party nutrition databases, neither reporting added sugars; USDA FoodData Central entry for a plain 60 g cake doughnut, uncoated. Dunkin' does not publish a per-item figure.", "data": [{"label": "Third-party database A", "value": 380, "tone": "bad"}, {"label": "Third-party database B", "value": 320, "tone": "bad"}, {"label": "USDA, plain uncoated cake doughnut", "value": 260, "tone": "neutral"}]}
+```
 
 For reference, USDA's entry for a plain 60-gram cake doughnut — before any cinnamon-sugar coating — is 260 calories, 15 g fat and 11 g total sugars. A cider donut is coated. So the honest answer to "how much sugar is in a Dunkin' cider donut" is: **more than 11 grams, by an amount nobody has published.** Orchard and farmstand versions, which is what most people picture, have no published data whatsoever.
 

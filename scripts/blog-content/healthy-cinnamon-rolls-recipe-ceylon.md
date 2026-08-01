@@ -38,6 +38,12 @@ Both of those numbers are printed here on purpose, because they answer different
 | Protein | 12 g | ~7 g |
 | Cinnamon type | not specified | Ceylon |
 
+```chart
+{"type": "hbar", "title": "Sugar per roll — added vs. total", "suffix": " g", "series": ["Added sugar", "Total sugar"], "source": "Cinnabon nutritional guide; this recipe calculated from USDA values for the listed ingredients. Total sugar includes the sugar naturally present in dates.", "data": [{"label": "Cinnabon Classic Roll", "value": 59, "value2": 61}, {"label": "This recipe", "value": 7, "value2": 17}]}
+```
+
+Both bars are shown deliberately. A date-filled roll is not a low-sugar food — 17 grams of total sugar is 17 grams of total sugar. What changes is that 10 of those grams come packaged with fiber inside whole fruit rather than added as a butter-and-brown-sugar slurry, and that the added figure drops by about 88%. Anyone selling you dates as sugar-free is selling you something.
+
 Homemade figures are calculated from USDA values for the listed ingredients, not laboratory-analyzed. A Cinnabon Classic contains more added sugar in one roll than the American Heart Association's daily limit for a man — and more than twice the limit for a woman.
 
 ## The cinnamon problem nobody mentions
