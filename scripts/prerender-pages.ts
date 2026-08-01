@@ -15,6 +15,7 @@ import { dirname, join } from "path";
 import { PRODUCTS, type Product } from "../client/src/data/products";
 import { PROTOCOLS } from "../client/src/data/protocols";
 import { STATES } from "../client/src/data/states";
+import { foodData, levelConfig } from "../client/src/data/food-chart";
 import { getStateCopy } from "../client/src/data/state-copy";
 import STATS from "../client/src/data/state-stats.json";
 
@@ -325,6 +326,67 @@ function main() {
   });
   mkdirSync(join(DIST, "app"), { recursive: true });
   writeFileSync(join(DIST, "app", "index.html"), injectIntoTemplate(template, appHead, appBody));
+  count++;
+
+  // /food-chart — 197 rated foods, rendered as crawlable HTML. This page was
+  // not prerendered at all, so it inherited the homepage fallback's title/H1.
+  const totalFoods = foodData.reduce((n, c) => n + c.items.length, 0);
+  const foodBody = `
+    <main class="pt-24 pb-20 px-4 sm:px-6 lg:px-8 bg-[#F9F9F7]">
+      <article class="max-w-3xl mx-auto prose prose-lg">
+        <h1>Anti-Inflammatory Food Chart</h1>
+        <p>${totalFoods} everyday foods rated on a seven-point scale from strongly
+        anti-inflammatory to highly inflammatory. Chronic inflammation is a shared
+        driver across metabolic, cardiovascular, and digestive conditions, and diet
+        is one of the inputs you control daily. Both ends of this scale have a place
+        in a balanced diet — awareness is the goal, not restriction.</p>
+        <h2>The scale</h2>
+        <ul>${([3, 2, 1, 0, -1, -2, -3] as const)
+          .map((l) => `<li><strong>${esc(levelConfig[l].label)}</strong></li>`)
+          .join("")}</ul>
+        ${foodData
+          .map(
+            (c) => `
+        <section>
+          <h2>${esc(c.category)}</h2>
+          <p>${esc(c.description)} (${c.items.length} items)</p>
+          <ul>${[...c.items]
+            .sort((a, b) => b.level - a.level)
+            .map((it) => `<li>${esc(it.name)} — ${esc(levelConfig[it.level].label)}</li>`)
+            .join("")}</ul>
+        </section>`
+          )
+          .join("")}
+        <p>Want this built into daily practice? The
+        <a href="/app">Sakred Health app</a> pairs it with guided protocols, or read
+        <a href="/blog/gut-health-daily-habits-improve-digestion-reduce-stress">our cited guide to gut health</a>.</p>
+      </article>
+    </main>`;
+  const foodHead = buildHead({
+    title: `Anti-Inflammatory Food Chart — ${totalFoods} Foods Rated`,
+    description: `${totalFoods} everyday foods rated from strongly anti-inflammatory to highly inflammatory, across fruits, vegetables, grains, proteins, fats, and seasonings.`,
+    path: "/food-chart",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Dataset",
+          name: "Sakred Health Anti-Inflammatory Food Chart",
+          description: `${totalFoods} foods rated on a seven-point inflammation scale.`,
+          url: `${BASE_URL}/food-chart`,
+          creator: { "@type": "Organization", name: "Sakred Health", url: BASE_URL },
+          variableMeasured: "Inflammation rating",
+          keywords: foodData.map((c) => c.category).join(", "),
+        },
+        breadcrumb([
+          { name: "Home", path: "/" },
+          { name: "Food Chart", path: "/food-chart" },
+        ]),
+      ],
+    },
+  });
+  mkdirSync(join(DIST, "food-chart"), { recursive: true });
+  writeFileSync(join(DIST, "food-chart", "index.html"), injectIntoTemplate(template, foodHead, foodBody));
   count++;
 
   // Lightweight static heads for stable pages the SPA otherwise leaves generic
