@@ -6,9 +6,9 @@ slug: healthy-chai-latte-recipe-from-scratch
 title: The Healthy Chai Latte: 6 Grams of Sugar Instead of 24
 excerpt: Most cafe chai lattes start from a sweetened concentrate, so the sugar is decided before anyone touches your cup. Here is actual brewed masala chai — whole spices, exact amounts, a batch concentrate that keeps — plus an honest grade for what each spice does.
 tags: [recipes, chai, sugar, spices, terrain]
-seoTitle: Healthy Chai Latte Recipe From Scratch (No Concentrate)
+seoTitle: "How Much Sugar Is in a Chai Latte?"
 seoDescription: Real masala chai brewed from whole spices — 6 g added sugar vs. 24 g from a concentrate. Exact amounts, simmer timing, and a batch concentrate that keeps.
-seoKeywords: [healthy chai latte, masala chai recipe, chai latte without concentrate, homemade chai tea latte, chai concentrate sugar]
+seoKeywords: [how much sugar is in a chai latte, is chai latte healthy, chai latte calories, masala chai recipe, chai latte without concentrate]
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M

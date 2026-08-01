@@ -4,9 +4,9 @@ author: gerard
 title: "Healthy Cinnamon Rolls, and Why the Cinnamon Itself Matters"
 excerpt: Soft tangzhong rolls with date-paste filling at about 7 grams of added sugar against 59 in a Cinnabon Classic — plus the coumarin limit that one teaspoon of ordinary supermarket cinnamon can reach on its own.
 tags: [recipes, cinnamon, added-sugar, baking, blood-sugar]
-seoTitle: Healthy Cinnamon Rolls With Ceylon Cinnamon
+seoTitle: "Are Cinnamon Rolls Bad for You? What's in One"
 seoDescription: Soft cinnamon rolls with 7 g added sugar versus 59 in a Cinnabon - plus why Ceylon cinnamon matters, the coumarin limit, and what these do to blood sugar.
-seoKeywords: [healthy cinnamon rolls, cinnamon rolls without refined sugar, ceylon vs cassia cinnamon, coumarin in cinnamon, do cinnamon rolls spike blood sugar]
+seoKeywords: [are cinnamon rolls bad for you, cinnabon calories and sugar, ceylon vs cassia cinnamon, coumarin in cinnamon, healthy cinnamon rolls recipe]
 prepTime: PT40M
 cookTime: PT25M
 totalTime: PT3H

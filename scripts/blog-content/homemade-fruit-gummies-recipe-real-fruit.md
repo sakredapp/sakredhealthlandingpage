@@ -6,9 +6,9 @@ slug: homemade-fruit-gummies-recipe-real-fruit
 title: "Homemade Fruit Gummies: Real Fruit, Four Ingredients, and What the Labels Don't Say"
 excerpt: Homemade gummies take fruit purée, unflavored gelatin, lemon juice, and optional honey — about 1.3 grams of added sugar per pouch-size serving against 8 to 10 grams in the leading commercial fruit snacks. Here's the method and the label reporting behind it.
 tags: [recipes, kids-nutrition, added-sugar, gelatin]
-seoTitle: Homemade Fruit Gummies Recipe With Real Fruit
+seoTitle: "Are Fruit Snacks Actually Made From Fruit?"
 seoDescription: A real-fruit gummy recipe with exact gelatin ratios and set times, plus published label data on what "made with real fruit" actually means.
-seoKeywords: [homemade gummies, real fruit gummies recipe, healthy gummy snacks for kids, gelatin gummies recipe, homemade fruit snacks]
+seoKeywords: [are fruit snacks healthy, what are fruit snacks made of, homemade fruit gummies, fruit snacks sugar content, real fruit gummies recipe]
 prepTime: PT15M
 cookTime: PT5M
 totalTime: PT2H20M

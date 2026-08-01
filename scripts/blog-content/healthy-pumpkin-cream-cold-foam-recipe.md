@@ -6,9 +6,9 @@ slug: healthy-pumpkin-cream-cold-foam-recipe
 title: "Healthy Pumpkin Cream Cold Foam: 8 Grams of Sugar, and the Physics of Why It Holds"
 excerpt: A pumpkin cream cold foam from real purée, cold cream, vanilla, spice and salt — 8 grams of added sugar, three ways to froth it without special equipment, and the food science of why cold foam works at all and why it eventually collapses.
 tags: [recipes, seasonal, sugar, cold-foam, food-science]
-seoTitle: Healthy Pumpkin Cream Cold Foam Recipe (8g Sugar)
+seoTitle: "What Is Pumpkin Cream Cold Foam? Sugar & Calories"
 seoDescription: A real-pumpkin cold foam with 8 g added sugar. Exact amounts, three frothing methods including no frother, and the food science of foam stability.
-seoKeywords: [healthy pumpkin cream cold foam, pumpkin cold foam recipe, how to make cold foam at home, cold foam without a frother, pumpkin cream cold brew copycat]
+seoKeywords: [what is pumpkin cream cold foam, pumpkin cream cold foam calories, cold foam sugar, how to make cold foam at home, pumpkin cold foam recipe]
 prepTime: PT5M
 cookTime: PT2M
 totalTime: PT7M

@@ -4,9 +4,9 @@ author: gerard
 title: "Sweet Potato Casserole Without Marshmallows — and Why You Should Boil, Not Roast"
 excerpt: About 7 grams of added sugar per serving against 27 in a commercial version, a pecan-oat topping instead of marshmallows, and the published glycemic data showing that how you cook the sweet potato matters more than what you put on it.
 tags: [recipes, sweet-potato, added-sugar, thanksgiving, glycemic-index]
-seoTitle: Sweet Potato Casserole Without Marshmallows
+seoTitle: "Is Sweet Potato Casserole Healthy? Real Numbers"
 seoDescription: A sweet potato casserole with 7 g added sugar per serving and a pecan-oat topping - plus why boiling instead of roasting changes the glycemic index.
-seoKeywords: [sweet potato casserole without marshmallows, healthy sweet potato casserole, sweet potato casserole with pecans, sweet potato glycemic index, thanksgiving side dishes healthy]
+seoKeywords: [is sweet potato casserole healthy, sweet potato casserole without marshmallows, sweet potato glycemic index, boiled vs baked sweet potato, healthy thanksgiving sides]
 prepTime: PT25M
 cookTime: PT55M
 totalTime: PT1H20M

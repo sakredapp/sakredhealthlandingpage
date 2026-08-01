@@ -6,9 +6,9 @@ featuredImageAlt: Cinnamon-sugar coated cake donuts in a parchment-lined box on 
 title: "Baked Apple Cider Donuts That Actually Taste Like Cider"
 excerpt: Reduce two cups of cider to a quarter cup and you get real apple flavor without a bottle of syrup. About 10 grams of added sugar per donut, no fryer — plus the 2025 synchrotron study that found most of a donut's oil goes in after it leaves the pot.
 tags: [recipes, apple-cider, added-sugar, baking, fall]
-seoTitle: Baked Apple Cider Donuts With Real Reduced Cider
+seoTitle: "Are Apple Cider Donuts Bad for You? The Data"
 seoDescription: Baked apple cider donuts made with boiled cider instead of syrup — about 10 g added sugar each — plus the food science of why fried donuts absorb oil.
-seoKeywords: [apple cider donuts, baked apple cider donuts, healthy apple cider donut recipe, boiled cider recipe, apple cider donuts without frying]
+seoKeywords: [are apple cider donuts bad for you, apple cider donut calories, baked apple cider donuts, boiled cider recipe, apple cider donuts without frying]
 prepTime: PT25M
 cookTime: PT13M
 totalTime: PT1H10M

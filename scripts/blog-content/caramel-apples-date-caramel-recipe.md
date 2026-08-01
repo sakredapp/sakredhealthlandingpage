@@ -6,9 +6,9 @@ featuredImageAlt: Caramel apples on wooden sticks rolled in chopped nuts, beside
 title: "Date Caramel Apples, and the Food Safety Story Behind the Stick"
 excerpt: A four-ingredient date caramel with no corn syrup and no added sugar — plus the CDC outbreak and the mBio study that explain why a caramel apple with a stick in it belongs in the refrigerator.
 tags: [recipes, dates, added-sugar, food-safety, fall]
-seoTitle: Date Caramel Apples With No Corn Syrup
+seoTitle: "Are Caramel Apples Safe to Eat? Listeria Risk"
 seoDescription: A date caramel apple recipe with zero added sugar and 5 g fiber - plus why the CDC and a 2015 study say caramel apples with sticks must be refrigerated.
-seoKeywords: [caramel apples, date caramel recipe, healthy caramel apples, caramel apples without corn syrup, are caramel apples safe]
+seoKeywords: [are caramel apples safe, caramel apple listeria, do caramel apples need to be refrigerated, date caramel recipe, caramel apples without corn syrup]
 prepTime: PT20M
 cookTime: PT0M
 totalTime: PT50M

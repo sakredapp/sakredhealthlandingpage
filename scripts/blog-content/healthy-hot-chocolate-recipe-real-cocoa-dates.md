@@ -6,9 +6,9 @@ slug: healthy-hot-chocolate-recipe-real-cocoa-dates
 title: "Healthy Hot Chocolate: Real Cocoa, Whole Dates, and What the Flavanol Data Actually Says"
 excerpt: A hot chocolate built from unsweetened cocoa, whole dates, vanilla, cinnamon, and salt — with the published sugar figures for the commercial versions, the cocoa-processing data that decides which tin to buy, and an honest read of the flavanol trials.
 tags: [recipes, sugar, cocoa, seasonal-drinks]
-seoTitle: Healthy Hot Chocolate With Real Cocoa and Dates
+seoTitle: "Is Hot Chocolate Bad for You? The Real Numbers"
 seoDescription: A hot chocolate made from unsweetened cocoa, whole dates, vanilla, cinnamon and salt — plus the real numbers on sugar and cocoa flavanols.
-seoKeywords: [healthy hot chocolate, hot chocolate without sugar, hot cocoa with dates, healthy hot chocolate recipe, natural cocoa powder]
+seoKeywords: [is hot chocolate bad for you, hot chocolate sugar content, healthy hot chocolate recipe, cocoa flavanols, hot cocoa vs hot chocolate]
 prepTime: PT5M
 cookTime: PT5M
 totalTime: PT10M

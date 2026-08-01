@@ -4,9 +4,9 @@ author: jace
 title: "Healthy Pumpkin Bread: No Refined Sugar, 10 Grams a Slice, and the Truth About What's in the Can"
 excerpt: A genuinely moist pumpkin loaf built on whole dates, maple, whole-grain flour and Greek yogurt — about 10 grams of added sugar per slice against 22 in a standard published recipe — plus what FDA actually says about calling canned squash "pumpkin."
 tags: [recipes, pumpkin, added-sugar, whole-grains, baking]
-seoTitle: Healthy Pumpkin Bread With No Refined Sugar
+seoTitle: "Is Pumpkin Bread Healthy? Sugar and Fiber Data"
 seoDescription: A moist pumpkin bread sweetened only with dates and maple — 10 g added sugar per slice — plus the FDA labeling story behind canned pumpkin.
-seoKeywords: [healthy pumpkin bread, pumpkin bread without refined sugar, moist pumpkin bread recipe, is canned pumpkin actually pumpkin, pumpkin bread with dates]
+seoKeywords: [is pumpkin bread healthy, pumpkin bread sugar content, healthy pumpkin bread recipe, is canned pumpkin actually pumpkin, pumpkin bread with dates]
 prepTime: PT20M
 cookTime: PT1H
 totalTime: PT3H20M
