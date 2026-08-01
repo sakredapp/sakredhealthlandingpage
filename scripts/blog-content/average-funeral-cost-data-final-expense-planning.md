@@ -1,5 +1,5 @@
 ---
-author: gerard
+author: michael
 featuredImage: https://images.unsplash.com/photo-1507290439931-a861b5a38200?w=800
 featuredImageAlt: Soft pink dahlia flower against a muted background
 slug: average-funeral-cost-data-final-expense-planning

@@ -1,5 +1,5 @@
 ---
-author: michael
+author: gerard
 slug: science-of-sleep-nightly-routines-better-rest-focus
 title: "The Science of Sleep: What the Data Says About Nightly Routines, Rest, and Focus"
 excerpt: Nearly a third of U.S. adults sleep under seven hours, and fewer than 55% wake up well-rested. Here is what large cohort studies and wearable datasets from Oura and WHOOP say actually improves sleep.

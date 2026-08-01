@@ -1,5 +1,5 @@
 ---
-author: gerard
+author: michael
 featuredImage: https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=800
 featuredImageAlt: Assorted prescription pills and tablets
 slug: healthcare-costs-retirement-medical-debt-statistics

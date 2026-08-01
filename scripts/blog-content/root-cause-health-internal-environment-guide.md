@@ -1,5 +1,5 @@
 ---
-author: michael
+author: gerard
 featuredImage: https://images.unsplash.com/photo-1594882645126-14020914d58d?w=800
 featuredImageAlt: Runner silhouetted against a sunrise on a ridge
 slug: root-cause-health-internal-environment-guide

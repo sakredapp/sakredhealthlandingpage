@@ -1,5 +1,5 @@
 ---
-author: gerard
+author: michael
 featuredImage: https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800
 featuredImageAlt: Nurse caring for an older woman
 slug: long-term-care-costs-statistics-aging-in-america

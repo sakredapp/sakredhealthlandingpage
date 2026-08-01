@@ -1,5 +1,5 @@
 ---
-author: gerard
+author: michael
 featuredImage: https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800
 featuredImageAlt: Person doing core exercises on a mat in a sunlit room
 slug: daily-habits-long-term-care-risk-healthy-aging-data

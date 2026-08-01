@@ -1,5 +1,5 @@
 ---
-author: gerard
+author: michael
 slug: employee-wellness-integrating-habit-tracking-self-care-company-culture
 title: "Employee Wellness 2.0: Making Habit Tracking and Self-Care Part of Company Culture"
 excerpt: Wearables and habit tracking have tripled in workplace programs, but tracking only works inside a culture that protects breaks, boundaries, and privacy. A data-backed, 90-day playbook for making wellness a daily norm.
