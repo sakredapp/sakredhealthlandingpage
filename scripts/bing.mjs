@@ -13,7 +13,7 @@
  *   node scripts/bing.mjs links     # inbound links Bing has indexed
  *   node scripts/bing.mjs submit    # submit every URL in both sitemaps (batched)
  */
-import { readFileSync, existsSync } from "fs";
+import { readFileSync, existsSync, readdirSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 
@@ -56,11 +56,62 @@ async function call(method, { post, params = {} } = {}) {
   }
 }
 
-/** Pull every URL out of both sitemaps. */
+/**
+ * Pull every URL out of both sitemaps.
+ *
+ * Prefers the locally built dist/ copies. Fetching them from production instead
+ * makes submission depend on the live site answering an automated request, and
+ * Vercel's bot firewall returns 403 with `x-vercel-mitigated: challenge` to
+ * scripted clients — which silently yielded "Found 0 URLs" rather than an error.
+ * Falls back to the network only when dist/ has not been built.
+ */
 async function sitemapUrls() {
   const urls = new Set();
-  for (const sm of ["sitemap.xml", "sitemap-dynamic.xml"]) {
-    const xml = await (await fetch(`${SITE}/${sm}`)).text();
+  const names = ["sitemap.xml", "sitemap-dynamic.xml"];
+  const distDir = join(ROOT, "dist");
+
+  if (existsSync(distDir)) {
+    // Static sitemap.xml is a real file; sitemap-dynamic.xml is a serverless
+    // route backed by the database, so it never exists on disk.
+    if (existsSync(join(distDir, "sitemap.xml"))) {
+      const xml = readFileSync(join(distDir, "sitemap.xml"), "utf8");
+      for (const m of xml.matchAll(/<loc>([^<]+)<\/loc>/g)) urls.add(m[1].trim());
+    }
+
+    // Walk the prerendered output for every page we actually ship. This is the
+    // ground truth for what got deployed, and it covers the blog posts the
+    // static sitemap omits.
+    const walk = (dir, rel = "") => {
+      for (const entry of readdirSync(dir, { withFileTypes: true })) {
+        if (!entry.isDirectory()) continue;
+        if (entry.name === "assets" || entry.name.startsWith(".")) continue;
+        const next = join(dir, entry.name);
+        const route = `${rel}/${entry.name}`;
+        if (existsSync(join(next, "index.html"))) urls.add(`${SITE}${route}`);
+        walk(next, route);
+      }
+    };
+    walk(distDir);
+    if (existsSync(join(distDir, "index.html"))) urls.add(`${SITE}/`);
+
+    if (urls.size) {
+      console.log(`Collected ${urls.size} URLs from dist/ (no network needed).`);
+      return [...urls];
+    }
+  }
+
+  console.warn("No sitemaps in dist/ — falling back to fetching production.");
+  console.warn("Run `npm run build` first if this returns 0 URLs.");
+  for (const sm of names) {
+    const res = await fetch(`${SITE}/${sm}`);
+    if (!res.ok) {
+      const mitigated = res.headers.get("x-vercel-mitigated");
+      throw new Error(
+        `GET ${SITE}/${sm} -> ${res.status}` +
+          (mitigated ? ` (x-vercel-mitigated: ${mitigated} — bot firewall, not an outage)` : ""),
+      );
+    }
+    const xml = await res.text();
     for (const m of xml.matchAll(/<loc>([^<]+)<\/loc>/g)) urls.add(m[1].trim());
   }
   return [...urls];
