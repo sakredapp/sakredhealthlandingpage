@@ -1,4 +1,5 @@
 ---
+author: jace
 featuredImage: https://images.unsplash.com/photo-1596591606975-97ee5cef3a1e?w=800
 featuredImageAlt: Close-up of mixed fresh berries
 slug: inflammatory-foods-and-what-to-eat-instead

@@ -1,4 +1,5 @@
 ---
+author: jace
 slug: nature-first-wellness-daily-habits-health-without-quick-fixes
 title: Nature-First Wellness: The $6.8 Trillion Industry and the 120 Minutes That Actually Move the Needle
 excerpt: The global wellness economy hit $6.8 trillion in 2024 while a third of adults still don't move enough. The best-evidenced intervention costs nothing: about two hours a week outdoors.

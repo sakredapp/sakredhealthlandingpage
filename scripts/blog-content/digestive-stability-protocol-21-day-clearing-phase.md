@@ -1,4 +1,5 @@
 ---
+author: michael
 featuredImage: https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800
 featuredImageAlt: Fresh salad plate with orange juice on a dark table
 slug: digestive-stability-protocol-21-day-clearing-phase

@@ -1,4 +1,5 @@
 ---
+author: jace
 slug: desk-detox-daily-movement-routines-counteract-sedentary-work-life
 title: "Desk Detox: What the Research Says About Undoing 10 Hours of Daily Sitting"
 excerpt: Office workers sit through roughly 70-80% of their working hours, and standing desks alone don't fix it. Here's what the research actually supports — five-minute walk breaks, exercise snacks, and realistic step targets.

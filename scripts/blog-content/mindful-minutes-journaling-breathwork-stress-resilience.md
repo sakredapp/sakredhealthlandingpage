@@ -1,4 +1,5 @@
 ---
+author: jace
 slug: mindful-minutes-journaling-breathwork-stress-resilience
 title: "Mindful Minutes: What the Research Actually Shows About Journaling and Breathwork"
 excerpt: A Stanford trial found five minutes of daily breathwork beat meditation on mood, while journaling's evidence is far more mixed. Here is what the randomized data supports, what it does not, and a protocol worth testing for 30 days.

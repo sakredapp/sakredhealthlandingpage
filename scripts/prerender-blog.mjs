@@ -14,6 +14,21 @@ import remarkGfm from "remark-gfm";
 import pg from "pg";
 import { CONTENT_DIR, parseArticle } from "./sync-blog-content.mjs";
 
+/* Byline registry — keep in sync with client/src/data/authors.ts (this file is
+   .mjs and cannot import the TS module). */
+const AUTHOR_IMAGE_BASE =
+  "https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogauthorimages";
+const AUTHORS = {
+  gerard: { name: "Gerard Cavaleri", image: `${AUTHOR_IMAGE_BASE}/gerard.jpeg` },
+  jace: { name: "Jace Russell", image: `${AUTHOR_IMAGE_BASE}/jace.jpeg` },
+  michael: { name: "Michael Cavaleri", image: `${AUTHOR_IMAGE_BASE}/michael.jpeg` },
+};
+function resolveAuthor(v) {
+  if (!v) return undefined;
+  const k = String(v).trim().toLowerCase();
+  return AUTHORS[k] || Object.values(AUTHORS).find((a) => a.name.toLowerCase() === k);
+}
+
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = join(ROOT, "dist");
 const BASE_URL = "https://www.sakredhealth.com";
@@ -120,16 +135,30 @@ function articleHtml(a, related = []) {
         { className: "max-w-3xl mx-auto" },
         h("h1", { className: "text-3xl sm:text-4xl font-display text-[#0F172A] mb-4" }, a.title),
         h("p", { className: "text-[#0F172A]/70 mb-3" }, a.excerpt),
-        a.author
-          ? h(
-              "p",
-              { className: "text-sm text-[#0F172A]/55 mb-8" },
-              `By ${a.author}${a.authorTitle ? `, ${a.authorTitle}` : ""}`,
-              a.reviewedBy
-                ? ` · Reviewed by ${a.reviewedBy}${a.reviewerTitle ? `, ${a.reviewerTitle}` : ""}`
-                : ""
+        (() => {
+          const p = resolveAuthor(a.author);
+          if (!p) return null;
+          return h(
+            "div",
+            { className: "flex items-center gap-3 mb-8" },
+            h("img", {
+              src: p.image,
+              alt: p.name,
+              width: 40,
+              height: 40,
+              loading: "lazy",
+              decoding: "async",
+              className: "w-10 h-10 rounded-full object-cover",
+            }),
+            h(
+              "div",
+              { className: "text-sm text-[#0F172A]/60" },
+              h("span", { className: "text-[#0F172A]/80 font-medium" }, p.name),
+              a.authorTitle || p.title ? `, ${a.authorTitle || p.title}` : "",
+              a.reviewedBy ? ` · Reviewed by ${a.reviewedBy}` : ""
             )
-          : null,
+          );
+        })(),
         a.featuredImage
           ? h("img", {
               src: a.featuredImage,
@@ -273,14 +302,17 @@ function jsonLd(a, dates) {
     image: a.featuredImage || `${BASE_URL}/og-image.jpg`,
     url: `${BASE_URL}/blog/${a.slug}`,
     mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}/blog/${a.slug}` },
-    author: a.author && a.author !== "Sakred Health"
-      ? {
-          "@type": "Person",
-          name: a.author,
-          ...(a.authorTitle ? { jobTitle: a.authorTitle } : {}),
-          ...(a.authorUrl ? { url: a.authorUrl } : {}),
-        }
-      : { "@type": "Organization", name: "Sakred Health", url: BASE_URL },
+    author: (() => {
+      const p = resolveAuthor(a.author);
+      if (!p) return { "@type": "Organization", name: "Sakred Health", url: BASE_URL };
+      return {
+        "@type": "Person",
+        name: p.name,
+        image: p.image,
+        ...(a.authorTitle || p.title ? { jobTitle: a.authorTitle || p.title } : {}),
+        worksFor: { "@type": "Organization", name: "Sakred Health", url: BASE_URL },
+      };
+    })(),
     publisher: {
       "@type": "Organization",
       name: "Sakred Health",

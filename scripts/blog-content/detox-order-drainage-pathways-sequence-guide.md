@@ -1,4 +1,5 @@
 ---
+author: michael
 featuredImage: https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800
 featuredImageAlt: Person standing with arms open facing a sunrise
 slug: detox-order-drainage-pathways-sequence-guide

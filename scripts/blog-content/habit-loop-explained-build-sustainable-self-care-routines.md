@@ -1,4 +1,5 @@
 ---
+author: jace
 slug: habit-loop-explained-build-sustainable-self-care-routines
 title: The Habit Loop, by the Numbers: What the Research Actually Says About Making Self-Care Stick
 excerpt: Habit formation takes a median of about two months, not 21 days, and ranges from four days to nearly a year. Here is what the evidence says about cues, rewards, if-then plans, and missed days.

@@ -1,4 +1,5 @@
 ---
+author: jace
 slug: personalized-wellness-tailoring-daily-routine-fit-lifestyle
 title: Personalized Wellness: What the Data Says About Why Generic Routines Fail
 excerpt: Identical meals produce blood-sugar responses that vary 68% between people, and identical training plans produce everything from no gain at all to enormous ones. Here is how to use that variability instead of fighting it.

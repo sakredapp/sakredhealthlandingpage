@@ -1,4 +1,5 @@
 ---
+author: michael
 featuredImage: https://images.unsplash.com/photo-1520206183501-b80df61043c2?w=800
 featuredImageAlt: Woman sleeping peacefully on a pillow
 slug: sleep-nervous-system-reset-14-day-protocol

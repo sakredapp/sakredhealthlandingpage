@@ -1,4 +1,5 @@
 ---
+author: jace
 featuredImage: https://images.unsplash.com/photo-1517578239113-b03992dcdd25?w=800
 featuredImageAlt: Cup of spiced coffee with foam on a wooden table
 slug: healthy-pumpkin-spice-latte-recipe

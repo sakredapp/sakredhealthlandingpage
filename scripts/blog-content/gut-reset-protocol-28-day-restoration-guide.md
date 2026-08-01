@@ -1,4 +1,5 @@
 ---
+author: michael
 featuredImage: https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800
 featuredImageAlt: Bowl of colorful vegetables, chickpeas and avocado
 slug: gut-reset-protocol-28-day-restoration-guide

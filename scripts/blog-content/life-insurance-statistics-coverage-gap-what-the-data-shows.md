@@ -1,4 +1,5 @@
 ---
+author: gerard
 featuredImage: https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800
 featuredImageAlt: Multi-generational family holding hands on a beach at sunset
 slug: life-insurance-statistics-coverage-gap-what-the-data-shows

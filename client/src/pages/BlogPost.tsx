@@ -57,6 +57,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card } from "@/components/ui/card";
 import type { BlogPost as BlogPostType } from "@shared/schema";
+import { resolveAuthor } from "@/data/authors";
 import { useEffect, useMemo } from "react";
 
 function BlogPostSkeleton() {
@@ -198,7 +199,7 @@ function useSEOMetaTags(post: BlogPostType | undefined) {
       image: image,
       author: {
         "@type": "Person",
-        name: post.author,
+        name: resolveAuthor(post.author)?.name ?? post.author,
       },
       publisher: {
         "@type": "Organization",
@@ -360,12 +361,33 @@ export default function BlogPost() {
 
             <div className="flex flex-wrap items-center gap-6 mb-8 pb-8 border-b border-stone-200">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#C5A059] to-[#A08040] flex items-center justify-center">
-                  <User className="w-5 h-5 text-white" />
-                </div>
+                {(() => {
+                  const person = resolveAuthor(post.author);
+                  return person ? (
+                    <img
+                      src={person.image}
+                      alt={person.name}
+                      width={40}
+                      height={40}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-10 h-10 rounded-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#C5A059] to-[#A08040] flex items-center justify-center">
+                      <User className="w-5 h-5 text-white" />
+                    </div>
+                  );
+                })()}
                 <div>
-                  <span className="block text-sm font-medium text-[#0F172A]" data-testid="text-post-author">{post.author}</span>
-                  <span className="block text-xs text-[#0F172A]/50">Wellness Expert</span>
+                  <span className="block text-sm font-medium text-[#0F172A]" data-testid="text-post-author">
+                    {resolveAuthor(post.author)?.name ?? post.author}
+                  </span>
+                  {resolveAuthor(post.author)?.title && (
+                    <span className="block text-xs text-[#0F172A]/50">
+                      {resolveAuthor(post.author)!.title}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="flex flex-wrap items-center gap-4 text-sm text-[#0F172A]/60">

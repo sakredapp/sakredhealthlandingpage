@@ -1,4 +1,5 @@
 ---
+author: michael
 featuredImage: https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800
 featuredImageAlt: Therapist applying oil during a back massage
 slug: lymphatic-drainage-routine-21-day-guide

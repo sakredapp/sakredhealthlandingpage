@@ -1,4 +1,5 @@
 ---
+author: gerard
 slug: building-resilient-workforce-daily-health-habits-employee-wellness
 title: "Building a Resilient Workforce: Why Daily Health Habits Beat Wellness Perks"
 excerpt: Employers spend roughly $68 billion a year on wellness, yet engagement sits at 20% and the flagship trials show most perks fail. The evidence points somewhere else — daily habits, backed by structural support.

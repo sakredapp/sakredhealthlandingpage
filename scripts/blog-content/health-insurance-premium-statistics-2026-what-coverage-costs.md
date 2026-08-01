@@ -1,4 +1,5 @@
 ---
+author: gerard
 featuredImage: https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800
 featuredImageAlt: Doctor in a white coat using a smartphone
 slug: health-insurance-premium-statistics-2026-what-coverage-costs

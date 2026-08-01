@@ -1,4 +1,5 @@
 ---
+author: jace
 featuredImage: https://images.unsplash.com/photo-1607478900766-efe13248b125?w=800
 featuredImageAlt: Frosted cupcakes with sprinkles on a pink background
 slug: healthier-halloween-candy-swaps-kids-will-eat

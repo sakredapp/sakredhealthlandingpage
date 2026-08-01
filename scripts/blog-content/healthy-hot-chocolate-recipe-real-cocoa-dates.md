@@ -1,4 +1,5 @@
 ---
+author: jace
 featuredImage: https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=800
 featuredImageAlt: Hot chocolate being poured into a ceramic mug
 slug: healthy-hot-chocolate-recipe-real-cocoa-dates

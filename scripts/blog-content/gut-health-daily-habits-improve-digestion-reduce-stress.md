@@ -1,4 +1,5 @@
 ---
+author: michael
 slug: gut-health-daily-habits-improve-digestion-reduce-stress
 title: Gut Health by the Numbers: What the Data Says About Digestion, Stress, and Daily Habits
 excerpt: Only about 7% of American adults hit their fiber target, and 55% of US calories now come from ultra-processed food. Here is what controlled trials actually show about fiber, fermented foods, stress, sleep, and probiotic supplements.
