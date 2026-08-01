@@ -110,7 +110,7 @@ const mdComponents = {
   },
 };
 
-function articleHtml(a) {
+function articleHtml(a, related = []) {
   return renderToStaticMarkup(
     h(
       "main",
@@ -131,10 +131,59 @@ function articleHtml(a) {
           "div",
           { className: "prose prose-lg max-w-none" },
           h(ReactMarkdown, { remarkPlugins: [remarkGfm], components: mdComponents }, a.content)
-        )
+        ),
+        related.length
+          ? h(
+              "nav",
+              { className: "mt-12 pt-8 border-t border-stone-200", "aria-label": "Related reading" },
+              h("h2", { className: "text-lg font-display text-[#0F172A] mb-3" }, "Related reading"),
+              h(
+                "ul",
+                null,
+                related.map((r) =>
+                  h("li", { key: r.slug }, h("a", { href: `/blog/${r.slug}` }, r.title))
+                )
+              )
+            )
+          : null
       )
     )
   );
+}
+
+/* Pick related posts by shared tags/keywords — the same signal the runtime
+   "Recommended Articles" block uses. Crawlers only ever saw the article body,
+   which left 9 posts orphaned and the pillar page with zero inbound links. */
+const PILLAR = "root-cause-health-internal-environment-guide";
+const WELLNESS_HINTS = ["wellness", "habit", "sleep", "gut", "detox", "protocol", "lymphatic", "stress", "nutrition", "digestion", "health"];
+
+function relatedFor(a, all) {
+  const tags = new Set([...(a.tags || []), ...(a.seoKeywords || [])]);
+  const scored = all
+    .filter((o) => o.slug !== a.slug)
+    .map((o) => {
+      const otags = new Set([...(o.tags || []), ...(o.seoKeywords || [])]);
+      let score = 0;
+      for (const t of tags) if (otags.has(t)) score += 3;
+      return { post: o, score };
+    })
+    .sort((x, y) => y.score - x.score);
+
+  const picks = scored.filter((x) => x.score > 0).slice(0, 3).map((x) => x.post);
+
+  // Every wellness post links up to the pillar page; every post gets at least 3.
+  const isWellness =
+    a.slug !== PILLAR &&
+    [...tags].some((t) => WELLNESS_HINTS.some((h) => String(t).includes(h)));
+  if (isWellness && !picks.some((p) => p.slug === PILLAR)) {
+    const pillar = all.find((p) => p.slug === PILLAR);
+    if (pillar) picks.unshift(pillar);
+  }
+  for (const cand of scored.map((x) => x.post)) {
+    if (picks.length >= 4) break;
+    if (!picks.some((p) => p.slug === cand.slug)) picks.push(cand);
+  }
+  return picks.slice(0, 4).map((p) => ({ slug: p.slug, title: p.title }));
 }
 
 function extractSourceUrls(content) {
@@ -279,8 +328,26 @@ async function main() {
     console.error("[prerender] date lookup skipped:", err.message);
   }
 
+  // Compute all related sets first, then guarantee no post is orphaned.
+  const relatedBySlug = new Map(articles.map((a) => [a.slug, relatedFor(a, articles)]));
+  const linkedTo = new Set();
+  for (const list of relatedBySlug.values()) for (const r of list) linkedTo.add(r.slug);
   for (const a of articles) {
-    const html = injectIntoTemplate(template, buildHead(a, dates[a.slug]), articleHtml(a));
+    if (linkedTo.has(a.slug)) continue;
+    const host = relatedFor(a, articles)[0];
+    const list = host && relatedBySlug.get(host.slug);
+    if (list) {
+      list.splice(3, 1, { slug: a.slug, title: a.title });
+      linkedTo.add(a.slug);
+    }
+  }
+
+  for (const a of articles) {
+    const html = injectIntoTemplate(
+      template,
+      buildHead(a, dates[a.slug]),
+      articleHtml(a, relatedBySlug.get(a.slug) || [])
+    );
     const dir = join(DIST, "blog", a.slug);
     mkdirSync(dir, { recursive: true });
     writeFileSync(join(dir, "index.html"), html);
