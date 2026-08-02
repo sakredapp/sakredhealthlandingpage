@@ -1,6 +1,6 @@
 ---
-featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/personalized-wellness-tailoring-daily-routine-fit-lifestyle.jpeg
-featuredImageAlt: Everyday wellness items arranged for an individual daily routine
+featuredImage: https://images.unsplash.com/photo-1762709753434-abea23356eed?w=1200&h=630&fit=crop&auto=format&q=80
+featuredImageAlt: A pair of running shoes resting on grass
 author: jace
 slug: personalized-wellness-tailoring-daily-routine-fit-lifestyle
 publishedAt: 2025-11-07T14:00:00.000Z

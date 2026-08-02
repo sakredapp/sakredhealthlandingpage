@@ -1,6 +1,6 @@
 ---
-featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/science-of-sleep-nightly-routines-better-rest-focus.jpeg
-featuredImageAlt: A calm, dimly lit bedroom set up for rest
+featuredImage: https://images.unsplash.com/photo-1704398811049-cf09880810ee?w=1200&h=630&fit=crop&auto=format&q=80
+featuredImageAlt: A dark bedroom with light through the window
 author: gerard
 slug: science-of-sleep-nightly-routines-better-rest-focus
 publishedAt: 2025-09-19T14:00:00.000Z
