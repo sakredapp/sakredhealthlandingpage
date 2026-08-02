@@ -72,15 +72,15 @@ Same fruit, different product, genuinely different result. If a label says syrup
 
 ## What about the artificial ones?
 
-Every sweetener above is caloric and comes from a plant. The other option on the shelf is the non-sugar sweeteners — aspartame, sucralose, saccharin, acesulfame K, and stevia and its derivatives — and the usual assumption is that they must be the safer choice because they carry no sugar and no calories.
+Every sweetener above is caloric and comes from a plant. The other option is the synthetic ones — aspartame, sucralose, acesulfame K, saccharin — usually assumed to be the safer choice because they carry no sugar and no calories.
 
-The World Health Organization does not agree. In **May 2023**, after reviewing **283 studies**, WHO issued a guideline advising that non-sugar sweeteners **not** be used to control weight or reduce the risk of noncommunicable disease. The review found that they **confer no long-term benefit in reducing body fat** in adults or children, and flagged potential undesirable effects from long-term use, including increased risk of type 2 diabetes, cardiovascular disease and mortality in adults.
+The largest direct look at that question does not support the assumption. Debras and colleagues followed **103,388 adults** in the French NutriNet-Santé cohort across **904,206 person-years**, measuring artificial sweetener intake from every dietary source — beverages, tabletop packets, dairy — using repeated 24-hour dietary records that captured brand names rather than relying on memory. Published in *The BMJ* in 2022, the analysis found **total artificial sweetener intake associated with increased risk of cardiovascular disease overall and of cerebrovascular events**. Broken out by molecule: **aspartame tracked with cerebrovascular risk, while acesulfame K and sucralose tracked with coronary heart disease risk** ([Debras et al., *BMJ*, 2022;378:e071204](https://pubmed.ncbi.nlm.nih.gov/36638072/)).
 
-Two caveats we will state rather than bury. WHO labelled this a **conditional** recommendation, not a strong one — meaning the evidence base has real limitations. And much of the harm signal comes from observational data, where reverse causation is a live concern: people already at higher metabolic risk are more likely to switch to sweeteners in the first place, which can make the sweetener look responsible for a risk that preceded it.
+**Grade it honestly: this is an observational cohort, not a trial.** It cannot establish cause, and reverse causation is a live concern — people already at higher metabolic risk are likelier to have switched to sweeteners in the first place, which can make the sweetener look responsible for a risk that preceded it. The cohort was also 80% women and skewed health-conscious, so it is not a cross-section of everyone.
 
-Even with those caveats, the practical conclusion is clear enough. **There is no good evidence that swapping to artificial sweeteners produces the benefit people expect from them**, and the world's leading health body specifically advises against using them for that purpose. If the choice is between a modest amount of something that grew — dates, maple, coconut sugar — and a synthetic replacement adopted on the theory that it is safer, that theory is not supported.
+What it does establish is that the confident version of the swap — that synthetic sweeteners are the obviously safer choice — is not backed by the best available data on people. At minimum the question is open, and the burden sits with the claim that they are safer, not against it.
 
-Which lands where most sensible eating lands: real ingredients, in moderation, with the amount as the thing you actually control.
+Which lands where sensible eating usually lands: real ingredients that grew somewhere, in moderation, with the quantity as the thing you actually control.
 
 ## What about blood pressure?
 
@@ -124,7 +124,7 @@ Not meaningfully. Honey is roughly half glucose and half fructose, similar to ta
 
 ### Are artificial sweeteners a better choice than sugar?
 
-Not on current guidance. In May 2023 the World Health Organization, after reviewing 283 studies, advised against using non-sugar sweeteners — aspartame, sucralose, saccharin, acesulfame K, stevia and others — for weight control or to reduce disease risk, finding no long-term benefit for body fat and flagging possible increased risk of type 2 diabetes and cardiovascular disease. WHO called it a conditional recommendation, so it is guidance rather than settled fact.
+Not on the best available evidence. A prospective cohort of 103,388 adults published in The BMJ in 2022 found total artificial sweetener intake associated with higher cardiovascular disease risk — aspartame with cerebrovascular events, acesulfame K and sucralose with coronary heart disease. It is observational rather than a trial, so it cannot prove cause, but it means the assumption that synthetic sweeteners are the safer swap is not supported.
 
 ### Do natural sweeteners affect blood pressure differently?
 
@@ -136,7 +136,7 @@ There is no good trial evidence that swapping one caloric sweetener for another 
 - [Journal of Hepatology — Geidl-Flueck et al., Fructose- and sucrose- but not glucose-sweetened beverages promote hepatic de novo lipogenesis (2021)](https://www.journal-of-hepatology.eu/article/S0168-8278(21)00161-6/fulltext)
 - [Nature Reviews Endocrinology — Malik & Hu, The role of sugar-sweetened beverages in the global epidemics of obesity and chronic diseases (2022)](https://www.nature.com/articles/s41574-021-00627-6)
 - [FDA — Added Sugars on the Nutrition Facts Label](https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label)
-- [WHO — Use of non-sugar sweeteners: WHO guideline (2023)](https://www.who.int/news/item/15-05-2023-who-advises-not-to-use-non-sugar-sweeteners-for-weight-control-in-newly-released-guideline)
+- [The BMJ — Debras et al., Artificial sweeteners and risk of cardiovascular diseases: results from the prospective NutriNet-Santé cohort (2022)](https://pubmed.ncbi.nlm.nih.gov/36638072/)
 - [American Heart Association — Added Sugars](https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/sugar/added-sugars)
 
 ---
