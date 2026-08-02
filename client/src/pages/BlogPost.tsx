@@ -52,7 +52,6 @@ const markdownComponents = {
 import { Calendar, User, ArrowLeft, Clock, ArrowRight } from "lucide-react";
 import { Navigation } from "@/components/landing/Navigation";
 import { Footer } from "@/components/landing/Footer";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card } from "@/components/ui/card";
@@ -341,20 +340,6 @@ export default function BlogPost() {
               <span>Back to Blog</span>
             </Link>
 
-            {post.tags && post.tags.length > 0 && (
-              <div className="flex flex-wrap gap-2 mb-4">
-                {post.tags.map((tag) => (
-                  <Badge
-                    key={tag}
-                    variant="secondary"
-                    className="bg-[#C5A059]/10 text-[#C5A059]"
-                  >
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-            )}
-
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-normal text-[#0F172A] mb-6 leading-tight" data-testid="text-post-title">
               {post.title}
             </h1>
@@ -429,22 +414,6 @@ export default function BlogPost() {
               </ReactMarkdown>
             </div>
 
-            {post.seoKeywords && post.seoKeywords.length > 0 && (
-              <div className="mt-10 pt-8 border-t border-stone-200">
-                <h3 className="text-sm font-medium text-[#0F172A]/60 mb-3">Keywords</h3>
-                <div className="flex flex-wrap gap-2">
-                  {post.seoKeywords.map((keyword) => (
-                    <Badge
-                      key={keyword}
-                      variant="outline"
-                      className="border-[#C5A059]/30 text-[#C5A059] bg-[#C5A059]/5 text-xs"
-                    >
-                      {keyword}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            )}
           </motion.div>
         </article>
 
@@ -475,19 +444,6 @@ export default function BlogPost() {
                       </div>
                     )}
                     <div className="p-5 flex-1 flex flex-col">
-                      {recPost.tags && recPost.tags.length > 0 && (
-                        <div className="flex flex-wrap gap-1.5 mb-2">
-                          {recPost.tags.slice(0, 2).map((tag) => (
-                            <Badge
-                              key={tag}
-                              variant="secondary"
-                              className="bg-[#C5A059]/10 text-[#C5A059] text-xs"
-                            >
-                              {tag}
-                            </Badge>
-                          ))}
-                        </div>
-                      )}
                       <h3 className="text-lg font-display font-normal text-[#0F172A] mb-2 group-hover:text-[#C5A059] transition-colors line-clamp-2">
                         {recPost.title}
                       </h3>
