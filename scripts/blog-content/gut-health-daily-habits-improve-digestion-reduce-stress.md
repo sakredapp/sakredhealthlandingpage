@@ -87,6 +87,10 @@ The American Gastroenterological Association reviewed the evidence across eight 
 
 For Crohn's disease, ulcerative colitis, IBS, and treatment of active *C. difficile* infection, the AGA found insufficient evidence and suggested patients consider stopping probiotics, given ongoing cost without demonstrated benefit. The guideline also stresses that effects are **strain-specific**, not species-specific — a bottle labeled "Lactobacillus" tells you almost nothing.
 
+**Read carefully what that guideline is evaluating.** It assesses **isolated, manufactured strains taken as a supplement for a named clinical diagnosis** — a pill, judged as a drug would be judged. It is not an assessment of fermented food, and it does not pretend to be. Kimchi, sauerkraut, kefir, miso and yoghurt have been eaten daily across Korea, Japan, China, India, the Caucasus and Eastern Europe for centuries, in populations that never ran a trial and never needed one. Nobody is going to fund a randomized trial of sauerkraut, because sauerkraut has no sponsor.
+
+So the honest position is narrower than either side usually states: **the supplement aisle is overselling, and the crock in your kitchen was never on trial.** Our recommendation is fermented food, which is why the AGA's finding does not change it.
+
 The mental-health picture is more favorable but still early. A 2024 systematic review and meta-analysis in *Nutrition Reviews* covering 23 randomized trials and 1,401 clinically diagnosed patients found probiotics reduced depressive symptoms (SMD −0.96; 95% CI −1.31 to −0.61) and anxiety symptoms (SMD −0.59; 95% CI −0.98 to −0.19) over up to 8 weeks. Prebiotics showed no significant effect on depression. The authors note small samples and short follow-up as key limitations.
 
 ## A four-week starting protocol
