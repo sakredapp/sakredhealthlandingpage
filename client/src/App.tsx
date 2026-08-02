@@ -4,7 +4,7 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider, useQuery } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import Landing from "@/pages/Landing";
 
 // Every non-home route is code-split so the landing page ships only its own JS.
@@ -72,9 +72,38 @@ function RequireAdminAuth({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
+/**
+ * wouter keeps the window scroll position across navigations, so following a
+ * link from part-way down a list (e.g. /blog) lands you part-way down the next
+ * page instead of at its top. Reset on every pathname change.
+ *
+ * Skipped when the URL carries a hash, so in-page anchors still work, and when
+ * the browser is restoring a history entry on back/forward.
+ */
+function ScrollToTop() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    if (window.location.hash) return;
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+      return () => {
+        window.history.scrollRestoration = "auto";
+      };
+    }
+  }, []);
+
+  return null;
+}
+
 function Router() {
   return (
     <Suspense fallback={<RouteFallback />}>
+    <ScrollToTop />
     <Switch>
       <Route path="/" component={Landing} />
       <Route path="/app" component={AppPage} />

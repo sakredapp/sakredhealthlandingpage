@@ -52,6 +52,14 @@ A healthy pumpkin spice coffee creamer is made from real pumpkin purée, milk an
 {"type": "bar", "title": "Added sugar in one mug, by how much you actually pour", "suffix": "g", "source": "International Delight product label, 2026; recipe calculated from USDA FoodData Central values", "data": [{"label": "Flavored creamer, 1 tbsp (the labeled serving)", "value": 5, "tone": "neutral"}, {"label": "Flavored creamer, 3 tbsp", "value": 15, "tone": "bad"}, {"label": "Flavored creamer, 4 tbsp", "value": 20, "tone": "bad"}, {"label": "This creamer, 3 tbsp", "value": 2.7, "tone": "good"}]}
 ```
 
+## About the sweetener
+
+Both versions use real sugar. That is not the difference, and saying otherwise invites an easy correction — the commercial product is sweetened with cane sugar, not an artificial sweetener.
+
+What differs is **what the sugar arrives inside**. This recipe sweetens with whole Medjool dates. Dates are more than 70% sugar, which we are not going to pretend away — and yet across five varieties tested in both healthy and type 2 diabetic subjects they measured a **glycemic index of roughly 44 to 55**, low-to-medium, with no significant post-meal glucose excursions in the diabetic group ([Alkaabi et al., *Nutrition Journal*, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3112406/)). The fruit's fiber is still attached and still doing its job. Strain it out into a syrup and that advantage leaves with it.
+
+So the claim is not that this sugar is free. FDA counts dates, maple and coconut sugar as added sugars, and so do we. The claim is **less sugar, and sugar that still has its fiber**. Full breakdown of [which sweeteners genuinely differ and which don't](/blog/healthy-pumpkin-spice-latte-recipe#it-is-not-just-less-sugar--it-is-a-different-kind-of-sugar).
+
 ## Ingredients
 
 - 1 1/2 cups (360 ml) whole milk

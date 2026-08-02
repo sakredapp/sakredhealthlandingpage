@@ -61,6 +61,14 @@ Read that chart carefully, because the bars are not measuring identical things. 
 
 The real win is not that dates are magic. It's that **you set the number.** One date makes a lightly sweet mug; two make a sweet one. A packet gives you one setting.
 
+## About the sweetener
+
+Both versions use real sugar. That is not the difference, and saying otherwise invites an easy correction — the commercial product is sweetened with cane sugar, not an artificial sweetener.
+
+What differs is **what the sugar arrives inside**. This recipe sweetens with whole Medjool dates. Dates are more than 70% sugar, which we are not going to pretend away — and yet across five varieties tested in both healthy and type 2 diabetic subjects they measured a **glycemic index of roughly 44 to 55**, low-to-medium, with no significant post-meal glucose excursions in the diabetic group ([Alkaabi et al., *Nutrition Journal*, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3112406/)). The fruit's fiber is still attached and still doing its job. Strain it out into a syrup and that advantage leaves with it.
+
+So the claim is not that this sugar is free. FDA counts dates, maple and coconut sugar as added sugars, and so do we. The claim is **less sugar, and sugar that still has its fiber**. Full breakdown of [which sweeteners genuinely differ and which don't](/blog/healthy-pumpkin-spice-latte-recipe#it-is-not-just-less-sugar--it-is-a-different-kind-of-sugar).
+
 ## Ingredients
 
 - 1½ cups (12 oz / 355 ml) milk of choice — dairy, unsweetened almond, oat, or half milk and half water

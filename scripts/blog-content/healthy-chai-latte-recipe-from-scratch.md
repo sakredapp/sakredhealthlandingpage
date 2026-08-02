@@ -72,6 +72,14 @@ One Oregon Chai latte spends 112% of a woman's entire daily added-sugar allowanc
 
 Below, the first eleven items make two 8-ounce cups. The last nine make a refrigerator batch of unsweetened concentrate — about four cups, or eight servings.
 
+## About the sweetener
+
+Both versions use real sugar. That is not the difference, and saying otherwise invites an easy correction — the commercial product is sweetened with cane sugar, not an artificial sweetener.
+
+What differs is the amount, and what the sugar arrives inside. Pure maple syrup and coconut sugar are minimally processed foods rather than refined syrup blends, and they carry trace minerals — but their fiber is gone, and **FDA counts both as added sugars**. We are not going to tell you they are metabolically free. Coconut sugar in particular is roughly 70–80% sucrose, and its widely repeated low-GI figure rests on a single small analysis that has not replicated well.
+
+Where a recipe can use **whole dates** instead, the fiber stays attached and that genuinely does change the glycemic response — five date varieties tested in healthy and diabetic subjects measured a glycemic index of about 44 to 55 despite being over 70% sugar ([Alkaabi et al., *Nutrition Journal*, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3112406/)). Full breakdown of [which sweeteners genuinely differ and which don't](/blog/healthy-pumpkin-spice-latte-recipe#it-is-not-just-less-sugar--it-is-a-different-kind-of-sugar).
+
 ## Ingredients
 
 - 1 1/2 cups (360 ml) water

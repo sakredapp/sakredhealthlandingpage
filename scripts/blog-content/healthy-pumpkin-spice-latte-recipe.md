@@ -46,6 +46,29 @@ A healthy pumpkin spice latte is made from real pumpkin purée, espresso or stro
 | Real pumpkin | Present in the sauce, in unstated amount | 2 tbsp purée per drink |
 | Sweetness you control | No | Yes — by the half tablespoon |
 
+## It is not just less sugar — it is a different kind of sugar
+
+This distinction gets flattened constantly, in both directions, so here it is precisely.
+
+**First, a correction to the version you usually hear:** Starbucks is not using artificial sweetener. Classic Syrup is sugar and water; the pumpkin spice sauce is built on real sugar and condensed milk. The difference between their drink and this one is *not* real sugar versus fake sugar. Anyone making that claim is handing critics an easy correction.
+
+The real difference is **what the sugar arrives inside**, and it forms a hierarchy rather than a binary:
+
+| Sweetener | What it actually is | Fiber intact? | Honest verdict |
+|---|---|---|---|
+| **Whole dates / date sugar** | Dried whole dates, ground. Nothing removed. | **Yes** | Genuinely different — the fiber matrix is still there |
+| **Pure maple syrup** | Boiled tree sap. Trace manganese and zinc. | No | Real food, but the sugar is free sugar |
+| **Coconut sugar** | Boiled palm sap. Trace minerals plus some inulin. | Mostly no | Marginally different; ~70–80% sucrose |
+| **Cane sugar / HFCS / flavored sauce** | Refined free sugar in solution | No | Sugar, and only sugar |
+
+The one with real evidence behind it is dates, and it is worth being specific about why. Dates are **more than 70% sugar** — nobody should pretend otherwise — and yet across five varieties tested in both healthy and type 2 diabetic subjects, they measured a **glycemic index of roughly 44 to 55**, in the low-to-medium range, with no significant post-meal glucose excursions in the diabetic group ([Alkaabi et al., *Nutrition Journal*, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3112406/)). The fiber the fruit came with is still doing its job.
+
+Date *sugar* keeps that advantage because it is not really a sugar at all — it is dehydrated whole dates, milled. Date *syrup* does not, because the fiber has been strained out.
+
+Where we will not overclaim: **coconut sugar is not meaningfully different from cane sugar metabolically.** It is roughly 70–80% sucrose, and the widely repeated low-GI figure for it traces to a single small analysis that has not replicated well. We use it in small amounts for flavor, not because it is a health food. And FDA counts every sweetener in that table — dates, maple, coconut and cane alike — as **added sugars** on a Nutrition Facts label.
+
+So the accurate claim is this: **less sugar, and where possible sugar that still has its fiber attached.** That is a defensible sentence. "Our sugar is real and theirs is fake" is not, and the first one is the stronger argument anyway.
+
 ```chart
 {"type": "bar", "title": "Added sugar: one drink against a whole day's limit", "suffix": "g", "source": "CSPI analysis of Starbucks nutrition data, 2025; American Heart Association added-sugar limits, 2025", "data": [{"label": "Grande PSL, 2% milk", "value": 32, "tone": "bad"}, {"label": "AHA limit, men", "value": 36, "tone": "neutral"}, {"label": "AHA limit, women", "value": 25, "tone": "neutral"}, {"label": "This recipe, 12 oz", "value": 12}]}
 ```

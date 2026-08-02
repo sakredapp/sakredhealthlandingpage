@@ -58,6 +58,14 @@ Read that chart carefully, because the bars are not identical measures. The Star
 
 The two 10-gram bars landing on top of each other isn't a coincidence found after the fact; it's the constraint the sweetener was built around. And it's worth saying plainly: **10 grams of added sugar per slice is not zero.** Dates and maple syrup are added sugars — FDA's 2019 guidance treats pure maple syrup and honey as added sugars on the Nutrition Facts label, and the same logic covers date syrup, coconut sugar, and agave. The advantage of baking this yourself is that you set the dial, not that natural sweeteners are metabolically free. Our [food chart](/food-chart) sorts sweeteners on exactly that basis.
 
+## About the sweetener
+
+Both versions use real sugar. That is not the difference, and saying otherwise invites an easy correction — the commercial product is sweetened with cane sugar, not an artificial sweetener.
+
+What differs is **what the sugar arrives inside**. This recipe sweetens with whole Medjool dates. Dates are more than 70% sugar, which we are not going to pretend away — and yet across five varieties tested in both healthy and type 2 diabetic subjects they measured a **glycemic index of roughly 44 to 55**, low-to-medium, with no significant post-meal glucose excursions in the diabetic group ([Alkaabi et al., *Nutrition Journal*, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3112406/)). The fruit's fiber is still attached and still doing its job. Strain it out into a syrup and that advantage leaves with it.
+
+So the claim is not that this sugar is free. FDA counts dates, maple and coconut sugar as added sugars, and so do we. The claim is **less sugar, and sugar that still has its fiber**. Full breakdown of [which sweeteners genuinely differ and which don't](/blog/healthy-pumpkin-spice-latte-recipe#it-is-not-just-less-sugar--it-is-a-different-kind-of-sugar).
+
 ## Ingredients
 
 - 1 can (15 oz / 425 g) 100% pure pumpkin purée — not pumpkin pie filling

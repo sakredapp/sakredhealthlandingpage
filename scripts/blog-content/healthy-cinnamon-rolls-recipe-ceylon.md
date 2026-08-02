@@ -70,6 +70,14 @@ In October 2023 the FDA began investigating children with elevated blood lead le
 
 This is a supply-chain contamination problem, not a property of the spice, and it is confined to specific products the FDA names. The practical response is not to fear cinnamon; it is to check the FDA's current alert list against what is in your cabinet, and to buy from suppliers who publish testing. That is a two-minute task that most people baking through a holiday season have never been told to do.
 
+## About the sweetener
+
+Both versions use real sugar. That is not the difference, and saying otherwise invites an easy correction — the commercial product is sweetened with cane sugar, not an artificial sweetener.
+
+What differs is **what the sugar arrives inside**. This recipe sweetens with whole Medjool dates. Dates are more than 70% sugar, which we are not going to pretend away — and yet across five varieties tested in both healthy and type 2 diabetic subjects they measured a **glycemic index of roughly 44 to 55**, low-to-medium, with no significant post-meal glucose excursions in the diabetic group ([Alkaabi et al., *Nutrition Journal*, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3112406/)). The fruit's fiber is still attached and still doing its job. Strain it out into a syrup and that advantage leaves with it.
+
+So the claim is not that this sugar is free. FDA counts dates, maple and coconut sugar as added sugars, and so do we. The claim is **less sugar, and sugar that still has its fiber**. Full breakdown of [which sweeteners genuinely differ and which don't](/blog/healthy-pumpkin-spice-latte-recipe#it-is-not-just-less-sugar--it-is-a-different-kind-of-sugar).
+
 ## Ingredients
 
 - 3 tablespoons bread flour, for the tangzhong

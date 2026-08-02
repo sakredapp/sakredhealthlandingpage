@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
@@ -10,7 +10,15 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useSeo } from "@/lib/seo";
+import { resolveAuthor } from "@/data/authors";
 import type { BlogPost } from "@shared/schema";
+
+/** Tags that mark a post as coverage/finance rather than health content. */
+const COVERAGE_TAGS = new Set([
+  "insurance", "mortgage-protection", "final-expense", "life-insurance",
+  "health-insurance", "retirement", "coverage", "medicare", "annuities",
+  "long-term-care", "financial-planning", "data",
+]);
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -75,7 +83,7 @@ export default function Blog() {
     ? Array.from(new Set(posts.flatMap((post) => post.seoKeywords || []))).sort()
     : [];
 
-  const filteredPosts = posts?.filter((post) => {
+  const matchedPosts = posts?.filter((post) => {
     const matchesSearch =
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -84,6 +92,42 @@ export default function Blog() {
     const matchesTag = !selectedTag || post.tags?.includes(selectedTag) || post.seoKeywords?.includes(selectedTag);
     return matchesSearch && matchesTag;
   });
+
+  // Posts were written in topical batches, so ordering purely by date clumps the
+  // listing — six recipes, then six insurance posts. Round-robin across subject
+  // buckets instead, keeping each bucket newest-first, so the grid reads as a mix.
+  // Only applied to the unfiltered view; once someone searches or picks a tag,
+  // straight recency is what they expect.
+  const filteredPosts = useMemo(() => {
+    if (!matchedPosts) return matchedPosts;
+    if (searchQuery || selectedTag) return matchedPosts;
+
+    const bucketOf = (post: BlogPost) => {
+      const tags = (post.tags || []).map((t) => t.toLowerCase());
+      if (tags.includes("big-food")) return "bigFood";
+      if (tags.includes("recipes")) return "recipes";
+      if (tags.some((t) => COVERAGE_TAGS.has(t))) return "coverage";
+      return "wellness";
+    };
+
+    const buckets = new Map<string, BlogPost[]>();
+    for (const post of matchedPosts) {
+      const key = bucketOf(post);
+      const list = buckets.get(key);
+      if (list) list.push(post);
+      else buckets.set(key, [post]);
+    }
+
+    // Interleave largest-bucket-first so no single subject bunches up at the end.
+    const queues = Array.from(buckets.values()).sort((a, b) => b.length - a.length);
+    const mixed: BlogPost[] = [];
+    for (let i = 0; mixed.length < matchedPosts.length; i++) {
+      for (const q of queues) {
+        if (i < q.length) mixed.push(q[i]);
+      }
+    }
+    return mixed;
+  }, [matchedPosts, searchQuery, selectedTag]);
 
   return (
     <div className="min-h-screen bg-[#F9F9F7]">
@@ -180,10 +224,29 @@ export default function Blog() {
                           {post.excerpt}
                         </p>
                         <div className="flex items-center gap-4 text-xs text-[#0F172A]/60 pt-4 border-t border-stone-100">
-                          <div className="flex items-center gap-1">
-                            <User className="w-3.5 h-3.5" />
-                            <span>{post.author}</span>
-                          </div>
+                          {(() => {
+                            // post.author holds the frontmatter key ("gerard"), not a
+                            // display name — resolve it so the card shows the full
+                            // byline and headshot rather than a lowercase slug.
+                            const author = resolveAuthor(post.author);
+                            return (
+                              <div className="flex items-center gap-1.5">
+                                {author?.image ? (
+                                  <img
+                                    src={author.image}
+                                    alt=""
+                                    loading="lazy"
+                                    width={20}
+                                    height={20}
+                                    className="w-5 h-5 rounded-full object-cover"
+                                  />
+                                ) : (
+                                  <User className="w-3.5 h-3.5" />
+                                )}
+                                <span>{author?.name ?? post.author}</span>
+                              </div>
+                            );
+                          })()}
                           {post.publishedAt && (
                             <div className="flex items-center gap-1">
                               <Calendar className="w-3.5 h-3.5" />

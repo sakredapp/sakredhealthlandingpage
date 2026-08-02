@@ -68,6 +68,14 @@ The temperature result is the counterintuitive one. Final oil content came out a
 
 None of that is an argument that fried food is dangerous. It is an argument about where the fat in a fried donut comes from — a physical process during cooling, not an inherent property of dough. A baked donut skips the process entirely, which is why the fat column above drops from roughly 20 grams to roughly 5. The 15-gram difference is not virtue. It is capillary pressure that never happened.
 
+## About the sweetener
+
+Both versions use real sugar. That is not the difference, and saying otherwise invites an easy correction — the commercial product is sweetened with cane sugar, not an artificial sweetener.
+
+What differs is the amount, and what the sugar arrives inside. Pure maple syrup and coconut sugar are minimally processed foods rather than refined syrup blends, and they carry trace minerals — but their fiber is gone, and **FDA counts both as added sugars**. We are not going to tell you they are metabolically free. Coconut sugar in particular is roughly 70–80% sucrose, and its widely repeated low-GI figure rests on a single small analysis that has not replicated well.
+
+Where a recipe can use **whole dates** instead, the fiber stays attached and that genuinely does change the glycemic response — five date varieties tested in healthy and diabetic subjects measured a glycemic index of about 44 to 55 despite being over 70% sugar ([Alkaabi et al., *Nutrition Journal*, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3112406/)). Full breakdown of [which sweeteners genuinely differ and which don't](/blog/healthy-pumpkin-spice-latte-recipe#it-is-not-just-less-sugar--it-is-a-different-kind-of-sugar).
+
 ## Ingredients
 
 - 2 cups fresh apple cider (reduces to about 1/4 cup)
