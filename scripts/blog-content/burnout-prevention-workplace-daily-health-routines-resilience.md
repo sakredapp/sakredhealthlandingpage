@@ -1,4 +1,6 @@
 ---
+featuredImage: https://images.unsplash.com/photo-1776391853674-92d8ee2369b0?w=1200&h=630&fit=crop&auto=format&q=80
+featuredImageAlt: An empty desk lit only by a lamp at night
 author: jace
 slug: burnout-prevention-workplace-daily-health-routines-resilience
 publishedAt: 2026-07-23T14:00:00.000Z

@@ -1,7 +1,7 @@
 ---
+featuredImage: https://images.unsplash.com/photo-1747330201652-dbebf32eceb7?w=1200&h=630&fit=crop&auto=format&q=80
+featuredImageAlt: An older person's hands resting on a walking cane
 author: michael
-featuredImage: https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800
-featuredImageAlt: Nurse caring for an older woman
 slug: long-term-care-costs-statistics-aging-in-america
 publishedAt: 2025-09-09T14:00:00.000Z
 title: "What Aging Actually Costs: The Long-Term Care Numbers Every Family Should See"

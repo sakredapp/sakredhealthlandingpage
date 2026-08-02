@@ -1,4 +1,6 @@
 ---
+featuredImage: https://images.unsplash.com/photo-1770617476915-7269d29d27dc?w=1200&h=630&fit=crop&auto=format&q=80
+featuredImageAlt: Rows of whole dried dates in varying shades of brown
 slug: are-natural-sweeteners-better-than-sugar
 publishedAt: 2026-07-03T14:00:00.000Z
 author: gerard

@@ -1,4 +1,6 @@
 ---
+featuredImage: https://images.unsplash.com/photo-1694632288834-17d86b340745?w=1200&h=630&fit=crop&auto=format&q=80
+featuredImageAlt: A pan of freshly baked cinnamon rolls with white icing
 slug: healthy-cinnamon-rolls-recipe-ceylon
 publishedAt: 2025-11-27T14:00:00.000Z
 author: gerard

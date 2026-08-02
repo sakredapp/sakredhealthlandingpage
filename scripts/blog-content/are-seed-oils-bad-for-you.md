@@ -1,4 +1,6 @@
 ---
+featuredImage: https://images.unsplash.com/photo-1768689033119-c3ac1e437d20?w=1200&h=630&fit=crop&auto=format&q=80
+featuredImageAlt: Golden oil pouring from a metal spout into a container
 slug: are-seed-oils-bad-for-you
 publishedAt: 2026-05-15T14:00:00.000Z
 author: jace

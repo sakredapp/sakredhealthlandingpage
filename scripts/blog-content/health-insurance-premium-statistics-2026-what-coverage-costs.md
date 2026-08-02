@@ -1,7 +1,7 @@
 ---
+featuredImage: https://images.unsplash.com/photo-1583521214690-73421a1829a9?w=1200&h=630&fit=crop&auto=format&q=80
+featuredImageAlt: Stacks of paper documents and file folders
 author: michael
-featuredImage: https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800
-featuredImageAlt: Doctor in a white coat using a smartphone
 slug: health-insurance-premium-statistics-2026-what-coverage-costs
 publishedAt: 2026-02-14T14:00:00.000Z
 title: "What Health Insurance Actually Costs in 2026: Premium Data From KFF and CMS"
