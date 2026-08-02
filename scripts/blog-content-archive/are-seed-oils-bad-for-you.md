@@ -65,6 +65,29 @@ That is a real finding. Here is what it is not:
 - It is **not** an outcome. LDL is a **surrogate marker** — a stand-in used because waiting for heart attacks takes decades. Surrogates have misled before.
 - It is **not** a comparison of like with like. Which brings us to the part no biomarker captures.
 
+### "Seed oil" is a category, not a substance
+
+Here is the limitation that undercuts every confident summary in this debate, in both directions.
+
+A trial specifies its oil. It names the type, sources it, stores it to protocol and uses it fresh. What it produces is a finding about *that* product under *those* conditions.
+
+The category sold in a supermarket has none of that. Under the single phrase "seed oil" sits an enormous range:
+
+- **Extraction.** Cold-pressed and expeller-pressed oils never meet a solvent. Most commodity oil is hexane-extracted, then bleached and deodorized. Same botanical seed, materially different process and product.
+- **Oxidation state.** Polyunsaturated fats are the most oxidation-prone fats there are — that is a direct consequence of having more double bonds. How oxidized a given bottle is depends on refining temperature, light exposure, oxygen, time on the shelf and how long it sat in a warm truck. **None of that appears on the label**, and two bottles of the same brand can differ.
+- **Reuse.** Oil held hot in a commercial fryer for days is chemically not the oil that was poured in, and it is how most people actually consume the stuff.
+- **Blends.** "Vegetable oil" is frequently a blend whose composition shifts with commodity prices between production runs.
+
+So a trial that finds no inflammatory effect from a defined, fresh, well-handled oil has told you something true about that oil. It has not told you about a bottle that spent eight months under fluorescent light, or about a fryer running since Tuesday. **Those questions were not asked, so they were not answered.**
+
+Two honest consequences, and we are stating both:
+
+The first is that the confident dismissal — "trials show seed oils are fine" — claims more than the trials support. They tested particular products under controlled conditions and cannot speak to a category this heterogeneous.
+
+The second cuts our way too: **we cannot assert that supermarket oil is worse than trial oil, only that nobody has properly checked.** Absence of evidence is not evidence, and we are not going to invent a finding to fill the gap. What we can say is that when a category varies this much and the label discloses almost none of it, a shopper has no way to know what they are buying — which is the same disclosure problem that runs through [the rest of this section](/blog/big-food-added-sugar-disclosure-gap).
+
+There is also a trend worth naming without overstating: refining has become more industrialized as volume has grown. We have not found data quantifying how the average retail bottle has changed over time, so we are flagging it as an open question rather than a claim.
+
 ### The processing gap
 
 Ask how each fat is made and the comparison stops being close.
@@ -114,6 +137,10 @@ The pathway exists, but conversion of linoleic acid to arachidonic acid in human
 ### Should I avoid seed oils?
 
 Avoiding them *for inflammation* is acting on a mechanism human studies do not show. There are better-grounded reasons to use less: most seed oil is eaten inside fried and ultra-processed food, which has controlled-trial evidence against it; the refining process is industrial in a way butter's is not; and the studies clearing seed oils each measure one narrow endpoint rather than whether the oil is good food. Cooking with something minimally processed is a defensible default that does not require the inflammation claim to be true.
+
+### Are all seed oils the same?
+
+No, and that is a real problem for every confident claim in this debate. Cold-pressed oil never meets a solvent; most commodity oil is hexane-extracted, bleached and deodorized. Oxidation varies with refining temperature, light, oxygen and shelf time, none of which is disclosed on the label. Trials test one defined product handled to protocol — not the bottle that has been under supermarket lighting for eight months.
 
 ### Is reused frying oil different from fresh oil?
 
