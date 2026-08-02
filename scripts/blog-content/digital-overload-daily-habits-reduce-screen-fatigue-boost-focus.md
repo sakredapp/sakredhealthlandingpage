@@ -1,6 +1,7 @@
 ---
 author: jace
 slug: digital-overload-daily-habits-reduce-screen-fatigue-boost-focus
+publishedAt: 2026-05-05T14:00:00.000Z
 title: "Digital Overload by the Numbers: Daily Habits That Reduce Screen Fatigue and Rebuild Focus"
 excerpt: Adults now spend nearly seven hours a day online and hold attention on one screen for just 47 seconds. Here is what the research says about screen fatigue, and the specific habits proven to reverse it.
 tags: [digital-wellness, screen-fatigue, focus, sleep, productivity]

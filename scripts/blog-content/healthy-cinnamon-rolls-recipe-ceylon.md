@@ -1,5 +1,6 @@
 ---
 slug: healthy-cinnamon-rolls-recipe-ceylon
+publishedAt: 2025-11-27T14:00:00.000Z
 author: gerard
 title: "Healthy Cinnamon Rolls, and Why the Cinnamon Itself Matters"
 excerpt: Soft tangzhong rolls with date-paste filling at about 7 grams of added sugar against 59 in a Cinnabon Classic — plus the coumarin limit that one teaspoon of ordinary supermarket cinnamon can reach on its own.

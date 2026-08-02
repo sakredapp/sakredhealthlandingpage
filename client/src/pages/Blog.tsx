@@ -13,12 +13,6 @@ import { useSeo } from "@/lib/seo";
 import { resolveAuthor } from "@/data/authors";
 import type { BlogPost } from "@shared/schema";
 
-/** Tags that mark a post as coverage/finance rather than health content. */
-const COVERAGE_TAGS = new Set([
-  "insurance", "mortgage-protection", "final-expense", "life-insurance",
-  "health-insurance", "retirement", "coverage", "medicare", "annuities",
-  "long-term-care", "financial-planning", "data",
-]);
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -93,41 +87,17 @@ export default function Blog() {
     return matchesSearch && matchesTag;
   });
 
-  // Posts were written in topical batches, so ordering purely by date clumps the
-  // listing — six recipes, then six insurance posts. Round-robin across subject
-  // buckets instead, keeping each bucket newest-first, so the grid reads as a mix.
-  // Only applied to the unfiltered view; once someone searches or picks a tag,
-  // straight recency is what they expect.
+  // Publication dates are assigned so that chronological order is already an
+  // even rotation across subject buckets (see scripts/blog-content frontmatter),
+  // so a plain newest-first sort gives a mixed grid without extra shuffling.
   const filteredPosts = useMemo(() => {
     if (!matchedPosts) return matchedPosts;
-    if (searchQuery || selectedTag) return matchedPosts;
-
-    const bucketOf = (post: BlogPost) => {
-      const tags = (post.tags || []).map((t) => t.toLowerCase());
-      if (tags.includes("big-food")) return "bigFood";
-      if (tags.includes("recipes")) return "recipes";
-      if (tags.some((t) => COVERAGE_TAGS.has(t))) return "coverage";
-      return "wellness";
-    };
-
-    const buckets = new Map<string, BlogPost[]>();
-    for (const post of matchedPosts) {
-      const key = bucketOf(post);
-      const list = buckets.get(key);
-      if (list) list.push(post);
-      else buckets.set(key, [post]);
-    }
-
-    // Interleave largest-bucket-first so no single subject bunches up at the end.
-    const queues = Array.from(buckets.values()).sort((a, b) => b.length - a.length);
-    const mixed: BlogPost[] = [];
-    for (let i = 0; mixed.length < matchedPosts.length; i++) {
-      for (const q of queues) {
-        if (i < q.length) mixed.push(q[i]);
-      }
-    }
-    return mixed;
-  }, [matchedPosts, searchQuery, selectedTag]);
+    return [...matchedPosts].sort((x, y) => {
+      const dx = x.publishedAt ? new Date(x.publishedAt).getTime() : 0;
+      const dy = y.publishedAt ? new Date(y.publishedAt).getTime() : 0;
+      return dy - dx;
+    });
+  }, [matchedPosts]);
 
   return (
     <div className="min-h-screen bg-[#F9F9F7]">

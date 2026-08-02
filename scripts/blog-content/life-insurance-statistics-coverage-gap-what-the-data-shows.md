@@ -3,6 +3,7 @@ author: michael
 featuredImage: https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800
 featuredImageAlt: Multi-generational family holding hands on a beach at sunset
 slug: life-insurance-statistics-coverage-gap-what-the-data-shows
+publishedAt: 2025-10-28T14:00:00.000Z
 title: "The Life Insurance Coverage Gap: What 2025–2026 Data Actually Shows"
 excerpt: Only 51% of American adults have life insurance, and roughly 100 million say they need coverage or more of it. Here is what the latest LIMRA, CDC, and rate data reveal about the gap — and why it persists.
 tags: [life-insurance, coverage-gap, insurance-statistics, financial-protection]

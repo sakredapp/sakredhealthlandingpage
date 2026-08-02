@@ -1,5 +1,6 @@
 ---
 slug: are-seed-oils-bad-for-you
+publishedAt: 2026-05-15T14:00:00.000Z
 author: gerard
 title: "Are Seed Oils Bad for You? We Went Looking for the Evidence and Found the Opposite"
 excerpt: The claim is that omega-6 linoleic acid drives inflammation. Randomized trials do not show that, and a 2,777-person analysis published in 2025 found linoleic acid inversely associated with six inflammatory markers. Here is what the evidence supports, and the real concern hiding underneath the wrong one.

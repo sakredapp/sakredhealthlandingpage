@@ -1,6 +1,7 @@
 ---
 author: jace
 slug: low-energy-high-performance-hydration-habits-boost-workday
+publishedAt: 2026-01-06T14:00:00.000Z
 title: From Low Energy to High Performance: What the Hydration Data Actually Says
 excerpt: Roughly one in three US adults is measurably under-hydrated, and the research shows the first thing to slip is sustained attention and mood, not thirst. Here is what the numbers support, and what they do not.
 tags: [hydration, energy, focus, workplace wellness, daily habits]

@@ -3,6 +3,7 @@ author: gerard
 featuredImage: https://images.unsplash.com/photo-1594882645126-14020914d58d?w=800
 featuredImageAlt: Runner silhouetted against a sunrise on a ridge
 slug: root-cause-health-internal-environment-guide
+publishedAt: 2025-09-29T14:00:00.000Z
 title: "Root-Cause Health: Why Symptoms Are Signals From Your Internal Environment"
 excerpt: Half of American adults now live with two or more chronic conditions while prescriptions climb. This guide explains what the body's internal environment actually is, which root drivers matter most, when symptom relief is still the right call, and how to sequence the work.
 tags: [root-cause-health, terrain, functional-wellness, protocols]

@@ -3,6 +3,7 @@ author: michael
 featuredImage: https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800
 featuredImageAlt: House keys beside a model home on a wooden table
 slug: american-mortgage-debt-statistics-mortgage-protection-data
+publishedAt: 2026-07-13T14:00:00.000Z
 title: "American Mortgage Debt Hits $13.19 Trillion: The 2026 Data Behind Mortgage Protection"
 excerpt: US mortgage debt reached $13.19 trillion in early 2026, and the average borrower owes $264,162. Here is what the data says about payments, delinquencies, and what happens to a mortgage when a borrower dies.
 tags: [mortgage-protection, mortgage-debt, life-insurance, financial-planning]

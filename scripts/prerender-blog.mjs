@@ -403,6 +403,20 @@ function injectIntoTemplate(template, headExtra, bodyHtml) {
   return out;
 }
 
+/**
+ * Frontmatter `publishedAt` is authoritative when present — the repo is the
+ * source of truth, and the DB only ever stamped published_at at insert time,
+ * so it could not be corrected from content. DB values fill in for any post
+ * that has not declared one.
+ */
+function frontmatterDates(articles) {
+  const out = {};
+  for (const a of articles) {
+    if (a.publishedAt) out[a.slug] = { publishedAt: new Date(a.publishedAt).toISOString() };
+  }
+  return out;
+}
+
 async function fetchDates() {
   if (!process.env.DATABASE_URL) return {};
   const pool = new pg.Pool({
@@ -434,6 +448,8 @@ async function main() {
   } catch (err) {
     console.error("[prerender] date lookup skipped:", err.message);
   }
+  // Frontmatter wins over whatever the database happens to hold.
+  dates = { ...dates, ...frontmatterDates(articles) };
 
   // Compute all related sets first, then guarantee no post is orphaned.
   const relatedBySlug = new Map(articles.map((a) => [a.slug, relatedFor(a, articles)]));

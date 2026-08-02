@@ -1,5 +1,6 @@
 ---
 slug: do-food-packaging-chemicals-disrupt-hormones
+publishedAt: 2026-02-05T14:00:00.000Z
 author: jace
 title: "Do Food Packaging Chemicals Disrupt Hormones? Where the Science Actually Stands"
 excerpt: Europe's food safety authority cut its safe daily limit for BPA by 20,000-fold in 2023. Germany's regulator, the European Medicines Agency and the FDA all formally disagreed. When expert bodies looking at identical evidence land four orders of magnitude apart, that disagreement is the story.

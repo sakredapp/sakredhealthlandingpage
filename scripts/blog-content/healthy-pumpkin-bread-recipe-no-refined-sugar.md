@@ -1,5 +1,6 @@
 ---
 slug: healthy-pumpkin-bread-recipe-no-refined-sugar
+publishedAt: 2025-10-28T14:00:00.000Z
 author: jace
 title: "Healthy Pumpkin Bread: No Refined Sugar, 10 Grams a Slice, and the Truth About What's in the Can"
 excerpt: A genuinely moist pumpkin loaf built on whole dates, maple, whole-grain flour and Greek yogurt — about 10 grams of added sugar per slice against 22 in a standard published recipe — plus what FDA actually says about calling canned squash "pumpkin."

@@ -1,5 +1,6 @@
 ---
 slug: do-sugary-drinks-cause-insulin-resistance
+publishedAt: 2025-12-07T14:00:00.000Z
 author: gerard
 title: "Do Sugary Drinks Cause Insulin Resistance? What a Controlled Trial Found"
 excerpt: Ninety-four people drank 80 grams of sugar a day for seven weeks in a double-blind trial. Their livers doubled fat production — but their insulin sensitivity did not measurably break. The real finding is more specific than the headline version, and more useful.

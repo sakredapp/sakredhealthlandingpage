@@ -3,6 +3,7 @@ author: gerard
 featuredImage: https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800
 featuredImageAlt: Bowl of colorful vegetables, chickpeas and avocado
 slug: gut-reset-protocol-28-day-restoration-guide
+publishedAt: 2026-03-16T14:00:00.000Z
 title: The 28-Day Gut Reset Protocol: A Restoration Guide Graded by the Evidence
 excerpt: A 28-day gut restoration plan built on nine daily practices — bitters, enzymes, L-glutamine, broth, an elimination diet, pre-meal breathing, probiotics, meal spacing, and fermented foods — with each one graded honestly against published trials.
 tags: [gut-reset, gut-health, protocol, microbiome, digestion]

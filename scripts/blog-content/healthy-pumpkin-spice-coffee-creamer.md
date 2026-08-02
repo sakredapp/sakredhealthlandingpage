@@ -2,6 +2,7 @@
 featuredImage: https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800
 featuredImageAlt: Iced coffee with cream swirling through it
 slug: healthy-pumpkin-spice-coffee-creamer
+publishedAt: 2025-10-08T14:00:00.000Z
 author: jace
 title: Healthy Pumpkin Spice Coffee Creamer — and What Is Actually in the Bottle
 excerpt: Most commercial coffee creamer contains no cream. It is water, sugar, and vegetable oil held together by emulsifiers, labeled at a one-tablespoon serving almost nobody pours. Here is what the labels say, and a batch pumpkin spice creamer that keeps a week.

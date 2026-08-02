@@ -1,5 +1,6 @@
 ---
 slug: healthy-sweet-potato-casserole-no-marshmallows
+publishedAt: 2025-09-18T14:00:00.000Z
 author: gerard
 title: "Sweet Potato Casserole Without Marshmallows — and Why You Should Boil, Not Roast"
 excerpt: About 7 grams of added sugar per serving against 27 in a commercial version, a pecan-oat topping instead of marshmallows, and the published glycemic data showing that how you cook the sweet potato matters more than what you put on it.

@@ -1,5 +1,6 @@
 ---
 slug: healthy-apple-cider-donuts-baked-recipe
+publishedAt: 2025-12-17T14:00:00.000Z
 author: jace
 featuredImage: https://images.unsplash.com/photo-1573519939879-57c40b9cea5d?w=1200
 featuredImageAlt: Cinnamon-sugar coated cake donuts in a parchment-lined box on a wooden table

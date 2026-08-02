@@ -3,6 +3,7 @@ author: gerard
 featuredImage: https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=800
 featuredImageAlt: Cross-section of a broccoli head on a white background
 slug: liver-detox-support-protocol-21-day-guide
+publishedAt: 2026-01-16T14:00:00.000Z
 title: The 21-Day Liver Support Protocol — What Actually Helps Phase I and Phase II Detoxification
 excerpt: A day-by-day guide to the Sakred Health 21-Day Liver & Detox Support Protocol, with every practice graded honestly against published evidence — from silymarin and cruciferous vegetables to castor oil packs and lemon water.
 tags: [liver-health, detox, nutrition, protocols]

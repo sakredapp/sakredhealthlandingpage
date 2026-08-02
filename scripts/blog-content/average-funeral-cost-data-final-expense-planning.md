@@ -3,6 +3,7 @@ author: michael
 featuredImage: https://images.unsplash.com/photo-1507290439931-a861b5a38200?w=800
 featuredImageAlt: Soft pink dahlia flower against a muted background
 slug: average-funeral-cost-data-final-expense-planning
+publishedAt: 2026-05-25T14:00:00.000Z
 title: "What a Funeral Actually Costs: The Data Behind Final Expense Planning"
 excerpt: The median U.S. funeral with burial runs $8,300 — $9,995 with a vault — while Social Security pays survivors just $255. A line-by-line look at funeral cost data and what it means for final expense planning.
 tags: [final-expense, funeral-costs, financial-planning, insurance-data]

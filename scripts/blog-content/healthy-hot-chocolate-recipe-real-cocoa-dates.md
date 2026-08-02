@@ -3,6 +3,7 @@ author: jace
 featuredImage: https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=800
 featuredImageAlt: Hot chocolate being poured into a ceramic mug
 slug: healthy-hot-chocolate-recipe-real-cocoa-dates
+publishedAt: 2025-11-17T14:00:00.000Z
 title: "Healthy Hot Chocolate: Real Cocoa, Whole Dates, and What the Flavanol Data Actually Says"
 excerpt: A hot chocolate built from unsweetened cocoa, whole dates, vanilla, cinnamon, and salt — with the published sugar figures for the commercial versions, the cocoa-processing data that decides which tin to buy, and an honest read of the flavanol trials.
 tags: [recipes, sugar, cocoa, seasonal-drinks]

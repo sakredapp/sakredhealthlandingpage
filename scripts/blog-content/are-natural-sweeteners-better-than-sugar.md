@@ -1,5 +1,6 @@
 ---
 slug: are-natural-sweeteners-better-than-sugar
+publishedAt: 2026-07-03T14:00:00.000Z
 author: gerard
 title: "Which Sugar Substitute Is Actually Healthiest? Six, Ranked by the Data"
 excerpt: Dates, maple, coconut sugar, honey, cane sugar and agave ranked on glycemic index, fructose content and fiber. Dates come out ahead because the fiber is still attached — and agave, marketed hardest on its low glycemic index, comes out last for a reason worth understanding.

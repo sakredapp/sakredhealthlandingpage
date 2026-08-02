@@ -1,5 +1,6 @@
 ---
 slug: trendy-starbucks-orders-what-they-do-to-your-body
+publishedAt: 2025-08-10T14:00:00.000Z
 author: gerard
 title: "What 3 Trendy Starbucks Orders Actually Do to Your Body"
 excerpt: The pumpkin spice latte, the chai latte and the pumpkin cream cold brew, by their published numbers — sugar, caffeine and calories against the daily limits — plus the version of each you can make for a fraction of the sugar.

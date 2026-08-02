@@ -3,6 +3,7 @@ author: michael
 featuredImage: https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800
 featuredImageAlt: Nurse caring for an older woman
 slug: long-term-care-costs-statistics-aging-in-america
+publishedAt: 2025-09-09T14:00:00.000Z
 title: "What Aging Actually Costs: The Long-Term Care Numbers Every Family Should See"
 excerpt: A private nursing home room now runs $129,575 a year, and 70% of 65-year-olds will develop severe care needs. Here is the verified data on long-term care costs, who pays, and how to plan.
 tags: [long-term-care, retirement-planning, caregiving, healthcare-costs]

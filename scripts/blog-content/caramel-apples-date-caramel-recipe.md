@@ -1,5 +1,6 @@
 ---
 slug: caramel-apples-date-caramel-recipe
+publishedAt: 2026-01-06T14:00:00.000Z
 author: gerard
 featuredImage: https://images.unsplash.com/photo-1571926821552-7b19d791d566?w=1200
 featuredImageAlt: Caramel apples on wooden sticks rolled in chopped nuts, beside a small green pumpkin

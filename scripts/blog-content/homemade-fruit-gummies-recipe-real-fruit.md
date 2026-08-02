@@ -3,6 +3,7 @@ featuredImage: https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=80
 featuredImageAlt: Colorful gummy bear candies
 author: jace
 slug: homemade-fruit-gummies-recipe-real-fruit
+publishedAt: 2025-09-08T14:00:00.000Z
 title: "Homemade Fruit Gummies: Real Fruit, Four Ingredients, and What the Labels Don't Say"
 excerpt: Homemade gummies take fruit purée, unflavored gelatin, lemon juice, and optional honey — about 1.3 grams of added sugar per pouch-size serving against 8 to 10 grams in the leading commercial fruit snacks. Here's the method and the label reporting behind it.
 tags: [recipes, kids-nutrition, added-sugar, gelatin]

@@ -3,6 +3,7 @@ author: jace
 featuredImage: https://images.unsplash.com/photo-1596591606975-97ee5cef3a1e?w=800
 featuredImageAlt: Close-up of mixed fresh berries
 slug: inflammatory-foods-and-what-to-eat-instead
+publishedAt: 2026-02-24T14:00:00.000Z
 title: "Inflammatory Foods and What to Eat Instead: A Swap-by-Swap Guide to the Evidence"
 excerpt: Ultra-processed foods now supply 53% of American adult calories. This guide separates what the trials actually show about diet and inflammation from what social media claims, with twelve concrete swaps, an honest look at seed oils, and a plain answer on the alkaline framing.
 tags: [anti-inflammatory-diet, inflammatory-foods, nutrition, terrain]

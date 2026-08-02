@@ -3,6 +3,7 @@ author: gerard
 featuredImage: https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800
 featuredImageAlt: Therapist applying oil during a back massage
 slug: lymphatic-drainage-routine-21-day-guide
+publishedAt: 2025-12-27T14:00:00.000Z
 title: "The 21-Day Lymphatic Drainage Routine: What the Evidence Actually Supports"
 excerpt: Your lymphatic system has no pump — it moves only when you move, breathe, or press on it. Here's a 21-day at-home routine built from eight practices, each graded honestly against the published evidence.
 tags: [lymphatic-system, movement, sauna, breathwork, 21-day-protocol]

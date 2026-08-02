@@ -1,5 +1,6 @@
 ---
 slug: what-a-pumpkin-spice-latte-does-to-your-body
+publishedAt: 2025-11-07T14:00:00.000Z
 author: gerard
 title: "What a Pumpkin Spice Latte Actually Does to Your Body"
 excerpt: A Grande PSL carries 32 grams of added sugar, 150 mg of caffeine and 390 calories. Here is what each of those numbers does, what the evidence supports, and what gets claimed about them that it doesn't.

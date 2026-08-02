@@ -3,6 +3,7 @@ author: gerard
 featuredImage: https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800
 featuredImageAlt: Fresh salad plate with orange juice on a dark table
 slug: digestive-stability-protocol-21-day-clearing-phase
+publishedAt: 2026-06-03T14:00:00.000Z
 title: The 21-Day Digestive Stability Protocol: An Honest Evidence Review of the Clearing Phase
 excerpt: About 14% of Americans report bloating in a given week. This is a practice-by-practice evidence grade for a 21-day digestive reset — what has real trial data, what is laboratory-only, and the binder and botanical risks nobody mentions.
 tags: [digestive-reset, gut-health, sibo, protocols, evidence-review]

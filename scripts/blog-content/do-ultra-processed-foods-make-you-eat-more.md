@@ -1,5 +1,6 @@
 ---
 slug: do-ultra-processed-foods-make-you-eat-more
+publishedAt: 2025-10-18T14:00:00.000Z
 author: jace
 title: "Do Ultra-Processed Foods Make You Eat More? The Trial That Answered It"
 excerpt: Twenty adults lived in a hospital ward for four weeks while every meal was matched for calories, sugar, fat, fiber and sodium. On the ultra-processed weeks they ate 508 calories a day more without being asked to. Here is what that proves, what it doesn't, and the newer trial that complicates it.

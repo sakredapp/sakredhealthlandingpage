@@ -3,6 +3,7 @@ author: gerard
 featuredImage: https://images.unsplash.com/photo-1520206183501-b80df61043c2?w=800
 featuredImageAlt: Woman sleeping peacefully on a pillow
 slug: sleep-nervous-system-reset-14-day-protocol
+publishedAt: 2025-08-20T14:00:00.000Z
 title: "The 14-Day Sleep & Nervous System Reset: A Protocol Graded by the Evidence"
 excerpt: About a third of American adults wake up at least three nights a week. This is a 14-day, practice-by-practice sleep reset — morning light, a 20-minute wind-down, a mental offload, and a calm-down supplement stack — with each step graded against published trials.
 tags: [sleep, nervous-system, circadian-rhythm, protocols]

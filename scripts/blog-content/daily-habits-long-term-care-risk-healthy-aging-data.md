@@ -3,6 +3,7 @@ author: michael
 featuredImage: https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800
 featuredImageAlt: Person doing core exercises on a mat in a sunlit room
 slug: daily-habits-long-term-care-risk-healthy-aging-data
+publishedAt: 2026-04-05T14:00:00.000Z
 title: "What Actually Sends People Into Long-Term Care — and Which Parts Are Modifiable"
 excerpt: Long-term care is triggered by lost function, not by a diagnosis. Falls, weakness, and cognitive decline have measurable modifiable inputs — and measurable limits. Here is the verified data on both sides, and why you want habits and coverage.
 tags: [healthy-aging, long-term-care, fall-prevention, daily-habits]

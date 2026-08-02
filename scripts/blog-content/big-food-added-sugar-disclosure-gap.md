@@ -1,5 +1,6 @@
 ---
 slug: big-food-added-sugar-disclosure-gap
+publishedAt: 2026-03-26T14:00:00.000Z
 author: jace
 title: "What Big Food Doesn't Have to Tell You About Sugar"
 excerpt: A packaged cookie must declare its added sugar. The same cookie sold at a chain counter does not. That gap is legal, deliberate, and it explains why nobody can tell you what's in a cider donut.

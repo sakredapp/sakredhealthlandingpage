@@ -3,6 +3,7 @@ featuredImage: https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=80
 featuredImageAlt: Iced coffee topped with cream swirling downward
 author: jace
 slug: healthy-pumpkin-cream-cold-foam-recipe
+publishedAt: 2025-10-18T14:00:00.000Z
 title: "Healthy Pumpkin Cream Cold Foam: 8 Grams of Sugar, and the Physics of Why It Holds"
 excerpt: A pumpkin cream cold foam from real purée, cold cream, vanilla, spice and salt — 8 grams of added sugar, three ways to froth it without special equipment, and the food science of why cold foam works at all and why it eventually collapses.
 tags: [recipes, seasonal, sugar, cold-foam, food-science]

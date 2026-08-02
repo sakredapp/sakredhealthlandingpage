@@ -1,5 +1,6 @@
 ---
 slug: is-big-food-making-society-dumber
+publishedAt: 2025-08-30T14:00:00.000Z
 author: gerard
 title: "Is Big Food Making Society Dumber? What the Evidence Actually Shows"
 excerpt: Adding iodine to salt in 1924 raised IQ by a full standard deviation in America's deficient regions. That single fact proves nourishment moves population intelligence. Whether the modern food supply is running that experiment in reverse is a harder question — here is what is established and what is not.

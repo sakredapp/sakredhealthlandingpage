@@ -3,6 +3,7 @@ author: jace
 featuredImage: https://images.unsplash.com/photo-1575549592564-4d50aa43b3af?w=800
 featuredImageAlt: Cups of spiced apple cider with sliced apples and cinnamon sticks
 slug: healthy-apple-crisp-oatmilk-macchiato
+publishedAt: 2026-01-26T14:00:00.000Z
 title: "The Healthy Apple Crisp Oatmilk Macchiato: What Reducing Cider Actually Does to Its Sugar"
 excerpt: A real-cider apple crisp macchiato with espresso, oat milk, and a spiced cider reduction instead of flavored syrup — plus the honest arithmetic on concentrated fruit sugar, the whole-fruit-versus-juice cohort data, and what oat milk's sweetness really is.
 tags: [recipes, seasonal, sugar, oat-milk, terrain]

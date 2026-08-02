@@ -3,6 +3,7 @@ author: gerard
 featuredImage: https://images.unsplash.com/photo-1536514888772-a269c6a8a198?w=800
 featuredImageAlt: A chai vendor pouring milk into a simmering pot of spiced tea at a street stall
 slug: healthy-chai-latte-recipe-from-scratch
+publishedAt: 2025-12-07T14:00:00.000Z
 title: The Healthy Chai Latte: 6 Grams of Sugar Instead of 24
 excerpt: Most cafe chai lattes start from a sweetened concentrate, so the sugar is decided before anyone touches your cup. Here is actual brewed masala chai — whole spices, exact amounts, a batch concentrate that keeps — plus an honest grade for what each spice does.
 tags: [recipes, chai, sugar, spices, terrain]

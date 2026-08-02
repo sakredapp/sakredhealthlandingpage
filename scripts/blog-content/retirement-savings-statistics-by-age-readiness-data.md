@@ -3,6 +3,7 @@ author: michael
 featuredImage: https://images.unsplash.com/photo-1473186578172-c141e6798cf4?w=800
 featuredImageAlt: Two Adirondack chairs facing the ocean at a quiet beach
 slug: retirement-savings-statistics-by-age-readiness-data
+publishedAt: 2025-10-08T14:00:00.000Z
 title: "How Much Americans Actually Have Saved for Retirement: The Data by Age"
 excerpt: "Median retirement savings by age from the Federal Reserve and Vanguard, 2026 confidence and readiness data, Social Security's real math, and what the numbers say about closing your own gap."
 tags: [retirement-savings, retirement-planning, social-security, financial-data]

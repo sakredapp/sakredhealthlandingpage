@@ -3,6 +3,7 @@ author: jace
 featuredImage: https://images.unsplash.com/photo-1517578239113-b03992dcdd25?w=800
 featuredImageAlt: Cup of spiced coffee with foam on a wooden table
 slug: healthy-pumpkin-spice-latte-recipe
+publishedAt: 2025-09-28T14:00:00.000Z
 title: The Healthy Pumpkin Spice Latte: 12 Grams of Sugar Instead of 32
 excerpt: A Starbucks Grande pumpkin spice latte carries about 32 grams of added sugar — more than the AHA's entire daily limit for women. Here is a real-pumpkin version at 12 grams, plus the sensory science that lets you use less sweetener without losing the drink.
 tags: [recipes, seasonal, sugar, pumpkin-spice, terrain]

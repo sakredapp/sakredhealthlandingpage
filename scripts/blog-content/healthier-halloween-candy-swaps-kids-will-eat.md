@@ -3,6 +3,7 @@ author: jace
 featuredImage: https://images.unsplash.com/photo-1607478900766-efe13248b125?w=800
 featuredImageAlt: Frosted cupcakes with sprinkles on a pink background
 slug: healthier-halloween-candy-swaps-kids-will-eat
+publishedAt: 2025-12-27T14:00:00.000Z
 title: "13 Healthier Halloween Candy Swaps Kids Will Actually Eat"
 excerpt: The American Heart Association's added-sugar ceiling for kids is 25 grams a day, and two fun-size candies can spend most of it. Here are 13 no-bake swaps that keep the format kids care about and change what's inside.
 tags: [halloween, kids-nutrition, added-sugar, recipes]

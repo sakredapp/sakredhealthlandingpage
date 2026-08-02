@@ -1,6 +1,7 @@
 ---
 author: jace
 slug: burnout-prevention-workplace-daily-health-routines-resilience
+publishedAt: 2026-07-23T14:00:00.000Z
 title: "Burnout by the Numbers: The Daily Routines That Actually Build Workplace Resilience"
 excerpt: Forty percent of employees worldwide report daily stress, and burnout costs employers thousands per person each year. Here is what the research says about the sleep, exercise, and recovery habits that measurably lower the risk.
 tags: [burnout, workplace-wellness, resilience, stress-management]

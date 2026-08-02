@@ -62,10 +62,12 @@ async function main() {
         }
         await pool.query(
           `UPDATE blog_posts SET title=$2, excerpt=$3, content=$4, tags=$5,
-             seo_title=$6, seo_description=$7, seo_keywords=$8, updated_at=NOW()
+             seo_title=$6, seo_description=$7, seo_keywords=$8, updated_at=NOW(),
+             published_at=COALESCE($9::timestamptz, published_at)
            WHERE slug=$1`,
           [a.slug, a.title, a.excerpt, a.content, a.tags || null,
-           a.seoTitle || null, a.seoDescription || null, a.seoKeywords || null]
+           a.seoTitle || null, a.seoDescription || null, a.seoKeywords || null,
+           a.publishedAt || null]
         );
         updated++;
         console.log(`[sync-blog] updated: ${a.slug}`);
@@ -74,10 +76,11 @@ async function main() {
           `INSERT INTO blog_posts
              (title, slug, excerpt, content, author, featured_image, featured_image_alt,
               tags, published, published_at, seo_title, seo_description, seo_keywords, status)
-           VALUES ($1,$2,$3,$4,$5,$6,$7,$8,true,NOW(),$9,$10,$11,'published')`,
+           VALUES ($1,$2,$3,$4,$5,$6,$7,$8,true,COALESCE($12::timestamptz, NOW()),$9,$10,$11,'published')`,
           [a.title, a.slug, a.excerpt, a.content, a.author || "Sakred Wellness Team",
            a.featuredImage || null, a.featuredImageAlt || null, a.tags || null,
-           a.seoTitle || null, a.seoDescription || null, a.seoKeywords || null]
+           a.seoTitle || null, a.seoDescription || null, a.seoKeywords || null,
+           a.publishedAt || null]
         );
         inserted++;
         console.log(`[sync-blog] inserted: ${a.slug}`);
