@@ -123,7 +123,8 @@ We don't think this evidence supports either alarm or dismissal. It supports pay
 - [Toxicological Sciences — Evidence evaluated by EFSA does not support lowering the temporary tolerable daily intake for bisphenol A](https://academic.oup.com/toxsci/article/198/2/185/7587524)
 - [FDA — Update on Phthalates in Food Packaging and Food Contact Applications](https://www.fda.gov/food/hfp-constituent-updates/fda-update-phthalates-food-packaging-and-food-contact-applications)
 - [FDA — Limits use of certain phthalates in food packaging (2022)](https://www.fda.gov/food/hfp-constituent-updates/fda-limits-use-certain-phthalates-food-packaging-and-issues-request-information-about-current-food)
-- [CBS News — BPA, phthalates "widespread" in supermarket foods, Consumer Reports says](https://www.cbsnews.com/news/bpa-phthalates-plastic-chemicals-consumer-reports-fda/)
+- [Consumer Reports — The Plastic Chemicals Hiding in Your Food (2024 testing)](https://www.consumerreports.org/health/food-contaminants/the-plastic-chemicals-hiding-in-your-food-a7358224781/)
+- [CBS News — coverage of the Consumer Reports findings](https://www.cbsnews.com/news/bpa-phthalates-plastic-chemicals-consumer-reports-fda/)
 
 ---
 
