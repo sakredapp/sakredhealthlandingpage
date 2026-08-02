@@ -1,7 +1,7 @@
 ---
 slug: are-seed-oils-bad-for-you
 publishedAt: 2026-05-15T14:00:00.000Z
-author: gerard
+author: jace
 title: "Are Seed Oils Bad for You? We Went Looking for the Evidence and Found the Opposite"
 excerpt: The claim is that omega-6 linoleic acid drives inflammation. Randomized trials do not show that, and a 2,777-person analysis published in 2025 found linoleic acid inversely associated with six inflammatory markers. Here is what the evidence supports, and the real concern hiding underneath the wrong one.
 tags: [big-food, seed-oils, inflammation, ultra-processed, research]
@@ -62,7 +62,7 @@ Because credibility is the whole asset, and a section about corporate food harms
 
 The seed oil narrative is popular, it is anti-industry, and it would fit this series perfectly. It is also not well supported, and the best current evidence points the other way. Publishing it anyway would make everything else here less trustworthy, including [the added-sugar disclosure gap](/blog/big-food-added-sugar-disclosure-gap) and [the ultra-processed calorie findings](/blog/do-ultra-processed-foods-make-you-eat-more), which rest on genuinely strong evidence and deserve not to be filed alongside a claim that does not.
 
-There is also a practical cost to getting this wrong. Someone who replaces canola with butter believing they are reducing inflammation has made a change that trials associate with *higher* LDL cholesterol, on the strength of a mechanism that does not hold up in humans. Bad information does not become harmless because its target is a large corporation.
+There is also a practical cost to getting the reasoning wrong, whichever fat someone lands on. Choosing a fat because of a mechanism that human studies do not show means the decision was made on a false premise, even if the choice itself turns out fine. Bad information does not become harmless because its target is a large corporation.
 
 The honest anti-Big-Food position on seed oils is narrower and better supported: **the problem is the fried and packaged food, not the fatty acid inside it.**
 
@@ -86,7 +86,17 @@ Yes. Oil held at high heat and reused undergoes oxidation and polymerization, pr
 
 ### Is butter better than seed oil?
 
-Not on the current evidence for cardiovascular risk — trials replacing saturated fat with polyunsaturated fat generally show improved lipid profiles. Switching to butter to reduce inflammation means acting on a mechanism that human studies do not support.
+We are not going to rank them on a single number, because that is how this comparison usually goes wrong.
+
+The trials substituting polyunsaturated for saturated fat show improved **blood lipid markers**. That is one measurement, and it is a surrogate marker rather than an outcome. Deciding which fat is better food on that basis alone ignores most of what differs between them:
+
+- **Processing.** Refined seed oils are industrially extracted — typically solvent-extracted, then degummed, bleached and deodorized. Butter is churned cream. By the NOVA classification this article leans on elsewhere, those are not the same category of food, and it would be inconsistent of us to treat ultra-processing as the central problem everywhere else and then ignore it here.
+- **What else is in there.** Butter carries fat-soluble vitamins A, D and K2 and comes in a dairy matrix whose effects are not reducible to its fatty acid profile. Refined oil is close to pure fat.
+- **What the food replaces.** Neither is eaten alone, and the rest of the meal usually matters more than the fat.
+
+So the honest position is that this is a genuinely open question where reasonable people weigh different factors, and anyone declaring a clean winner — in either direction — is compressing a multi-variable question into whichever single variable supports their conclusion.
+
+What the evidence does settle is narrower and is the actual subject of this article: switching between them **specifically to reduce inflammation** acts on a mechanism that human studies do not show.
 
 ## Sources
 
