@@ -69,7 +69,7 @@ Where we will not overclaim: **coconut sugar is not meaningfully different from 
 
 So the accurate claim is this: **less sugar, and where possible sugar that still has its fiber attached.** That is a defensible sentence. "Our sugar is real and theirs is fake" is not, and the first one is the stronger argument anyway.
 
-Full breakdown, including why agave's low glycemic index is misleading and where coconut sugar's reputation came from: [how each type of sugar actually behaves in the body](/blog/are-natural-sweeteners-better-than-sugar).
+Full breakdown, including why agave's low glycemic index is misleading and where coconut sugar's reputation came from: [which sugar substitute is actually healthiest](/blog/are-natural-sweeteners-better-than-sugar).
 
 ```chart
 {"type": "bar", "title": "Added sugar: one drink against a whole day's limit", "suffix": "g", "source": "CSPI analysis of Starbucks nutrition data, 2025; American Heart Association added-sugar limits, 2025", "data": [{"label": "Grande PSL \u2014 cane sugar sauce + syrup", "value": 32, "tone": "bad"}, {"label": "AHA limit, men", "value": 36, "tone": "neutral"}, {"label": "AHA limit, women", "value": 25, "tone": "neutral"}, {"label": "This recipe, 12 oz \u2014 maple or date paste", "value": 12, "tone": "good"}]}

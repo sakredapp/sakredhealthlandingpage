@@ -1,17 +1,17 @@
 ---
 slug: are-natural-sweeteners-better-than-sugar
 author: gerard
-title: "Are Natural Sweeteners Better Than Sugar? Ranking Them by What the Data Shows"
-excerpt: Dates, maple, honey, coconut sugar and agave are all sold as better-than-sugar. Only some of that survives contact with the evidence — and agave, the one marketed hardest on its low glycemic index, is roughly 85% fructose, the exact sugar a controlled trial showed doubles liver fat production.
+title: "Which Sugar Substitute Is Actually Healthiest? Six, Ranked by the Data"
+excerpt: Dates, maple, coconut sugar, honey, cane sugar and agave ranked on glycemic index, fructose content and fiber. Dates come out ahead because the fiber is still attached — and agave, marketed hardest on its low glycemic index, comes out last for a reason worth understanding.
 tags: [big-food, sugar, sweeteners, blood-sugar, research]
-seoTitle: "Are Natural Sweeteners Better Than Sugar?"
-seoDescription: Dates, maple, honey, coconut sugar and agave compared on glycemic index, fructose content and fiber — with what the evidence supports and what it doesn't.
-seoKeywords: [are natural sweeteners better than sugar, is coconut sugar healthier, date sugar vs sugar, is agave healthy, natural sweetener glycemic index]
+seoTitle: "Which Sugar Substitute Is Actually Healthiest?"
+seoDescription: Six sweeteners ranked on glycemic index, fructose and fiber. Why dates come out ahead, where coconut sugar really lands, and why agave ranks last.
+seoKeywords: [healthiest sugar substitute, best natural sweetener, is coconut sugar healthier, is agave healthy, natural sweeteners vs sugar, date sugar vs sugar]
 ---
 
-Mostly no — but not uniformly, and the differences that are real are not the ones being advertised.
+Some genuinely are — but the ranking is not the one the marketing implies, and the sweetener sold hardest as the healthy choice finishes last.
 
-Here is the short version before the detail. **The only sweetener on the shelf with a genuinely different metabolic profile is the one that isn't really a sweetener: whole dates and date sugar, which are dried fruit with the fiber still in them.** Maple syrup and honey are real foods carrying trace minerals, but the sugar in them is free sugar and behaves like it. **Coconut sugar's famous low glycemic index rests on a single industry-funded study of 10 people that has never been independently replicated.** And **agave — marketed hardest of all on its low GI — is roughly 85% fructose**, which is more than high-fructose corn syrup, and fructose is precisely the sugar a controlled trial showed doubles the liver's fat production.
+Here is the short version before the detail. **The only sweetener on the shelf with a genuinely different metabolic profile is the one that isn't really a sweetener: whole dates and date sugar, which are dried fruit with the fiber still in them.** Maple syrup and honey are real foods carrying trace minerals, but the sugar in them is free sugar and behaves like it. **Coconut sugar sits in the middle — genuinely better than table sugar, though not by the margin its packaging claims.** And **agave — marketed hardest of all on its low GI — is roughly 85% fructose**, which is more than high-fructose corn syrup, and fructose is precisely the sugar a controlled trial showed doubles the liver's fat production.
 
 That last one is the inversion worth remembering: the sweetener with the lowest glycemic index in this group is arguably the one with the weakest case, because glycemic index only measures blood glucose, and fructose barely raises blood glucose *because the liver takes it instead*.
 
@@ -20,11 +20,11 @@ That last one is the inversion worth remembering: the sweetener with the lowest 
 ## Key statistics at a glance
 
 ```stats
-[{"display": "44–55", "label": "Glycemic index of dates across five varieties, despite being over 70% sugar", "source": "Alkaabi et al., Nutrition Journal, 2011"}, {"value": 85, "suffix": "%", "label": "Approximate fructose content of agave syrup — higher than HFCS", "source": "Published composition analyses"}, {"value": 54, "label": "Coconut sugar glycemic index measured at the University of Sydney, vs. the marketed figure of 35", "source": "University of Sydney GI testing, 2015"}, {"display": "2×", "label": "Increase in liver fat synthesis from fructose and sucrose drinks — but not glucose", "source": "Geidl-Flueck et al., Journal of Hepatology, 2021"}]
+[{"display": "44–55", "label": "Glycemic index of dates across five varieties, despite being over 70% sugar", "source": "Alkaabi et al., Nutrition Journal, 2011"}, {"value": 85, "suffix": "%", "label": "Approximate fructose content of agave syrup — higher than HFCS", "source": "Published composition analyses"}, {"value": 54, "label": "Coconut sugar glycemic index \u2014 lower than table sugar's 65, though not the 35 on the label", "source": "University of Sydney GI testing, 2015"}, {"display": "2×", "label": "Increase in liver fat synthesis from fructose and sucrose drinks — but not glucose", "source": "Geidl-Flueck et al., Journal of Hepatology, 2021"}]
 ```
 
 - **Dates** are more than 70% sugar and still measure a glycemic index of roughly **44 to 55** across five varieties, tested in both healthy and type 2 diabetic subjects, with no significant post-meal glucose excursions in the diabetic group — [*Alkaabi et al., Nutrition Journal, 2011*](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3112406/)
-- **Coconut sugar's** widely quoted GI of 35 traces to a **2003 Philippine Food and Nutrition Research Institute study of 10 subjects**, funded by the domestic coconut industry and never independently replicated; the University of Sydney, the leading GI testing laboratory, measured **54** against table sugar's 65
+- **Coconut sugar** measured a glycemic index of **54** at the University of Sydney against table sugar's **65** — a real, modest improvement. The **35** widely printed on packaging traces to a 2003 Philippine Food and Nutrition Research Institute study of 10 subjects, funded by the domestic coconut industry, never independently replicated. It also retains potassium, iron, zinc and some inulin, which refined sugar does not
 - **Agave syrup is roughly 70–90% fructose** (commonly cited near 85%), compared with about **55% for high-fructose corn syrup** and **50% for table sugar**
 - **Honey** is close to an even split of glucose and fructose
 - In a double-blind randomized trial, **fructose and sucrose roughly doubled hepatic fat synthesis** at 80 g/day over seven weeks — **glucose at the same dose produced no change** — [*Geidl-Flueck et al., Journal of Hepatology, 2021*](https://www.journal-of-hepatology.eu/article/S0168-8278(21)00161-6/fulltext)
@@ -41,7 +41,7 @@ That last one is the inversion worth remembering: the sweetener with the lowest 
 | **Whole dates / date sugar** | Dried whole dates, ground. Nothing removed. | **Yes** | The one real exception — fiber matrix intact |
 | **Pure maple syrup** | Boiled tree sap. Mostly sucrose, trace manganese and zinc. Low free fructose. | No | Real food, but free sugar |
 | **Honey** | Roughly half glucose, half fructose | No | Comparable to table sugar metabolically |
-| **Coconut sugar** | Boiled palm sap. ~70–80% sucrose, trace minerals, some inulin. | Mostly no | Marginal. The GI claim does not hold up |
+| **Coconut sugar** | Boiled palm sap. ~70–80% sucrose, plus potassium, iron, zinc and some inulin. | Mostly no | Modestly better — GI 54 vs 65, and low in fructose |
 | **Table sugar / HFCS** | Refined free sugar | No | The baseline |
 | **Agave syrup** | ~85% fructose | No | Lowest GI, arguably the weakest case |
 
@@ -96,7 +96,7 @@ The claim we will make: **less sugar, and where the recipe allows, sugar that st
 
 ### Is coconut sugar healthier than regular sugar?
 
-Barely, if at all. It is roughly 70–80% sucrose, chemically close to table sugar. Its widely marketed glycemic index of 35 comes from a single 2003 study of 10 subjects funded by the Philippine coconut industry, never independently replicated. Later testing at the University of Sydney measured 54, against 65 for table sugar.
+Modestly, yes. It measured a glycemic index of 54 at the University of Sydney against 65 for table sugar, it is low in fructose because it is mostly sucrose, and it retains potassium, iron, zinc and some inulin that refined sugar has lost entirely. The one caveat is the number on the package: the widely printed GI of 35 comes from a single 2003 study of 10 subjects funded by the Philippine coconut industry and has never been independently replicated. Better than sugar — just not by as much as the label says.
 
 ### Is agave nectar a good sugar substitute?
 

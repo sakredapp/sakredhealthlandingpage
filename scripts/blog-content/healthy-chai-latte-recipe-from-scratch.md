@@ -78,7 +78,7 @@ Both versions use real sugar. That is not the difference, and saying otherwise i
 
 What differs is the amount, and what the sugar arrives inside. Pure maple syrup and coconut sugar are minimally processed foods rather than refined syrup blends, and they carry trace minerals — but their fiber is gone, and **FDA counts both as added sugars**. We are not going to tell you they are metabolically free. Coconut sugar in particular is roughly 70–80% sucrose, and its widely repeated low-GI figure rests on a single small analysis that has not replicated well.
 
-Where a recipe can use **whole dates** instead, the fiber stays attached and that genuinely does change the glycemic response — five date varieties tested in healthy and diabetic subjects measured a glycemic index of about 44 to 55 despite being over 70% sugar ([Alkaabi et al., *Nutrition Journal*, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3112406/)). Full breakdown of [how each type of sugar actually behaves in the body](/blog/are-natural-sweeteners-better-than-sugar).
+Where a recipe can use **whole dates** instead, the fiber stays attached and that genuinely does change the glycemic response — five date varieties tested in healthy and diabetic subjects measured a glycemic index of about 44 to 55 despite being over 70% sugar ([Alkaabi et al., *Nutrition Journal*, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3112406/)). Full breakdown of [which sugar substitute is actually healthiest](/blog/are-natural-sweeteners-better-than-sugar).
 
 ## Ingredients
 
