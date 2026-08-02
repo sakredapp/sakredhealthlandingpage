@@ -39,7 +39,7 @@ Both of those numbers are printed here on purpose, because they answer different
 | Cinnamon type | not specified | Ceylon |
 
 ```chart
-{"type": "hbar", "title": "Sugar per roll — added vs. total", "suffix": " g", "series": ["Added sugar", "Total sugar"], "source": "Cinnabon nutritional guide; this recipe calculated from USDA values for the listed ingredients. Total sugar includes the sugar naturally present in dates.", "data": [{"label": "Cinnabon Classic Roll", "value": 59, "value2": 61}, {"label": "This recipe", "value": 7, "value2": 17}]}
+{"type": "hbar", "title": "Sugar per roll — added vs. total", "suffix": " g", "series": ["Added sugar", "Total sugar"], "source": "Cinnabon nutritional guide; this recipe calculated from USDA values for the listed ingredients. Total sugar includes the sugar naturally present in dates.", "data": [{"label": "Cinnabon \u2014 brown + granulated sugar", "value": 59, "value2": 61}, {"label": "This recipe \u2014 whole-date paste", "value": 7, "value2": 17}]}
 ```
 
 Both bars are shown deliberately. A date-filled roll is not a low-sugar food — 17 grams of total sugar is 17 grams of total sugar. What changes is that 10 of those grams come packaged with fiber inside whole fruit rather than added as a butter-and-brown-sugar slurry, and that the added figure drops by about 88%. Anyone selling you dates as sugar-free is selling you something.
@@ -76,7 +76,7 @@ Both versions use real sugar. That is not the difference, and saying otherwise i
 
 What differs is **what the sugar arrives inside**. This recipe sweetens with whole Medjool dates. Dates are more than 70% sugar, which we are not going to pretend away — and yet across five varieties tested in both healthy and type 2 diabetic subjects they measured a **glycemic index of roughly 44 to 55**, low-to-medium, with no significant post-meal glucose excursions in the diabetic group ([Alkaabi et al., *Nutrition Journal*, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3112406/)). The fruit's fiber is still attached and still doing its job. Strain it out into a syrup and that advantage leaves with it.
 
-So the claim is not that this sugar is free. FDA counts dates, maple and coconut sugar as added sugars, and so do we. The claim is **less sugar, and sugar that still has its fiber**. Full breakdown of [which sweeteners genuinely differ and which don't](/blog/healthy-pumpkin-spice-latte-recipe#it-is-not-just-less-sugar--it-is-a-different-kind-of-sugar).
+So the claim is not that this sugar is free. FDA counts dates, maple and coconut sugar as added sugars, and so do we. The claim is **less sugar, and sugar that still has its fiber**. Full breakdown of [how each type of sugar actually behaves in the body](/blog/are-natural-sweeteners-better-than-sugar).
 
 ## Ingredients
 

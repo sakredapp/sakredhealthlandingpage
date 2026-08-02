@@ -77,7 +77,7 @@ Both versions use real sugar. That is not the difference, and saying otherwise i
 
 What differs is the amount, and what the sugar arrives inside. Pure maple syrup and coconut sugar are minimally processed foods rather than refined syrup blends, and they carry trace minerals — but their fiber is gone, and **FDA counts both as added sugars**. We are not going to tell you they are metabolically free. Coconut sugar in particular is roughly 70–80% sucrose, and its widely repeated low-GI figure rests on a single small analysis that has not replicated well.
 
-Where a recipe can use **whole dates** instead, the fiber stays attached and that genuinely does change the glycemic response — five date varieties tested in healthy and diabetic subjects measured a glycemic index of about 44 to 55 despite being over 70% sugar ([Alkaabi et al., *Nutrition Journal*, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3112406/)). Full breakdown of [which sweeteners genuinely differ and which don't](/blog/healthy-pumpkin-spice-latte-recipe#it-is-not-just-less-sugar--it-is-a-different-kind-of-sugar).
+Where a recipe can use **whole dates** instead, the fiber stays attached and that genuinely does change the glycemic response — five date varieties tested in healthy and diabetic subjects measured a glycemic index of about 44 to 55 despite being over 70% sugar ([Alkaabi et al., *Nutrition Journal*, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3112406/)). Full breakdown of [how each type of sugar actually behaves in the body](/blog/are-natural-sweeteners-better-than-sugar).
 
 ## Ingredients
 
@@ -128,7 +128,7 @@ USDA's generic entry for sweet potato casserole or mashed sweet potato reports 2
 The vegetable underneath is genuinely excellent. USDA's casserole entry carries 1,412 mcg RAE of vitamin A per cup — 157% of the 900 mcg Daily Value — because sweet potatoes are among the densest common food sources of provitamin A carotenoids. Six grams of fiber per cup is real. Potassium is substantial.
 
 ```chart
-{"type": "bar", "title": "Added sugar per serving", "suffix": " g", "source": "Retail label and calculated USDA values", "data": [{"label": "Retail casserole (1/2 c)", "value": 27, "tone": "bad"}, {"label": "This version", "value": 7, "tone": "good"}]}
+{"type": "bar", "title": "Added sugar per serving", "suffix": " g", "source": "Retail label and calculated USDA values", "data": [{"label": "Retail casserole \u2014 sugar + marshmallow", "value": 27, "tone": "bad"}, {"label": "This version \u2014 maple + a little coconut sugar", "value": 7, "tone": "good"}]}
 ```
 
 So the honest answer: sweet potato casserole is a vegetable dish that is often served as a dessert wearing a vegetable's name. Bringing it back to roughly 7 grams of added sugar per serving — inside the per-occasion framing the 2025–2030 Dietary Guidelines introduced, and well under the American Heart Association's 25 g and 36 g daily limits — makes it a side dish again. It does not make it a health food, and it is still 290 calories.

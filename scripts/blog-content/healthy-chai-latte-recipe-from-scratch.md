@@ -65,7 +65,7 @@ That is the whole thesis in miniature. The problem was never the spice. It was t
 | Sweetness you control | By the pump, since March 2026 | No | By the half teaspoon |
 
 ```chart
-{"type": "bar", "title": "Added sugar in one chai latte, against a whole day's limit", "suffix": "g", "source": "Manufacturer nutrition panels (Tazo/Unilever SmartLabel; Oregon Chai, 2026); American Heart Association added-sugar limits, 2026", "data": [{"label": "Oregon Chai concentrate latte", "value": 28, "tone": "bad"}, {"label": "Tazo chai latte, as directed", "value": 24, "tone": "bad"}, {"label": "AHA daily limit, men", "value": 36, "tone": "neutral"}, {"label": "AHA daily limit, women", "value": 25, "tone": "neutral"}, {"label": "This recipe, 12 oz", "value": 6, "tone": "good"}]}
+{"type": "bar", "title": "Added sugar in one chai latte, against a whole day's limit", "suffix": "g", "source": "Manufacturer nutrition panels (Tazo/Unilever SmartLabel; Oregon Chai, 2026); American Heart Association added-sugar limits, 2026", "data": [{"label": "Oregon Chai \u2014 cane sugar syrup", "value": 28, "tone": "bad"}, {"label": "Tazo \u2014 cane sugar + honey", "value": 24, "tone": "bad"}, {"label": "AHA daily limit, men", "value": 36, "tone": "neutral"}, {"label": "AHA daily limit, women", "value": 25, "tone": "neutral"}, {"label": "This recipe \u2014 1 tsp jaggery, maple or honey", "value": 6, "tone": "good"}]}
 ```
 
 One Oregon Chai latte spends 112% of a woman's entire daily added-sugar allowance from the AHA and 78% of a man's. A Tazo one spends 96% and 67%. Neither of those is a dessert; both are what a person drinks at 8 a.m. on a Tuesday because they like cardamom.
@@ -78,7 +78,7 @@ Both versions use real sugar. That is not the difference, and saying otherwise i
 
 What differs is the amount, and what the sugar arrives inside. Pure maple syrup and coconut sugar are minimally processed foods rather than refined syrup blends, and they carry trace minerals — but their fiber is gone, and **FDA counts both as added sugars**. We are not going to tell you they are metabolically free. Coconut sugar in particular is roughly 70–80% sucrose, and its widely repeated low-GI figure rests on a single small analysis that has not replicated well.
 
-Where a recipe can use **whole dates** instead, the fiber stays attached and that genuinely does change the glycemic response — five date varieties tested in healthy and diabetic subjects measured a glycemic index of about 44 to 55 despite being over 70% sugar ([Alkaabi et al., *Nutrition Journal*, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3112406/)). Full breakdown of [which sweeteners genuinely differ and which don't](/blog/healthy-pumpkin-spice-latte-recipe#it-is-not-just-less-sugar--it-is-a-different-kind-of-sugar).
+Where a recipe can use **whole dates** instead, the fiber stays attached and that genuinely does change the glycemic response — five date varieties tested in healthy and diabetic subjects measured a glycemic index of about 44 to 55 despite being over 70% sugar ([Alkaabi et al., *Nutrition Journal*, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3112406/)). Full breakdown of [how each type of sugar actually behaves in the body](/blog/are-natural-sweeteners-better-than-sugar).
 
 ## Ingredients
 

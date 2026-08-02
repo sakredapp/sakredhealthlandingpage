@@ -51,7 +51,7 @@ Two honest comparisons. The first is the coffee-shop slice; the second is the re
 | Sweetener control | Fixed | Fixed by recipe | Yours, per loaf |
 
 ```chart
-{"type": "hbar", "title": "Sugar per slice, and the daily ceilings it runs against", "suffix": " g", "source": "Starbucks published nutrition data; King Arthur Baking; American Heart Association, 2026; Dietary Guidelines for Americans 2025–2030", "data": [{"label": "Starbucks Pumpkin & Pepita Loaf (total sugars)", "value": 31, "tone": "bad"}, {"label": "AHA daily added-sugar limit, women", "value": 25, "tone": "neutral"}, {"label": "Standard published pumpkin bread, 12 slices/loaf", "value": 22, "tone": "bad"}, {"label": "DGA 2025–2030 added-sugar limit, per meal", "value": 10, "tone": "neutral"}, {"label": "This loaf, per slice", "value": 10, "tone": "good"}]}
+{"type": "hbar", "title": "Sugar per slice, and the daily ceilings it runs against", "suffix": " g", "source": "Starbucks published nutrition data; King Arthur Baking; American Heart Association, 2026; Dietary Guidelines for Americans 2025–2030", "data": [{"label": "Starbucks Pumpkin & Pepita Loaf (total sugars)", "value": 31, "tone": "bad"}, {"label": "AHA daily added-sugar limit, women", "value": 25, "tone": "neutral"}, {"label": "Standard pumpkin bread \u2014 granulated sugar", "value": 22, "tone": "bad"}, {"label": "DGA 2025–2030 added-sugar limit, per meal", "value": 10, "tone": "neutral"}, {"label": "This loaf \u2014 whole dates + maple", "value": 10, "tone": "good"}]}
 ```
 
 Read that chart carefully, because the bars are not identical measures. The Starbucks figure is **total** sugars. The King Arthur figure is added sugar only, calculated from that recipe's own published 528 grams of granulated sugar for two loaves — and King Arthur bases its serving count on 16 slices per loaf, which would put it at about 16.5 g. We used 12 slices for both loaves so the comparison is apples to apples.
@@ -64,7 +64,7 @@ Both versions use real sugar. That is not the difference, and saying otherwise i
 
 What differs is **what the sugar arrives inside**. This recipe sweetens with whole Medjool dates. Dates are more than 70% sugar, which we are not going to pretend away — and yet across five varieties tested in both healthy and type 2 diabetic subjects they measured a **glycemic index of roughly 44 to 55**, low-to-medium, with no significant post-meal glucose excursions in the diabetic group ([Alkaabi et al., *Nutrition Journal*, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3112406/)). The fruit's fiber is still attached and still doing its job. Strain it out into a syrup and that advantage leaves with it.
 
-So the claim is not that this sugar is free. FDA counts dates, maple and coconut sugar as added sugars, and so do we. The claim is **less sugar, and sugar that still has its fiber**. Full breakdown of [which sweeteners genuinely differ and which don't](/blog/healthy-pumpkin-spice-latte-recipe#it-is-not-just-less-sugar--it-is-a-different-kind-of-sugar).
+So the claim is not that this sugar is free. FDA counts dates, maple and coconut sugar as added sugars, and so do we. The claim is **less sugar, and sugar that still has its fiber**. Full breakdown of [how each type of sugar actually behaves in the body](/blog/are-natural-sweeteners-better-than-sugar).
 
 ## Ingredients
 

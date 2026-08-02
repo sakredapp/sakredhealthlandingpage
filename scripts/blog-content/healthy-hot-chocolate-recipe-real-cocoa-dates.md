@@ -54,7 +54,7 @@ Here is the honest accounting. The homemade version is not sugar-free, and the c
 | Sweetener control | Fixed | Fixed | Yours, per mug |
 
 ```chart
-{"type": "hbar", "title": "Sugars per serving, as typically prepared", "suffix": " g", "source": "Manufacturer nutrition labels; USDA FoodData Central; American Heart Association, 2026", "data": [{"label": "Instant cocoa envelope, prepared", "value": 28, "tone": "bad"}, {"label": "AHA daily added-sugar limit, women", "value": 25, "tone": "neutral"}, {"label": "One Medjool date (this recipe's sweetener)", "value": 16, "tone": "good"}]}
+{"type": "hbar", "title": "Sugars per serving, as typically prepared", "suffix": " g", "source": "Manufacturer nutrition labels; USDA FoodData Central; American Heart Association, 2026", "data": [{"label": "Instant cocoa \u2014 sugar + corn syrup solids", "value": 28, "tone": "bad"}, {"label": "AHA daily added-sugar limit, women", "value": 25, "tone": "neutral"}, {"label": "One whole Medjool date \u2014 fiber intact", "value": 16, "tone": "good"}]}
 ```
 
 Read that chart carefully, because the bars are not measuring identical things. The packet figure is the mix alone, prepared with water. The date figure is only the sweetener — add roughly 18 g if you use 1½ cups of dairy milk, since a cup of whole milk carries about 12 g of naturally occurring lactose per USDA data. Milk sugar is not added sugar, and it's in the café drink too. Café hot chocolates vary widely by chain, size, and whether whipped cream is added — check the chain's own nutrition panel rather than trusting a general figure.
@@ -67,7 +67,7 @@ Both versions use real sugar. That is not the difference, and saying otherwise i
 
 What differs is **what the sugar arrives inside**. This recipe sweetens with whole Medjool dates. Dates are more than 70% sugar, which we are not going to pretend away — and yet across five varieties tested in both healthy and type 2 diabetic subjects they measured a **glycemic index of roughly 44 to 55**, low-to-medium, with no significant post-meal glucose excursions in the diabetic group ([Alkaabi et al., *Nutrition Journal*, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3112406/)). The fruit's fiber is still attached and still doing its job. Strain it out into a syrup and that advantage leaves with it.
 
-So the claim is not that this sugar is free. FDA counts dates, maple and coconut sugar as added sugars, and so do we. The claim is **less sugar, and sugar that still has its fiber**. Full breakdown of [which sweeteners genuinely differ and which don't](/blog/healthy-pumpkin-spice-latte-recipe#it-is-not-just-less-sugar--it-is-a-different-kind-of-sugar).
+So the claim is not that this sugar is free. FDA counts dates, maple and coconut sugar as added sugars, and so do we. The claim is **less sugar, and sugar that still has its fiber**. Full breakdown of [how each type of sugar actually behaves in the body](/blog/are-natural-sweeteners-better-than-sugar).
 
 ## Ingredients
 
