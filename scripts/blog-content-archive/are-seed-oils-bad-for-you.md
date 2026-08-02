@@ -2,21 +2,23 @@
 slug: are-seed-oils-bad-for-you
 publishedAt: 2026-05-15T14:00:00.000Z
 author: jace
-title: "Are Seed Oils Bad for You? We Went Looking for the Evidence and Found the Opposite"
-excerpt: The claim is that omega-6 linoleic acid drives inflammation. Randomized trials do not show that, and a 2,777-person analysis published in 2025 found linoleic acid inversely associated with six inflammatory markers. Here is what the evidence supports, and the real concern hiding underneath the wrong one.
+title: "Are Seed Oils Bad for You? The Studies Answer a Narrower Question Than People Think"
+excerpt: The inflammation claim specifically is not supported by trials. But the studies clearing seed oils measure one thing — usually a blood marker — and a single marker was never a sensible way to decide whether a food is good. Canola exists because rapeseed had to be bred out of being an industrial oil crop.
 tags: [big-food, seed-oils, inflammation, ultra-processed, research]
-seoTitle: "Are Seed Oils Bad for You? What the Evidence Says"
-seoDescription: Randomized trials don't support the claim that seed oils cause inflammation. A 2025 Framingham analysis found linoleic acid inversely linked to inflammation.
+seoTitle: "Are Seed Oils Bad for You? What Studies Miss"
+seoDescription: The inflammation claim isn't supported by trials — but the studies clearing seed oils measure one marker each, and ignore how the oil is made.
 seoKeywords: [are seed oils bad for you, do seed oils cause inflammation, linoleic acid inflammation, omega 6 seed oils truth, seed oil free diet]
 ---
 
-We went into this one expecting to write a critical piece, because it fits the theme of this section. The evidence did not cooperate, so this post says what we found instead.
+Two things are true at once, and almost everyone writing about this picks one and drops the other.
 
-**The specific claim — that the omega-6 linoleic acid in seed oils drives inflammation — is not supported by the controlled evidence.** A systematic review of randomized controlled trials concluded that intervention studies "do not provide evidence of a causal relationship between an increased intake of linoleic acid and increased concentrations of inflammatory markers." And in 2025, an analysis of **2,777 participants** in the Framingham Offspring and Omni cohorts found red blood cell linoleic acid **inversely** correlated with five inflammatory markers — C-reactive protein, interleukin-6, ICAM-1, MCP-1 and P-selectin. Its authors concluded that linoleic acid "is more likely to be anti- than pro-inflammatory, and current efforts to reduce its intake are ill advised."
+**The specific claim — that omega-6 linoleic acid drives inflammation — is not supported by the controlled evidence.** A systematic review of randomized trials found no causal link between linoleic acid intake and inflammatory markers, and a 2025 analysis of 2,777 adults in the Framingham cohorts found linoleic acid *inversely* correlated with five inflammatory markers. We went looking for support for the inflammation thesis and did not find it. We are going to say so, because publishing a popular claim we could not verify would make everything else here worth less.
 
-That is close to the opposite of the popular claim, from the exact measurement the claim is about.
+**But "does not raise this one marker" is not the same as "is good food," and that is where the coverage goes wrong.** Every study clearing seed oils measures something narrow — a blood lipid panel, an inflammatory cytokine, a substitution at matched calories. None of them ask what the oil is, how it is made, or what else it does or doesn't bring with it. A single biomarker was never a sensible basis for deciding whether something belongs in your kitchen, and the last time nutrition science tried that, it gave us margarine.
 
-**But there is a real thing underneath the panic, and it is not the fatty acid.** Seed oils are overwhelmingly consumed *inside* ultra-processed food — fried fast food, packaged snacks, commercial baked goods. People who eat a lot of seed oil are, in the main, people eating a lot of ultra-processed food, and [that pattern has controlled-trial evidence behind it](/blog/do-ultra-processed-foods-make-you-eat-more) that the seed oil hypothesis lacks. The seed oil is a **tracer**, not the toxin. Blaming the oil rather than the food it arrives in is how a correct instinct gets attached to the wrong molecule.
+Here is the thing the inflammation debate never gets to: **canola oil exists because the plant it comes from had to be bred out of being an industrial oil.** Rapeseed oil was valued as a machine lubricant — it clung to metal under the heat and steam of marine engines, which is why it mattered in the Second World War. Traditional rapeseed ran 40% or more erucic acid, a fatty acid linked to heart damage in animal studies. Through the 1960s, Baldur Stefansson and Keith Downey at the University of Manitoba cross-bred that down, releasing the first low-erucic, low-glucosinolate cultivar in 1974. The name is an abbreviation: **Can**ada, **O**il, **L**ow **A**cid.
+
+That is not an argument that canola is poison. It is context that no lipid panel contains, and it is the kind of thing a reader deserves before being told a study "cleared" something.
 
 *This article is educational, not medical or nutrition advice. Every figure comes from a named peer-reviewed source.*
 
@@ -48,6 +50,39 @@ So the theory predicts one thing and the measurements show another. When that ha
 
 Read that chart carefully. The bars show **magnitude**, and every correlation was **negative** — higher linoleic acid went with lower inflammatory markers. They are also all small. This is not evidence that seed oils are health food. It is evidence that the specific mechanism the panic is built on does not appear in people.
 
+## What these studies were built to detect — and what they weren't
+
+This is the part that usually goes missing, so it gets its own section.
+
+A study is a question with a method attached. Change the question and the same data means something different. So when a trial reports that swapping saturated fat for polyunsaturated fat improves blood lipids, the honest translation is narrow:
+
+**"At matched calories, substituting one fat for another moves one panel of blood markers."**
+
+That is a real finding. Here is what it is not:
+
+- It is **not** a statement that the oil is nutritious. Blood lipids say nothing about vitamin content, processing, or what the food displaces.
+- It is **not** a statement about the amount anyone actually eats. Substitution trials hold calories constant. Someone eating an enormous amount of butter and someone eating a little are not the same case, and "use less butter" is a change these trials never tested.
+- It is **not** an outcome. LDL is a **surrogate marker** — a stand-in used because waiting for heart attacks takes decades. Surrogates have misled before.
+- It is **not** a comparison of like with like. Which brings us to the part no biomarker captures.
+
+### The processing gap
+
+Ask how each fat is made and the comparison stops being close.
+
+**Cream to butter:** agitate it until the fat separates. That is the entire process. It has been done in wooden churns for thousands of years, and you can do it in a jar.
+
+**Seed to oil:** clean, crack and flake the seed, heat-condition it, press it, then wash the remaining oil out of the meal with a solvent — typically hexane. Recover the solvent. Then degum, refine, bleach and deodorize, because the crude oil is not palatable. Deodorizing runs at around 200°C or higher.
+
+Both end in a jar of fat. They are not the same category of operation, and by the **NOVA classification** that the rest of our reporting relies on, they are not the same category of food. It would be incoherent for us to argue that industrial processing is the central problem in the food supply — which the [controlled feeding evidence supports](/blog/do-ultra-processed-foods-make-you-eat-more) — and then set that aside the moment the processed item scores well on a cholesterol panel.
+
+### So why did we publish the inflammation finding at all?
+
+Because it is true, and because the case against ultra-processed food does not need a mechanism that isn't there.
+
+If the argument is "seed oils cause inflammation," the first person to check finds trials saying otherwise and dismisses everything else you said. If the argument is "this is a heavily refined industrial product, cleared on narrow endpoints, that mostly arrives inside fried and packaged food" — that holds, because every part of it is true.
+
+**The strong claim survives scrutiny. The popular one doesn't.** We would rather hand you the one that survives.
+
 ## What is legitimately concerning
 
 Dismissing the inflammation claim does not mean everything about seed oils is fine. Two concerns survive scrutiny, and neither is about omega-6 as such.
@@ -70,7 +105,7 @@ The honest anti-Big-Food position on seed oils is narrower and better supported:
 
 ### Do seed oils cause inflammation?
 
-The controlled evidence says no. A systematic review of randomized trials found no causal relationship between linoleic acid intake and inflammatory markers, and a 2025 analysis of 2,777 adults found red blood cell linoleic acid inversely correlated with five separate markers of inflammation.
+Not by the mechanism usually claimed. The controlled evidence says no. A systematic review of randomized trials found no causal relationship between linoleic acid intake and inflammatory markers, and a 2025 analysis of 2,777 adults found red blood cell linoleic acid inversely correlated with five separate markers of inflammation.
 
 ### Is linoleic acid converted to inflammatory compounds?
 
@@ -78,7 +113,7 @@ The pathway exists, but conversion of linoleic acid to arachidonic acid in human
 
 ### Should I avoid seed oils?
 
-The evidence does not support avoiding them for inflammation. There is a better-supported reason to eat less of them in practice: most seed oil is consumed inside fried and ultra-processed foods, and those foods have controlled-trial evidence against them that the oil itself does not.
+Avoiding them *for inflammation* is acting on a mechanism human studies do not show. There are better-grounded reasons to use less: most seed oil is eaten inside fried and ultra-processed food, which has controlled-trial evidence against it; the refining process is industrial in a way butter's is not; and the studies clearing seed oils each measure one narrow endpoint rather than whether the oil is good food. Cooking with something minimally processed is a defensible default that does not require the inflammation claim to be true.
 
 ### Is reused frying oil different from fresh oil?
 
