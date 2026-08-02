@@ -167,6 +167,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       });
     }
 
+    // NOTE: this is a one-time seeder, not a sync. It inserts missing slugs and
+    // never updates an existing row, so running it against already-seeded
+    // content reports "Seed complete" having changed nothing. That is correct
+    // for seeding and wrong for refreshing — scripts/sync-blog-content.mjs is
+    // the only thing that should reconcile blog_posts with the markdown files.
     let inserted = 0;
     for (const article of articles) {
       try {

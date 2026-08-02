@@ -48,9 +48,19 @@ async function main() {
   });
 
   try {
-    let updated = 0, inserted = 0, unchanged = 0;
+    let updated = 0, inserted = 0, unchanged = 0, failed = 0;
+    const seenSlugs = [];
     for (const file of files) {
-      const a = parseArticle(readFileSync(join(CONTENT_DIR, file), "utf8"), file);
+      let a;
+      try {
+        a = parseArticle(readFileSync(join(CONTENT_DIR, file), "utf8"), file);
+      } catch (err) {
+        // One malformed file must not silently take the rest of the sync with it.
+        failed++;
+        console.error(`[sync-blog] SKIPPED ${file}: ${err.message}`);
+        continue;
+      }
+      seenSlugs.push(a.slug);
       const { rows } = await pool.query(
         `SELECT id, content, title, excerpt, author, featured_image, featured_image_alt,
                 tags, seo_title, seo_description, seo_keywords, published_at,
@@ -114,7 +124,47 @@ async function main() {
         console.log(`[sync-blog] inserted: ${a.slug}`);
       }
     }
-    console.log(`[sync-blog] done: ${inserted} inserted, ${updated} updated, ${unchanged} unchanged.`);
+    console.log(
+      `[sync-blog] done: ${inserted} inserted, ${updated} updated, ` +
+      `${unchanged} unchanged, ${failed} failed.`
+    );
+
+    // Every bug in this pipeline so far has been a write that succeeded at doing
+    // nothing, so make the silent cases loud instead of leaving them to be found
+    // months later on the live site.
+    if (failed > 0) {
+      console.error(
+        `[sync-blog] WARNING: ${failed} file(s) failed to parse and were not synced.`
+      );
+    }
+    if (files.length > 0 && seenSlugs.length === 0) {
+      console.error(
+        "[sync-blog] WARNING: found markdown files but synced none. Check frontmatter."
+      );
+    }
+
+    // Deleting or archiving a markdown file does NOT remove its row, so the post
+    // stays live and keeps appearing in listings. That is how an archived post
+    // remained published for an entire session. Report it rather than deleting,
+    // since unpublishing content is not this script's call to make.
+    if (seenSlugs.length > 0) {
+      const { rows: orphans } = await pool.query(
+        `SELECT slug, published, status FROM blog_posts WHERE slug <> ALL($1::text[])`,
+        [seenSlugs]
+      );
+      if (orphans.length > 0) {
+        console.warn(
+          `[sync-blog] WARNING: ${orphans.length} published row(s) have no markdown file ` +
+          `and will keep serving stale content:`
+        );
+        for (const o of orphans) {
+          console.warn(`[sync-blog]   - ${o.slug} (published=${o.published}, status=${o.status})`);
+        }
+        console.warn(
+          "[sync-blog]   Restore the file, or unpublish the row deliberately."
+        );
+      }
+    }
   } finally {
     await pool.end();
   }
