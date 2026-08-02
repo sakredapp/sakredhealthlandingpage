@@ -43,6 +43,16 @@ Read that number again, because most recipes in this category will not print it:
 
 Homemade figures are calculated from USDA values for the listed ingredients, not laboratory-analyzed.
 
+## The date was the caramel, long before caramel existed
+
+Caramel, strictly, is sugar cooked past about 120°C until it browns and thickens. That requires refined sugar in quantity — which for most of human history was either unavailable or too expensive to boil down for texture. The caramel apple is a modern confection built on cheap industrial sugar.
+
+The thing it imitates is much older. Across the Middle East and North Africa, **dates and date syrup were the default sweetener for thousands of years** — the "honey" referred to in many ancient texts is date honey, not bee honey. Dates gave you the same things caramel is prized for: deep sweetness, a dark toffee note, and a thick sticky body that clings to whatever you dip in it. They gave you those things as a *fruit*, with fibre and potassium and magnesium still attached, and without a pan or a thermometer.
+
+So date caramel is not a substitute for the real thing. It is closer to the original solution to the same problem — how do you get something sweet and sticky onto a piece of fruit — arrived at by people who did not have a sugar refinery and did not need one.
+
+The texture difference below follows directly from that, and it is worth understanding rather than fighting: sugar caramel sets hard because cooked sucrose forms a glassy matrix. Date caramel stays soft because it is fruit purée thickened by chilled coconut oil. You are not getting a shatter. You are getting something closer to dulce de leche, on an apple, made of apples' older companion.
+
 ## The part about the stick
 
 In late 2014, CDC investigated a multistate outbreak of listeriosis that eventually counted 35 cases across 12 states. Thirty-four of those patients — 97% — were hospitalized. Listeriosis contributed to at least three of seven reported deaths. The source was traced to commercially produced, prepackaged caramel apples made from Granny Smith and Gala apples packed by Bidart Bros. of Bakersfield, California, which recalled its 2014 apples after environmental testing at the packing facility found *Listeria monocytogenes*.
