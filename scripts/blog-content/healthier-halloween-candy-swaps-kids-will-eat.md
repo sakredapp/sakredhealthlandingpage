@@ -29,7 +29,7 @@ One thing first, because it matters more than any recipe here: **one night of ca
 - **61.9% of calories** consumed by US youth ages 1–18 come from ultra-processed foods, versus 53.0% for adults — *CDC/NCHS Data Brief 536, 2025*
 - **8 g of added sugar** in a single 17 g fun-size Snickers bar; **11 g** in one 15 g fun-size pack of Skittles — *manufacturer nutrition labels, Mars Wrigley*
 - The evidence underneath every "keep sugar under 10% of calories" guideline is mostly **dental caries** data — and it found **frequency of exposure** mattered more than total quantity — *Moynihan, Advances in Nutrition, 2016*
-- A 1995 *JAMA* meta-analysis of 23 blinded, placebo-controlled trials found **sugar does not affect children's behavior or cognition** — *Wolraich, Wilson & White*
+- A 1995 *JAMA* meta-analysis of 23 blinded trials found **a single dose of sugar does not acutely affect children's behavior or cognition** — though the control arm was an artificial sweetener, and no trial tested a chronic high-sugar diet — *Wolraich, Wilson & White*
 - Americans planned to spend **$3.9 billion on Halloween candy in 2025**, part of a record $13.1 billion holiday total — *National Retail Federation consumer survey, 2025*
 
 ## How much candy do kids actually eat on Halloween?
@@ -52,7 +52,13 @@ No — and this is worth saying carefully, because almost every parent has watch
 
 The most cited evidence is a 1995 meta-analysis in *JAMA* by Wolraich, Wilson and White, which pooled 23 studies that met four strict criteria: a known quantity of sugar, an artificial-sweetener placebo, blinding of children, parents, and researchers, and reportable effect sizes. The conclusion was that sugar does not affect the behavior or cognitive performance of children. The finding held in the subgroups where you'd most expect it to break — children whose own parents described them as "sugar-sensitive," and children diagnosed with ADHD.
 
-So what are parents seeing? A costume, a dark street, nineteen other children, and a schedule two hours off. Expectation does real work too: in research from the same era, parents told their child had received sugar rated that child as more hyperactive even when the child had received a placebo. The setting is doing the work; the sugar is taking the blame.
+So what are parents seeing? A costume, a dark street, nineteen other children, and a schedule two hours off. Expectation does real work too: in research from the same era, parents told their child had received sugar rated that child as more hyperactive even when the child had received a placebo. On Halloween night specifically, the setting is doing most of the work.
+
+**Now read the method again, because it decides how far that conclusion travels.** Those trials gave a *known quantity of sugar on a single occasion* and watched for a behavioral change over the following hours. That is an acute challenge test. It tells you a candy bar does not flip a switch in a child. It says nothing whatsoever about what a diet running on sugar does to a child's mood, attention or sleep across months — which is the thing parents are actually worried about, and which no study in that meta-analysis was built to see.
+
+And notice what the comparison arm was. The strict criteria included **an artificial-sweetener placebo** — so the control children were drinking aspartame. The finding is therefore *"sugar and artificial sweetener produced no detectable difference in acute behavior,"* which is not the same sentence as *"sugar has no effect."* If you do not regard an artificial sweetener as an inert substance — and we [do not](/blog/are-natural-sweeteners-better-than-sugar) — then a null result against it is a much weaker statement than it is usually reported to be.
+
+None of that overturns the study. It is well designed for the question it asked, and we are not going to tell you sugar causes hyperactivity, because that specific claim did not hold up when it was tested properly. We are telling you the question was narrow.
 
 That's good news, because it means the reason to care about added sugar isn't your child's behavior on Halloween night. It's teeth, what sugar displaces, and the everyday baseline — none of them emergencies, all of them responsive to unglamorous consistency.
 
@@ -216,7 +222,9 @@ None of this requires a new personality — just a slightly better default, repe
 There's no evidence-based number for a single night, and anyone quoting one is guessing. The anchor that does exist is the AHA's 2016 recommendation of under 25 g of added sugar per day for ages 2–18, and no added sugar under age 2. In practice two to three fun-size pieces spends most of a day's allowance — one fun-size Snickers is 8 g, one fun-size Skittles pack is 11 g, per the manufacturers' labels. Rather than policing the night, most families get more out of adjusting the following two weeks.
 
 **Will Halloween candy make my kid hyper?**
-Almost certainly not from the sugar. The 1995 *JAMA* meta-analysis by Wolraich and colleagues pooled 23 blinded, placebo-controlled trials and found no effect of sugar on children's behavior or cognition, including in children their parents called sugar-sensitive and children with ADHD. Costumes, crowds, darkness, and a disrupted bedtime are more than sufficient explanation.
+Almost certainly not from the sugar on the night itself. The 1995 *JAMA* meta-analysis by Wolraich and colleagues pooled 23 blinded trials and found no effect of a single sugar dose on children's behavior or cognition, including in children their parents called sugar-sensitive and children with ADHD. Costumes, crowds, darkness and a disrupted bedtime are more than sufficient explanation.
+
+Two limits worth carrying, though. Those were acute challenge tests — one dose, one afternoon — so they say nothing about what a high-sugar diet does over months. And the control arm was an artificial sweetener, meaning the finding is really "sugar and aspartame did not differ," which is a weaker claim than it usually gets reported as.
 
 **Are honey and maple syrup healthier than the sugar in candy?**
 They are added sugars, and the FDA's 2019 final guidance requires pure honey and pure maple syrup to declare an added-sugars percent Daily Value for that reason. They bring trace minerals and much more flavor per gram, which is genuinely useful — you can use less. But treat any recipe calling them "refined-sugar-free" as a marketing sentence, not a nutrition one.

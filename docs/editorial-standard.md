@@ -85,6 +85,22 @@ mechanism, control for placebo, or quantify an effect size, and we do not preten
 otherwise. But it is evidence of a different kind, and it long predates the institution
 that now declines to certify it.
 
+### Ask why the thing was invented
+
+The strongest version of this argument is not defensive. It is explaining **what a
+preparation was originally for** — because almost none of them started as dessert.
+
+Masala chai is ginger and pepper for warmth and digestion, cardamom for the stomach,
+cinnamon and clove for balance. Cacao was a bitter ceremonial and medicinal drink for
+centuries before Europeans added sugar. Cider was preservation. Dates were a staple
+that let people cross deserts. The sugar, the cream and the whipped topping are all
+recent additions layered onto something that already had a job.
+
+That reframes the whole recipe. We are not "making a treat healthier." We are
+**taking something back to what it was for** and removing what industry added on top.
+Use this wherever a recipe has a real origin — it explains the value of the thing in
+its own terms, without needing a study to license it.
+
 ### How to write it
 
 - **Never** write "no evidence," "unproven," "not validated," or "traditional use only"

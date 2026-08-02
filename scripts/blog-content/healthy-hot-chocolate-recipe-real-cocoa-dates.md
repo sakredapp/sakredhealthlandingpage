@@ -41,6 +41,16 @@ Nobody actually craves maltodextrin. What people want in December is a warm mug,
 - One Medjool date (24 g) contains **16 g sugar, 1.6 g fiber, and 167 mg potassium** — *USDA FoodData Central*
 - Two tablespoons of unsweetened cocoa contribute about **4 g fiber, 164 mg potassium, and 54 mg magnesium** for roughly 24 calories — *USDA FoodData Central*
 
+## Hot chocolate was medicine before it was dessert
+
+Worth knowing before you make it, because it changes what this recipe is doing.
+
+Cacao was drunk for roughly three thousand years in Mesoamerica before sugar ever touched it. The Maya and later the Aztec took it **bitter** — ground cacao with water, often chili, vanilla or achiote, whipped to a foam by pouring between vessels from a height. It was ceremonial, it was used medicinally, and cacao beans were valuable enough to function as currency. Nobody was drinking it as a treat. It was a stimulant and a tonic, and it tasted like one.
+
+Sugar arrived with Europeans, and the drink was gradually rebuilt around it. What sits in a packet today is the end of that process: sugar first on the ingredient list, cocoa well down it, plus milk solids and thickeners standing in for the fat that was stripped out.
+
+**So this recipe is not "a healthier version of hot chocolate."** It is closer to the original — real cocoa carrying its own bitterness, sweetened just enough by whole fruit to be drinkable, with the aromatics doing the work they were always there to do. The sugar is the recent addition. Taking most of it back out returns the drink to roughly what it was for.
+
 ## What you're actually replacing
 
 Here is the honest accounting. The homemade version is not sugar-free, and the commercial numbers include milk sugars that the homemade version also has if you use dairy.
