@@ -1,6 +1,6 @@
 ---
-featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/nature-first-wellness-daily-habits-health-without-quick-fixes.jpeg
-featuredImageAlt: A quiet green outdoor path in natural daylight
+featuredImage: https://images.unsplash.com/photo-1502143655672-dbd02dd6abb6?w=1200&h=630&fit=crop&auto=format&q=80
+featuredImageAlt: A pathway through forest on a foggy morning
 author: jace
 slug: nature-first-wellness-daily-habits-health-without-quick-fixes
 publishedAt: 2025-11-17T14:00:00.000Z

@@ -1,6 +1,6 @@
 ---
-featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/habit-loop-explained-build-sustainable-self-care-routines.jpeg
-featuredImageAlt: A daily routine laid out as repeating marked steps
+featuredImage: https://images.unsplash.com/photo-1552993843-71ada7343f48?w=1200&h=630&fit=crop&auto=format&q=80
+featuredImageAlt: A balanced cairn of stacked stones
 author: jace
 slug: habit-loop-explained-build-sustainable-self-care-routines
 publishedAt: 2026-03-06T14:00:00.000Z

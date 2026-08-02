@@ -1,6 +1,6 @@
 ---
-featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/mindful-minutes-journaling-breathwork-stress-resilience.jpeg
-featuredImageAlt: An open journal and pen in soft natural light
+featuredImage: https://images.unsplash.com/photo-1462642109801-4ac2971a3a51?w=1200&h=630&fit=crop&auto=format&q=80
+featuredImageAlt: A pen resting on handwritten lined paper
 author: jace
 slug: mindful-minutes-journaling-breathwork-stress-resilience
 publishedAt: 2025-11-27T14:00:00.000Z
