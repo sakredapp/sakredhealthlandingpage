@@ -1,9 +1,11 @@
-# Image prompts — 20 separate images
+# Image prompts — 20 images, plus 3 optional extras
 
-**This is 20 different images, not one.** Each numbered block below is a
-complete, self-contained prompt. Paste **one block at a time** into ChatGPT and
-generate that image, then move to the next. Nothing needs to be combined or
-prepended — the style and the rules are already inside every prompt.
+**These are 23 separate images, not one.** Each block below is a complete,
+self-contained prompt. Paste **one block at a time** into ChatGPT and generate
+that image, then move to the next. Nothing needs to be combined or prepended —
+the style and the rules are already inside every prompt.
+
+Images 1–20 are the set. Extras A–C at the bottom are optional.
 
 After each image: save it as the filename listed under the prompt, and drop the
 file into `client/public/images/blog/`. Send them to me and I'll wire the
@@ -356,4 +358,3 @@ them is the point of the article. If a generated image gets those wrong,
 regenerate rather than accepting it.
 
 **Sizing.** 1200x630 landscape, saved as JPG, ideally under about 200 KB each.
-```
