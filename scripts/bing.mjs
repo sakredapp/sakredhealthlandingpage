@@ -161,6 +161,20 @@ const commands = {
   async submit() {
     const urls = await sitemapUrls();
     console.log(`Found ${urls.length} URLs across both sitemaps.`);
+    // `npm run build` is only `vite build`; the prerendered route directories
+    // come from prerender-blog.mjs and prerender-pages.ts, which it does not
+    // run. Without them dist/ holds a single index.html and this happily
+    // submits ~10 URLs and exits 0 — a silent no-op that looks like success.
+    const MIN_EXPECTED = 60;
+    if (urls.length < MIN_EXPECTED) {
+      console.error(
+        `\nRefusing to submit: only ${urls.length} URLs found, expected at least ${MIN_EXPECTED}.\n` +
+        `dist/ is probably missing prerendered routes. Run the full build first:\n` +
+        `  npm run build:full\n`
+      );
+      process.exitCode = 1;
+      return;
+    }
     // API caps a batch at 500 URLs.
     for (let i = 0; i < urls.length; i += 500) {
       const batch = urls.slice(i, i + 500);
