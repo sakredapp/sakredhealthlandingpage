@@ -87,7 +87,7 @@ So the claim is not that this sugar is free. FDA counts dates, maple and coconut
 
 - 12 ounces pitted Medjool dates (about 14 large dates)
 - 1/4 cup unsalted almond butter or cashew butter
-- 2 tablespoons refined coconut oil, melted
+- 2 tablespoons unrefined (virgin) coconut oil, melted
 - 2 teaspoons vanilla extract
 - 1/2 teaspoon fine sea salt
 - 4 to 6 tablespoons hot water, as needed
@@ -110,7 +110,7 @@ So the claim is not that this sugar is free. FDA counts dates, maple and coconut
 
 No, and any recipe that tells you otherwise is describing a different food.
 
-Sugar caramel sets because sucrose is cooked past 120°C, driving out water and creating a supersaturated, glassy or highly viscous matrix that holds a hard shell at room temperature. Date caramel is never cooked. It is fruit purée: pectin, fiber, fructose and glucose suspended in water. It thickens when chilled because the coconut oil in it crystallizes — refined coconut oil is solid below about 24°C — but it stays soft and tacky, closer to a thick dulce de leche than to the snap of a candy shell.
+Sugar caramel sets because sucrose is cooked past 120°C, driving out water and creating a supersaturated, glassy or highly viscous matrix that holds a hard shell at room temperature. Date caramel is never cooked. It is fruit purée: pectin, fiber, fructose and glucose suspended in water. It thickens when chilled because the coconut oil in it crystallizes — coconut oil is solid below about 24°C — but it stays soft and tacky, closer to a thick dulce de leche than to the snap of a candy shell.
 
 That is why the recipe specifies cold apples, a thick blend, and immediate refrigeration. The coconut oil is not there for flavor; it is the only structural element in the coating.
 

@@ -18,7 +18,7 @@ recipeCuisine: American
 
 Pumpkin bread is a dessert wearing a vegetable's name. A widely published home recipe runs about **22 grams of added sugar per slice** at 12 slices to the loaf, and a Starbucks Pumpkin & Pepita Loaf lists **31 grams of total sugars** with 2 grams of fiber — so a single slice can carry a woman's entire daily added-sugar allowance under the American Heart Association's 25-gram limit. The pumpkin itself is genuinely nutritious; half a cup of the canned purée delivers more than a full day's vitamin A plus 3.6 grams of fiber. The problem is the ratio of sugar to everything else, not the squash.
 
-Rebuilt around that ratio, the loaf lands at about **10 grams of added sugar and 4 grams of fiber per slice** — one can of pure pumpkin purée, whole-grain flour, eggs, a little neutral oil, Greek yogurt, warm spices, vanilla, salt, baking soda, and six blended Medjool dates plus two tablespoons of maple syrup as the entire sweetener. It is still a sweet quick bread. It is just one where you set the number.
+Rebuilt around that ratio, the loaf lands at about **10 grams of added sugar and 4 grams of fiber per slice** — one can of pure pumpkin purée, whole-grain flour, eggs, a little extra-virgin olive oil, Greek yogurt, warm spices, vanilla, salt, baking soda, and six blended Medjool dates plus two tablespoons of maple syrup as the entire sweetener. It is still a sweet quick bread. It is just one where you set the number.
 
 Below that: what is actually inside a can labeled "pumpkin," what you genuinely give up when you take sugar out of a quick bread, and whether pumpkin is as nutritious as autumn marketing implies. All three answers are more interesting than the internet version.
 
@@ -48,7 +48,7 @@ Two honest comparisons. The first is the coffee-shop slice; the second is the re
 | Sugars | 31 g total | ~22 g added, from 528 g granulated sugar across 2 loaves | ~10 g added, from 6 dates + 2 Tbsp maple |
 | Fiber | 2 g | Not a meaningful source (all-purpose flour) | ~4 g |
 | Flour | Refined | All-purpose | White whole wheat (whole grain) |
-| Fat source | Not disclosed by slice | 198 g vegetable oil per 2 loaves | 67 g neutral oil + Greek yogurt |
+| Fat source | Not disclosed by slice | 198 g vegetable oil per 2 loaves | 67 g extra-virgin olive oil + Greek yogurt |
 | Sweetener control | Fixed | Fixed by recipe | Yours, per loaf |
 
 ```chart
@@ -73,7 +73,7 @@ So the claim is not that this sugar is free. FDA counts dates, maple and coconut
 - 6 large Medjool dates (about 144 g pitted), plus 3 tablespoons very hot water
 - 2 tablespoons (40 g) pure maple syrup
 - 2 large eggs, at room temperature
-- 1/3 cup (67 g) neutral oil — avocado, light olive, or melted refined coconut
+- 1/3 cup (67 g) extra-virgin olive oil, or melted unrefined (virgin) coconut oil
 - 1/3 cup (80 g) plain whole-milk Greek yogurt, or unsweetened applesauce
 - 2 teaspoons pure vanilla extract
 - 2 1/4 cups (270 g) white whole wheat flour, or a 1:1 gluten-free baking blend

@@ -79,7 +79,7 @@ A 4% relative reduction per greenness increment is not a miracle. Applied across
 Nature-first isn't a rejection of modern medicine. It's a claim about where the unmet need sits. The measured deficits in the U.S. and globally are unglamorous and largely environmental:
 
 - **Time outdoors.** The EPA-funded National Human Activity Pattern Survey found Americans spend an average of 87% of their time inside buildings and another 6% inside vehicles — roughly 93% enclosed.
-- **Movement.** WHO's 2024 analysis in *The Lancet Global Health*, drawing on 507 surveys and 5.7 million participants, put insufficient physical activity at 31.3% of adults — about 1.8 billion people — and projected 34.7% by 2030 on current trends. Our guide to [countering a sedentary workday](/blog/desk-detox-daily-movement-routines-counteract-sedentary-work-life) covers the office-hours half of this problem.
+- **Movement.** A 2024 analysis in *The Lancet Global Health*, drawing on 507 surveys and 5.7 million participants, put insufficient physical activity at 31.3% of adults — about 1.8 billion people — and projected 34.7% by 2030 on current trends. Our guide to [countering a sedentary workday](/blog/desk-detox-daily-movement-routines-counteract-sedentary-work-life) covers the office-hours half of this problem.
 - **Sleep.** 30.5% of U.S. adults slept under seven hours in 2024, according to the CDC's National Center for Health Statistics.
 - **Vitamin D.** An analysis of NHANES 2007–2016 data covering 11,119 U.S. adults aged 50–79, published in *Frontiers in Nutrition* in 2023, found 4.6% severely deficient, 15.2% moderately deficient, and 33.6% insufficient — a pattern that tracks with indoor living, and one where testing before supplementing is the sensible order.
 

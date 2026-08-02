@@ -5,10 +5,10 @@ featuredImageAlt: Close-up of mixed fresh berries
 slug: inflammatory-foods-and-what-to-eat-instead
 publishedAt: 2026-02-24T14:00:00.000Z
 title: "Inflammatory Foods and What to Eat Instead: A Swap-by-Swap Guide to the Evidence"
-excerpt: Ultra-processed foods now supply 53% of American adult calories. This guide separates what the trials actually show about diet and inflammation from what social media claims, with twelve concrete swaps, an honest look at seed oils, and a plain answer on the alkaline framing.
+excerpt: Ultra-processed foods now supply 53% of American adult calories. This guide separates what the trials actually measured about diet and inflammation from what they get reported as saying, with twelve concrete swaps, a hard look at what the seed oil research never asked, and a plain answer on the alkaline framing.
 tags: [anti-inflammatory-diet, inflammatory-foods, nutrition, terrain]
 seoTitle: Inflammatory Foods and What to Eat Instead
-seoDescription: A verified, honest guide to inflammatory foods — what the CRP and IL-6 trials really show, 12 everyday swaps, and the truth about seed oils and alkaline diets.
+seoDescription: A verified, honest guide to inflammatory foods — what the CRP and IL-6 trials really measured, 12 everyday swaps, and what the seed oil research left out.
 seoKeywords: [inflammatory foods, foods that cause inflammation, anti-inflammatory foods, anti inflammatory food list, what to eat instead]
 ---
 
@@ -25,12 +25,12 @@ The honest answer is more interesting than the internet version. Inflammation is
 ```
 
 - **A 500-calorie-per-day difference** appeared when 20 adults ate ultra-processed versus unprocessed diets matched for presented calories, sugar, fat, sodium, fiber, and macronutrients — *Hall and colleagues, Cell Metabolism, 2019*
-- **Every 50 g of processed meat eaten daily** is associated with about **18% higher colorectal cancer risk** — *IARC Monographs Volume 114, via the World Health Organization*
+- **Every 50 g of processed meat eaten daily** is associated with about **18% higher colorectal cancer risk** — *IARC Monographs Volume 114, 2018*
 - **hs-CRP rose 60–109%** in healthy young men drinking just 600 mL of sugar-sweetened beverage daily for three weeks — *Aeberli and colleagues, American Journal of Clinical Nutrition, 2011*
 - **19 inflammatory proteins fell**, including interleukin-6, in adults who ate a fermented-food diet for 10 weeks — *Wastyk and colleagues, Cell, 2021*
 - **Mean US fiber intake is about 16 g/day** against Adequate Intakes of 25 g for women and 38 g for men — *USDA Food Surveys Research Group, 2014; Institute of Medicine*
 - **17.1 teaspoons** of added sugar per day is the US adult average, against a Dietary Guidelines ceiling of 10% of calories — roughly 12 teaspoons at 2,000 kcal — *USDA Economic Research Service*
-- **Higher blood levels of linoleic acid** — the main omega-6 in seed oils — were associated with **lower** cardiovascular mortality (HR 0.78) across 30 cohorts and 68,659 people — *Marklund and colleagues, Circulation, 2019*
+- **Higher blood levels of linoleic acid** — the main omega-6 in seed oils — were associated with **lower** cardiovascular mortality (HR 0.78) across 30 cohorts and 68,659 people. This measured blood, not bottles, and no trial in this literature tested the refining chain that turns a seed into commodity oil — *Marklund and colleagues, Circulation, 2019*
 
 ## Acute inflammation is protection. The chronic kind is the problem.
 
@@ -83,19 +83,38 @@ This is the part that actually moves. Each swap below is a displacement — you 
 
 A note on the processed-meat classification, because it is routinely misreported. IARC Group 1 means the evidence that something causes cancer is **strong** — not that the risk is large. The WHO says so explicitly: processed meat sits in the same evidence category as tobacco smoking and asbestos, but "this does NOT mean that they are all equally dangerous." An 18% relative increase on a modest baseline risk is a real reason to make bacon a weekend food rather than a daily one. It is not a reason to panic.
 
-## Seed oils: what the trials actually show
+## Seed oils: what the trials measured, and what they never asked
 
-This is the claim our readers hear most, and the strong version of it does not hold up.
+This is the claim our readers hear most, and it is worth being precise about — because the popular version of it and the popular rebuttal are both answering the wrong question.
 
-The argument goes: modern diets are flooded with omega-6 linoleic acid from soybean, corn, canola, and sunflower oil; linoleic acid converts to arachidonic acid; arachidonic acid is the precursor to pro-inflammatory eicosanoids; therefore seed oils drive chronic inflammation. Every step in that chain is biochemically real. The conclusion still fails, because the chain was tested directly and the effect did not appear.
+The mechanism argument goes: modern diets are flooded with omega-6 linoleic acid from soybean, corn, canola, and sunflower oil; linoleic acid converts to arachidonic acid; arachidonic acid is the precursor to pro-inflammatory eicosanoids; therefore seed oils drive chronic inflammation. Every step in that chain is biochemically real.
 
-A 2012 systematic review of randomized controlled trials in the *Journal of the Academy of Nutrition and Dietetics* by Johnson and Fritsche concluded that virtually no evidence from randomized intervention studies in healthy non-infant humans shows that adding linoleic acid to the diet raises inflammatory markers. A 2017 meta-analysis in *Food & Function* pooling 30 randomized controlled studies and 1,377 participants found no significant effect of higher linoleic acid intake on IL-6, and no significant effect on CRP overall — with a possible signal only at very large intake increases.
+Researchers tested that chain, and here is what they found. A 2012 systematic review of randomized controlled trials in the *Journal of the Academy of Nutrition and Dietetics* by Johnson and Fritsche concluded that virtually no evidence from randomized intervention studies in healthy non-infant humans shows that adding linoleic acid to the diet raises inflammatory markers. A 2017 meta-analysis in *Food & Function* pooling 30 randomized controlled studies and 1,377 participants found no significant effect of higher linoleic acid intake on IL-6, and no significant effect on CRP overall. In a 2019 individual-level pooled analysis of 30 prospective cohorts in *Circulation*, Marklund and colleagues examined 68,659 participants and found higher linoleic acid associated with *lower* cardiovascular risk — hazard ratios of 0.93 for total cardiovascular disease and 0.78 for cardiovascular mortality.
 
-The cohort data point the same direction, or better. In a 2019 individual-level pooled analysis of 30 prospective cohorts in *Circulation*, Marklund and colleagues examined 68,659 participants and 15,198 cardiovascular events using measured blood and tissue fatty acid levels rather than food questionnaires. Higher linoleic acid was associated with *lower* risk: hazard ratios of 0.93 for total cardiovascular disease, 0.78 for cardiovascular mortality, and 0.88 for ischemic stroke. Arachidonic acid was not associated with higher risk either.
+Those findings get reported as "science says seed oils are fine." That is not what any of them established, and the gap matters.
 
-Two fair caveats. First, **conjugated** linoleic acid — a different compound, sold as a supplement — is not the same thing; a 2023 GRADE-assessed meta-analysis in *Frontiers in Immunology* found CLA supplementation raised CRP and TNF-alpha. Second, the real problem with fried snack foods is not disputed here at all: they are ultra-processed, calorie-dense, and displace better food. That case stands on the *Cell Metabolism* and *BMJ* evidence above without needing the seed-oil story.
+**Read the question they actually asked.** Translated out of journal language, the trials asked: *does raising one fatty acid, over a few weeks, in participants eating a controlled diet, move one or two blood proteins?* The answer is no. That is a real answer to a small question. Nobody arrives at "is industrially extracted seed oil a sound thing to build a diet on?" from there — and CRP and IL-6 are surrogate markers, not health outcomes. As noted earlier in this guide, Mendelian randomization has repeatedly failed to show that CRP causes heart disease. A marker that may not cause the disease also cannot exonerate a food when it fails to move.
 
-The practical upshot: swap the fried chips because they are chips. Cook with extra-virgin olive oil because the Mediterranean pattern has the best outcome data, not because canola is poison. Being investigative rather than restrictive means dropping a claim when the trials say drop it.
+**The Marklund analysis measured blood, not bottles.** It used circulating and tissue fatty acid levels — a genuine strength against food-questionnaire error, and the reason it gets cited so confidently. But blood linoleic acid is not a record of how much refined oil someone poured into a pan. It tracks whole dietary patterns, including nuts, seeds, and whole foods that carry linoleic acid inside an intact food matrix. Reading a cohort of blood levels as a verdict on commodity oil is a substitution the study never made.
+
+**Nobody tested the processing.** This is the part that goes missing entirely, and it is the part we care about most. Consider what each oil requires to exist:
+
+- **Olive oil.** Crush the fruit. Press it. That is extra-virgin olive oil — a fruit juice, mechanically separated.
+- **Coconut oil.** Press the meat. Separate.
+- **Butter.** Agitate cream until the fat globules cluster. You can do it in a jar by shaking it.
+- **Canola, soybean, corn, cottonseed oil.** Crack the seed, flake it, heat it, press it, wash the meal in **hexane** — a petroleum solvent — evaporate the solvent, degum, neutralize with alkali, bleach with clay, then deodorize by steam-stripping at roughly 200°C to strip the smell and taste that the previous steps produced.
+
+A trial can match two oils for calories and fatty acid profile. It cannot match them for that. And no trial in this literature was designed to isolate the effect of the refining chain, so no trial in this literature has anything to say about it.
+
+**"Seed oil" is a category, not a substance.** A study specifies its oil — a defined batch, stored to protocol, fresh. The category on a supermarket shelf has none of that. Polyunsaturated fats are the most oxidation-prone fats there are, a direct consequence of having more double bonds, and how oxidized a given bottle is depends on refining heat, light exposure, shelf time, and how long it sat in a warm truck. Fryer oil held hot for days is chemically not the oil that was poured in. "Vegetable oil" is often a blend whose composition shifts with commodity prices. **None of that appears on the label**, which means the trials tested something the shopper cannot buy, and the shopper buys something the trials never tested.
+
+**One fair caveat in the other direction.** We cannot assert that the bottle at the store is worse than the bottle in the trial, because nobody has properly checked. What we can say is that "nobody has tested what people actually buy" is not the same sentence as "what people actually buy is fine." Refining has also become more industrialized as volume has grown; we have not found data quantifying how the average retail bottle has changed over time, so we flag it as an open question rather than a claim.
+
+**Where we land.** We are not going to tell you canola causes inflammation, because the trials looked for that and did not find it, and we are not in the business of repeating a claim the evidence does not carry. We are also not going to pretend a hexane-washed, bleached, 200°C-deodorized industrial product earned a clean bill of health from a study that measured a blood protein for six weeks. Those are different statements and both are true.
+
+Our position does not depend on the inflammation argument at all. Cook with **extra-virgin olive oil** and **unrefined coconut oil** because they are foods you could make in a kitchen, made from a plant you could hold, with nothing added and nothing stripped out. That has always been the standard here, and it does not need a biomarker to justify it.
+
+Two genuine footnotes: **conjugated** linoleic acid, a different compound sold as a supplement, is not the same thing — a 2023 GRADE-assessed meta-analysis in *Frontiers in Immunology* found CLA supplementation raised CRP and TNF-alpha. And the case against fried snack foods never rested on the seed-oil story anyway: they are ultra-processed, calorie-dense, and displace better food, which the *Cell Metabolism* and *BMJ* evidence above establishes on its own.
 
 ## Why patterns beat single foods
 
@@ -160,7 +179,7 @@ For most people, no. Outside of diagnosed celiac disease, wheat allergy, or lact
 - [BMJ — Ultra-processed food exposure and adverse health outcomes: umbrella review of epidemiological meta-analyses (2024)](https://bmjgroup.com/consistent-evidence-links-ultra-processed-food-to-over-30-damaging-health-outcomes/)
 - [American Journal of Clinical Nutrition — Low to moderate sugar-sweetened beverage consumption impairs glucose and lipid metabolism and promotes inflammation in healthy young men (2011)](https://pubmed.ncbi.nlm.nih.gov/21677052/)
 - [Nutrients — Effect of Important Food Sources of Fructose-Containing Sugars on Inflammatory Biomarkers: A Systematic Review and Meta-Analysis of Controlled Feeding Trials (2022)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9572084/)
-- [World Health Organization — Cancer: Carcinogenicity of the consumption of red meat and processed meat (IARC Monographs Volume 114)](https://www.who.int/news-room/questions-and-answers/item/cancer-carcinogenicity-of-the-consumption-of-red-meat-and-processed-meat)
+- [IARC Monographs Volume 114 — Red Meat and Processed Meat (2018)](https://publications.iarc.fr/564)
 - [Medicine (Baltimore) — Whole grain diet reduces systemic inflammation: A meta-analysis of 9 randomized trials (2018)](https://pmc.ncbi.nlm.nih.gov/articles/PMC6221555/)
 - [International Journal of Food Sciences and Nutrition — Effect of dietary fiber on circulating C-reactive protein in overweight and obese adults: a meta-analysis of RCTs (2015)](https://pubmed.ncbi.nlm.nih.gov/25578759/)
 - [Cell — Gut-microbiota-targeted diets modulate human immune status (Wastyk et al., 2021)](https://www.cell.com/cell/pdf/S0092-8674(21)00754-6.pdf)

@@ -90,7 +90,7 @@ Where a recipe can use **whole dates** instead, the fiber stays attached and tha
 - 1/4 cup pure maple syrup
 - 1/2 cup unsweetened applesauce
 - 1/4 cup plain whole-milk Greek yogurt
-- 3 tablespoons melted unsalted butter or neutral oil
+- 3 tablespoons melted unsalted butter, or extra-virgin olive oil
 - 1 large egg, room temperature
 - 2 teaspoons vanilla extract
 - 2 tablespoons melted butter, for the coating
@@ -145,7 +145,7 @@ Three things narrow the gap:
 
 ## Can you make them dairy-free or gluten-free?
 
-Dairy-free is straightforward. Swap the yogurt for a thick unsweetened coconut or almond yogurt and use a neutral oil in the batter and for brushing. You lose the browning contribution of milk solids in the coating step, so add an extra pinch of salt to the cinnamon sugar.
+Dairy-free is straightforward. Swap the yogurt for a thick unsweetened coconut or almond yogurt and use extra-virgin olive oil or melted unrefined coconut oil in the batter and for brushing. You lose the browning contribution of milk solids in the coating step, so add an extra pinch of salt to the cinnamon sugar.
 
 Gluten-free is harder and worth being honest about. A 1:1 gluten-free baking blend containing xanthan gum works, but the batter needs to rest 15 minutes before piping so the starches hydrate, and the donuts are noticeably more fragile coming out of the pan. Let them cool a full 8 minutes before turning out rather than 4.
 

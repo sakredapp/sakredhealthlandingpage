@@ -28,7 +28,7 @@ One thing first, because it matters more than any recipe here: **one night of ca
 - US children average **44.2 g (ages 2–5), 69.5 g (6–11), and 76.9 g (12–19)** of added sugar daily; only about **35%** of children 2–19 meet the federal limit of under 10% of calories — *USDA Food Surveys Research Group, NHANES 2015–2016*
 - **61.9% of calories** consumed by US youth ages 1–18 come from ultra-processed foods, versus 53.0% for adults — *CDC/NCHS Data Brief 536, 2025*
 - **8 g of added sugar** in a single 17 g fun-size Snickers bar; **11 g** in one 15 g fun-size pack of Skittles — *manufacturer nutrition labels, Mars Wrigley*
-- WHO's 2015 guideline recommends free sugars stay **below 10% of energy**, with a conditional further reduction to **below 5%**, based largely on the dental caries evidence — *World Health Organization*
+- The evidence underneath every "keep sugar under 10% of calories" guideline is mostly **dental caries** data — and it found **frequency of exposure** mattered more than total quantity — *Moynihan, Advances in Nutrition, 2016*
 - A 1995 *JAMA* meta-analysis of 23 blinded, placebo-controlled trials found **sugar does not affect children's behavior or cognition** — *Wolraich, Wilson & White*
 - Americans planned to spend **$3.9 billion on Halloween candy in 2025**, part of a record $13.1 billion holiday total — *National Retail Federation consumer survey, 2025*
 
@@ -58,7 +58,11 @@ That's good news, because it means the reason to care about added sugar isn't yo
 
 ## What added sugar actually does affect
 
-**Teeth.** This is the strongest evidence base in the whole conversation. The World Health Organization's 2015 guideline recommends reducing free sugars to less than 10% of total energy intake for adults and children, with a conditional suggestion to go below 5%. The 10% recommendation rests on moderate-quality observational evidence for dental caries; the 5% suggestion rests on lower-quality ecological data showing less caries below that threshold. Note the definition: WHO's "free sugars" include sugars added by manufacturers or cooks *plus* sugars naturally present in honey, syrups, and fruit juice — which is exactly why the fruit-gummy recipe below uses whole fruit purée rather than juice concentrate.
+**Teeth.** This is the strongest evidence base in the whole conversation, and also the most misreported. The familiar advice is a ceiling — keep sugars under 10% of daily calories, ideally under 5%. The 10% figure rests on moderate-quality observational caries evidence; the 5% figure rests on weaker ecological data. Both are percentages of total calories, which is a number essentially no parent can compute for their kid on a Tuesday.
+
+Read the underlying research and a far more usable finding is sitting right there. Moynihan's 2016 review in *Advances in Nutrition* — the evidence base those ceilings were built on — found that **how often** sugar contacts teeth matters more than **how much**. Every exposure restarts an acid cycle; the mouth needs time between them to remineralize. That single fact is more actionable than any percentage target, and it points somewhere the guideline never goes: one candy sitting is better than a bag grazed all afternoon.
+
+One more thing worth knowing, because it explains the recipe below: sugar pressed out of fruit behaves differently from sugar still locked inside it. Juice and juice concentrate have had the cell-wall matrix destroyed, so the sugar is free in solution. Whole fruit purée keeps the fiber. That is why the gummy recipe uses purée rather than concentrate.
 
 The frequency and stickiness matter as much as the total. A single sitting with a handful of candy, followed by brushing, is a very different exposure than the same candy grazed across six hours of a school afternoon.
 
@@ -104,7 +108,7 @@ Date paste thickens as it cools because of the fruit's pectin and fiber — that
 **Replaces:** Skittles, Starburst, gummy worms.
 **What's in it:** 1 cup fruit purée (blended strawberries, mango, or unsweetened applesauce), 1 tbsp lemon juice, 3 tbsp unflavored gelatin, optional 1 tsp honey.
 **Method:** Warm the purée and lemon juice until steaming but not boiling. Sprinkle the gelatin over the surface, let it bloom 1 minute, then whisk hard until completely dissolved. Pour into silicone molds and refrigerate 2 hours. Keeps about a week, covered, in the fridge.
-Use whole fruit, not juice concentrate — per WHO's definition, juice sugars count as free sugars while the sugars in whole fruit purée do not.
+Use whole fruit, not juice concentrate — pressing fruit into juice destroys the cell walls holding the sugar, while purée keeps the fiber matrix intact.
 
 ### 4. Chocolate-covered frozen banana coins
 
@@ -152,7 +156,7 @@ Use whole fruit, not juice concentrate — per WHO's definition, juice sugars co
 ### 11. Roasted cinnamon chickpeas
 
 **Replaces:** Crunchy candy-coated snacks and chip bags.
-**What's in it:** 1 can chickpeas, 1 tsp neutral oil, 1 tsp cinnamon, 1 tsp coconut sugar, pinch of salt.
+**What's in it:** 1 can chickpeas, 1 tsp extra-virgin olive oil, 1 tsp cinnamon, 1 tsp coconut sugar, pinch of salt.
 **Method:** Rinse, drain, and dry the chickpeas thoroughly on a towel — dryness is the whole trick. Toss with oil and roast at 400°F for 30–35 minutes, shaking the pan twice. Toss with the cinnamon, coconut sugar, and salt while hot. Eat the same day; they soften overnight.
 
 ### 12. Frozen yogurt bark
@@ -202,7 +206,7 @@ The trick-or-treating stays. Restriction tends to make the restricted thing loud
 - **Give out non-candy treats at your own door.** Schwartz, Chen and Brownell's 2003 study in the *Journal of Nutrition Education and Behavior* offered trick-or-treaters aged 3 to 14 a choice between comparable small toys and candy at seven Connecticut households. Of 283 children observed, 52.3% took candy and 47.7% took a toy — statistically a coin flip. Glow sticks, stickers, and temporary tattoos are not a consolation prize to a seven-year-old.
 - **Let the haul be a haul on the night.** The 2022 *Children* study found meal timing didn't significantly change intake. Fighting over pieces four and five costs more than it returns.
 - **Then change the default the next morning.** Put the homemade swaps in the fridge at eye level and let the wrapped candy live in a cupboard. Availability beats negotiation.
-- **Concentrate the exposure, then brush.** Frequency of sugar contact is the caries driver in WHO's evidence base; six grazing hours is a worse exposure than one sitting.
+- **Concentrate the exposure, then brush.** Frequency of sugar contact is the caries driver in the underlying research; six grazing hours is a worse exposure than one sitting.
 
 None of this requires a new personality — just a slightly better default, repeated. If you want that structured rather than improvised, [the Sakred app](/app) is built to hold exactly this kind of small daily consistency, and while you're thinking about your family's long game, it's worth knowing where your [coverage](/get-coverage) stands too.
 
@@ -225,7 +229,7 @@ Energy bites, dark-chocolate bark, coconut clusters, and trail mix packs are she
 - [American Heart Association / Circulation — Added Sugars and Cardiovascular Disease Risk in Children: A Scientific Statement (2016)](https://www.ahajournals.org/doi/10.1161/cir.0000000000000439)
 - [USDA Food Surveys Research Group — Added Sugars in American Children's Diet: What We Eat in America, NHANES 2015–2016 (2019)](https://www.ncbi.nlm.nih.gov/books/NBK589213/)
 - [CDC/NCHS — Data Brief 536: Ultra-processed Food Consumption in Youth and Adults, United States, August 2021–August 2023 (2025)](https://www.cdc.gov/nchs/products/databriefs/db536.htm)
-- [World Health Organization — Guideline: Sugars Intake for Adults and Children (2015)](https://www.ncbi.nlm.nih.gov/books/NBK285525/)
+- [Advances in Nutrition — Effect on Caries of Restricting Sugars Intake, Moynihan (2016)](https://pubmed.ncbi.nlm.nih.gov/26773020/)
 - [JAMA — Wolraich, Wilson & White, The Effect of Sugar on Behavior or Cognition in Children: A Meta-analysis (1995)](https://jamanetwork.com/journals/jama/fullarticle/391812)
 - [Children (Basel) — Children Consume High Amounts of Candy Before and After a Meal: Within-Person Comparisons of Children's Candy Intake (2022)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9856888/)
 - [Pediatrics — Chapin et al., Nonfatal Choking on Food Among Children 14 Years or Younger in the United States, 2001–2009 (2013)](https://pubmed.ncbi.nlm.nih.gov/23897916/)

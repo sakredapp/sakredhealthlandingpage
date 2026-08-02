@@ -25,7 +25,11 @@ Burnout is often described in vague terms — feeling "fried," "running on empty
 
 ## What burnout actually is — and isn't
 
-The World Health Organization gave burnout a precise definition when it included the syndrome in the ICD-11 in 2019. Burnout, per the WHO, results from "chronic workplace stress that has not been successfully managed" and has three dimensions: energy depletion or exhaustion; increased mental distance from one's job, or cynicism about it; and reduced professional efficacy. Notably, the WHO classifies it as an occupational phenomenon, not a medical condition, and specifies that the term applies to work — not to life in general.
+Burnout got an official definition in 2019, when it entered the ICD-11 as "chronic workplace stress that has not been successfully managed," with three dimensions: energy depletion or exhaustion; increased mental distance from one's job, or cynicism about it; and reduced professional efficacy. The three dimensions are a genuinely useful checklist, and we use them below.
+
+**The classification itself is worth reading twice.** Burnout was filed as an *occupational phenomenon* — explicitly not a medical condition — and restricted to work rather than life in general. Sit with what that does. It means the thing wearing you down is officially not a diagnosis, which conveniently means no treatment pathway, no insurer obligation, and no employer liability. The exhausted person is left holding a "phenomenon."
+
+We think the three-part description is accurate and the classification is a choice that serves institutions more than people. You can use one without swallowing the other. And note what the definition quietly assumes by walling burnout off from "life in general": that the body keeps separate books for work stress and everything else. It does not. The nervous system running you into the ground at 4 p.m. on a Tuesday is the same one handling your sleep, your digestion, and your family — which is exactly why the fixes below are whole-life habits rather than workplace policies.
 
 That definition matters practically. If burnout is unmanaged chronic stress, then prevention has two levers: reduce the stress load where possible, and strengthen the daily recovery systems — sleep, movement, real breaks — that let your body process the load it can't avoid.
 
@@ -66,9 +70,9 @@ Pulling the research together into a workday-shaped protocol:
 
 - **Anchor sleep first.** Fixed wake time, 7–9 hour window, no work email in the last hour before bed. Below 6 hours is the documented danger zone.
 - **Schedule 3 exercise sessions per week.** Cardio or resistance both work; pick the one you'll actually repeat. Four weeks is long enough to feel a difference.
-- **Take real breaks, not screen swaps.** The WHO's definition hinges on stress that "has not been successfully managed" — recovery windows during the day are part of managing it. Step away from the desk at lunch; get outside when you can.
+- **Take real breaks, not screen swaps.** The ICD-11 description hinges on stress that "has not been successfully managed" — recovery windows during the day are part of managing it. Step away from the desk at lunch; get outside when you can.
 - **Contain work rumination.** Since thinking about work during leisure time independently predicted burnout in the 2012 prospective study, create a hard stop ritual: a shutdown note listing tomorrow's top three tasks, then close the laptop.
-- **Watch the three dimensions.** Exhaustion that rest doesn't fix, rising cynicism, and slipping performance are the WHO's three markers. Two out of three for more than a few weeks is a signal to change something structural — workload, boundaries, or role — not just add another habit.
+- **Watch the three dimensions.** Exhaustion that rest doesn't fix, rising cynicism, and slipping performance are the three markers. Two out of three for more than a few weeks is a signal to change something structural — workload, boundaries, or role — not just add another habit.
 
 ## Resilience is a long-game asset
 
@@ -78,7 +82,7 @@ Burnout prevention compounds the same way saving does: unremarkable daily deposi
 
 - [Gallup — State of the Global Workplace 2025: Global Employee Engagement Falls for the Second Time Since 2009 (2025)](https://www.gallup.com/workplace/659279/global-engagement-falls-second-time-2009.aspx)
 - [Gallup — State of the Global Workplace: Global Data Summary (2026)](https://www.gallup.com/workplace/697904/state-of-the-global-workplace-global-data.aspx)
-- [World Health Organization — Burn-out an "Occupational Phenomenon": International Classification of Diseases (2019)](https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases)
+- [ICD-11 for Mortality and Morbidity Statistics — QD85 Burn-out](https://icd.who.int/browse11/l-m/en#/http://id.who.int/icd/entity/129180281)
 - [SHRM — Here's How Bad Burnout Has Become at Work (2024)](https://www.shrm.org/topics-tools/news/inclusion-diversity/burnout-shrm-research-2024)
 - [American Psychological Association — 2024 Work in America Survey (2024)](https://www.apa.org/pubs/reports/work-in-america/2024)
 - [American Journal of Preventive Medicine — The Health and Economic Burden of Employee Burnout to U.S. Employers (2025)](https://www.ajpmonline.org/article/S0749-3797(25)00023-6/abstract)

@@ -22,7 +22,7 @@ The good news is that the research on countermeasures has gotten much sharper in
 
 - **1 in 4 US adults** reports sitting more than 8 hours a day, and 44% report no moderate-to-vigorous weekly physical activity (CDC researchers in JAMA, 2018)
 - **60–75 minutes** of daily moderate activity appeared to eliminate the excess mortality risk of high sitting time in a meta-analysis of over 1 million adults (Ekelund et al., The Lancet, 2016)
-- **Standing more does not improve cardiovascular outcomes** and may raise the risk of circulatory problems like varicose veins (University of Sydney, 2024)
+- **Standing more does not improve cardiovascular outcomes** (University of Sydney, 2024) — which is what you would expect, since standing is not cardio. The study never measured hips, spine, or fascia, which is why anyone stands in the first place
 
 ## What prolonged sitting actually does
 
@@ -32,13 +32,21 @@ Two honest readings of that research. First, sitting itself is not a death sente
 
 The shorter-term costs are easier to feel. A 2025 study of office workers published in Scientific Reports found an overall work-related musculoskeletal disorder prevalence of about 80%, with neck pain reported by 58.6% of workers and lower back pain by 52.5%. Other office-worker surveys land in a similar range, consistently placing neck, lower back, and shoulder pain at the top of the complaint list.
 
-## The standing desk caveat: standing is not movement
+## The standing desk studies measured the wrong thing
 
-Standing desks are the most heavily marketed answer to sedentary work, so it's worth being clear about what the research shows. A 2024 University of Sydney analysis of wearable-tracker data found that standing more, compared with sitting, did not improve cardiovascular disease outcomes (coronary heart disease, stroke, heart failure) over the long term — and was associated with increased risk of circulatory conditions such as varicose veins. The likely mechanism: standing still doesn't engage the muscle pump in your legs that pushes blood back toward the heart, and some participants who stood longer showed increased arterial stiffness.
+Standing desks are the most heavily marketed answer to sedentary work, and the research on them is a clean example of a study answering a question nobody asked and getting reported as though it settled the matter.
 
-A West Virginia University clinical trial published in 2024 reached a complementary conclusion: sit-stand desks did reduce total sitting time, but alternating sitting and standing had no effect on blood pressure.
+A 2024 University of Sydney analysis of wearable-tracker data found that standing more, compared with sitting, did not improve cardiovascular disease outcomes — coronary heart disease, stroke, heart failure — over the long term, and was associated with increased risk of circulatory conditions such as varicose veins. A West Virginia University clinical trial the same year found sit-stand desks reduced total sitting time but had no effect on blood pressure. The headlines wrote themselves: *standing desks don't work.*
 
-None of this means a sit-stand desk is useless — varying posture can help with comfort, and standing burns marginally more energy than sitting. But the evidence points the same direction from every angle: the variable that moves health outcomes is *movement*, not posture. If a standing desk gets you to move more, it's helping. If you just stand still instead of sitting still, it isn't.
+**Nobody stands at a desk to lower their blood pressure.** Standing is not cardio. It does not raise your heart rate, and no one ever claimed it did. Measuring a standing desk against coronary heart disease and reporting a null result is like testing whether a seatbelt improves fuel economy, finding it doesn't, and running the headline "seatbelts don't work."
+
+The reason to stand is what eight hours of hip flexion does to a body over thirty years. Sitting holds the hip flexors short, the glutes switched off, and the thoracic spine rounded, hour after hour, day after day. That is where the actual cost shows up — anterior pelvic tilt, tight hips, a lower back doing work the glutes stopped doing, fascia that adapted to the shape you spend the most time in. None of it registers as a coronary event, so none of it appears in a cardiovascular endpoint. The study did not find that standing fails to help your hips. **It never looked.**
+
+The costs it did not measure are the ones office workers actually report. A 2025 study of office workers in *Scientific Reports* found roughly 80% prevalence of work-related musculoskeletal disorders, with neck pain at 58.6% and lower back pain at 52.5%. That is the outcome that matters here, and no standing-desk trial has been designed around it.
+
+**The one finding worth keeping** is the varicose-vein signal, because it is specific and it has a mechanism: standing *still* doesn't engage the calf muscle pump that pushes blood back toward the heart. That is a real argument against locking into one posture — which is also the argument against sitting. The lesson is not "sit back down." It is that the body is built to change position, and holding any single position for eight hours is the problem.
+
+Stand, sit, walk, shift your weight, put a foot up. Vary it. The variable that moves the outcomes these studies measured is *movement* — and the variable that moves the ones they didn't measure is *not staying folded into the same shape all day*.
 
 ## The most specific finding: 5 minutes every half hour
 

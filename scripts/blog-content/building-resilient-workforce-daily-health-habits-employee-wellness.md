@@ -56,7 +56,7 @@ The clearest illustration comes from Columbia University Irving Medical Center's
 
 Habit science explains why this framing also fits how people actually change. In a classic 2009 University College London study led by Phillippa Lally, participants adopting a new health behavior took a median of 66 days to reach automaticity — with a range from 18 to 254 days — and missing a single day didn't derail the process. Behavior change is a two-to-three-month repetition project, not a workshop. A lunchtime seminar cannot deliver 66 repetitions. A workday designed around movement, breaks, and boundaries delivers them automatically.
 
-There's a similar logic on mental health. A WHO-led study published in *The Lancet Psychiatry* in 2016 estimated that every $1 invested in scaled-up treatment for depression and anxiety returns $4 in better health and productivity — against a backdrop of roughly $1 trillion per year that those conditions cost the global economy. Notice what earns the return: sustained, evidence-based treatment and support, not awareness posters.
+There's a similar logic on mental health. A study published in *The Lancet Psychiatry* in 2016 by Chisholm and colleagues estimated that every $1 invested in scaled-up treatment for depression and anxiety returns $4 in better health and productivity — against a backdrop of roughly $1 trillion per year that those conditions cost the global economy. Notice what earns the return: sustained, evidence-based treatment and support, not awareness posters.
 
 ## The habits that compound at the organizational level
 
@@ -100,7 +100,7 @@ The case for daily habits over perks is ultimately conservative: it follows the 
 - [Industrial Relations Journal (Wiley) — Fleming, Employee Well-Being Outcomes from Individual-Level Mental Health Interventions (2024)](https://onlinelibrary.wiley.com/doi/10.1111/irj.12418)
 - [Columbia University Irving Medical Center — Rx for Prolonged Sitting: A Five-Minute Stroll Every Half Hour (2023)](https://www.cuimc.columbia.edu/news/rx-prolonged-sitting-five-minute-stroll-every-half-hour)
 - [University College London — How Long Does It Take to Form a Habit? (2009)](https://www.ucl.ac.uk/news/2009/aug/how-long-does-it-take-form-habit)
-- [World Health Organization — Investing in Treatment for Depression and Anxiety Leads to Fourfold Return (2016)](https://www.who.int/news/item/13-04-2016-investing-in-treatment-for-depression-and-anxiety-leads-to-fourfold-return)
+- [The Lancet Psychiatry — Scaling-up treatment of depression and anxiety: a global return on investment analysis, Chisholm et al. (2016)](https://pubmed.ncbi.nlm.nih.gov/27083119/)
 - [Gallup — 1 in 5 Employees Worldwide Feel Lonely (2024)](https://www.gallup.com/workplace/645566/employees-worldwide-feel-lonely.aspx)
 - [Gallup — This Fixable Problem Costs U.S. Businesses $1 Trillion (2019)](https://www.gallup.com/workplace/247391/fixable-problem-costs-businesses-trillion.aspx)
 - [BMC Psychiatry (PMC) — Global Patterns of Workplace Productivity for People with Depression: Absenteeism and Presenteeism Costs Across Eight Countries (2016)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5101346/)
