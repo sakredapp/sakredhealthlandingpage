@@ -30,6 +30,14 @@ Both of those numbers are printed here on purpose, because they answer different
 [{"value": 59, "suffix": " g", "label": "Added sugar in one Cinnabon Classic Roll", "source": "Cinnabon nutritional guide"}, {"value": 880, "label": "Calories in that same roll", "source": "Cinnabon nutritional guide"}, {"value": 0.1, "decimals": 1, "suffix": " mg/kg", "label": "Tolerable daily intake of coumarin, per body weight", "source": "EFSA and German BfR"}, {"value": 73, "suffix": "%", "label": "Lower glucose response when protein and vegetables are eaten before carbs", "source": "Shukla et al., Diabetes Care, 2015"}]
 ```
 
+## Cinnamon was medicine and preservative long before it was a filling
+
+Cinnamon is one of the oldest traded spices on earth, and for most of that history nobody was putting it in a bun. It was used in ancient Egypt in embalming and perfumery, and it has been a **warming digestive** in both Ayurveda and Chinese medicine for millennia — taken to settle the stomach and move cold stagnation, not to sweeten a pastry. It was also a preservative, which is a large part of why it was worth what it was worth. The spice trade that redrew maps ran on cargo like this.
+
+That history is the reason this recipe cares which cinnamon you use. **Ceylon — *Cinnamomum verum*, literally "true cinnamon"** — is the one those traditions were built on. What sits in most supermarket jars is cassia, a cheaper relative with a harsher flavour and, as the next section covers, a real coumarin ceiling if you eat it daily.
+
+The commercial cinnamon roll inverted the whole thing: cassia in trace quantity, as a flavour note on top of a butter-and-brown-sugar slurry carrying 59 grams of added sugar. The spice became garnish on the sugar. Here it is doing the job it was traded for.
+
 ## Commercial versus homemade
 
 | Per roll | Cinnabon Classic Roll (241 g) | This version, 1 of 12 |

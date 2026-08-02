@@ -36,6 +36,14 @@ A healthy pumpkin spice latte is made from real pumpkin purée, espresso or stro
 - **RR 1.20 (95% CI 1.15–1.25) for type 2 diabetes per additional daily serving** of sugar-sweetened beverages across 72 prospective cohort studies (Li et al., *Frontiers in Nutrition*, 2023) — an observational association, not proof of cause
 - **17,003 micrograms of beta-carotene and 7.1 grams of fiber per cup** of plain canned pumpkin, for 83 calories (USDA FoodData Central)
 
+## Every spice in "pumpkin spice" is a warming digestive
+
+The blend did not come from a coffee chain. Cinnamon, ginger, nutmeg, clove and allspice are **warming, digestive spices** in Ayurveda and Chinese medicine alike — the category of things taken with or after a heavy meal, in autumn and winter, precisely because they were understood to help you handle food and cold. That combination has been showing up in autumn cooking for centuries for reasons that had nothing to do with a seasonal marketing calendar.
+
+Which makes the modern version a strange object. The spices are still in there, in trace amounts, suspended in 32 grams of sugar — and they are the *only* part of the drink anyone historically considered functional. The sugar is the addition. The spice is the original.
+
+That is the whole logic of this recipe. Keep the aromatics, and let them do the work they were always there to do — including the work of making a much smaller amount of sugar taste like enough.
+
 ## Commercial vs. homemade, honestly
 
 | | Grande PSL, 2% milk | This recipe, 12 oz |

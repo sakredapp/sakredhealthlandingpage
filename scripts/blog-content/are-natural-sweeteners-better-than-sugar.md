@@ -48,6 +48,16 @@ That last one is the inversion worth remembering: the sweetener with the lowest 
 | **Table sugar / HFCS** | Refined free sugar | No | The baseline |
 | **Agave syrup** | ~85% fructose | No | Lowest GI, arguably the weakest case |
 
+## Dates were a staple, not a candy
+
+Before ranking anything, it is worth being clear about what a date actually is, because the framing of "natural sweetener" undersells it.
+
+The date palm is among the oldest cultivated fruit crops on earth, and dates were a **staple food** across the Middle East and North Africa for thousands of years — not a treat at the end of a meal but a dense, portable, keeping food that people crossed deserts on. That is a different category from a sweetener. It carries fibre, potassium and magnesium, and it arrives in a fruit matrix rather than as an extracted crystal.
+
+Hold that next to what refined white sugar is: sucrose extracted from cane or beet, with every other part of the plant stripped away. One is a food that happens to be sweet. The other is sweetness with the food removed.
+
+That distinction runs underneath the entire ranking below, and it is why we do not treat "sugar is sugar" as the end of the conversation.
+
 ## Why glycemic index is the wrong yardstick on its own
 
 Glycemic index measures one thing: how much a food raises **blood glucose** in the two hours after eating it. That is genuinely useful information, and it is also incomplete in a way the sweetener market has learned to exploit.

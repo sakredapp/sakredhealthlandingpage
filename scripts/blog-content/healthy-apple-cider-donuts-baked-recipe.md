@@ -30,6 +30,14 @@ The reduction is the whole trick, and it is worth understanding why it works: co
 [{"value": 8, "suffix": ":1", "label": "Reduction that turns 2 cups of cider into 1/4 cup of syrup", "source": "Traditional boiled cider is reduced roughly 7:1"}, {"value": 24, "suffix": " g", "label": "Sugar in one cup of 100% apple cider or juice", "source": "USDA FoodData Central"}, {"display": "320–380", "label": "Calorie range reported for one chain cider donut across databases", "source": "Third-party nutrition databases, 2020–2026"}, {"value": 53, "suffix": "%", "label": "Share of US adult calories from ultra-processed foods", "source": "CDC/NCHS Data Brief 536, 2025"}]
 ```
 
+## Cider was preservation before it was a flavour
+
+Worth knowing, because it explains why the reduction step in this recipe is doing real work rather than being a fussy extra.
+
+Pressing apples was how you kept an orchard's harvest from rotting. Fresh apples last weeks; cider lasts, and fermented cider lasts far longer — which is why it was a staple drink across medieval England and colonial America, often in preference to water. Boiling cider down further was the same instinct taken one step: reduce it, and you get a thick, keeping syrup that was a household sweetener long before refined sugar was cheap enough for ordinary kitchens.
+
+So the cider reduction here is not a modern trick to cut sugar. It is closer to the original use of the apple — concentrating the fruit's own sweetness and acidity into something with enough flavour to carry a whole batch. What changed in the commercial version is that cane sugar was added on top of a thing that was already sweet, and then the reduction step was dropped because it takes twenty minutes and sugar is cheaper.
+
 ## Commercial versus homemade
 
 The uncomfortable part of building this table is that one column cannot be filled in honestly.
