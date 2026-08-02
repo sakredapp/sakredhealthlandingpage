@@ -1,6 +1,6 @@
 ---
-featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/employee-wellness-integrating-habit-tracking-self-care-company-culture.jpeg
-featuredImageAlt: A habit tracker and planner on a tidy desk
+featuredImage: https://images.unsplash.com/photo-1774853107769-c80031c15220?w=1200&h=630&fit=crop&auto=format&q=80
+featuredImageAlt: A bright modern workspace with a large indoor plant
 author: michael
 slug: employee-wellness-integrating-habit-tracking-self-care-company-culture
 publishedAt: 2026-04-25T14:00:00.000Z
