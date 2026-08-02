@@ -7,7 +7,6 @@ import { Navigation } from "@/components/landing/Navigation";
 import { Footer } from "@/components/landing/Footer";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useSeo } from "@/lib/seo";
 import { resolveAuthor } from "@/data/authors";
@@ -56,7 +55,6 @@ function BlogCardSkeleton() {
 
 export default function Blog() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
   const { data: posts, isLoading } = useQuery<BlogPost[]>({
     queryKey: ["/api/blog-posts"],
@@ -69,22 +67,13 @@ export default function Blog() {
     canonical: "/blog",
   });
 
-  const allTags = posts
-    ? Array.from(new Set(posts.flatMap((post) => post.tags || []))).sort()
-    : [];
-
-  const allKeywords = posts
-    ? Array.from(new Set(posts.flatMap((post) => post.seoKeywords || []))).sort()
-    : [];
-
   const matchedPosts = posts?.filter((post) => {
     const matchesSearch =
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.tags?.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
       post.seoKeywords?.some(kw => kw.toLowerCase().includes(searchQuery.toLowerCase()));
-    const matchesTag = !selectedTag || post.tags?.includes(selectedTag) || post.seoKeywords?.includes(selectedTag);
-    return matchesSearch && matchesTag;
+    return matchesSearch;
   });
 
   // Publication dates are assigned so that chronological order is already an
@@ -238,70 +227,13 @@ export default function Blog() {
               </div>
               <h3 className="text-xl font-display font-normal text-[#0F172A] mb-2">No articles found</h3>
               <p className="text-[#0F172A]/70">
-                {searchQuery || selectedTag
-                  ? "Try adjusting your search or filters"
+                {searchQuery
+                  ? "Try adjusting your search"
                   : "Check back soon for wellness insights and tips"}
               </p>
             </motion.div>
           )}
 
-          {(allTags.length > 0 || allKeywords.length > 0) && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-16 pt-12 border-t border-stone-200"
-            >
-              <h2 className="text-2xl font-display font-normal text-[#0F172A] mb-6 text-center">
-                Wellness Glossary
-              </h2>
-              <p className="text-[#0F172A]/70 text-center mb-8 max-w-2xl mx-auto">
-                Explore topics and keywords from our wellness library. Click any term to find related articles.
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-2">
-                {selectedTag && (
-                  <Badge
-                    variant="outline"
-                    className="cursor-pointer border-stone-300 text-[#0F172A]/70 hover:border-[#C5A059]"
-                    onClick={() => setSelectedTag(null)}
-                    data-testid="button-clear-filter"
-                  >
-                    Clear filter
-                  </Badge>
-                )}
-                {allTags.map((tag) => (
-                  <Badge
-                    key={tag}
-                    variant={selectedTag === tag ? "default" : "outline"}
-                    className={`cursor-pointer ${
-                      selectedTag === tag
-                        ? "bg-gradient-to-r from-[#C5A059] to-[#EBD598] text-[#0F172A] border-0"
-                        : "border-stone-300 text-[#0F172A]/70 hover:border-[#C5A059]"
-                    }`}
-                    onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
-                    data-testid={`button-tag-${tag}`}
-                  >
-                    {tag}
-                  </Badge>
-                ))}
-                {allKeywords.map((keyword) => (
-                  <Badge
-                    key={keyword}
-                    variant={selectedTag === keyword ? "default" : "outline"}
-                    className={`cursor-pointer ${
-                      selectedTag === keyword
-                        ? "bg-gradient-to-r from-[#C5A059] to-[#EBD598] text-[#0F172A] border-0"
-                        : "border-[#C5A059]/30 text-[#C5A059] hover:border-[#C5A059] bg-[#C5A059]/5"
-                    }`}
-                    onClick={() => setSelectedTag(selectedTag === keyword ? null : keyword)}
-                    data-testid={`button-keyword-${keyword}`}
-                  >
-                    {keyword}
-                  </Badge>
-                ))}
-              </div>
-            </motion.div>
-          )}
         </div>
       </main>
 

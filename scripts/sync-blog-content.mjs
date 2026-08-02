@@ -52,22 +52,46 @@ async function main() {
     for (const file of files) {
       const a = parseArticle(readFileSync(join(CONTENT_DIR, file), "utf8"), file);
       const { rows } = await pool.query(
-        "SELECT id, content, title FROM blog_posts WHERE slug = $1",
+        `SELECT id, content, title, excerpt, author, featured_image, featured_image_alt,
+                tags, seo_title, seo_description, seo_keywords, published_at
+           FROM blog_posts WHERE slug = $1`,
         [a.slug]
       );
       if (rows.length > 0) {
-        if (rows[0].content === a.content && rows[0].title === a.title) {
+        // Compare every field the UPDATE below writes — not just content and title.
+        // Frontmatter-only edits (a new featuredImage, a corrected publishedAt) leave
+        // the body untouched, and a content-only check silently skips them.
+        const r = rows[0];
+        const sameList = (x, y) =>
+          JSON.stringify(x ?? null) === JSON.stringify(y ?? null);
+        const sameDate = (x, y) =>
+          !y || (x && new Date(x).getTime() === new Date(y).getTime());
+        if (
+          r.content === a.content &&
+          r.title === a.title &&
+          r.excerpt === (a.excerpt ?? null) &&
+          r.author === (a.author || "Sakred Wellness Team") &&
+          r.featured_image === (a.featuredImage ?? null) &&
+          r.featured_image_alt === (a.featuredImageAlt ?? null) &&
+          sameList(r.tags, a.tags) &&
+          r.seo_title === (a.seoTitle ?? null) &&
+          r.seo_description === (a.seoDescription ?? null) &&
+          sameList(r.seo_keywords, a.seoKeywords) &&
+          sameDate(r.published_at, a.publishedAt)
+        ) {
           unchanged++;
           continue;
         }
         await pool.query(
           `UPDATE blog_posts SET title=$2, excerpt=$3, content=$4, tags=$5,
              seo_title=$6, seo_description=$7, seo_keywords=$8, updated_at=NOW(),
-             published_at=COALESCE($9::timestamptz, published_at)
+             published_at=COALESCE($9::timestamptz, published_at),
+             author=$10, featured_image=$11, featured_image_alt=$12
            WHERE slug=$1`,
           [a.slug, a.title, a.excerpt, a.content, a.tags || null,
            a.seoTitle || null, a.seoDescription || null, a.seoKeywords || null,
-           a.publishedAt || null]
+           a.publishedAt || null, a.author || "Sakred Wellness Team",
+           a.featuredImage || null, a.featuredImageAlt || null]
         );
         updated++;
         console.log(`[sync-blog] updated: ${a.slug}`);
