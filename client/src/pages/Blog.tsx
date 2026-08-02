@@ -201,19 +201,6 @@ export default function Blog() {
                         </div>
                       )}
                       <div className="p-6 flex-1 flex flex-col">
-                        {post.tags && post.tags.length > 0 && (
-                          <div className="flex flex-wrap gap-2 mb-3">
-                            {post.tags.slice(0, 2).map((tag) => (
-                              <Badge
-                                key={tag}
-                                variant="secondary"
-                                className="bg-[#C5A059]/10 text-[#C5A059] text-xs"
-                              >
-                                {tag}
-                              </Badge>
-                            ))}
-                          </div>
-                        )}
                         <h2
                           className="text-xl font-display font-normal text-[#0F172A] mb-2 group-hover:text-[#C5A059] transition-colors line-clamp-2"
                           data-testid={`text-post-title-${post.id}`}
