@@ -150,15 +150,27 @@ export default function Blog() {
                 <motion.div key={post.id} variants={itemVariants}>
                   <Link href={`/blog/${post.slug}`} data-testid={`link-post-${post.id}`}>
                     <Card className="bg-white rounded-2xl overflow-hidden shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_20px_-4px_rgba(197,160,89,0.25)] hover:border-[#C5A059]/30 transition-all duration-300 border border-transparent cursor-pointer group h-full flex flex-col">
-                      {post.featuredImage && (
-                        <div className="aspect-[16/9] overflow-hidden bg-gradient-to-br from-[#C5A059]/10 to-[#EBD598]/20">
+                      {/* Every card gets a 16:9 block whether or not it has a photo.
+                          Skipping it for image-less posts left short text-only stubs
+                          scattered through the grid, which read as broken cards. */}
+                      <div className="aspect-[16/9] overflow-hidden bg-gradient-to-br from-[#C5A059]/10 to-[#EBD598]/20">
+                        {post.featuredImage ? (
                           <img loading="lazy" decoding="async"
                             src={post.featuredImage}
-                            alt={post.title}
+                            alt={post.featuredImageAlt || post.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           />
-                        </div>
-                      )}
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#C5A059]/15 via-[#EBD598]/20 to-[#C5A059]/10">
+                            <span
+                              aria-hidden="true"
+                              className="font-display text-3xl tracking-[0.3em] text-[#C5A059]/50 group-hover:text-[#C5A059]/70 transition-colors"
+                            >
+                              SH
+                            </span>
+                          </div>
+                        )}
+                      </div>
                       <div className="p-6 flex-1 flex flex-col">
                         <h2
                           className="text-xl font-display font-normal text-[#0F172A] mb-2 group-hover:text-[#C5A059] transition-colors line-clamp-2"

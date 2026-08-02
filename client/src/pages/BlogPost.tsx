@@ -434,15 +434,26 @@ export default function BlogPost() {
               {recommendedPosts.map((recPost) => (
                 <Link key={recPost.id} href={`/blog/${recPost.slug}`} data-testid={`link-recommended-${recPost.id}`}>
                   <Card className="bg-white rounded-2xl overflow-hidden shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_20px_-4px_rgba(197,160,89,0.25)] hover:border-[#C5A059]/30 transition-all duration-300 border border-transparent cursor-pointer group h-full flex flex-col">
-                    {recPost.featuredImage && (
-                      <div className="aspect-[16/9] overflow-hidden bg-gradient-to-br from-[#C5A059]/10 to-[#EBD598]/20">
+                    {/* Uniform 16:9 block regardless of image, so a post without a
+                        photo doesn't collapse into a short mismatched card. */}
+                    <div className="aspect-[16/9] overflow-hidden bg-gradient-to-br from-[#C5A059]/10 to-[#EBD598]/20">
+                      {recPost.featuredImage ? (
                         <img loading="lazy" decoding="async"
                           src={recPost.featuredImage}
-                          alt={recPost.title}
+                          alt={recPost.featuredImageAlt || recPost.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
-                      </div>
-                    )}
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#C5A059]/15 via-[#EBD598]/20 to-[#C5A059]/10">
+                          <span
+                            aria-hidden="true"
+                            className="font-display text-2xl tracking-[0.3em] text-[#C5A059]/50 group-hover:text-[#C5A059]/70 transition-colors"
+                          >
+                            SH
+                          </span>
+                        </div>
+                      )}
+                    </div>
                     <div className="p-5 flex-1 flex flex-col">
                       <h3 className="text-lg font-display font-normal text-[#0F172A] mb-2 group-hover:text-[#C5A059] transition-colors line-clamp-2">
                         {recPost.title}
