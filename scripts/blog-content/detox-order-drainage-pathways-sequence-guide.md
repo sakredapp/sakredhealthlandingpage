@@ -117,7 +117,9 @@ The lymphatic system has no central pump. At rest, intrinsic contraction of lymp
 
 Havas and colleagues quantified this in the *Journal of Physiology* in 1997, tracking labeled albumin cleared from the vastus lateralis in eight men: **0.04% per minute at rest, rising three- to sixfold with 100 submaximal contractions over 10 minutes.** That is the single clearest number in this entire sequence, and it points at movement rather than any technique. Which matters, because a 2024 analysis in *The Lancet Global Health* found 31.3% of adults worldwide — 1.8 billion people — insufficiently active in 2022, up from 23.4% in 2000.
 
-Passive techniques are graded lower and should be. Our [21-Day Lymphatic Drainage Routine](/blog/lymphatic-drainage-routine-21-day-guide) covers what manual drainage, dry brushing, rebounding, and sauna each have — and don't have — behind them. **Evidence: strong for muscle contraction; weak for passive brushing in healthy people.**
+Move first, then. If you only do one thing for lymph, walk — the measurement above is unambiguous and nothing else in this sequence is backed that cleanly.
+
+That is not an argument against the passive techniques, and we want to be careful here, because "movement is measured" and "brushing is worthless" are different claims and only the first one is ours. Dry brushing toward the heart follows lymphatic anatomy and has been practised across Ayurvedic *garshana* and Nordic traditions for centuries. Nobody has measured it, and nobody will — there is no patent on a bristle brush and so no sponsor for the study. Our [21-Day Lymphatic Drainage Routine](/blog/lymphatic-drainage-routine-21-day-guide) covers what manual drainage, dry brushing, rebounding and sauna each have behind them. **Evidence: strong and quantified for muscle contraction; passive techniques are anatomically coherent and traditionally durable, but unmeasured rather than disproven.**
 
 ## Sweating: the honest accounting
 

@@ -69,7 +69,9 @@ The human data is real but modest. In a 2014 randomized trial in *Cancer Prevent
 
 One practical detail worth more than any supplement: **cooking destroys myrosinase**, the enzyme that converts glucoraphanin to sulforaphane. In a 2018 crossover study in *Molecular Nutrition & Food Research*, 12 adults ate 200 g of cooked broccoli with or without 1 g of powdered brown mustard seed; urinary sulforaphane metabolite rose from 9.8 to 44.7 µmol per gram creatinine — over four times more. Eat some crucifers raw, or add mustard powder, horseradish, or wasabi to the cooked version.
 
-**Bitter foods** — artichoke, dandelion, arugula — are traditional choleretics. The classic human measurement is a 1994 randomized crossover pilot in *Phytomedicine*: 20 subjects given 1.92 g of artichoke extract intraduodenally showed a 127.3% rise in bile secretion at 30 minutes and 151.5% at 60. Note the caveats — 20 people, a concentrated extract delivered straight into the duodenum, in 1994. Eating an artichoke is not that experiment. **Evidence: limited.**
+**Bitter foods** — artichoke, dandelion, arugula — are traditional choleretics. The classic human measurement is a 1994 randomized crossover pilot in *Phytomedicine*: 20 subjects given 1.92 g of artichoke extract intraduodenally showed a 127.3% rise in bile secretion at 30 minutes and 151.5% at 60. Note the caveats — 20 people, a concentrated extract delivered straight into the duodenum, in 1994. Eating an artichoke is not that experiment, and we are not going to claim it is.
+
+But notice which direction the gap runs. Bitter greens before a meal are not a modern supplement idea; they are standard practice across European, Ayurvedic and Chinese kitchens, and the word *choleretic* exists because people observed the effect long before anyone cannulated a duodenum. The 1994 study is one attempt to measure something that has been acted on for centuries. **Evidence: one small human measurement supporting a long-standing traditional practice; nobody has run the trial on eating the food, and nobody is going to fund one on artichokes.**
 
 ## Open the exit route: fiber and hydration
 
