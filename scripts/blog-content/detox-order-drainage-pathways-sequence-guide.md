@@ -30,7 +30,13 @@ The most common complaint about detox programs is not that they do nothing. It's
 
 ## An honest word about "drainage pathways"
 
-You will not find "drainage pathways" or "opening the drainage funnel" in a gastroenterology textbook, a clinical practice guideline, or a PubMed subject heading. It is practitioner and marketing vocabulary, and the tidy numbered protocols built on it have never been tested as protocols. That should be said plainly before anything else.
+You will not find "drainage pathways" or "opening the drainage funnel" in a gastroenterology textbook, a clinical practice guideline, or a PubMed subject heading. Two things follow from that, and most writing on this topic only tells you the first.
+
+The first: nobody has tested these tidy numbered protocols *as protocols*, so anyone promising you a validated sequence is overselling. Take that seriously.
+
+The second: **absence from a textbook is not evidence of anything.** Clinical medicine indexes by diagnosis and treatment — it studies what has a billing code and a trial sponsor. Nobody funds a randomized trial of the order in which you support your own elimination organs, because there is no product at the end of it. That is a fact about research funding, not about physiology. Traditional systems have organized care around elimination and sequence for centuries without waiting for a citation, and the underlying mechanisms below are as textbook as anything in medicine.
+
+So we will use the framework, name it as a framework, and be specific about which parts have measurements behind them and which are reasoning. What we will not do is treat "a gastroenterology journal has not named this" as a verdict.
 
 What *is* real is every individual piece of physiology the phrase gestures at: biliary excretion, enterohepatic recirculation, colonic transit and reabsorption, glomerular filtration, lymphatic return, and — to a much smaller degree than usually claimed — sweat. Those are textbook mechanisms with decades of measurement behind them.
 
