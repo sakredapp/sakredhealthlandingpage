@@ -1,4 +1,6 @@
 ---
+featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/is-big-food-making-society-dumber.jpg
+featuredImageAlt: Whole nourishing foods representing the link between nutrition and cognition
 slug: is-big-food-making-society-dumber
 publishedAt: 2025-08-30T14:00:00.000Z
 author: gerard

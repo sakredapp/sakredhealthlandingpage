@@ -1,4 +1,6 @@
 ---
+featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/do-sugary-drinks-cause-insulin-resistance.jpeg
+featuredImageAlt: Sweetened soft drinks in glass bottles on a plain surface
 slug: do-sugary-drinks-cause-insulin-resistance
 publishedAt: 2025-12-07T14:00:00.000Z
 author: gerard

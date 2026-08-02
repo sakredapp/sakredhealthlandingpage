@@ -1,4 +1,6 @@
 ---
+featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/what-a-pumpkin-spice-latte-does-to-your-body.jpeg
+featuredImageAlt: A pumpkin spice latte in a takeaway cup with autumn spices
 slug: what-a-pumpkin-spice-latte-does-to-your-body
 publishedAt: 2025-11-07T14:00:00.000Z
 author: gerard

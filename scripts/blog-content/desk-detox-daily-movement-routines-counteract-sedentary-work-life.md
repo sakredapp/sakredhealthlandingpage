@@ -1,4 +1,6 @@
 ---
+featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/desk-detox-daily-movement-routines-counteract-sedentary-work-life.jpeg
+featuredImageAlt: A workspace set up to encourage standing and movement through the day
 author: jace
 slug: desk-detox-daily-movement-routines-counteract-sedentary-work-life
 publishedAt: 2026-06-23T14:00:00.000Z

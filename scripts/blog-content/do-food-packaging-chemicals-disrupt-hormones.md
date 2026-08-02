@@ -1,4 +1,6 @@
 ---
+featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/do-food-packaging-chemicals-disrupt-hormones.jpeg
+featuredImageAlt: Plastic food containers and packaging on a clean surface
 slug: do-food-packaging-chemicals-disrupt-hormones
 publishedAt: 2026-02-05T14:00:00.000Z
 author: jace
@@ -86,13 +88,19 @@ It is not the same as a demonstrated effect on human health at real-world doses.
 
 Notice how much sits in the second list. That is not us hedging — it is the actual state of the field, and it is why this post makes no recommendations dressed up as science.
 
-## What we are not going to tell you
+## The ideal, and the floor
 
-We are not going to tell you to throw out your plastic containers, buy a particular brand of cookware, or take a supplement to "detox" these compounds. There is no evidence that would justify any of it, and the wellness industry's confidence on this topic vastly exceeds the evidence base.
+Let's separate two questions that usually get mashed together: *what would be ideal*, and *what are we going to tell you to do.*
 
-What can be said without overstepping is modest and mostly free: this is one more reason that food prepared from whole ingredients passes through fewer industrial systems than food assembled in a factory — which is the same conclusion the rest of this section reaches by better-evidenced routes, like [the calorie effect of ultra-processed food](/blog/do-ultra-processed-foods-make-you-eat-more) and [what sugary drinks do to the liver](/blog/do-sugary-drinks-cause-insulin-resistance). If the packaging chemistry turns out to matter, that habit already accounts for it. If it turns out not to, nothing was lost.
+**The ideal is not complicated.** Glass, stainless steel, and ceramic do not leach plasticizers into your food, because there are none in them to leach. Food that never sat in a lined can, never got microwaved in a plastic tub, and never came wrapped in film has fewer opportunities to pick up something nobody has fully characterized. If you wanted to be perfect about this, that is the direction — and it is worth naming plainly, because most coverage of this topic skips straight past the ideal to argue about whether the current limits are adequate.
 
-That is a genuinely weaker claim than "Big Food is poisoning your hormones." It is the one the evidence supports.
+**What we are not going to do is tell you to throw out your kitchen.** Not because plastic is proven fine, but because we cannot show you the size of the benefit, and we are not going to manufacture urgency we cannot measure. We are also not going to sell you a supplement to "detox" these compounds, or a particular brand of cookware. Nobody has demonstrated that any specific consumer swap meaningfully lowers total body burden, and anyone claiming a number there is guessing.
+
+**So here is the honest shape of it.** The ideal direction is clear and costs nothing to drift toward. Glass containers for leftovers, not microwaving in plastic, decanting hot food out of takeaway containers, less canned and packaged food overall — none of that requires believing any particular regulator got it right. It is free, it is reversible, and it moves you the right way whether or not the science lands where the cautious reading suggests.
+
+What we will not do is dress those choices up as proven interventions. They are the low-cost side of an open question, and that is a perfectly good reason to make them. The same logic runs through the rest of this section: food prepared from whole ingredients passes through fewer industrial systems than food assembled in a factory, which we argue on better-evidenced grounds in [the calorie effect of ultra-processed food](/blog/do-ultra-processed-foods-make-you-eat-more) and [what sugary drinks do to the liver](/blog/do-sugary-drinks-cause-insulin-resistance). If the packaging chemistry turns out to matter, that habit already accounts for it. If it turns out not to, nothing was lost.
+
+**One thing worth sitting with.** EFSA looked at this and cut its tolerable daily intake for BPA by a factor of **20,000**. Whatever you conclude about who is right, a four-order-of-magnitude revision is not a field that has this nailed down — and "the current limits are safe" is a claim resting on the same unsettled ground as everything else here.
 
 ## Frequently asked questions
 

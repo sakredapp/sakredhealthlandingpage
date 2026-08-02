@@ -1,4 +1,6 @@
 ---
+featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/big-food-added-sugar-disclosure-gap.jpeg
+featuredImageAlt: Packaged supermarket foods arranged beside a nutrition label
 slug: big-food-added-sugar-disclosure-gap
 publishedAt: 2026-03-26T14:00:00.000Z
 author: jace

@@ -1,4 +1,6 @@
 ---
+featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/trendy-starbucks-orders-what-they-do-to-your-body.jpeg
+featuredImageAlt: Iced coffee drinks with flavoured syrups and cold foam
 slug: trendy-starbucks-orders-what-they-do-to-your-body
 publishedAt: 2025-08-10T14:00:00.000Z
 author: gerard

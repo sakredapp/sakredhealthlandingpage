@@ -1,4 +1,6 @@
 ---
+featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/employee-wellness-integrating-habit-tracking-self-care-company-culture.jpeg
+featuredImageAlt: A habit tracker and planner on a tidy desk
 author: michael
 slug: employee-wellness-integrating-habit-tracking-self-care-company-culture
 publishedAt: 2026-04-25T14:00:00.000Z

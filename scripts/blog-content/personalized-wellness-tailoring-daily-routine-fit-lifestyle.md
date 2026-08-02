@@ -1,4 +1,6 @@
 ---
+featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/personalized-wellness-tailoring-daily-routine-fit-lifestyle.jpeg
+featuredImageAlt: Everyday wellness items arranged for an individual daily routine
 author: jace
 slug: personalized-wellness-tailoring-daily-routine-fit-lifestyle
 publishedAt: 2025-11-07T14:00:00.000Z

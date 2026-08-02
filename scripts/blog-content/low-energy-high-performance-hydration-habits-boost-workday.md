@@ -1,4 +1,6 @@
 ---
+featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/low-energy-high-performance-hydration-habits-boost-workday.jpeg
+featuredImageAlt: A glass of water and a filled bottle on a work desk
 author: jace
 slug: low-energy-high-performance-hydration-habits-boost-workday
 publishedAt: 2026-01-06T14:00:00.000Z

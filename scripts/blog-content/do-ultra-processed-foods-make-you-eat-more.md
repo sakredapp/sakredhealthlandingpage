@@ -1,4 +1,6 @@
 ---
+featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/do-ultra-processed-foods-make-you-eat-more.jpeg
+featuredImageAlt: Ultra-processed packaged snacks beside whole unprocessed ingredients
 slug: do-ultra-processed-foods-make-you-eat-more
 publishedAt: 2025-10-18T14:00:00.000Z
 author: jace

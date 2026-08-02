@@ -1,4 +1,6 @@
 ---
+featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/gut-health-daily-habits-improve-digestion-reduce-stress.jpeg
+featuredImageAlt: Fermented foods and fibre-rich vegetables arranged together
 author: gerard
 slug: gut-health-daily-habits-improve-digestion-reduce-stress
 publishedAt: 2026-04-15T14:00:00.000Z

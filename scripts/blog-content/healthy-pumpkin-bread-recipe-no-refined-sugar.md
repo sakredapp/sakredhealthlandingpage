@@ -1,4 +1,6 @@
 ---
+featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/healthy-pumpkin-bread-recipe-no-refined-sugar.jpeg
+featuredImageAlt: A sliced loaf of pumpkin bread on a wooden board
 slug: healthy-pumpkin-bread-recipe-no-refined-sugar
 publishedAt: 2025-10-28T14:00:00.000Z
 author: jace

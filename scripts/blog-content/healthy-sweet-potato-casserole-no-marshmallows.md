@@ -1,4 +1,6 @@
 ---
+featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/healthy-sweet-potato-casserole-no-marshmallows.jpeg
+featuredImageAlt: Baked sweet potato casserole with a pecan and oat topping
 slug: healthy-sweet-potato-casserole-no-marshmallows
 publishedAt: 2025-09-18T14:00:00.000Z
 author: gerard

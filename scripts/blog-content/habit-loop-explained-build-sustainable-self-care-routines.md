@@ -1,4 +1,6 @@
 ---
+featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/habit-loop-explained-build-sustainable-self-care-routines.jpeg
+featuredImageAlt: A daily routine laid out as repeating marked steps
 author: jace
 slug: habit-loop-explained-build-sustainable-self-care-routines
 publishedAt: 2026-03-06T14:00:00.000Z

@@ -1,4 +1,6 @@
 ---
+featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/building-resilient-workforce-daily-health-habits-employee-wellness.jpeg
+featuredImageAlt: A bright workplace common area set up for rest and conversation
 author: michael
 slug: building-resilient-workforce-daily-health-habits-employee-wellness
 publishedAt: 2026-08-02T14:00:00.000Z

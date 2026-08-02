@@ -1,4 +1,6 @@
 ---
+featuredImage: https://dupymdjsuvirkwadanjt.supabase.co/storage/v1/object/public/blogimages/digital-overload-daily-habits-reduce-screen-fatigue-boost-focus.jpeg
+featuredImageAlt: A desk with screens powered down during a deliberate break
 author: jace
 slug: digital-overload-daily-habits-reduce-screen-fatigue-boost-focus
 publishedAt: 2026-05-05T14:00:00.000Z
