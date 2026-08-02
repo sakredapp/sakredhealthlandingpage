@@ -53,7 +53,8 @@ async function main() {
       const a = parseArticle(readFileSync(join(CONTENT_DIR, file), "utf8"), file);
       const { rows } = await pool.query(
         `SELECT id, content, title, excerpt, author, featured_image, featured_image_alt,
-                tags, seo_title, seo_description, seo_keywords, published_at
+                tags, seo_title, seo_description, seo_keywords, published_at,
+                published, status
            FROM blog_posts WHERE slug = $1`,
         [a.slug]
       );
@@ -77,7 +78,9 @@ async function main() {
           r.seo_title === (a.seoTitle ?? null) &&
           r.seo_description === (a.seoDescription ?? null) &&
           sameList(r.seo_keywords, a.seoKeywords) &&
-          sameDate(r.published_at, a.publishedAt)
+          sameDate(r.published_at, a.publishedAt) &&
+          r.published === true &&
+          r.status === "published"
         ) {
           unchanged++;
           continue;
@@ -86,7 +89,8 @@ async function main() {
           `UPDATE blog_posts SET title=$2, excerpt=$3, content=$4, tags=$5,
              seo_title=$6, seo_description=$7, seo_keywords=$8, updated_at=NOW(),
              published_at=COALESCE($9::timestamptz, published_at),
-             author=$10, featured_image=$11, featured_image_alt=$12
+             author=$10, featured_image=$11, featured_image_alt=$12,
+             published=true, status='published'
            WHERE slug=$1`,
           [a.slug, a.title, a.excerpt, a.content, a.tags || null,
            a.seoTitle || null, a.seoDescription || null, a.seoKeywords || null,
