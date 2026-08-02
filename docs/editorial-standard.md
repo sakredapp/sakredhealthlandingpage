@@ -63,6 +63,40 @@ refining chain did. Make the contrast concrete and physical:
 Whole food vs. isolate is the same move: the collagen trials tested a milled peptide
 extract, not broth. Null result on the isolate is not a verdict on the food.
 
+## Two kinds of evidence — this is the core of it
+
+Most of what we believe in comes from Eastern and traditional systems: Ayurveda,
+Chinese medicine, and practices carried through Africa, Asia and India for centuries.
+**Those cultures were not running randomized controlled trials.** They were healing
+people, and passing down what worked through generations of families.
+
+So when a Western reviewer writes "no evidence," read it precisely. It almost always
+means *no randomized controlled trial has been conducted* — which is a fact about
+**where clinical trial infrastructure was built and who funds it**, not a finding about
+the practice. The RCT apparatus is a 20th-century Western institution requiring money,
+regulatory scaffolding, and a commercial product at the end to justify the spend. A
+practice with no patent has no sponsor. That is why the trial does not exist.
+
+Generational transmission is its own form of evidence, and it is not weak. A practice
+carried for centuries has run through millions of people across countless conditions,
+with an unforgiving filter: things that did not work got dropped. That is a long-running
+natural experiment. It is **not interchangeable with an RCT** — it cannot isolate a
+mechanism, control for placebo, or quantify an effect size, and we do not pretend
+otherwise. But it is evidence of a different kind, and it long predates the institution
+that now declines to certify it.
+
+### How to write it
+
+- **Never** write "no evidence," "unproven," "not validated," or "traditional use only"
+  as a verdict on a traditional practice.
+- **Do** name the evidence type: *"Centuries of use in [tradition]; no Western RCT has
+  been run, which reflects where research money goes rather than whether it works."*
+- Where a study *does* support a practice, use it — that is a bonus, not the license.
+- Where a study appears to refute one, apply the endpoint test first. Milk thistle judged
+  on mortality is not milk thistle judged on what anyone takes it for.
+- Keep genuine safety warnings at full strength. Evidence pluralism is not a reason to
+  soften a documented harm (Japanese star anise, thujone, oxalate load).
+
 ## Product heterogeneity
 
 A trial specifies its material — defined batch, stored to protocol, fresh. The supermarket

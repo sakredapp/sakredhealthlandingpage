@@ -67,7 +67,7 @@ The thoracic duct empties in the chest, where pressure swings with every breath;
 
 The Finnish cohort data is the most impressive evidence anywhere in this protocol. Laukkanen and colleagues followed 2,315 middle-aged men in the Kuopio Ischaemic Heart Disease study for a median 20.7 years and reported in JAMA Internal Medicine (2015) that men taking 4–7 saunas weekly had a hazard ratio of 0.37 (95% CI 0.18–0.75) for sudden cardiac death versus once-weekly bathers; all-cause mortality was 30.8% versus 49.1%. The same cohort, in Age and Ageing (2017), showed HR 0.34 (95% CI 0.16–0.71) for dementia. Acutely, a single 30-minute session at 73°C dropped mean systolic pressure from 137 to 130 mmHg and carotid-femoral pulse wave velocity from 9.8 to 8.6 m/s in 102 adults with cardiovascular risk factors (Journal of Human Hypertension, 2018).
 
-Two caveats. These are observational cohorts in a culture where sauna use is universal, so frequent bathers may simply be healthier. And none of it measured lymph: the lymphatic rationale is indirect, resting on heat stress raising cardiac output and skin blood flow — which a 2018 American Journal of Physiology review notes can reach 7–8 L/min — meaning more capillary filtration and more lymph formed. Reasonable, unproven. Infrared sauna, though popular, has nothing approaching this evidence base.
+Two caveats. These are observational cohorts in a culture where sauna use is universal, so frequent bathers may simply be healthier. And none of it measured lymph: the lymphatic rationale is indirect, resting on heat stress raising cardiac output and skin blood flow — which a 2018 American Journal of Physiology review notes can reach 7–8 L/min — meaning more capillary filtration and more lymph formed. Mechanistically sound, and untested for this specific endpoint — which is a gap in the research agenda, not a mark against the practice. Infrared sauna, though popular, has nothing approaching this evidence base.
 
 **Hot-cold contrast showers — evidence grade: moderate for recovery, weak for anything else.**
 
@@ -81,7 +81,7 @@ These two get lumped together constantly. Their evidence bases could not be more
 
 The Cochrane review by Ezzo and colleagues (2015) concluded that manual lymphatic drainage is safe and well tolerated and may add benefit alongside compression bandaging. A larger meta-analysis of 17 RCTs and 1,911 patients in Medicine (Liang et al., 2020) was more sober: overall, MLD did not significantly reduce lymphedema (SMD −0.09, 95% CI −0.85 to 0.67), though it did in patients under 60 and at one month of intervention. Encouragingly for a home protocol, a 2025 non-inferiority randomized trial in Breast Cancer Research and Treatment found self-administered decongestive therapy achieved 44.7% limb volume reduction versus 49.2% for certified-therapist care in 50 women — non-inferior, with the self-care group still improving at three months.
 
-The critical caveat: every one of those trials studied people with diagnosed lymphedema. Extrapolating to "detox massage for healthy people" is not supported. Light self-massage toward the collarbone and armpits is safe, pleasant, and physiologically sensible — it is not a validated intervention absent lymphedema.
+The critical caveat, and it cuts in a direction worth naming: every one of those trials studied people with **diagnosed lymphedema**. That is who gets funded, because that is who has a billing code. So we can say the technique demonstrably moves lymph in the population where it was measured — and that nobody has bothered to measure it in everyone else. Absence of a trial in healthy people is not a negative result; it is an unasked question. Light self-massage toward the collarbone and armpits is safe, pleasant, anatomically sound, and long-standing practice across manual traditions. What we will not do is quote you an effect size nobody has generated.
 
 **Dry brushing — evidence grade: traditional use only.**
 
@@ -109,11 +109,11 @@ No. Any scale change during a lymphatic routine is fluid, and it returns. The re
 
 ### How long should I dry brush, and in what direction?
 
-Two to five minutes, long strokes toward the heart, starting at the feet. The directionality follows lymphatic anatomy, which is sound reasoning — just be clear no trial has verified the practice moves lymph.
+Two to five minutes, long strokes toward the heart, starting at the feet. The directionality follows lymphatic anatomy, which is sound reasoning. No Western trial has measured whether dry brushing moves lymph — and none is coming, because there is no patent on a bristle brush and therefore nobody to fund the study. Brushing toward the heart is a practice carried through Ayurvedic *garshana* and Nordic and folk traditions for centuries, on the evidence that generations kept doing it. Take it for what it is: anatomically coherent, traditionally durable, and unmeasured by an apparatus that was never pointed at it.
 
 ### Is rebounding better than walking for lymph?
 
-There's no evidence it is. The 2025 Scientific Reports study showed thoracic duct expansion after 15 minutes of walking at 2 km/h. Use whichever you'll actually do daily.
+Nobody has run the head-to-head, so anyone ranking them is guessing. What we do have is a 2025 *Scientific Reports* study showing thoracic duct expansion after just 15 minutes of walking at 2 km/h — a very low bar, cleared by an ordinary walk. Rebounding adds rhythmic compression and gravitational loading, which is mechanistically sensible for a system with no pump of its own. Use whichever you will actually do daily; that variable dwarfs the difference between them.
 
 ### Should I do this if I have lymphedema?
 
