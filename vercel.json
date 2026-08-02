@@ -5,17 +5,39 @@
   "framework": null,
   "installCommand": "npm install",
   "rewrites": [
-    { "source": "/sitemap-dynamic.xml", "destination": "/api/sitemap-dynamic" },
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    {
+      "source": "/sitemap-dynamic.xml",
+      "destination": "/api/sitemap-dynamic"
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
   ],
   "headers": [
     {
       "source": "/api/(.*)",
       "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET,POST,PUT,DELETE,OPTIONS" },
-        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET,POST,PUT,DELETE,OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/blog/are-seed-oils-bad-for-you",
+      "destination": "/blog/do-ultra-processed-foods-make-you-eat-more",
+      "permanent": true
     }
   ]
 }
