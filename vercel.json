@@ -32,12 +32,5 @@
         }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/blog/are-seed-oils-bad-for-you",
-      "destination": "/blog/do-ultra-processed-foods-make-you-eat-more",
-      "permanent": true
-    }
   ]
 }
