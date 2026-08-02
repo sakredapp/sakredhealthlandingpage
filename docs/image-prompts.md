@@ -22,7 +22,7 @@ are current, getting traffic, and are the ones with no artwork at all.
 Save as: `big-food-added-sugar-disclosure-gap.jpg`
 
 ```
-Editorial magazine photography, landscape 1200x630. A single unbranded white
+Editorial magazine photography, wide landscape orientation. A single unbranded white
 paper bakery bag and a plain unlabeled packaged carton sitting side by side on a
 pale stone counter. The carton's back panel faces the camera, showing an
 abstract, unreadable nutrition-panel-shaped grid of thin lines. The paper bag
@@ -37,7 +37,7 @@ No text, no lettering, no logos, no watermarks, no brand marks, no faces.
 Save as: `do-ultra-processed-foods-make-you-eat-more.jpg`
 
 ```
-Editorial magazine photography, landscape 1200x630, shot from directly overhead.
+Editorial magazine photography, wide landscape orientation, shot from directly overhead.
 Two identical plain white plates on a pale stone surface. The left plate holds
 whole unprocessed foods: an apple, a boiled egg, plain oats, a small handful of
 almonds. The right plate holds the same visual volume of anonymous beige-and-tan
@@ -52,7 +52,7 @@ No text, no lettering, no logos, no watermarks, no brand marks, no faces.
 Save as: `is-big-food-making-society-dumber.jpg`
 
 ```
-Editorial magazine photography, landscape 1200x630. A vintage clear glass salt
+Editorial magazine photography, wide landscape orientation. A vintage clear glass salt
 cellar with a small tarnished brass spoon resting beside it on a worn oak table,
 next to a loose stack of mid-century school examination papers covered in
 abstract, unreadable pencil markings. Warm late-afternoon window light raking
@@ -67,7 +67,7 @@ no faces.
 Save as: `do-sugary-drinks-cause-insulin-resistance.jpg`
 
 ```
-Editorial magazine photography, landscape 1200x630. Three identical plain
+Editorial magazine photography, wide landscape orientation. Three identical plain
 unbranded clear drinking glasses in a row on a pale stone counter, each filled
 with a clear carbonated liquid, condensation beading on the sides. Beside them,
 a small precise heap of white sugar crystals on the stone — measured and
@@ -82,7 +82,7 @@ watermarks, no brand marks, no bottles, no cans, no faces.
 Save as: `do-food-packaging-chemicals-disrupt-hormones.jpg`
 
 ```
-Editorial magazine photography, landscape 1200x630. A plain unlabeled metal food
+Editorial magazine photography, wide landscape orientation. A plain unlabeled metal food
 can with its lid removed, empty and clean, standing on a pale stone laboratory
 bench beside a sheet of clear food-grade plastic film catching a soft highlight.
 Cool, neutral, slightly clinical daylight — the feel of a testing laboratory, not
@@ -96,7 +96,7 @@ no brand marks, no faces.
 Save as: `are-seed-oils-bad-for-you.jpg`
 
 ```
-Editorial magazine photography, landscape 1200x630. A plain unlabeled clear glass
+Editorial magazine photography, wide landscape orientation. A plain unlabeled clear glass
 bottle of pale golden oil on a pale stone counter, backlit so the oil glows warm
 and clean. Beside it, a scatter of raw sunflower and rapeseed seeds. Warm natural
 window light from behind, soft shadows falling toward the camera, shallow depth
@@ -109,7 +109,7 @@ no lettering, no logos, no watermarks, no brand marks, no faces.
 Save as: `what-a-pumpkin-spice-latte-does-to-your-body.jpg`
 
 ```
-Editorial magazine photography, landscape 1200x630, low three-quarter camera
+Editorial magazine photography, wide landscape orientation, low three-quarter camera
 angle at cup height. A plain unbranded white ceramic cup of orange-tan spiced
 latte on a stone surface. Beside it, loose whole spices — cinnamon sticks, star
 anise, whole cloves — and a small heap of raw sugar crystals that is
@@ -124,7 +124,7 @@ watermarks, no faces.
 Save as: `trendy-starbucks-orders-what-they-do-to-your-body.jpg`
 
 ```
-Editorial magazine photography, landscape 1200x630, shot straight on at cup
+Editorial magazine photography, wide landscape orientation, shot straight on at cup
 height. Three plain unbranded clear glass drinking vessels in a row on a pale
 stone counter, evenly spaced. Left: an orange-tan spiced latte. Middle: a pale
 milky spiced tea. Right: a dark cold brew topped with a pale cream foam layer.
@@ -141,7 +141,7 @@ lids, no straws, no logos, no text, no lettering, no watermarks, no faces.
 Save as: `healthy-cinnamon-rolls-recipe-ceylon.jpg`
 
 ```
-Editorial magazine photography, landscape 1200x630. Soft homemade cinnamon rolls
+Editorial magazine photography, wide landscape orientation. Soft homemade cinnamon rolls
 in a well-used ceramic baking dish, one roll lifted slightly on a spatula to
 reveal a tender spiral with dark date-paste filling. A thin pale yogurt glaze
 drizzled over them — NOT a thick white icing cap. Beside the dish, two small
@@ -157,7 +157,7 @@ no watermarks, no faces.
 Save as: `healthy-pumpkin-bread-recipe-no-refined-sugar.jpg`
 
 ```
-Editorial magazine photography, landscape 1200x630. A dark-crumbed pumpkin loaf
+Editorial magazine photography, wide landscape orientation. A dark-crumbed pumpkin loaf
 on a wooden board with three slices cut and fanned forward to show the moist
 interior. The crumb is visibly whole-grain — flecked and dense, not pale and
 cake-like. Beside the loaf, a few whole Medjool dates and a small open tin of
@@ -171,7 +171,7 @@ no logos, no watermarks, no faces.
 Save as: `healthy-sweet-potato-casserole-no-marshmallows.jpg`
 
 ```
-Editorial magazine photography, landscape 1200x630. A rustic ceramic baking dish
+Editorial magazine photography, wide landscape orientation. A rustic ceramic baking dish
 of mashed sweet potato casserole topped with a golden pecan-and-rolled-oat
 crumble, with toasted nuts and oats clearly visible across the surface. A serving
 spoon lifts one portion to reveal the deep orange mash underneath. Warm holiday
@@ -192,7 +192,7 @@ These share a quieter, more abstract style than the food images.
 Save as: `science-of-sleep-nightly-routines-better-rest-focus.jpg`
 
 ```
-Calm editorial wellness photography, landscape 1200x630. Rumpled white linen
+Calm editorial wellness photography, wide landscape orientation. Rumpled white linen
 bedding in soft blue pre-dawn light, a hardback book lying face-down and open on
 the covers, an unlit bedside lamp beside it. No screens or phones anywhere in
 frame. Human presence implied but no person visible. Muted stone, sage and pale
@@ -204,7 +204,7 @@ field. No text, no lettering, no logos, no watermarks, no faces.
 Save as: `gut-health-daily-habits-improve-digestion-reduce-stress.jpg`
 
 ```
-Calm editorial wellness photography, landscape 1200x630, shot from overhead.
+Calm editorial wellness photography, wide landscape orientation, shot from overhead.
 Several glass jars of fermented foods — sauerkraut, kefir, kimchi — arranged on a
 pale stone counter, with a plain ceramic mug beside them releasing a soft wisp of
 steam. Natural side light, muted stone and sage palette, matte surfaces.
@@ -217,7 +217,7 @@ faces.
 Save as: `desk-detox-daily-movement-routines-counteract-sedentary-work-life.jpg`
 
 ```
-Calm editorial wellness photography, landscape 1200x630. An empty ergonomic
+Calm editorial wellness photography, wide landscape orientation. An empty ergonomic
 office chair pushed back from a standing desk, with a yoga mat half-unrolled on
 the floor beside it. Morning light falling in long soft bands across the floor.
 Muted stone and sage palette, natural light, generous negative space. Human
@@ -229,7 +229,7 @@ watermarks, no faces.
 Save as: `digital-overload-daily-habits-reduce-screen-fatigue-boost-focus.jpg`
 
 ```
-Calm editorial wellness photography, landscape 1200x630. A smartphone lying
+Calm editorial wellness photography, wide landscape orientation. A smartphone lying
 face-down on a warm wooden table beside a closed paper notebook and a simple pen.
 Soft window light with the shadow of a houseplant falling across the surface.
 Muted stone and sage palette, matte finishes, shallow depth of field, generous
@@ -241,7 +241,7 @@ lettering, no logos, no watermarks, no faces.
 Save as: `mindful-minutes-journaling-breathwork-stress-resilience.jpg`
 
 ```
-Calm editorial wellness photography, landscape 1200x630. An open journal with
+Calm editorial wellness photography, wide landscape orientation. An open journal with
 completely blank cream pages, a fountain pen resting in the centre gutter, and a
 plain ceramic cup of tea beside it. Single-source window light from one side,
 soft shadows. Muted stone and sage palette, generous negative space, shallow
@@ -254,7 +254,7 @@ lettering, no logos, no watermarks, no faces.
 Save as: `burnout-prevention-workplace-daily-health-routines-resilience.jpg`
 
 ```
-Calm editorial wellness photography, landscape 1200x630. A quiet empty corner of
+Calm editorial wellness photography, wide landscape orientation. A quiet empty corner of
 an office at golden hour: one simple chair, a potted plant, warm low light coming
 through half-open blinds and striping the wall. Still and restful in mood rather
 than corporate. Muted stone and sage palette, generous negative space, shallow
@@ -266,7 +266,7 @@ lettering, no logos, no watermarks, no faces.
 Save as: `building-resilient-workforce-daily-health-habits-employee-wellness.jpg`
 
 ```
-Calm editorial wellness photography, landscape 1200x630. An empty modern office
+Calm editorial wellness photography, wide landscape orientation. An empty modern office
 breakroom, bright and airy, with a bowl of fresh fruit and glass water carafes on
 a clean counter. Large windows, soft natural daylight, plants in the background.
 Muted stone and sage palette with warm wood accents. Generous negative space.
@@ -278,7 +278,7 @@ faces.
 Save as: `employee-wellness-integrating-habit-tracking-self-care-company-culture.jpg`
 
 ```
-Calm editorial wellness photography, landscape 1200x630. A paper habit-tracker on
+Calm editorial wellness photography, wide landscape orientation. A paper habit-tracker on
 a wooden clipboard, showing a clean hand-drawn grid of empty squares with several
 marked by simple hand-inked checkmarks. The grid has NO written words or labels —
 checkmarks and empty boxes only. A plain mug of coffee beside it, morning window
@@ -291,7 +291,7 @@ faces.
 Save as: `habit-loop-explained-build-sustainable-self-care-routines.jpg`
 
 ```
-Calm editorial wellness photography, landscape 1200x630, shot from directly
+Calm editorial wellness photography, wide landscape orientation, shot from directly
 overhead. A single length of natural fibre rope arranged in a soft continuous
 circle on a pale stone surface, the loop closing on itself. One light source from
 the side casting a gentle shadow. Minimal and quiet, almost still-life.
@@ -309,7 +309,7 @@ Lower priority — these posts already work without artwork.
 Save as: `low-energy-high-performance-hydration-habits-boost-workday.jpg`
 
 ```
-Calm editorial wellness photography, landscape 1200x630. A plain glass water
+Calm editorial wellness photography, wide landscape orientation. A plain glass water
 bottle and a matching tumbler, both beaded with condensation, on a sunlit desk
 with a slice of lemon beside them. Sharp directional sunlight creating crisp
 shadows across the surface. Muted stone and sage palette with clear glass
@@ -321,7 +321,7 @@ watermarks, no labels, no faces.
 Save as: `nature-first-wellness-daily-habits-health-without-quick-fixes.jpg`
 
 ```
-Calm editorial wellness photography, landscape 1200x630. A worn forest walking
+Calm editorial wellness photography, wide landscape orientation. A worn forest walking
 trail in early morning mist, with soft light filtering down through tall trees
 and catching the haze. Quiet, green, unpeopled. Muted sage, moss and stone
 palette. Generous negative space, natural light only. No people, no text, no
@@ -332,7 +332,7 @@ lettering, no logos, no watermarks, no faces.
 Save as: `personalized-wellness-tailoring-daily-routine-fit-lifestyle.jpg`
 
 ```
-Calm editorial wellness photography, landscape 1200x630, overhead flat lay. A
+Calm editorial wellness photography, wide landscape orientation, overhead flat lay. A
 deliberately mismatched set of personal objects arranged on a pale stone surface:
 one running shoe, a ceramic mug of tea, a closed notebook, a pair of headphones.
 The arrangement is loose and personal rather than neatly gridded. Warm neutral
@@ -357,4 +357,20 @@ needs Ceylon bark to look different from cassia, because the difference between
 them is the point of the article. If a generated image gets those wrong,
 regenerate rather than accepting it.
 
-**Sizing.** 1200x630 landscape, saved as JPG, ideally under about 200 KB each.
+**Sizing — read this before you start.**
+
+Image models do not accept arbitrary pixel dimensions. ChatGPT generates at a
+fixed set of sizes, and the one you want is **landscape 1536x1024** (3:2). Ask
+for "landscape" explicitly if it gives you a square.
+
+Our target is 1200x630 (1.91:1), which is wider than 3:2 — so every image needs
+a **centre crop off the top and bottom**, losing roughly 15% of the height. That
+is why every prompt above asks for generous negative space and keeps the subject
+in the middle of the frame: the crop is expected, and the composition is built to
+survive it.
+
+So the flow is: generate landscape → crop to 1200x630 from the centre → save as
+JPG under about 200 KB.
+
+If you would rather not crop 23 images by hand, send them to me at whatever size
+they come out and I will batch-crop and compress them.
