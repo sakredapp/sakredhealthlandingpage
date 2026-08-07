@@ -392,15 +392,6 @@ function main() {
   // Lightweight static heads for stable pages the SPA otherwise leaves generic
   const simplePages: { path: string; title: string; description: string; h1: string; body: string }[] = [
     {
-      path: "/about",
-      title: "Our Story — Why Sakred Health Exists",
-      description:
-        "Sakred Health pairs daily-habit wellness with real coverage — life, health, mortgage protection, and retirement — one licensed agency, one dedicated agent.",
-      h1: "Why Sakred Health exists",
-      body:
-        "We think coverage and health belong in the same place. Most agencies sell you a policy and disappear until renewal; most wellness apps ignore the financial risk entirely. Sakred Health does both — a licensed agency for life, health, mortgage protection, final expense, and retirement coverage in all 50 states, paired with an app of guided daily-health protocols and one dedicated agent who knows your family.",
-    },
-    {
       path: "/get-coverage",
       title: "Get Coverage — Free Quote in Minutes",
       description:

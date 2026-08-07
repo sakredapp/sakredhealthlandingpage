@@ -11,7 +11,6 @@ import Landing from "@/pages/Landing";
 const AppPage = lazy(() => import("@/pages/AppPage"));
 const Products = lazy(() => import("@/pages/Products"));
 const ProductDetail = lazy(() => import("@/pages/ProductDetail"));
-const About = lazy(() => import("@/pages/About"));
 const StateMortgageProtection = lazy(() => import("@/pages/StateMortgageProtection"));
 const GetCoverage = lazy(() => import("@/pages/GetCoverage"));
 const Blog = lazy(() => import("@/pages/Blog"));
@@ -107,7 +106,6 @@ function Router() {
     <Switch>
       <Route path="/" component={Landing} />
       <Route path="/app" component={AppPage} />
-      <Route path="/about" component={About} />
       <Route path="/products" component={Products} />
       <Route path="/products/:slug" component={ProductDetail} />
       <Route path="/mortgage-protection/:state" component={StateMortgageProtection} />
