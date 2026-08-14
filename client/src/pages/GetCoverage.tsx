@@ -1,7 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Navigation } from "@/components/landing/Navigation";
-import { Footer } from "@/components/landing/Footer";
+import { SiteLayout } from "@/components/site/SiteLayout";
 import { Button } from "@/components/ui/button";
 import { MapPin, ArrowRight, CheckCircle2, Loader2, ShieldCheck } from "lucide-react";
 import { Link } from "wouter";
@@ -164,9 +163,8 @@ export default function GetCoverage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7]">
-      <Navigation />
-      <section className="pt-24 pb-12 lg:pb-20">
+    <SiteLayout solidHeader>
+      <section className="pt-8 pb-12 lg:pb-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -546,7 +544,6 @@ export default function GetCoverage() {
           </motion.div>
         </div>
       </section>
-      <Footer />
-    </div>
+    </SiteLayout>
   );
 }

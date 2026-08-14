@@ -1,7 +1,7 @@
 import { useParams, Link } from "wouter";
 import { ArrowLeft, Check } from "lucide-react";
-import { Navigation } from "@/components/landing/Navigation";
-import { Footer } from "@/components/landing/Footer";
+import { SiteLayout } from "@/components/site/SiteLayout";
+import { COVERAGE_GLYPHS } from "@/components/health/CoverageGlyphs";
 import { Button } from "@/components/ui/button";
 import { Reveal, StampHeading } from "@/components/motion";
 import { TextUsSection } from "@/components/TextUsSection";
@@ -17,6 +17,7 @@ export default function ProductDetail() {
   const { slug = "" } = useParams<{ slug: string }>();
   const product = getProduct(slug);
   const photo = PRODUCT_PAGE_IMAGES[slug];
+  const Glyph = COVERAGE_GLYPHS[slug];
 
   useSeo({
     title: product
@@ -41,28 +42,25 @@ export default function ProductDetail() {
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-[#FDFBF7]">
-        <Navigation />
-        <main className="pt-24 pb-20 px-4 text-center">
-          <div className="max-w-lg mx-auto py-20">
-            <h1 className="text-3xl font-display font-normal text-[#2C2C2C] mb-4">Product not found</h1>
-            <p className="text-[#2C2C2C]/60 mb-8">That page doesn't exist or has moved.</p>
-            <Button asChild className="rounded-full btn-gold-gradient text-[#2C2C2C] border border-[#C5A059]">
+      <SiteLayout solidHeader>
+        <div className="px-4 py-20 text-center">
+          <div className="max-w-lg mx-auto">
+            <h1 className="text-3xl font-display font-normal text-sakred-espresso mb-4">Product not found</h1>
+            <p className="text-sakred-ink/60 mb-8">That page doesn't exist or has moved.</p>
+            <Button asChild className="rounded-full btn-gold-gradient text-sakred-espresso border border-sakred-gold">
               <Link href="/products">See all products</Link>
             </Button>
           </div>
-        </main>
-        <Footer />
-      </div>
+        </div>
+      </SiteLayout>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7]">
-      <Navigation />
-      <main className="pt-24">
+    <SiteLayout solidHeader>
+      <div className="pt-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link href="/products" className="inline-flex items-center gap-2 text-[#C5A059] hover:underline mb-8">
+          <Link href="/products" className="inline-flex items-center gap-2 text-sakred-gold-deep hover:underline mb-8">
             <ArrowLeft className="w-4 h-4" />
             <span>All products</span>
           </Link>
@@ -71,22 +69,27 @@ export default function ProductDetail() {
             {/* copy + animated demo */}
             <div>
               <Reveal>
-                <p className="text-sm font-medium uppercase tracking-wider text-[#C5A059] mb-3">{product.pillar}</p>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-normal text-[#2C2C2C] mb-3 leading-tight">
+                {Glyph && (
+                  <div className="mb-5 h-16 w-24 opacity-90">
+                    <Glyph />
+                  </div>
+                )}
+                <p className="text-sm font-medium uppercase tracking-wider text-sakred-gold-deep mb-3">{product.pillar}</p>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-normal text-sakred-espresso mb-3 leading-tight">
                   {product.title}
                 </h1>
-                <p className="text-xl text-[#2C2C2C]/80 mb-5">{product.tagline}</p>
-                <p className="text-lg text-[#2C2C2C]/65 leading-relaxed mb-8">{product.blurb}</p>
+                <p className="text-xl text-sakred-ink/80 mb-5">{product.tagline}</p>
+                <p className="text-lg text-sakred-ink/65 leading-relaxed mb-8">{product.blurb}</p>
               </Reveal>
 
               <Reveal delay={0.12}>
                 <ul className="space-y-3 mb-8">
                   {product.points.map((pt) => (
                     <li key={pt} className="flex items-start gap-3">
-                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-[#C5A059] to-[#EBD598] flex items-center justify-center mt-0.5">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-sakred-gold to-sakred-gold-light flex items-center justify-center mt-0.5">
                         <Check className="w-3.5 h-3.5 text-white" />
                       </span>
-                      <span className="text-[#2C2C2C]/75 leading-relaxed">{pt}</span>
+                      <span className="text-sakred-ink/75 leading-relaxed">{pt}</span>
                     </li>
                   ))}
                 </ul>
@@ -102,12 +105,12 @@ export default function ProductDetail() {
             <Reveal delay={0.1} y={24}>
               <div
                 id="inquire"
-                className="scroll-mt-28 bg-white rounded-2xl border border-[#E8E4DC] p-6 sm:p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] lg:sticky lg:top-24"
+                className="scroll-mt-28 bg-sakred-surface rounded-2xl border border-sakred-stone p-6 sm:p-8 shadow-[0_20px_44px_-30px_rgba(28,26,23,0.45)] lg:sticky lg:top-24"
               >
-                <h2 className="font-display font-semibold text-xl text-[#2C2C2C] mb-1">
+                <h2 className="font-display font-semibold text-xl text-sakred-espresso mb-1">
                   Inquire about {product.title}
                 </h2>
-                <p className="text-sm text-[#2C2C2C]/55 mb-6">
+                <p className="text-sm text-sakred-ink/55 mb-6">
                   A licensed agent will reach out — no obligation, no pressure.
                 </p>
                 <ProductIntakeForm
@@ -127,7 +130,7 @@ export default function ProductDetail() {
 
         {/* Deep-dive sections */}
         {product.detailSections?.map((section) => (
-          <section key={section.heading} className="py-12 lg:py-16 mt-12 bg-[#F6F4EF]">
+          <section key={section.heading} className="py-12 lg:py-16 mt-12 bg-sakred-surface-alt">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
               <div
                 className={`grid grid-cols-1 ${
@@ -137,21 +140,21 @@ export default function ProductDetail() {
                 <div>
                   <StampHeading
                     text={section.heading}
-                    className="text-2xl sm:text-3xl font-display font-normal text-[#2C2C2C] mb-5"
+                    className="text-2xl sm:text-3xl font-display font-normal text-sakred-espresso mb-5"
                   />
                   {section.intro?.map((p) => (
                     <Reveal key={p.slice(0, 24)} delay={0.08}>
-                      <p className="text-[#2C2C2C]/70 leading-relaxed mb-4">{p}</p>
+                      <p className="text-sakred-ink/70 leading-relaxed mb-4">{p}</p>
                     </Reveal>
                   ))}
                   <Reveal delay={0.12}>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 my-6">
                       {section.items.map((item) => (
                         <li key={item.name} className="flex items-start gap-2.5">
-                          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#C5A059] shrink-0" />
+                          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-sakred-gold shrink-0" />
                           <span className="text-sm sm:text-base leading-snug">
-                            <span className="font-display font-semibold text-[#2C2C2C]">{item.name}</span>
-                            <span className="text-[#2C2C2C]/55"> — {item.description}</span>
+                            <span className="font-display font-semibold text-sakred-espresso">{item.name}</span>
+                            <span className="text-sakred-ink/55"> — {item.description}</span>
                           </span>
                         </li>
                       ))}
@@ -159,7 +162,7 @@ export default function ProductDetail() {
                   </Reveal>
                   {section.outro && (
                     <Reveal delay={0.16}>
-                      <p className="text-[#2C2C2C]/70 leading-relaxed">{section.outro}</p>
+                      <p className="text-sakred-ink/70 leading-relaxed">{section.outro}</p>
                     </Reveal>
                   )}
                 </div>
@@ -168,7 +171,7 @@ export default function ProductDetail() {
                     <img
                       src={photo.src}
                       alt={photo.alt}
-                      className="w-full h-64 lg:h-80 object-cover rounded-3xl border border-[#E8E4DC] shadow-[0_20px_50px_-25px_rgba(197,160,89,0.45)]"
+                      className="w-full h-64 lg:h-80 object-cover rounded-3xl border border-sakred-stone shadow-[0_20px_50px_-28px_rgba(28,26,23,0.5)]"
                       loading="lazy"
                     />
                   </Reveal>
@@ -183,8 +186,7 @@ export default function ProductDetail() {
         {product.slug === "life-insurance" && (
           <CoverageCalculator ctaHref="#inquire" ctaLabel="Get a real quote" />
         )}
-      </main>
-      <Footer />
-    </div>
+      </div>
+    </SiteLayout>
   );
 }

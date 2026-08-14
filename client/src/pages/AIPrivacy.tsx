@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Shield, Lock, Eye, Trash2, Download, UserCheck } from "lucide-react";
-import { Navigation } from "@/components/landing/Navigation";
-import { Footer } from "@/components/landing/Footer";
+import { SiteLayout } from "@/components/site/SiteLayout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -41,10 +40,9 @@ const privacyFeatures = [
 
 export default function AIPrivacy() {
   return (
-    <div className="min-h-screen bg-[#F9F9F7]">
-      <Navigation />
+    <SiteLayout solidHeader>
 
-      <main className="pt-24 pb-20">
+      <div className="pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -134,9 +132,7 @@ export default function AIPrivacy() {
             </Card>
           </motion.div>
         </div>
-      </main>
-
-      <Footer />
-    </div>
+      </div>
+    </SiteLayout>
   );
 }

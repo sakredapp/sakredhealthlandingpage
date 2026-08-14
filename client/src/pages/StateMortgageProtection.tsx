@@ -1,7 +1,6 @@
 import { useParams, Link } from "wouter";
 import { Check } from "lucide-react";
-import { Navigation } from "@/components/landing/Navigation";
-import { Footer } from "@/components/landing/Footer";
+import { SiteLayout } from "@/components/site/SiteLayout";
 import { Button } from "@/components/ui/button";
 import { Reveal, StampHeading } from "@/components/motion";
 import { getStateCopy } from "@/data/state-copy";
@@ -60,19 +59,17 @@ export default function StateMortgageProtection() {
 
   if (!state || !stat || !mp) {
     return (
-      <div className="min-h-screen bg-[#FDFBF7]">
-        <Navigation />
-        <main className="pt-24 pb-20 px-4 text-center">
-          <div className="max-w-lg mx-auto py-20">
+      <SiteLayout solidHeader>
+        <div className="px-4 py-20 text-center">
+          <div className="max-w-lg mx-auto">
             <h1 className="text-3xl font-display font-normal text-[#2C2C2C] mb-4">State not found</h1>
             <p className="text-[#2C2C2C]/60 mb-8">We couldn't find that state page.</p>
             <Button asChild className="rounded-full btn-gold-gradient text-[#2C2C2C] border border-[#C5A059]">
               <Link href="/products/mortgage-protection">Mortgage protection</Link>
             </Button>
           </div>
-        </main>
-        <Footer />
-      </div>
+        </div>
+      </SiteLayout>
     );
   }
 
@@ -85,9 +82,8 @@ export default function StateMortgageProtection() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7]">
-      <Navigation />
-      <main className="pt-24">
+    <SiteLayout solidHeader>
+      <div className="pt-8">
         {/* Hero */}
         <section className="pb-10 lg:pb-16">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -191,8 +187,7 @@ export default function StateMortgageProtection() {
         <TextUsSection keyword={mp.smsKeyword} productTitle="Mortgage Protection" fixedState={state.abbr} />
 
         <MortgageCalculator ctaHref="#inquire" />
-      </main>
-      <Footer />
-    </div>
+      </div>
+    </SiteLayout>
   );
 }

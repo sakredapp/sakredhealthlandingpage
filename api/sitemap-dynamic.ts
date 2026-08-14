@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { setCorsHeaders } from "./_lib/auth.js";
 import { getBlogPosts } from "./_lib/storage.js";
+import { getModalitiesWithCounts, getPublishedSlugs } from "./_lib/health-network.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   setCorsHeaders(res);
@@ -18,7 +19,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const posts = await getBlogPosts();
+    /**
+     * Blog posts and the network are fetched together — a slow directory
+     * shouldn't serialise behind the blog when Googlebot is waiting.
+     *
+     * The network calls degrade to empty rather than throwing, so a sitemap is
+     * always produced. An incomplete sitemap costs some crawl coverage; a 500
+     * costs the whole file.
+     */
+    const [posts, networkSlugs, modalities] = await Promise.all([
+      getBlogPosts(),
+      getPublishedSlugs(),
+      getModalitiesWithCounts(),
+    ]);
     const baseUrl = "https://www.sakredhealth.com";
 
     // Product route slugs (keep in sync with client/src/data/products.ts).
@@ -44,8 +57,26 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       "wisconsin","wyoming","washington-dc",
     ];
 
+    /**
+     * Only modalities with published locations are listed. A category page
+     * with nothing under it is a thin page, and asking Google to index a
+     * hundred of them is how a domain earns a quality problem (brief §8).
+     */
+    const modalityPages = modalities
+      .filter((m) => (m.locationCount ?? 0) > 0)
+      .map((m) => ({
+        loc: `/discover/${m.slug}`,
+        priority: "0.7",
+        changefreq: "weekly",
+      }));
+
     const staticPages = [
       { loc: "/", priority: "1.0", changefreq: "weekly" },
+      { loc: "/discover", priority: "0.95", changefreq: "daily" },
+      { loc: "/resources", priority: "0.8", changefreq: "weekly" },
+      { loc: "/for-practitioners", priority: "0.7", changefreq: "monthly" },
+      { loc: "/recommend", priority: "0.6", changefreq: "monthly" },
+      ...modalityPages,
       { loc: "/get-coverage", priority: "0.9", changefreq: "weekly" },
       { loc: "/products", priority: "0.9", changefreq: "weekly" },
       ...productSlugs.map((s) => ({ loc: `/products/${s}`, priority: "0.8", changefreq: "monthly" })),
@@ -70,6 +101,25 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>`;
+    }
+
+    /**
+     * Published network records only — `getPublishedSlugs` filters on
+     * `published = true`, so nothing in draft can be advertised to a crawler.
+     */
+    for (const kind of ["locations", "practitioners"] as const) {
+      for (const record of networkSlugs[kind]) {
+        const lastmod = record.updatedAt
+          ? new Date(record.updatedAt).toISOString().split("T")[0]
+          : undefined;
+        xml += `
+  <url>
+    <loc>${baseUrl}/${kind}/${record.slug}</loc>${lastmod ? `
+    <lastmod>${lastmod}</lastmod>` : ""}
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>`;
+      }
     }
 
     for (const post of posts) {

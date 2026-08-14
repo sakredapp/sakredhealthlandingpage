@@ -186,3 +186,25 @@ export const insertAbTestConversionSchema = createInsertSchema(abTestConversions
 
 export type InsertAbTestConversion = z.infer<typeof insertAbTestConversionSchema>;
 export type AbTestConversion = typeof abTestConversions.$inferSelect;
+
+/**
+ * Rate-limit counters for the public network submission endpoints.
+ *
+ * Declared here — rather than created at runtime by the API route that uses it
+ * — so the shape of production is a property of the repo and not of whichever
+ * request happened to arrive first. See api/_lib/abuse.ts.
+ *
+ * It holds no personal data. `keyHash` is an HMAC of a normalised identifier
+ * (an IP, an email, a submission id) keyed with a server secret: enough to
+ * count against, useless for identifying anyone. Rows expire and are swept.
+ */
+export const submissionThrottle = pgTable("submission_throttle", {
+  keyHash: text("key_hash").primaryKey(),
+  /** What is being limited: "practitioner:ip", "recommend:ip", "media:submission". */
+  kind: text("kind").notNull(),
+  hits: integer("hits").notNull().default(0),
+  windowStart: timestamp("window_start", { withTimezone: true }).notNull().defaultNow(),
+  expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+});
+
+export type SubmissionThrottle = typeof submissionThrottle.$inferSelect;
