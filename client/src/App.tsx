@@ -1,5 +1,6 @@
 import { Switch, Route, useLocation } from "wouter";
 import { MotionConfig } from "framer-motion";
+import { Analytics } from "@vercel/analytics/react";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider, useQuery } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -8,6 +9,14 @@ import { lazy, Suspense, useEffect } from "react";
 import Landing from "@/pages/Landing";
 
 // Every non-home route is code-split so the landing page ships only its own JS.
+// This matters more since the rebuild: /discover pulls in MapLibre, and no
+// other route should pay for it.
+const Discover = lazy(() => import("@/pages/Discover"));
+const LocationPage = lazy(() => import("@/pages/LocationPage"));
+const PractitionerPage = lazy(() => import("@/pages/PractitionerPage"));
+const Resources = lazy(() => import("@/pages/Resources"));
+const ForPractitioners = lazy(() => import("@/pages/ForPractitioners"));
+const Recommend = lazy(() => import("@/pages/Recommend"));
 const AppPage = lazy(() => import("@/pages/AppPage"));
 const Products = lazy(() => import("@/pages/Products"));
 const ProductDetail = lazy(() => import("@/pages/ProductDetail"));
@@ -30,8 +39,9 @@ const NotFound = lazy(() => import("@/pages/not-found"));
 
 function RouteFallback() {
   return (
-    <div className="min-h-screen bg-[#F9F9F7] flex items-center justify-center">
-      <div className="w-8 h-8 rounded-full border-2 border-[#C5A059]/30 border-t-[#C5A059] animate-spin" />
+    <div className="min-h-screen bg-sakred-canvas flex items-center justify-center">
+      <div className="w-8 h-8 rounded-full border-2 border-sakred-gold/30 border-t-sakred-gold animate-spin" />
+      <span className="sr-only">Loading…</span>
     </div>
   );
 }
@@ -105,6 +115,19 @@ function Router() {
     <ScrollToTop />
     <Switch>
       <Route path="/" component={Landing} />
+
+      {/* The network. Order matters: the two- and three-segment /discover
+          routes must be declared before the bare one, or wouter's Switch
+          matches "/discover" first and the category routes never fire. */}
+      <Route path="/discover/:modality/:city" component={Discover} />
+      <Route path="/discover/:modality" component={Discover} />
+      <Route path="/discover" component={Discover} />
+      <Route path="/locations/:slug" component={LocationPage} />
+      <Route path="/practitioners/:slug" component={PractitionerPage} />
+      <Route path="/recommend" component={Recommend} />
+      <Route path="/for-practitioners" component={ForPractitioners} />
+      <Route path="/resources" component={Resources} />
+
       <Route path="/app" component={AppPage} />
       <Route path="/products" component={Products} />
       <Route path="/products/:slug" component={ProductDetail} />
@@ -148,6 +171,10 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          {/* Page views + the custom funnel events in lib/analytics.ts.
+              Self-hosted by Vercel, so no third-party script and no consent
+              banner obligation for basic traffic measurement. */}
+          <Analytics />
         </TooltipProvider>
       </MotionConfig>
     </QueryClientProvider>

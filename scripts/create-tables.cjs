@@ -127,6 +127,23 @@ async function createTables() {
     `);
     console.log("✓ ab_test_conversions");
 
+    // Rate-limit counters for the public network submission endpoints.
+    // Holds HMACed identifiers only — see migrations/0001_submission_throttle.sql.
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS submission_throttle (
+        key_hash TEXT PRIMARY KEY,
+        kind TEXT NOT NULL,
+        hits INTEGER NOT NULL DEFAULT 0,
+        window_start TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+        expires_at TIMESTAMPTZ NOT NULL
+      );
+    `);
+    await client.query(`
+      CREATE INDEX IF NOT EXISTS submission_throttle_expires_at_idx
+        ON submission_throttle (expires_at);
+    `);
+    console.log("✓ submission_throttle");
+
     console.log("\nAll tables created successfully!");
   } catch (err) {
     console.error("Error:", err.message);

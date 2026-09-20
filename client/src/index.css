@@ -1,50 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+/* Fonts are loaded from index.html (preconnect + one variable-axis request).
+   The @import that used to sit here fetched a second, static-weight copy of the
+   same two families — a render-blocking round trip for bytes already in flight. */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* LIGHT MODE - Old Money Wellness Theme */
+/**
+ * SAKRED HEALTH — daylight theme.
+ *
+ * The shadcn token layer below is tuned to the same daylight palette exposed on
+ * Tailwind as `sakred-*` (see tailwind.config.ts). Both exist on purpose: the
+ * tokens keep the Radix/shadcn primitives (dialogs, selects, the admin CMS) on
+ * palette automatically, while the named `sakred-*` classes are what the
+ * marketing surfaces are composed from. Change a colour in both places or not
+ * at all — they are two views of one palette, not two palettes.
+ */
 :root {
-  --button-outline: rgba(0,0,0, .10);
-  --badge-outline: rgba(0,0,0, .05);
+  --button-outline: rgba(28,26,23, .10);
+  --badge-outline: rgba(28,26,23, .05);
   --opaque-button-border-intensity: -8;
-  --elevate-1: rgba(0,0,0, .03);
-  --elevate-2: rgba(0,0,0, .08);
-  --background: 60 9% 97%;
-  --foreground: 222 47% 11%;
-  --border: 60 6% 88%;
-  --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
-  --card-border: 60 6% 90%;
-  --sidebar: 60 7% 95%;
-  --sidebar-foreground: 222 47% 11%;
-  --sidebar-border: 60 6% 88%;
-  --sidebar-primary: 43 74% 56%;
-  --sidebar-primary-foreground: 222 47% 11%;
-  --sidebar-accent: 60 7% 92%;
-  --sidebar-accent-foreground: 222 47% 11%;
-  --sidebar-ring: 43 74% 56%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 222 47% 11%;
-  --popover-border: 60 6% 88%;
-  --primary: 43 74% 56%;
-  --primary-foreground: 222 47% 11%;
-  --secondary: 60 6% 92%;
-  --secondary-foreground: 222 47% 11%;
-  --muted: 60 6% 94%;
-  --muted-foreground: 222 20% 40%;
-  --accent: 43 60% 92%;
-  --accent-foreground: 43 74% 40%;
+  --elevate-1: rgba(28,26,23, .03);
+  --elevate-2: rgba(28,26,23, .07);
+  --background: 42 26% 93%;      /* canvas      #F1EEE7 */
+  --foreground: 36 10% 10%;      /* espresso    #1C1A17 */
+  --border: 36 30% 83%;          /* warm stone  #E0D5C5 */
+  --card: 40 100% 99%;           /* surface     #FFFDF9 */
+  --card-foreground: 36 10% 10%;
+  --card-border: 36 30% 86%;
+  --sidebar: 40 47% 95%;
+  --sidebar-foreground: 36 10% 10%;
+  --sidebar-border: 36 30% 83%;
+  --sidebar-primary: 39 48% 56%;
+  --sidebar-primary-foreground: 36 10% 10%;
+  --sidebar-accent: 39 42% 89%;
+  --sidebar-accent-foreground: 36 10% 10%;
+  --sidebar-ring: 39 48% 56%;
+  --popover: 40 100% 99%;
+  --popover-foreground: 36 10% 10%;
+  --popover-border: 36 30% 83%;
+  --primary: 39 48% 56%;         /* gold accent #C5A059 */
+  --primary-foreground: 36 10% 10%;
+  --secondary: 40 47% 95%;       /* surface alt #F8F4EC */
+  --secondary-foreground: 36 10% 10%;
+  --muted: 40 40% 94%;
+  --muted-foreground: 36 8% 42%;
+  --accent: 39 42% 89%;          /* parchment   #EFE7D8 */
+  --accent-foreground: 39 54% 35%;
   --destructive: 0 84% 42%;
   --destructive-foreground: 0 0% 100%;
-  --input: 60 6% 70%;
-  --ring: 43 74% 56%;
-  --chart-1: 43 74% 56%;
-  --chart-2: 43 60% 45%;
-  --chart-3: 43 74% 65%;
-  --chart-4: 43 50% 50%;
-  --chart-5: 43 80% 60%;
+  --input: 36 25% 75%;
+  --ring: 39 48% 56%;
+  --chart-1: 39 48% 56%;
+  --chart-2: 39 40% 40%;
+  --chart-3: 39 55% 68%;
+  --chart-4: 30 25% 45%;
+  --chart-5: 45 45% 62%;
   --font-sans: 'DM Sans', sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-mono: Menlo, monospace;
@@ -357,6 +368,300 @@
   @media (prefers-reduced-motion: reduce) {
     .glow-card::before {
       display: none;
+    }
+  }
+
+  /* ================================================================ *
+   * SAKRED HEALTH — daylight surfaces
+   *
+   * A small set of materials the network pages are built from. Each one
+   * is a *surface*, not a decoration: pick the plane a section lives on,
+   * then compose content on top of it.
+   * ================================================================ */
+
+  /**
+   * Atlas grain. The faintest paper tooth over ivory so large empty areas
+   * read as parchment rather than flat #F1EEE7. Two offset dot grids at
+   * very low alpha — cheap, no image request, invisible individually.
+   */
+  .surface-atlas {
+    background-color: #F1EEE7;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(28, 26, 23, 0.035) 1px, transparent 0),
+      radial-gradient(circle at 1px 1px, rgba(197, 160, 89, 0.05) 1px, transparent 0);
+    background-size: 26px 26px, 38px 38px;
+    background-position: 0 0, 13px 19px;
+  }
+
+  /** The grounded coverage plane — deeper, warmer, unmistakably a different
+   *  material from the discovery pages without leaving the palette. */
+  .surface-latte {
+    background-image: linear-gradient(168deg, #EFE7D8 0%, #E3D7C2 55%, #D9CBB2 100%);
+  }
+
+  /** Inverted café plane for the market / download bands. Type on this is cream. */
+  .surface-cafe {
+    background-image: linear-gradient(160deg, #4A3D30 0%, #322A22 100%);
+  }
+
+  /** A hairline that reads as drawn rather than printed — used to separate
+   *  bands without the hard 1px seam a plain border gives on warm ivory. */
+  .rule-gold {
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      rgba(197, 160, 89, 0.45) 18%,
+      rgba(197, 160, 89, 0.45) 82%,
+      transparent
+    );
+    height: 1px;
+  }
+
+  /**
+   * The shared card interaction (brief §2): 2–4px of lift, a softening
+   * shadow, and the gold border coming up. Deliberately one class so every
+   * card on the site moves by exactly the same amount.
+   */
+  .lift-card {
+    transition:
+      transform 420ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 420ms cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 420ms cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+  }
+
+  .lift-card:hover {
+    transform: translate3d(0, -3px, 0);
+    box-shadow: 0 18px 38px -22px rgba(28, 26, 23, 0.34);
+    border-color: rgba(197, 160, 89, 0.55);
+  }
+
+  /**
+   * Image crop movement on hover (§2). The wrapper clips; the <img> inside
+   * eases up by a hair. Scale rather than translate so no edge is ever
+   * exposed, and only on the image so text over it never blurs.
+   */
+  .crop-shift {
+    overflow: hidden;
+  }
+
+  .crop-shift img {
+    transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+  }
+
+  .crop-shift:hover img {
+    transform: scale(1.045);
+  }
+
+  /** Skeleton shimmer for map/list loading, on palette. */
+  .skeleton-warm {
+    background-color: #E8E1D4;
+  }
+
+  /* --- MapLibre chrome, restyled to the palette ------------------- */
+  .maplibregl-ctrl-attrib,
+  .maplibregl-ctrl-attrib a {
+    background: rgba(255, 253, 249, 0.82) !important;
+    color: rgba(28, 26, 23, 0.55) !important;
+    font-family: var(--font-sans) !important;
+    font-size: 10px !important;
+  }
+
+  .maplibregl-ctrl-group {
+    background: #FFFDF9 !important;
+    border: 1px solid rgba(224, 213, 197, 0.9) !important;
+    box-shadow: 0 6px 18px -12px rgba(28, 26, 23, 0.4) !important;
+    border-radius: 10px !important;
+    overflow: hidden;
+  }
+
+  .maplibregl-ctrl-group button + button {
+    border-top: 1px solid rgba(224, 213, 197, 0.7) !important;
+  }
+
+  .maplibregl-canvas:focus {
+    outline: 2px solid rgba(197, 160, 89, 0.6);
+    outline-offset: -2px;
+  }
+
+  /**
+   * The community rail.
+   *
+   * The track holds the cards twice and translates by exactly -50%, so the
+   * second copy is in the first copy's starting position when the animation
+   * restarts — a seamless loop with nothing measuring anything in JS.
+   */
+  .marquee {
+    overflow: hidden;
+  }
+
+  .marquee__track {
+    width: max-content;
+    animation: marquee-slide 46s linear infinite;
+  }
+
+  .marquee:hover .marquee__track,
+  .marquee:focus-within .marquee__track {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee-slide {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-50%, 0, 0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee__track {
+      animation: none;
+    }
+
+    /* Stopped mid-loop the rail would just be a truncated row, so let it
+       scroll by hand instead. */
+    .marquee {
+      overflow-x: auto;
+    }
+  }
+
+  /* --- Map pins --------------------------------------------------- *
+   * Rendered as real <button>s by SakredMap, so they are tab-reachable.
+   * A pin has three states and each one has to be readable at a glance on
+   * a pale ivory map: resting (gold dot, white ring), hovered (grown, gold
+   * halo), selected (espresso ring, larger, halo held open).
+   */
+  .sakred-pin {
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    /*
+     * NEVER animate `transform` on this element.
+     *
+     * MapLibre positions a marker by writing
+     * `transform: translate(-50%,-50%) translate(Xpx,Ypx)` inline, and a CSS
+     * animation beats an inline style in the cascade. An earlier version put
+     * the landing animation here with `both`, so the final keyframe
+     * (`transform: translateY(0) scale(1)`) persisted forever and permanently
+     * overwrote MapLibre's positioning — every one of the 14 pins stacked at
+     * the map's origin while the list beside it correctly said "14 practices in
+     * this view". The map looked empty and nothing threw.
+     *
+     * So this element animates OPACITY ONLY. The movement lives on the dot,
+     * which MapLibre does not touch.
+     */
+    animation: pin-appear 520ms cubic-bezier(0.16, 1, 0.3, 1) var(--pin-delay, 0s) both;
+  }
+
+  @keyframes pin-appear {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* The landing movement, on an element MapLibre never writes to. */
+  @keyframes pin-land {
+    from { transform: translateY(-10px) scale(0.4); }
+    60%  { transform: translateY(0) scale(1.12); }
+    to   { transform: translateY(0) scale(1); }
+  }
+
+  .sakred-pin__halo {
+    position: absolute;
+    inset: -7px;
+    border-radius: 9999px;
+    background: rgba(197, 160, 89, 0.22);
+    opacity: 0;
+    transform: scale(0.6);
+    transition:
+      opacity 220ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .sakred-pin__dot {
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: #C5A059;
+    border: 2.5px solid #FFFDF9;
+    box-shadow: 0 4px 10px -3px rgba(28, 26, 23, 0.45);
+    transition:
+      transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+      background-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 220ms cubic-bezier(0.16, 1, 0.3, 1);
+    animation: pin-land 520ms cubic-bezier(0.16, 1, 0.3, 1) var(--pin-delay, 0s) both;
+  }
+
+  .sakred-pin:hover .sakred-pin__halo,
+  .sakred-pin:focus-visible .sakred-pin__halo {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .sakred-pin:hover .sakred-pin__dot,
+  .sakred-pin:focus-visible .sakred-pin__dot {
+    transform: scale(1.14);
+  }
+
+  .sakred-pin:focus-visible {
+    outline: none;
+  }
+
+  .sakred-pin:focus-visible .sakred-pin__dot {
+    border-color: #1C1A17;
+  }
+
+  .sakred-pin.is-selected {
+    z-index: 5;
+  }
+
+  .sakred-pin.is-selected .sakred-pin__halo {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+
+  .sakred-pin.is-selected .sakred-pin__dot {
+    transform: scale(1.3);
+    background: #8A6C27;
+    border-color: #FFFDF9;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sakred-pin,
+    .sakred-pin__dot {
+      animation: none;
+    }
+
+    .sakred-pin__dot,
+    .sakred-pin__halo {
+      transition: none;
+    }
+  }
+
+  /**
+   * The site's motion contract, enforced in CSS as well as in framer-motion
+   * (App.tsx sets MotionConfig reducedMotion="user"). Belt and braces: the
+   * ambient CSS animations above are not framer's to switch off.
+   */
+  @media (prefers-reduced-motion: reduce) {
+    .lift-card,
+    .crop-shift img {
+      transition: none;
+    }
+
+    .lift-card:hover {
+      transform: none;
+    }
+
+    .crop-shift:hover img {
+      transform: none;
+    }
+
+    .animate-drift,
+    .animate-draw-line {
+      animation: none !important;
     }
   }
 }

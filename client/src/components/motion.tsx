@@ -22,12 +22,30 @@ import {
   useReducedMotion,
   useScroll,
   useSpring,
+  useTransform,
+  type MotionValue,
   type TargetAndTransition,
   type Variants,
 } from "framer-motion";
 
 /** The "settle" curve. One easing for the whole site keeps motion feeling like one system. */
 export const EASE = [0.16, 1, 0.3, 1] as const;
+
+/**
+ * The site's timing scale (brief §26). Seconds, because that is what
+ * framer-motion takes. Nothing should invent a duration outside this table —
+ * if a new interaction doesn't fit one of these, it is the wrong interaction.
+ */
+export const DUR = {
+  /** Micro interaction: hover, toggle, chip select. */
+  micro: 0.16,
+  /** A card, panel or list item arriving. */
+  card: 0.44,
+  /** The workhorse scroll reveal. */
+  reveal: 0.62,
+  /** The hero's opening sequence, start to finish. */
+  hero: 1.0,
+} as const;
 
 /** Fire reveals slightly before the element reaches the bottom edge, so content is
  *  already settling as it scrolls into view instead of popping in late. */
@@ -311,6 +329,346 @@ export function CountUp({
         {suffix}
       </span>
     </span>
+  );
+}
+
+/* ------------------------------------------------------------------ *
+ * 6 · Stagger container / child
+ * ------------------------------------------------------------------ */
+
+const staggerParent = (step: number, delay: number): Variants => ({
+  hidden: {},
+  visible: { transition: { staggerChildren: step, delayChildren: delay } },
+});
+
+const staggerChild = (y: number): Variants => ({
+  hidden: { opacity: 0, y },
+  visible: { opacity: 1, y: 0, transition: { duration: DUR.card, ease: EASE } },
+});
+
+interface StaggerProps {
+  children: ReactNode;
+  className?: string;
+  /** Seconds between children. */
+  step?: number;
+  delay?: number;
+  y?: number;
+  as?: "div" | "ul" | "ol";
+}
+
+/**
+ * Deals its children in one after another when the group scrolls into view.
+ *
+ * Wrap each child in `<StaggerItem>`. Unlike calling `Reveal` in a `.map()`
+ * with a computed delay, the timing lives in one place, so a row of four and a
+ * grid of twelve are visibly the same gesture.
+ */
+export function StaggerChildren({
+  children,
+  className,
+  step = 0.07,
+  delay = 0,
+  as = "div",
+}: StaggerProps) {
+  const reduced = useReducedMotion();
+  const Tag = as === "ul" ? motion.ul : as === "ol" ? motion.ol : motion.div;
+
+  return (
+    <Tag
+      className={className}
+      variants={staggerParent(reduced ? 0 : step, delay)}
+      initial="hidden"
+      whileInView="visible"
+      viewport={VIEWPORT}
+    >
+      {children}
+    </Tag>
+  );
+}
+
+/** One child of a `StaggerChildren` group. */
+export function StaggerItem({
+  children,
+  className,
+  y = 16,
+  as = "div",
+}: {
+  children: ReactNode;
+  className?: string;
+  y?: number;
+  as?: "div" | "li";
+}) {
+  const Tag = as === "li" ? motion.li : motion.div;
+  return (
+    <Tag className={className} variants={staggerChild(y)}>
+      {children}
+    </Tag>
+  );
+}
+
+/* ------------------------------------------------------------------ *
+ * 7 · Parallax image
+ * ------------------------------------------------------------------ */
+
+interface ParallaxImageProps {
+  src: string;
+  alt: string;
+  className?: string;
+  /** Total travel in px across the whole scroll-through. Keep it under ~60. */
+  distance?: number;
+  /** Skip lazy-loading for an above-the-fold hero image. */
+  eager?: boolean;
+  sizes?: string;
+}
+
+/**
+ * A photo that drifts against the page as it scrolls past.
+ *
+ * The image is deliberately over-sized (`h-[118%]`, pulled up by 9%) so the
+ * frame is never uncovered at either end of the travel. Motion is on the
+ * image only — any caption or text layered over the frame stays put, because
+ * text sliding under a reader's eye is the thing that makes parallax feel
+ * cheap.
+ */
+export function ParallaxImage({
+  src,
+  alt,
+  className,
+  distance = 44,
+  eager = false,
+  sizes,
+}: ParallaxImageProps) {
+  const reduced = useReducedMotion();
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [-distance / 2, distance / 2]);
+
+  return (
+    <div ref={ref} className={`relative overflow-hidden ${className ?? ""}`}>
+      <motion.img
+        src={src}
+        alt={alt}
+        sizes={sizes}
+        loading={eager ? "eager" : "lazy"}
+        decoding="async"
+        style={reduced ? undefined : { y }}
+        className="absolute inset-x-0 -top-[9%] h-[118%] w-full object-cover"
+      />
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ *
+ * 8 · Lift card
+ * ------------------------------------------------------------------ */
+
+/**
+ * Scroll-reveal plus the shared hover lift, in one wrapper.
+ *
+ * The lift itself is CSS (`.lift-card` in index.css) rather than framer state:
+ * a hover that costs a React render per pointer event is a hover that stutters
+ * on a grid of twenty cards.
+ */
+export function LiftCard({
+  children,
+  className,
+  delay = 0,
+  /** Set when the card is already inside a `StaggerChildren` group. */
+  inStagger = false,
+}: {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+  inStagger?: boolean;
+}) {
+  const reduced = useReducedMotion();
+  const classes = `lift-card ${className ?? ""}`;
+
+  if (inStagger) {
+    return (
+      <motion.div className={classes} variants={staggerChild(16)}>
+        {children}
+      </motion.div>
+    );
+  }
+
+  return (
+    <motion.div
+      className={classes}
+      initial={reduced ? false : { opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={VIEWPORT}
+      transition={{ duration: DUR.card, ease: EASE, delay }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/* ------------------------------------------------------------------ *
+ * 9 · Map pin reveal
+ * ------------------------------------------------------------------ */
+
+interface MapPinRevealProps {
+  children: ReactNode;
+  /** Position within the pin's container. */
+  style?: CSSProperties;
+  /** 0-based order in the drop sequence. */
+  index?: number;
+  /** Seconds before the first pin drops. */
+  delay?: number;
+  /** One soft pulse after landing — reserve for the one or two hero pins. */
+  pulse?: boolean;
+  className?: string;
+}
+
+/**
+ * A pin that drops onto the atlas, settles, and (optionally) pulses exactly
+ * once.
+ *
+ * "Once" is the whole point (brief §2): a pin that pulses forever stops
+ * meaning "look here" within about four seconds and becomes a distraction the
+ * eye has to actively suppress for the rest of the visit.
+ */
+export function MapPinReveal({
+  children,
+  style,
+  index = 0,
+  delay = 0,
+  pulse = false,
+  className,
+}: MapPinRevealProps) {
+  const reduced = useReducedMotion();
+  const start = delay + index * 0.13;
+
+  if (reduced) {
+    return (
+      <div style={style} className={className}>
+        {children}
+      </div>
+    );
+  }
+
+  return (
+    <motion.div
+      style={style}
+      className={className}
+      initial={{ opacity: 0, scale: 0.4, y: -14 }}
+      animate={
+        pulse
+          ? { opacity: 1, scale: [0.4, 1.14, 1, 1.09, 1], y: 0 }
+          : { opacity: 1, scale: [0.4, 1.1, 1], y: 0 }
+      }
+      transition={{
+        duration: pulse ? 1.5 : 0.62,
+        ease: EASE,
+        delay: start,
+        times: pulse ? [0, 0.28, 0.44, 0.78, 1] : [0, 0.62, 1],
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/* ------------------------------------------------------------------ *
+ * 10 · Section transition (scroll-linked handoff)
+ * ------------------------------------------------------------------ */
+
+/**
+ * Returns the 0→1 scroll progress of an element passing through the viewport,
+ * spring-smoothed.
+ *
+ * This is what makes the homepage read as one continuous story rather than a
+ * stack of rectangles (brief §2, §10): the hero's selected map pin, the trust
+ * section's provider card, and the "how it works" panels are all driven off
+ * progress values like this one, so a single scroll gesture carries one object
+ * through several states instead of swapping three unrelated ones.
+ */
+export function useSectionProgress(ref: React.RefObject<HTMLElement>): MotionValue<number> {
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  return useSpring(scrollYProgress, { stiffness: 140, damping: 30, restDelta: 0.001 });
+}
+
+/**
+ * A band that settles into place as it enters — the "one continuous surface"
+ * feel, applied to a whole section rather than its contents.
+ *
+ * Very restrained on purpose: 12px and a hair of scale. Enough that the page
+ * feels like it has depth, not so much that a fast scroll turns into a slide
+ * deck.
+ */
+export function SectionTransition({
+  children,
+  className,
+  id,
+}: {
+  children: ReactNode;
+  className?: string;
+  id?: string;
+}) {
+  const reduced = useReducedMotion();
+  return (
+    <motion.section
+      id={id}
+      className={className}
+      initial={reduced ? false : { opacity: 0, y: 12, scale: 0.995 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, margin: "0px 0px -8% 0px" }}
+      transition={{ duration: DUR.reveal, ease: EASE }}
+    >
+      {children}
+    </motion.section>
+  );
+}
+
+/* ------------------------------------------------------------------ *
+ * 11 · Reveal text
+ * ------------------------------------------------------------------ */
+
+/**
+ * Word-by-word reveal for body copy and pull quotes — `StampHeading` without
+ * the gold accent handling, for when the text is a paragraph rather than a
+ * headline.
+ *
+ * Reduced motion renders the string as one plain node, not a pile of spans.
+ */
+export function RevealText({
+  text,
+  className,
+  delay = 0,
+}: {
+  text: string;
+  className?: string;
+  delay?: number;
+}) {
+  const reduced = useReducedMotion();
+  if (reduced) return <p className={className}>{text}</p>;
+
+  const words = text.trim().split(/\s+/);
+  return (
+    <motion.p
+      className={className}
+      variants={stampContainer(delay)}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+    >
+      {words.map((word, i) => (
+        <span key={i}>
+          <motion.span variants={stampWord} className="inline-block">
+            {word}
+          </motion.span>
+          {i < words.length - 1 ? " " : null}
+        </span>
+      ))}
+    </motion.p>
   );
 }
 

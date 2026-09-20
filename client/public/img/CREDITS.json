@@ -1,0 +1,80 @@
+{
+  "note": "Editorial photography bundled from Unsplash under the free Unsplash License. None of these images depict a Sakred practitioner or a listed practice. Regenerate with: node scripts/fetch-editorial-images.mjs",
+  "assets": [
+    {
+      "slot": "trustPractice",
+      "name": "treatment-acupuncture",
+      "photographer": "Antonika Chanel",
+      "page": "https://unsplash.com/photos/jmRbgqXLCI0",
+      "alt": "A practitioner placing an acupuncture needle in a patient's hand during a treatment",
+      "files": [
+        "treatment-acupuncture-800.avif",
+        "treatment-acupuncture-800.webp",
+        "treatment-acupuncture-800.jpg",
+        "treatment-acupuncture-1600.avif",
+        "treatment-acupuncture-1600.webp",
+        "treatment-acupuncture-1600.jpg"
+      ]
+    },
+    {
+      "slot": "practitioners",
+      "name": "apothecary-mortar",
+      "photographer": "Katherine Hanlon",
+      "page": "https://unsplash.com/photos/9-Hgi9w9bDM",
+      "alt": "A stone mortar and pestle holding dried petals and botanicals, photographed from above",
+      "files": [
+        "apothecary-mortar-800.avif",
+        "apothecary-mortar-800.webp",
+        "apothecary-mortar-800.jpg",
+        "apothecary-mortar-1600.avif",
+        "apothecary-mortar-1600.webp",
+        "apothecary-mortar-1600.jpg"
+      ]
+    },
+    {
+      "slot": "library",
+      "name": "library-botanical-book",
+      "photographer": "Annie Spratt",
+      "page": "https://unsplash.com/photos/iLEwA5UH8mE",
+      "alt": "An old botanical reference book lying open on a wooden table at a plate of pressed-flower illustrations",
+      "files": [
+        "library-botanical-book-800.avif",
+        "library-botanical-book-800.webp",
+        "library-botanical-book-800.jpg",
+        "library-botanical-book-1600.avif",
+        "library-botanical-book-1600.webp",
+        "library-botanical-book-1600.jpg"
+      ]
+    },
+    {
+      "slot": "protocols",
+      "name": "protocol-tea",
+      "photographer": "Sixteen Miles Out",
+      "page": "https://unsplash.com/photos/three-cups-of-tea-on-a-wooden-table-IPUkKVJBEXQ",
+      "alt": "Three cups of herbal tea arranged on a weathered wooden table, seen from above",
+      "files": [
+        "protocol-tea-800.avif",
+        "protocol-tea-800.webp",
+        "protocol-tea-800.jpg",
+        "protocol-tea-1600.avif",
+        "protocol-tea-1600.webp",
+        "protocol-tea-1600.jpg"
+      ]
+    },
+    {
+      "slot": "coverage",
+      "name": "coverage-home-porch",
+      "photographer": "Roger Starnes Sr",
+      "page": "https://unsplash.com/photos/a-house-with-a-porch-and-a-front-porch-7bNemZ5dCWY",
+      "alt": "A craftsman bungalow with a deep covered front porch, brick pillars and planted borders",
+      "files": [
+        "coverage-home-porch-800.avif",
+        "coverage-home-porch-800.webp",
+        "coverage-home-porch-800.jpg",
+        "coverage-home-porch-1600.avif",
+        "coverage-home-porch-1600.webp",
+        "coverage-home-porch-1600.jpg"
+      ]
+    }
+  ]
+}

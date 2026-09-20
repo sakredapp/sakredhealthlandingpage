@@ -1,15 +1,13 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
-import { Navigation } from "@/components/landing/Navigation";
-import { Footer } from "@/components/landing/Footer";
+import { SiteLayout } from "@/components/site/SiteLayout";
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-[#F9F9F7]">
-      <Navigation />
+    <SiteLayout solidHeader>
 
-      <main className="pt-24 pb-20">
+      <div className="pb-20">
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -250,9 +248,7 @@ export default function PrivacyPolicy() {
             </div>
           </motion.div>
         </article>
-      </main>
-
-      <Footer />
-    </div>
+      </div>
+    </SiteLayout>
   );
 }

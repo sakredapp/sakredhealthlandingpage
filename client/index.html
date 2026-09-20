@@ -5,36 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 
     <!-- Primary SEO -->
-    <title>Sakred Health — Health, Life &amp; Mortgage Protection</title>
-    <meta name="description" content="One licensed agency for health, life, mortgage protection, and retirement coverage — with a dedicated agent in all 50 states. Free consultation." />
-    <meta name="keywords" content="health insurance, mortgage protection insurance, life insurance, final expense, annuities, ACA marketplace plans, private health insurance, Sakred Health" />
+    <title>Sakred Health — Find Trusted Practitioners &amp; Care Near You</title>
+    <meta name="description" content="Discover trusted practitioners, practices and health resources near you on the Sakred Health Network — plus care protocols, research, and licensed insurance guidance." />
+    <meta name="keywords" content="find a practitioner, acupuncture near me, traditional Chinese medicine, functional medicine, holistic practitioners, integrative care directory, health insurance, mortgage protection, Sakred Health" />
     <link rel="canonical" href="https://www.sakredhealth.com/" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Sakred Health — Your Whole Life, Covered" />
-    <meta property="og:description" content="Health, home, and family — one agency, one dedicated agent, all 50 states." />
+    <meta property="og:title" content="Sakred Health — Find Trusted Care Around You" />
+    <meta property="og:description" content="A trusted navigation layer for real-world health. Find practitioners and practices near you, follow care protocols, and protect your household." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://www.sakredhealth.com/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Three generations of a family sharing dinner at home at golden hour" />
+    <meta property="og:image:alt" content="The Sakred Health Network map, showing reviewed practices across the United States" />
     <meta property="og:url" content="https://www.sakredhealth.com" />
     <meta property="og:site_name" content="Sakred Health" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sakred Health — Your Whole Life, Covered" />
-    <meta name="twitter:description" content="Health, home, and family — one agency, one dedicated agent, all 50 states." />
+    <meta name="twitter:title" content="Sakred Health — Find Trusted Care Around You" />
+    <meta name="twitter:description" content="A trusted navigation layer for real-world health. Find practitioners and practices near you, follow care protocols, and protect your household." />
     <meta name="twitter:image" content="https://www.sakredhealth.com/og-image.jpg" />
-    <meta name="twitter:image:alt" content="Three generations of a family sharing dinner at home at golden hour" />
+    <meta name="twitter:image:alt" content="The Sakred Health Network map, showing reviewed practices across the United States" />
 
     <!-- Geo / Coverage -->
     <meta name="geo.region" content="US" />
     <meta name="geo.placename" content="United States" />
 
     <!-- Theme -->
-    <meta name="theme-color" content="#FDFBF7" />
+    <meta name="theme-color" content="#F1EEE7" />
     <link rel="icon" type="image/png" href="/favicon.png" />
 
     <!-- Fonts (only DM Sans + Playfair Display are used) -->
@@ -46,22 +46,45 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "InsuranceAgency",
-      "name": "Sakred Health",
-      "url": "https://www.sakredhealth.com",
-      "logo": "https://www.sakredhealth.com/favicon.png",
-      "description": "Sakred Health connects individuals and families with dedicated insurance agents and 15+ top carriers to find the right private health coverage in all 50 states.",
-      "areaServed": {
-        "@type": "Country",
-        "name": "United States"
-      },
-      "serviceType": ["Health Insurance", "Private Health Coverage", "ACA Marketplace Plans", "Supplemental Insurance"],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "sales",
-        "url": "https://www.sakredhealth.com/get-coverage",
-        "availableLanguage": "English"
-      }
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.sakredhealth.com/#organization",
+          "name": "Sakred Health",
+          "url": "https://www.sakredhealth.com",
+          "logo": "https://www.sakredhealth.com/favicon.png",
+          "description": "A trusted navigation layer for real-world health: a curated network of practitioners and practices, care protocols, health education, and licensed insurance guidance.",
+          "areaServed": { "@type": "Country", "name": "United States" },
+          "subOrganization": {
+            "@type": "InsuranceAgency",
+            "name": "Sakred Health Insurance Services",
+            "url": "https://www.sakredhealth.com/products",
+            "areaServed": { "@type": "Country", "name": "United States" },
+            "serviceType": ["Health Insurance", "Life Insurance", "Mortgage Protection", "Final Expense", "ACA Marketplace Plans", "Retirement Annuities"],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "url": "https://www.sakredhealth.com/get-coverage",
+              "availableLanguage": "English"
+            }
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.sakredhealth.com/#website",
+          "name": "Sakred Health",
+          "url": "https://www.sakredhealth.com",
+          "publisher": { "@id": "https://www.sakredhealth.com/#organization" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://www.sakredhealth.com/discover?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
     }
     </script>
   </head>

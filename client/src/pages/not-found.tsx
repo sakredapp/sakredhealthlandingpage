@@ -1,48 +1,72 @@
+/**
+ * 404.
+ *
+ * Also the page a `/locations/:slug` or `/practitioners/:slug` renders when the
+ * record isn't published — so the onward links point at the network rather than
+ * only at the homepage. Someone who followed a dead practice link is still
+ * looking for a practice.
+ */
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
-import { Navigation } from "@/components/landing/Navigation";
-import { Footer } from "@/components/landing/Footer";
-import { Button } from "@/components/ui/button";
+import { SiteLayout } from "@/components/site/SiteLayout";
+import { useSeo } from "@/lib/seo";
+
+const ELSEWHERE = [
+  { href: "/discover", label: "Find trusted care" },
+  { href: "/resources", label: "Resources" },
+  { href: "/products", label: "Coverage" },
+  { href: "/blog", label: "Research" },
+];
 
 export default function NotFound() {
+  useSeo({
+    title: "Page not found | Sakred Health",
+    description: "That page doesn't exist or has moved.",
+    noindex: true,
+  });
+
   return (
-    <div className="min-h-screen bg-[#F9F9F7] flex flex-col">
-      <Navigation />
-      
-      <main className="flex-1 flex items-center justify-center px-4">
+    <SiteLayout solidHeader>
+      <div className="flex min-h-[60vh] items-center justify-center px-4 py-20">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-md"
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-md text-center"
         >
-          <div className="w-20 h-20 rounded-full bg-[#C5A059]/10 flex items-center justify-center mx-auto mb-6">
-            <span className="text-4xl font-display font-semibold text-[#C5A059]">404</span>
-          </div>
-          
-          <h1 className="text-3xl sm:text-4xl font-display font-semibold text-[#0F172A] mb-4">
-            Page Not Found
+          <span className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full border border-sakred-gold/35 bg-sakred-gold/10">
+            <span className="font-display text-3xl text-sakred-gold-deep">404</span>
+          </span>
+
+          <h1 className="font-display text-3xl leading-tight text-sakred-espresso sm:text-4xl">
+            We can&rsquo;t find that page
           </h1>
-          
-          <p className="text-[#0F172A]/70 mb-8 leading-relaxed">
-            The page you're looking for doesn't exist or has been moved. Let's get you back on track.
+          <p className="mt-4 leading-relaxed text-sakred-ink/65">
+            It doesn&rsquo;t exist, or it moved. Here&rsquo;s where most people are
+            heading.
           </p>
-          
-          <Button
-            asChild
-            className="rounded-full btn-gold-shine text-[#0F172A] border border-[#C5A059] shadow-lg shadow-[#C5A059]/20"
-            data-testid="button-back-home"
+
+          <ul className="mt-8 flex flex-wrap justify-center gap-2.5">
+            {ELSEWHERE.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="inline-block rounded-full border border-sakred-stone bg-sakred-surface px-4 py-2 text-sm font-medium text-sakred-espresso lift-card"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <Link
+            href="/"
+            className="mt-6 inline-block text-sm font-medium text-sakred-gold-deep hover:text-sakred-espresso"
           >
-            <Link href="/">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </Link>
-          </Button>
+            ← Back to the homepage
+          </Link>
         </motion.div>
-      </main>
-      
-      <Footer />
-    </div>
+      </div>
+    </SiteLayout>
   );
 }

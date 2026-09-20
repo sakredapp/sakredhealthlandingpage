@@ -16,15 +16,30 @@ export interface FoodCategory {
   items: FoodItem[];
 }
 
-export const levelConfig: Record<PHLevel, { label: string; color: string; bgColor: string; position: number }> = {
-  3: { label: "Strongly Anti-Inflammatory", color: "#059669", bgColor: "#D1FAE5", position: 1 },
-  2: { label: "Anti-Inflammatory", color: "#10B981", bgColor: "#ECFDF5", position: 2 },
-  1: { label: "Mildly Anti-Inflammatory", color: "#34D399", bgColor: "#F0FDF4", position: 3 },
-  0: { label: "Neutral", color: "#C5A059", bgColor: "#FEF3C7", position: 4 },
-  [-1]: { label: "Mildly Inflammatory", color: "#F59E0B", bgColor: "#FEF3C7", position: 5 },
-  [-2]: { label: "Inflammatory", color: "#F97316", bgColor: "#FED7AA", position: 6 },
-  [-3]: { label: "Highly Inflammatory", color: "#DC2626", bgColor: "#FEE2E2", position: 7 },
+/**
+ * The seven-point scale.
+ *
+ * Retoned to the Sakred daylight palette: muted sage through gold through
+ * clay. The point is a readable gradient, not a traffic light — a red "STOP"
+ * next to a food reads as a moral instruction, and both ends of this scale
+ * have a place in a balanced diet. `color` is used for type and must stay dark
+ * enough to pass contrast on its own `bgColor`.
+ *
+ * `position` is the segment index (1–7) in the little scale indicator, and is
+ * independent of the colours.
+ */
+export const levelConfig: Record<PHLevel, { label: string; short: string; color: string; bgColor: string; position: number }> = {
+  3: { label: "Strongly Anti-Inflammatory", short: "Strongly anti", color: "#405B3B", bgColor: "#E2E8DA", position: 1 },
+  2: { label: "Anti-Inflammatory", short: "Anti", color: "#54704C", bgColor: "#E8EDE0", position: 2 },
+  1: { label: "Mildly Anti-Inflammatory", short: "Mildly anti", color: "#6B8560", bgColor: "#EFF2E8", position: 3 },
+  0: { label: "Neutral", short: "Neutral", color: "#8A6C27", bgColor: "#F5EDDB", position: 4 },
+  [-1]: { label: "Mildly Inflammatory", short: "Mildly pro", color: "#96682A", bgColor: "#F6E8D3", position: 5 },
+  [-2]: { label: "Inflammatory", short: "Pro", color: "#8F5433", bgColor: "#F3E0D5", position: 6 },
+  [-3]: { label: "Highly Inflammatory", short: "Highly pro", color: "#7A3A28", bgColor: "#F0DAD2", position: 7 },
 };
+
+/** Highest → lowest, the order the legend and the filter row read in. */
+export const LEVEL_ORDER: PHLevel[] = [3, 2, 1, 0, -1, -2, -3];
 
 export const foodData: FoodCategory[] = [
   {

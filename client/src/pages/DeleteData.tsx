@@ -1,15 +1,13 @@
 import { motion } from "framer-motion";
-import { Navigation } from "@/components/landing/Navigation";
-import { Footer } from "@/components/landing/Footer";
+import { SiteLayout } from "@/components/site/SiteLayout";
 import { Card } from "@/components/ui/card";
 import { Mail, Database, Clock, Shield, CheckCircle } from "lucide-react";
 
 export default function DeleteData() {
   return (
-    <div className="min-h-screen bg-[#F9F9F7]">
-      <Navigation />
+    <SiteLayout solidHeader>
       
-      <main className="pt-24 pb-16">
+      <div className="pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -195,9 +193,7 @@ export default function DeleteData() {
             </Card>
           </motion.div>
         </div>
-      </main>
-
-      <Footer />
-    </div>
+      </div>
+    </SiteLayout>
   );
 }

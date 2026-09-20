@@ -17,7 +17,20 @@ import { PROTOCOLS } from "../client/src/data/protocols";
 import { STATES } from "../client/src/data/states";
 import { foodData, levelConfig } from "../client/src/data/food-chart";
 import { getStateCopy } from "../client/src/data/state-copy";
+import { SEED_MODALITIES } from "../client/src/data/modalities";
 import STATS from "../client/src/data/state-stats.json";
+
+/**
+ * The app's five pillars. Mirrors client/src/pages/AppPage.tsx — if you change
+ * one, change both: this is the copy crawlers and unfurlers see.
+ */
+const APP_PILLARS = [
+  { title: "Discover", body: "Find trusted practitioners, practices and health resources near you — the same network the website maps, with the places you save kept between visits." },
+  { title: "Protocols", body: "Follow Sakred protocols, and — as the network fills in — the plans your own practitioner assigns. Sequenced day by day." },
+  { title: "Community", body: "Ask who's worth seeing and answer for someone else. Real experiences from people who have already been." },
+  { title: "Resources", body: "The library of guides and cited research, plus the Real Foods Market." },
+  { title: "Policies", body: "Eligible Sakred clients can see their coverage, documents and member IDs, and message their agent." },
+];
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = join(ROOT, "dist");
@@ -270,38 +283,34 @@ function main() {
     count++;
   }
 
-  // /app — real crawlable protocol content + MobileApplication schema
+  // /app — the five pillars, matching the rewritten page. NOT detox, streaks
+  // or wearable sync: the crawlable copy has to say what the page says.
   const appBody = `
-    <main class="pt-24 pb-20 px-4 sm:px-6 lg:px-8 bg-[#FDFBF7]">
+    <main class="pt-24 pb-20 px-4 sm:px-6 lg:px-8 bg-[#F1EEE7]">
       <article class="max-w-3xl mx-auto prose prose-lg">
         <h1>The Sakred Health app</h1>
-        <p>Guided multi-day wellness protocols with daily habit tracking, streaks, reminders, and
-        wearable sync — alongside your policy documents and a dedicated agent, in one app for iOS and Android.</p>
-        <h2>Guided programs, scheduled day by day</h2>
-        ${PROTOCOLS.map(
+        <p>Find trusted practitioners and practices near you, follow care protocols
+        between appointments, learn from the community, and access your Sakred coverage —
+        one app for iOS and Android, free to download.</p>
+        ${APP_PILLARS.map(
           (p) => `
         <section>
-          <h3>${esc(p.name)} — ${p.days} days</h3>
-          <p>${esc(p.summary)}</p>
-          <ul>${p.practices.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
-          <p><a href="/blog/${p.postSlug}">Read the full ${p.days}-day guide</a></p>
+          <h2>${esc(p.title)}</h2>
+          <p>${esc(p.body)}</p>
         </section>`
         ).join("")}
-        <h2>What else is in the app</h2>
-        <ul>
-          <li>Policy cards for health, life, and annuity coverage — premiums, deductibles, member IDs, and documents</li>
-          <li>Plain-language policy search and messaging with your dedicated agent</li>
-          <li>A habits encyclopedia, guided routines, and daily habit tracking with streaks</li>
-          <li>An eBook library with in-app reader and audio</li>
-          <li>Wearable sync for Garmin, Oura, WHOOP, and Fitbit</li>
-        </ul>
-        <p><a href="/get-coverage">Get coverage</a> or browse <a href="/blog">our research library</a>.</p>
+        <h2>Protocols you can follow</h2>
+        <ul>${PROTOCOLS.map(
+          (p) => `<li><a href="/blog/${p.postSlug}">${esc(p.name)} — ${p.days}-day protocol</a></li>`
+        ).join("")}</ul>
+        <p><a href="/discover">Search the network</a> · <a href="/resources">Resources</a> ·
+        <a href="/products">Coverage</a></p>
       </article>
     </main>`;
   const appHead = buildHead({
-    title: "Health App: Guided Detox, Gut & Sleep Routines",
+    title: "The Sakred Health App — Find Care, Follow Protocols",
     description:
-      "Guided multi-day wellness protocols — liver detox, gut reset, lymphatic drainage, and sleep — with habit tracking, streaks, and wearable sync.",
+      "Find trusted practitioners near you, follow care protocols between visits, learn from the community, and access your Sakred coverage — one app for iOS and Android.",
     path: "/app",
     jsonLd: {
       "@context": "https://schema.org",
@@ -313,9 +322,10 @@ function main() {
           applicationCategory: "HealthApplication",
           url: `${BASE_URL}/app`,
           description:
-            "Guided multi-day wellness protocols with daily habit tracking, streaks, and wearable sync, alongside insurance policy management and a dedicated agent.",
-          featureList: PROTOCOLS.map((p) => `${p.name} (${p.days}-day guided protocol)`).join(", "),
+            "A trusted navigation layer for real-world health: discover practitioners and practices near you, follow care protocols, learn from the community, and access Sakred insurance coverage.",
+          featureList: APP_PILLARS.map((p) => p.title).join(", "),
           publisher: { "@type": "Organization", name: "Sakred Health", url: BASE_URL },
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         },
         breadcrumb([
           { name: "Home", path: "/" },
@@ -357,9 +367,9 @@ function main() {
         </section>`
           )
           .join("")}
-        <p>Want this built into daily practice? The
-        <a href="/app">Sakred Health app</a> pairs it with guided protocols, or read
-        <a href="/blog/gut-health-daily-habits-improve-digestion-reduce-stress">our cited guide to gut health</a>.</p>
+        <p>Explore more health resources: the <a href="/resources">library</a>, the
+        <a href="/blog">research</a>, or <a href="/discover">a practitioner near you</a>
+        who can tell you which parts of this matter for you.</p>
       </article>
     </main>`;
   const foodHead = buildHead({
@@ -425,54 +435,248 @@ function main() {
     count++;
   }
 
+  // ---- Network pages: /discover, /resources, /for-practitioners, /recommend
+  //
+  // Static heads and real crawlable copy. The directory results themselves are
+  // client-rendered from the canonical tables (and prerendered separately by
+  // prerender-network.mjs when the network is configured) — but the editorial
+  // framing around them is known at build time and belongs in the HTML.
+  const networkPages: {
+    path: string;
+    title: string;
+    description: string;
+    body: string;
+    jsonLd?: object;
+  }[] = [
+    {
+      path: "/discover",
+      title: "Find Trusted Practitioners Near You — Sakred Health",
+      description:
+        "Search the Sakred Health Network for trusted practitioners, practices and health resources near you. Every practice is reviewed by a person before it is published.",
+      body: `
+        <h1>Find trusted care around you</h1>
+        <p>Discover practitioners, practices and health resources selected for a more
+        intentional approach to health. Search by modality, by city, or by moving the map.</p>
+        <h2>Browse by modality</h2>
+        <ul>${SEED_MODALITIES.map(
+          (m) => `<li><a href="/discover/${m.slug}">${esc(m.name)}</a> — ${esc(m.description)}</li>`
+        ).join("")}</ul>
+        <h2>How practices are verified</h2>
+        <p>Listed, Credential Verified, Sakred Reviewed and Sakred Verified are four
+        states, in order — each one a check somebody performed. A practitioner may
+        request consideration; they cannot award themselves a state, and there is
+        nothing to buy.</p>
+        <p><a href="/recommend">Recommend a practitioner</a> ·
+        <a href="/for-practitioners">Are you a practitioner?</a></p>`,
+    },
+    {
+      path: "/resources",
+      title: "Resources — Library, Real Foods Market & Food Chart",
+      description:
+        "Cited guides and research, the Real Foods Market, and an anti-inflammatory food chart rating 197 everyday foods — the Sakred Health resource library.",
+      body: `
+        <h1>Know enough to ask better questions</h1>
+        <p>Three places to read, look things up, and decide what to bring to your next
+        appointment. All of it free, all of it cited.</p>
+        <h2>Library</h2>
+        <p>Long-form writing on the things that actually move health, with the studies
+        attached and the caveats left in. <a href="/blog">Browse the library</a>.</p>
+        <h2>Real Foods Market</h2>
+        <p>Foods, products and trusted resources — what we would actually buy, and the
+        specific reason it made the list. The Market lives in the
+        <a href="/app">Sakred Health app</a>.</p>
+        <h2>Food Chart</h2>
+        <p>${totalFoods} everyday foods rated on a seven-point inflammation scale, searchable
+        and filterable. <a href="/food-chart">Open the food chart</a>.</p>`,
+    },
+    {
+      path: "/for-practitioners",
+      title: "For Practitioners — Join the Sakred Health Network",
+      description:
+        "Sakred Health is building a curated network across traditional, holistic and integrative care. Request consideration for your practice — verification is earned, never purchased.",
+      body: `
+        <h1>Help us build a better health network</h1>
+        <p>Sakred Health is building a curated network across traditional, holistic and
+        integrative care — the practitioners people already recommend to each other, in
+        one place a stranger can actually find.</p>
+        <h2>What being in the network means</h2>
+        <ul>
+          <li><strong>Public discovery</strong> — a profile that appears on the map and in search</li>
+          <li><strong>A real professional profile</strong> — your space, your practitioners, your credentials</li>
+          <li><strong>Protocol delivery</strong> — assign the plan a client leaves with (coming to the network)</li>
+          <li><strong>Community context</strong> — the conversations people already have about where to go</li>
+          <li><strong>No pay-to-buy verification</strong> — no tier to purchase, no placement to sponsor</li>
+        </ul>
+        <h2>How review works</h2>
+        <p>You can ask to be considered. You cannot award yourself a state, and there is
+        nothing to buy. <a href="/recommend?kind=location">Request consideration</a>.</p>`,
+    },
+    {
+      path: "/recommend",
+      title: "Recommend a Practitioner — Sakred Health Network",
+      description:
+        "Know a practitioner or practice that belongs in the Sakred Health Network? Tell us about them. Every recommendation is reviewed by a person.",
+      body: `
+        <h1>Who should be on the map?</h1>
+        <p>The best practitioners are usually found by word of mouth, not by search. If
+        someone changed how you feel, tell us — that is how the network grows.</p>
+        <p>Every recommendation goes into a review queue and is read by a person. Nothing
+        is published automatically.</p>
+        <p><a href="/discover">Back to the map</a> ·
+        <a href="/for-practitioners">Are you a practitioner?</a></p>`,
+    },
+  ];
+
+  for (const page of networkPages) {
+    const head = buildHead({
+      title: page.title,
+      description: page.description,
+      path: page.path,
+      jsonLd: page.jsonLd ?? {
+        "@context": "https://schema.org",
+        "@graph": [
+          breadcrumb([
+            { name: "Home", path: "/" },
+            { name: page.title.split(" — ")[0], path: page.path },
+          ]),
+        ],
+      },
+    });
+    const dir = join(DIST, page.path.slice(1));
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(
+      join(dir, "index.html"),
+      injectIntoTemplate(
+        template,
+        head,
+        `<main class="pt-24 pb-20 px-4 sm:px-6 lg:px-8 bg-[#F1EEE7]"><article class="max-w-3xl mx-auto prose prose-lg">${page.body}</article></main>`
+      )
+    );
+    count++;
+  }
+
+  // Modality category pages. Generated only for the seed vocabulary, which is
+  // a short, curated list — this is deliberately NOT a loop over every possible
+  // modality × city pair. Thin pages at scale are a penalty, not a strategy.
+  for (const modality of SEED_MODALITIES) {
+    const head = buildHead({
+      title: `${modality.name} Practitioners — Sakred Health Network`,
+      description: truncate(
+        `Find ${modality.name.toLowerCase()} practitioners on the Sakred Health Network. ${modality.description}`,
+        158
+      ),
+      path: `/discover/${modality.slug}`,
+      jsonLd: {
+        "@context": "https://schema.org",
+        "@graph": [
+          breadcrumb([
+            { name: "Home", path: "/" },
+            { name: "Discover", path: "/discover" },
+            { name: modality.name, path: `/discover/${modality.slug}` },
+          ]),
+        ],
+      },
+    });
+    const body = `
+    <main class="pt-24 pb-20 px-4 sm:px-6 lg:px-8 bg-[#F1EEE7]">
+      <article class="max-w-3xl mx-auto prose prose-lg">
+        <h1>${esc(modality.name)}</h1>
+        <p>${esc(modality.description)}</p>
+        <p>Practices offering ${esc(modality.name.toLowerCase())} appear on the map above once
+        they have been reviewed and published. <a href="/discover">Search the whole
+        network</a>, or <a href="/recommend">recommend a practitioner</a> you think
+        belongs here.</p>
+      </article>
+    </main>`;
+    const dir = join(DIST, "discover", modality.slug);
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(join(dir, "index.html"), injectIntoTemplate(template, head, body));
+    count++;
+  }
+
   // Homepage — dist/index.html is also the SPA fallback, so it must be written
   // LAST (the template was read at the top of main() and is unaffected).
-  // Without this the crawler-facing homepage was an empty <div id="root">:
-  // no H1, no copy. React replaces this markup on mount.
+  // Network-first: the crawler-facing homepage now leads with finding care,
+  // with coverage as the substantial secondary pillar it is on the real page.
   const homeBody = `
-    <main class="pt-24 pb-20 px-4 sm:px-6 lg:px-8 bg-[#F9F9F7]">
+    <main class="pt-24 pb-20 px-4 sm:px-6 lg:px-8 bg-[#F1EEE7]">
       <div class="max-w-3xl mx-auto prose prose-lg">
-        <p>Mortgage Protection · Life · Health · Retirement</p>
-        <h1>Your whole life, covered.</h1>
-        <p>The health plan, the mortgage protection, and the retirement income behind it —
-        built together by one dedicated agent who knows your family. Licensed in all 50 states.</p>
-        <p><a href="/get-coverage">Get a free quote</a> · <a href="/products">See plans in your area</a></p>
-        <h2>What we protect</h2>
-        <ul>${PRODUCTS.map(
-          (p) => `<li><a href="/products/${p.slug}">${esc(p.title)}</a> — ${esc(p.tagline)}</li>`
+        <p>The Sakred Health Network</p>
+        <h1>Find trusted care around you.</h1>
+        <p>Discover practitioners, practices and health resources selected for a more
+        intentional approach to health — then follow what to do between appointments.</p>
+        <p><a href="/discover">Explore the network</a> ·
+        <a href="/recommend">Recommend a practitioner</a> ·
+        <a href="/products">Looking for insurance coverage?</a></p>
+
+        <h2>Know who you're choosing</h2>
+        <p>Every practice carries a public trust state: Listed, Credential Verified,
+        Sakred Reviewed, or Sakred Verified. Four states, in order, each one a check
+        somebody performed. A practitioner may request consideration; they cannot award
+        themselves a state.</p>
+
+        <h2>Browse by modality</h2>
+        <ul>${SEED_MODALITIES.map(
+          (m) => `<li><a href="/discover/${m.slug}">${esc(m.name)}</a></li>`
         ).join("")}</ul>
-        <h2>Wellness built in</h2>
-        <p>Every household we cover gets the <a href="/app">Sakred Health app</a>: guided
-        multi-day protocols for sleep, gut, liver, and lymphatic health, daily habit tracking,
-        and your policy documents and agent in the same place.</p>
+
+        <h2>Care doesn't stop when the appointment ends</h2>
+        <p>Sakred protocols keep guidance organised between visits, in the
+        <a href="/app">Sakred Health app</a> — alongside the network, the community,
+        the library and your policies.</p>
         <ul>${PROTOCOLS.map(
           (p) => `<li><a href="/blog/${p.postSlug}">${esc(p.name)} — ${p.days}-day protocol</a></li>`
         ).join("")}</ul>
-        <h2>Research</h2>
-        <p>We publish cited research on coverage and daily health — read
-        <a href="/blog">the full library</a>.</p>
+
+        <h2>Your health deserves protection too</h2>
+        <p>Sakred also helps families protect their health, income, home and retirement
+        with licensed insurance guidance — one dedicated agent, all 50 states.</p>
+        <ul>${PRODUCTS.map(
+          (p) => `<li><a href="/products/${p.slug}">${esc(p.title)}</a> — ${esc(p.tagline)}</li>`
+        ).join("")}</ul>
+        <p><a href="/products">Explore coverage</a> · <a href="/get-coverage">Get a quote</a></p>
+
+        <h2>Learn</h2>
+        <p>We publish cited research on health, food, practice and coverage —
+        <a href="/blog">read the library</a>, or look up a food in the
+        <a href="/food-chart">anti-inflammatory food chart</a>.</p>
       </div>
     </main>`;
   const homeHead = buildHead({
-    title: "Sakred Health — Health, Life & Mortgage Protection",
+    title: "Sakred Health — Find Trusted Practitioners & Care Near You",
     description:
-      "One licensed agency for health, life, mortgage protection, and retirement coverage — with a dedicated agent in all 50 states. Free consultation.",
+      "Discover trusted practitioners, practices and health resources near you on the Sakred Health Network — plus care protocols, research, and licensed insurance guidance.",
     path: "/",
     jsonLd: {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "InsuranceAgency",
+          "@type": "Organization",
+          "@id": `${BASE_URL}/#organization`,
           name: "Sakred Health",
           url: BASE_URL,
-          areaServed: { "@type": "Country", name: "United States" },
           description:
-            "Licensed insurance agency offering health, life, mortgage protection, final expense, and retirement coverage in all 50 states, with a wellness app included.",
+            "A trusted navigation layer for real-world health: a curated network of practitioners and practices, care protocols, health education, and licensed insurance guidance.",
+          areaServed: { "@type": "Country", name: "United States" },
+          subOrganization: {
+            "@type": "InsuranceAgency",
+            name: "Sakred Health Insurance Services",
+            url: `${BASE_URL}/products`,
+            areaServed: { "@type": "Country", name: "United States" },
+          },
         },
         {
           "@type": "WebSite",
           name: "Sakred Health",
           url: BASE_URL,
+          potentialAction: {
+            "@type": "SearchAction",
+            target: {
+              "@type": "EntryPoint",
+              urlTemplate: `${BASE_URL}/discover?q={search_term_string}`,
+            },
+            "query-input": "required name=search_term_string",
+          },
         },
       ],
     },

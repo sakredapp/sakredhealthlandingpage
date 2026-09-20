@@ -50,8 +50,7 @@ const markdownComponents = {
   },
 };
 import { Calendar, User, ArrowLeft, Clock, ArrowRight } from "lucide-react";
-import { Navigation } from "@/components/landing/Navigation";
-import { Footer } from "@/components/landing/Footer";
+import { SiteLayout } from "@/components/site/SiteLayout";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card } from "@/components/ui/card";
@@ -292,21 +291,18 @@ export default function BlogPost() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-[#F9F9F7]">
-        <Navigation />
-        <main className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+      <SiteLayout solidHeader>
+        <div className="px-4 pb-20 pt-8 sm:px-6 lg:px-8">
           <BlogPostSkeleton />
-        </main>
-        <Footer />
-      </div>
+        </div>
+      </SiteLayout>
     );
   }
 
   if (error || !post) {
     return (
-      <div className="min-h-screen bg-[#F9F9F7]">
-        <Navigation />
-        <main className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+      <SiteLayout solidHeader>
+        <div className="px-4 pb-20 pt-8 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center py-20">
             <h1 className="text-3xl font-display font-normal text-[#0F172A] mb-4">Article not found</h1>
             <p className="text-[#0F172A]/70 mb-8">
@@ -316,19 +312,17 @@ export default function BlogPost() {
               <Link href="/blog">Back to Blog</Link>
             </Button>
           </div>
-        </main>
-        <Footer />
-      </div>
+        </div>
+      </SiteLayout>
     );
   }
 
   const readTime = estimateReadTime(post.content);
 
   return (
-    <div className="min-h-screen bg-[#F9F9F7]">
-      <Navigation />
+    <SiteLayout solidHeader>
 
-      <main className="pt-24 pb-20">
+      <div className="pb-20 pt-8">
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -472,9 +466,7 @@ export default function BlogPost() {
             </div>
           </motion.section>
         )}
-      </main>
-
-      <Footer />
-    </div>
+      </div>
+    </SiteLayout>
   );
 }
