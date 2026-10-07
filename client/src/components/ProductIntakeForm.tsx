@@ -2,6 +2,9 @@ import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Loader2, ShieldCheck } from "lucide-react";
+import { useEmailValidation } from "@/lib/use-email-validation";
+import { usePhoneValidation } from "@/lib/use-phone-validation";
+import { EmailWarning, PhoneWarning, warnRing } from "@/components/LeadCheckWarning";
 
 const US_STATES = [
   "AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA",
@@ -58,6 +61,10 @@ export function ProductIntakeForm({ product, productTitle, amountLabel, defaultS
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const check = (kind: "email" | "phone") =>
+    `/api/lead-check?product=${encodeURIComponent(product)}&check=${kind}`;
+  const emailCheck = useEmailValidation(check("email"));
+  const phoneCheck = usePhoneValidation(check("phone"));
 
   function update(field: keyof typeof form, value: string | boolean) {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -72,7 +79,20 @@ export function ProductIntakeForm({ product, productTitle, amountLabel, defaultS
     if (!form.state) return setError("Please select your state.");
     if (!form.sms_consent) return setError("Please agree to receive messages to continue.");
 
+    // The real-time lead check (CRM: MillionVerifier email, Telnyx phone),
+    // both at once so every warning shows in one look. A bad email or a soft
+    // phone answer gets ONE look, then pressing again goes through: the lead
+    // is never lost. Every failure lets them through.
     setSubmitting(true);
+    const [emailOk, phoneOk] = await Promise.all([
+      emailCheck.confirm(form.email),
+      phoneCheck.confirm(form.phone),
+    ]);
+    if (!emailOk || !phoneOk) {
+      setSubmitting(false);
+      return;
+    }
+
     setError(null);
     try {
       // TrustedForm / Jornaya cert values are injected into these hidden inputs
@@ -148,13 +168,19 @@ export function ProductIntakeForm({ product, productTitle, amountLabel, defaultS
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="pf-phone" className={labelClass}>Phone *</label>
-          <input id="pf-phone" type="tel" required autoComplete="tel-national" className={inputClass}
-            placeholder="(555) 123-4567" value={form.phone} onChange={(e) => update("phone", formatPhone(e.target.value))} />
+          <input id="pf-phone" type="tel" required autoComplete="tel-national" className={`${inputClass} ${phoneCheck.state.status === "invalid" ? warnRing : ""}`}
+            placeholder="(555) 123-4567" value={form.phone}
+            onChange={(e) => { const v = formatPhone(e.target.value); update("phone", v); phoneCheck.onChange(v); }}
+            onBlur={() => phoneCheck.onBlur(form.phone)} />
+          <PhoneWarning state={phoneCheck.state} />
         </div>
         <div>
           <label htmlFor="pf-email" className={labelClass}>Email *</label>
-          <input id="pf-email" type="email" required autoComplete="email" className={inputClass}
-            placeholder="jane@example.com" value={form.email} onChange={(e) => update("email", e.target.value)} />
+          <input id="pf-email" type="email" required autoComplete="email" className={`${inputClass} ${emailCheck.state.status === "warn" ? warnRing : ""}`}
+            placeholder="jane@example.com" value={form.email}
+            onChange={(e) => { update("email", e.target.value); emailCheck.onChange(e.target.value); }}
+            onBlur={() => emailCheck.onBlur(form.email)} />
+          <EmailWarning state={emailCheck.state} onFix={(fix) => { update("email", fix); emailCheck.onChange(fix); }} />
         </div>
       </div>
 

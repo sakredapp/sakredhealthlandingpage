@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { setCorsHeaders } from "./_lib/auth.js";
+import { CAMPAIGN_ENV, CRM_BASE_URL, campaignFor, checkPhone, visitorIp } from "./_lib/lead-check.js";
 
 /**
  * Per-product lead forwarder.
@@ -19,19 +20,10 @@ import { setCorsHeaders } from "./_lib/auth.js";
  *   CRM_CAMPAIGN_LIFE_INSURANCE       (when the CRM adds it)
  *   CRM_CAMPAIGN_RETIREMENT_ANNUITIES (when the CRM adds it)
  */
-const CRM_LEADS_URL = "https://www.sakredcrm.com/api/webhooks/leads";
+const CRM_LEADS_URL = new URL("/api/webhooks/leads", CRM_BASE_URL).toString();
 
-// Env names tried in order — first one set wins. ACA falls back to the health
-// campaign until the CRM stands up a dedicated ACA campaign (set
-// CRM_CAMPAIGN_ACA when they do; no code change needed).
-const CAMPAIGN_ENV: Record<string, string[]> = {
-  "mortgage-protection": ["CRM_CAMPAIGN_MORTGAGE_PROTECTION"],
-  "health-insurance": ["CRM_CAMPAIGN_HEALTH_INSURANCE"],
-  "aca-plans": ["CRM_CAMPAIGN_ACA", "CRM_CAMPAIGN_HEALTH_INSURANCE"],
-  "final-expense": ["CRM_CAMPAIGN_FINAL_EXPENSE"],
-  "life-insurance": ["CRM_CAMPAIGN_LIFE_INSURANCE"],
-  "retirement-annuities": ["CRM_CAMPAIGN_ANNUITY"],
-};
+// Product id -> campaign env names live in ./_lib/lead-check.ts, shared with
+// the real-time check so both always ask about the same campaign.
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   setCorsHeaders(res);
@@ -42,10 +34,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const body = (req.body || {}) as Record<string, unknown>;
 
     const product = String(body.product || "").trim().toLowerCase();
-    const envNames = CAMPAIGN_ENV[product];
-    if (!envNames) return res.status(400).json({ error: "Unknown product" });
+    if (!CAMPAIGN_ENV[product]) return res.status(400).json({ error: "Unknown product" });
 
-    const campaign = envNames.map((n) => process.env[n]).find(Boolean);
+    const campaign = campaignFor(product);
     if (!campaign) {
       // Campaign not wired up yet — tell the client to fall back to text/call.
       return res.status(503).json({
@@ -71,6 +62,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // requires the checkbox; this is the server-side guarantee behind it.
     if (body.sms_consent !== true) {
       return res.status(400).json({ error: "SMS consent is required" });
+    }
+
+    // The phone check, again, server-side (the form ran it on blur as a
+    // courtesy). Fails open. `blocking: false` is the CRM's soft policy: the
+    // number is saved whatever the answer (a landline is marked calls-only
+    // there), so only the hard mobile-only gate ever refuses here, with the
+    // CRM's own sentence.
+    const phoneCheck = await checkPhone(product, phone, 9000, visitorIp(req.headers));
+    if (!phoneCheck.valid && phoneCheck.blocking !== false) {
+      console.warn(`product-lead: phone refused ***${phone.slice(-4)} (${phoneCheck.lineType ?? "?"})`);
+      return res.status(422).json({ error: phoneCheck.message || "Please enter a valid mobile phone number." });
     }
 
     // Forward everything the form sent (minus the product id) with core fields

@@ -14,7 +14,8 @@
     "serve:dist": "npx tsx scripts/serve-dist.ts",
     "test:browser": "node scripts/browser-test.mjs",
     "test:browser:only": "node tests/browser-regression.mjs",
-    "test:intake": "npx tsx tests/intake-e2e.mjs"
+    "test:intake": "npx tsx tests/intake-e2e.mjs",
+    "test:lead-check": "tsx --test tests/lead-check.test.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
