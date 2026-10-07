@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { MapPin, ArrowRight, CheckCircle2, Loader2, ShieldCheck } from "lucide-react";
 import { Link } from "wouter";
 import { useSeo } from "@/lib/seo";
+import { useEmailValidation } from "@/lib/use-email-validation";
+import { usePhoneValidation } from "@/lib/use-phone-validation";
+import { EmailWarning, PhoneWarning, warnRing } from "@/components/LeadCheckWarning";
 
 const US_STATES = [
   "AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA",
@@ -72,6 +75,9 @@ export default function GetCoverage() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // /get-coverage is the health-insurance intake (see the payload below).
+  const emailCheck = useEmailValidation("/api/lead-check?product=health-insurance&check=email");
+  const phoneCheck = usePhoneValidation("/api/lead-check?product=health-insurance&check=phone");
 
   useSeo({
     title: "Get Coverage — Free Consultation with a Licensed Agent | Sakred Health",
@@ -116,7 +122,19 @@ export default function GetCoverage() {
       return;
     }
 
+    // The real-time lead check (CRM: MillionVerifier email, Telnyx phone),
+    // both at once so every warning shows in one look. A bad email or a soft
+    // phone answer gets ONE look, then pressing again goes through: the lead
+    // is never lost. Every failure lets them through.
     setSubmitting(true);
+    const [emailOk, phoneOk] = await Promise.all([
+      emailCheck.confirm(form.email),
+      phoneCheck.confirm(form.phone),
+    ]);
+    if (!emailOk || !phoneOk) {
+      setSubmitting(false);
+      return;
+    }
 
     try {
       // Migrated to the campaign-slug path: /get-coverage is a health-insurance
@@ -251,11 +269,17 @@ export default function GetCoverage() {
                       type="tel"
                       required
                       autoComplete="tel-national"
-                      className={inputClass}
+                      className={`${inputClass} ${phoneCheck.state.status === "invalid" ? warnRing : ""}`}
                       placeholder="(555) 123-4567"
                       value={form.phone}
-                      onChange={(e) => update("phone", formatPhone(e.target.value))}
+                      onChange={(e) => {
+                        const v = formatPhone(e.target.value);
+                        update("phone", v);
+                        phoneCheck.onChange(v);
+                      }}
+                      onBlur={() => phoneCheck.onBlur(form.phone)}
                     />
+                    <PhoneWarning state={phoneCheck.state} />
                   </div>
                   <div>
                     <label htmlFor="email" className={labelClass}>Email *</label>
@@ -264,10 +288,21 @@ export default function GetCoverage() {
                       type="email"
                       required
                       autoComplete="email"
-                      className={inputClass}
+                      className={`${inputClass} ${emailCheck.state.status === "warn" ? warnRing : ""}`}
                       placeholder="jane@example.com"
                       value={form.email}
-                      onChange={(e) => update("email", e.target.value)}
+                      onChange={(e) => {
+                        update("email", e.target.value);
+                        emailCheck.onChange(e.target.value);
+                      }}
+                      onBlur={() => emailCheck.onBlur(form.email)}
+                    />
+                    <EmailWarning
+                      state={emailCheck.state}
+                      onFix={(fix) => {
+                        update("email", fix);
+                        emailCheck.onChange(fix);
+                      }}
                     />
                   </div>
                 </div>

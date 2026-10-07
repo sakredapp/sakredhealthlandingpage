@@ -52,6 +52,9 @@ const STATIC_ROUTES: Record<string, string> = {
   "/api/network/practitioner-application": "api/network/practitioner-application.ts",
   "/api/network/recommend": "api/network/recommend.ts",
   "/api/network/application-media": "api/network/application-media.ts",
+  // The lead forms: set CRM_BASE_URL to a local mock so no test lead reaches the CRM.
+  "/api/lead-check": "api/lead-check.ts",
+  "/api/product-lead": "api/product-lead.ts",
 };
 
 /** The media route posts a base64 image, so this ceiling matches its own. */
