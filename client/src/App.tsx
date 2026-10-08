@@ -35,6 +35,8 @@ const SmsOptIn = lazy(() => import("@/pages/SmsOptIn"));
 const FoodChart = lazy(() => import("@/pages/FoodChart"));
 const DeleteAccount = lazy(() => import("@/pages/DeleteAccount"));
 const DeleteData = lazy(() => import("@/pages/DeleteData"));
+const DoNotSell = lazy(() => import("@/pages/DoNotSell"));
+const InsurancePrivacy = lazy(() => import("@/pages/InsurancePrivacy"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 function RouteFallback() {
@@ -154,6 +156,8 @@ function Router() {
       <Route path="/food-chart" component={FoodChart} />
       <Route path="/delete-account" component={DeleteAccount} />
       <Route path="/delete-data" component={DeleteData} />
+      <Route path="/do-not-sell" component={DoNotSell} />
+      <Route path="/insurance-privacy" component={InsurancePrivacy} />
       <Route component={NotFound} />
     </Switch>
     </Suspense>
