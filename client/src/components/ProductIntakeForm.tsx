@@ -244,7 +244,7 @@ export function ProductIntakeForm({ product, productTitle, amountLabel, defaultS
               Privacy Policy
             </a>{" "}
             and{" "}
-            <a href="/terms-of-service" target="_blank" rel="noopener" className="text-[#C5A059] underline">
+            <a href="/insurance-terms" target="_blank" rel="noopener" className="text-[#C5A059] underline">
               Terms of Service
             </a>
             . *

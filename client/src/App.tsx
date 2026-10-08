@@ -37,6 +37,7 @@ const DeleteAccount = lazy(() => import("@/pages/DeleteAccount"));
 const DeleteData = lazy(() => import("@/pages/DeleteData"));
 const DoNotSell = lazy(() => import("@/pages/DoNotSell"));
 const InsurancePrivacy = lazy(() => import("@/pages/InsurancePrivacy"));
+const InsuranceTerms = lazy(() => import("@/pages/InsuranceTerms"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 function RouteFallback() {
@@ -158,6 +159,7 @@ function Router() {
       <Route path="/delete-data" component={DeleteData} />
       <Route path="/do-not-sell" component={DoNotSell} />
       <Route path="/insurance-privacy" component={InsurancePrivacy} />
+      <Route path="/insurance-terms" component={InsuranceTerms} />
       <Route component={NotFound} />
     </Switch>
     </Suspense>
