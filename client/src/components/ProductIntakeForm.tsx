@@ -240,7 +240,7 @@ export function ProductIntakeForm({ product, productTitle, amountLabel, defaultS
             condition of any purchase. Message frequency varies and message &amp; data rates may apply. I can
             revoke consent at any time, including by replying STOP to any text or HELP for assistance. I have
             read the{" "}
-            <a href="/privacy-policy" target="_blank" rel="noopener" className="text-[#C5A059] underline">
+            <a href="/insurance-privacy" target="_blank" rel="noopener" className="text-[#C5A059] underline">
               Privacy Policy
             </a>{" "}
             and{" "}
