@@ -124,7 +124,8 @@ export default function SmsOptIn() {
               <h2>10. Terms & Conditions</h2>
               <p>
                 By participating in our SMS program, you also agree to our{" "}
-                <Link href="/terms-of-service" className="text-[#C5A059] hover:underline">Terms of Service</Link>.
+                <Link href="/terms-of-service" className="text-[#C5A059] hover:underline">Terms of Service</Link> and, for insurance texts, our{" "}
+                <Link href="/insurance-terms" className="text-[#C5A059] hover:underline">Insurance Terms</Link>.
                 We reserve the right to modify or discontinue the SMS program at any time without notice.
               </p>
 

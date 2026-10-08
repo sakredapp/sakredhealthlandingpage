@@ -102,6 +102,9 @@ export const FOOTER_COLUMNS: { title: string; links: NavLink[] }[] = [
     links: [
       { label: "Privacy", href: "/privacy-policy" },
       { label: "Terms", href: "/terms-of-service" },
+      { label: "Insurance Privacy", href: "/insurance-privacy" },
+      { label: "Insurance Terms", href: "/insurance-terms" },
+      { label: "Do Not Sell My Info", href: "/do-not-sell" },
       { label: "SMS Opt-In", href: "/opt-in" },
       { label: "AI & Privacy", href: "/ai-privacy" },
       { label: "Contact", href: "/get-coverage" },

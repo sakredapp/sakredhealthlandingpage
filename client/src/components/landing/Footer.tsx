@@ -14,6 +14,9 @@ export function Footer() {
     legal: [
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms of Service", href: "/terms-of-service" },
+      { label: "Insurance Privacy", href: "/insurance-privacy" },
+      { label: "Insurance Terms", href: "/insurance-terms" },
+      { label: "Do Not Sell My Info", href: "/do-not-sell" },
       { label: "SMS Opt-In Policy", href: "/opt-in" },
       { label: "AI & Privacy", href: "/ai-privacy" },
     ],
