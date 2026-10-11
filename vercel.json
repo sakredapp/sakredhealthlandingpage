@@ -52,5 +52,13 @@
       "destination": "/",
       "permanent": true
     }
-  ]
+  ],
+  "ignoreCommand": "bash scripts/vercel-should-build.sh",
+  "git": {
+    "deploymentEnabled": {
+      "*": false,
+      "**": false,
+      "main": true
+    }
+  }
 }
