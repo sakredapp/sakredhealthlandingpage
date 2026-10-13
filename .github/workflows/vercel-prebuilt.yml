@@ -82,10 +82,14 @@ jobs:
       VERCEL_ORG_ID: team_z0wmEUwwLi5hHjuSDxGkFzin
       VERCEL_TELEMETRY_DISABLED: "1"
       PROJECT: ${{ matrix.project }}
-      # Names of env vars that are EMPTY in `vercel pull` (Vercel "sensitive"
-      # vars cannot be read back) and are only needed at runtime, never by the
-      # build. Space separated. See the "Build env" step.
+      # Names of env vars that are EMPTY in `vercel pull` (the VERCEL_* system
+      # ones) and are only needed at runtime, never by the build. Space
+      # separated. See the "Build env" step.
       RUNTIME_ONLY_ENV: ${{ vars.PREBUILT_RUNTIME_ONLY_ENV }}
+      # Public-prefixed names that are deliberately NOT baked into the bundle
+      # because only server code reads them, through a runtime lookup. Space
+      # separated, normally empty. See the "Build env" step.
+      SERVER_READ_PUBLIC_ENV: ${{ vars.PREBUILT_SERVER_READ_PUBLIC_ENV }}
     steps:
       - name: Resolve Vercel credentials
         run: |
@@ -171,10 +175,23 @@ jobs:
         run: vercel pull --yes --environment=${{ steps.target.outputs.target }}
 
       - name: Build env - nothing the build needs may be empty
-        # `vercel pull` writes Vercel "sensitive" vars as EMPTY strings. A build
-        # that inlines an empty NEXT_PUBLIC_/VITE_/EXPO_PUBLIC_ value ships a
-        # broken site that still deploys green, so an empty value stops the job
-        # here, loudly, before any build. Two ways to clear a name:
+        # `vercel pull` cannot read a Vercel "Sensitive" variable back. It
+        # writes the literal text [SENSITIVE] in its place (older CLIs wrote an
+        # empty string). A build that inlines that into a NEXT_PUBLIC_/VITE_/
+        # EXPO_PUBLIC_ value ships a broken site that still deploys green: one
+        # cutover shipped "[SENSITIVE]" as a Supabase URL and took a login
+        # down. So, before any build:
+        #   - a Sensitive value that is NOT public-prefixed is removed from the
+        #     build env and named in the log. The build runs without it, the
+        #     way a build runs on a laptop; functions still get the real value
+        #     from Vercel at runtime, prebuilt or not. Build code must therefore
+        #     never NEED a secret (render on request instead of at build).
+        #   - a Sensitive or empty PUBLIC-prefixed value stops the job, unless
+        #     the overlay file supplies it or the name is in the repository
+        #     variable PREBUILT_SERVER_READ_PUBLIC_ENV (server code reads it at
+        #     runtime; it is then removed so it cannot be baked in).
+        # The "No placeholder in the build output" step after the build is the
+        # backstop for all of this. Two ways to clear an EMPTY name:
         #   - the build needs it: put NAME=value in /etc/build-runner/<project>.env
         #     on the box (mode 640 root:builder, same as crmbuilds), or un-mark
         #     it Sensitive on Vercel;
@@ -202,6 +219,32 @@ jobs:
             echo "no overlay file $OVERLAY (fine unless a name below is empty)"
           fi
           missing=0
+          # Pass 1: Sensitive placeholders. Rewrites the pulled file.
+          : > "$PULLED.clean"
+          while IFS= read -r line || [ -n "$line" ]; do
+            case "$line" in ''|'#'*) printf '%s\n' "$line" >> "$PULLED.clean"; continue ;; esac
+            key="${line%%=*}"
+            val="$(printf '%s' "${line#*=}" | sed -e 's/^"//' -e 's/"$//')"
+            case "$key" in
+              NEXT_PUBLIC_*|VITE_*|EXPO_PUBLIC_*)
+                case " ${SERVER_READ_PUBLIC_ENV:-} " in
+                  *" $key "*) echo "$key: not baked in (PREBUILT_SERVER_READ_PUBLIC_ENV) - server code reads it at runtime"; continue ;;
+                esac
+                if [ "$val" = "[SENSITIVE]" ]; then
+                  echo "::error title=Sensitive public value::$key is marked Sensitive on Vercel, so the build box cannot read it, and it is baked into the bundle - put the real value in $OVERLAY"; missing=1; continue
+                fi ;;
+              *)
+                if [ "$val" = "[SENSITIVE]" ]; then
+                  echo "$key: Sensitive on Vercel - not available to the build, runtime only"; continue
+                fi ;;
+            esac
+            printf '%s\n' "$line" >> "$PULLED.clean"
+          done < "$PULLED"
+          mv "$PULLED.clean" "$PULLED"
+          if grep -qF "[SENSITIVE]" "$PULLED"; then
+            echo "::error title=Placeholder left in build env::a [SENSITIVE] placeholder survived in $PULLED"; exit 1
+          fi
+          # Pass 2: empty values.
           while IFS= read -r line || [ -n "$line" ]; do
             case "$line" in ''|'#'*) continue ;; esac
             key="${line%%=*}"
@@ -228,6 +271,20 @@ jobs:
             vercel build
           fi
           echo "seconds=$(( SECONDS - START ))" >> "$GITHUB_OUTPUT"
+
+      - name: No placeholder in the build output
+        # Backstop. If the text [SENSITIVE] reached anything that is about to be
+        # uploaded, a value the build could not read was baked in. Stop here:
+        # nothing has been deployed yet. File names only, never the lines.
+        run: |
+          test -d .vercel/output || { echo "::error::.vercel/output missing after vercel build"; exit 1; }
+          HITS="$(grep -rIlF "[SENSITIVE]" .vercel/output | head -20 || true)"
+          if [ -n "$HITS" ]; then
+            echo "::error title=Placeholder baked into the build::the text [SENSITIVE] is in the build output - a Sensitive Vercel variable was inlined. Not deploying."
+            printf '%s\n' "$HITS"
+            exit 1
+          fi
+          echo "build output is clean: no [SENSITIVE] placeholder in $(find .vercel/output -type f | wc -l) files"
 
       - name: vercel deploy --prebuilt
         id: deploy
@@ -267,6 +324,23 @@ jobs:
           echo "url=$URL" >> "$GITHUB_OUTPUT"
           echo "seconds=$(( SECONDS - START ))" >> "$GITHUB_OUTPUT"
           echo "deployed: $URL"
+
+      - name: Sync blog articles into the database
+        # The build box cannot read DATABASE_URL (Sensitive on Vercel), so the
+        # build no longer writes the articles in scripts/blog-content into the
+        # blog_posts table. The new deployment does it itself, at runtime, when
+        # asked once here. It only ever writes what shipped in this deployment
+        # and is a no-op when nothing changed. A failure does not undo a good
+        # deploy: it warns, and the next deploy (or re-running this job) fixes it.
+        if: steps.target.outputs.target == 'production'
+        run: |
+          for attempt in 1 2 3; do
+            if OUT="$(curl -fsS -m 120 -X POST https://www.sakredhealth.com/api/admin/sync-blog-content)"; then
+              echo "blog sync: $OUT"; exit 0
+            fi
+            sleep $(( 15 * attempt ))
+          done
+          echo "::warning title=Blog sync did not run::POST https://www.sakredhealth.com/api/admin/sync-blog-content failed 3 times. New or edited articles are not in the database yet; re-run this job or call it by hand."
 
       - name: Job summary
         if: always()

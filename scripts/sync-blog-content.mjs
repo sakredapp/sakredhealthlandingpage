@@ -1,6 +1,14 @@
-// Syncs scripts/blog-content/*.md into the blog_posts table at build time.
+// Syncs scripts/blog-content/*.md into the blog_posts table.
 // Upserts by slug and only writes rows whose content actually changed, so
-// re-deploys are no-ops. Never fails the build: any error logs and exits 0.
+// repeat runs are no-ops.
+//
+// Two callers:
+//   - the build command (vercel.json), when the build has DATABASE_URL. Never
+//     fails the build: any error logs and exits 0.
+//   - api/admin/sync-blog-content.ts, at runtime. Production builds run on our
+//     own build box, which cannot read DATABASE_URL (Vercel keeps Sensitive
+//     variables from builds that run outside Vercel), so there the sync is
+//     skipped at build and the deploy workflow calls that endpoint afterwards.
 import { readFileSync, readdirSync } from "fs";
 import { fileURLToPath, pathToFileURL } from "url";
 import { dirname, join } from "path";
@@ -32,13 +40,17 @@ export function parseArticle(raw, file) {
   return { ...meta, content: m[2].trim() };
 }
 
-async function main() {
+/**
+ * Run the sync. Returns the counts, or { skipped: reason } when there is
+ * nothing to do. Throws on a database error; each caller decides what that means.
+ */
+export async function syncBlogContent({ contentDir = CONTENT_DIR } = {}) {
   if (!process.env.DATABASE_URL) {
     console.log("[sync-blog] DATABASE_URL not set, skipping blog content sync.");
-    return;
+    return { skipped: "DATABASE_URL not set" };
   }
-  const files = readdirSync(CONTENT_DIR).filter((f) => f.endsWith(".md"));
-  if (files.length === 0) return;
+  const files = readdirSync(contentDir).filter((f) => f.endsWith(".md"));
+  if (files.length === 0) return { skipped: "no markdown files" };
 
   const pool = new pg.Pool({
     connectionString: process.env.DATABASE_URL,
@@ -53,7 +65,7 @@ async function main() {
     for (const file of files) {
       let a;
       try {
-        a = parseArticle(readFileSync(join(CONTENT_DIR, file), "utf8"), file);
+        a = parseArticle(readFileSync(join(contentDir, file), "utf8"), file);
       } catch (err) {
         // One malformed file must not silently take the rest of the sync with it.
         failed++;
@@ -165,13 +177,14 @@ async function main() {
         );
       }
     }
+    return { files: files.length, inserted, updated, unchanged, failed };
   } finally {
     await pool.end();
   }
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
-  main().catch((err) => {
+  syncBlogContent().catch((err) => {
     console.error("[sync-blog] sync failed (build continues):", err.message);
   });
 }
