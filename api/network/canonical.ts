@@ -17,13 +17,20 @@
  * The client-side replace stays for in-app navigation, where no request is made
  * and so no redirect can happen.
  *
- * ── This is not on the hot path ──────────────────────────────────────
+ * ── It also renders the page ─────────────────────────────────────────
  *
  * `rewrites` in vercel.json are evaluated only after the filesystem is checked,
- * and every canonical provider page is prerendered to static HTML at build
- * time. So a canonical URL never reaches this function — it is served as a
- * static file, as before. Only a slug with no prerendered page arrives here:
- * an alias, a typo, or a page published since the last build.
+ * so a provider page that was prerendered to a static file at build time never
+ * reaches this function.
+ *
+ * The production build no longer has one. Builds run on our own build box, and
+ * Vercel does not hand Sensitive variables (the network credentials) to a build
+ * that runs outside Vercel, so `scripts/prerender-network.ts` skips there. This
+ * function has those credentials at runtime, so it renders the SAME document
+ * the prerender wrote (one renderer: `api/_lib/network-page-html.ts`) and lets
+ * the edge cache it. A crawler gets the title, description, canonical, JSON-LD
+ * and body text exactly as before, and a page published five minutes ago gets
+ * them without waiting for a deploy.
  *
  * ── Unknown slugs get a real 404 ─────────────────────────────────────
  *
@@ -36,7 +43,13 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { readFileSync, existsSync } from "fs";
 import { join } from "path";
 import { getLocationBySlug, getPractitionerBySlug } from "../_lib/health-network.js";
-import { locationPath, practitionerPath } from "../../shared/health-network.js";
+import {
+  locationPath,
+  practitionerPath,
+  type HealthLocation,
+  type HealthPractitioner,
+} from "../../shared/health-network.js";
+import { renderLocationHtml, renderPractitionerHtml } from "../_lib/network-page-html.js";
 
 type Kind = "location" | "practitioner";
 
@@ -127,8 +140,25 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(308).end();
     }
 
-    /* A real page that simply wasn't in the last build — published since, most
-       likely. 200 and the shell; the SPA fetches and renders it. */
+    /* A real, published page. Serve the full document: head tags, JSON-LD and
+       a crawlable body injected into the app shell (React mounts over it for a
+       person). If the shell or the render is unavailable, the bare shell still
+       works: the SPA fetches and renders the page client-side. */
+    try {
+      const template = await appShell(req);
+      if (template) {
+        const html =
+          kind === "location"
+            ? renderLocationHtml(template, entity as HealthLocation)
+            : renderPractitionerHtml(template, entity as HealthPractitioner);
+        res.setHeader("Content-Type", "text/html; charset=utf-8");
+        // Edge cached: ten minutes fresh, then served stale while it refreshes.
+        res.setHeader("Cache-Control", "public, s-maxage=600, stale-while-revalidate=86400");
+        return res.status(200).send(html);
+      }
+    } catch (error) {
+      console.error("[network/canonical] page render failed, serving the shell:", error);
+    }
     return serveShell(req, res, 200);
   } catch (error) {
     console.error("[network/canonical] failed:", error);

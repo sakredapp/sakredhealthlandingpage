@@ -7,6 +7,9 @@
   "functions": {
     "api/network/canonical.ts": {
       "includeFiles": "dist/index.html"
+    },
+    "api/admin/sync-blog-content.ts": {
+      "includeFiles": "scripts/blog-content/**"
     }
   },
   "rewrites": [

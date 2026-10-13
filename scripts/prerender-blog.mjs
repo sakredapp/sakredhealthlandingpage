@@ -417,8 +417,26 @@ function frontmatterDates(articles) {
   return out;
 }
 
+/**
+ * Dates without a database. The build box cannot read DATABASE_URL (Vercel
+ * keeps Sensitive variables from builds that run outside Vercel), so the dates
+ * come from the live site's own public blog API, which reads the same table.
+ * Frontmatter still wins for publishedAt; this is what keeps dateModified.
+ */
+async function fetchDatesFromLiveSite() {
+  const res = await fetch(`${BASE_URL}/api/blog-posts`, { signal: AbortSignal.timeout(20000) });
+  if (!res.ok) throw new Error(`${BASE_URL}/api/blog-posts answered ${res.status}`);
+  const posts = await res.json();
+  if (!Array.isArray(posts)) throw new Error("blog API did not return a list");
+  const iso = (v) => (v && !Number.isNaN(new Date(v).getTime()) ? new Date(v).toISOString() : undefined);
+  console.log(`[prerender] dates for ${posts.length} posts read from the live blog API (no DATABASE_URL in this build)`);
+  return Object.fromEntries(
+    posts.map((p) => [p.slug, { publishedAt: iso(p.publishedAt), updatedAt: iso(p.updatedAt) }])
+  );
+}
+
 async function fetchDates() {
-  if (!process.env.DATABASE_URL) return {};
+  if (!process.env.DATABASE_URL) return fetchDatesFromLiveSite();
   const pool = new pg.Pool({
     connectionString: process.env.DATABASE_URL,
     max: 1,
