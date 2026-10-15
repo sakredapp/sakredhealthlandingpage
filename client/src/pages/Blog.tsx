@@ -14,7 +14,7 @@
  */
 import { useMemo, useState } from "react";
 import { Link } from "wouter";
-import { useQuery } from "@tanstack/react-query";
+import { useBlogSummary, postReadingMinutes, type BlogPostSummary as BlogPost } from "@/lib/blog-summary";
 import { motion } from "framer-motion";
 import { ArrowRight, Search, User, X } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
@@ -29,12 +29,11 @@ import { resolveAuthor } from "@/data/authors";
 import {
   BLOG_CATEGORIES,
   categoryForTags,
-  readingMinutes,
   type BlogCategory,
 } from "@/data/blog-categories";
 import { useSeo, SITE_URL } from "@/lib/seo";
 import { remoteSrcSet } from "@/lib/img";
-import type { BlogPost } from "@shared/schema";
+
 
 const dateLabel = (value: Date | string | null) =>
   value
@@ -122,7 +121,7 @@ function Byline({ post, className }: { post: BlogPost; className?: string }) {
         </>
       )}
       <span aria-hidden="true">·</span>
-      <span>{readingMinutes(post.content)} min read</span>
+      <span>{postReadingMinutes(post)} min read</span>
     </div>
   );
 }
@@ -157,9 +156,7 @@ export default function Blog() {
   const [term, setTerm] = useState("");
   const [category, setCategory] = useState<BlogCategory | null>(null);
 
-  const { data: posts, isLoading } = useQuery<BlogPost[]>({
-    queryKey: ["/api/blog-posts"],
-  });
+  const { data: posts, isLoading } = useBlogSummary();
 
   useSeo({
     title: "Research & Writing — Health, Food, Practice & Coverage | Sakred Health",

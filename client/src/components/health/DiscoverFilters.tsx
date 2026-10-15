@@ -93,11 +93,14 @@ export function DiscoverFilters({
   onChange,
   modalities,
   resultCount,
+  countPending = false,
 }: {
   filters: FilterState;
   onChange: (next: FilterState) => void;
   modalities: Modality[];
   resultCount: number | null;
+  /** The first search is still loading: keep the count row's space. */
+  countPending?: boolean;
 }) {
   const [expanded, setExpanded] = useState(false);
   const active = countActiveFilters(filters);
@@ -206,11 +209,18 @@ export function DiscoverFilters({
         )}
       </div>
 
-      {resultCount !== null && (
-        <p className="flex items-center gap-2 border-t border-sakred-stone/60 px-4 py-2 text-xs text-sakred-ink/55 sm:px-5">
+      {/* The row keeps its height while the first search loads (hidden, not
+          absent), so the map below doesn't jump when the count arrives. */}
+      {(resultCount !== null || countPending) && (
+        <p
+          className={`flex items-center gap-2 border-t border-sakred-stone/60 px-4 py-2 text-xs text-sakred-ink/55 sm:px-5 ${
+            resultCount === null ? "invisible" : ""
+          }`}
+          aria-hidden={resultCount === null}
+        >
           <SlidersHorizontal className="h-3 w-3" aria-hidden="true" />
           <span aria-live="polite">
-            {resultCount} {resultCount === 1 ? "practice" : "practices"} in this view
+            {resultCount ?? 0} {resultCount === 1 ? "practice" : "practices"} in this view
           </span>
         </p>
       )}

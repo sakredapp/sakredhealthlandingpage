@@ -335,6 +335,7 @@ export default function Discover() {
         }}
         modalities={modalities}
         resultCount={available && !isLoading ? locations.length : null}
+        countPending={isLoading}
       />
 
       {/* ---- the workspace ---- *

@@ -9,7 +9,7 @@
  * them — it reads the same `/api/blog-posts` the blog does.
  */
 import { Link } from "wouter";
-import { useQuery } from "@tanstack/react-query";
+import { useBlogSummary, postReadingMinutes } from "@/lib/blog-summary";
 import { ArrowRight, BookOpen, Leaf, Table2 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { NewsletterBand } from "@/components/site/NewsletterBand";
@@ -22,17 +22,17 @@ import {
   ParallaxImage,
 } from "@/components/motion";
 import { HEALTH_IMAGES } from "@/data/health-images";
-import { categoryForTags, readingMinutes } from "@/data/blog-categories";
+import { categoryForTags } from "@/data/blog-categories";
 import { foodData } from "@/data/food-chart";
 import { APP_STORE_URL } from "@/data/app-assets";
 import { useSeo, SITE_URL } from "@/lib/seo";
 import { remoteSrcSet } from "@/lib/img";
-import type { BlogPost } from "@shared/schema";
+
 
 const TOTAL_FOODS = foodData.reduce((n, category) => n + category.items.length, 0);
 
 export default function Resources() {
-  const { data: posts } = useQuery<BlogPost[]>({ queryKey: ["/api/blog-posts"] });
+  const { data: posts } = useBlogSummary();
   const recent = (posts ?? []).slice(0, 6);
 
   useSeo({
@@ -171,7 +171,7 @@ export default function Resources() {
                           {post.excerpt}
                         </p>
                         <span className="mt-3 text-xs text-sakred-ink/45">
-                          {readingMinutes(post.content)} min read
+                          {postReadingMinutes(post)} min read
                         </span>
                       </div>
                     </Link>

@@ -126,6 +126,15 @@ export function useNetworkSearch(
  * Modalities
  * ==================================================================== */
 
+/** The build-time list in a prerendered /discover page, if there is one. */
+function modalitySnapshot(): { modalities: Modality[]; available: boolean } | undefined {
+  // globalThis, not window: the build-time render (scripts/prerender-shell.mjs)
+  // sets the same value in Node, so server and browser render the same chips.
+  const snapshot = (globalThis as { __SAKRED_MODALITIES__?: { modalities: Modality[]; available: boolean } })
+    .__SAKRED_MODALITIES__;
+  return snapshot && Array.isArray(snapshot.modalities) ? snapshot : undefined;
+}
+
 export function useModalities(): NetworkResult<Modality[]> {
   const { data, isLoading } = useQuery<{ modalities: Modality[]; available: boolean }>({
     queryKey: ["/api/network/modalities"],
@@ -135,6 +144,11 @@ export function useModalities(): NetworkResult<Modality[]> {
       return res.json();
     },
     staleTime: 10 * 60_000,
+    // The list the site served at build time, written into the /discover pages
+    // by scripts/prerender-shell.mjs, so the filter chips don't re-wrap
+    // when the API answers. Marked as old, so the live list still loads on mount.
+    initialData: modalitySnapshot,
+    initialDataUpdatedAt: 0,
   });
 
   const modalities = data?.modalities ?? [];
