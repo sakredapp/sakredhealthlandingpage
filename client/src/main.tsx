@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { startTransition, useEffect } from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import App from "./App";
 import { endShellHydration } from "./components/motion";
@@ -28,7 +28,11 @@ const plainQuery = Array.from(new URLSearchParams(window.location.search).keys()
 );
 
 if (shellPath !== null && (shellPath || "/") === here && plainQuery) {
-  hydrateRoot(root, <Hydrated />);
+  // As a transition, React adopts the page in small slices and yields to the
+  // browser between them, instead of one long task that holds up a tap.
+  startTransition(() => {
+    hydrateRoot(root, <Hydrated />);
+  });
 } else {
   endShellHydration();
   createRoot(root).render(<App />);
