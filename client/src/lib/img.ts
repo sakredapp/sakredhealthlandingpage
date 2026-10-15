@@ -30,6 +30,8 @@ export function remoteSrcSet(url: string | null | undefined): string | undefined
       const next = new URL(parsed.toString());
       next.searchParams.set("w", String(width));
       if (h) next.searchParams.set("h", String(Math.round((h * width) / w)));
+      // Same pixels and crop; lets the CDN send WebP/AVIF instead of JPEG.
+      if (!next.searchParams.has("auto")) next.searchParams.set("auto", "format");
       return `${next.toString()} ${width}w`;
     })
     .join(", ");
