@@ -1,6 +1,5 @@
 import { Switch, Route, useLocation } from "wouter";
 import { MotionConfig } from "framer-motion";
-import { Analytics } from "@vercel/analytics/react";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider, useQuery } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -177,10 +176,6 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
-          {/* Page views + the custom funnel events in lib/analytics.ts.
-              Self-hosted by Vercel, so no third-party script and no consent
-              banner obligation for basic traffic measurement. */}
-          <Analytics />
         </TooltipProvider>
       </MotionConfig>
     </QueryClientProvider>

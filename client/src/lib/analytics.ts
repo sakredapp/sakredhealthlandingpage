@@ -20,12 +20,11 @@
  *
  * ── Sinks ────────────────────────────────────────────────────────────
  *
- * Vercel Analytics when available, plus `window.dataLayer` so GA4/GTM can be
- * added later with no code change here. No sink configured is a silent no-op:
- * analytics must never be able to break a page.
+ * `window.dataLayer`, so GA4/GTM can be added later with no code change here.
+ * (Vercel Web Analytics was removed: it is not enabled on this project, so its
+ * script URL served the HTML page and threw on every load.) No sink configured
+ * is a silent no-op: analytics must never be able to break a page.
  */
-import { track as vercelTrack } from "@vercel/analytics";
-
 /* ==================================================================== *
  * The vocabulary
  * ==================================================================== */
@@ -160,12 +159,6 @@ function sanitise(props: AnalyticsProps | undefined): Record<string, string | nu
  */
 export function track(event: AnalyticsEvent, props?: AnalyticsProps): void {
   const payload = sanitise(props);
-
-  try {
-    vercelTrack(event, payload);
-  } catch {
-    /* no sink, blocked, or not enabled on the plan — fine */
-  }
 
   try {
     const layer = (window as any).dataLayer;
