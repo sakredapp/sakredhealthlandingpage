@@ -124,17 +124,19 @@ async function seedBlog() {
 /**
  * A prerendered page is readable before the app runs, so the app's script
  * waits until that first paint instead of sharing a phone's bandwidth with
- * the page's CSS, fonts and photos. The script is the same file; it only
- * starts one frame later (and never before the page has finished parsing).
+ * the page's CSS, fonts and photos. The script is the same file; it starts
+ * once the browser reports the page's first paint (and never before the page
+ * has finished parsing). Browsers without paint timing start it a frame
+ * later; a tab opened in the background never paints, so a timer starts it too.
  */
 function startAppAfterPaint(html) {
   const tag = html.match(/<script type="module" crossorigin src="(\/assets\/index-[^"]+\.js)"><\/script>/);
   if (!tag) return html;
   const loader =
-    // A tab opened in the background never paints, so a timer starts it too.
     `<script>(function(){var done=0;function go(){if(done++)return;var s=document.createElement("script");s.type="module";s.crossOrigin="anonymous";s.src=${JSON.stringify(tag[1])};document.head.appendChild(s)}` +
-    `function later(){setTimeout(document.readyState==="loading"?function(){document.addEventListener("DOMContentLoaded",go)}:go,0)}` +
-    `requestAnimationFrame(later);setTimeout(function(){if(document.readyState!=="loading")go();else document.addEventListener("DOMContentLoaded",go)},2000)})()</script>`;
+    `function start(){setTimeout(document.readyState==="loading"?function(){document.addEventListener("DOMContentLoaded",go)}:go,0)}` +
+    `var po;try{po=new PerformanceObserver(function(){po.disconnect();start()});po.observe({type:"paint",buffered:true})}catch(e){po=0}` +
+    `if(!po)requestAnimationFrame(start);setTimeout(start,2000)})()</script>`;
   return html.replace(tag[0], () => loader);
 }
 
