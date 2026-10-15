@@ -10,7 +10,7 @@
     "db:push": "drizzle-kit push",
     "census:refresh": "node scripts/fetch-census.mjs",
     "vercel-build": "vite build",
-    "build:full": "vite build && node scripts/prerender-blog.mjs && npx tsx scripts/prerender-pages.ts && npx tsx scripts/prerender-network.ts && node scripts/prerender-home.mjs",
+    "build:full": "vite build && node scripts/prerender-blog.mjs && npx tsx scripts/prerender-pages.ts && npx tsx scripts/prerender-network.ts && node scripts/prerender-shell.mjs",
     "serve:dist": "npx tsx scripts/serve-dist.ts",
     "test:browser": "node scripts/browser-test.mjs",
     "test:browser:only": "node tests/browser-regression.mjs",
