@@ -344,7 +344,7 @@ export default function BlogPost() {
                   const person = resolveAuthor(post.author);
                   return person ? (
                     <img
-                      src={person.image}
+                      src={person.avatar}
                       alt={person.name}
                       width={40}
                       height={40}

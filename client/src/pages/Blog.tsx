@@ -102,7 +102,7 @@ function Byline({ post, className }: { post: BlogPost; className?: string }) {
       <span className="flex items-center gap-1.5">
         {author?.image ? (
           <img
-            src={author.image}
+            src={author.avatar}
             alt=""
             loading="lazy"
             width={20}
