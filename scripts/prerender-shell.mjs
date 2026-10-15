@@ -126,8 +126,10 @@ async function seedBlog() {
  * waits until that first paint instead of sharing a phone's bandwidth with
  * the page's CSS, fonts and photos. The script is the same file; it starts
  * once the browser reports the page's first paint (and never before the page
- * has finished parsing). Browsers without paint timing start it a frame
- * later; a tab opened in the background never paints, so a timer starts it too.
+ * has finished parsing): the first contentful paint, not the earlier
+ * "first-paint" entry, which can come before any content is on screen.
+ * Browsers without paint timing start it a frame later; a tab opened in the
+ * background never paints, so a timer starts it too.
  */
 function startAppAfterPaint(html) {
   const tag = html.match(/<script type="module" crossorigin src="(\/assets\/index-[^"]+\.js)"><\/script>/);
@@ -135,7 +137,7 @@ function startAppAfterPaint(html) {
   const loader =
     `<script>(function(){var done=0;function go(){if(done++)return;var s=document.createElement("script");s.type="module";s.crossOrigin="anonymous";s.src=${JSON.stringify(tag[1])};document.head.appendChild(s)}` +
     `function start(){setTimeout(document.readyState==="loading"?function(){document.addEventListener("DOMContentLoaded",go)}:go,0)}` +
-    `var po;try{po=new PerformanceObserver(function(){po.disconnect();start()});po.observe({type:"paint",buffered:true})}catch(e){po=0}` +
+    `var po;try{po=new PerformanceObserver(function(l){if(!l.getEntriesByName("first-contentful-paint").length)return;po.disconnect();start()});po.observe({type:"paint",buffered:true})}catch(e){po=0}` +
     `if(!po)requestAnimationFrame(start);setTimeout(start,2000)})()</script>`;
   return html.replace(tag[0], () => loader);
 }
