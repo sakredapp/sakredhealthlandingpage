@@ -108,6 +108,7 @@ export default function ForPractitioners() {
           <EditorialImage
             photo={HEALTH_IMAGES.practitioners}
             className="aspect-[5/4] w-full rounded-3xl"
+            eager
             sizes="(max-width: 1024px) 100vw, 560px"
           />
         </div>
