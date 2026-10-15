@@ -1,12 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "node scripts/sync-blog-content.mjs; vite build && node scripts/prerender-blog.mjs && npx tsx scripts/prerender-pages.ts && npx tsx scripts/prerender-network.ts",
+  "buildCommand": "node scripts/sync-blog-content.mjs; vite build && node scripts/prerender-blog.mjs && npx tsx scripts/prerender-pages.ts && npx tsx scripts/prerender-network.ts && node scripts/prerender-home.mjs",
   "outputDirectory": "dist",
   "framework": null,
   "installCommand": "npm install",
   "functions": {
     "api/network/canonical.ts": {
-      "includeFiles": "dist/index.html"
+      "includeFiles": "dist/spa.html"
     },
     "api/admin/sync-blog-content.ts": {
       "includeFiles": "scripts/blog-content/**"
@@ -27,10 +27,28 @@
     },
     {
       "source": "/((?!api/).*)",
-      "destination": "/index.html"
+      "destination": "/spa.html"
     }
   ],
   "headers": [
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
     {
       "source": "/api/(.*)",
       "headers": [

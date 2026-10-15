@@ -192,6 +192,7 @@ export function NetworkHero() {
               fitToLocations={locations.length > 0}
               className="h-full w-full"
               ariaLabel="Map of the Sakred Health Network"
+              deferInit
             />
           </div>
 
