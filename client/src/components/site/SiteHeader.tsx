@@ -11,7 +11,8 @@ import { Link, useLocation } from "wouter";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { COVERAGE_LINKS, PRIMARY_NAV } from "./nav-data";
 import { track } from "@/lib/analytics";
-import sakredLogo from "@assets/full_png_image_sakred__1771270183106.png";
+// 108px WebP of the same mark (shown at 36px; 3x for retina). The 512px PNG was 161KB.
+import sakredLogo from "@assets/sakred-logo-108.webp";
 
 interface SiteHeaderProps {
   /** Start opaque. Set on every page whose content begins under the header. */
@@ -93,7 +94,7 @@ export function SiteHeader({ solid = false }: SiteHeaderProps) {
       >
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex shrink-0 items-center" aria-label="Sakred Health — home">
-            <img src={sakredLogo} alt="Sakred Health" className="h-9 w-auto" />
+            <img src={sakredLogo} alt="Sakred Health" width={36} height={36} className="h-9 w-auto" />
           </Link>
 
           {/* ---- desktop ---- */}

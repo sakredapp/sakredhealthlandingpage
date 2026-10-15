@@ -665,3 +665,30 @@
     }
   }
 }
+
+/* Load-time entrances (fadeUp and StampHeading in components/motion.tsx).
+   CSS rather than framer-motion so they start with the first paint, including
+   on the prerendered homepage before any JavaScript has run. Same distances,
+   durations and settle curve as the framer versions they replace. */
+@keyframes sakred-fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes sakred-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes sakred-stamp {
+  from { opacity: 0; transform: translateY(0.16em); filter: blur(1.5px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+@keyframes sakred-stamp-accent {
+  from { opacity: 0; transform: translateY(0.16em); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* Keep the fade, drop the movement (what MotionConfig reducedMotion="user" did). */
+  [style*="sakred-fade-up"] { animation-name: sakred-fade-in !important; }
+  /* Headlines render whole. */
+  [style*="sakred-stamp"] { animation: none !important; }
+}

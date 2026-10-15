@@ -28,6 +28,7 @@ import type { Map as MapLibreMap, Marker } from "maplibre-gl";
 import type { LocationSummary, MapBounds } from "@shared/health-network";
 import { buildSakredMapStyle, STYLE_URL_OVERRIDE } from "@/lib/map-style";
 import { AtlasCanvas } from "./AtlasCanvas";
+import { whenPageSettles } from "@/lib/when-page-settles";
 
 export interface SakredMapProps {
   locations: LocationSummary[];
@@ -47,6 +48,13 @@ export interface SakredMapProps {
   className?: string;
   /** Describes the map to screen readers. Required — this is real content. */
   ariaLabel: string;
+  /**
+   * Scenery maps (the homepage hero) start the engine only once the visitor
+   * interacts with the page (scroll, touch, pointer, key) or a few seconds
+   * after load. Until then the drawn atlas shows, exactly as it does while the
+   * engine downloads. Keeps ~1MB of map JS off the first paint.
+   */
+  deferInit?: boolean;
 }
 
 const DEFAULT_CENTER: [number, number] = [-98.5, 39.5];
@@ -92,6 +100,7 @@ export function SakredMap({
   fitToLocations = false,
   className,
   ariaLabel,
+  deferInit = false,
 }: SakredMapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
@@ -117,9 +126,12 @@ export function SakredMap({
     let cancelled = false;
     const container = containerRef.current;
     if (!container) return;
+    const gate = deferInit ? whenPageSettles(10000) : null;
 
     (async () => {
       try {
+        if (gate) await gate.promise;
+        if (cancelled) return;
         const [{ default: maplibregl }] = await Promise.all([
           import("maplibre-gl"),
           import("maplibre-gl/dist/maplibre-gl.css"),
@@ -196,6 +208,7 @@ export function SakredMap({
 
     return () => {
       cancelled = true;
+      gate?.cancel();
       markersRef.current.forEach((m) => m.remove());
       markersRef.current.clear();
       mapRef.current?.remove();

@@ -18,17 +18,68 @@
  * coverage?" link in NetworkHero.
  */
 import { SiteLayout } from "@/components/site/SiteLayout";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { NetworkHero } from "@/components/health/NetworkHero";
-import { TrustLadder } from "@/components/health/TrustLadder";
-import { HowSakredWorks } from "@/components/health/HowSakredWorks";
-import { ProtocolsBand } from "@/components/health/ProtocolsBand";
-import { CommunityBand } from "@/components/health/CommunityBand";
-import { ResourcesBand } from "@/components/health/ResourcesBand";
-import { CoverageBand } from "@/components/health/CoverageBand";
-import { DownloadBand } from "@/components/health/DownloadBand";
 import { useSeo, SITE_URL } from "@/lib/seo";
+import { whenPageSettles } from "@/lib/when-page-settles";
+
+/**
+ * Sections 2-8 live in their own chunk and mount on the visitor's first
+ * interaction (scroll, touch, pointer, key), when the URL points at one of
+ * them (/#how-it-works), or a few seconds after load. The first screen then
+ * renders only the hero, which is what makes the page paint fast on a phone.
+ * The chunk is fetched as soon as the page has loaded, so it is ready by the
+ * time anyone scrolls.
+ */
+const loadBelowFold = () => import("@/components/health/LandingBelowFold");
+const LandingBelowFold = lazy(loadBelowFold);
+
+/** Holds the space the sections will fill so the footer starts off-screen. */
+function BelowFoldPlaceholder() {
+  return <div className="min-h-screen" aria-hidden="true" />;
+}
+
+function useShowBelowFold(): boolean {
+  // Starts false even for /#how-it-works so the first render matches the
+  // prerendered homepage shell; the effect below opens it straight away.
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    if (show) return;
+    if (window.location.hash.length > 1) {
+      setShow(true);
+      return;
+    }
+    const gate = whenPageSettles(10000);
+    gate.promise.then(() => setShow(true));
+    const onHash = () => setShow(true);
+    window.addEventListener("hashchange", onHash);
+    const prefetch = () => void loadBelowFold();
+    if (document.readyState === "complete") prefetch();
+    else window.addEventListener("load", prefetch, { once: true });
+    return () => {
+      gate.cancel();
+      window.removeEventListener("hashchange", onHash);
+      window.removeEventListener("load", prefetch);
+    };
+  }, [show]);
+
+  return show;
+}
+
+/** Once the sections exist, honour a #section in the URL. */
+function ScrollToHash() {
+  useEffect(() => {
+    const id = window.location.hash.slice(1);
+    if (!id) return;
+    document.getElementById(id)?.scrollIntoView();
+  }, []);
+  return null;
+}
 
 export default function Landing() {
+  const showBelowFold = useShowBelowFold();
+
   useSeo({
     title: "Sakred Health — Find Trusted Practitioners & Care Near You",
     description:
@@ -64,13 +115,14 @@ export default function Landing() {
   return (
     <SiteLayout>
       <NetworkHero />
-      <TrustLadder />
-      <HowSakredWorks />
-      <ProtocolsBand />
-      <CommunityBand />
-      <ResourcesBand />
-      <CoverageBand />
-      <DownloadBand />
+      {showBelowFold ? (
+        <Suspense fallback={<BelowFoldPlaceholder />}>
+          <LandingBelowFold />
+          <ScrollToHash />
+        </Suspense>
+      ) : (
+        <BelowFoldPlaceholder />
+      )}
     </SiteLayout>
   );
 }

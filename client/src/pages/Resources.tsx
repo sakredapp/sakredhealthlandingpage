@@ -26,6 +26,7 @@ import { categoryForTags, readingMinutes } from "@/data/blog-categories";
 import { foodData } from "@/data/food-chart";
 import { APP_STORE_URL } from "@/data/app-assets";
 import { useSeo, SITE_URL } from "@/lib/seo";
+import { remoteSrcSet } from "@/lib/img";
 import type { BlogPost } from "@shared/schema";
 
 const TOTAL_FOODS = foodData.reduce((n, category) => n + category.items.length, 0);
@@ -112,6 +113,7 @@ export default function Resources() {
               {HEALTH_IMAGES.library.src ? (
                 <ParallaxImage
                   src={`/img/${HEALTH_IMAGES.library.bundle}-1600.jpg`}
+                  srcSet={`/img/${HEALTH_IMAGES.library.bundle}-800.webp 800w, /img/${HEALTH_IMAGES.library.bundle}-1600.webp 1600w`}
                   alt={HEALTH_IMAGES.library.alt}
                   sizes="(max-width: 1024px) 100vw, 400px"
                   distance={38}
@@ -149,6 +151,8 @@ export default function Resources() {
                         <div className="crop-shift aspect-[16/9] w-full overflow-hidden">
                           <img
                             src={post.featuredImage}
+                            srcSet={remoteSrcSet(post.featuredImage)}
+                            sizes="(max-width: 640px) 100vw, 360px"
                             alt={post.featuredImageAlt || post.title}
                             loading="lazy"
                             decoding="async"

@@ -59,12 +59,40 @@ export function stagger(index: number, step = 0.07, cap = 0.42): number {
   return Math.min(index * step, cap);
 }
 
-/** Load-time entrance props (for above-the-fold content that never scrolls into view). */
+/** The settle curve as CSS, for the entrances that run as CSS animations. */
+const EASE_CSS = `cubic-bezier(${EASE.join(", ")})`;
+
+/**
+ * True on the server (the build-time homepage shell, see entry-shell.tsx) and
+ * during the browser's first render when it is hydrating that shell. Anything
+ * that animates on load reads this once per mount so the markup the server
+ * wrote and the markup the browser hydrates are the same.
+ */
+let shellHydrating =
+  typeof document !== "undefined" && !!document.getElementById("root")?.hasAttribute("data-shell");
+
+export function isShellRender(): boolean {
+  return typeof document === "undefined" || shellHydrating;
+}
+
+/** Called by main.tsx once the shell has been hydrated. */
+export function endShellHydration(): void {
+  shellHydrating = false;
+}
+
+/**
+ * Load-time entrance props (for above-the-fold content that never scrolls into view).
+ *
+ * The same 18px / 620ms settle as before, run as a CSS animation (keyframes in
+ * index.css) rather than by framer-motion. That way it starts with the first
+ * paint, including on the prerendered homepage before any JavaScript has run,
+ * and costs the main thread nothing. Reduced motion keeps the fade and drops
+ * the movement, as MotionConfig did.
+ */
 export function fadeUp(delay = 0) {
   return {
-    initial: { opacity: 0, y: 18 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.62, ease: EASE, delay },
+    initial: false as const,
+    style: { animation: `sakred-fade-up 0.62s ${EASE_CSS} ${delay}s both` },
   };
 }
 
@@ -115,13 +143,15 @@ export function ScrollProgress() {
     restDelta: 0.001,
   });
 
-  if (reduced) return null;
+  // Hidden by CSS rather than unmounted under reduced motion, so the
+  // prerendered homepage markup matches what every browser hydrates.
+  if (reduced && !isShellRender()) return null;
 
   return (
     <motion.div
       aria-hidden="true"
       style={{ scaleX }}
-      className="fixed top-16 left-0 right-0 z-50 h-0.5 origin-left bg-gradient-to-r from-[#C5A059] to-[#EBD598]"
+      className="fixed top-16 left-0 right-0 z-50 h-0.5 origin-left bg-gradient-to-r from-[#C5A059] to-[#EBD598] motion-reduce:hidden"
     />
   );
 }
@@ -183,6 +213,36 @@ export function StampHeading({
 }: StampHeadingProps) {
   const reduced = useReducedMotion();
   const Tag = as;
+  // Fixed per mount: a heading in the prerendered homepage shell presses in by
+  // CSS from the first paint and keeps doing so after hydration.
+  const [cssMode] = useState(isShellRender);
+
+  if (cssMode) {
+    const words = [
+      ...text.trim().split(/\s+/).map((word) => ({ word, gold: false })),
+      ...(accent ? accent.trim().split(/\s+/).map((word) => ({ word, gold: true })) : []),
+    ];
+    return (
+      <Tag className={className}>
+        {words.map(({ word, gold }, i) => (
+          <span key={`${gold ? "a" : "p"}-${i}`}>
+            <span
+              className={gold ? `inline-block ${GRADIENT_WORD}` : "inline-block"}
+              style={{
+                animation: `${gold ? "sakred-stamp-accent" : "sakred-stamp"} 0.46s ${EASE_CSS} ${(
+                  delay +
+                  i * 0.042
+                ).toFixed(3)}s both`,
+              }}
+            >
+              {word}
+            </span>
+            {i < words.length - 1 ? " " : null}
+          </span>
+        ))}
+      </Tag>
+    );
+  }
 
   if (reduced) {
     return (
@@ -419,6 +479,8 @@ interface ParallaxImageProps {
   /** Skip lazy-loading for an above-the-fold hero image. */
   eager?: boolean;
   sizes?: string;
+  /** Responsive candidates, so a phone fetches a phone-sized file. */
+  srcSet?: string;
 }
 
 /**
@@ -437,6 +499,7 @@ export function ParallaxImage({
   distance = 44,
   eager = false,
   sizes,
+  srcSet,
 }: ParallaxImageProps) {
   const reduced = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
@@ -450,6 +513,7 @@ export function ParallaxImage({
     <div ref={ref} className={`relative overflow-hidden ${className ?? ""}`}>
       <motion.img
         src={src}
+        srcSet={srcSet}
         alt={alt}
         sizes={sizes}
         loading={eager ? "eager" : "lazy"}

@@ -357,6 +357,7 @@ export default function Discover() {
             fitToLocations={locations.length > 0}
             className="h-full w-full"
             ariaLabel={`Map of ${locations.length} practices in the Sakred Health Network`}
+            deferInit
           />
 
           {/* "Search this area" — appears only once the viewport has genuinely
