@@ -117,6 +117,7 @@ export default function Resources() {
                   alt={HEALTH_IMAGES.library.alt}
                   sizes="(max-width: 1024px) 100vw, 400px"
                   distance={38}
+                  eager
                   className="mt-8 aspect-[4/3] w-full rounded-2xl"
                 />
               ) : (

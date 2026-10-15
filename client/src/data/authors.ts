@@ -11,6 +11,8 @@ export interface Author {
   /** Optional credential/role shown after the name and used as jobTitle. */
   title?: string;
   image: string;
+  /** 120px square copy for the small round byline photo (the full image is ~250 KB). */
+  avatar: string;
 }
 
 const IMAGE_BASE =
@@ -21,16 +23,19 @@ export const AUTHORS: Record<string, Author> = {
     key: "gerard",
     name: "Gerard Cavaleri",
     image: `${IMAGE_BASE}/gerard.jpeg`,
+    avatar: "/img/authors/gerard-120.webp",
   },
   jace: {
     key: "jace",
     name: "Jace Russell",
     image: `${IMAGE_BASE}/jace.jpeg`,
+    avatar: "/img/authors/jace-120.webp",
   },
   michael: {
     key: "michael",
     name: "Michael Cavaleri",
     image: `${IMAGE_BASE}/michael.jpeg`,
+    avatar: "/img/authors/michael-120.webp",
   },
 };
 

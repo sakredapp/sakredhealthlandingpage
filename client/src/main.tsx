@@ -23,7 +23,7 @@ const here = window.location.pathname.replace(/\/+$/, "") || "/";
 // The shell was rendered without a query string. A query that changes what
 // the page shows (/discover?q=..., /blog?category=...) gets a fresh render;
 // ad and campaign tags don't change the page, so those still hydrate.
-const plainQuery = [...new URLSearchParams(window.location.search).keys()].every((key) =>
+const plainQuery = Array.from(new URLSearchParams(window.location.search).keys()).every((key) =>
   /^(utm_|fbclid$|gclid$|msclkid$|ttclid$|ref$)/.test(key)
 );
 
