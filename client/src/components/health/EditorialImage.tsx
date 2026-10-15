@@ -14,6 +14,7 @@ import { useState } from "react";
 import type { EditorialPhoto } from "@/data/health-images";
 import type { Modality } from "@shared/health-network";
 import { ProviderFallback } from "./ProviderFallback";
+import { remoteSrcSet } from "@/lib/img";
 
 interface EditorialImageProps {
   photo: EditorialPhoto | undefined;
@@ -128,7 +129,7 @@ export function EditorialImage({
               srcSet={
                 photo!.bundle
                   ? `/img/${photo!.bundle}-800.jpg 800w, /img/${photo!.bundle}-1600.jpg 1600w`
-                  : undefined
+                  : remoteSrcSet(photo!.src)
               }
               alt={photo!.alt}
               sizes={sizes}

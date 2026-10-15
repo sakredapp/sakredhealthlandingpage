@@ -7,8 +7,9 @@
 // paints as soon as the CSS lands. main.tsx hydrates it in place.
 //
 // dist/index.html is also the SPA fallback for every other route, which must
-// stay empty, so the untouched template is first copied to dist/spa.html and
-// vercel.json rewrites unknown routes there. Run after the other prerender
+// not carry the homepage hero, so the file as it stands is first copied to
+// dist/spa.html and vercel.json rewrites unknown routes there (those routes
+// get exactly the HTML they got before). Run after the other prerender
 // scripts: they read dist/index.html as their template.
 //
 // Never fails the build: on any error the homepage stays the plain SPA.
@@ -51,11 +52,20 @@ async function main() {
   const html = render("/");
   if (!html || !html.includes("<h1")) throw new Error("render produced no hero");
 
+  // The root holds the crawler copy prerender-pages.ts wrote for "/". It moves
+  // into a <noscript> beside the hero so crawlers that don't run JavaScript
+  // still read every link and paragraph they did before; browsers with
+  // JavaScript never render it.
+  const match = template.match(/<div id="root">([\s\S]*)<\/div>(\s*<\/body>)/);
+  if (!match) throw new Error('<div id="root"> not found in template');
+  const crawlerCopy = match[1].trim();
   const out = template.replace(
-    /<div id="root">\s*<\/div>/,
-    () => `<div id="root" data-shell>${html}</div>`
+    match[0],
+    () =>
+      `<div id="root" data-shell>${html}</div>` +
+      (crawlerCopy ? `\n    <noscript>${crawlerCopy}</noscript>` : "") +
+      match[2]
   );
-  if (out === template) throw new Error('empty <div id="root"></div> not found in template');
   writeFileSync(indexPath, out);
   console.log(`[prerender-home] wrote ${Math.round(html.length / 1024)} KB of hero markup into dist/index.html`);
 }

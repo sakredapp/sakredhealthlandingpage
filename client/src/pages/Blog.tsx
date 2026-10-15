@@ -33,6 +33,7 @@ import {
   type BlogCategory,
 } from "@/data/blog-categories";
 import { useSeo, SITE_URL } from "@/lib/seo";
+import { remoteSrcSet } from "@/lib/img";
 import type { BlogPost } from "@shared/schema";
 
 const dateLabel = (value: Date | string | null) =>
@@ -71,6 +72,7 @@ function CardImage({
       {post.featuredImage ? (
         <img
           src={post.featuredImage}
+          srcSet={remoteSrcSet(post.featuredImage)}
           alt={post.featuredImageAlt || post.title}
           sizes={sizes}
           loading={eager ? "eager" : "lazy"}

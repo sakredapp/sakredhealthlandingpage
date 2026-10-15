@@ -63,7 +63,7 @@ type Kind = "location" | "practitioner";
  *
  * The fallback exists because a build artifact being present at the moment
  * functions are bundled is an ordering assumption, and a blank page for every
- * mistyped provider URL is a poor thing to discover in production. `/index.html`
+ * mistyped provider URL is a poor thing to discover in production. `/spa.html`
  * is a real static file, so it is matched by the filesystem before any rewrite —
  * the fetch cannot loop back into this function.
  *
@@ -75,7 +75,7 @@ let shell: string | null | undefined;
 async function appShell(req: VercelRequest): Promise<string | null> {
   if (shell !== undefined) return shell;
 
-  const path = join(process.cwd(), "dist", "index.html");
+  const path = join(process.cwd(), "dist", "spa.html");
   if (existsSync(path)) {
     shell = readFileSync(path, "utf8");
     return shell;
@@ -85,7 +85,7 @@ async function appShell(req: VercelRequest): Promise<string | null> {
   if (host) {
     try {
       const proto = header(req, "x-forwarded-proto") ?? "https";
-      const response = await fetch(`${proto}://${host}/index.html`);
+      const response = await fetch(`${proto}://${host}/spa.html`);
       if (response.ok) {
         shell = await response.text();
         return shell;

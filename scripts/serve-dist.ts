@@ -202,7 +202,9 @@ createServer(async (rq, rs) => {
    */
   if (!existsSync(file) || statSync(file).isDirectory()) {
     if (extname(path)) { rs.writeHead(404); return rs.end("not found"); }
-    file = join(DIST, "index.html");
+    // Same as vercel.json: unknown routes get the empty SPA template, not the
+    // prerendered homepage in index.html.
+    file = existsSync(join(DIST, "spa.html")) ? join(DIST, "spa.html") : join(DIST, "index.html");
   }
 
   rs.writeHead(200, { "content-type": MIME[extname(file)] ?? "application/octet-stream" });
