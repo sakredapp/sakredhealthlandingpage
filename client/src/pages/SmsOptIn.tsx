@@ -24,25 +24,27 @@ export default function SmsOptIn() {
               SMS Opt-In & Messaging Policy
             </h1>
             <p className="text-[#0F172A]/70 mb-8">
-              Effective Date: May 2, 2026
+              Effective Date: October 22, 2026
             </p>
 
             <div className="prose prose-lg max-w-none prose-headings:text-[#0F172A] prose-headings:font-display prose-headings:font-medium prose-p:text-[#0F172A]/70 prose-p:leading-relaxed prose-a:text-[#C5A059] prose-li:text-[#0F172A]/70">
 
               <h2>1. Program Description</h2>
               <p>
-                Sakred Health ("Sakred," "we," "our," or "us") is a licensed life and health insurance agency. We offer an SMS messaging program to provide information about life insurance and private health insurance products, coverage options, plan availability, enrollment assistance, beneficiary updates, and related insurance updates. By opting in, you consent to receive text messages from Sakred Health related to these life and health insurance services.
+                Sakred Health ("Sakred," "we," "our," or "us") is a licensed life and health insurance agency. We run an SMS messaging program for people who have opted in, with information about the life and health insurance coverage they asked about, plan availability, policy and beneficiary updates, and related insurance updates. By opting in, you consent to receive text messages from Sakred Health related to these life and health insurance services.
               </p>
 
               <h2>2. Consent & Opt-In</h2>
               <p>
-                By providing your mobile phone number and opting in to our SMS program, you expressly consent to receive recurring automated marketing and informational text messages from Sakred Health. Consent is not a condition of purchase or enrollment in any insurance plan. You may opt in through:
+                By providing your mobile phone number and opting in to our SMS program, you expressly consent to receive recurring automated marketing and informational text messages from Sakred Health. Consent is not a condition of purchase or enrollment in any insurance plan.
+              </p>
+              <p>
+                Online coverage requests on sakredhealth.com are paused. While they are, this website takes no coverage requests, gives no quotes, and does not connect visitors with an agent. You cannot opt in on this website while online requests are paused. Where opt-in is available, you may opt in through:
               </p>
               <ul>
-                <li>Submitting your phone number via our website or app</li>
-                <li>Texting a designated keyword to our short code or phone number</li>
-                <li>Providing verbal or written consent during a consultation or enrollment process</li>
-                <li>Completing an online form that includes SMS consent language</li>
+                <li>Texting a designated keyword to our phone number</li>
+                <li>Providing verbal or written consent during a call with us</li>
+                <li>Completing an online form that includes SMS consent language, when our online forms are available</li>
               </ul>
               <p>
                 By opting in, you confirm that the phone number provided is your own and that you are authorized to receive messages at that number.
@@ -55,7 +57,7 @@ export default function SmsOptIn() {
               <ul>
                 <li>Life insurance plan information and policy updates</li>
                 <li>Health insurance plan information, benefits, and coverage details</li>
-                <li>Quote follow-ups for life and health products</li>
+                <li>Follow-ups about a request you made</li>
                 <li>Appointment reminders and callback confirmations</li>
                 <li>Open enrollment notifications and deadline reminders (health)</li>
                 <li>Beneficiary update reminders (life)</li>

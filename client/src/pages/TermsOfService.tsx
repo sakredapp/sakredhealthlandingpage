@@ -24,7 +24,7 @@ export default function TermsOfService() {
               Terms of Service
             </h1>
             <p className="text-[#0F172A]/70 mb-8">
-              Effective Date: May 2, 2026
+              Effective Date: October 22, 2026
             </p>
 
             <div className="prose prose-lg max-w-none prose-headings:text-[#0F172A] prose-headings:font-display prose-headings:font-medium prose-p:text-[#0F172A]/70 prose-p:leading-relaxed prose-a:text-[#C5A059] prose-li:text-[#0F172A]/70">
@@ -35,7 +35,7 @@ export default function TermsOfService() {
 
               <h2>2. Services</h2>
               <p>
-                We provide life and health insurance brokerage and enrollment services ("Services"), including plan comparison, policy quoting, enrollment assistance, and ongoing customer support for individuals and families seeking life insurance and health coverage. Sakred Health also offers an optional client portal and preventative wellness platform with policy information, coverage breakdowns, dedicated agent support, structured daily wellness routines, habit tracking, and wearable integrations. The Service is designed to support your insurance and wellness needs but is not a substitute for professional medical advice, diagnosis, or treatment.
+                Sakred Health is a licensed life and health insurance agency. This website offers general, educational guides about insurance and wellness ("Services"). Online coverage requests on sakredhealth.com are paused. While they are, this website takes no coverage requests, gives no quotes, and does not connect visitors with an agent. If you already asked us about coverage, the messages and calls about that request are covered by our <a href="/insurance-terms">Insurance Terms</a>. Sakred Health also offers an optional app with educational content and wellness tools, such as structured daily routines, habit tracking, and wearable integrations. The Service is not a substitute for professional medical advice, diagnosis, or treatment.
               </p>
 
               <h2>3. User Accounts</h2>
@@ -65,12 +65,12 @@ export default function TermsOfService() {
 
               <h2>6. Fees and Payment</h2>
               <p>
-                Consumers do not pay Sakred Health for our brokerage and enrollment Services. As a licensed life and health insurance agency, As a licensed insurance agency, Sakred Health earns a commission when a policy is placed on your behalf. The wellness app and client portal are free to use, with no paid tiers, subscriptions, or credit card information required.
+                This website and the app are free to use, with no paid tiers, subscriptions, or credit card information required. Sakred Health does not charge consumers. As a licensed insurance agency, it earns a commission when a policy is placed.
               </p>
 
               <h2>7. SMS Communications</h2>
               <p>
-                By opting in to our SMS messaging program, you consent to receive recurring automated marketing and informational text messages from Sakred Health related to your life and health insurance inquiries. Consent to receive SMS messages is not a condition of using the Service or of purchasing any insurance policy.
+                If you opted in to our SMS messaging program, you consented to receive recurring automated marketing and informational text messages from Sakred Health related to your life and health insurance inquiries. This website is not taking new SMS opt-ins while online requests are paused. Consent to receive SMS messages is not a condition of using the Service or of purchasing any insurance policy.
               </p>
               <p>
                 You may opt out at any time by replying STOP to any message. Standard message and data rates may apply. For complete details, see our full Section 17 below and our{" "}
@@ -132,7 +132,7 @@ export default function TermsOfService() {
 
               <h2>17. SMS Messaging Program</h2>
               <p>
-                By providing your mobile phone number to Sakred Health, you consent to receive SMS text messages from us related to your life and health insurance inquiries, including:
+                If you opted in to our SMS program, you may receive text messages from us related to your life and health insurance inquiries, including:
               </p>
               <ul>
                 <li>

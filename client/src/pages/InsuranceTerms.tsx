@@ -44,20 +44,25 @@ export default function InsuranceTerms() {
               Insurance Terms &amp; Conditions
             </h1>
             <p className="text-[#0F172A]/70 mb-8">
-              Last updated: October 8, 2026
+              Last updated: October 22, 2026
             </p>
 
             <div className="prose prose-lg max-w-none prose-headings:text-[#0F172A] prose-headings:font-display prose-headings:font-medium prose-p:text-[#0F172A]/70 prose-p:leading-relaxed prose-a:text-[#C5A059] prose-li:text-[#0F172A]/70">
               <p>
-                These terms apply when you ask Sakred Health (&ldquo;we,&rdquo; &ldquo;us,&rdquo; &ldquo;our&rdquo;) about life insurance, mortgage protection, or other insurance coverage: the request you make through our websites, advertisements, and forms, and the texts, emails, calls, and private page that follow it. By making a request you agree to these terms. If you do not agree, please do not submit a request.
+                These terms apply if you asked Sakred Health (&ldquo;we,&rdquo; &ldquo;us,&rdquo; &ldquo;our&rdquo;) about life insurance, mortgage protection, or other insurance coverage: the request you made, and the texts, emails, calls, and private page that follow it. By making a request you agreed to these terms.
               </p>
               <p>
                 They do not cover the Sakred Health app or practitioner directory, which have their own <Link href="/terms-of-service">Terms of Service</Link>. How we handle your information is in our <Link href="/insurance-privacy">Insurance Privacy Policy</Link>.
               </p>
 
+              <h2>Online requests are paused</h2>
+              <p>
+                Online coverage requests on sakredhealth.com are paused. While they are, this website takes no coverage requests, gives no quotes, and does not connect visitors with an agent. Nothing on this website is an offer to take a request.
+              </p>
+
               <h2>What we do</h2>
               <p>
-                Sakred Health generates insurance inquiries and sells or provides them to licensed insurance agents and agencies, so that someone licensed in your state can respond to your request. We are not an insurance company and we do not underwrite policies. We are not a lender or loan servicer and have no connection to your mortgage. Any coverage you obtain is issued by a licensed insurance carrier and is subject to that carrier&rsquo;s underwriting, terms, and approval.
+                For a request you already made, Sakred Health sells or provides it to licensed insurance agents and agencies, so that someone licensed in your state can respond to it. We are not an insurance company and we do not underwrite policies. We are not a lender or loan servicer and have no connection to your mortgage. Any coverage you obtain is issued by a licensed insurance carrier and is subject to that carrier&rsquo;s underwriting, terms, and approval.
               </p>
 
               <h2>Not advice</h2>
@@ -78,7 +83,7 @@ export default function InsuranceTerms() {
               <h2>Text message terms</h2>
               <ul>
                 <li><strong>Program:</strong> Sakred Health insurance requests, operated by Sakred Health.</li>
-                <li><strong>What you receive:</strong> confirmation of your request, an introduction to the licensed agent handling it, scheduling and reminders, and follow-up about the coverage you asked about.</li>
+                <li><strong>What you receive:</strong> messages about the request you made: confirmation, scheduling and reminders, and follow-up about the coverage you asked about, including from the licensed agent handling it.</li>
                 <li><strong>Frequency:</strong> varies.</li>
                 <li><strong>Cost:</strong> message and data rates may apply.</li>
                 <li><strong>To stop:</strong> reply <strong>STOP</strong> to any message.</li>
