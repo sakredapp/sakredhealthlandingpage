@@ -50,12 +50,12 @@ export default function InsurancePrivacy() {
               Insurance Privacy Policy
             </h1>
             <p className="text-[#0F172A]/70 mb-8">
-              Last updated: October 8, 2026
+              Last updated: October 22, 2026
             </p>
 
             <div className="prose prose-lg max-w-none prose-headings:text-[#0F172A] prose-headings:font-display prose-headings:font-medium prose-p:text-[#0F172A]/70 prose-p:leading-relaxed prose-a:text-[#C5A059] prose-li:text-[#0F172A]/70">
               <p>
-                This policy explains what Sakred Health (&ldquo;we,&rdquo; &ldquo;us,&rdquo; &ldquo;our&rdquo;) collects when you ask us about life insurance, mortgage protection, or other insurance coverage, what we do with it, who receives it, and the choices you have. It covers the request you made through our websites, advertisements, and forms, and the texts, emails, calls, and private page that follow it.
+                This policy explains what Sakred Health (&ldquo;we,&rdquo; &ldquo;us,&rdquo; &ldquo;our&rdquo;) collects when you ask us about life insurance, mortgage protection, or other insurance coverage, what we do with it, who receives it, and the choices you have. It covers a request you made to us, and the texts, emails, calls, and private page that follow it. Online coverage requests on sakredhealth.com are paused. While they are, this website takes no coverage requests, gives no quotes, and does not connect visitors with an agent.
               </p>
               <p>
                 It does not cover the Sakred Health app or practitioner directory, which have their own <Link href="/privacy">Privacy Policy</Link>.
@@ -81,7 +81,7 @@ export default function InsurancePrivacy() {
 
               <h2>How we use it</h2>
               <ul>
-                <li>To route your request to a licensed insurance agent in your state, who contacts you to discuss coverage.</li>
+                <li>If you made a request, to route it to a licensed insurance agent in your state, who may contact you to discuss coverage.</li>
                 <li>To contact you by phone, text, or email as described in the consent you gave, and to keep the record of that consent.</li>
                 <li>To personalise our own messages and your private page.</li>
                 <li>To measure and improve our advertising.</li>
@@ -95,7 +95,7 @@ export default function InsurancePrivacy() {
 
               <h2>Who receives your request</h2>
               <p>
-                Sakred Health generates insurance inquiries and sells or provides them to licensed insurance agents and agencies, so that someone licensed in your state can respond to your request. If you choose to apply for coverage, your information goes to the insurance carrier. We also share information with service providers that host our systems, deliver messages, and measure advertising, under contracts that limit what they may do with it.
+                For a request you made, Sakred Health sells or provides it to licensed insurance agents and agencies, so that someone licensed in your state can respond to it. If you choose to apply for coverage, your information goes to the insurance carrier. We also share information with service providers that host our systems, deliver messages, and measure advertising, under contracts that limit what they may do with it.
               </p>
               <p>
                 We do not sell your information to unrelated third parties for their own marketing. Some state laws treat selling your request to agents, or sharing for targeted advertising, as a &ldquo;sale&rdquo; or &ldquo;share&rdquo;; see <Link href="/do-not-sell">Do Not Sell or Share My Info</Link> for how to opt out. We may also disclose information when the law requires it, to protect our rights, or as part of a merger or sale of the business.
@@ -107,7 +107,7 @@ export default function InsurancePrivacy() {
 
               <h2>Text messages</h2>
               <p>
-                Mobile information is used to send the messages you agreed to: confirming your request, introducing the licensed agent handling it, scheduling, and follow-up about the coverage you asked about. Message frequency varies. Message and data rates may apply. Reply <strong>STOP</strong> to any message to opt out, or <strong>HELP</strong> for help.
+                Mobile information is used to send the messages you agreed to about the request you made: confirmation, scheduling, and follow-up about the coverage you asked about, including from the licensed agent handling it. Message frequency varies. Message and data rates may apply. Reply <strong>STOP</strong> to any message to opt out, or <strong>HELP</strong> for help.
               </p>
               <p>
                 <strong>No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Text-messaging originator opt-in data and consent will not be shared with any third parties,</strong> other than the providers that deliver our messages on our behalf and are bound not to use it for anything else. The categories of sharing above exclude your text-messaging opt-in data.

@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { INTAKE_PAUSED_BODY, QUOTE_FORMS_LIVE } from "../shared/quote-forms.js";
 import { setCorsHeaders } from "./_lib/auth.js";
 import { CAMPAIGN_ENV, CRM_BASE_URL, campaignFor, checkPhone, visitorIp } from "./_lib/lead-check.js";
 
@@ -25,7 +26,22 @@ const CRM_LEADS_URL = new URL("/api/webhooks/leads", CRM_BASE_URL).toString();
 // Product id -> campaign env names live in ./_lib/lead-check.ts, shared with
 // the real-time check so both always ask about the same campaign.
 
+/**
+ * Paused-intake gate (2026-10-22). While shared/quote-forms.ts QUOTE_FORMS_LIVE
+ * is false the site promises no quote, agent or intake, so this route refuses
+ * direct posts too: nothing is checked, forwarded or sent to the CRM.
+ */
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (!QUOTE_FORMS_LIVE) {
+    setCorsHeaders(res);
+    if (req.method === "OPTIONS") return res.status(200).end();
+    return res.status(503).json(INTAKE_PAUSED_BODY);
+  }
+  return handleProductLead(req, res);
+}
+
+/** The live handler, used only when the switch is on (and by tests). */
+export async function handleProductLead(req: VercelRequest, res: VercelResponse) {
   setCorsHeaders(res);
   if (req.method === "OPTIONS") return res.status(200).end();
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });

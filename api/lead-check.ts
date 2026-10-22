@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { INTAKE_PAUSED_BODY, QUOTE_FORMS_LIVE } from "../shared/quote-forms.js";
 import { checkEmail, checkPhone, visitorIp } from "./_lib/lead-check.js";
 
 /**
@@ -10,8 +11,20 @@ import { checkEmail, checkPhone, visitorIp } from "./_lib/lead-check.js";
  * Same-origin, the campaign slug is attached server-side from the product id,
  * and no key lives on this site. Answers carry only what the form shows.
  * Every failure is "accepted".
+ *
+ * Paused-intake gate (2026-10-22). While shared/quote-forms.ts QUOTE_FORMS_LIVE
+ * is false the site promises no quote, agent or intake, so this route refuses
+ * direct posts too: nothing is checked, forwarded or sent to the CRM.
  */
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (!QUOTE_FORMS_LIVE) {
+    return res.status(503).json(INTAKE_PAUSED_BODY);
+  }
+  return handleLeadCheck(req, res);
+}
+
+/** The live handler, used only when the switch is on (and by tests). */
+export async function handleLeadCheck(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
   const product = String(req.query.product || "");

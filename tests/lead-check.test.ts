@@ -12,8 +12,10 @@ import { readFileSync } from "node:fs";
 
 process.env.CRM_BASE_URL = "https://crm.example.test";
 const { checkEmail, checkPhone } = await import("../api/_lib/lead-check.ts");
-const { default: leadCheck } = await import("../api/lead-check.ts");
-const { default: productLead } = await import("../api/product-lead.ts");
+// The live handlers (used when shared/quote-forms.ts QUOTE_FORMS_LIVE is on).
+const { handleLeadCheck: leadCheck, default: leadCheckRoute } = await import("../api/lead-check.ts");
+const { handleProductLead: productLead, default: productLeadRoute } = await import("../api/product-lead.ts");
+const { QUOTE_FORMS_LIVE } = await import("../shared/quote-forms.ts");
 
 const realFetch = globalThis.fetch;
 type Call = { url: URL; init?: RequestInit };
@@ -164,4 +166,18 @@ test("no provider key or host appears anywhere in this site's code", () => {
     const src = readFileSync(f, "utf8");
     assert.doesNotMatch(src, /MILLIONVERIFIER_API_KEY|millionverifier\.com|TELNYX_API_KEY|process\.env\.[A-Z_]*KEY/);
   }
+});
+
+test("paused intake: while the forms switch is off, both routes refuse and never call the CRM", async () => {
+  assert.equal(QUOTE_FORMS_LIVE, false);
+  stubFetch(() => reply({ valid: true }));
+  const r1 = fakeRes();
+  await productLeadRoute(fakeReq({}, leadBody), r1);
+  assert.equal(r1.statusCode, 503);
+  assert.equal(r1.body.paused, true);
+  const r2 = fakeRes();
+  await leadCheckRoute(fakeReq({ product: "health-insurance", check: "email" }, { email: "x@example.test" }), r2);
+  assert.equal(r2.statusCode, 503);
+  assert.equal(r2.body.paused, true);
+  assert.equal(calls.length, 0);
 });

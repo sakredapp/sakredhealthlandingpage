@@ -24,7 +24,7 @@ export default function PrivacyPolicy() {
               Privacy Policy
             </h1>
             <p className="text-[#0F172A]/70 mb-8">
-              Effective Date: May 2, 2026
+              Effective Date: October 22, 2026
             </p>
 
             <div className="prose prose-lg max-w-none prose-headings:text-[#0F172A] prose-headings:font-display prose-headings:font-medium prose-p:text-[#0F172A]/70 prose-p:leading-relaxed prose-a:text-[#C5A059] prose-li:text-[#0F172A]/70">
@@ -37,7 +37,7 @@ export default function PrivacyPolicy() {
 
               <h2>SMS Disclaimer</h2>
               <p>
-                Sakred Health is a licensed life and health insurance agency. We provide Customer Support messages (information on your policy/quote/enrollment and help if you ever need guidance during the process), and marketing of our life and health insurance services when applicable. SMS opt-in consent and phone numbers collected through our messaging program are never sold, rented, or shared with third parties for their own marketing purposes. You may opt out at any time by replying STOP. Standard message and data rates may apply.
+                Sakred Health is a licensed life and health insurance agency. Online coverage requests on sakredhealth.com are paused. While they are, this website takes no coverage requests, gives no quotes, and does not connect visitors with an agent. We send Customer Support messages (information about your policy or a request you made, and help if you need it), and marketing of our life and health insurance services when applicable. SMS opt-in consent and phone numbers collected through our messaging program are never sold, rented, or shared with third parties for their own marketing purposes. You may opt out at any time by replying STOP. Standard message and data rates may apply.
               </p>
 
               <h2>1. Information We Collect</h2>
