@@ -128,7 +128,7 @@ export default function ProductDetail() {
 
         {/* Dedicated text-us section — product keyword + local number w/ state picker */}
         <div className="mt-14">
-          <TextUsSection keyword={product.smsKeyword} productTitle={product.title} />
+          {QUOTE_FORMS_LIVE && <TextUsSection keyword={product.smsKeyword} productTitle={product.title} />}
         </div>
 
         {/* Deep-dive sections */}

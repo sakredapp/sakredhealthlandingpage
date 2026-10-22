@@ -39,7 +39,7 @@ export default function StateMortgageProtection() {
       : "Mortgage protection by state | Sakred Health",
     description:
       state && stat
-        ? `The median ${state.name} home is worth ${usd(stat.medianHomeValue)}, with owners paying about ${usd(stat.medianOwnerCostWithMortgage)}/mo on a mortgage. See how mortgage protection can pay off the balance so your family keeps the home — free quote, no obligation.`
+        ? `The median ${state.name} home is worth ${usd(stat.medianHomeValue)}, with owners paying about ${usd(stat.medianOwnerCostWithMortgage)}/mo on a mortgage. See how mortgage protection can pay off the balance so your family keeps the home.`
         : "Mortgage protection insurance that pays off your home loan so your family keeps the house.",
     canonical: state ? `/mortgage-protection/${state.slug}` : "/products/mortgage-protection",
     noindex: !state,
@@ -187,7 +187,7 @@ export default function StateMortgageProtection() {
           </div>
         </section>
 
-        <TextUsSection keyword={mp.smsKeyword} productTitle="Mortgage Protection" fixedState={state.abbr} />
+        {QUOTE_FORMS_LIVE && <TextUsSection keyword={mp.smsKeyword} productTitle="Mortgage Protection" fixedState={state.abbr} />}
 
         <MortgageCalculator ctaHref="#inquire" />
       </div>

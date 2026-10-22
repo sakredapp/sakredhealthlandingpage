@@ -106,7 +106,6 @@ export const FOOTER_COLUMNS: { title: string; links: NavLink[] }[] = [
       { label: "Do Not Sell My Info", href: "/do-not-sell" },
       { label: "SMS Opt-In", href: "/opt-in" },
       { label: "AI & Privacy", href: "/ai-privacy" },
-      { label: "Contact", href: "/get-coverage" },
     ],
   },
 ];

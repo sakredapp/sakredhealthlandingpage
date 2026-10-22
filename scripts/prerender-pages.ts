@@ -77,11 +77,13 @@ function buildHead(opts: {
   description: string;
   path: string;
   jsonLd: object;
+  noindex?: boolean;
 }): string {
   const url = `${BASE_URL}${opts.path}`;
   return [
     `<title>${esc(opts.title)}</title>`,
     `<meta name="description" content="${esc(opts.description)}">`,
+    ...(opts.noindex ? [`<meta name="robots" content="noindex">`] : []),
     `<link rel="canonical" href="${url}">`,
     `<meta property="og:type" content="website">`,
     `<meta property="og:title" content="${esc(opts.title)}">`,
@@ -215,7 +217,7 @@ function main() {
       buildHead({
         title: "Coverage Options — Life, Health & Mortgage Protection",
         description:
-          "Mortgage protection, life insurance, final expense, private health, ACA marketplace plans, and retirement annuities — one licensed agency, all 50 states.",
+          "Mortgage protection, life insurance, final expense, private health, ACA marketplace plans, and retirement income, explained in plain words.",
         path: "/products",
         jsonLd: { "@context": "https://schema.org", "@graph": [breadcrumb([{ name: "Home", path: "/" }, { name: "Products", path: "/products" }])] },
       }),
@@ -400,7 +402,7 @@ function main() {
   count++;
 
   // Lightweight static heads for stable pages the SPA otherwise leaves generic
-  const simplePages: { path: string; title: string; description: string; h1: string; body: string }[] = [
+  const simplePages: { path: string; title: string; description: string; h1: string; body: string; noindex?: boolean }[] = [
     {
       path: "/get-coverage",
       title: "Coverage Information",
@@ -409,6 +411,7 @@ function main() {
       h1: "Coverage information",
       body:
         "We are not taking coverage requests on this site right now. You can still read about each kind of coverage in plain words on our coverage pages.",
+      noindex: true,
     },
   ];
   for (const pg of simplePages) {
@@ -416,6 +419,7 @@ function main() {
       title: pg.title,
       description: pg.description,
       path: pg.path,
+      noindex: pg.noindex,
       jsonLd: {
         "@context": "https://schema.org",
         "@graph": [breadcrumb([{ name: "Home", path: "/" }, { name: pg.title.split(" — ")[0], path: pg.path }])],

@@ -66,7 +66,7 @@ export const PRODUCTS: Product[] = [
           { name: "Your terms", description: "Adjust the term and benefit to match your budget and timeline" },
         ],
         outro:
-          "Because it's budget-driven, monthly premiums can range anywhere from about $30 to $250+, depending on the coverage amount, your age, and your health. Your dedicated agent walks you through the options and builds a plan that fits.",
+          "Because it's budget-driven, monthly premiums can range anywhere from about $30 to $250+, depending on the coverage amount, your age, and your health.",
       },
     ],
   },
@@ -110,7 +110,7 @@ export const PRODUCTS: Product[] = [
           { name: "Indexed Universal Life (IUL)", description: "Permanent life insurance with market-linked cash value" },
         ],
         outro:
-          "Not sure which fits? That's the job — your dedicated agent compares them against your income, debts, and goals and builds the mix that actually makes sense.",
+          "Which fits depends on your income, debts, and goals — many families end up with a mix.",
       },
     ],
   },
@@ -122,10 +122,10 @@ export const PRODUCTS: Product[] = [
     eyebrow: "Getting sick shouldn't cost you the house",
     tagline: "Real coverage, a real agent, on your budget.",
     blurb:
-      "Major medical, short-term, and supplemental plans compared for your situation by a dedicated agent — for the self-employed, 1099, and anyone without an employer plan.",
+      "Major medical, short-term, and supplemental plans explained in plain words — for the self-employed, 1099, and anyone without an employer plan.",
     points: [
       "Major medical, short-term, dental & vision, supplemental",
-      "A dedicated agent who compares carriers for you",
+      "How plans from different carriers compare",
       "Plans matched to your budget — not a one-size-fits-all group plan",
     ],
     detailSections: [
@@ -198,7 +198,7 @@ export const PRODUCTS: Product[] = [
           { name: "Immediate", description: "Turn a lump sum into income that starts right away" },
         ],
         outro:
-          "Which one fits depends on your timeline, savings, and how soon you need the income — your dedicated agent maps it out with you, no pressure.",
+          "Which one fits depends on your timeline, savings, and how soon you need the income.",
       },
     ],
   },
