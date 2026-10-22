@@ -92,7 +92,7 @@ Two recent lines of evidence suggest hydration is worth more than a productivity
 
 On the interventional side, a 2024 systematic review in *JAMA Network Open* pooled 18 randomized trials that changed daily water intake. The evidence base was thin, but higher intake produced 44%–100% greater weight loss than control conditions and 15 fewer kidney stone events per 100 participants over five years, with single trials hinting at benefits for migraine, urinary tract infections and glycemic control.
 
-Small, cheap, boring habits that compound over decades are also the logic behind planning your financial protection early — if that is on your list, you can [get a coverage quote](/get-coverage) in a few minutes.
+Small, cheap, boring habits that compound over decades are also the logic behind planning your financial protection early — if that is on your list, you can [read about coverage options](/products).
 
 ## Try one week of measurement
 

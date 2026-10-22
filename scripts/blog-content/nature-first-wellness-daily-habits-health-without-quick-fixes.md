@@ -104,7 +104,7 @@ If stress rather than time is your binding constraint, pair the outdoor block wi
 
 Quick fixes sell because they promise conversion — a switch flipped, a new person. The evidence here describes something less dramatic and more reliable: small environmental exposures, repeated, that show up as a 4% mortality difference in a satellite dataset or five points of systolic blood pressure in a meta-analysis. Nothing about that will feel like a transformation on any given Tuesday. That's what compounding looks like from the inside.
 
-Financial protection follows the same arithmetic. It does nothing visible on a normal day and everything on the worst one, and it gets cheaper the earlier you start. If you're already building the health side of that equation, it's worth seeing what the coverage side costs — you can [get a personalized quote](/get-coverage) or read about how [life insurance](/products/life-insurance) fits alongside the habits you're keeping.
+Financial protection follows the same arithmetic. It does nothing visible on a normal day and everything on the worst one, and it gets cheaper the earlier you start. If you're already building the health side of that equation, it's worth seeing what the coverage side costs — you can [read about coverage options](/products) or read about how [life insurance](/products/life-insurance) fits alongside the habits you're keeping.
 
 ## Sources
 

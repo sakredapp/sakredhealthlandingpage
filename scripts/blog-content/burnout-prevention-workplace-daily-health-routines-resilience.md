@@ -78,7 +78,7 @@ Pulling the research together into a workday-shaped protocol:
 
 ## Resilience is a long-game asset
 
-Burnout prevention compounds the same way saving does: unremarkable daily deposits, large long-run difference. The data in this article is ultimately about protecting your most valuable financial asset — your ability to earn, think clearly, and show up for the people who depend on you. That's the same logic behind [life insurance](/products/life-insurance): you protect the downside so your family's plans don't hinge on everything going right. If you're building your health habits, it's a natural moment to check your coverage too — you can [get a quote](/get-coverage) in a few minutes.
+Burnout prevention compounds the same way saving does: unremarkable daily deposits, large long-run difference. The data in this article is ultimately about protecting your most valuable financial asset — your ability to earn, think clearly, and show up for the people who depend on you. That's the same logic behind [life insurance](/products/life-insurance): you protect the downside so your family's plans don't hinge on everything going right. If you're building your health habits, it's a natural moment to [read about your coverage options](/products) too.
 
 ## Sources
 

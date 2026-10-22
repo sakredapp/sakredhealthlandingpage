@@ -124,7 +124,7 @@ Fourteen-day protocols don't fail because people disagree with them. They fail b
 
 In [the Sakred app](/app), this program runs as a scheduled daily checklist: each practice appears on the day it's introduced, with reminders timed to your own sunset and wake time, streak tracking, and a free paired guide covering the wind-down sequence and supplement notes in more depth. Many people run it alongside the [hydration habits](/blog/low-energy-high-performance-hydration-habits-boost-workday) or [nature-first daily habits](/blog/nature-first-wellness-daily-habits-health-without-quick-fixes) programs.
 
-Sleep also sits upstream of nearly everything an insurer measures — blood pressure, weight, cardiovascular risk — so fixing it pays off twice. When you're ready, you can [check your coverage options](/get-coverage).
+Sleep also sits upstream of nearly everything an insurer measures — blood pressure, weight, cardiovascular risk — so fixing it pays off twice. When you're ready, you can [read about your coverage options](/products).
 
 Consistency over intensity. Fourteen nights, one layer at a time.
 

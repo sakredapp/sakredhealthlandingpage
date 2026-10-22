@@ -37,12 +37,12 @@ export const COVERAGE_LINKS: NavLink[] = [
   {
     label: "Private Health Insurance",
     href: "/products/health-insurance",
-    description: "Real coverage, a real agent, on your budget.",
+    description: "Real coverage, explained in plain words.",
   },
   {
     label: "ACA Marketplace",
     href: "/products/aca-plans",
-    description: "Marketplace coverage, handled for you.",
+    description: "How marketplace coverage works.",
   },
   {
     label: "Retirement & Annuities",

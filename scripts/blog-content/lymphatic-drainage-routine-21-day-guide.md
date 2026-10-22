@@ -123,7 +123,7 @@ Talk to a certified lymphedema therapist first. The self-administered protocols 
 
 The failure mode here isn't difficulty — it's the eight-item mental checklist. [The Sakred app](/app) schedules each practice on the day it starts, tracks completion and streaks, sends reminders at times you set, and includes the free paired guide with the full self-massage sequence and brushing map. Pick Lite or Intensive on day one and switch whenever you need to. Consistency over intensity is the whole point.
 
-Building habits that support your body is one half of looking after the people who depend on you. The other half is making sure they're covered if something goes wrong — when you're ready, you can [check your coverage in a few minutes](/get-coverage).
+Building habits that support your body is one half of looking after the people who depend on you. The other half is making sure they're covered if something goes wrong — when you're ready, you can [read about your coverage options](/products).
 
 ## Sources
 

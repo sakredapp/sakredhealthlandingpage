@@ -122,7 +122,7 @@ The reason protocols fail is rarely disbelief. It is that nine practices, staged
 
 If you are also working on sleep, run this alongside our [nightly routine guide](/blog/science-of-sleep-nightly-routines-better-rest-focus); disrupted sleep undercuts most of what this protocol is trying to do.
 
-And while daily habits are the part of your health you steer directly, the part you cannot steer — a diagnosis, a hospitalization, an interrupted income — is what coverage is for. You can [get a quote in a few minutes](/get-coverage) or review our [health plan options](/products/health-insurance).
+And while daily habits are the part of your health you steer directly, the part you cannot steer — a diagnosis, a hospitalization, an interrupted income — is what coverage is for. You can [read about coverage options](/products) or review our [health plan options](/products/health-insurance).
 
 ## Sources
 

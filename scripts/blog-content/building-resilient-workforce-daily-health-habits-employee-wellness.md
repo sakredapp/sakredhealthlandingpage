@@ -89,7 +89,7 @@ Program sign-ups are a vanity metric; the JAMA trial had fine participation and 
 
 ## The resilience dividend
 
-The case for daily habits over perks is ultimately conservative: it follows the trials rather than the brochures. Frequent movement, protected sleep, scheduled stress recovery, and genuine connection are cheap, repeatable, and — unlike the average wellness perk — supported by physiological evidence. They compound for the organization in retention and productivity, and they compound for individuals in something even more personal: long-term health is also the foundation of a family's financial plan, from insurability to premiums. If you're thinking about that side of resilience, you can [get a coverage quote](/get-coverage) or explore how [life insurance](/products/life-insurance) fits alongside the health you're building one habit at a time.
+The case for daily habits over perks is ultimately conservative: it follows the trials rather than the brochures. Frequent movement, protected sleep, scheduled stress recovery, and genuine connection are cheap, repeatable, and — unlike the average wellness perk — supported by physiological evidence. They compound for the organization in retention and productivity, and they compound for individuals in something even more personal: long-term health is also the foundation of a family's financial plan, from insurability to premiums. If you're thinking about that side of resilience, you can [read about coverage options](/products) or explore how [life insurance](/products/life-insurance) fits alongside the health you're building one habit at a time.
 
 ## Sources
 

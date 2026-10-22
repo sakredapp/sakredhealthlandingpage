@@ -57,7 +57,7 @@ export const PRODUCTS: Product[] = [
         heading: "Protect your family from the mortgage — not the bank",
         intro: [
           "Mortgage protection has nothing to do with PMI. PMI protects the lender if you default; mortgage protection protects the people you love. If something happens to you, it keeps your family from inheriting the burden of the mortgage and helps preserve the equity you worked hard to build, so they aren't forced to sell the home.",
-          "Best of all, it's flexible. We size the coverage around your budget and your goals — there's no one-size-fits-all answer.",
+          "Best of all, it's flexible. Coverage can be sized around your budget and your goals — there's no one-size-fits-all answer.",
         ],
         items: [
           { name: "Breathing room", description: "Cover a year or two of mortgage payments so your family has time to regroup" },
@@ -103,7 +103,7 @@ export const PRODUCTS: Product[] = [
     amountLabel: "Coverage in mind",
     detailSections: [
       {
-        heading: "The kinds of life coverage we write",
+        heading: "The kinds of life coverage",
         items: [
           { name: "Term Life", description: "Affordable level coverage for 10, 20, or 30 years — the most protection per dollar" },
           { name: "Whole Life", description: "Permanent coverage with guaranteed cash value growth" },
@@ -120,7 +120,7 @@ export const PRODUCTS: Product[] = [
     pillar: "Health",
     title: "Private Health Insurance",
     eyebrow: "Getting sick shouldn't cost you the house",
-    tagline: "Real coverage, a real agent, on your budget.",
+    tagline: "Real coverage, explained in plain words.",
     blurb:
       "Major medical, short-term, and supplemental plans explained in plain words — for the self-employed, 1099, and anyone without an employer plan.",
     points: [
@@ -130,7 +130,7 @@ export const PRODUCTS: Product[] = [
     ],
     detailSections: [
       {
-        heading: "Every kind of health coverage we place",
+        heading: "The kinds of health coverage",
         items: [
           { name: "Major Medical", description: "Comprehensive health coverage (PPO, HMO, EPO)" },
           { name: "Limited Medical", description: "Budget-friendly plans with set benefit limits" },
@@ -143,7 +143,7 @@ export const PRODUCTS: Product[] = [
           { name: "Disability Income", description: "Income replacement during disability" },
         ],
         outro:
-          "You don't need to know which of these you need — that's what your agent is for. Tell them your situation and budget; they'll bring back the plans worth looking at.",
+          "Which of these fits depends on your situation and budget; most people only need one.",
       },
     ],
   },
@@ -152,14 +152,14 @@ export const PRODUCTS: Product[] = [
     smsKeyword: "ACA",
     pillar: "Health",
     title: "ACA Marketplace Plans",
-    eyebrow: "Subsidies, if you qualify — without the government-website maze",
-    tagline: "Marketplace coverage, handled for you.",
+    eyebrow: "Subsidies, if you qualify, explained",
+    tagline: "How marketplace coverage works.",
     blurb:
-      "Affordable Care Act plans with premium subsidies for those who qualify. We check your subsidy, compare the marketplace plans in your area, and handle enrollment — no Healthcare.gov wrestling required.",
+      "Affordable Care Act plans with premium subsidies for those who qualify. Here is how subsidies are calculated, how marketplace plans compare, and how enrollment works.",
     points: [
-      "Free subsidy check — many households qualify and don't know it",
+      "How subsidies are calculated — many households qualify and don't know it",
       "Guaranteed coverage regardless of pre-existing conditions",
-      "We handle the marketplace paperwork and enrollment windows",
+      "How enrollment windows work",
     ],
     detailSections: [
       {
@@ -168,10 +168,10 @@ export const PRODUCTS: Product[] = [
           { name: "Premium subsidies", description: "Income-based tax credits that can cut your monthly premium dramatically" },
           { name: "Essential benefits", description: "Every ACA plan covers doctor visits, hospitalization, prescriptions, and preventive care" },
           { name: "Pre-existing conditions", description: "Guaranteed issue — you can't be denied or charged more for your health history" },
-          { name: "Enrollment windows", description: "Open Enrollment plus Special Enrollment after qualifying life events — we track the deadlines" },
+          { name: "Enrollment windows", description: "Open Enrollment plus Special Enrollment after qualifying life events" },
         ],
         outro:
-          "Earn too much for a subsidy? That's exactly when private health insurance often beats an unsubsidized marketplace premium — your agent will compare both sides and show you the math.",
+          "Earn too much for a subsidy? That's exactly when private health insurance often beats an unsubsidized marketplace premium — it is worth comparing both sides.",
       },
     ],
   },

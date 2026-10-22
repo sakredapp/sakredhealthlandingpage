@@ -84,7 +84,7 @@ App downloads and challenge sign-ups are activity metrics, not outcomes. Given t
 
 ## Where this lands
 
-The honest pitch for Employee Wellness 2.0 is modest and therefore credible: tracking works when adherence is easy and voluntary, habits form in about two to three months of repetition, and none of it survives contact with a culture that quietly punishes self-care. Fix defaults first, add the feedback loop second, protect privacy absolutely — and give it 90 days before judging. For individual employees, the same daily habits that make a workforce resilient also underwrite personal resilience, including the financial kind; if that's on your mind, our [health insurance options](/products/health-insurance) and [coverage quote flow](/get-coverage) are a reasonable next stop.
+The honest pitch for Employee Wellness 2.0 is modest and therefore credible: tracking works when adherence is easy and voluntary, habits form in about two to three months of repetition, and none of it survives contact with a culture that quietly punishes self-care. Fix defaults first, add the feedback loop second, protect privacy absolutely — and give it 90 days before judging. For individual employees, the same daily habits that make a workforce resilient also underwrite personal resilience, including the financial kind; if that's on your mind, our [health insurance options](/products/health-insurance) and [coverage guides](/products) are a reasonable next stop.
 
 ## Sources
 

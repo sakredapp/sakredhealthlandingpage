@@ -85,7 +85,7 @@ The data points to a fairly specific order of operations:
 
 ## The bill arrives either way
 
-Every number in this article describes the same choice framed two ways. Health care in retirement will cost a typical 65-year-old six figures whether or not they planned for it; the difference is whether it's paid from a funded HSA and steady income, or from depleted savings, credit cards, and a fundraising page with a 12% success rate. The planning window matters most in the 10–15 years before Medicare — the same 50–64 age band where medical debt peaks at 10%. If you're in that window, [get a coverage review](/get-coverage) and put real numbers on your own version of the $172,500.
+Every number in this article describes the same choice framed two ways. Health care in retirement will cost a typical 65-year-old six figures whether or not they planned for it; the difference is whether it's paid from a funded HSA and steady income, or from depleted savings, credit cards, and a fundraising page with a 12% success rate. The planning window matters most in the 10–15 years before Medicare — the same 50–64 age band where medical debt peaks at 10%. If you're in that window, it's worth putting real numbers on your own version of the $172,500; our [coverage guides](/products) explain the options.
 
 ## Frequently asked questions
 

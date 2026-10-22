@@ -174,7 +174,7 @@ The practical markers are a formed, easy-to-pass stool most days without straini
 
 Sequencing is the kind of thing people get right on paper and wrong in practice — the fiber ramp gets skipped, the binder gets taken at breakfast alongside a medication, the lymph block starts in week two because it's the fun one. In [the Sakred app](/app), each of these four protocols runs as a scheduled daily checklist: practices appear on the day they're meant to start, timing separations are built into the reminders, streaks carry the boring middle weeks, and every habit in the encyclopedia carries its evidence grade. Pick Lite (15–20 minutes a day) or Intensive (45–60) and run them in order. Each ships with a free companion guide.
 
-Work with the body's own elimination systems rather than around them — and if you're already thinking in multi-month horizons, it's a reasonable moment to [check your coverage](/get-coverage) too. Our post on [wellness without quick fixes](/blog/nature-first-wellness-daily-habits-health-without-quick-fixes) is the philosophical companion to this one.
+Work with the body's own elimination systems rather than around them — and if you're already thinking in multi-month horizons, it's a reasonable moment to [read about your coverage options](/products) too. Our post on [wellness without quick fixes](/blog/nature-first-wellness-daily-habits-health-without-quick-fixes) is the philosophical companion to this one.
 
 ## Sources
 

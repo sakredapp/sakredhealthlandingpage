@@ -127,7 +127,7 @@ const VARIANTS: Variant[] = [
     points: [
       "Pays off the balance so the equity you built stays with your family",
       "Keeps heirs from being forced into a quick sale to cover payments",
-      "Pairs with your broader life and estate plan under one agent",
+      "Pairs with your broader life and estate plan",
     ],
     numbersHeading: (n) => ({ text: `The equity behind`, accent: `a ${n} home` }),
     whyHeading: { text: "Equity is only yours", accent: "if they can keep it" },
@@ -143,7 +143,7 @@ const VARIANTS: Variant[] = [
       `Straight talk: a home in ${c.name} runs about ${c.hv}, and the payment is around ${c.oc} a month. Mortgage protection is coverage that pays off whatever's left on your loan if you die. That's it. Your family keeps the house and skips the payment. It isn't a loan, a refinance, or PMI. ${rankPhrase(c, "cost")}`,
     points: [
       "If you pass, it pays off the mortgage balance — simple as that",
-      "You pick the amount and term; we size it to your budget",
+      "You pick the amount and term to fit your budget",
       "No exam required on many plans; fixed premiums that don't rise",
     ],
     numbersHeading: (n) => ({ text: `${n} home costs,`, accent: "no spin" }),

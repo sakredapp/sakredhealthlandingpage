@@ -98,7 +98,7 @@ RAND Europe's 2016 analysis put the U.S. economic loss from insufficient sleep a
 
 The safety numbers are starker. Williamson and Feyer's 2000 study in *Occupational and Environmental Medicine*, testing 39 participants across 28 hours of sleep deprivation, found that after 17 to 19 hours awake, performance on some tasks matched or fell below a 0.05% blood alcohol concentration, with response speeds up to 50% slower. The AAA Foundation for Traffic Safety's 2024 report estimated that **17.6% of all fatal U.S. crashes between 2017 and 2021 involved a drowsy driver** — roughly ten times what police-reported data captures.
 
-Sleep sits upstream of nearly every health metric an insurer looks at: blood pressure, weight, cardiovascular risk, mental health. Improving it compounds in both directions — better focus now, better numbers when you apply for coverage later. You can [check your coverage options](/get-coverage) or read how [term life insurance](/products/life-insurance) is priced against health factors like these.
+Sleep sits upstream of nearly every health metric an insurer looks at: blood pressure, weight, cardiovascular risk, mental health. Improving it compounds in both directions — better focus now, better numbers when you apply for coverage later. You can [read about your coverage options](/products) or read how [term life insurance](/products/life-insurance) is priced against health factors like these.
 
 ## Start with the wake-up time
 

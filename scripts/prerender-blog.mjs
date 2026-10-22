@@ -565,7 +565,6 @@ async function main() {
     "",
     "## Products",
     "",
-    `- [Get coverage](${BASE_URL}/get-coverage): quote flow for all products`,
     `- [Life insurance](${BASE_URL}/products/life-insurance)`,
     `- [Mortgage protection](${BASE_URL}/products/mortgage-protection)`,
     `- [Final expense](${BASE_URL}/products/final-expense)`,

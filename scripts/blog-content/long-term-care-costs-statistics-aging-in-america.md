@@ -86,7 +86,7 @@ ASPE's 2022 analysis puts the same reality in per-family terms: for an older adu
 
 ## The math favors the early planner
 
-Every figure in this article points the same direction: the risk is common (70% lifetime), the cost is high ($74,400–$129,575 a year), the default payer is your own savings until Medicaid, and the fallback is 49.5 billion hours of unpaid family labor. None of that is a reason for despair — it is a reason to run the numbers at 55 instead of 75, while insurance, income products, and housing choices are all still on the table. If you want help stress-testing your own plan, you can [start a coverage conversation](/get-coverage) in a few minutes.
+Every figure in this article points the same direction: the risk is common (70% lifetime), the cost is high ($74,400–$129,575 a year), the default payer is your own savings until Medicaid, and the fallback is 49.5 billion hours of unpaid family labor. None of that is a reason for despair — it is a reason to run the numbers at 55 instead of 75, while insurance, income products, and housing choices are all still on the table. If you want to stress-test your own plan, our [coverage guides](/products) explain the options in plain words.
 
 ## Frequently asked questions
 
