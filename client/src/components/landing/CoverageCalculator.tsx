@@ -44,7 +44,7 @@ export function CoverageCalculator({ ctaHref = "/products", ctaLabel = "Get a re
           <Reveal delay={0.12}>
             <p className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto">
               Slide to see a ballpark based on replacing your income and protecting your
-              dependents. It's a starting point — your agent builds the real number with you.
+              dependents. It's a starting point — the real number depends on underwriting.
             </p>
           </Reveal>
         </div>

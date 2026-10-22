@@ -35,7 +35,7 @@ export function MortgageCalculator({ ctaHref = "#inquire" }: { ctaHref?: string 
           <Reveal delay={0.12}>
             <p className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto">
               Slide to a ballpark based on what's left on your loan, plus a cushion of covered
-              payments. It's a starting point — your agent builds the real number with you.
+              payments. It's a starting point — the real number depends on underwriting.
             </p>
           </Reveal>
         </div>
