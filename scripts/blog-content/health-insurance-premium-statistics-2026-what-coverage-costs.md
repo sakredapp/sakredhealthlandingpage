@@ -73,7 +73,7 @@ All of this sits against an enormous backdrop: US health spending hit $5.3 trill
 2. **Don't auto-renew.** The 58%-vs-114% gap in KFF's data is the measurable value of shopping: enrollees who switched plans cut their premium increase roughly in half compared with standing pat.
 3. **If your income is under 250% of poverty, price silver plans first.** Cost-sharing reductions — which shrink deductibles dramatically — only attach to silver plans, yet just 45% of eligible HealthCare.gov enrollees chose a CSR plan in 2026, down from 66% in 2025, per KFF. Many people chasing a cheap bronze premium left significant deductible help on the table.
 4. **Weigh the deductible, not just the premium.** The average 2026 marketplace deductible is $3,786 (KFF). A bronze plan that saves $60 a month but adds $2,500 of deductible only wins if you stay healthy.
-5. **If you're between jobs or above the subsidy cliff, compare every market.** Employer COBRA, marketplace plans, and [private health insurance options](/products/health-insurance) price very differently at the same income. A 30-minute comparison is worth hundreds of dollars a month at 2026 rates — you can [start a quote here](/get-coverage).
+5. **If you're between jobs or above the subsidy cliff, compare every market.** Employer COBRA, marketplace plans, and [private health insurance options](/products/health-insurance) price very differently at the same income. A 30-minute comparison is worth hundreds of dollars a month at 2026 rates — you can [read about coverage options](/products).
 
 ## Where costs go from here
 

@@ -214,7 +214,7 @@ The trick-or-treating stays. Restriction tends to make the restricted thing loud
 - **Then change the default the next morning.** Put the homemade swaps in the fridge at eye level and let the wrapped candy live in a cupboard. Availability beats negotiation.
 - **Concentrate the exposure, then brush.** Frequency of sugar contact is the caries driver in the underlying research; six grazing hours is a worse exposure than one sitting.
 
-None of this requires a new personality — just a slightly better default, repeated. If you want that structured rather than improvised, [the Sakred app](/app) is built to hold exactly this kind of small daily consistency, and while you're thinking about your family's long game, it's worth knowing where your [coverage](/get-coverage) stands too.
+None of this requires a new personality — just a slightly better default, repeated. If you want that structured rather than improvised, [the Sakred app](/app) is built to hold exactly this kind of small daily consistency, and while you're thinking about your family's long game, it's worth knowing where your [coverage](/products) stands too.
 
 ## Frequently asked questions
 

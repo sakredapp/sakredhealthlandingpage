@@ -97,7 +97,7 @@ A few implementation notes. Use a recurring timer or calendar block — the inte
 
 ## The long-game math
 
-Sedentary risk is cumulative and quiet — the studies above measure outcomes over years and decades, not weeks. That's also why it responds so well to small, boring, repeated interventions: five minutes here, two flights of stairs there, compounding across thousands of workdays. The same long-game logic applies to financial protection. Movement habits shift your odds; they don't eliminate risk, which is why pairing healthy routines with coverage that protects your family makes sense at any fitness level. If you've been putting that off the way most of us put off the lunchtime walk, you can [get a coverage quote](/get-coverage) in a few minutes — ideally while standing.
+Sedentary risk is cumulative and quiet — the studies above measure outcomes over years and decades, not weeks. That's also why it responds so well to small, boring, repeated interventions: five minutes here, two flights of stairs there, compounding across thousands of workdays. The same long-game logic applies to financial protection. Movement habits shift your odds; they don't eliminate risk, which is why pairing healthy routines with coverage that protects your family makes sense at any fitness level. If you've been putting that off the way most of us put off the lunchtime walk, you can [read about coverage options](/products) — ideally while standing.
 
 ## Sources
 

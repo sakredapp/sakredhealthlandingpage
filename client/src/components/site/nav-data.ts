@@ -37,12 +37,12 @@ export const COVERAGE_LINKS: NavLink[] = [
   {
     label: "Private Health Insurance",
     href: "/products/health-insurance",
-    description: "Real coverage, a real agent, on your budget.",
+    description: "Real coverage, explained in plain words.",
   },
   {
     label: "ACA Marketplace",
     href: "/products/aca-plans",
-    description: "Marketplace coverage, handled for you.",
+    description: "How marketplace coverage works.",
   },
   {
     label: "Retirement & Annuities",
@@ -74,7 +74,6 @@ export const FOOTER_COLUMNS: { title: string; links: NavLink[] }[] = [
       { label: "How It Works", href: "/#how-it-works" },
       { label: "App", href: "/app" },
       { label: "For Practitioners", href: "/for-practitioners" },
-      { label: "Get Coverage", href: "/get-coverage" },
     ],
   },
   {
@@ -107,7 +106,6 @@ export const FOOTER_COLUMNS: { title: string; links: NavLink[] }[] = [
       { label: "Do Not Sell My Info", href: "/do-not-sell" },
       { label: "SMS Opt-In", href: "/opt-in" },
       { label: "AI & Privacy", href: "/ai-privacy" },
-      { label: "Contact", href: "/get-coverage" },
     ],
   },
 ];

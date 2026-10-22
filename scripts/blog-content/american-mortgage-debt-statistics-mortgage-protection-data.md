@@ -80,7 +80,7 @@ If you carry a mortgage, the data points to a short, concrete checklist:
 
 ## The debt is certain; the income is not
 
-Every number in this article describes the same asymmetry. The $13.19 trillion in mortgage debt is contractual — it comes due every month regardless of what happens to the people paying it. The incomes servicing that debt are not guaranteed at all, and only about half of American adults have insured theirs. Closing that gap for your own household is not complicated: it is a term policy sized to a known number with a known end date. You can [get a quote](/get-coverage) in a few minutes, and the younger and healthier you are when you lock it in, the less the certainty costs.
+Every number in this article describes the same asymmetry. The $13.19 trillion in mortgage debt is contractual — it comes due every month regardless of what happens to the people paying it. The incomes servicing that debt are not guaranteed at all, and only about half of American adults have insured theirs. Closing that gap for your own household is not complicated: it is a term policy sized to a known number with a known end date. You can [read how term coverage works](/products/life-insurance); the younger and healthier you are when you lock it in, the less the certainty costs.
 
 ## Sources
 

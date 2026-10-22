@@ -45,7 +45,7 @@ Current rate data makes the reality concrete. Here is what coverage actually cos
 | 20-year term (female) | $500,000 | ~$23.50 |
 | Whole life (either) | $500,000 | ~$440 |
 
-Two things stand out. First, term coverage at this age costs about as much as a streaming bundle — an order of magnitude less than most young adults assume. Second, the term-versus-whole-life spread is roughly 15x for the same death benefit, which matters because "life insurance is expensive" often means someone was quoted a permanent product when a term policy would have covered the actual risk. If you want to see what the pure-protection version costs for your age and health class, a [term life quote](/get-coverage) takes minutes, and our [life insurance overview](/products/life-insurance) explains where term and permanent designs each make sense.
+Two things stand out. First, term coverage at this age costs about as much as a streaming bundle — an order of magnitude less than most young adults assume. Second, the term-versus-whole-life spread is roughly 15x for the same death benefit, which matters because "life insurance is expensive" often means someone was quoted a permanent product when a term policy would have covered the actual risk. Our [life insurance overview](/products/life-insurance) explains where term and permanent designs each make sense.
 
 ## Who falls into the gap
 
@@ -79,7 +79,7 @@ Rising life expectancy is good news, and it's part of why level term insurance f
 
 ## Closing your own gap, by the numbers
 
-The data suggests a short, specific sequence. First, check what you actually have — if your only coverage is employer group insurance, note that it likely ends with the job and covers one to two times salary. Second, price the real thing before assuming it's unaffordable: three-quarters of people who guess are wrong, usually by a lot, and a healthy 30-year-old's half-million in term coverage runs about $23–28 a month in current data. Third, borrow the one behavior the research says works — talk to a licensed professional, since 86% of people who do end up covered. You can start both steps at once by [getting a quote](/get-coverage); it costs nothing to find out which side of the 47% you're on.
+The data suggests a short, specific sequence. First, check what you actually have — if your only coverage is employer group insurance, note that it likely ends with the job and covers one to two times salary. Second, price the real thing before assuming it's unaffordable: three-quarters of people who guess are wrong, usually by a lot, and a healthy 30-year-old's half-million in term coverage runs about $23–28 a month in current data. Third, borrow the one behavior the research says works — talk to a licensed professional, since 86% of people who do end up covered. Our [coverage guides](/products) explain both steps in plain words.
 
 ## Sources
 

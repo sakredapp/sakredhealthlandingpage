@@ -25,12 +25,13 @@ import {
 import { PILLARS, PRODUCTS } from "@/data/products";
 import { useSeo, SITE_URL } from "@/lib/seo";
 import { track } from "@/lib/analytics";
+import { QUOTE_FORMS_LIVE } from "@/lib/quote-forms";
 
 export default function Products() {
   useSeo({
     title: "Coverage Options — Life, Health & Mortgage Protection",
     description:
-      "Mortgage protection, life insurance, final expense, private health, ACA marketplace plans, and retirement annuities — one licensed agency, one dedicated agent, all 50 states.",
+      "Mortgage protection, life insurance, final expense, private health, ACA marketplace plans, and retirement income, explained in plain words.",
     canonical: "/products",
     jsonLd: {
       "@context": "https://schema.org",
@@ -68,9 +69,10 @@ export default function Products() {
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-sakred-ink/70 sm:text-lg">
             Your health is part of your life, so we cover the whole picture — the health
             plan, the mortgage protection behind it, and the retirement income after it.
-            One licensed agency, one dedicated agent, all fifty states.
+            Here is how each kind of coverage works, in plain words.
           </p>
 
+          {QUOTE_FORMS_LIVE && (
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
               href="/get-coverage"
@@ -83,6 +85,7 @@ export default function Products() {
               Free consultation — no obligation, no pressure.
             </span>
           </div>
+          )}
           </div>
 
           {/* Architecture and home, not a handshake or an umbrella. This is the
@@ -158,7 +161,7 @@ export default function Products() {
                               {product.blurb}
                             </p>
                             <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-sakred-espresso">
-                              Inquire about {product.title}
+                              Learn about {product.title}
                               <ArrowRight
                                 className="h-4 w-4 text-sakred-gold transition-transform duration-micro group-hover:translate-x-0.5"
                                 aria-hidden="true"

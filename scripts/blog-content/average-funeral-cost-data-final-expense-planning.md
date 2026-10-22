@@ -87,7 +87,7 @@ Final expense insurance (also called burial insurance) is a small whole life pol
 - **Median case:** $10,000–$12,000 — covers the $9,995 burial-with-vault median plus a margin for cemetery charges the NFDA figure excludes.
 - **With inflation cushion:** $15,000–$25,000 — appropriate if the policy may not pay out for 15–20 years, given the long-run 3.65% annual funeral inflation rate, or if you want it to also clear small debts and end-of-life medical bills.
 
-The market matches this math. Final expense policies are typically issued in amounts from $5,000 to $50,000, and most buyers land in the $10,000–$20,000 range — enough to clear the burial-with-vault median plus cemetery and transition costs. These policies are typically simplified-issue — no medical exam, a few health questions — which is why they remain accessible at ages 50–85 when term coverage gets expensive or unavailable. You can see how [final expense coverage](/products/final-expense) is structured, or [run a quote](/get-coverage) against the numbers in this article to see what your target amount would cost monthly.
+The market matches this math. Final expense policies are typically issued in amounts from $5,000 to $50,000, and most buyers land in the $10,000–$20,000 range — enough to clear the burial-with-vault median plus cemetery and transition costs. These policies are typically simplified-issue — no medical exam, a few health questions — which is why they remain accessible at ages 50–85 when term coverage gets expensive or unavailable. You can see how [final expense coverage](/products/final-expense) is structured, and set it against the numbers in this article.
 
 ## The two-number summary
 

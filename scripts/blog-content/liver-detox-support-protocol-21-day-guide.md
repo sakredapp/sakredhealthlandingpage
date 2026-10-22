@@ -125,7 +125,7 @@ Yes, and you keep most of the benefit. MASLD is the metabolic form, driven by di
 
 The failure mode of every protocol isn't knowing what to do — it's remembering on day 14 when the novelty is gone. In [the Sakred app](/app), the Liver & Detox Support Protocol runs as a scheduled daily checklist: each practice appears on the day it's introduced, reminders fire at times you set, streaks track completion, and every habit links to an encyclopedia entry with its mechanism and evidence grade. Pick Lite or Intensive at the start and switch mid-protocol without losing your streak. It's free, and it ships with a free companion guide covering meal templates, the cruciferous rotation, and the flaxseed ramp-up schedule.
 
-Liver health is long-horizon work — the same category as the planning most people postpone. If you're already thinking in decades, it's worth [checking your coverage](/get-coverage) too, and our post on [wellness without quick fixes](/blog/nature-first-wellness-daily-habits-health-without-quick-fixes) is the philosophical companion to this one.
+Liver health is long-horizon work — the same category as the planning most people postpone. If you're already thinking in decades, it's worth [reading about your coverage options](/products) too, and our post on [wellness without quick fixes](/blog/nature-first-wellness-daily-habits-health-without-quick-fixes) is the philosophical companion to this one.
 
 ## Sources
 

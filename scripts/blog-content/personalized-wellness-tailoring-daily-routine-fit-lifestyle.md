@@ -99,7 +99,7 @@ Track adherence alongside outcome. A protocol you completed 6 of 7 days at moder
 
 The optimal routine, run at 40% adherence, loses to a mediocre routine run at 90%. Every dataset above points the same direction: the between-person spread is larger than the difference between competing protocols, which means the highest-value decision you make is not *which* plan but *which plan you will still be doing in November*.
 
-The same logic applies to the parts of life that aren't habits. Coverage that fits your actual household and budget is the coverage that stays in force — and staying in force is the entire point. If you want to see options matched to your situation rather than a template, you can [get a personalized quote](/get-coverage) or compare [life insurance options](/products/life-insurance).
+The same logic applies to the parts of life that aren't habits. Coverage that fits your actual household and budget is the coverage that stays in force — and staying in force is the entire point. If you want to understand the options before you choose, you can [read about coverage options](/products) or compare [life insurance options](/products/life-insurance).
 
 ## Sources
 

@@ -83,7 +83,7 @@ export default function Landing() {
   useSeo({
     title: "Sakred Health — Find Trusted Practitioners & Care Near You",
     description:
-      "Discover trusted practitioners, practices and health resources near you on the Sakred Health Network — plus care protocols, research, and licensed insurance guidance for your household.",
+      "Discover trusted practitioners, practices and health resources near you on the Sakred Health Network — plus care protocols and research.",
     canonical: "/",
     jsonLd: [
       {
@@ -92,7 +92,7 @@ export default function Landing() {
         name: "Sakred Health",
         url: SITE_URL,
         description:
-          "A trusted navigation layer for real-world health: find practitioners and practices near you, follow care protocols, and access licensed insurance guidance.",
+          "A trusted navigation layer for real-world health: find practitioners and practices near you, and follow care protocols.",
         areaServed: { "@type": "Country", name: "United States" },
       },
       {

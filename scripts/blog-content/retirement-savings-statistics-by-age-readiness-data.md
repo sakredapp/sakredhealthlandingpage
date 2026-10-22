@@ -88,7 +88,7 @@ Morningstar's Model of U.S. Retirement Outcomes (2024) projects that about 45% o
 
 ## Where to go from your own number
 
-The data suggests a simple sequence. First, find your median: compare your household balance to your age band above, using medians, not averages. Second, stress-test Social Security: rerun your plan assuming 78–83% of your projected benefit, per the 2026 Trustees Report ranges. Third, buy certainty where the data says risk concentrates — longevity and market timing — which is what guaranteed-income products exist to do. If you want a specific number for your situation rather than a national median, you can [get a personalized quote](/get-coverage) in a few minutes.
+The data suggests a simple sequence. First, find your median: compare your household balance to your age band above, using medians, not averages. Second, stress-test Social Security: rerun your plan assuming 78–83% of your projected benefit, per the 2026 Trustees Report ranges. Third, buy certainty where the data says risk concentrates — longevity and market timing — which is what guaranteed-income products exist to do. If you want to understand what drives the number beyond a national median, you can [read about coverage options](/products).
 
 ## Frequently asked questions
 

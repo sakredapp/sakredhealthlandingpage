@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Reveal, StampHeading } from "@/components/motion";
+import { QUOTE_FORMS_LIVE } from "@/lib/quote-forms";
 
 /**
  * Interactive mortgage-protection estimator: remaining balance + monthly
@@ -34,7 +35,7 @@ export function MortgageCalculator({ ctaHref = "#inquire" }: { ctaHref?: string 
           <Reveal delay={0.12}>
             <p className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto">
               Slide to a ballpark based on what's left on your loan, plus a cushion of covered
-              payments. It's a starting point — your agent builds the real number with you.
+              payments. It's a starting point — the real number depends on underwriting.
             </p>
           </Reveal>
         </div>
@@ -123,6 +124,7 @@ export function MortgageCalculator({ ctaHref = "#inquire" }: { ctaHref?: string 
                 <p className="text-sm text-[#2C2C2C]/55 mb-6">
                   A payoff-plus-cushion estimate — not a quote or an offer of coverage.
                 </p>
+                {QUOTE_FORMS_LIVE && (
                 <a href={ctaHref}>
                   <Button
                     size="lg"
@@ -132,6 +134,7 @@ export function MortgageCalculator({ ctaHref = "#inquire" }: { ctaHref?: string 
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </a>
+                )}
               </div>
             </div>
           </div>

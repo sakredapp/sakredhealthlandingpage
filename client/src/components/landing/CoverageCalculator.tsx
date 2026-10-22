@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { MapPin } from "lucide-react";
 import { Reveal, StampHeading } from "@/components/motion";
+import { QUOTE_FORMS_LIVE } from "@/lib/quote-forms";
 
 /**
  * Interactive life-insurance coverage estimator. Sliders update the suggested
@@ -43,7 +44,7 @@ export function CoverageCalculator({ ctaHref = "/products", ctaLabel = "Get a re
           <Reveal delay={0.12}>
             <p className="text-lg text-[#2C2C2C]/70 max-w-2xl mx-auto">
               Slide to see a ballpark based on replacing your income and protecting your
-              dependents. It's a starting point — your agent builds the real number with you.
+              dependents. It's a starting point — the real number depends on underwriting.
             </p>
           </Reveal>
         </div>
@@ -130,7 +131,7 @@ export function CoverageCalculator({ ctaHref = "/products", ctaLabel = "Get a re
                 <p className="text-sm text-[#2C2C2C]/55 mb-6">
                   A common income-replacement estimate — not a quote or an offer of coverage.
                 </p>
-                {ctaHref.startsWith("#") ? (
+                {QUOTE_FORMS_LIVE && (ctaHref.startsWith("#") ? (
                   <a href={ctaHref}>
                     <Button
                       size="lg"
@@ -150,7 +151,7 @@ export function CoverageCalculator({ ctaHref = "/products", ctaLabel = "Get a re
                       {ctaLabel}
                     </Button>
                   </Link>
-                )}
+                ))}
               </div>
             </div>
           </div>

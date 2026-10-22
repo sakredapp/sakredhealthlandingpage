@@ -86,7 +86,7 @@ You don't need to replicate the full intervention to borrow its mechanism. The t
 
 Screen fatigue built up gradually, and it unwinds the same way. A realistic first week: install a 20-20-20 reminder on your work computer (day 1), turn off every notification that isn't a direct message from a human (day 2), schedule two 60-minute phone-in-another-room focus blocks (days 3–5), and move your phone charger out of the bedroom for good (weekend). Each step maps to a measured outcome — fewer eye-strain symptoms in two weeks, fewer of the ~200 daily checks, and a meaningful shot at 24 more minutes of sleep per night.
 
-Protecting your attention and sleep is part of the same long-game logic as protecting your family's finances — small, unglamorous decisions made once that keep paying off. If that long game is on your mind, you can [get a coverage quote](/get-coverage) in a few minutes, screen time we'd argue is well spent.
+Protecting your attention and sleep is part of the same long-game logic as protecting your family's finances — small, unglamorous decisions made once that keep paying off. If that long game is on your mind, you can [read about coverage options](/products), reading time we'd argue is well spent.
 
 ## Sources
 

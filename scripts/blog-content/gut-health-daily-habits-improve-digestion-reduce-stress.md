@@ -105,7 +105,7 @@ Specific, and ordered by evidence strength:
 
 Give it four to six weeks before judging. Most of the trials above ran 8 to 17 weeks, and the outcomes that moved were measured in blood and stool, not in how any single week felt.
 
-Daily habits are the part of your health you control directly. The parts you can't — an unexpected diagnosis, a hospitalization, an income interruption — are what financial protection is for. You can [get a quote in a few minutes](/get-coverage) or read about our [health plan options](/products/health-insurance).
+Daily habits are the part of your health you control directly. The parts you can't — an unexpected diagnosis, a hospitalization, an income interruption — are what financial protection is for. You can [read about coverage options](/products) or read about our [health plan options](/products/health-insurance).
 
 ## Sources
 

@@ -82,7 +82,7 @@ A defensible starting stack, drawn directly from the doses above: five minutes o
 
 ## What to check at day 30
 
-Track two things, not ten: whether you completed the practice (a simple yes/no per day) and a single one-to-ten stress rating taken at the same hour. The Stanford data suggests the mood benefit grows with cumulative days, so a four-week run is roughly the minimum honest test. Chronic stress also does not stay psychological — the American Heart Association's Mind-Heart-Body Connection scientific statement in Circulation (2021) concluded that psychological health is associated with cardiovascular health and disease risk, which is one reason stress habits belong in the same conversation as the rest of your long-term planning. If that planning includes protecting the people who depend on you, you can [get a coverage quote](/get-coverage) in about the time one of these sessions takes.
+Track two things, not ten: whether you completed the practice (a simple yes/no per day) and a single one-to-ten stress rating taken at the same hour. The Stanford data suggests the mood benefit grows with cumulative days, so a four-week run is roughly the minimum honest test. Chronic stress also does not stay psychological — the American Heart Association's Mind-Heart-Body Connection scientific statement in Circulation (2021) concluded that psychological health is associated with cardiovascular health and disease risk, which is one reason stress habits belong in the same conversation as the rest of your long-term planning. If that planning includes protecting the people who depend on you, you can [read about coverage options](/products) in about the time one of these sessions takes.
 
 ## Sources
 

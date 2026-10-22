@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { MapPin, ArrowRight, CheckCircle2, Loader2, ShieldCheck } from "lucide-react";
 import { Link } from "wouter";
 import { useSeo } from "@/lib/seo";
+import { QUOTE_FORMS_LIVE } from "@/lib/quote-forms";
 import { useEmailValidation } from "@/lib/use-email-validation";
 import { usePhoneValidation } from "@/lib/use-phone-validation";
 import { EmailWarning, PhoneWarning, warnRing } from "@/components/LeadCheckWarning";
@@ -70,7 +71,7 @@ const inputClass =
 
 const labelClass = "block text-sm font-medium text-[#2C2C2C]/80 mb-1.5";
 
-export default function GetCoverage() {
+function GetCoverageForm() {
   const [form, setForm] = useState<FormData>(initialForm);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -581,4 +582,41 @@ export default function GetCoverage() {
       </section>
     </SiteLayout>
   );
+}
+
+/** While quote forms are off, /get-coverage shows a short note instead of the
+ *  form. The form above is kept so QUOTE_FORMS_LIVE can bring it back. */
+function CoverageRequestsPaused() {
+  useSeo({
+    title: "Coverage Information | Sakred Health",
+    description:
+      "Plain-words information about health, life, mortgage protection and retirement coverage from Sakred Health.",
+    canonical: "/get-coverage",
+    noindex: true,
+  });
+  return (
+    <SiteLayout solidHeader>
+      <section className="pt-8 pb-16 lg:pb-24">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-3xl sm:text-4xl font-display font-normal tracking-tight text-[#2C2C2C] mb-6">
+            Coverage information
+          </h1>
+          <p className="text-base sm:text-lg leading-relaxed text-[#2C2C2C]/70 mb-8">
+            We are not taking coverage requests on this site right now. You can still
+            read about each kind of coverage in plain words.
+          </p>
+          <Link
+            href="/products"
+            className="inline-flex items-center rounded-full border border-[#C5A059] px-6 py-3 text-sm font-medium text-[#2C2C2C]"
+          >
+            Explore coverage
+          </Link>
+        </div>
+      </section>
+    </SiteLayout>
+  );
+}
+
+export default function GetCoverage() {
+  return QUOTE_FORMS_LIVE ? <GetCoverageForm /> : <CoverageRequestsPaused />;
 }

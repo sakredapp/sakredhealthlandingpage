@@ -106,7 +106,7 @@ The two behaviors with the largest documented deficits are worth considering fir
 
 The honest pitch for habit design is not transformation. It is that a behavior which currently costs you a decision every day will, somewhere between two and five months from now, cost you almost nothing — and will keep running during the weeks when your motivation is gone. That's the whole return: a durable asset that survives your bad months.
 
-We think about coverage the same way. Health habits and financial protection both work by compounding quietly in the background, and both are cheapest to start when you least feel you need them. If you want to see what protecting your family looks like alongside the habits you're building, you can [get a personalized quote](/get-coverage) in a few minutes.
+We think about coverage the same way. Health habits and financial protection both work by compounding quietly in the background, and both are cheapest to start when you least feel you need them. If you want to see what protecting your family looks like alongside the habits you're building, you can [read about coverage options](/products).
 
 ## Sources
 
