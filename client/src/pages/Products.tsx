@@ -25,6 +25,7 @@ import {
 import { PILLARS, PRODUCTS } from "@/data/products";
 import { useSeo, SITE_URL } from "@/lib/seo";
 import { track } from "@/lib/analytics";
+import { QUOTE_FORMS_LIVE } from "@/lib/quote-forms";
 
 export default function Products() {
   useSeo({
@@ -71,6 +72,7 @@ export default function Products() {
             One licensed agency, one dedicated agent, all fifty states.
           </p>
 
+          {QUOTE_FORMS_LIVE && (
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
               href="/get-coverage"
@@ -83,6 +85,7 @@ export default function Products() {
               Free consultation — no obligation, no pressure.
             </span>
           </div>
+          )}
           </div>
 
           {/* Architecture and home, not a handshake or an umbrella. This is the

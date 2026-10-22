@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { MapPin } from "lucide-react";
 import { Reveal, StampHeading } from "@/components/motion";
+import { QUOTE_FORMS_LIVE } from "@/lib/quote-forms";
 
 /**
  * Interactive life-insurance coverage estimator. Sliders update the suggested
@@ -130,7 +131,7 @@ export function CoverageCalculator({ ctaHref = "/products", ctaLabel = "Get a re
                 <p className="text-sm text-[#2C2C2C]/55 mb-6">
                   A common income-replacement estimate — not a quote or an offer of coverage.
                 </p>
-                {ctaHref.startsWith("#") ? (
+                {QUOTE_FORMS_LIVE && (ctaHref.startsWith("#") ? (
                   <a href={ctaHref}>
                     <Button
                       size="lg"
@@ -150,7 +151,7 @@ export function CoverageCalculator({ ctaHref = "/products", ctaLabel = "Get a re
                       {ctaLabel}
                     </Button>
                   </Link>
-                )}
+                ))}
               </div>
             </div>
           </div>

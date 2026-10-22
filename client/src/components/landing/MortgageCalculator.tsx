@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Reveal, StampHeading } from "@/components/motion";
+import { QUOTE_FORMS_LIVE } from "@/lib/quote-forms";
 
 /**
  * Interactive mortgage-protection estimator: remaining balance + monthly
@@ -123,6 +124,7 @@ export function MortgageCalculator({ ctaHref = "#inquire" }: { ctaHref?: string 
                 <p className="text-sm text-[#2C2C2C]/55 mb-6">
                   A payoff-plus-cushion estimate — not a quote or an offer of coverage.
                 </p>
+                {QUOTE_FORMS_LIVE && (
                 <a href={ctaHref}>
                   <Button
                     size="lg"
@@ -132,6 +134,7 @@ export function MortgageCalculator({ ctaHref = "#inquire" }: { ctaHref?: string 
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </a>
+                )}
               </div>
             </div>
           </div>

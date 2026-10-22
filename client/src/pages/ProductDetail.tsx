@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Reveal, StampHeading } from "@/components/motion";
 import { TextUsSection } from "@/components/TextUsSection";
 import { ProductIntakeForm } from "@/components/ProductIntakeForm";
+import { QUOTE_FORMS_LIVE } from "@/lib/quote-forms";
 import { ProductDemo } from "@/components/ProductDemos";
 import { CoverageCalculator } from "@/components/landing/CoverageCalculator";
 import { MortgageCalculator } from "@/components/landing/MortgageCalculator";
@@ -102,6 +103,7 @@ export default function ProductDetail() {
             </div>
 
             {/* form */}
+            {QUOTE_FORMS_LIVE && (
             <Reveal delay={0.1} y={24}>
               <div
                 id="inquire"
@@ -120,6 +122,7 @@ export default function ProductDetail() {
                 />
               </div>
             </Reveal>
+            )}
           </div>
         </div>
 

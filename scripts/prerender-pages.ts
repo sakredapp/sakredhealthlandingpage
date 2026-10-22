@@ -153,7 +153,7 @@ function productBody(p: Product): string {
                 .join("")}</ul></section>`
             : ""
         }
-        <p><a href="/get-coverage">Get a personalized quote</a> or browse <a href="/products">all coverage options</a>.</p>
+        <p>Browse <a href="/products">all coverage options</a>.</p>
       </article>
     </main>`;
 }
@@ -251,7 +251,7 @@ function main() {
         <p>Source: <a href="${esc(meta.sourceUrl)}">${esc(meta.source)}</a></p>
         <h2>${esc(copy.whyHeading.text)} ${esc(copy.whyHeading.accent)}</h2>
         <p>${esc(copy.whyBody)}</p>
-        <p><a href="/get-coverage">Get a ${esc(st.name)} mortgage protection quote</a> or read the national picture in <a href="/blog/american-mortgage-debt-statistics-mortgage-protection-data">our mortgage debt data report</a>.</p>
+        <p>Read the national picture in <a href="/blog/american-mortgage-debt-statistics-mortgage-protection-data">our mortgage debt data report</a>.</p>
       </article>
     </main>`;
     const head = buildHead({
@@ -403,12 +403,12 @@ function main() {
   const simplePages: { path: string; title: string; description: string; h1: string; body: string }[] = [
     {
       path: "/get-coverage",
-      title: "Get Coverage — Free Quote in Minutes",
+      title: "Coverage Information",
       description:
-        "Tell us about your household and get matched with life, health, mortgage protection, or retirement coverage. Licensed in all 50 states. Free consultation.",
-      h1: "Get coverage built around your household",
+        "Plain-words information about health, life, mortgage protection and retirement coverage from Sakred Health.",
+      h1: "Coverage information",
       body:
-        "Answer a few questions about your household and a licensed agent will match you with the right mix of health, life, mortgage protection, and retirement coverage. Free consultation, no obligation, no pressure — and licensed in all 50 states.",
+        "We are not taking coverage requests on this site right now. You can still read about each kind of coverage in plain words on our coverage pages.",
     },
   ];
   for (const pg of simplePages) {
@@ -629,12 +629,12 @@ function main() {
         ).join("")}</ul>
 
         <h2>Your health deserves protection too</h2>
-        <p>Sakred also helps families protect their health, income, home and retirement
-        with licensed insurance guidance — one dedicated agent, all 50 states.</p>
+        <p>Plain-words guides to health, life, mortgage protection and retirement
+        coverage.</p>
         <ul>${PRODUCTS.map(
           (p) => `<li><a href="/products/${p.slug}">${esc(p.title)}</a> — ${esc(p.tagline)}</li>`
         ).join("")}</ul>
-        <p><a href="/products">Explore coverage</a> · <a href="/get-coverage">Get a quote</a></p>
+        <p><a href="/products">Explore coverage</a></p>
 
         <h2>Learn</h2>
         <p>We publish cited research on health, food, practice and coverage —
@@ -645,7 +645,7 @@ function main() {
   const homeHead = buildHead({
     title: "Sakred Health — Find Trusted Practitioners & Care Near You",
     description:
-      "Discover trusted practitioners, practices and health resources near you on the Sakred Health Network — plus care protocols, research, and licensed insurance guidance.",
+      "Discover trusted practitioners, practices and health resources near you on the Sakred Health Network — plus care protocols and research.",
     path: "/",
     jsonLd: {
       "@context": "https://schema.org",
@@ -656,7 +656,7 @@ function main() {
           name: "Sakred Health",
           url: BASE_URL,
           description:
-            "A trusted navigation layer for real-world health: a curated network of practitioners and practices, care protocols, health education, and licensed insurance guidance.",
+            "A trusted navigation layer for real-world health: a curated network of practitioners and practices, care protocols and health education.",
           areaServed: { "@type": "Country", name: "United States" },
           subOrganization: {
             "@type": "InsuranceAgency",

@@ -27,8 +27,7 @@ export function SiteFooter() {
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-sakred-ink/60">
               A trusted navigation layer for real-world health — find practitioners and
-              practices near you, follow care protocols between visits, and protect your
-              household with licensed insurance guidance.
+              practices near you, and follow care protocols between visits.
             </p>
             <Link
               href="/recommend"

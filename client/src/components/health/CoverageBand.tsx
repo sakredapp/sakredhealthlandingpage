@@ -18,6 +18,7 @@ import { StampHeading, StaggerChildren, StaggerItem } from "@/components/motion"
 import { PRODUCTS } from "@/data/products";
 import { COVERAGE_GLYPHS } from "./CoverageGlyphs";
 import { track } from "@/lib/analytics";
+import { QUOTE_FORMS_LIVE } from "@/lib/quote-forms";
 
 export function CoverageBand() {
   return (
@@ -34,9 +35,8 @@ export function CoverageBand() {
             className="font-display text-3xl leading-tight tracking-tight text-sakred-espresso sm:text-4xl"
           />
           <p className="mt-4 max-w-xl text-base leading-relaxed text-sakred-ink/70">
-            Sakred also helps families protect their health, income, home and
-            retirement with licensed insurance guidance — one dedicated agent,
-            all fifty states.
+            Plain-words guides to protecting your health, income, home and
+            retirement.
           </p>
         </div>
 
@@ -92,6 +92,7 @@ export function CoverageBand() {
           >
             Explore coverage
           </Link>
+          {QUOTE_FORMS_LIVE && (<>
           <Link
             href="/get-coverage"
             onClick={() => track("quote_started", { surface: "homepage" })}
@@ -102,6 +103,7 @@ export function CoverageBand() {
           <p className="text-xs text-sakred-ink/50">
             Free consultation — no obligation, no pressure.
           </p>
+          </>)}
         </div>
       </div>
     </section>
