@@ -5,17 +5,30 @@
  * dialog, so a screenshot swap doesn't have to be made in three places (and
  * therefore get made in two).
  *
- * Screens are hosted in the public `appdemoscreenshots` bucket. Adding or
- * replacing one means editing the URL here, nothing else.
+ * The originals live in the public `appdemoscreenshots` bucket at 1320px wide
+ * (2.1 MB for the set). The site serves resized AVIF/WebP/JPEG copies from
+ * `client/public/img/app/` made by `scripts/fetch-app-screens.mjs`: the largest
+ * slot is 272 CSS px, and the full-size JPEGs held /app's main content back
+ * 13-16 s on a phone. Replacing a screen: swap it in the bucket, re-run the
+ * script, and update `name`/`height` here.
  */
-const BUCKET = "https://auth.sakredhealth.com/storage/v1/object/public/appdemoscreenshots";
+const IMG = "/img/app";
+
+/** Widths the script emits. */
+export const APP_SCREEN_WIDTHS = [320, 640] as const;
 
 export const APP_STORE_URL = "https://apps.apple.com/us/app/sakred-health/id6756814847";
 export const GOOGLE_PLAY_URL =
   "https://play.google.com/store/apps/details?id=com.sakredunion.app";
 
 export interface AppScreen {
+  /** File stem in /img/app — `<name>-<width>.<avif|webp|jpg>`. */
+  name: string;
+  /** Plain JPEG at 640w, for anything that can't take a <picture>. */
   image: string;
+  /** Intrinsic size at 320w, so the frame reserves its space before load. */
+  width: number;
+  height: number;
   label: string;
   /** What the screen shows — used as alt text, so it must describe, not label. */
   alt: string;
@@ -28,37 +41,58 @@ export interface AppScreen {
  */
 export const APP_SCREENS: AppScreen[] = [
   {
-    image: `${BUCKET}/homescreen%20.jpeg`,
+    name: "home",
+    image: `${IMG}/home-640.jpg`,
+    width: 320,
+    height: 655,
     label: "Home",
     alt: "The Sakred Health app home screen showing the day's overview",
   },
   {
-    image: `${BUCKET}/todays%20habits.jpeg`,
+    name: "today",
+    image: `${IMG}/today-640.jpg`,
+    width: 320,
+    height: 674,
     label: "Today",
     alt: "Today's plan in the Sakred Health app, listing the day's practices",
   },
   {
-    image: `${BUCKET}/routine%20outline%20.jpeg`,
+    name: "protocols",
+    image: `${IMG}/protocols-640.jpg`,
+    width: 320,
+    height: 695,
     label: "Protocols",
     alt: "A multi-day protocol laid out day by day in the Sakred Health app",
   },
   {
-    image: `${BUCKET}/routine%20and%20habit%20tracker%20.jpeg`,
+    name: "tracking",
+    image: `${IMG}/tracking-640.jpg`,
+    width: 320,
+    height: 656,
     label: "Tracking",
     alt: "Progress through a protocol shown across the week",
   },
   {
-    image: `${BUCKET}/library%20overview%20.jpeg`,
+    name: "library",
+    image: `${IMG}/library-640.jpg`,
+    width: 320,
+    height: 658,
     label: "Library & Community",
     alt: "The library and community section of the Sakred Health app",
   },
   {
-    image: `${BUCKET}/real%20foods%20market%20.jpeg`,
+    name: "market",
+    image: `${IMG}/market-640.jpg`,
+    width: 320,
+    height: 659,
     label: "Real Foods Market",
     alt: "The Real Foods Market inside the Sakred Health app",
   },
   {
-    image: `${BUCKET}/policy%20portal%20.jpeg`,
+    name: "policies",
+    image: `${IMG}/policies-640.jpg`,
+    width: 320,
+    height: 610,
     label: "Policies",
     alt: "The policy portal showing coverage details and documents",
   },

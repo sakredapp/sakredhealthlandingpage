@@ -39,6 +39,7 @@ import {
   APP_STORE_URL,
   GOOGLE_PLAY_URL,
 } from "@/data/app-assets";
+import { AppScreenPicture } from "@/components/health/AppScreenPicture";
 import { useSeo, SITE_URL } from "@/lib/seo";
 import { track } from "@/lib/analytics";
 
@@ -211,18 +212,25 @@ export default function AppPage() {
               <div className="relative overflow-hidden rounded-[2.2rem] border-[5px] border-sakred-espresso/85 bg-sakred-espresso shadow-[0_36px_70px_-32px_rgba(28,26,23,0.65)]">
                 {/* Crossfade rather than a carousel: the phone frame stays put,
                     only what's inside it changes, so nothing on the page moves. */}
+                {/* The first screen is the main content: fetch it first. The
+                    others sit under it at opacity 0, so they are fetched at
+                    low priority rather than competing with it. */}
                 {APP_SCREENS.map((screen, index) => (
-                  <motion.img
+                  <motion.div
                     key={screen.label}
-                    src={screen.image}
-                    alt={screen.alt}
-                    loading={index === 0 ? "eager" : "lazy"}
-                    decoding="async"
                     initial={false}
                     animate={{ opacity: activeScreen === index ? 1 : 0 }}
                     transition={{ duration: DUR.card, ease: EASE }}
                     className={`w-full ${index === 0 ? "block" : "absolute inset-0"}`}
-                  />
+                  >
+                    <AppScreenPicture
+                      screen={screen}
+                      sizes="17rem"
+                      loading={index === 0 ? "eager" : "lazy"}
+                      fetchPriority={index === 0 ? "high" : "low"}
+                      className="block h-auto w-full"
+                    />
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -324,13 +332,7 @@ export default function AppPage() {
           {APP_SCREENS.map((screen) => (
             <li key={screen.label} className="w-44 shrink-0 snap-center sm:w-52">
               <div className="overflow-hidden rounded-[1.4rem] border-4 border-sakred-espresso/85 bg-sakred-espresso">
-                <img
-                  src={screen.image}
-                  alt={screen.alt}
-                  loading="lazy"
-                  decoding="async"
-                  className="block w-full"
-                />
+                <AppScreenPicture screen={screen} sizes="(min-width: 640px) 13rem, 11rem" />
               </div>
               <p className="mt-2 text-center text-xs text-sakred-ink/55">{screen.label}</p>
             </li>

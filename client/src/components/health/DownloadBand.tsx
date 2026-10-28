@@ -15,6 +15,7 @@ import {
   APP_STORE_URL,
   GOOGLE_PLAY_URL,
 } from "@/data/app-assets";
+import { AppScreenPicture } from "./AppScreenPicture";
 import { track } from "@/lib/analytics";
 
 /** Two phones and a tablet-ish third, fanned. */
@@ -117,13 +118,7 @@ export function DownloadBand() {
               className="absolute left-1/2 top-1/2 -ml-[7.5rem] -mt-[15rem] w-60"
             >
               <div className="overflow-hidden rounded-[2rem] border-4 border-sakred-espresso/85 bg-sakred-espresso shadow-[0_30px_60px_-30px_rgba(28,26,23,0.7)]">
-                <img
-                  src={item.screen.image}
-                  alt={item.screen.alt}
-                  loading="lazy"
-                  decoding="async"
-                  className="block w-full"
-                />
+                <AppScreenPicture screen={item.screen} sizes="15rem" />
               </div>
             </motion.div>
           ))}
