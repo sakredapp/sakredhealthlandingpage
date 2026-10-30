@@ -50,7 +50,7 @@ export default function InsurancePrivacy() {
               Insurance Privacy Policy
             </h1>
             <p className="text-[#0F172A]/70 mb-8">
-              Last updated: October 22, 2026
+              Last updated: October 30, 2026
             </p>
 
             <div className="prose prose-lg max-w-none prose-headings:text-[#0F172A] prose-headings:font-display prose-headings:font-medium prose-p:text-[#0F172A]/70 prose-p:leading-relaxed prose-a:text-[#C5A059] prose-li:text-[#0F172A]/70">
@@ -111,6 +111,11 @@ export default function InsurancePrivacy() {
               </p>
               <p>
                 <strong>No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Text-messaging originator opt-in data and consent will not be shared with any third parties,</strong> other than the providers that deliver our messages on our behalf and are bound not to use it for anything else. The categories of sharing above exclude your text-messaging opt-in data.
+              </p>
+
+              <h3>How we read your texts</h3>
+              <p>
+                We may automatically look at the tone and style of the texts you send us (for example, whether you seem rushed or unsure) so our replies fit you better. We keep only a short code for 30 days, we do not use it to decide your price, eligibility or what ads you see, and we never share it.
               </p>
 
               <h2>Your choices</h2>

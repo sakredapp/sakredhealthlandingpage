@@ -24,7 +24,7 @@ export default function PrivacyPolicy() {
               Privacy Policy
             </h1>
             <p className="text-[#0F172A]/70 mb-8">
-              Effective Date: October 22, 2026
+              Effective Date: October 30, 2026
             </p>
 
             <div className="prose prose-lg max-w-none prose-headings:text-[#0F172A] prose-headings:font-display prose-headings:font-medium prose-p:text-[#0F172A]/70 prose-p:leading-relaxed prose-a:text-[#C5A059] prose-li:text-[#0F172A]/70">
@@ -126,6 +126,11 @@ export default function PrivacyPolicy() {
               <p>
                 This information is used to send you messages about your life and health insurance inquiries, including account notifications, customer care, and (only with your explicit consent) marketing of our life and health insurance services. Your phone number and opt-in data are not sold, rented, or shared with third parties for their marketing purposes. For full details, see our{" "}
                 <a href="/opt-in">SMS Opt-In & Messaging Policy</a>.
+              </p>
+
+              <h3>How we read your texts</h3>
+              <p>
+                We may automatically look at the tone and style of the texts you send us (for example, whether you seem rushed or unsure) so our replies fit you better. We keep only a short code for 30 days, we do not use it to decide your price, eligibility or what ads you see, and we never share it.
               </p>
 
               <h2>2. How We Use Your Information</h2>
